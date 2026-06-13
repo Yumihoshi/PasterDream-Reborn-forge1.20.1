@@ -1,0 +1,38 @@
+# eclipse 相关
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea 相关
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle 相关
+build
+.gradle
+
+# 其他
+eclipse
+run
+
+# 旧版源码参考（不参与编译，不入库）
+reference/
+reference-resources/
+
+# 数据生成
+src/generated/
+run-data/
+
+# 备份
+*.bak
+
+# 临时文件
+vanilla_temp/
+mc_temp/
+.log/
