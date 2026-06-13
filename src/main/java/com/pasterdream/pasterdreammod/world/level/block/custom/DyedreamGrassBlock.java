@@ -13,7 +13,7 @@ public class DyedreamGrassBlock extends Block {
     public DyedreamGrassBlock() {
         super(BlockBehaviour.Properties.of()
                 .mapColor(net.minecraft.world.level.material.MapColor.COLOR_PINK)
-                .sound(SoundType.GRAVEL)
+                .sound(SoundType.GRASS)
                 .strength(0.75F, 0.5F));
     }
 

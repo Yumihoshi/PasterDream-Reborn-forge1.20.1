@@ -36,10 +36,12 @@ public class PasterDreamMod
 
         IEventBus modEventBus = context.getModEventBus();
 
-        // 注册 DeferredRegister
-        ModBlocks.BLOCKS.register(modEventBus);
-        ModItems.ITEMS.register(modEventBus);
-        ModCreativeModeTabs.TABS.register(modEventBus);
+        //调用物品注册方法
+        ModItems.register(modEventBus);
+        //调用创造物品栏注册方法
+        ModCreativeModeTabs.register(modEventBus);
+        //调用方块注册方法
+        ModBlocks.register(modEventBus);
 
         // 注册 commonSetup 方法用于 mod 加载
         modEventBus.addListener(this::commonSetup);
