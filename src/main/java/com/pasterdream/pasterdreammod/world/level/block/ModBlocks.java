@@ -21,7 +21,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DYEDREAM_DIRT = BLOCKS.register("dyedream_dirt",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_PINK)
+                    .mapColor(MapColor.COLOR_PINK)
                     .sound(SoundType.GRAVEL)
                     .strength(0.75F, 0.5F)));
 
@@ -30,14 +30,14 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DYEDREAM_LOG = BLOCKS.register("dyedream_log",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.WOOD)
+                    .mapColor(MapColor.SNOW)
                     .sound(SoundType.WOOD)
                     .strength(2.0F, 2.0F)
                     .ignitedByLava()));
 
     public static final RegistryObject<Block> DYEDREAM_LEAVES = BLOCKS.register("dyedream_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.PLANT)
+                    .mapColor(MapColor.COLOR_PINK)
                     .sound(SoundType.GRASS)
                     .strength(0.2F, 0.2F)
                     .noOcclusion()
@@ -45,7 +45,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DYEDREAM_SAPLING = BLOCKS.register("dyedream_sapling",
             () -> new SaplingBlock(ModTreeGrowers.DYEDREAM, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.PLANT)
+                    .mapColor(MapColor.SNOW)
                     .noCollission()
                     .instabreak()
                     .randomTicks()

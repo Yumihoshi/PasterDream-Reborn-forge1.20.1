@@ -11,12 +11,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.IPlantable;
 
 public class DyedreamGrassBlock extends Block {
     public DyedreamGrassBlock() {
         super(BlockBehaviour.Properties.of()
-                .mapColor(net.minecraft.world.level.material.MapColor.COLOR_PINK)
+                .mapColor(MapColor.COLOR_MAGENTA)
                 .sound(SoundType.GRASS)
                 .strength(0.75F, 0.5F)
                 .randomTicks());
@@ -46,9 +47,7 @@ public class DyedreamGrassBlock extends Block {
     private static boolean canBeGrass(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos above = pos.above();
         BlockState aboveState = level.getBlockState(above);
-        if (!aboveState.isAir()) return false;
-        if (aboveState.getFluidState().getAmount() == 8) return false;
-        return level.getMaxLocalRawBrightness(above) >= level.getMaxLightLevel();
+        return aboveState.isAir() && aboveState.getFluidState().getAmount() < 8;
     }
 
     private static boolean canPropagate(BlockState state, LevelReader level, BlockPos pos) {
