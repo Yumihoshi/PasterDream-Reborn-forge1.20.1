@@ -47,6 +47,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DYEDREAM_PLANKS_TRAPDOOR.get());
                         output.accept(ModItems.DYEDREAM_PLANKS_PRESSURE_PLATE.get());
                         output.accept(ModItems.DYEDREAM_PLANKS_BUTTON.get());
+                        output.accept(ModItems.PINK_SLIME_BLOCK.get());
+                        output.accept(ModItems.PINK_MUSHROOM_BLOCK.get());
+                        output.accept(ModItems.PINK_MUSHROOM_STEM.get());
+                        output.accept(ModItems.PINK_MUSHROOM_PORES.get());
+                        output.accept(ModItems.PINK_SHROOMLIGHT.get());
+                        output.accept(ModItems.PINK_MUSHROOM.get());
+                        output.accept(ModItems.TALL_PINK_MUSHROOM.get());
                     })
                     .build());
 
@@ -59,6 +66,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DYEDREAM_DUST.get());
                         output.accept(ModItems.DYEDREAM_DUST_PIECE.get());
                         output.accept(ModItems.AMBER_CANDY.get());
+                        output.accept(ModItems.PINK_SLIMEBALL.get());
                     })
                     .build());
 

@@ -113,6 +113,31 @@ public final class RecipeHelpers {
                 .save(writer);
     }
 
+    /**
+     * 9→1 压缩配方：9×材料合成 1×压缩块（3×3 有序合成）。
+     */
+    public static void storageCompress(Consumer<FinishedRecipe> writer,
+                                        ItemLike material, ItemLike block) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block, 1)
+                .pattern("aaa")
+                .pattern("aaa")
+                .pattern("aaa")
+                .define('a', material)
+                .unlockedBy(getHasName(material), has(material))
+                .save(writer);
+    }
+
+    /**
+     * 1→9 分解配方：1×压缩块分解为 9×材料（无序合成）。
+     */
+    public static void storageDecompress(Consumer<FinishedRecipe> writer,
+                                          ItemLike block, ItemLike material) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, material, 9)
+                .requires(block)
+                .unlockedBy(getHasName(block), has(block))
+                .save(writer);
+    }
+
     private static String getHasName(ItemLike item) {
         return BuiltInRegistries.ITEM.getKey(item.asItem()).getPath();
     }

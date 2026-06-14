@@ -27,12 +27,20 @@
     "dyedream_planks_door": "dyedream_planks_door",
     "dyedream_planks_trapdoor": "dyedream_planks_trapdoor",
     "dyedream_planks_pressure_plate": "dyedream_planks_pressure_plate",
-    "dyedream_planks_button": "dyedream_planks_button"
+    "dyedream_planks_button": "dyedream_planks_button",
+    "pinkslime_block": "pink_slime_block",
+    "pinkagaric_0": "pink_mushroom_block",
+    "pinkagaric_1": "pink_mushroom_stem",
+    "pinkagaric_2": "pink_mushroom_pores",
+    "pinkagaric_3": "pink_shroomlight",
+    "flower_8": "pink_mushroom",
+    "flower_10": "tall_pink_mushroom"
   },
   "items": {
     "amber_candy": "amber_candy",
     "dyedream_dust": "dyedream_dust",
     "dyedream_dust_piece": "dyedream_dust_piece",
+    "pink_slimeball": "pink_slimeball",
     "dyedreamquartz": "dyedream_quartz"
   },
   "entities": {},

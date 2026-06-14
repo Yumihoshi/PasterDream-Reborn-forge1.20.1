@@ -29,6 +29,9 @@ public class ModItems {
     public static final RegistryObject<Item> AMBER_CANDY = ITEMS.register("amber_candy",
             AmberCandyItem::new);
 
+    public static final RegistryObject<Item> PINK_SLIMEBALL = ITEMS.register("pink_slimeball",
+            () -> new Item(new Item.Properties()));
+
     // ===== 方块物品 =====
 
     public static final RegistryObject<Item> DYEDREAM_DIRT = ITEMS.register("dyedream_dirt",
@@ -60,6 +63,23 @@ public class ModItems {
 
     public static final RegistryObject<Item> AMBER_CANDY_ORE = ITEMS.register("amber_candy_ore",
             () -> new BlockItem(ModBlocks.AMBER_CANDY_ORE.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> PINK_SLIME_BLOCK = ITEMS.register("pink_slime_block",
+            () -> new BlockItem(ModBlocks.PINK_SLIME_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> PINK_MUSHROOM_BLOCK = ITEMS.register("pink_mushroom_block",
+            () -> new BlockItem(ModBlocks.PINK_MUSHROOM_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> PINK_MUSHROOM_STEM = ITEMS.register("pink_mushroom_stem",
+            () -> new BlockItem(ModBlocks.PINK_MUSHROOM_STEM.get(), new Item.Properties()));
+    public static final RegistryObject<Item> PINK_MUSHROOM_PORES = ITEMS.register("pink_mushroom_pores",
+            () -> new BlockItem(ModBlocks.PINK_MUSHROOM_PORES.get(), new Item.Properties()));
+    public static final RegistryObject<Item> PINK_SHROOMLIGHT = ITEMS.register("pink_shroomlight",
+            () -> new BlockItem(ModBlocks.PINK_SHROOMLIGHT.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> PINK_MUSHROOM = ITEMS.register("pink_mushroom",
+            () -> new BlockItem(ModBlocks.PINK_MUSHROOM.get(), new Item.Properties()));
+    public static final RegistryObject<Item> TALL_PINK_MUSHROOM = ITEMS.register("tall_pink_mushroom",
+            () -> new BlockItem(ModBlocks.TALL_PINK_MUSHROOM.get(), new Item.Properties()));
 
     // ===== 染梦石英建材系列 =====
 

@@ -17,6 +17,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.DYEDREAM_DUST.get(), "Dye Dream Dust");
         add(ModItems.DYEDREAM_DUST_PIECE.get(), "Dye Dream Dust Piece");
         add(ModItems.AMBER_CANDY.get(), "Amber Candy");
+        add(ModItems.PINK_SLIMEBALL.get(), "Pink Slimeball");
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "Dye Dream Dirt");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "Dye Dream Grass Block");
@@ -46,6 +47,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_PLANKS_TRAPDOOR.get(), "Dye Dream Planks Trapdoor");
         add(ModBlocks.DYEDREAM_PLANKS_PRESSURE_PLATE.get(), "Dye Dream Planks Pressure Plate");
         add(ModBlocks.DYEDREAM_PLANKS_BUTTON.get(), "Dye Dream Planks Button");
+        add(ModBlocks.PINK_SLIME_BLOCK.get(), "Pink Slime Block");
+        add(ModBlocks.PINK_MUSHROOM_BLOCK.get(), "Pink Mushroom Cap");
+        add(ModBlocks.PINK_MUSHROOM_STEM.get(), "Pink Mushroom Stem");
+        add(ModBlocks.PINK_MUSHROOM_PORES.get(), "Pink Mushroom Pores");
+        add(ModBlocks.PINK_SHROOMLIGHT.get(), "Pink Shroomlight");
+        add(ModBlocks.PINK_MUSHROOM.get(), "Pink Mushroom");
+        add(ModBlocks.TALL_PINK_MUSHROOM.get(), "Tall Pink Mushroom");
         add("itemGroup.pasterdream.pasterdream_tab", "Paster Dream");
         add("itemGroup.pasterdream.pasterdream_materials_tab", "Paster Dream Materials");
     }

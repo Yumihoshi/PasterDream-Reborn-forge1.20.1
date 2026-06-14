@@ -28,6 +28,12 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.DYEDREAM_DUST.get());
         basicItem(ModItems.DYEDREAM_DUST_PIECE.get());
         basicItem(ModItems.AMBER_CANDY.get());
+        basicItem(ModItems.PINK_SLIMEBALL.get());
+
+        withExistingParent(ModItems.PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/pink_mushroom"));
+        withExistingParent(ModItems.TALL_PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/pink_mushroom"));
 
         withExistingParent(ModItems.DYEDREAM_SAPLING.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/dyedream_sapling"));
