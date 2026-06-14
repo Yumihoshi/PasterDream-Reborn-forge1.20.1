@@ -1,7 +1,7 @@
-package com.pasterdream.pasterdreammod.datagen;
+package com.pasterdream.pasterdreammod.datagen.common;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
-import com.pasterdream.pasterdreammod.world.level.block.ModBlocks;
+import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;

@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.world.item;
+package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import net.minecraft.core.registries.Registries;

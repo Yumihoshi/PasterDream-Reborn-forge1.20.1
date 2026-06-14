@@ -1,8 +1,7 @@
-package com.pasterdream.pasterdreammod.world.item;
+package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
-import com.pasterdream.pasterdreammod.world.item.custom.AmberCandyItem;
-import com.pasterdream.pasterdreammod.world.level.block.ModBlocks;
+import com.pasterdream.pasterdreammod.world.item.AmberCandyItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;

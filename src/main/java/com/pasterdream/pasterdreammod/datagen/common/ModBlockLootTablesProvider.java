@@ -1,7 +1,7 @@
-package com.pasterdream.pasterdreammod.datagen;
+package com.pasterdream.pasterdreammod.datagen.common;
 
-import com.pasterdream.pasterdreammod.world.item.ModItems;
-import com.pasterdream.pasterdreammod.world.level.block.ModBlocks;
+import com.pasterdream.pasterdreammod.init.ModItems;
+import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;

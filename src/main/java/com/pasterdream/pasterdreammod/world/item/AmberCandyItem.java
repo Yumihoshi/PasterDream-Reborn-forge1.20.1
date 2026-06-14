@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.world.item.custom;
+package com.pasterdream.pasterdreammod.world.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

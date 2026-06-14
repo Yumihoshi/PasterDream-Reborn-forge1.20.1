@@ -1,7 +1,7 @@
 package com.pasterdream.pasterdreammod.worldgen;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
-import com.pasterdream.pasterdreammod.world.level.block.ModBlocks;
+import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;

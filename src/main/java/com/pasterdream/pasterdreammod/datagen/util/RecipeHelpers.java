@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.util;
+package com.pasterdream.pasterdreammod.datagen.util;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
