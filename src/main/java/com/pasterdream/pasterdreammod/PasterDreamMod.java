@@ -10,7 +10,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -37,7 +36,7 @@ public class PasterDreamMod
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
-        modEventBus.addListener(this::AddItemTooltip);
+        MinecraftForge.EVENT_BUS.addListener(this::AddItemTooltip);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -60,15 +59,5 @@ public class PasterDreamMod
     private void AddItemTooltip(ItemTooltipEvent event)
     {
         AddTooltip.addTooltip(event);
-    }
-
-    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
-    public class AttachCapabilities
-    {
-        @SubscribeEvent
-        public static void attachCapabilities(AttachCapabilitiesEvent<ItemStack> event)
-        {
-            FluidContainerCapabilityHandler.attachCapabilities(event);
-        }
     }
 }
