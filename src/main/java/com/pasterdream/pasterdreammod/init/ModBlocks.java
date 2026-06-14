@@ -1,7 +1,8 @@
-package com.pasterdream.pasterdreammod.world.level.block;
+package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
-import com.pasterdream.pasterdreammod.world.level.block.custom.DyedreamGrassBlock;
+import com.pasterdream.pasterdreammod.world.behavior.ModTreeGrowers;
+import com.pasterdream.pasterdreammod.world.block.DyedreamGrassBlock;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoublePlantBlock;

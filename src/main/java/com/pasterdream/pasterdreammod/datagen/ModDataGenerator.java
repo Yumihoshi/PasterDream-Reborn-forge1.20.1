@@ -1,9 +1,10 @@
-package com.pasterdream.pasterdreammod;
+package com.pasterdream.pasterdreammod.datagen;
 
-import com.pasterdream.pasterdreammod.datagen.*;
+import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.datagen.common.*;
 import com.pasterdream.pasterdreammod.datagen.lang.ModEnUsLangProvider;
 import com.pasterdream.pasterdreammod.datagen.lang.ModZhCnLangProvider;
-import com.pasterdream.pasterdreammod.datagen.ModWorldGenProvider;
+import com.pasterdream.pasterdreammod.datagen.common.ModWorldGenProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;

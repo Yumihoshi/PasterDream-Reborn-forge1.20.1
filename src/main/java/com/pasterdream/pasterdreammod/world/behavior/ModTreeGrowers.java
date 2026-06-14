@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.world.level.block;
+package com.pasterdream.pasterdreammod.world.behavior;
 
 import com.pasterdream.pasterdreammod.worldgen.ModConfiguredFeatures;
 import net.minecraft.resources.ResourceKey;

@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.datagen;
+package com.pasterdream.pasterdreammod.datagen.common;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.worldgen.ModConfiguredFeatures;

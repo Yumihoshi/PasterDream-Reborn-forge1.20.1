@@ -1,6 +1,6 @@
-package com.pasterdream.pasterdreammod.world.level.block.custom;
+package com.pasterdream.pasterdreammod.world.block;
 
-import com.pasterdream.pasterdreammod.world.level.block.ModBlocks;
+import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

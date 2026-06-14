@@ -1,20 +1,15 @@
 package com.pasterdream.pasterdreammod.client;
 
-import com.pasterdream.pasterdreammod.PasterDreamMod;
-import com.pasterdream.pasterdreammod.world.level.block.ModBlocks;
+import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-@Mod.EventBusSubscriber(modid = PasterDreamMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ClientEvents {
-
-    @SubscribeEvent
+public class ClientSetRenderLayer
+{
     @SuppressWarnings({"deprecation", "removal"})
-    public static void onClientSetup(FMLClientSetupEvent event) {
+    public static void register()
+    {
         // ===== cutout 渲染（镂空/十字） =====
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DYEDREAM_PLANKS_PANE.get(), RenderType.cutout());
 
