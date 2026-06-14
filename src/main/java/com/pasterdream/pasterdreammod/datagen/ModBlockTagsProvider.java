@@ -31,7 +31,16 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         // 可以用锄头来挖掘
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.DYEDREAM_LEAVES.get())
-                .add(ModBlocks.DYEDREAM_WORLDTREE_LEAVES.get());
+                .add(ModBlocks.DYEDREAM_WORLDTREE_LEAVES.get())
+                .add(ModBlocks.PINK_MUSHROOM_BLOCK.get())
+                .add(ModBlocks.PINK_MUSHROOM_STEM.get())
+                .add(ModBlocks.PINK_MUSHROOM_PORES.get())
+                .add(ModBlocks.PINK_SHROOMLIGHT.get());
+
+        tag(BlockTags.WART_BLOCKS)
+                .add(ModBlocks.PINK_MUSHROOM_BLOCK.get())
+                .add(ModBlocks.PINK_MUSHROOM_STEM.get())
+                .add(ModBlocks.PINK_MUSHROOM_PORES.get());
 
         // 可以用斧子来挖掘
         tag(BlockTags.MINEABLE_WITH_AXE)
@@ -60,7 +69,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.SAPLINGS)
                 .add(ModBlocks.DYEDREAM_SAPLING.get());
 
-        // ===== 染梦石英矿石 =====
+        // ===== 染梦石英 =====
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.DYEDREAM_QUARTZ_ORE.get())

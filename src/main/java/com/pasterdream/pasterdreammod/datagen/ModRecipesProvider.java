@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.datagen;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.util.RecipeHelpers;
 import com.pasterdream.pasterdreammod.world.item.ModItems;
+import com.pasterdream.pasterdreammod.world.level.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
@@ -57,6 +58,28 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(ModItems.DYEDREAM_PLANKS.get())
                 .unlockedBy(getHasName(ModItems.DYEDREAM_PLANKS.get()), has(ModItems.DYEDREAM_PLANKS.get()))
                 .save(pWriter);
+
+        // ===== 粉顶菇配方 =====
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.PINK_DYE, 1)
+                .requires(ModBlocks.PINK_MUSHROOM.get())
+                .unlockedBy(getHasName(ModBlocks.PINK_MUSHROOM.get()), has(ModBlocks.PINK_MUSHROOM.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":pink_dye_from_pink_mushroom");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.PINK_DYE, 2)
+                .requires(ModBlocks.TALL_PINK_MUSHROOM.get())
+                .unlockedBy(getHasName(ModBlocks.TALL_PINK_MUSHROOM.get()), has(ModBlocks.TALL_PINK_MUSHROOM.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":pink_dye_from_tall_pink_mushroom");
+
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.TALL_PINK_MUSHROOM.get()),
+                        RecipeCategory.MISC, ModBlocks.PINK_MUSHROOM.get().asItem(), 2)
+                .unlockedBy(getHasName(ModBlocks.TALL_PINK_MUSHROOM.get()), has(ModBlocks.TALL_PINK_MUSHROOM.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":pink_mushroom_from_tall_pink_mushroom_stonecutting");
+
+        // ===== 粉色粘液配方 =====
+
+        RecipeHelpers.storageCompress(pWriter, ModItems.PINK_SLIMEBALL.get(), ModItems.PINK_SLIME_BLOCK.get());
+        RecipeHelpers.storageDecompress(pWriter, ModItems.PINK_SLIME_BLOCK.get(), ModItems.PINK_SLIMEBALL.get());
 
         // ===== 染梦粉尘配方 =====
 

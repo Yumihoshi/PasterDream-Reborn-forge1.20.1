@@ -17,6 +17,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.DYEDREAM_DUST.get(), "染梦粉尘");
         add(ModItems.DYEDREAM_DUST_PIECE.get(), "小撮染梦粉尘");
         add(ModItems.AMBER_CANDY.get(), "琥珀糖");
+        add(ModItems.PINK_SLIMEBALL.get(), "粉色粘液球");
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "染梦泥土");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "染梦草方块");
@@ -46,6 +47,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_PLANKS_TRAPDOOR.get(), "染梦木板活板门");
         add(ModBlocks.DYEDREAM_PLANKS_PRESSURE_PLATE.get(), "染梦木板压力板");
         add(ModBlocks.DYEDREAM_PLANKS_BUTTON.get(), "染梦木板按钮");
+        add(ModBlocks.PINK_SLIME_BLOCK.get(), "粉色粘液块");
+        add(ModBlocks.PINK_MUSHROOM_BLOCK.get(), "粉顶菌菌盖");
+        add(ModBlocks.PINK_MUSHROOM_STEM.get(), "粉顶菌菌柄");
+        add(ModBlocks.PINK_MUSHROOM_PORES.get(), "粉顶菌菌孔块");
+        add(ModBlocks.PINK_SHROOMLIGHT.get(), "粉顶菌菌光体");
+        add(ModBlocks.PINK_MUSHROOM.get(), "粉顶菇");
+        add(ModBlocks.TALL_PINK_MUSHROOM.get(), "高粉顶菇");
         add("itemGroup.pasterdream.pasterdream_tab", "Paster Dream");
         add("itemGroup.pasterdream.pasterdream_materials_tab", "Paster Dream 材料");
     }

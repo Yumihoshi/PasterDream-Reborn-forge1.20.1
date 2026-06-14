@@ -15,7 +15,10 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -115,6 +118,37 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.DYEDREAM_PLANKS_PRESSURE_PLATE);
 
         buttonBlock((ButtonBlock) ModBlocks.DYEDREAM_PLANKS_BUTTON.get(), blockTexture(ModBlocks.DYEDREAM_PLANKS.get()));
+
+        var pinkSlime = models().cubeAll(ModBlocks.PINK_SLIME_BLOCK.getId().getPath(), blockTexture(ModBlocks.PINK_SLIME_BLOCK.get())).renderType("translucent");
+        simpleBlockWithItem(ModBlocks.PINK_SLIME_BLOCK.get(), pinkSlime);
+
+        // ===== 粉顶菌菇系列 =====
+
+        var capTex = modLoc("block/pink_mushroom_block_cap");
+        var poreTex = modLoc("block/pink_mushroom_block_pores");
+        var stemTex = modLoc("block/pink_mushroom_stem");
+        var stemTopTex = modLoc("block/pink_mushroom_stem_top");
+
+        var capModel = models().cube(ModBlocks.PINK_MUSHROOM_BLOCK.getId().getPath(),
+                poreTex, capTex, capTex, capTex, capTex, capTex).texture("particle", poreTex);
+        simpleBlockWithItem(ModBlocks.PINK_MUSHROOM_BLOCK.get(), capModel);
+
+        axisBlock((RotatedPillarBlock) ModBlocks.PINK_MUSHROOM_STEM.get(), stemTex, stemTopTex);
+        blockItem(ModBlocks.PINK_MUSHROOM_STEM);
+
+        simpleBlockWithItem(ModBlocks.PINK_MUSHROOM_PORES.get(), models().cubeAll(ModBlocks.PINK_MUSHROOM_PORES.getId().getPath(), poreTex));
+
+        var shroomlightModel = models().cubeAll(ModBlocks.PINK_SHROOMLIGHT.getId().getPath(), blockTexture(ModBlocks.PINK_SHROOMLIGHT.get())).renderType("cutout");
+        simpleBlockWithItem(ModBlocks.PINK_SHROOMLIGHT.get(), shroomlightModel);
+
+        var pinkMushroom = models().cross(ModBlocks.PINK_MUSHROOM.getId().getPath(), blockTexture(ModBlocks.PINK_MUSHROOM.get())).renderType("cutout");
+        simpleBlock(ModBlocks.PINK_MUSHROOM.get(), pinkMushroom);
+
+        var tallUpper = models().cross(ModBlocks.TALL_PINK_MUSHROOM.getId().getPath() + "_top", modLoc("block/pink_mushroom")).renderType("cutout");
+        var tallLower = models().cross(ModBlocks.TALL_PINK_MUSHROOM.getId().getPath() + "_bottom", modLoc("block/tall_pink_mushroom_bottom")).renderType("cutout");
+        getVariantBuilder(ModBlocks.TALL_PINK_MUSHROOM.get())
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).addModels(new ConfiguredModel(tallLower))
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).addModels(new ConfiguredModel(tallUpper));
     }
 
     private <T extends Block> void blockItem(RegistryObject<T> block) {
