@@ -1,16 +1,14 @@
 package com.pasterdream.pasterdreammod;
 
-import com.mojang.logging.LogUtils;
 import com.pasterdream.pasterdreammod.client.ClientSetRenderLayer;
-import com.pasterdream.pasterdreammod.helper.FluidHandlerResolvers;
-import com.pasterdream.pasterdreammod.init.ModBlocks;
-import com.pasterdream.pasterdreammod.init.ModCreativeModeTabs;
-import com.pasterdream.pasterdreammod.init.ModItems;
-import com.pasterdream.pasterdreammod.init.ModNetwork;
-import net.minecraft.client.Minecraft;
-import net.minecraftforge.api.distmarker.Dist;
+import com.pasterdream.pasterdreammod.helper.FluidContainerCapability.FluidContainerCapabilityHandler;
+import com.pasterdream.pasterdreammod.helper.FluidHandler.FluidHandlerResolvers;
+import com.pasterdream.pasterdreammod.helper.tooltipadder.AddTooltip;
+import com.pasterdream.pasterdreammod.init.*;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -18,7 +16,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
 
 @Mod(PasterDreamMod.MOD_ID)
@@ -35,10 +32,12 @@ public class PasterDreamMod
         ModItems.register(modEventBus);             //注册物品
         ModCreativeModeTabs.register(modEventBus);  //注册创造模式物品栏
         ModBlocks.register(modEventBus);            //注册方块
+        ModFluids.register(modEventBus);
         ModNetwork.register();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
+        modEventBus.addListener(this::AddItemTooltip);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -49,11 +48,27 @@ public class PasterDreamMod
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         FluidHandlerResolvers.FluidHandlerResolverRegister();
+        ModFluidContainerRelation.registerFluidContainerRelation();
     }
 
     //在这里输入客户端注册内容
     private void clientSetup(final FMLClientSetupEvent event)
     {
         ClientSetRenderLayer.register();
+    }
+
+    private void AddItemTooltip(ItemTooltipEvent event)
+    {
+        AddTooltip.addTooltip(event);
+    }
+
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public class AttachCapabilities
+    {
+        @SubscribeEvent
+        public static void attachCapabilities(AttachCapabilitiesEvent<ItemStack> event)
+        {
+            FluidContainerCapabilityHandler.attachCapabilities(event);
+        }
     }
 }
