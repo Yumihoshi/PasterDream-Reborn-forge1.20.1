@@ -8,6 +8,6 @@ public class DyeDreamJuiceFluid extends PasterDreamBaseFluid
     @Override
     public FluidType getFluidType()
     {
-        return ModFluids.DYEDREAM_JUICE_TYPE.get();
+        return ModFluids.DYE_DREAM_JUICE_TYPE.get();
     }
 }

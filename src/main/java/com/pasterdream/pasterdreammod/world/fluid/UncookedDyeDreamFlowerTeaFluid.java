@@ -3,11 +3,11 @@ package com.pasterdream.pasterdreammod.world.fluid;
 import com.pasterdream.pasterdreammod.init.ModFluids;
 import net.minecraftforge.fluids.FluidType;
 
-public class DreamjuiceFluid extends PasterDreamBaseFluid
+public class UncookedDyeDreamFlowerTeaFluid extends PasterDreamBaseFluid
 {
     @Override
     public FluidType getFluidType()
     {
-        return ModFluids.DREAMJUICE_TYPE.get();
+        return ModFluids.UNCOOKED_DYE_DREAM_FLOWER_TEA_TYPE.get();
     }
 }
