@@ -6,11 +6,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
 
-public class RageElixir0FluidType extends PasterDreamBaseFluidType
+public class RageElixirFluidType extends PasterDreamBaseFluidType
 {
-    public static final FluidType TYPE = new RageElixir0FluidType();
+    public static final FluidType TYPE = new RageElixirFluidType();
 
-    private RageElixir0FluidType()
+    private RageElixirFluidType()
     {
         super(Properties.create().density(1000).viscosity(1000).temperature(300).canExtinguish(true).canSwim(true).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY), ResourceLocation.fromNamespaceAndPath("minecraft", "block/water_still"), ResourceLocation.fromNamespaceAndPath("minecraft", "block/water_flow"), 0xFF9F41D0);
     }
@@ -18,6 +18,6 @@ public class RageElixir0FluidType extends PasterDreamBaseFluidType
     @Override
     public String getDescriptionId()
     {
-        return "fluid." + PasterDreamMod.MOD_ID + ".rage_elixir_0";
+        return "fluid." + PasterDreamMod.MOD_ID + ".rage_elixir";
     }
 }
