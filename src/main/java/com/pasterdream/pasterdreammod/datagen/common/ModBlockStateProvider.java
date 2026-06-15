@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.datagen.common;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
+import com.pasterdream.pasterdreammod.init.ModFluids;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -192,6 +193,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.DYEDREAM_ICE.get(), cubeAll(ModBlocks.DYEDREAM_ICE.get()));
         simpleBlockWithItem(ModBlocks.DYEDREAM_PACKED_ICE.get(), cubeAll(ModBlocks.DYEDREAM_PACKED_ICE.get()));
         simpleBlockWithItem(ModBlocks.DYEDREAM_LARTERN.get(), cubeAll(ModBlocks.DYEDREAM_LARTERN.get()));
+
+        simpleBlock(ModBlocks.MELTDREAM_LIQUID.get(), models().cubeAll(ModBlocks.MELTDREAM_LIQUID.getId().getPath(), modLoc("block/meltdream_liquid_flowing")));
+        simpleBlock(ModBlocks.SHADOW_LIQUID.get(), models().cubeAll(ModBlocks.SHADOW_LIQUID.getId().getPath(), modLoc("block/shadow_liquid_flowing")));
     }
 
     private <T extends Block> void blockItem(RegistryObject<T> block) {
@@ -201,6 +205,4 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private <T extends Block> void blockItem(RegistryObject<T> block, String append) {
         simpleBlockItem(block.get(), new ModelFile.UncheckedModelFile(PasterDreamMod.MOD_ID + ":block/" + block.getId().getPath() + append));
     }
-
-
 }
