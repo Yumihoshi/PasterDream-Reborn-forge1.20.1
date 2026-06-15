@@ -32,8 +32,10 @@ public class ModFluids
     public static final RegistryObject<FluidType> WIND_PLANT_EXTRACT_TYPE = FLUID_TYPES.register("wind_plant_extract", () -> WindPlantExtractFluidType.TYPE);
     public static final RegistryObject<FluidType> YEAST_TYPE = FLUID_TYPES.register("yeast", () -> YeastFluidType.TYPE);
 
-    public static final RegistryObject<Fluid> MELTDREAM_LIQUID = FLUIDS.register("meltdream_liquid", MeltdreamLiquidFluid::new);
-    public static final RegistryObject<Fluid> SHADOW_LIQUID = FLUIDS.register("shadow_liquid", ShadowLiquidFluid::new);
+    public static final RegistryObject<Fluid> FLOWING_MELTDREAM_LIQUID = FLUIDS.register("flowing_meltdream_liquid", MeltdreamLiquidFluid.Flowing::new);
+    public static final RegistryObject<Fluid> MELTDREAM_LIQUID = FLUIDS.register("meltdream_liquid", MeltdreamLiquidFluid.Source::new);
+    public static final RegistryObject<Fluid> FLOWING_SHADOW_LIQUID = FLUIDS.register("flowing_shadow_liquid", ShadowLiquidFluid.Flowing::new);
+    public static final RegistryObject<Fluid> SHADOW_LIQUID = FLUIDS.register("shadow_liquid", ShadowLiquidFluid.Source::new);
 
     public static final RegistryObject<Fluid> APPLE_JUICE = FLUIDS.register("apple_juice", AppleJuiceFluid::new);
     public static final RegistryObject<Fluid> DREAMJUICE = FLUIDS.register("dreamjuice", DreamjuiceFluid::new);

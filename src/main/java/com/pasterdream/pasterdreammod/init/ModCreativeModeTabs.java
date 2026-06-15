@@ -99,6 +99,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GLASS_JAR.get());
                         output.accept(ModItems.GLASS_JAR_OF_WATER.get());
                         output.accept(ModItems.GLASS_JAR_OF_MILK.get());
+                        output.accept(ModItems.DYEDREAM_ALLOY_NUGGET.get());
+                        output.accept(ModItems.MELTDREAM_LIQUID_BUCKET.get());
+                        output.accept(ModItems.SHADOW_LIQUID_BUCKET.get());
                     })
                     .build());
 

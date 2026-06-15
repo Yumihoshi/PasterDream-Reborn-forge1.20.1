@@ -13,7 +13,6 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
 import java.util.Objects;
 
 public class ModItemModelsProvider extends ItemModelProvider {
@@ -77,6 +76,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("block/medium_dyedream_bud"));
         withExistingParent(ModItems.LARGE_DYEDREAM_BUD.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/large_dyedream_bud"));
+
     }
 
     @Override
@@ -119,5 +119,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
                 ResourceLocation.withDefaultNamespace("item/handheld")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "item/" + item.getId().getPath()));
     }
+
+
 
 }

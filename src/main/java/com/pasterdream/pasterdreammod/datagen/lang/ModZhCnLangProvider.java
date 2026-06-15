@@ -24,6 +24,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.TITANIUM_NUGGET.get(), "钛金粒");
         add(ModItems.RAW_TITANIUM.get(), "粗钛");
         add(ModItems.DYEDREAM_ALLOY_NUGGET.get(), "染梦合金粒");
+        add(ModItems.MORTAR.get(), "研钵");
+        add(ModItems.DYEDREAM_DYE.get(), "染梦染料");
+        add(ModItems.DYEDREAM_BUD_NUGGET.get(), "染梦晶芽粒");
+        add(ModItems.MELTDREAM_LIQUID_BUCKET.get(), "融梦涌泉桶");
+        add(ModItems.SHADOW_LIQUID_BUCKET.get(), "熔融阴影桶");
 
         add(ModItems.MOLTEN_GOLD_INGOT.get(), "炙焰金锭");
         add(ModItems.MOLTEN_GOLD_NUGGET.get(), "炙焰金粒");
@@ -85,10 +90,24 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_PACKED_ICE.get(), "染梦浮冰");
         add(ModBlocks.DYEDREAM_LARTERN.get(), "染梦水晶灯");
 
-        add(ModItems.MORTAR.get(), "研钵");
-        add(ModItems.DYEDREAM_DYE.get(), "染梦染料");
-        add(ModItems.DYEDREAM_BUD_NUGGET.get(), "染梦晶芽粒");
-        add("itemGroup.pasterdream.pasterdream_tab", "Paster Dream");
-        add("itemGroup.pasterdream.pasterdream_materials_tab", "Paster Dream 材料");
+        add("fluid.pasterdream.meltdream_liquid","融梦涌泉");
+        add("fluid.pasterdream.shadow_liquid","熔融阴影");
+
+        add("fluid.pasterdream.apple_juice","苹果汁（流体）");
+        add("fluid.pasterdream.dreamjuice","梦境果汁（流体）");
+        add("fluid.pasterdream.dyedream_flower_tea","染梦花茶（流体）");
+        add("fluid.pasterdream.dyedream_juice","染梦果汁（流体）");
+        add("fluid.pasterdream.dyedream_perfume","染梦香水（流体）");
+        add("fluid.pasterdream.goldenrod_tea","秋麒麟茶（流体）");
+        add("fluid.pasterdream.guiding_drug","药引瓶（流体）");
+        add("fluid.pasterdream.honey_juice","蜂蜜汁（流体）");
+        add("fluid.pasterdream.rage_elixir_0","狂暴战意灵药I（流体）");
+        add("fluid.pasterdream.uncooked_dyedream_flower_tea","未烹饪的染梦花茶（流体）");
+        add("fluid.pasterdream.watermelon_juice","西瓜汁（流体）");
+        add("fluid.pasterdream.wind_plant_extract","风植萃取液（流体）");
+        add("fluid.pasterdream.yeast","酵母（流体）");
+
+        add("itemGroup.pasterdream.pasterdream_tab", "帕斯特之梦 | 方块");
+        add("itemGroup.pasterdream.pasterdream_materials_tab", "帕斯特之梦 | 物品");
     }
 }

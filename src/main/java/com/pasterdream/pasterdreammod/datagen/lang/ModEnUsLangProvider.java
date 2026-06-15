@@ -24,6 +24,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.TITANIUM_NUGGET.get(), "Titanium Nugget");
         add(ModItems.RAW_TITANIUM.get(), "Raw Titanium");
         add(ModItems.DYEDREAM_ALLOY_NUGGET.get(), "Dye Dream Alloy Nugget");
+        add(ModItems.MORTAR.get(), "Mortar");
+        add(ModItems.DYEDREAM_DYE.get(), "Dye Dream Dye");
+        add(ModItems.DYEDREAM_BUD_NUGGET.get(), "Dye Dream Bud Nugget");
+        add(ModItems.MELTDREAM_LIQUID_BUCKET.get(), "Meltdream Liquid Bucket");
+        add(ModItems.SHADOW_LIQUID_BUCKET.get(), "Shadow Liquid Bucket");
         add(ModItems.MOLTEN_GOLD_INGOT.get(), "Molten Gold Ingot");
         add(ModItems.MOLTEN_GOLD_NUGGET.get(), "Molten Gold Nugget");
         add(ModItems.RAW_MOLTEN_GOLD.get(), "Raw Molten Gold");
