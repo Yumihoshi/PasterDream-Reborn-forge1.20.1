@@ -23,7 +23,7 @@ public class generateBucketItem
     public static void generateBucketItem(DataGenerator generator, PackOutput output)
     {
         FluidBucketModelProvider bucketModels = new FluidBucketModelProvider(output);
-        bucketModels.addBucket(ModItems.MELTDREAM_LIQUID_BUCKET, ModFluids.MELTDREAM_LIQUID);
+        bucketModels.addBucket(ModItems.MELT_DREAM_LIQUID_BUCKET, ModFluids.MELT_DREAM_LIQUID);
         bucketModels.addBucket(ModItems.SHADOW_LIQUID_BUCKET, ModFluids.SHADOW_LIQUID);
         generator.addProvider(true, bucketModels);
     }

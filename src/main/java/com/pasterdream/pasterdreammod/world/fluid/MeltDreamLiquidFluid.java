@@ -3,7 +3,6 @@ package com.pasterdream.pasterdreammod.world.fluid;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModFluids;
 import com.pasterdream.pasterdreammod.init.ModItems;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -12,16 +11,16 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 
-public abstract class MeltdreamLiquidFluid extends ForgeFlowingFluid
+public abstract class MeltDreamLiquidFluid extends ForgeFlowingFluid
 {
-    public static final ForgeFlowingFluid.Properties PROPERTIES = (new ForgeFlowingFluid.Properties(ModFluids.MELTDREAM_LIQUID_TYPE, ModFluids.MELTDREAM_LIQUID, ModFluids.FLOWING_MELTDREAM_LIQUID)).explosionResistance(100.0F).tickRate(3).bucket(ModItems.MELTDREAM_LIQUID_BUCKET).block(() -> (LiquidBlock) ModBlocks.MELTDREAM_LIQUID.get());
+    public static final ForgeFlowingFluid.Properties PROPERTIES = (new ForgeFlowingFluid.Properties(ModFluids.MELT_DREAM_LIQUID_TYPE, ModFluids.MELT_DREAM_LIQUID, ModFluids.FLOWING_MELT_DREAM_LIQUID)).explosionResistance(100.0F).tickRate(3).bucket(ModItems.MELT_DREAM_LIQUID_BUCKET).block(() -> (LiquidBlock) ModBlocks.MELTDREAM_LIQUID.get());
 
-    private MeltdreamLiquidFluid()
+    private MeltDreamLiquidFluid()
     {
         super(PROPERTIES);
     }
 
-    public static class Source extends MeltdreamLiquidFluid
+    public static class Source extends MeltDreamLiquidFluid
     {
         public int getAmount(FluidState state)
         {
@@ -34,7 +33,7 @@ public abstract class MeltdreamLiquidFluid extends ForgeFlowingFluid
         }
     }
 
-    public static class Flowing extends MeltdreamLiquidFluid
+    public static class Flowing extends MeltDreamLiquidFluid
     {
         protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder)
         {
@@ -56,6 +55,6 @@ public abstract class MeltdreamLiquidFluid extends ForgeFlowingFluid
     @Override
     public FluidType getFluidType()
     {
-        return ModFluids.MELTDREAM_LIQUID_TYPE.get();
+        return ModFluids.MELT_DREAM_LIQUID_TYPE.get();
     }
 }
