@@ -32,6 +32,9 @@ public class GUIBackGroundRender
     public static ResourceLocation SHADOW_BLAST_FURNACE_PROCESS_BAR = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/shadow_blast_furnace/shadow_blast_furnace_process.png");
     public static ResourceLocation SHADOW_BLAST_FURNACE_SHADOW_LIQUID_AMOUNT_BAR = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/shadow_blast_furnace/shadow_blast_furnace_shadow_liquid_amount_bar.png");
 
+    public static ResourceLocation MELT_DREAM_ENERGY_BAR = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/melt_dream_energy/melt_dream_energy_bar.png");
+    public static ResourceLocation MELT_DREAM_ENERGY_AMOUNT_BAR = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/melt_dream_energy/melt_dream_energy_amount_bar.png");
+
     public static ResourceLocation CLAYPAN_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/claypan/claypan.png");
     public static ResourceLocation ARROW = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/claypan/arrow.png");
 
@@ -150,6 +153,16 @@ public class GUIBackGroundRender
     public static void rendShadowBlastFurnaceShadowLiquidAmountBar(GuiGraphics guiGraphics, int x, int y, double percent)
     {
         guiGraphics.blit(SHADOW_BLAST_FURNACE_SHADOW_LIQUID_AMOUNT_BAR, x, y, 0, (int)(35 * (1 - percent)), 10, (int)(35 * percent), 10, 35);
+    }
+
+    public static void rendMeltDreamEnergyBar(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(MELT_DREAM_ENERGY_BAR, x, y, 0, 0, 72, 12, 72, 12);
+    }
+
+    public static void rendMeltDreamEnergyAmountBar(GuiGraphics guiGraphics, int x, int y, double percent)
+    {
+        guiGraphics.blit(MELT_DREAM_ENERGY_AMOUNT_BAR, x, y, 0, 0, (int)(66 * percent), 4, 66, 4);
     }
 
     public static void rendClaypanGUI(GuiGraphics guiGraphics, int x, int y)

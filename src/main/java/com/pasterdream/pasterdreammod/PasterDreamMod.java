@@ -1,13 +1,13 @@
 package com.pasterdream.pasterdreammod;
 
 import com.pasterdream.pasterdreammod.client.ClientSetRenderLayer;
-import com.pasterdream.pasterdreammod.helper.FluidContainerCapability.FluidContainerCapabilityHandler;
+import com.pasterdream.pasterdreammod.client.MeltdreamenergyTank;
 import com.pasterdream.pasterdreammod.helper.FluidHandler.FluidHandlerResolvers;
 import com.pasterdream.pasterdreammod.helper.tooltipadder.AddTooltip;
 import com.pasterdream.pasterdreammod.init.*;
-import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -37,6 +37,8 @@ public class PasterDreamMod
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         MinecraftForge.EVENT_BUS.addListener(this::AddItemTooltip);
+        MinecraftForge.EVENT_BUS.addListener(this::AddCommand);
+        modEventBus.addListener(this::AddOverlays);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -59,5 +61,15 @@ public class PasterDreamMod
     private void AddItemTooltip(ItemTooltipEvent event)
     {
         AddTooltip.addTooltip(event);
+    }
+
+    private void AddCommand(RegisterCommandsEvent event)
+    {
+        ModCommands.register(event.getDispatcher());
+    }
+
+    private void AddOverlays(RegisterGuiOverlaysEvent event)
+    {
+        event.registerAboveAll("meltdream_energy", MeltdreamenergyTank.MELT_DREAM_ENERGY_TANK);
     }
 }
