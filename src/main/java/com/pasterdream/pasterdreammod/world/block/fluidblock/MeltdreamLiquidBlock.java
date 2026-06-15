@@ -16,7 +16,7 @@ public class MeltdreamLiquidBlock extends LiquidBlock
 {
     public MeltdreamLiquidBlock()
     {
-        super(() -> (FlowingFluid) ModFluids.FLOWING_MELTDREAM_LIQUID.get(), Properties.of().mapColor(MapColor.FIRE).strength(100.0F).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).noCollission().noLootTable().liquid().pushReaction(PushReaction.DESTROY).sound(SoundType.EMPTY).replaceable());
+        super(() -> (FlowingFluid) ModFluids.FLOWING_MELT_DREAM_LIQUID.get(), Properties.of().mapColor(MapColor.FIRE).strength(100.0F).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).noCollission().noLootTable().liquid().pushReaction(PushReaction.DESTROY).sound(SoundType.EMPTY).replaceable());
     }
 
     public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving)

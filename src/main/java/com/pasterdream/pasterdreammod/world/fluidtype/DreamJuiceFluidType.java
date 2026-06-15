@@ -6,11 +6,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
 
-public class DreamjuiceFluidType extends PasterDreamBaseFluidType
+public class DreamJuiceFluidType extends PasterDreamBaseFluidType
 {
-    public static final FluidType TYPE = new DreamjuiceFluidType();
+    public static final FluidType TYPE = new DreamJuiceFluidType();
 
-    private DreamjuiceFluidType()
+    private DreamJuiceFluidType()
     {
         super(Properties.create().density(1000).viscosity(1000).temperature(300).canExtinguish(true).canSwim(true).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY), ResourceLocation.fromNamespaceAndPath("minecraft", "block/water_still"), ResourceLocation.fromNamespaceAndPath("minecraft", "block/water_flow"), 0x7FA85CD1);
     }
@@ -18,6 +18,6 @@ public class DreamjuiceFluidType extends PasterDreamBaseFluidType
     @Override
     public String getDescriptionId()
     {
-        return "fluid." + PasterDreamMod.MOD_ID + ".dreamjuice";
+        return "fluid." + PasterDreamMod.MOD_ID + ".dream_juice";
     }
 }
