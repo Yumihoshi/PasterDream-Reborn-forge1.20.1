@@ -89,10 +89,16 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DYEDREAM_BUD_NUGGET.get());
                         output.accept(ModItems.RAW_DYEDREAM_ALLOY_INGOT.get());
                         output.accept(ModItems.DYEDREAM_ALLOY_INGOT.get());
+                        output.accept(ModItems.DYEDREAM_ALLOY_NUGGET.get());
                         output.accept(ModItems.RAW_TITANIUM.get());
                         output.accept(ModItems.TITANIUM_INGOT.get());
                         output.accept(ModItems.TITANIUM_NUGGET.get());
-                        output.accept(ModItems.DYEDREAM_ALLOY_NUGGET.get());
+                        output.accept(ModItems.RAW_MOLTEN_GOLD.get());
+                        output.accept(ModItems.MOLTEN_GOLD_INGOT.get());
+                        output.accept(ModItems.MOLTEN_GOLD_NUGGET.get());
+                        output.accept(ModItems.GLASS_JAR.get());
+                        output.accept(ModItems.GLASS_JAR_OF_WATER.get());
+                        output.accept(ModItems.GLASS_JAR_OF_MILK.get());
                     })
                     .build());
 

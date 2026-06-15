@@ -25,6 +25,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.RAW_TITANIUM.get(), "粗钛");
         add(ModItems.DYEDREAM_ALLOY_NUGGET.get(), "染梦合金粒");
 
+        add(ModItems.MOLTEN_GOLD_INGOT.get(), "炙焰金锭");
+        add(ModItems.MOLTEN_GOLD_NUGGET.get(), "炙焰金粒");
+        add(ModItems.RAW_MOLTEN_GOLD.get(), "粗炙焰金");
+        add(ModItems.GLASS_JAR.get(), "玻璃罐");
+        add(ModItems.GLASS_JAR_OF_WATER.get(), "水罐");
+        add(ModItems.GLASS_JAR_OF_MILK.get(), "牛奶罐");
+
         add(ModBlocks.DYEDREAM_DIRT.get(), "染梦泥土");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "染梦草方块");
         add(ModBlocks.DYEDREAM_LOG.get(), "染梦原木");
