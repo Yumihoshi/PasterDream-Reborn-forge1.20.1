@@ -74,24 +74,38 @@
 
 ## 物品映射
 
-| 旧 ID | 新 ID | 变更说明 | 客制化类处理 |
-|-------|-------|---------|------------|
-| `amber_candy` | `amber_candy` | 不改，食物属性：回复 0.5 饱食度 + 3s 生命恢复 I | 无需客制化类，直接用 `Item` + `FoodProperties` |
-| `dyedream_dust` | `dyedream_dust` | 不改 | 无需客制化类，直接用 `Item` |
-| `dyedream_dust_piece` | `dyedream_dust_piece` | 不改 | 无需客制化类，直接用 `Item` |
-| `pink_slimeball` | `pink_slimeball` | 不改 | 无需客制化类，直接用 `Item` |
-| `mortar` | `mortar` | 不改 | 无需客制化类，直接用 `Item` |
-| `dyedream_dye` | `dyedream_dye` | 不改 | 无需客制化类，直接用 `Item` |
-| `dyedream_bud_nugget` | `dyedream_bud_nugget` | 不改 | 无需客制化类，直接用 `Item` |
-| `raw_titanium` | `raw_titanium` | 不改 | 无需客制化类，直接用 `Item` |
-| `titanium_ingot` | `titanium_ingot` | 不改 | 无需客制化类，直接用 `Item` |
-| `titanium_nugget` | `titanium_nugget` | 不改 | 无需客制化类，直接用 `Item` |
-| `dyedream_base` | `raw_dyedream_alloy_ingot` | 重命名，`dyedream_base` → `raw_dyedream_alloy_ingot`（染梦合金锭粗胚） | 无需客制化类，直接用 `Item` |
-| `dyedream_ingot` | `dyedream_alloy_ingot` | 重命名，`dyedream_ingot` → `dyedream_alloy_ingot`（染梦合金锭） | 无需客制化类，直接用 `Item` |
-| `dyedream_nugget` | `dyedream_alloy_nugget` | 重命名，补充 `alloy_` 前缀与系列一致 | 无需客制化类，直接用 `Item` |
-| `dyedreamquartz` | `dyedream_quartz` | 重命名，补下划线 | 无需客制化类，直接用 `Item` |
+| 旧 ID                      | 新 ID                       | 变更说明                                                      | 客制化类处理                               |
+|---------------------------|----------------------------|-----------------------------------------------------------|--------------------------------------|
+| `amber_candy`             | `amber_candy`              | 不改，食物属性：回复 0.5 饱食度 + 3s 生命恢复 I                            | 无需客制化类，直接用 `Item` + `FoodProperties` |
+| `dyedream_dust`           | `dyedream_dust`            | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `dyedream_dust_piece`     | `dyedream_dust_piece`      | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `pink_slimeball`          | `pink_slimeball`           | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `mortar`                  | `mortar`                   | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `dyedream_dye`            | `dyedream_dye`             | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `dyedream_bud_nugget`     | `dyedream_bud_nugget`      | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `raw_titanium`            | `raw_titanium`             | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `titanium_ingot`          | `titanium_ingot`           | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `titanium_nugget`         | `titanium_nugget`          | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `dyedream_base`           | `raw_dyedream_alloy_ingot` | 重命名，`dyedream_base` → `raw_dyedream_alloy_ingot`（染梦合金锭粗胚） | 无需客制化类，直接用 `Item`                    |
+| `dyedream_ingot`          | `dyedream_alloy_ingot`     | 重命名，`dyedream_ingot` → `dyedream_alloy_ingot`（染梦合金锭）      | 无需客制化类，直接用 `Item`                    |
+| `dyedream_nugget`         | `dyedream_alloy_nugget`    | 重命名，补充 `alloy_` 前缀与系列一致                                   | 无需客制化类，直接用 `Item`                    |
+| `dyedreamquartz`          | `dyedream_quartz`          | 重命名，补下划线                                                  | 无需客制化类，直接用 `Item`                    |
+| `meltdream_liquid_bucket` | `meltdream_liquid_bucket`  | 不改                                                        | 无需客制化类，直接用 `BucketItem`              |
+| `shadow_liquid_bucket` | `shadow_liquid_bucket`     | 不改                                                        | 无需客制化类，直接用 `BucketItem`              |
 
 ---
+
+## 流体映射
+
+| 旧 ID               | 新 ID               | 变更说明 | 客制化类处理            |
+|--------------------|--------------------|----|-------------------|
+| `meltdream_liquid` | `meltdream_liquid` | 不改 | 合并变体，使用统一Fluid的注册 |
+| `shadow_liquid`    | `shadow_liquid`    | 不改 | 合并变体，使用统一Fluid的注册 |
+
+
+---
+
+
 
 ## 实体映射
 

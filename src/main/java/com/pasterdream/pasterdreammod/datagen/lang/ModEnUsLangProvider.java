@@ -24,6 +24,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.TITANIUM_NUGGET.get(), "Titanium Nugget");
         add(ModItems.RAW_TITANIUM.get(), "Raw Titanium");
         add(ModItems.DYEDREAM_ALLOY_NUGGET.get(), "Dye Dream Alloy Nugget");
+        add(ModItems.MORTAR.get(), "Mortar");
+        add(ModItems.DYEDREAM_DYE.get(), "Dye Dream Dye");
+        add(ModItems.DYEDREAM_BUD_NUGGET.get(), "Dye Dream Bud Nugget");
+        add(ModItems.MELTDREAM_LIQUID_BUCKET.get(), "Meltdream Liquid Bucket");
+        add(ModItems.SHADOW_LIQUID_BUCKET.get(), "Shadow Liquid Bucket");
 
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "Dye Dream Dirt");
@@ -79,9 +84,23 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_PACKED_ICE.get(), "Dye Dream Packed Ice");
         add(ModBlocks.DYEDREAM_LARTERN.get(), "Dye Dream Lantern");
 
-        add(ModItems.MORTAR.get(), "Mortar");
-        add(ModItems.DYEDREAM_DYE.get(), "Dye Dream Dye");
-        add(ModItems.DYEDREAM_BUD_NUGGET.get(), "Dye Dream Bud Nugget");
+        add("fluid.pasterdream.meltdream_liquid","Meltdream Liquid");
+        add("fluid.pasterdream.shadow_liquid","Shadow Liquid");
+
+        add("fluid.pasterdream.apple_juice","Apple Juice(fluid)");
+        add("fluid.pasterdream.dreamjuice","Dreamjuice(fluid)");
+        add("fluid.pasterdream.dyedream_flower_tea","Dyedream Flower Tea(fluid)");
+        add("fluid.pasterdream.dyedream_juice","Dyedream Juice(fluid)");
+        add("fluid.pasterdream.dyedream_perfume","Dyedream Perfume(fluid)");
+        add("fluid.pasterdream.goldenrod_tea","Goldenrod Tea(fluid)");
+        add("fluid.pasterdream.guiding_drug","Guiding Drug(fluid)");
+        add("fluid.pasterdream.honey_juice","Honey Juice(fluid)");
+        add("fluid.pasterdream.rage_elixir_0","Rage Elixir 0(fluid)");
+        add("fluid.pasterdream.uncooked_dyedream_flower_tea","Uncooked Dyedream Flower Tea(fluid)");
+        add("fluid.pasterdream.watermelon_juice","Watermelon Juice(fluid)");
+        add("fluid.pasterdream.wind_plant_extract","Wind Plant Extract(fluid)");
+        add("fluid.pasterdream.yeast","Yeast(fluid)");
+
         add("itemGroup.pasterdream.pasterdream_tab", "Paster Dream");
         add("itemGroup.pasterdream.pasterdream_materials_tab", "Paster Dream Materials");
     }
