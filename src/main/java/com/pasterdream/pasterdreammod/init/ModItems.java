@@ -108,6 +108,21 @@ public class ModItems {
     public static final RegistryObject<Item> GLASS_CUP_OF_WATERMELON_JUICE = ITEMS.register("glass_cup_of_watermelon_juice",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> FLOUR = ITEMS.register("flour",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> DOUGH = ITEMS.register("dough",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> RYE_SEED = ITEMS.register("rye_seed",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> DOUGH_WITH_EGG = ITEMS.register("dough_with_egg",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> COARSE_SALT = ITEMS.register("coarse_salt",
+            () -> new Item(new Item.Properties()));
+
 
     // ===== 方块物品 =====
 

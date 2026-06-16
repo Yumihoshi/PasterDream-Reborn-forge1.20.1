@@ -110,7 +110,11 @@
 | `dyedream_juice`            | `glass_cup_of_dyedream_juice`               | 重命名，更改命名格式为 `glass_cup_of_xxx`                            | 无需客制化类，直接用 `Item`                    |
 | `honey_juice`               | `glass_cup_of_honey_juice`                  | 重命名，更改命名格式为 `glass_cup_of_xxx`                            | 无需客制化类，直接用 `Item`                    |
 | `watermelon_juice`          | `glass_cup_of_watermelon_juice`             | 重命名，更改命名格式为 `glass_cup_of_xxx`                            | 无需客制化类，直接用 `Item`                    |
-
+| `ryeseed`                   | `rye_seed`                                  | 重命名，补下划线                                                  | 无需客制化类，直接用 `Item`                    |
+| `flour`                     | `flour`                                     | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `dough`                     | `dough`                                     | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `eggdough`                  | `dough_with_egg`                            | 重命名，`eggdough` → `dough_with_egg`                         | 无需客制化类，直接用 `Item`                    |
+| `coarse_salt`               | `coarse_salt`                               | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 ---
 
 ## 流体映射

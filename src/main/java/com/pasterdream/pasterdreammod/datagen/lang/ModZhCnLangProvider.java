@@ -47,7 +47,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.GLASS_CUP_OF_HONEY_JUICE.get(), "蜂蜜汁");
         add(ModItems.GLASS_CUP_OF_UNCOOKED_DYEDREAM_FLOWER_TEA.get(), "未烹调的染梦花茶");
         add(ModItems.GLASS_CUP_OF_WATERMELON_JUICE.get(), "西瓜汁");
-
+        add(ModItems.FLOUR.get(), "面粉");
+        add(ModItems.DOUGH.get(), "面团");
+        add(ModItems.RYE_SEED.get(), "野麦粒");
+        add(ModItems.DOUGH_WITH_EGG.get(), "蛋液面团");
+        add(ModItems.COARSE_SALT.get(), "粗盐");
 
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "染梦泥土");

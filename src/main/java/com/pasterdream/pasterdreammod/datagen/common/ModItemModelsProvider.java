@@ -56,6 +56,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.GLASS_CUP_OF_HONEY_JUICE.get());
         basicItem(ModItems.GLASS_CUP_OF_UNCOOKED_DYEDREAM_FLOWER_TEA.get());
         basicItem(ModItems.GLASS_CUP_OF_WATERMELON_JUICE.get());
+        basicItem(ModItems.FLOUR.get());
+        basicItem(ModItems.DOUGH.get());
+        basicItem(ModItems.RYE_SEED.get());
+        basicItem(ModItems.DOUGH_WITH_EGG.get());
+        basicItem(ModItems.COARSE_SALT.get());
 
 
         withExistingParent(ModItems.PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))
