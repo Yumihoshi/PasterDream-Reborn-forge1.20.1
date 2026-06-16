@@ -113,6 +113,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GLASS_CUP_OF_DYEDREAM_JUICE.get());
                         output.accept(ModItems.GLASS_CUP_OF_HONEY_JUICE.get());
                         output.accept(ModItems.GLASS_CUP_OF_WATERMELON_JUICE.get());
+                        output.accept(ModItems.RYE_SEED.get());
+                        output.accept(ModItems.FLOUR.get());
+                        output.accept(ModItems.DOUGH.get());
+                        output.accept(ModItems.DOUGH_WITH_EGG.get());
+                        output.accept(ModItems.COARSE_SALT.get());
 
                     })
                     .build());
