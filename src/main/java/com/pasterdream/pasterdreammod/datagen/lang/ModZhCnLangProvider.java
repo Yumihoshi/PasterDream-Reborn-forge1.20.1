@@ -115,7 +115,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("fluid.pasterdream.guiding_drug","药引瓶（流体）");
         add("fluid.pasterdream.honey_juice","蜂蜜汁（流体）");
         add("fluid.pasterdream.rage_elixir","狂暴战意灵药（流体）");
-        add("fluid.pasterdream.uncooked_dyedream_flower_tea","未烹饪的染梦花茶（流体）");
+        add("fluid.pasterdream.uncooked_dyedream_flower_tea","未烹调的染梦花茶（流体）");
         add("fluid.pasterdream.watermelon_juice","西瓜汁（流体）");
         add("fluid.pasterdream.wind_plant_extract","风植萃取液（流体）");
         add("fluid.pasterdream.yeast","酵母（流体）");
