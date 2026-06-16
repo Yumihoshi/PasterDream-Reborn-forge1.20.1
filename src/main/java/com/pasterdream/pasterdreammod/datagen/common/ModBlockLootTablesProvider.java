@@ -26,15 +26,11 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.DYEDREAM_DIRT.get());
-        add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(),
-                block -> createSilkTouchDispatchTable(block,
-                        LootItem.lootTableItem(ModBlocks.DYEDREAM_DIRT.get())));
+        add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(ModBlocks.DYEDREAM_DIRT.get())));
         dropSelf(ModBlocks.DYEDREAM_LOG.get());
         dropSelf(ModBlocks.DYEDREAM_WOOD.get());
-        add(ModBlocks.DYEDREAM_LEAVES.get(),
-                block -> createLeavesDrops(block, ModBlocks.DYEDREAM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(ModBlocks.DYEDREAM_WORLDTREE_LEAVES.get(),
-                block -> createLeavesDrops(block, ModBlocks.DYEDREAM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(ModBlocks.DYEDREAM_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.DYEDREAM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(ModBlocks.DYEDREAM_WORLDTREE_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.DYEDREAM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(ModBlocks.DYEDREAM_SAPLING.get());
 
         add(ModBlocks.DYEDREAM_QUARTZ_ORE.get(),
@@ -61,14 +57,12 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PILLAR_DYEDREAM_QUARTZ_BLOCK.get());
         dropSelf(ModBlocks.CHISELED_DYEDREAM_QUARTZ_BLOCK.get());
         dropSelf(ModBlocks.DYEDREAM_QUARTZ_BLOCK_STAIRS.get());
-        add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.DYEDREAM_QUARTZ_BLOCK_SLAB.get()));
+        add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_SLAB.get(), block -> createSlabItemTable(ModBlocks.DYEDREAM_QUARTZ_BLOCK_SLAB.get()));
         dropSelf(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL.get());
 
         dropSelf(ModBlocks.DYEDREAM_PLANKS.get());
         dropSelf(ModBlocks.DYEDREAM_PLANKS_STAIRS.get());
-        add(ModBlocks.DYEDREAM_PLANKS_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.DYEDREAM_PLANKS_SLAB.get()));
+        add(ModBlocks.DYEDREAM_PLANKS_SLAB.get(), block -> createSlabItemTable(ModBlocks.DYEDREAM_PLANKS_SLAB.get()));
         dropSelf(ModBlocks.DYEDREAM_PLANKS_FENCE.get());
         dropSelf(ModBlocks.DYEDREAM_PLANKS_FENCEGATE.get());
         dropSelf(ModBlocks.DYEDREAM_PLANKS_PANE.get());
@@ -129,9 +123,12 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.DYEDREAM_BUD_BLOCK.get());
         dropSelf(ModBlocks.DYEDREAM_BUD_STAIRS.get());
-        add(ModBlocks.DYEDREAM_BUD_SLAB.get(),
-                block -> createSlabItemTable(ModBlocks.DYEDREAM_BUD_SLAB.get()));
+        add(ModBlocks.DYEDREAM_BUD_SLAB.get(), block -> createSlabItemTable(ModBlocks.DYEDREAM_BUD_SLAB.get()));
         dropSelf(ModBlocks.DYEDREAM_BUD_WALL.get());
+
+
+        dropSelf(ModBlocks.CLAYPAN.get());
+
     }
 
     @Override

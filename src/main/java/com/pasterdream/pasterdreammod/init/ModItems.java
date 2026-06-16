@@ -247,6 +247,9 @@ public class ModItems {
     public static final RegistryObject<Item> MELT_DREAM_LIQUID_BUCKET = ITEMS.register("melt_dream_liquid_bucket", () -> new BucketItem(ModFluids.MELT_DREAM_LIQUID, (new Item.Properties()).craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON)));
     public static final RegistryObject<Item> SHADOW_LIQUID_BUCKET = ITEMS.register("shadow_liquid_bucket", () -> new BucketItem(ModFluids.SHADOW_LIQUID, (new Item.Properties()).craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON)));
 
+    //方块实体对应物品
+    public static final RegistryObject<Item> CLAYPAN = ITEMS.register("claypan", () -> new BlockItem(ModBlocks.CLAYPAN.get(), new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

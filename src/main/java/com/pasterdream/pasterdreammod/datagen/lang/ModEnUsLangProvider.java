@@ -103,6 +103,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_ICE.get(), "Dye Dream Ice");
         add(ModBlocks.DYEDREAM_PACKED_ICE.get(), "Dye Dream Packed Ice");
         add(ModBlocks.DYEDREAM_LARTERN.get(), "Dye Dream Lantern");
+        add(ModBlocks.CLAYPAN.get(), "Claypan");
 
         add("fluid.pasterdream.melt_dream_liquid","Melt Dream Liquid");
         add("fluid.pasterdream.shadow_liquid","Shadow Liquid");
@@ -123,5 +124,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add("itemGroup.pasterdream.pasterdream_tab", "Paster Dream");
         add("itemGroup.pasterdream.pasterdream_materials_tab", "Paster Dream Materials");
+        add("itemGroup.pasterdream.pasterdream_equipment_creative_tab", "Paster Dream Equipment");
     }
 }

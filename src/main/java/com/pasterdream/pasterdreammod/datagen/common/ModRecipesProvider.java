@@ -262,6 +262,17 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         RecipeHelpers.storageCompress(pWriter, ModItems.PINK_SLIMEBALL.get(), ModItems.PINK_SLIME_BLOCK.get());
         RecipeHelpers.storageDecompress(pWriter, ModItems.PINK_SLIME_BLOCK.get(), ModItems.PINK_SLIMEBALL.get());
 
+        //陶盆配方
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CLAYPAN.get(), 2)
+                .pattern("aba")
+                .pattern("aaa")
+                .define('a', ItemTags.TERRACOTTA)
+                .define('b', Items.WHITE_DYE)
+                .unlockedBy(getHasName(Items.WHITE_DYE), has(Items.WHITE_DYE))
+                .save(pWriter);
+
+
+
         // ===== 染梦粉尘配方 =====
 
         dustRecipes(pWriter);

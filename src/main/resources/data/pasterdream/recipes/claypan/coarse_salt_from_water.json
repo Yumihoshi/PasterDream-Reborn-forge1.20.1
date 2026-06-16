@@ -1,0 +1,10 @@
+{
+  "type": "pasterdream:claypan",
+  "fluid":
+  {
+    "fluid": "minecraft:water",
+    "amount": 125
+  },
+  "result": "pasterdream:coarse_salt",
+  "processingTime": 24000
+}
