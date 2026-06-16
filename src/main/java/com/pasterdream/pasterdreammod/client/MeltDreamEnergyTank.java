@@ -17,14 +17,29 @@ public class MeltDreamEnergyTank
 
         Minecraft.getInstance().player.getCapability(ModCapabilities.MELT_DREAM_ENERGY).ifPresent(capability ->
         {
-            double energy = capability.getMeltDreamEnergy();
-            RenderSystem.enableBlend();
+            double meltDreamEnergy = capability.getMeltDreamEnergy();
+            double maxMeltDreamEnergy = capability.getMaxMeltDreamEnergy();
 
-            GUIBackGroundRender.rendMeltDreamEnergyBar(guiGraphics, 9, height - 17);
-            GUIBackGroundRender.rendMeltDreamEnergyAmountBar(guiGraphics, 12, height - 13, energy / 100.0);
-            guiGraphics.drawCenteredString(Minecraft.getInstance().font, String.valueOf(energy), 46, height - 25, 0xFFFFFFFF);
+            if (maxMeltDreamEnergy != 0)
+            {
+                RenderSystem.enableBlend();
+                GUIBackGroundRender.rendMeltDreamEnergyBar(guiGraphics, 9, height - 17);
+                GUIBackGroundRender.rendMeltDreamEnergyAmountBar(guiGraphics, 12, height - 13, meltDreamEnergy / maxMeltDreamEnergy);
 
-            RenderSystem.disableBlend();
+                String meltDreamEnergyString = meltDreamEnergy + "/" + maxMeltDreamEnergy;
+                if(Minecraft.getInstance().font.width(meltDreamEnergyString) <= 90)
+                {
+                    guiGraphics.drawCenteredString(Minecraft.getInstance().font, meltDreamEnergyString, 46, height - 25, 0xFFFFFFFF);
+                }
+                    else
+                    {
+                        guiGraphics.pose().pushPose();
+                        guiGraphics.pose().scale(0.5f, 0.5f, 1f);
+                        guiGraphics.drawCenteredString(Minecraft.getInstance().font, meltDreamEnergyString, 92, (2 * height - 42), 0xFFFFFF);
+                        guiGraphics.pose().popPose();
+                    }
+                RenderSystem.disableBlend();
+            }
         });
     };
 }

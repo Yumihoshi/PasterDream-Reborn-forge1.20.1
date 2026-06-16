@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.network;
+package com.pasterdream.pasterdreammod.network.san;
 
 import com.pasterdream.pasterdreammod.capability.ModCapabilities;
 import com.pasterdream.pasterdreammod.capability.san.ISan;
@@ -11,39 +11,35 @@ import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
-public class SanSyncPacket
+public class MaxSanSyncPacket
 {
     private final int playerId;
-    private final double sanValue;
-    private final boolean isEnabled;
+    private final double maxSanValue;
 
-    public SanSyncPacket(Player player, ISan capability)
+    public MaxSanSyncPacket(Player player, ISan capability)
     {
         playerId = player.getId();
-        sanValue = capability.getSanValue();
-        isEnabled = capability.getIsSanEnabled();
+        maxSanValue = capability.getMaxSanValue();
     }
 
-    private SanSyncPacket(int playerId, double sanValue, boolean isEnabled)
+    private MaxSanSyncPacket(int playerId, double maxSanValue)
     {
         this.playerId = playerId;
-        this.sanValue = sanValue;
-        this.isEnabled = isEnabled;
+        this.maxSanValue = maxSanValue;
     }
 
-    public static void encode(SanSyncPacket packet, FriendlyByteBuf buffer)
+    public static void encode(MaxSanSyncPacket packet, FriendlyByteBuf buffer)
     {
         buffer.writeInt(packet.playerId);
-        buffer.writeDouble(packet.sanValue);
-        buffer.writeBoolean(packet.isEnabled);
+        buffer.writeDouble(packet.maxSanValue);
     }
 
-    public static SanSyncPacket decode(FriendlyByteBuf buffer)
+    public static MaxSanSyncPacket decode(FriendlyByteBuf buffer)
     {
-        return new SanSyncPacket(buffer.readInt(), buffer.readDouble(), buffer.readBoolean());
+        return new MaxSanSyncPacket(buffer.readInt(), buffer.readDouble());
     }
 
-    public static void handle(SanSyncPacket packet, Supplier<NetworkEvent.Context> context)
+    public static void handle(MaxSanSyncPacket packet, Supplier<NetworkEvent.Context> context)
     {
         context.get().enqueueWork(() ->
         {
@@ -52,8 +48,7 @@ public class SanSyncPacket
             {
                 player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
                 {
-                    capability.setSanValue(packet.sanValue);
-                    capability.setIsSanEnable(packet.isEnabled);
+                    capability.setMaxSanValue(packet.maxSanValue);
                 });
             }
         });
@@ -64,7 +59,7 @@ public class SanSyncPacket
     {
         if (player instanceof ServerPlayer serverPlayer)
         {
-            ModNetwork.sendSanSyncPacketToPlayer(new SanSyncPacket(player, capability), serverPlayer);
+            ModNetwork.sendMaxSanSyncPacketToPlayer(new MaxSanSyncPacket(player, capability), serverPlayer);
         }
     }
 }

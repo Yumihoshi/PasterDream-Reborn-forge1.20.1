@@ -18,13 +18,28 @@ public class SanTank
         Minecraft.getInstance().player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
         {
             double sanValue = capability.getSanValue();
-            RenderSystem.enableBlend();
+            double maxSanValue = capability.getMaxSanValue();
 
-            GUIBackGroundRender.rendSanBar(guiGraphics, width - 34, height - 30);
-            GUIBackGroundRender.rendSanAmountBar(guiGraphics, width - 34, height - 30, sanValue / 100.0);
-            guiGraphics.drawCenteredString(Minecraft.getInstance().font, String.valueOf(sanValue), width - 20, height - 38, 0xFFFFFFFF);
+            if (maxSanValue != 0)
+            {
+                RenderSystem.enableBlend();
+                GUIBackGroundRender.rendSanBar(guiGraphics, width - 34, height - 30);
+                GUIBackGroundRender.rendSanAmountBar(guiGraphics, width - 34, height - 30, sanValue / maxSanValue);
 
-            RenderSystem.disableBlend();
+                String sanString = sanValue + "/" + maxSanValue;
+                if(Minecraft.getInstance().font.width(sanString) <= 38)
+                {
+                    guiGraphics.drawCenteredString(Minecraft.getInstance().font, sanString, width - 20, height - 38, 0xFFFFFFFF);
+                }
+                    else
+                    {
+                        guiGraphics.pose().pushPose();
+                        guiGraphics.pose().scale(0.5f, 0.5f, 1f);
+                        guiGraphics.drawCenteredString(Minecraft.getInstance().font, sanString, 2 * width - 40, (2 * height - 68), 0xFFFFFF);
+                        guiGraphics.pose().popPose();
+                    }
+                RenderSystem.disableBlend();
+            }
         });
     };
 }

@@ -5,8 +5,10 @@ import com.pasterdream.pasterdreammod.capability.meltdreamenergy.IMeltDreamEnerg
 import com.pasterdream.pasterdreammod.capability.meltdreamenergy.MeltDreamEnergyProvider;
 import com.pasterdream.pasterdreammod.capability.san.ISan;
 import com.pasterdream.pasterdreammod.capability.san.SanProvider;
-import com.pasterdream.pasterdreammod.network.MeltDreamEnergySyncPacket;
-import com.pasterdream.pasterdreammod.network.SanSyncPacket;
+import com.pasterdream.pasterdreammod.network.meltdreamenergy.MaxMeltDreamEnergySyncPacket;
+import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
+import com.pasterdream.pasterdreammod.network.san.MaxSanSyncPacket;
+import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -77,7 +79,9 @@ public class EventRegister
             if (!player.level().isClientSide)
             {
                 player.getCapability(ModCapabilities.MELT_DREAM_ENERGY).ifPresent(capability -> MeltDreamEnergySyncPacket.sendToPlayer(player, capability));
+                player.getCapability(ModCapabilities.MELT_DREAM_ENERGY).ifPresent(capability -> MaxMeltDreamEnergySyncPacket.sendToPlayer(player, capability));
                 player.getCapability(ModCapabilities.SAN).ifPresent(capability -> SanSyncPacket.sendToPlayer(player, capability));
+                player.getCapability(ModCapabilities.SAN).ifPresent(capability -> MaxSanSyncPacket.sendToPlayer(player, capability));
             }
         }
     }
