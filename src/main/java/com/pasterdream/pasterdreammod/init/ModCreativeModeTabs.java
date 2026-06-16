@@ -122,6 +122,15 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> PASTERDREAM_EQUIPMENT_CREATIVE_TAB = CREATIVE_MODE_TABS.register("pasterdream_equipment_creative_tab", () -> CreativeModeTab.builder()
+            .icon(() -> new ItemStack(ModBlocks.CLAYPAN.get())) //暂时用这个占位，后续替换为琴雨梦玩偶
+            .title(Component.translatable("itemGroup.pasterdream.pasterdream_equipment_creative_tab"))
+            .displayItems((CreativeModeTab.ItemDisplayParameters pParameters, CreativeModeTab.Output pOutput) ->
+            {
+                pOutput.accept(ModBlocks.CLAYPAN.get());
+            })
+            .build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }

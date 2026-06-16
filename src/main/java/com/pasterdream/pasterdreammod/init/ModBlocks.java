@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.init;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.world.behavior.ModTreeGrowers;
 import com.pasterdream.pasterdreammod.world.block.DyedreamGrassBlock;
+import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanBlock;
 import com.pasterdream.pasterdreammod.world.block.fluidblock.MeltdreamLiquidBlock;
 import com.pasterdream.pasterdreammod.world.block.fluidblock.ShadowLiquidBlock;
 import net.minecraft.world.effect.MobEffects;
@@ -104,6 +105,9 @@ public class ModBlocks {
     //流体方块
     public static final RegistryObject<Block> MELTDREAM_LIQUID = BLOCKS.register("meltdream_liquid", MeltdreamLiquidBlock::new);
     public static final RegistryObject<Block> SHADOW_LIQUID = BLOCKS.register("shadow_liquid", ShadowLiquidBlock::new);
+
+    //方块实体对应方块
+    public static final RegistryObject<Block> CLAYPAN = BLOCKS.register("claypan", () -> new ClaypanBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(0.5F, 10.0F).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((blockState, blockGetter, blockPosition) -> false)));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

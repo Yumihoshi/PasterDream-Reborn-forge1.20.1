@@ -1,8 +1,6 @@
 package com.pasterdream.pasterdreammod;
 
-import com.pasterdream.pasterdreammod.client.ClientSetRenderLayer;
-import com.pasterdream.pasterdreammod.client.MeltDreamEnergyTank;
-import com.pasterdream.pasterdreammod.client.SanTank;
+import com.pasterdream.pasterdreammod.client.*;
 import com.pasterdream.pasterdreammod.helper.FluidHandler.FluidHandlerResolvers;
 import com.pasterdream.pasterdreammod.helper.tooltipadder.AddTooltip;
 import com.pasterdream.pasterdreammod.init.*;
@@ -32,8 +30,11 @@ public class PasterDreamMod
         ModItems.register(modEventBus);             //注册物品
         ModCreativeModeTabs.register(modEventBus);  //注册创造模式物品栏
         ModBlocks.register(modEventBus);            //注册方块
-        ModFluids.register(modEventBus);
-        ModNetwork.register();
+        ModBlockEntities.register(modEventBus);     //注册方块实体
+        ModFluids.register(modEventBus);            //注册流体
+        ModMenus.register(modEventBus);             //注册菜单
+        ModRecipes.register(modEventBus);           //注册配方
+        ModNetwork.register();                      //注册网络包
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -57,6 +58,8 @@ public class PasterDreamMod
     private void clientSetup(final FMLClientSetupEvent event)
     {
         ClientSetRenderLayer.register();
+        ModScreens.register(event);
+        ModBlockEntityRenderer.register(event);
     }
 
     private void AddItemTooltip(ItemTooltipEvent event)

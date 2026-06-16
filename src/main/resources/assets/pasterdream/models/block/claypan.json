@@ -1,0 +1,10 @@
+{
+  "parent": "pasterdream:custom/claypan",
+  "textures":
+  {
+    "all": "pasterdream:block/claypan",
+    "particle": "pasterdream:block/claypan_break",
+    "0": "pasterdream:block/claypan"
+  },
+  "render_type": "cutout"
+}

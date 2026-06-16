@@ -1,12 +1,21 @@
 package com.pasterdream.pasterdreammod.compat.jei;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.compat.jei.claypanrecipe.ClaypanRecipeCategory;
+import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModFluids;
+import com.pasterdream.pasterdreammod.init.ModRecipes;
+import com.pasterdream.pasterdreammod.recipe.claypan.IClaypanRecipe;
+import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanScreen;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.forge.ForgeTypes;
-import mezz.jei.api.registration.IExtraIngredientRegistration;
+import mezz.jei.api.registration.*;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraftforge.fluids.FluidStack;
 
 import java.util.ArrayList;
@@ -19,6 +28,43 @@ public class ModJEIPlugin implements IModPlugin
     public ResourceLocation getPluginUid()
     {
         return ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "jei_plugin");
+    }
+
+    @Override
+    public void registerRecipes(IRecipeRegistration registration)
+    {
+        ClientLevel level = Minecraft.getInstance().level;
+        if (level != null)
+        {
+            RecipeManager recipeManager = level.getRecipeManager();
+            List<IClaypanRecipe> recipes = recipeManager.getAllRecipesFor(ModRecipes.CLAYPAN.get());
+            registration.addRecipes(ClaypanRecipeCategory.CLAYPAN_RECIPE_RECIPE_TYPE, recipes);
+        }
+    }
+
+    @Override
+    public void registerGuiHandlers(IGuiHandlerRegistration registration)
+    {
+        registration.addRecipeClickArea(ClaypanScreen.class, 74, 7, 22, 15, ClaypanRecipeCategory.CLAYPAN_RECIPE_RECIPE_TYPE);
+    }
+
+    @Override
+    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration)
+    {
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.CLAYPAN.get()), ClaypanRecipeCategory.CLAYPAN_RECIPE_RECIPE_TYPE);
+    }
+
+    @Override
+    public void registerCategories(IRecipeCategoryRegistration registration)
+    {
+        try
+        {
+            registration.addRecipeCategories(new ClaypanRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     //将流体添加至JEI物品列表

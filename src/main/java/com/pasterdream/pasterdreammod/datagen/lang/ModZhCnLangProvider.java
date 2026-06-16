@@ -106,6 +106,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_ICE.get(), "染梦冰");
         add(ModBlocks.DYEDREAM_PACKED_ICE.get(), "染梦浮冰");
         add(ModBlocks.DYEDREAM_LARTERN.get(), "染梦水晶灯");
+        add(ModBlocks.CLAYPAN.get(), "陶盆");
 
         add("fluid.pasterdream.melt_dream_liquid","融梦涌泉");
         add("fluid.pasterdream.shadow_liquid","熔融阴影");
@@ -126,5 +127,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add("itemGroup.pasterdream.pasterdream_tab", "帕斯特之梦 | 方块");
         add("itemGroup.pasterdream.pasterdream_materials_tab", "帕斯特之梦 | 物品");
+        add("itemGroup.pasterdream.pasterdream_equipment_creative_tab", "帕斯特之梦 | 设备");
     }
 }
