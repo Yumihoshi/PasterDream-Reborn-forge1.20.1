@@ -3,8 +3,12 @@ package com.pasterdream.pasterdreammod.init;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.network.FluidSlotInteractPacket;
 import com.pasterdream.pasterdreammod.network.FluidSoundPacket;
-import com.pasterdream.pasterdreammod.network.MeltDreamEnergySyncPacket;
-import com.pasterdream.pasterdreammod.network.SanSyncPacket;
+import com.pasterdream.pasterdreammod.network.meltdreamenergy.IsNotNeedSyncPacket;
+import com.pasterdream.pasterdreammod.network.meltdreamenergy.MaxMeltDreamEnergySyncPacket;
+import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
+import com.pasterdream.pasterdreammod.network.san.IsSanEnableSyncPacket;
+import com.pasterdream.pasterdreammod.network.san.MaxSanSyncPacket;
+import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkRegistry;
@@ -21,8 +25,14 @@ public class ModNetwork
     {
         CHANNEL.registerMessage(id++, FluidSlotInteractPacket.class, FluidSlotInteractPacket::encode, FluidSlotInteractPacket::decode, FluidSlotInteractPacket::handle);
         CHANNEL.registerMessage(id++, FluidSoundPacket.class, FluidSoundPacket::encode, FluidSoundPacket::decode, FluidSoundPacket::handle);
+
         CHANNEL.registerMessage(id++, MeltDreamEnergySyncPacket.class, MeltDreamEnergySyncPacket::encode, MeltDreamEnergySyncPacket::decode, MeltDreamEnergySyncPacket::handle);
+        CHANNEL.registerMessage(id++, IsNotNeedSyncPacket.class, IsNotNeedSyncPacket::encode, IsNotNeedSyncPacket::decode, IsNotNeedSyncPacket::handle);
+        CHANNEL.registerMessage(id++, MaxMeltDreamEnergySyncPacket.class, MaxMeltDreamEnergySyncPacket::encode, MaxMeltDreamEnergySyncPacket::decode, MaxMeltDreamEnergySyncPacket::handle);
+
         CHANNEL.registerMessage(id++, SanSyncPacket.class, SanSyncPacket::encode, SanSyncPacket::decode, SanSyncPacket::handle);
+        CHANNEL.registerMessage(id++, IsSanEnableSyncPacket.class, IsSanEnableSyncPacket::encode, IsSanEnableSyncPacket::decode, IsSanEnableSyncPacket::handle);
+        CHANNEL.registerMessage(id++, MaxSanSyncPacket.class, MaxSanSyncPacket::encode, MaxSanSyncPacket::decode, MaxSanSyncPacket::handle);
     }
 
     public static void sendMeltDreamEnergySyncPacketToPlayer(MeltDreamEnergySyncPacket packet, ServerPlayer player)
@@ -30,7 +40,17 @@ public class ModNetwork
         CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), packet);
     }
 
+    public static void sendMaxMeltDreamEnergySyncPacketToPlayer(MaxMeltDreamEnergySyncPacket packet, ServerPlayer player)
+    {
+        CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), packet);
+    }
+
     public static void sendSanSyncPacketToPlayer(SanSyncPacket packet, ServerPlayer player)
+    {
+        CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), packet);
+    }
+
+    public static void sendMaxSanSyncPacketToPlayer(MaxSanSyncPacket packet, ServerPlayer player)
     {
         CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), packet);
     }

@@ -9,5 +9,9 @@ public interface ISan
     void setIsSanEnable(boolean isEnabled);
     boolean getIsSanEnabled();
 
+    double getMaxSanValue();
+    void setMaxSanValue(double maxSanValue);
+    void addMaxSanValue(double delta);
+
     void copyValueFromOtherSan(ISan other);
 }

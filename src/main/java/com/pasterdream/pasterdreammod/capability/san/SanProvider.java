@@ -24,6 +24,7 @@ public class SanProvider implements ICapabilitySerializable<CompoundTag>
         CompoundTag tag = new CompoundTag();
         tag.putDouble("san_value", instance.getSanValue());
         tag.putBoolean("is_enabled", instance.getIsSanEnabled());
+        tag.putDouble("max_san_value", instance.getMaxSanValue());
         return tag;
     }
 
@@ -32,5 +33,6 @@ public class SanProvider implements ICapabilitySerializable<CompoundTag>
     {
         instance.setSanValue(tag.getDouble("san_value"));
         instance.setIsSanEnable(tag.getBoolean("is_enabled"));
+        instance.setMaxSanValue(tag.getDouble("max_san_value"));
     }
 }

@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.network;
+package com.pasterdream.pasterdreammod.network.meltdreamenergy;
 
 import com.pasterdream.pasterdreammod.capability.ModCapabilities;
 import com.pasterdream.pasterdreammod.capability.meltdreamenergy.IMeltDreamEnergy;
@@ -14,33 +14,29 @@ import java.util.function.Supplier;
 public class MeltDreamEnergySyncPacket
 {
     private final int playerId;
-    private final double energy;
-    private final boolean noNeed;
+    private final double meltDreamEnergy;
 
     public MeltDreamEnergySyncPacket(Player player, IMeltDreamEnergy capability)
     {
         this.playerId = player.getId();
-        this.energy = capability.getMeltDreamEnergy();
-        this.noNeed = capability.getIsOrNotNeedConsumeDreamEnergy();
+        this.meltDreamEnergy = capability.getMeltDreamEnergy();
     }
 
-    private MeltDreamEnergySyncPacket(int playerId, double meltDreamEnergyCount, boolean isNotNeed)
+    private MeltDreamEnergySyncPacket(int playerId, double meltDreamEnergy)
     {
         this.playerId = playerId;
-        this.energy = meltDreamEnergyCount;
-        this.noNeed = isNotNeed;
+        this.meltDreamEnergy = meltDreamEnergy;
     }
 
     public static void encode(MeltDreamEnergySyncPacket packet, FriendlyByteBuf buffer)
     {
         buffer.writeInt(packet.playerId);
-        buffer.writeDouble(packet.energy);
-        buffer.writeBoolean(packet.noNeed);
+        buffer.writeDouble(packet.meltDreamEnergy);
     }
 
     public static MeltDreamEnergySyncPacket decode(FriendlyByteBuf buffer)
     {
-        return new MeltDreamEnergySyncPacket(buffer.readInt(), buffer.readDouble(), buffer.readBoolean());
+        return new MeltDreamEnergySyncPacket(buffer.readInt(), buffer.readDouble());
     }
 
     public static void handle(MeltDreamEnergySyncPacket packet, Supplier<NetworkEvent.Context> context)
@@ -52,8 +48,7 @@ public class MeltDreamEnergySyncPacket
             {
                 player.getCapability(ModCapabilities.MELT_DREAM_ENERGY).ifPresent(capability ->
                 {
-                    capability.setMeltDreamEnergy(packet.energy);
-                    capability.setIsOrNotNeedConsumeDreamEnergy(packet.noNeed);
+                    capability.setMeltDreamEnergy(packet.meltDreamEnergy);
                 });
             }
         });
