@@ -1,6 +1,5 @@
 package com.pasterdream.pasterdreammod.world.block.dreamcauldron;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.component.DreamCauldronButton;
 import com.pasterdream.pasterdreammod.component.FluidSlot;
@@ -11,7 +10,6 @@ import com.pasterdream.pasterdreammod.network.FluidSlotInteractPacket;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
