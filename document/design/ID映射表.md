@@ -123,6 +123,7 @@
 | `salt`                    | `salt`                                      | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 | `pinkegg`                 | `pink_egg`                                  | 重命名，补下划线                                                  | 无需客制化类，直接用 `Item`                    |
 | `chocolate`               | `chocolate`                                 | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `dyedream_fruit`          | `dyedream_fruit`                            | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 | `cake_base`               | `cake_base`                                 | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 | `buncake_0`               | `cream_bun_cake`                            | 重命名，更改命名格式为 `xxx_bun_cake`                                | 无需客制化类，直接用 `Item`                    |
 | `buncake_1`               | `berry_bun_cake`                            | 重命名，更改命名格式为 `xxx_bun_cake`                                | 无需客制化类，直接用 `Item`                    |

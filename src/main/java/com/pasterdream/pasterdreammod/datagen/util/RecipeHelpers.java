@@ -142,10 +142,10 @@ public final class RecipeHelpers {
     /**
      * 蛋糕类合成配方
      * @param material 合成材料，决定合成出来的蛋糕的效果
+     *@param cake 出来的蛋糕种类
      */
-    public static void cake(Consumer<FinishedRecipe> writer,
-                                         ItemLike material) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, material, 1)
+    public static void cake(Consumer<FinishedRecipe> writer,ItemLike material,ItemLike cake) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, cake)
                 .requires(ModItems.CREAM_BUN_CAKE.get())
                 .requires(material)
                 .unlockedBy(getHasName(ModItems.CREAM_BUN_CAKE.get()), has(ModItems.CREAM_BUN_CAKE.get()))

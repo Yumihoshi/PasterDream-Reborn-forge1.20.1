@@ -52,6 +52,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.COARSE_SALT.get(), "Coarse Salt");
         add(ModItems.SALT.get(), "Salt");
         add(ModItems.PINK_EGG.get(), "Pink Egg");
+        add(ModItems.DYEDREAM_FRUIT.get(), "Dyedream Fruit");
         add(ModItems.CHOCOLATE.get(), "Chocolate");
         add(ModItems.CAKE_BASE.get(), "Cake Base");
         add(ModItems.CREAM_BUN_CAKE.get(), "Cream Bun Cake");

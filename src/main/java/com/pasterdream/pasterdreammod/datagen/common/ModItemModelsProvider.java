@@ -65,6 +65,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.SALT.get());
         basicItem(ModItems.PINK_EGG.get());
         basicItem(ModItems.CHOCOLATE.get());
+        basicItem(ModItems.DYEDREAM_FRUIT.get());;
         basicItem(ModItems.CAKE_BASE.get());
         basicItem(ModItems.CREAM_BUN_CAKE.get());
         basicItem(ModItems.BERRY_BUN_CAKE.get());

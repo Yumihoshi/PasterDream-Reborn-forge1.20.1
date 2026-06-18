@@ -332,7 +332,6 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.GLASS_JAR.get()), has(ModItems.GLASS_JAR.get()))
                 .save(pWriter);
 
-
         // 水罐合成配方
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_WATER.get(), 8)
                 .requires(Items.WATER_BUCKET,1)
@@ -345,6 +344,13 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(Items.MILK_BUCKET,1)
                 .requires(ModItems.GLASS_JAR.get(), 8)
                 .unlockedBy(getHasName(Items.MILK_BUCKET), has(Items.MILK_BUCKET))
+                .save(pWriter);
+
+        // 巧克力合成配方
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CHOCOLATE.get(), 1)
+                .requires(Items.COCOA_BEANS,2)
+                .requires(Items.SUGAR,1)
+                .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR))
                 .save(pWriter);
 
         // 面团合成配方
@@ -362,7 +368,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.DOUGH.get()), has(ModItems.DOUGH.get()))
                 .save(pWriter);
 
-        //蛋糕胚合成配方
+        // 蛋糕胚合成配方
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CAKE_BASE.get(), 2)
                 .requires(ModItems.DOUGH_WITH_EGG.get(),1)
                 .requires(Items.SUGAR,1)
@@ -370,6 +376,28 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.DOUGH_WITH_EGG.get()), has(ModItems.DOUGH_WITH_EGG.get()))
                 .save(pWriter);
 
+        // 奶油小蛋糕合成配方
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CREAM_BUN_CAKE.get(), 1)
+                .requires(ModItems.CAKE_BASE.get(),1)
+                .requires(ModItems.GLASS_JAR_OF_MILK.get(),1)
+                .unlockedBy(getHasName(ModItems.CAKE_BASE.get()), has(ModItems.CAKE_BASE.get()))
+                .save(pWriter);
+
+        // 六种蛋糕合成
+        RecipeHelpers.cake(pWriter,Items.SWEET_BERRIES,ModItems.BERRY_BUN_CAKE.get());
+        RecipeHelpers.cake(pWriter,Items.POTATO,ModItems.TUBER_BUN_CAKE.get());
+        RecipeHelpers.cake(pWriter,Items.MELON_SLICE,ModItems.WATERMELON_BUN_CAKE.get());
+        RecipeHelpers.cake(pWriter,Items.PUMPKIN,ModItems.PUMPKIN_BUN_CAKE.get());
+        RecipeHelpers.cake(pWriter,Items.GLOW_BERRIES,ModItems.GLOW_BERRY_BUN_CAKE.get());
+        RecipeHelpers.cake(pWriter,ModItems.DYEDREAM_FRUIT.get(),ModItems.DYEDREAM_FRUIT_BUN_CAKE.get());
+
+        //巧克力抹茶蛋糕合成配方
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CHOCOLATE_MATCHA_CAKE.get(), 1)
+                .requires(ModItems.CAKE_BASE.get(),1)
+                .requires(Ingredient.of(ItemTags.LEAVES),1)
+                .requires(ModItems.CHOCOLATE.get(),1)
+                .unlockedBy(getHasName(ModItems.CAKE_BASE.get()), has(ModItems.CAKE_BASE.get()))
+                .save(pWriter);
 
     }
     private void alloySmeltingRecipes(Consumer<FinishedRecipe> pWriter) {
