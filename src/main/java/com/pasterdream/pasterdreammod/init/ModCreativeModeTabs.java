@@ -121,6 +121,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COARSE_SALT.get());
                         output.accept(ModItems.SALT.get());
                         output.accept(ModItems.PINK_EGG.get());
+                        output.accept(ModItems.DYEDREAM_FRUIT.get());
                         output.accept(ModItems.CHOCOLATE.get());
                         output.accept(ModItems.CAKE_BASE.get());
                         output.accept(ModItems.CREAM_BUN_CAKE.get());

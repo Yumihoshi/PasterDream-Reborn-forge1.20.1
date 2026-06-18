@@ -56,6 +56,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.SALT.get(), "盐");
         add(ModItems.PINK_EGG.get(), "粉红蛋");
         add(ModItems.CHOCOLATE.get(), "巧克力");
+        add(ModItems.DYEDREAM_FRUIT.get(), "染梦果");
         add(ModItems.CAKE_BASE.get(), "蛋糕胚");
         add(ModItems.CREAM_BUN_CAKE.get(), "奶油小蛋糕");
         add(ModItems.BERRY_BUN_CAKE.get(), "甜浆果小蛋糕");
