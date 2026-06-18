@@ -1,8 +1,7 @@
-package com.pasterdream.pasterdreammod.world.item.drinkitem;
+package com.pasterdream.pasterdreammod.world.item.drinkandfooditem;
 
 import com.pasterdream.pasterdreammod.capability.ModCapabilities;
-import com.pasterdream.pasterdreammod.helper.FluidContainerCapability.FluidContainerRegistry;
-import com.pasterdream.pasterdreammod.helper.drinkproperties.PasterDreamDrinkProperties;
+import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamDrinkAndFoodProperties;
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -14,13 +13,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-public class PasterDreamDrinkItem extends Item
+public class PasterDreamFoodItem extends Item
 {
     private final int useDuration;
     private final double sanAdd;
     private final double meltDreamEnergyAdd;
 
-    public PasterDreamDrinkItem(PasterDreamDrinkProperties properties)
+    public PasterDreamFoodItem(PasterDreamDrinkAndFoodProperties properties)
     {
         super(properties);
         this.useDuration = properties.getUseDuration();
@@ -35,9 +34,9 @@ public class PasterDreamDrinkItem extends Item
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) //喝，为什么不喝？
+    public UseAnim getUseAnimation(ItemStack stack)
     {
-        return UseAnim.DRINK;
+        return UseAnim.EAT;
     }
 
     @Override
@@ -58,7 +57,6 @@ public class PasterDreamDrinkItem extends Item
 
         if (!level.isClientSide && entity instanceof Player player)
         {
-
             if (sanAdd != 0)
             {
                 player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
@@ -78,40 +76,15 @@ public class PasterDreamDrinkItem extends Item
             }
         }
 
-        if (entity instanceof Player player && player.isCreative())
+        if (!level.isClientSide && entity instanceof Player player)
         {
-            return stack;
+            onFoodSpecial(player, level);
         }
 
-        Item emptyContainer = FluidContainerRegistry.getEntryForFillToEmpty(this).emptyItem;
-        stack.shrink(1);
-
-        if (stack.isEmpty())
-        {
-            if (emptyContainer != null)
-            {
-                return new ItemStack(emptyContainer);
-            }
-            return ItemStack.EMPTY;
-        }
-            else
-            {
-                if (!level.isClientSide && entity instanceof Player player)
-                {
-                    if (emptyContainer != null)
-                    {
-                        ItemStack containerStack = new ItemStack(emptyContainer);
-                        if (!player.getInventory().add(containerStack))
-                        {
-                            player.drop(containerStack, false);
-                        }
-                    }
-                }
-                return stack;
-            }
+        return ItemStack.EMPTY;
     }
 
-    protected void onDrinkSpecial(Player player, Level level)
+    protected void onFoodSpecial(Player player, Level level)
     {
         //默认无操作
     }

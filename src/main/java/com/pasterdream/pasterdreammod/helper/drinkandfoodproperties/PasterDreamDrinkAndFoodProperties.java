@@ -1,41 +1,41 @@
-package com.pasterdream.pasterdreammod.helper.drinkproperties;
+package com.pasterdream.pasterdreammod.helper.drinkandfoodproperties;
 
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 
-public class PasterDreamDrinkProperties extends Item.Properties
+public class PasterDreamDrinkAndFoodProperties extends Item.Properties
 {
     private int useDuration = 32;
     private double sanAdd = 0;
     private double meltDreamEnergyAdd = 0;
 
     @Override
-    public PasterDreamDrinkProperties food(FoodProperties food)
+    public PasterDreamDrinkAndFoodProperties food(FoodProperties food)
     {
         super.food(food);
         return this;
     }
 
     @Override
-    public PasterDreamDrinkProperties stacksTo(int size)
+    public PasterDreamDrinkAndFoodProperties stacksTo(int size)
     {
         super.stacksTo(size);
         return this;
     }
 
-    public PasterDreamDrinkProperties useDuration(int ticks)
+    public PasterDreamDrinkAndFoodProperties useDuration(int ticks)
     {
         this.useDuration = ticks;
         return this;
     }
 
-    public PasterDreamDrinkProperties sanAdd(double amount)
+    public PasterDreamDrinkAndFoodProperties sanAdd(double amount)
     {
         this.sanAdd = amount;
         return this;
     }
 
-    public PasterDreamDrinkProperties meltDreamEnergyAdd(double amount)
+    public PasterDreamDrinkAndFoodProperties meltDreamEnergyAdd(double amount)
     {
         this.meltDreamEnergyAdd = amount;
         return this;
