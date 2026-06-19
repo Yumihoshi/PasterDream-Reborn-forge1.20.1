@@ -75,6 +75,11 @@ public class ModItems {
     public static final RegistryObject<Item> MAGIC_STONE = ITEMS.register("magic_stone",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> SOUL_DUST = ITEMS.register("soul_dust",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SOUL_ESSENCE = ITEMS.register("soul_essence",
+            () -> new Item(new Item.Properties()));
+
     // ===== 玻璃罐系列 =====
     public static final RegistryObject<Item> GLASS_JAR = ITEMS.register("glass_jar", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> GLASS_JAR_OF_WATER = ITEMS.register("glass_jar_of_water", () -> new PasterDreamDrinkItem((PasterDreamDrinkAndFoodProperties) new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().alwaysEat().build()).useDuration(24).craftRemainder(ModItems.GLASS_JAR.get())));
@@ -266,6 +271,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_GOLD_ORE = ITEMS.register("molten_gold_ore",
             () -> new BlockItem(ModBlocks.MOLTEN_GOLD_ORE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SOUL_ORE = ITEMS.register("soul_ore",
+            () -> new BlockItem(ModBlocks.SOUL_ORE.get(), new Item.Properties()));
     public static final RegistryObject<Item> PINK_SLIME_BLOCK = ITEMS.register("pink_slime_block",
             () -> new BlockItem(ModBlocks.PINK_SLIME_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> PINK_MUSHROOM_BLOCK = ITEMS.register("pink_mushroom_block",

@@ -89,6 +89,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TITANIUM_NUGGET.get());
                         output.accept(ModItems.MOLTEN_GOLD_NUGGET.get());
                         output.accept(ModItems.DYEDREAM_ALLOY_NUGGET.get());
+                        output.accept(ModItems.SOUL_DUST.get());
+                        output.accept(ModItems.SOUL_ESSENCE.get());
                         output.accept(ModItems.MAGIC_STONE.get());
                         output.accept(ModItems.PINK_SLIMEBALL.get());
                         output.accept(ModItems.PINK_EGG.get());
@@ -175,9 +177,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CALCITE_TILES_WALL.get());
                         output.accept(ModItems.TITANIUM_ORE.get());
                         output.accept(ModItems.DEEPSLATE_TITANIUM_ORE.get());
-                        output.accept(ModItems.TITANIUM_ORE.get());
-                        output.accept(ModItems.DEEPSLATE_TITANIUM_ORE.get());
                         output.accept(ModItems.MOLTEN_GOLD_ORE.get());
+                        output.accept(ModItems.SOUL_ORE.get());
                     })
                     .build());
 

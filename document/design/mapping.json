@@ -72,7 +72,8 @@
     "calcite_tiles_wall": "calcite_tiles_wall",
     "titanium_ore": "titanium_ore",
     "deepslate_titanium_ore": "deepslate_titanium_ore",
-    "moltengold_ore": "molten_gold_ore"
+    "moltengold_ore": "molten_gold_ore",
+    "soul_ore": "soul_ore"
   },
   "items": {
     "amber_candy": "amber_candy",
@@ -142,7 +143,9 @@
     "sandwich_0": "sandwich",
     "wafer_biscuit": "wafer_biscuit",
     "stuffed_wafer_cookies": "stuffed_wafer_cookies",
-    "magic_stone": "magic_stone"
+    "magic_stone": "magic_stone",
+    "soul_dust": "soul_dust",
+    "soul_essence": "soul_essence"
   },
   "entities": {},
   "recipes": {

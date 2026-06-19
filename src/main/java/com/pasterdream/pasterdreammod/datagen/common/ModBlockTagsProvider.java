@@ -28,7 +28,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         // 可以用铲子来挖掘
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.DYEDREAM_DIRT.get())
-                .add(ModBlocks.DYEDREAM_GRASS_BLOCK.get());
+                .add(ModBlocks.DYEDREAM_GRASS_BLOCK.get())
+                .add(ModBlocks.SOUL_ORE.get());
 
         // 可以用锄头来挖掘
         tag(BlockTags.MINEABLE_WITH_HOE)

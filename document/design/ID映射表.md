@@ -90,6 +90,7 @@
 | `titanium_ore`                 | `titanium_ore`                  | 不改                                        | 无需客制化类，直接用 `Block`                                  |
 | `deepslate_titanium_ore`       | `deepslate_titanium_ore`        | 不改                                        | 无需客制化类，直接用 `Block`                                  |
 | `moltengold_ore`               | `molten_gold_ore`               | 重命名，补下划线                                | 无需客制化类，直接用 `Block`                                  |
+| `soul_ore`                     | `soul_ore`                      | 不改                                        | 客制化类 `SoulOreBlock`，覆写 getShape 降低碰撞箱（14px 高） |
 
 
 ---
@@ -167,6 +168,8 @@
 | `stuffed_wafer_cookies`   | `stuffed_wafer_cookies`                     | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 
 | `magic_stone`              | `magic_stone`                               | 不改，Tooltip 文字待后续实现                                        | 无需客制化类，直接用 `Item`                    |
+| `soul_dust`                | `soul_dust`                                 | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `soul_essence`             | `soul_essence`                              | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 ---
 
 ## 流体映射
