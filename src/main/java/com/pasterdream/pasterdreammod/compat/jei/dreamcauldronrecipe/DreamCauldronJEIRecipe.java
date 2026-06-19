@@ -1,7 +1,7 @@
 package com.pasterdream.pasterdreammod.compat.jei.dreamcauldronrecipe;
 
 import com.pasterdream.pasterdreammod.helper.fluidingredient.FluidIngredient;
-import com.pasterdream.pasterdreammod.recipe.dreamcauldron.IDreamCauldronRecipe;
+import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipe;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
@@ -11,13 +11,13 @@ public class DreamCauldronJEIRecipe
 {
     private final List<FluidIngredient> fluidIngredients;
     private final List<Ingredient> itemIngredients;
-    private final ItemStack output;
+    private final ItemStack outputItem;
 
-    public DreamCauldronJEIRecipe(IDreamCauldronRecipe recipe)
+    public DreamCauldronJEIRecipe(DreamCauldronRecipe recipe)
     {
-        this.fluidIngredients = recipe.getFluidIngredients();
-        this.itemIngredients = recipe.getItemIngredients();
-        this.output = recipe.getResultItem(null);
+        this.fluidIngredients = recipe.getInputFluidIngredients();
+        this.itemIngredients = recipe.getInputItemIngredients();
+        this.outputItem = recipe.getOutputItemIngredients().get(0).getItems()[0];
     }
 
     public List<FluidIngredient> getFluidIngredients()
@@ -32,6 +32,6 @@ public class DreamCauldronJEIRecipe
 
     public ItemStack getOutput()
     {
-        return output;
+        return outputItem;
     }
 }

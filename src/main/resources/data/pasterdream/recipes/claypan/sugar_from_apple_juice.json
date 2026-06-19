@@ -1,10 +1,17 @@
 {
   "type": "pasterdream:claypan",
-  "fluid":
-  {
-    "fluid": "pasterdream:apple_juice",
-    "amount": 125
-  },
-  "result": "minecraft:sugar",
+  "fluidInputs":
+  [
+    {
+      "fluid": "pasterdream:apple_juice",
+      "amount": 125
+    }
+  ],
+  "itemOutputs":
+  [
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
   "processingTime": 6000
 }

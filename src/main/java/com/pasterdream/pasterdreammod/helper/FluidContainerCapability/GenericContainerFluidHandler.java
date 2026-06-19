@@ -5,7 +5,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 
-public class GenericContainerFluidHandler  implements IFluidHandlerItem
+public class GenericContainerFluidHandler implements IFluidHandlerItem
 {
     private ItemStack inputItem;
     private Item item;

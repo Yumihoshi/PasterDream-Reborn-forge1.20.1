@@ -1,24 +1,15 @@
 package com.pasterdream.pasterdreammod.world.block.claypan;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.pasterdream.pasterdreammod.PasterDreamMod;
-import com.pasterdream.pasterdreammod.component.FluidSlot;
+import com.pasterdream.pasterdreammod.helper.AbstractContainerMenuWithFluidSlot.AbstractContainerScreenWithFluidSlot;
 import com.pasterdream.pasterdreammod.helper.RenderHelper.GUIBackGroundRender;
-import com.pasterdream.pasterdreammod.init.ModNetwork;
-import com.pasterdream.pasterdreammod.network.FluidSlotInteractPacket;
-import io.netty.buffer.Unpooled;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class ClaypanScreen extends AbstractContainerScreen<ClaypanMenu>
+public class ClaypanScreen extends AbstractContainerScreenWithFluidSlot<ClaypanMenu>
 {
-    private FluidSlot fluidSlot;
-
     public ClaypanScreen(ClaypanMenu menu, Inventory inv, Component title)
     {
         super(menu, inv, title);
@@ -30,14 +21,6 @@ public class ClaypanScreen extends AbstractContainerScreen<ClaypanMenu>
     protected void init()
     {
         super.init();
-        fluidSlot = new FluidSlot(leftPos + 49, topPos + 5, () -> menu.getBlockEntity().getFluidTank().getFluid(), button ->
-        {
-            FriendlyByteBuf extraData = new FriendlyByteBuf(Unpooled.buffer());
-            extraData.writeBlockPos(menu.getBlockEntity().getBlockPos());
-            extraData.writeInt(0);
-            ModNetwork.CHANNEL.sendToServer(new FluidSlotInteractPacket(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "block_entity"), extraData, button == 0));
-        });
-        addRenderableWidget(fluidSlot);
     }
 
     @Override
@@ -58,6 +41,8 @@ public class ClaypanScreen extends AbstractContainerScreen<ClaypanMenu>
 
         int lastTick = maxProgress - progress;
         guiGraphics.drawCenteredString(minecraft.getInstance().font, String.format("%02d", (lastTick / 72000)) + "h" + String.format("%02d", ((lastTick % 72000) / 1200)) + "m" + String.format("%02d", ((lastTick % 1200) / 20)) + "s" + String.format("%02d", (lastTick % 20)) + "tick", leftPos + (imageWidth / 2), topPos + 29, 0xFFFFFFFF);
+
+        super.renderBg(guiGraphics, partialTick, mouseX, mouseY);
     }
 
     @Override

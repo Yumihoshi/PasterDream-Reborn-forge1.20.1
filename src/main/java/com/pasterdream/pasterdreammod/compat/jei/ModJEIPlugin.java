@@ -7,9 +7,9 @@ import com.pasterdream.pasterdreammod.compat.jei.dreamcauldronrecipe.DreamCauldr
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModFluids;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
-import com.pasterdream.pasterdreammod.recipe.claypan.IClaypanRecipe;
-import com.pasterdream.pasterdreammod.recipe.dreamcauldron.IDreamCauldronRecipe;
+import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipe;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanScreen;
+import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipe;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.forge.ForgeTypes;
@@ -41,10 +41,10 @@ public class ModJEIPlugin implements IModPlugin
         if (level != null)
         {
             RecipeManager recipeManager = level.getRecipeManager();
-            List<IClaypanRecipe> claypanRecipes = recipeManager.getAllRecipesFor(ModRecipes.CLAYPAN.get());
+            List<ClaypanRecipe> claypanRecipes = recipeManager.getAllRecipesFor(ModRecipes.CLAYPAN.get());
             registration.addRecipes(ClaypanRecipeCategory.CLAYPAN_RECIPE_TYPE, claypanRecipes);
 
-            List<IDreamCauldronRecipe> dreamCauldronRecipes = recipeManager.getAllRecipesFor(ModRecipes.DREAM_CAULDRON.get());
+            List<DreamCauldronRecipe> dreamCauldronRecipes = recipeManager.getAllRecipesFor(ModRecipes.DREAM_CAULDRON.get());
             registration.addRecipes(DreamCauldronRecipeCategory.DREAM_CAULDRON_RECIPE_TYPE, dreamCauldronRecipes.stream().map(DreamCauldronJEIRecipe::new).collect(Collectors.toList()));
         }
     }

@@ -1,10 +1,7 @@
 package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
-import com.pasterdream.pasterdreammod.network.DreamCauldronCraftPacket;
-import com.pasterdream.pasterdreammod.network.FluidSlotInteractPacket;
-import com.pasterdream.pasterdreammod.network.FluidSoundPacket;
-import com.pasterdream.pasterdreammod.network.MortarFluidInteractPacket;
+import com.pasterdream.pasterdreammod.network.*;
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.IsNotNeedSyncPacket;
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MaxMeltDreamEnergySyncPacket;
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
@@ -25,6 +22,8 @@ public class ModNetwork
 
     public static void register()
     {
+        CHANNEL.registerMessage(id++, FluidSyncPacket.class, FluidSyncPacket::encode, FluidSyncPacket::decode, FluidSyncPacket::handle);
+
         CHANNEL.registerMessage(id++, FluidSlotInteractPacket.class, FluidSlotInteractPacket::encode, FluidSlotInteractPacket::decode, FluidSlotInteractPacket::handle);
         CHANNEL.registerMessage(id++, FluidSoundPacket.class, FluidSoundPacket::encode, FluidSoundPacket::decode, FluidSoundPacket::handle);
 

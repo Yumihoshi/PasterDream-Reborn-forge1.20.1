@@ -32,13 +32,35 @@ public class MortarScreen extends AbstractContainerScreen<MortarMenu>
     {
         super.init();
 
-        inputFluidSlot0 = createFluidSlot(leftPos + 26, topPos + 5, 0, true);
-        inputFluidSlot1 = createFluidSlot(leftPos + 44, topPos + 5, 1, true);
-        inputFluidSlot2 = createFluidSlot(leftPos + 26, topPos + 23, 2, true);
-        inputFluidSlot3 = createFluidSlot(leftPos + 44, topPos + 23, 3, true);
+        inputFluidSlot0 = new FluidSlot(leftPos + 26, topPos + 5, () -> menu.getInputFluid(0), button ->
+        {
+            ModNetwork.CHANNEL.sendToServer(new MortarFluidInteractPacket(true, 0, button == 0));
+        });
 
-        outputFluidSlot0 = createFluidSlot(leftPos + 26, topPos + 67, 0, false);
-        outputFluidSlot1 = createFluidSlot(leftPos + 44, topPos + 67, 1, false);
+        inputFluidSlot1 = new FluidSlot(leftPos + 44, topPos + 5, () -> menu.getInputFluid(1), button ->
+        {
+            ModNetwork.CHANNEL.sendToServer(new MortarFluidInteractPacket(true, 1, button == 0));
+        });
+
+        inputFluidSlot2 = new FluidSlot(leftPos + 26, topPos + 23, () -> menu.getInputFluid(2), button ->
+        {
+            ModNetwork.CHANNEL.sendToServer(new MortarFluidInteractPacket(true, 2, button == 0));
+        });
+
+        inputFluidSlot3 = new FluidSlot(leftPos + 44, topPos + 23, () -> menu.getInputFluid(3), button ->
+        {
+            ModNetwork.CHANNEL.sendToServer(new MortarFluidInteractPacket(true, 3, button == 0));
+        });
+
+        outputFluidSlot0 = new FluidSlot(leftPos + 26, topPos + 67, () -> menu.getOutputFluid(0), button ->
+        {
+            ModNetwork.CHANNEL.sendToServer(new MortarFluidInteractPacket(false, 0, button == 0));
+        });
+
+        outputFluidSlot1 = new FluidSlot(leftPos + 44, topPos + 67, () -> menu.getOutputFluid(1), button ->
+        {
+            ModNetwork.CHANNEL.sendToServer(new MortarFluidInteractPacket(false, 1, button == 0));
+        });
 
         Button MortarButton = Button.builder(Component.translatable("button.pasterdream.mortarbutton"), button ->
         {
@@ -52,14 +74,6 @@ public class MortarScreen extends AbstractContainerScreen<MortarMenu>
         addRenderableWidget(outputFluidSlot0);
         addRenderableWidget(outputFluidSlot1);
         addRenderableWidget(MortarButton);
-    }
-
-    private FluidSlot createFluidSlot(int x, int y, int index, boolean isInput)
-    {
-        return new FluidSlot(x, y, () -> isInput ? menu.getInputFluidStack(index) : menu.getOutputFluidStack(index), button ->
-        {
-            ModNetwork.CHANNEL.sendToServer(new MortarFluidInteractPacket(isInput, index, button == 0));
-        });
     }
 
     @Override
