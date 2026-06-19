@@ -51,6 +51,20 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DYEDREAM_FRUIT_BUN_CAKE.get());
                         output.accept(ModItems.GLASS_JAR_OF_GOLDENROD_TEA.get());
                         output.accept(ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get());
+                        output.accept(ModItems.CAKE_BASE.get());
+                        output.accept(ModItems.RICE_CAKE.get());
+                        output.accept(ModItems.FRIED_EGG.get());
+                        output.accept(ModItems.BACON_AND_EGG.get());
+                        output.accept(ModItems.ODD_BACON_AND_EGG.get());
+                        output.accept(ModItems.HEART_CHOCOLATE.get());
+                        output.accept(ModItems.WHITE_HEART_CHOCOLATE.get());
+                        output.accept(ModItems.PINK_HEART_CHOCOLATE.get());
+                        output.accept(ModItems.BREAD_SLICE.get());
+                        output.accept(ModItems.SWISS_ROLL.get());
+                        output.accept(ModItems.SANDWICH.get());
+                        output.accept(ModItems.WAFER_BISCUIT.get());
+                        output.accept(ModItems.STUFFED_WAFER_COOKIES.get());
+                        output.accept(ModItems.FIG.get());
                     })
                     .build());
 
@@ -172,6 +186,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DYEDREAM_SAPLING.get());
                         output.accept(ModItems.PINK_MUSHROOM.get());
                         output.accept(ModItems.TALL_PINK_MUSHROOM.get());
+
+
                     })
                     .build());
 

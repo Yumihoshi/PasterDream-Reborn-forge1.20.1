@@ -57,6 +57,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.PINK_EGG.get(), "粉红蛋");
         add(ModItems.CHOCOLATE.get(), "巧克力");
         add(ModItems.DYEDREAM_FRUIT.get(), "染梦果");
+        add(ModItems.FIG.get(), "无花果");
         add(ModItems.CAKE_BASE.get(), "蛋糕胚");
         add(ModItems.CREAM_BUN_CAKE.get(), "奶油小蛋糕");
         add(ModItems.BERRY_BUN_CAKE.get(), "甜浆果小蛋糕");
@@ -67,6 +68,19 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.DYEDREAM_FRUIT_BUN_CAKE.get(), "染梦果小蛋糕");
         add(ModItems.CHOCOLATE_MATCHA_CAKE.get(), "巧克力抹茶蛋糕");
         add(ModItems.MAGIC_STONE.get(), "魔法石");
+        add(ModItems.RICE_CAKE.get(), "年糕");
+        add(ModItems.DYEDREAM_POPSICLE.get(), "染梦冰棒");
+        add(ModItems.FRIED_EGG.get(), "煎蛋");
+        add(ModItems.BACON_AND_EGG.get(), "培根煎蛋");
+        add(ModItems.ODD_BACON_AND_EGG.get(), "奇怪的培根煎蛋");
+        add(ModItems.HEART_CHOCOLATE.get(), "心形巧克力");
+        add(ModItems.WHITE_HEART_CHOCOLATE.get(), "白心形巧克力");
+        add(ModItems.PINK_HEART_CHOCOLATE.get(), "粉心形巧克力");
+        add(ModItems.BREAD_SLICE.get(), "面包片");
+        add(ModItems.SWISS_ROLL.get(), "瑞士卷");
+        add(ModItems.SANDWICH.get(), "三明治");
+        add(ModItems.WAFER_BISCUIT.get(), "威化饼干");
+        add(ModItems.STUFFED_WAFER_COOKIES.get(), "威化夹心");
 
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "染梦泥土");
