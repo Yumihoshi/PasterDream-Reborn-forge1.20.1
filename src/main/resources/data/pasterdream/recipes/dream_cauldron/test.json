@@ -1,6 +1,7 @@
 {
   "type": "pasterdream:dream_cauldron",
-  "fluidInputs": [
+  "fluidInputs":
+  [
     {
       "fluid": "pasterdream:melt_dream_liquid",
       "amount": 100
@@ -10,7 +11,8 @@
       "amount": 125
     }
   ],
-  "itemInputs": [
+  "itemInputs":
+  [
     {
       "item": "minecraft:stick"
     },
@@ -19,8 +21,10 @@
     }
   ],
   "result":
-  {
-    "item": "minecraft:diamond",
-    "count": 1
-  }
+  [
+    {
+      "item": "minecraft:diamond",
+      "count": 1
+    }
+  ]
 }

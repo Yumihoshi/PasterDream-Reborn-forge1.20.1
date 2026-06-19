@@ -4,7 +4,6 @@ import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.helper.FluidHandler.IFluidHandlerProvider;
 import com.pasterdream.pasterdreammod.init.ModBlockEntities;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
-import com.pasterdream.pasterdreammod.recipe.claypan.IClaypanRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -111,15 +110,14 @@ public class ClaypanBlockEntity extends BlockEntity implements MenuProvider, IFl
         {
             if (itemHandler.getStackInSlot(0).isEmpty())
             {
-                Optional<IClaypanRecipe> recipe = findMatchingRecipe();
+                Optional<ClaypanRecipe> recipe = findMatchingRecipe();
                 if (recipe.isPresent())
                 {
-                    IClaypanRecipe claypanRecipe = recipe.get();
-                    recipeRequiredFluid = claypanRecipe.getFluidInput();
+                    ClaypanRecipe claypanRecipe = recipe.get();
+                    recipeRequiredFluid = claypanRecipe.getInputFluidIngredients().get(0).getFluidStack();
                     if (fluidTank.getFluidAmount() >= recipeRequiredFluid.getAmount())
                     {
-                        fluidTank.drain(recipeRequiredFluid.getAmount(), IFluidHandler.FluidAction.EXECUTE);
-                        currentRecipeOutput = claypanRecipe.getResultItem(level.registryAccess()).copy();
+                        currentRecipeOutput = claypanRecipe.getOutputItemIngredients().get(0).getItems()[0];
                         maxProgress = claypanRecipe.getProcessingTime();
                         progress = 0;
                         setChanged();
@@ -130,17 +128,23 @@ public class ClaypanBlockEntity extends BlockEntity implements MenuProvider, IFl
 
         if (maxProgress > 0)
         {
+            if (fluidTank.getFluidAmount() < recipeRequiredFluid.getAmount() || fluidTank.getFluid().getFluid() != recipeRequiredFluid.getFluid())
+            {
+                resetProgress();
+            }
             progress++;
+
             setChanged();
             if (progress >= maxProgress)
             {
+                fluidTank.drain(recipeRequiredFluid.getAmount(), IFluidHandler.FluidAction.EXECUTE);
                 itemHandler.setStackInSlot(0, currentRecipeOutput.copy());
                 resetProgress();
             }
         }
     }
 
-    private Optional<IClaypanRecipe> findMatchingRecipe()
+    private Optional<ClaypanRecipe> findMatchingRecipe()
     {
         if (level == null)
         {
@@ -153,7 +157,7 @@ public class ClaypanBlockEntity extends BlockEntity implements MenuProvider, IFl
             return Optional.empty();
         }
 
-        return level.getRecipeManager().getAllRecipesFor(ModRecipes.CLAYPAN.get()).stream().filter(recipe -> recipe.getFluidInput().getFluid() == fluid.getFluid()).filter(recipe -> fluidTank.getFluidAmount() >= recipe.getFluidInput().getAmount()) .findFirst();
+        return level.getRecipeManager().getAllRecipesFor(ModRecipes.CLAYPAN.get()).stream().filter(recipe -> recipe.getInputFluidIngredients().get(0).getFluid() == fluid.getFluid()).filter(recipe -> fluidTank.getFluidAmount() >= recipe.getInputFluidIngredients().get(0).getAmount()).findFirst();
     }
 
     private void resetProgress()
@@ -242,7 +246,12 @@ public class ClaypanBlockEntity extends BlockEntity implements MenuProvider, IFl
     @Override
     public IFluidHandler getFluidHandler(int tankIndex)
     {
-        return this.fluidTank;
+        return fluidTank;
+    }
+
+    public IItemHandler getItemHandler()
+    {
+        return itemHandler;
     }
 
     public int getProgress()

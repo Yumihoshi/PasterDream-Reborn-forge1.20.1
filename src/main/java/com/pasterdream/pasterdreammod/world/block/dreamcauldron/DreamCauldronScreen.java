@@ -1,25 +1,16 @@
 package com.pasterdream.pasterdreammod.world.block.dreamcauldron;
 
-import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.component.DreamCauldronButton;
-import com.pasterdream.pasterdreammod.component.FluidSlot;
+import com.pasterdream.pasterdreammod.helper.AbstractContainerMenuWithFluidSlot.AbstractContainerScreenWithFluidSlot;
 import com.pasterdream.pasterdreammod.helper.RenderHelper.GUIBackGroundRender;
 import com.pasterdream.pasterdreammod.init.ModNetwork;
 import com.pasterdream.pasterdreammod.network.DreamCauldronCraftPacket;
-import com.pasterdream.pasterdreammod.network.FluidSlotInteractPacket;
-import io.netty.buffer.Unpooled;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class DreamCauldronScreen extends AbstractContainerScreen<DreamCauldronMenu>
+public class DreamCauldronScreen extends AbstractContainerScreenWithFluidSlot<DreamCauldronMenu>
 {
-    private FluidSlot fluidSlot0;
-    private FluidSlot fluidSlot1;
-
     public DreamCauldronScreen(DreamCauldronMenu menu, Inventory inventory, Component title)
     {
         super(menu, inventory, title);
@@ -31,25 +22,6 @@ public class DreamCauldronScreen extends AbstractContainerScreen<DreamCauldronMe
     protected void init()
     {
         super.init();
-
-        fluidSlot0 = new FluidSlot(leftPos + 162, topPos + 18, () -> menu.getBlockEntity().getFluidTank(0).getFluid(), button ->
-        {
-            FriendlyByteBuf extra = new FriendlyByteBuf(Unpooled.buffer());
-            extra.writeBlockPos(menu.getBlockEntity().getBlockPos());
-            extra.writeInt(0);
-            ModNetwork.CHANNEL.sendToServer(new FluidSlotInteractPacket(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "block_entity"), extra, button == 0));
-        });
-        addRenderableWidget(fluidSlot0);
-
-        fluidSlot1 = new FluidSlot(leftPos + 9, topPos + 45, () -> menu.getBlockEntity().getFluidTank(1).getFluid(), button ->
-        {
-            FriendlyByteBuf extra = new FriendlyByteBuf(Unpooled.buffer());
-            extra.writeBlockPos(menu.getBlockEntity().getBlockPos());
-            extra.writeInt(1);
-            ModNetwork.CHANNEL.sendToServer(new FluidSlotInteractPacket(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "block_entity"), extra, button == 0));
-        });
-        addRenderableWidget(fluidSlot1);
-
         addRenderableWidget(new DreamCauldronButton(leftPos + 71, topPos + 67, button -> ModNetwork.CHANNEL.sendToServer(new DreamCauldronCraftPacket(menu.getBlockEntity().getBlockPos()))));
     }
 
@@ -59,6 +31,7 @@ public class DreamCauldronScreen extends AbstractContainerScreen<DreamCauldronMe
         GUIBackGroundRender.rendDreamCauldronGUI(guiGraphics, leftPos + 9, topPos);
         GUIBackGroundRender.rendPasterDreamInventoryGUI(guiGraphics, leftPos + 5, topPos + 105);
         GUIBackGroundRender.rendDreamCauldronMeltDreamLiquidBar(guiGraphics, leftPos + 149, topPos + 19, menu.getBlockEntity().getFluidTank(0).getFluid().getAmount() / 2000.0);
+        super.renderBg(guiGraphics, partialTick, mouseX, mouseY);
     }
 
     @Override

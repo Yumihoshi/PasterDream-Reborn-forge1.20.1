@@ -1,37 +1,46 @@
 package com.pasterdream.pasterdreammod.world.block.claypan;
 
+import com.pasterdream.pasterdreammod.helper.AbstractContainerMenuWithFluidSlot.AbstractContainerMenuWithFluidSlot;
+import com.pasterdream.pasterdreammod.helper.AbstractContainerMenuWithFluidSlot.FluidContainer;
+import com.pasterdream.pasterdreammod.helper.AbstractContainerMenuWithFluidSlot.FluidSlot;
 import com.pasterdream.pasterdreammod.init.ModMenus;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.fluids.capability.IFluidHandler;
-import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.templates.FluidTank;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class ClaypanMenu extends AbstractContainerMenu
+public class ClaypanMenu extends AbstractContainerMenuWithFluidSlot
 {
     private final ClaypanBlockEntity blockEntity;
     private final ContainerData data;
+    private final FluidContainer fluidContainer;
 
     public ClaypanMenu(int id, Inventory inventory, ClaypanBlockEntity blockEntity, ServerPlayer serverPlayer)
     {
         super(ModMenus.CLAYPAN.get(), id);
         this.blockEntity = blockEntity;
+        this.fluidContainer = new ClaypanFluidContainer(blockEntity.getFluidTank());
 
         data = new SimpleContainerData(2);
         data.set(0, blockEntity.getProgress());
         data.set(1, blockEntity.getMaxProgress());
         addDataSlots(data);
 
-        LazyOptional<IItemHandler> itemHandlerCap = blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER);
-        itemHandlerCap.ifPresent(iItemHandler -> addSlot(new SlotItemHandler(iItemHandler, 0, 104, 6)));
+        addFluidSlot(new FluidSlot(fluidContainer, 0, 49, 5));
+        addSlot(new SlotItemHandler(blockEntity.getItemHandler(), 0, 104, 6)
+        {
+            @Override
+            public boolean mayPlace(ItemStack stack)
+            {
+                return false;
+            }
+        });
 
         //玩家物品栏
         for (int i = 0; i < 9; i++)
@@ -45,6 +54,7 @@ public class ClaypanMenu extends AbstractContainerMenu
         }
 
         addDataSlots(data);
+        reBuildLastFluids();
     }
 
     public ClaypanMenu(int id, Inventory inventory, ClaypanBlockEntity blockEntity)
@@ -52,9 +62,71 @@ public class ClaypanMenu extends AbstractContainerMenu
         this(id, inventory, blockEntity, null);
     }
 
-    public IFluidHandler getFluidHandler()
+    private static class ClaypanFluidContainer implements FluidContainer
     {
-        return blockEntity.getFluidTank();
+        private final FluidTank tank;
+
+        public ClaypanFluidContainer(FluidTank tank)
+        {
+            this.tank = tank;
+        }
+
+        @Override
+        public int getFluidContainerSize()
+        {
+            return 1;
+        }
+
+        @Override
+        public FluidStack getFluid(int index)
+        {
+            return index == 0 ? tank.getFluid() : FluidStack.EMPTY;
+        }
+
+        @Override
+        public void setFluid(int index, FluidStack stack)
+        {
+            if (index == 0)
+            {
+                tank.setFluid(stack);
+            }
+        }
+
+        @Override
+        public int getMaxFluidCapacity(int index)
+        {
+            return tank.getCapacity();
+        }
+
+        @Override
+        public void setChanged()
+        {
+
+        }
+
+        @Override
+        public boolean stillValid(Player player)
+        {
+            return true;
+        }
+
+        @Override
+        public boolean canPlaceFluid(int index, FluidStack stack)
+        {
+            return true;
+        }
+
+        @Override
+        public boolean canTakeFluid(int index, Player player)
+        {
+            return true;
+        }
+    }
+
+    @Override
+    public FluidContainer getFluidContainer()
+    {
+        return fluidContainer;
     }
 
     @Override
@@ -74,9 +146,9 @@ public class ClaypanMenu extends AbstractContainerMenu
 
         ItemStack stack = slot.getItem();
         ItemStack copy = stack.copy();
-        if (index == 0)
+        if (index == 1)
         {
-            if (!this.moveItemStackTo(stack, 1, 37, true))
+            if (!this.moveItemStackTo(stack, 2, 38, true))
             {
                 return ItemStack.EMPTY;
             }

@@ -1,10 +1,12 @@
 package com.pasterdream.pasterdreammod.compat.jei.claypanrecipe;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.helper.fluidingredient.FluidIngredient;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
-import com.pasterdream.pasterdreammod.recipe.claypan.IClaypanRecipe;
+import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -14,13 +16,19 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraftforge.fluids.FluidStack;
 
-public class ClaypanRecipeCategory implements IRecipeCategory<IClaypanRecipe>
+import java.util.List;
+
+public class ClaypanRecipeCategory implements IRecipeCategory<ClaypanRecipe>
 {
-    public static final RecipeType<IClaypanRecipe> CLAYPAN_RECIPE_TYPE = new RecipeType<>(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "claypan"), IClaypanRecipe.class);
+    public static final RecipeType<ClaypanRecipe> CLAYPAN_RECIPE_TYPE = new RecipeType<>(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "claypan"), ClaypanRecipe.class);
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/claypan/claypan.png");
     private final IDrawable background;
     private final IDrawable icon;
@@ -32,7 +40,7 @@ public class ClaypanRecipeCategory implements IRecipeCategory<IClaypanRecipe>
     }
 
     @Override
-    public RecipeType<IClaypanRecipe> getRecipeType()
+    public RecipeType<ClaypanRecipe> getRecipeType()
     {
         return CLAYPAN_RECIPE_TYPE;
     }
@@ -62,7 +70,7 @@ public class ClaypanRecipeCategory implements IRecipeCategory<IClaypanRecipe>
     }
 
     @Override
-    public void draw(IClaypanRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY)
+    public void draw(ClaypanRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY)
     {
         int time = recipe.getProcessingTime();
         background.draw(guiGraphics);
@@ -70,9 +78,28 @@ public class ClaypanRecipeCategory implements IRecipeCategory<IClaypanRecipe>
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, IClaypanRecipe recipe, IFocusGroup focuses)
+    public void setRecipe(IRecipeLayoutBuilder builder, ClaypanRecipe recipe, IFocusGroup focuses)
     {
-        builder.addSlot(RecipeIngredientRole.INPUT, 6, 6).addFluidStack(recipe.getFluidInput().getFluid(), recipe.getFluidInput().getAmount()).setFluidRenderer(recipe.getFluidInput().getAmount(), false, 16, 16);
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 60, 6).addItemStack(recipe.getResultItem(null));
+        List<FluidIngredient> fluidInputs = recipe.getInputFluidIngredients();
+        if (!fluidInputs.isEmpty())
+        {
+            FluidIngredient fluidIngredient = fluidInputs.get(0);
+            Fluid fluid = fluidIngredient.getFluid();
+            int amount = fluidIngredient.getAmount();
+            CompoundTag nbt = fluidIngredient.getNbt();
+            IRecipeSlotBuilder slot = builder.addSlot(RecipeIngredientRole.INPUT, 6, 6).addFluidStack(fluid, amount, nbt).setFluidRenderer(amount, false, 16, 16);
+        }
+
+        // 物品输出
+        List<Ingredient> itemOutputs = recipe.getOutputItemIngredients();
+        if (!itemOutputs.isEmpty())
+        {
+            Ingredient outputIng = itemOutputs.get(0);
+            ItemStack outputStack = outputIng.getItems().length > 0 ? outputIng.getItems()[0] : ItemStack.EMPTY;
+            if (!outputStack.isEmpty())
+            {
+                builder.addSlot(RecipeIngredientRole.OUTPUT, 60, 6).addItemStack(outputStack);
+            }
+        }
     }
 }

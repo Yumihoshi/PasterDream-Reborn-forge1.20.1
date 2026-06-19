@@ -29,20 +29,6 @@ public class MortarItem extends Item
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide)
         {
-            CompoundTag tag = stack.getOrCreateTag();
-            if (!tag.contains("InputFluids"))
-            {
-                ListTag inputFluids = new ListTag();
-                for (int i = 0; i < 4; i++) inputFluids.add(new CompoundTag());
-                tag.put("InputFluids", inputFluids);
-            }
-            if (!tag.contains("OutputFluids"))
-            {
-                ListTag outputFluids = new ListTag();
-                for (int i = 0; i < 2; i++) outputFluids.add(new CompoundTag());
-                tag.put("OutputFluids", outputFluids);
-            }
-
             NetworkHooks.openScreen((ServerPlayer) player, new MenuProvider()
             {
                 @Override

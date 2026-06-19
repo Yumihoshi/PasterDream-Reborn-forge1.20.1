@@ -1,11 +1,12 @@
 package com.pasterdream.pasterdreammod.world.block.dreamcauldron;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.helper.AbstractContainerMenuWithFluidSlot.FluidContainer;
 import com.pasterdream.pasterdreammod.helper.FluidHandler.IFluidHandlerProvider;
-import com.pasterdream.pasterdreammod.helper.recipematchresult.DreamCauldronRecipeMatchResult;
 import com.pasterdream.pasterdreammod.init.ModBlockEntities;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
-import com.pasterdream.pasterdreammod.recipe.dreamcauldron.DreamCauldronRecipe;
+import com.pasterdream.pasterdreammod.recipe.GenericPasterDreamRecipe;
+import com.pasterdream.pasterdreammod.recipe.GenericPasterDreamRecipeMatchResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -18,6 +19,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -39,6 +41,7 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
     private static final int FLUID0_CAPACITY = 2000;
     private static final int FLUID1_CAPACITY = 8000;
     private static final int ITEM_INPUT_SLOTS = 3;
+    private static final int OUTPUT_SLOT_INDEX = 3;
 
     public DreamCauldronBlockEntity(BlockPos pos, BlockState state)
     {
@@ -63,18 +66,18 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
         }
     };
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(ITEM_INPUT_SLOTS + 1)
+    private final ItemStackHandler itemHandler = new ItemStackHandler(4)
     {
         @Override
-        protected void onContentsChanged(int slot)
+        protected void onContentsChanged(int slotIndex)
         {
             setChangedAndSync();
         }
 
         @Override
-        public boolean isItemValid(int slot, ItemStack stack)
+        public boolean isItemValid(int slotIndex, ItemStack stack)
         {
-            return slot != ITEM_INPUT_SLOTS;
+            return slotIndex != OUTPUT_SLOT_INDEX;
         }
     };
 
@@ -115,13 +118,13 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
 
     public boolean canCraft()
     {
-        DreamCauldronRecipeMatchResult result = findMatchingRecipe();
+        GenericPasterDreamRecipeMatchResult result = findMatchingRecipe();
         if (result == null)
         {
             return false;
         }
 
-        ItemStack output = result.recipe().getResultItem(null);
+        ItemStack output = getOutputFromRecipe(result.recipe());
         return canFitOutput(output);
     }
 
@@ -132,51 +135,50 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
             return;
         }
 
-        DreamCauldronRecipeMatchResult result = findMatchingRecipe();
+        GenericPasterDreamRecipeMatchResult result = findMatchingRecipe();
         if (result == null)
         {
             return;
         }
 
-        DreamCauldronRecipe recipe = result.recipe();
+        GenericPasterDreamRecipe recipe = result.recipe();
 
         //消耗流体
-        for (int i = 0; i < recipe.getFluidIngredients().size(); i++)
+        for (int i = 0; i < recipe.getInputFluidIngredients().size(); i++)
         {
             int slot = result.fluidSlotMap()[i];
-            int amount = recipe.getFluidIngredients().get(i).getAmount();
+            int amount = recipe.getInputFluidIngredients().get(i).getAmount();
             fluidTanks[slot].drain(amount, IFluidHandler.FluidAction.EXECUTE);
         }
 
-        //消耗物品（每个输入槽消耗1个）
-        for (int i = 0; i < recipe.getItemIngredients().size(); i++)
+        //消耗物品
+        for (int i = 0; i < recipe.getInputItemIngredients().size(); i++)
         {
             int slot = result.itemSlotMap()[i];
             itemHandler.extractItem(slot, 1, false);
         }
 
         //产出
-        ItemStack output = recipe.getResultItem(null);
-        if (itemHandler.getStackInSlot(ITEM_INPUT_SLOTS).isEmpty())
+        ItemStack output = getOutputFromRecipe(recipe);
+        if (!output.isEmpty())
         {
-            itemHandler.setStackInSlot(ITEM_INPUT_SLOTS, output.copy());
-        }
-            else
+            ItemStack existing = itemHandler.getStackInSlot(3);
+            if (existing.isEmpty())
             {
-                //堆叠
-                ItemStack existing = itemHandler.getStackInSlot(ITEM_INPUT_SLOTS);
+                itemHandler.setStackInSlot(3, output.copy());
+            }
+            else
                 if (ItemStack.isSameItemSameTags(existing, output) && existing.getCount() + output.getCount() <= existing.getMaxStackSize())
                 {
                     existing.grow(output.getCount());
-                    itemHandler.setStackInSlot(ITEM_INPUT_SLOTS, existing);
                 }
-            }
+        }
         setChangedAndSync();
     }
 
     //查找匹配的配方，返回匹配结果
     @Nullable
-    private DreamCauldronRecipeMatchResult findMatchingRecipe()
+    private GenericPasterDreamRecipeMatchResult findMatchingRecipe()
     {
         if (level == null)
         {
@@ -207,6 +209,21 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
 
         //遍历配方
         return level.getRecipeManager().getAllRecipesFor(ModRecipes.DREAM_CAULDRON.get()).stream().map(recipe -> recipe.matchesWithSlots(fluidStacks, itemStacks)).filter(Optional::isPresent).map(Optional::get).findFirst().orElse(null);
+    }
+
+    //获取配方输出
+    private ItemStack getOutputFromRecipe(GenericPasterDreamRecipe recipe)
+    {
+        if (!recipe.getOutputItemIngredients().isEmpty())
+        {
+            Ingredient ingredient = recipe.getOutputItemIngredients().get(0);
+            ItemStack[] stacks = ingredient.getItems();
+            if (stacks.length > 0)
+            {
+                return stacks[0].copy();
+            }
+        }
+        return ItemStack.EMPTY;
     }
 
     //检查输出槽是否能容纳
@@ -310,5 +327,10 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
     public FluidTank getFluidTank(int tankIndex)
     {
         return fluidTanks[tankIndex];
+    }
+
+    public FluidTank[] getFluidTanks()
+    {
+        return fluidTanks;
     }
 }

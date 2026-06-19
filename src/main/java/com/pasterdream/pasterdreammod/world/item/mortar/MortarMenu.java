@@ -11,26 +11,27 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
 public class MortarMenu extends AbstractContainerMenu
 {
-    private final MortarInventory inventory;
+    private final MortarDataHandler dataHandler;
     private final ItemStack container;
-    private final IItemHandler itemHandler;
-    private static final int INPUT_FLUID_SLOTS = 4;
-    private static final int OUTPUT_FLUID_SLOTS = 2;
+
+    private IItemHandler itemHandler;
 
     public MortarMenu(int id, Inventory inventory, ItemStack container, InteractionHand hand)
     {
         super(ModMenus.MORTAR.get(), id);
         this.container = container;
-        this.inventory = new MortarInventory(container);
-        this.itemHandler = new InvWrapper(this.inventory);
+        this.dataHandler = new MortarDataHandler(container);
+        //this.inventory = new MortarInventory(dataHandler);
+        this.itemHandler = new InvWrapper(inventory);
 
-        initNBT();
+
 
         for (int row = 0; row < 2; row++)
         {
@@ -67,103 +68,54 @@ public class MortarMenu extends AbstractContainerMenu
         }
     }
 
-    private void initNBT()
+    public MortarDataHandler getDataHandler()
     {
-        CompoundTag tag = container.getOrCreateTag();
-
-        if (!tag.contains("InputFluids"))
-        {
-            ListTag list = new ListTag();
-            for (int i = 0; i < INPUT_FLUID_SLOTS; i++)
-            {
-                list.add(new CompoundTag());
-            }
-            tag.put("InputFluids", list);
-        }
-
-        if (!tag.contains("OutputFluids"))
-        {
-            ListTag list = new ListTag();
-            for (int i = 0; i < OUTPUT_FLUID_SLOTS; i++)
-            {
-                list.add(new CompoundTag());
-            }
-            tag.put("OutputFluids", list);
-        }
-    }
-
-    private ListTag getFluidList(String key)
-    {
-        return container.getOrCreateTag().getList(key, Tag.TAG_LIST);
-    }
-
-    public FluidStack getInputFluidStack(int index)
-    {
-        ListTag list = getFluidList("InputFluids");
-        if (index < 0 || index >= list.size())
-        {
-            return FluidStack.EMPTY;
-        }
-        return FluidStack.loadFluidStackFromNBT(list.getCompound(index));
-    }
-
-    public void setInputFluidStack(int index, FluidStack stack)
-    {
-        ListTag list = getFluidList("InputFluids");
-        if (index < 0 || index >= list.size())
-        {
-            return;
-        }
-        CompoundTag fluidTag = list.getCompound(index);
-        if (stack.isEmpty())
-        {
-            list.set(index, new CompoundTag());
-        }
-            else
-            {
-                stack.writeToNBT(fluidTag);
-            }
-        container.getOrCreateTag().put("InputFluids", list);
-    }
-
-    public FluidStack getOutputFluidStack(int index)
-    {
-        ListTag list = getFluidList("OutputFluids");
-        if (index < 0 || index >= list.size())
-        {
-            return FluidStack.EMPTY;
-        }
-        return FluidStack.loadFluidStackFromNBT(list.getCompound(index));
-    }
-
-    public void setOutputFluidStack(int index, FluidStack stack)
-    {
-        ListTag list = getFluidList("OutputFluids");
-        if (index < 0 || index >= list.size())
-        {
-            return;
-        }
-
-        CompoundTag fluidTag = list.getCompound(index);
-        if (stack.isEmpty())
-        {
-            list.set(index, new CompoundTag());
-        }
-        else
-            {
-                stack.writeToNBT(fluidTag);
-            }
-        container.getOrCreateTag().put("OutputFluids", list);
-    }
-
-    public MortarInventory getInventory()
-    {
-        return inventory;
+        return dataHandler;
     }
 
     public ItemStack getContainer()
     {
         return container;
+    }
+
+    public FluidStack getInputFluid(int index)
+    {
+        return dataHandler.getInputFluid(index);
+    }
+
+    public void setInputFluid(int index, FluidStack stack)
+    {
+        dataHandler.setInputFluid(index, stack);
+    }
+
+    public FluidStack getOutputFluid(int index)
+    {
+        return dataHandler.getOutputFluid(index);
+    }
+
+    public void setOutputFluid(int index, FluidStack stack)
+    {
+        dataHandler.setOutputFluid(index, stack);
+    }
+
+    public ItemStack getInputItem(int index)
+    {
+        return dataHandler.getInputItem(index);
+    }
+
+    public void setInputItem(int index, ItemStack stack)
+    {
+        dataHandler.setInputItem(index, stack);
+    }
+
+    public ItemStack getOutputItem(int index)
+    {
+        return dataHandler.getOutputItem(index);
+    }
+
+    public void setOutputItem(int index, ItemStack stack)
+    {
+        dataHandler.setOutputItem(index, stack);
     }
 
     @Override

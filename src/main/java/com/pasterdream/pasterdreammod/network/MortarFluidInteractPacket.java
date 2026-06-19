@@ -1,6 +1,8 @@
 package com.pasterdream.pasterdreammod.network;
 
+import com.pasterdream.pasterdreammod.world.item.mortar.MortarDataHandler;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
+import com.pasterdream.pasterdreammod.world.item.mortar.MortarMenu;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -50,35 +52,38 @@ public class MortarFluidInteractPacket
                 return;
             }
 
-            ItemStack mortarItemStack = player.getMainHandItem();
-            if (!(mortarItemStack.getItem() instanceof MortarItem))
+            if (!(player.containerMenu instanceof MortarMenu menu))
             {
-                mortarItemStack = player.getOffhandItem();
-                if (!(mortarItemStack.getItem() instanceof MortarItem))
-                {
-                    return;
-                }
-            }
-
-            String key = message.isInput ? "InputFluids" : "OutputFluids";
-            ListTag list = mortarItemStack.getOrCreateTag().getList(key, Tag.TAG_LIST);
-
-            if (message.index < 0 || message.index >= list.size())
-            {
-                System.err.println("message.index = " + message.index);
-                System.out.println("list.size() = " + list.size());
+                System.out.println("player.containerMenu is not MortarMenu");
                 return;
             }
 
-            CompoundTag fluidTag = list.getCompound(message.index);
-            FluidStack current = FluidStack.loadFluidStackFromNBT(fluidTag);
+            MortarDataHandler dataHandler = menu.getDataHandler();
+            String key = message.isInput ? "InputFluids" : "OutputFluids";
+            ListTag list = dataHandler.getContainer().getOrCreateTag().getList(key, Tag.TAG_LIST);
+            if (message.index < 0 || message.index >= list.size())
+            {
+                System.err.println("Invalid index: " + message.index + ", list size: " + list.size());
+                return;
+            }
+
+            FluidStack current ;
+            if(message.isInput)
+            {
+                current = dataHandler.getInputFluid(message.index);
+            }
+                else
+                {
+                    current = dataHandler.getOutputFluid(message.index);
+                }
+
             ItemStack heldItem = player.containerMenu.getCarried();
             if (heldItem.isEmpty())
             {
                 return;
             }
 
-            IFluidHandler handler = new FluidHandlerWrapper(list, message.index, mortarItemStack, key);
+            IFluidHandler handler = new FluidHandlerWrapper(list, message.index, dataHandler.getContainer(), key);
             FluidActionResult result;
             if (message.fillMode)
             {
@@ -91,7 +96,7 @@ public class MortarFluidInteractPacket
 
             if (result.isSuccess())
             {
-                player.containerMenu.setCarried(result.getResult());
+                player.containerMenu.setCarried(result.getResult());    //wrapper中会自动保存数据
             }
         });
         context.get().setPacketHandled(true);
