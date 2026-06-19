@@ -79,6 +79,14 @@
 | `ice_bud_0`                      | `ice_bud`                        | 重命名，删除 `_0` 后缀，仅此一种变体                         | 无需客制化类，直接用 `AmethystClusterBlock`                  |
 | `cloud`                         | `cloud`                          | 不改                                        | 无需客制化类，直接用 `HalfTransparentBlock`，旧版手动覆写 `skipRendering`/`propagatesSkylightDown` 等，新版 `HalfTransparentBlock` 内置 |
 | `dark_cloud`                    | `dark_cloud`                     | 不改                                        | 无需客制化类，直接用 `HalfTransparentBlock`                  |
+| `polished_calcite`             | `polished_calcite`              | 不改                                        | 无需客制化类，直接用 `Block`                                  |
+| `polished_calcite_stairs`      | `polished_calcite_stairs`       | 不改                                        | 无需客制化类，直接用 `StairBlock`                             |
+| `polished_calcite_slab`        | `polished_calcite_slab`         | 不改                                        | 无需客制化类，直接用 `SlabBlock`                              |
+| `polished_calcite_wall`        | `polished_calcite_wall`         | 不改                                        | 无需客制化类，直接用 `WallBlock`                              |
+| `calcite_tiles`                | `calcite_tiles`                 | 不改 | 无需客制化类，直接用 `Block`                                  |
+| `calcite_tiles_stairs`         | `calcite_tiles_stairs`          | 不改                                        | 无需客制化类，直接用 `StairBlock`                             |
+| `calcite_tiles_slab`           | `calcite_tiles_slab`            | 不改 (旧版翻译键填错成"楼梯"，实际是台阶)           | 无需客制化类，直接用 `SlabBlock`                              |
+| `calcite_tiles_wall`           | `calcite_tiles_wall`            | 不改                                        | 无需客制化类，直接用 `WallBlock`                              |
 
 
 ---

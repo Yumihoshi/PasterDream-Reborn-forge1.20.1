@@ -312,6 +312,24 @@ public class ModItems {
     public static final RegistryObject<Item> DYEDREAM_ALLOY_BLOCK = ITEMS.register("dyedream_alloy_block",
             () -> new BlockItem(ModBlocks.DYEDREAM_ALLOY_BLOCK.get(), new Item.Properties()));
 
+    // ===== 方解石系列 =====
+    public static final RegistryObject<Item> POLISHED_CALCITE = ITEMS.register("polished_calcite",
+            () -> new BlockItem(ModBlocks.POLISHED_CALCITE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> POLISHED_CALCITE_STAIRS = ITEMS.register("polished_calcite_stairs",
+            () -> new BlockItem(ModBlocks.POLISHED_CALCITE_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> POLISHED_CALCITE_SLAB = ITEMS.register("polished_calcite_slab",
+            () -> new BlockItem(ModBlocks.POLISHED_CALCITE_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> POLISHED_CALCITE_WALL = ITEMS.register("polished_calcite_wall",
+            () -> new BlockItem(ModBlocks.POLISHED_CALCITE_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CALCITE_TILES = ITEMS.register("calcite_tiles",
+            () -> new BlockItem(ModBlocks.CALCITE_TILES.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CALCITE_TILES_STAIRS = ITEMS.register("calcite_tiles_stairs",
+            () -> new BlockItem(ModBlocks.CALCITE_TILES_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CALCITE_TILES_SLAB = ITEMS.register("calcite_tiles_slab",
+            () -> new BlockItem(ModBlocks.CALCITE_TILES_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CALCITE_TILES_WALL = ITEMS.register("calcite_tiles_wall",
+            () -> new BlockItem(ModBlocks.CALCITE_TILES_WALL.get(), new Item.Properties()));
+
     //流体桶物品
     public static final RegistryObject<Item> MELT_DREAM_LIQUID_BUCKET = ITEMS.register("melt_dream_liquid_bucket", () -> new BucketItem(ModFluids.MELT_DREAM_LIQUID, (new Item.Properties()).craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON)));
     public static final RegistryObject<Item> SHADOW_LIQUID_BUCKET = ITEMS.register("shadow_liquid_bucket", () -> new BucketItem(ModFluids.SHADOW_LIQUID, (new Item.Properties()).craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON)));

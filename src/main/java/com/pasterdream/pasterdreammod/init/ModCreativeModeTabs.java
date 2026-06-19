@@ -151,6 +151,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ICE_BUD.get());
                         output.accept(ModItems.CLOUD.get());
                         output.accept(ModItems.DARK_CLOUD.get());
+                        output.accept(ModItems.POLISHED_CALCITE.get());
+                        output.accept(ModItems.POLISHED_CALCITE_STAIRS.get());
+                        output.accept(ModItems.POLISHED_CALCITE_SLAB.get());
+                        output.accept(ModItems.POLISHED_CALCITE_WALL.get());
+                        output.accept(ModItems.CALCITE_TILES.get());
+                        output.accept(ModItems.CALCITE_TILES_STAIRS.get());
+                        output.accept(ModItems.CALCITE_TILES_SLAB.get());
+                        output.accept(ModItems.CALCITE_TILES_WALL.get());
                     })
                     .build());
 

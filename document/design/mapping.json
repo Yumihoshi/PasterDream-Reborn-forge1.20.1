@@ -61,7 +61,15 @@
     "ice_stone": "ice_stone",
     "ice_bud_0": "ice_bud",
     "cloud": "cloud",
-    "dark_cloud": "dark_cloud"
+    "dark_cloud": "dark_cloud",
+    "polished_calcite": "polished_calcite",
+    "polished_calcite_stairs": "polished_calcite_stairs",
+    "polished_calcite_slab": "polished_calcite_slab",
+    "polished_calcite_wall": "polished_calcite_wall",
+    "calcite_tiles": "calcite_tiles",
+    "calcite_tiles_stairs": "calcite_tiles_stairs",
+    "calcite_tiles_slab": "calcite_tiles_slab",
+    "calcite_tiles_wall": "calcite_tiles_wall"
   },
   "items": {
     "amber_candy": "amber_candy",

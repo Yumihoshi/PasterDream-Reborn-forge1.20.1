@@ -10,7 +10,9 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -128,6 +130,43 @@ public final class RecipeHelpers {
                 .requires(planks)
                 .unlockedBy(getHasName(planks), has(planks))
                 .save(writer);
+    }
+
+    /**
+     * 建材系列配方：楼梯(4) + 台阶(6) + 墙(6) 的合成与切石机配方。
+     */
+    public static void buildingBlockFamilyRecipes(Consumer<FinishedRecipe> writer,
+            ItemLike base, ItemLike stairs, ItemLike slab, ItemLike wall,
+            String modId) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, stairs, 4)
+                .pattern("a  ")
+                .pattern("aa ")
+                .pattern("aaa")
+                .define('a', base)
+                .unlockedBy(getHasName(base), has(base))
+                .save(writer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, slab, 6)
+                .pattern("aaa")
+                .define('a', base)
+                .unlockedBy(getHasName(base), has(base))
+                .save(writer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wall, 6)
+                .pattern("aaa")
+                .pattern("aaa")
+                .define('a', base)
+                .unlockedBy(getHasName(base), has(base))
+                .save(writer);
+
+        var ingredient = Ingredient.of(base);
+        SingleItemRecipeBuilder.stonecutting(ingredient, RecipeCategory.BUILDING_BLOCKS, stairs)
+                .unlockedBy(getHasName(base), has(base))
+                .save(writer, modId + ":" + getItemName(stairs) + "_from_stonecutting");
+        SingleItemRecipeBuilder.stonecutting(ingredient, RecipeCategory.BUILDING_BLOCKS, slab, 2)
+                .unlockedBy(getHasName(base), has(base))
+                .save(writer, modId + ":" + getItemName(slab) + "_from_stonecutting");
+        SingleItemRecipeBuilder.stonecutting(ingredient, RecipeCategory.BUILDING_BLOCKS, wall)
+                .unlockedBy(getHasName(base), has(base))
+                .save(writer, modId + ":" + getItemName(wall) + "_from_stonecutting");
     }
 
     /**

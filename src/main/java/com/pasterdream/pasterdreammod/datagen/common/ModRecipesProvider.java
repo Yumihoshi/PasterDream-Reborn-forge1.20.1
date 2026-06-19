@@ -37,6 +37,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         dustRecipes(pWriter);
         quartzRecipes(pWriter);
         alloyRecipes(pWriter);
+        calciteRecipes(pWriter);
         foodRecipes(pWriter);
     }
 
@@ -228,41 +229,10 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.DYEDREAM_BUD_NUGGET.get()), has(ModItems.DYEDREAM_BUD_NUGGET.get()))
                 .save(pWriter);
 
-        // 染梦水晶砖 → 4× 楼梯
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DYEDREAM_BUD_STAIRS.get(), 4)
-                .pattern("a  ")
-                .pattern("aa ")
-                .pattern("aaa")
-                .define('a', ModBlocks.DYEDREAM_BUD_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.DYEDREAM_BUD_BLOCK.get()), has(ModBlocks.DYEDREAM_BUD_BLOCK.get()))
-                .save(pWriter);
-
-        // 染梦水晶砖 → 6× 台阶
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DYEDREAM_BUD_SLAB.get(), 6)
-                .pattern("aaa")
-                .define('a', ModBlocks.DYEDREAM_BUD_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.DYEDREAM_BUD_BLOCK.get()), has(ModBlocks.DYEDREAM_BUD_BLOCK.get()))
-                .save(pWriter);
-
-        // 染梦水晶砖 → 6× 墙
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DYEDREAM_BUD_WALL.get(), 6)
-                .pattern("aaa")
-                .pattern("aaa")
-                .define('a', ModBlocks.DYEDREAM_BUD_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.DYEDREAM_BUD_BLOCK.get()), has(ModBlocks.DYEDREAM_BUD_BLOCK.get()))
-                .save(pWriter);
-
-        // 切石机配方
-        var budBlockIngredient = Ingredient.of(ModBlocks.DYEDREAM_BUD_BLOCK.get());
-        SingleItemRecipeBuilder.stonecutting(budBlockIngredient, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DYEDREAM_BUD_STAIRS.get())
-                .unlockedBy(getHasName(ModBlocks.DYEDREAM_BUD_BLOCK.get()), has(ModBlocks.DYEDREAM_BUD_BLOCK.get()))
-                .save(pWriter, PasterDreamMod.MOD_ID + ":dyedream_bud_stairs_from_stonecutting");
-        SingleItemRecipeBuilder.stonecutting(budBlockIngredient, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DYEDREAM_BUD_SLAB.get(), 2)
-                .unlockedBy(getHasName(ModBlocks.DYEDREAM_BUD_BLOCK.get()), has(ModBlocks.DYEDREAM_BUD_BLOCK.get()))
-                .save(pWriter, PasterDreamMod.MOD_ID + ":dyedream_bud_slab_from_stonecutting");
-        SingleItemRecipeBuilder.stonecutting(budBlockIngredient, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DYEDREAM_BUD_WALL.get())
-                .unlockedBy(getHasName(ModBlocks.DYEDREAM_BUD_BLOCK.get()), has(ModBlocks.DYEDREAM_BUD_BLOCK.get()))
-                .save(pWriter, PasterDreamMod.MOD_ID + ":dyedream_bud_wall_from_stonecutting");
+        RecipeHelpers.buildingBlockFamilyRecipes(pWriter,
+                ModBlocks.DYEDREAM_BUD_BLOCK.get(), ModBlocks.DYEDREAM_BUD_STAIRS.get(),
+                ModBlocks.DYEDREAM_BUD_SLAB.get(), ModBlocks.DYEDREAM_BUD_WALL.get(),
+                PasterDreamMod.MOD_ID);
     }
 
     // ===== 粉顶菇配方 =====
@@ -483,6 +453,49 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         // 染梦合金块 ↔ 锭
         RecipeHelpers.storageCompress(pWriter, ModItems.DYEDREAM_ALLOY_INGOT.get(), ModBlocks.DYEDREAM_ALLOY_BLOCK.get(), PasterDreamMod.MOD_ID);
         RecipeHelpers.storageDecompress(pWriter, ModBlocks.DYEDREAM_ALLOY_BLOCK.get(), ModItems.DYEDREAM_ALLOY_INGOT.get(), PasterDreamMod.MOD_ID);
+    }
+
+    // ===== 方解石系列配方 =====
+
+    private void calciteRecipes(Consumer<FinishedRecipe> pWriter) {
+        // 4× 方解石 → 4× 磨制方解石
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_CALCITE.get(), 4)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', Items.CALCITE)
+                .unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE))
+                .save(pWriter);
+
+        // 磨制方解石 → 楼梯/台阶/墙 + 切石机
+        RecipeHelpers.buildingBlockFamilyRecipes(pWriter,
+                ModItems.POLISHED_CALCITE.get(), ModItems.POLISHED_CALCITE_STAIRS.get(),
+                ModItems.POLISHED_CALCITE_SLAB.get(), ModItems.POLISHED_CALCITE_WALL.get(),
+                PasterDreamMod.MOD_ID);
+
+        // 2×2 磨制方解石 → 4× 方解石瓦
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.CALCITE_TILES.get(), 4)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', ModItems.POLISHED_CALCITE.get())
+                .unlockedBy(getHasName(ModItems.POLISHED_CALCITE.get()), has(ModItems.POLISHED_CALCITE.get()))
+                .save(pWriter);
+
+        // 方解石瓦 → 楼梯/台阶/墙 + 切石机
+        RecipeHelpers.buildingBlockFamilyRecipes(pWriter,
+                ModItems.CALCITE_TILES.get(), ModItems.CALCITE_TILES_STAIRS.get(),
+                ModItems.CALCITE_TILES_SLAB.get(), ModItems.CALCITE_TILES_WALL.get(),
+                PasterDreamMod.MOD_ID);
+
+        // 跨系列切石机配方
+        var calciteIngredient = Ingredient.of(Items.CALCITE);
+        var polishedCalciteIngredient = Ingredient.of(ModItems.POLISHED_CALCITE.get());
+
+        SingleItemRecipeBuilder.stonecutting(calciteIngredient, RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_CALCITE.get())
+                .unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":polished_calcite_from_stonecutting");
+        SingleItemRecipeBuilder.stonecutting(polishedCalciteIngredient, RecipeCategory.BUILDING_BLOCKS, ModItems.CALCITE_TILES.get())
+                .unlockedBy(getHasName(ModItems.POLISHED_CALCITE.get()), has(ModItems.POLISHED_CALCITE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":calcite_tiles_from_stonecutting");
     }
 
     // ===== 食物相关合成配方 =====
