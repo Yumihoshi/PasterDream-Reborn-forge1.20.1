@@ -61,6 +61,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_LOG.get())
                 .add(ModBlocks.DYEDREAM_WOOD.get());
 
+        tag(ModBlockTags.STRIPPED_LOGS)
+                .add(ModBlocks.DYEDREAM_LOG.get());
+
+        tag(ModBlockTags.STRIPPED_WOOD)
+                .add(ModBlocks.DYEDREAM_WOOD.get());
+
 
         tag(BlockTags.LEAVES)
                 .add(ModBlocks.DYEDREAM_LEAVES.get())

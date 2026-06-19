@@ -175,8 +175,9 @@ public final class RecipeHelpers {
     private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = {0.05F, 0.0625F, 0.083333336F, 0.1F};
     /** 普通树叶掉落木棍的概率 — 与原版私有字段一致 */
     private static final float[] NORMAL_LEAVES_STICK_CHANCES = {0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F};
-    /** 果实掉落概率 — 与原版苹果掉落概率一致 */
-    private static final float[] LEAVES_FRUIT_CHANCES = {0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F};
+    /** 果实掉落概率 **/
+    // MC原版概率为{0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F}
+    private static final float[] LEAVES_FRUIT_CHANCES = {0.05F, 0.0625F, 0.083333336F, 0.1F};
     /** 剪刀或精准采集条件 — 用公开 API 构建，避免引用原版 private 字段 */
     private static final LootItemCondition.Builder HAS_SHEARS_OR_SILK_TOUCH = MatchTool.toolMatches(
             ItemPredicate.Builder.item().of(Items.SHEARS))

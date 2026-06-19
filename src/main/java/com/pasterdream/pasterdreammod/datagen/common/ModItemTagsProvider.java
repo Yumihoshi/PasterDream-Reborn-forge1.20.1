@@ -42,6 +42,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
         copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
 
+        copy(ModBlockTags.STRIPPED_LOGS, ModItemTags.STRIPPED_LOGS);
+        copy(ModBlockTags.STRIPPED_WOOD, ModItemTags.STRIPPED_WOOD);
+
         // 玻璃板 - copy 方块标签到物品标签，再添加到 forge:glass_panes
         copy(ModBlockTags.MOD_GLASS_PANE, ModItemTags.MOD_GLASS_PANE);
 
