@@ -418,6 +418,43 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.RAW_DYEDREAM_ALLOY_INGOT.get()), has(ModItems.RAW_DYEDREAM_ALLOY_INGOT.get()))
                 .save(pWriter, PasterDreamMod.MOD_ID + ":dyedream_alloy_ingot_from_blasting");
 
+        // 灵魂矿土 → 灵魂粉尘（熔炉 + 高炉）
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.SOUL_ORE.get()),
+                        RecipeCategory.MISC, ModItems.SOUL_DUST.get(), 1.0F, 200)
+                .unlockedBy(getHasName(ModItems.SOUL_ORE.get()), has(ModItems.SOUL_ORE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":soul_dust_from_smelting");
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ModItems.SOUL_ORE.get()),
+                        RecipeCategory.MISC, ModItems.SOUL_DUST.get(), 1.0F, 100)
+                .unlockedBy(getHasName(ModItems.SOUL_ORE.get()), has(ModItems.SOUL_ORE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":soul_dust_from_blasting");
+
+        // 灵魂精华：1×恶魂之泪 + 8×灵魂粉尘
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SOUL_ESSENCE.get(), 1)
+                .pattern("aaa")
+                .pattern("aba")
+                .pattern("aaa")
+                .define('a', ModItems.SOUL_DUST.get())
+                .define('b', Items.GHAST_TEAR)
+                .unlockedBy(getHasName(ModItems.SOUL_DUST.get()), has(ModItems.SOUL_DUST.get()))
+                .save(pWriter);
+
+        // 魔法石：1×钻石 + 8×灵魂粉尘
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MAGIC_STONE.get(), 32)
+                .pattern("ab")
+                .pattern("bb")
+                .define('a', Items.DIAMOND)
+                .define('b', ModItems.SOUL_DUST.get())
+                .unlockedBy(getHasName(ModItems.SOUL_DUST.get()), has(ModItems.SOUL_DUST.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":magic_stone_from_diamond");
+        // 魔法石：1×冰凌晶芽 + 8×灵魂粉尘
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MAGIC_STONE.get(), 32)
+                .pattern("ab")
+                .pattern("bb")
+                .define('a', ModBlocks.ICE_BUD.get())
+                .define('b', ModItems.SOUL_DUST.get())
+                .unlockedBy(getHasName(ModItems.SOUL_DUST.get()), has(ModItems.SOUL_DUST.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":magic_stone_from_ice_bud");
+
         // 炙焰金矿石 → 炙焰金锭（熔炉 + 高炉）
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.MOLTEN_GOLD_ORE.get()),
                         RecipeCategory.MISC, ModItems.MOLTEN_GOLD_INGOT.get(), 1.0F, 200)

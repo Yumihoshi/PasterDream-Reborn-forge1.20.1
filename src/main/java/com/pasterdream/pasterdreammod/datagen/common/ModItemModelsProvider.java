@@ -90,6 +90,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.SANDWICH.get());
         basicItem(ModItems.WAFER_BISCUIT.get());
         basicItem(ModItems.STUFFED_WAFER_COOKIES.get());
+        basicItem(ModItems.SOUL_DUST.get());
+        basicItem(ModItems.SOUL_ESSENCE.get());
 
 
 

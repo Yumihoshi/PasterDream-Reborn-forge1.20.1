@@ -78,6 +78,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.SANDWICH.get(), "Sandwich");
         add(ModItems.WAFER_BISCUIT.get(), "Wafer Biscuit");
         add(ModItems.STUFFED_WAFER_COOKIES.get(), "Stuffed Wafer Cookies");
+        add(ModItems.SOUL_DUST.get(), "Soul Dust");
+        add(ModItems.SOUL_ESSENCE.get(), "Soul Essence");
 
 
 
@@ -96,6 +98,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.TITANIUM_ORE.get(), "Titanium Ore");
         add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), "Deepslate Titanium Ore");
         add(ModBlocks.MOLTEN_GOLD_ORE.get(), "Molten Gold Ore");
+        add(ModBlocks.SOUL_ORE.get(), "Soul Ore");
         add(ModBlocks.DYEDREAM_QUARTZ_BLOCK.get(), "Dye Dream Quartz Block");
         add(ModBlocks.SMOOTH_DYEDREAM_QUARTZ_BLOCK.get(), "Smooth Dye Dream Quartz Block");
         add(ModBlocks.BRICKS_DYEDREAM_QUARTZ_BLOCK.get(), "Dye Dream Quartz Bricks");
