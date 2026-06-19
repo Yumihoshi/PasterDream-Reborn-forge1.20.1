@@ -139,6 +139,7 @@
 | `pinkegg`                 | `pink_egg`                                  | 重命名，补下划线                                                  | 无需客制化类，直接用 `Item`                    |
 | `chocolate`               | `chocolate`                                 | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 | `dyedream_fruit`          | `dyedream_fruit`                            | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `fig`                     | `fig`                                       | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 | `cake_base`               | `cake_base`                                 | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 | `buncake_0`               | `cream_bun_cake`                            | 重命名，更改命名格式为 `xxx_bun_cake`                                | 无需客制化类，直接用 `Item`                    |
 | `buncake_1`               | `berry_bun_cake`                            | 重命名，更改命名格式为 `xxx_bun_cake`                                | 无需客制化类，直接用 `Item`                    |
@@ -148,6 +149,20 @@
 | `buncake_5`               | `glow_berry_bun_cake`                       | 重命名，更改命名格式为 `xxx_bun_cake`                                | 无需客制化类，直接用 `Item`                    |
 | `buncake_6`               | `dyedream_fruit_bun_cake`                   | 重命名，更改命名格式为 `xxx_bun_cake`                                | 无需客制化类，直接用 `Item`                    |
 | `chocolate_matcha_cake`   | `chocolate_matcha_cake`                     | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `ricecake`                | `rice_cake`                                 | 重命名，补下划线                                                  | 无需客制化类，直接用 `Item`                    |
+| `dyedream_popsicle`       | `dyedream_popsicle`                         | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `fried_egg`               | `fried_egg`                                 | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `bacon_and_egg`           | `bacon_and_egg`                             | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `odd_bacon_and_egg`       | `odd_bacon_and_egg`                         | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `heart_chocolate_0`       | `heart_chocolate`                           | 重命名，为心形巧克力加上颜色前缀（黑色除外）                                    | 无需客制化类，直接用 `Item`                    |
+| `heart_chocolate_1`       | `white_heart_chocolate`                     | 重命名，为心形巧克力加上颜色前缀（黑色除外）                                    | 无需客制化类，直接用 `Item`                    |
+| `heart_chocolate_2`       | `pink_heart_chocolate`                      | 重命名，为心形巧克力加上颜色前缀（黑色除外）                                    | 无需客制化类，直接用 `Item`                    |
+| `bread_slice`             | `bread_slice`                               | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `swiss_roll`              | `swiss_roll`                                | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `sandwich_0`              | `sandwich`                                  | 重命名，去除掉 `_0`                                              | 无需客制化类，直接用 `Item`                    |
+| `wafer_biscuit`           | `wafer_biscuit`                             | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `stuffed_wafer_cookies`   | `stuffed_wafer_cookies`                     | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+
 | `magic_stone`              | `magic_stone`                               | 不改，Tooltip 文字待后续实现                                        | 无需客制化类，直接用 `Item`                    |
 ---
 

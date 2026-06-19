@@ -53,6 +53,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.SALT.get(), "Salt");
         add(ModItems.PINK_EGG.get(), "Pink Egg");
         add(ModItems.DYEDREAM_FRUIT.get(), "Dyedream Fruit");
+        add(ModItems.FIG.get(), "Fig");
         add(ModItems.CHOCOLATE.get(), "Chocolate");
         add(ModItems.CAKE_BASE.get(), "Cake Base");
         add(ModItems.CREAM_BUN_CAKE.get(), "Cream Bun Cake");
@@ -64,6 +65,21 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.DYEDREAM_FRUIT_BUN_CAKE.get(), "Dyedream Fruit Bun Cake");
         add(ModItems.CHOCOLATE_MATCHA_CAKE.get(), "Chocolate Matcha Cake");
         add(ModItems.MAGIC_STONE.get(), "Magic Stone");
+        add(ModItems.RICE_CAKE.get(), "Rice Cake");
+        add(ModItems.DYEDREAM_POPSICLE.get(), "Dyedream Popsicle");
+        add(ModItems.FRIED_EGG.get(), "Fried Egg");
+        add(ModItems.BACON_AND_EGG.get(), "Bacon and Egg");
+        add(ModItems.ODD_BACON_AND_EGG.get(), "Odd Bacon and Egg");
+        add(ModItems.HEART_CHOCOLATE.get(), "Heart Chocolate");
+        add(ModItems.WHITE_HEART_CHOCOLATE.get(), "White Heart Chocolate");
+        add(ModItems.PINK_HEART_CHOCOLATE.get(), "Pink Heart Chocolate");
+        add(ModItems.BREAD_SLICE.get(), "Bread Slice");
+        add(ModItems.SWISS_ROLL.get(), "Swiss Roll");
+        add(ModItems.SANDWICH.get(), "Sandwich");
+        add(ModItems.WAFER_BISCUIT.get(), "Wafer Biscuit");
+        add(ModItems.STUFFED_WAFER_COOKIES.get(), "Stuffed Wafer Cookies");
+
+
 
 
 

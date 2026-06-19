@@ -66,6 +66,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.PINK_EGG.get());
         basicItem(ModItems.CHOCOLATE.get());
         basicItem(ModItems.DYEDREAM_FRUIT.get());;
+        basicItem(ModItems.FIG.get());
         basicItem(ModItems.CAKE_BASE.get());
         basicItem(ModItems.CREAM_BUN_CAKE.get());
         basicItem(ModItems.BERRY_BUN_CAKE.get());
@@ -76,6 +77,19 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.DYEDREAM_FRUIT_BUN_CAKE.get());
         basicItem(ModItems.CHOCOLATE_MATCHA_CAKE.get());
         basicItem(ModItems.MAGIC_STONE.get());
+        basicItem(ModItems.RICE_CAKE.get());
+        basicItem(ModItems.DYEDREAM_POPSICLE.get());
+        basicItem(ModItems.FRIED_EGG.get());
+        basicItem(ModItems.BACON_AND_EGG.get());
+        basicItem(ModItems.ODD_BACON_AND_EGG.get());
+        basicItem(ModItems.HEART_CHOCOLATE.get());
+        basicItem(ModItems.WHITE_HEART_CHOCOLATE.get());
+        basicItem(ModItems.PINK_HEART_CHOCOLATE.get());
+        basicItem(ModItems.BREAD_SLICE.get());
+        basicItem(ModItems.SWISS_ROLL.get());
+        basicItem(ModItems.SANDWICH.get());
+        basicItem(ModItems.WAFER_BISCUIT.get());
+        basicItem(ModItems.STUFFED_WAFER_COOKIES.get());
 
 
 
