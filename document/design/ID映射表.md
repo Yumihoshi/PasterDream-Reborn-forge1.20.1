@@ -90,7 +90,12 @@
 | `titanium_ore`                 | `titanium_ore`                  | 不改                                        | 无需客制化类，直接用 `Block`                                  |
 | `deepslate_titanium_ore`       | `deepslate_titanium_ore`        | 不改                                        | 无需客制化类，直接用 `Block`                                  |
 | `moltengold_ore`               | `molten_gold_ore`               | 重命名，补下划线                                | 无需客制化类，直接用 `Block`                                  |
-| `soul_ore`                     | `soul_ore`                      | 不改                                        | 客制化类 `SoulOreBlock`，覆写 getShape 降低碰撞箱（14px 高） |
+| `soul_ore`                     | `soul_ore`                      | 不改                                        | 客制化类 `SoulOreBlock`，覆写 getCollisionShape 降低碰撞箱（14px 高） |
+| `raw_titanium_block`           | `raw_titanium_block`            | 不改                                        | 无需客制化类，直接用 `Block`                                  |
+| `salt_block`                   | `salt_block`                    | 不改                                        | 无需客制化类，直接用 `Block`                                  |
+| `titanium_block`               | `titanium_block`                | 不改                                        | 无需客制化类，直接用 `Block`                                  |
+| `moltengold_block`             | `molten_gold_block`             | 重命名，补下划线                                | 无需客制化类，直接用 `Block`                                  |
+| `charged_amethyst_block`       | `charged_amethyst_block`        | 不改                                        | 无需客制化类，直接用 `HalfTransparentBlock`                    |
 
 
 ---
@@ -170,6 +175,7 @@
 | `magic_stone`              | `magic_stone`                               | 不改，Tooltip 文字待后续实现                                        | 无需客制化类，直接用 `Item`                    |
 | `soul_dust`                | `soul_dust`                                 | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 | `soul_essence`             | `soul_essence`                              | 不改                                                        | 无需客制化类，直接用 `Item`                    |
+| `charged_amethyst`           | `charged_amethyst`                           | 不改                                                        | 无需客制化类，直接用 `Item`                    |
 ---
 
 ## 流体映射
