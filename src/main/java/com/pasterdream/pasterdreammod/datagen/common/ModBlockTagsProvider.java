@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.datagen.common;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.tag.ModBlockTags;
+import com.pasterdream.pasterdreammod.util.BuildingBlockFamily;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -89,10 +90,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_LARTERN.get())
                 .add(ModBlocks.ICE_STONE.get())
                 .add(ModBlocks.ICE_BUD.get())
-                .add(ModBlocks.DYEDREAM_BUD_BLOCK.get())
-                .add(ModBlocks.DYEDREAM_BUD_STAIRS.get())
-                .add(ModBlocks.DYEDREAM_BUD_SLAB.get())
-                .add(ModBlocks.DYEDREAM_BUD_WALL.get())
                 .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK.get())
                 .add(ModBlocks.SMOOTH_DYEDREAM_QUARTZ_BLOCK.get())
                 .add(ModBlocks.BRICKS_DYEDREAM_QUARTZ_BLOCK.get())
@@ -115,12 +112,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_DUST_ORE.get())
                 .add(ModBlocks.SMALL_DYEDREAM_BUD.get())
                 .add(ModBlocks.MEDIUM_DYEDREAM_BUD.get())
-                .add(ModBlocks.LARGE_DYEDREAM_BUD.get())
-                .add(ModBlocks.DYEDREAM_BUD_BLOCK.get())
-                .add(ModBlocks.DYEDREAM_BUD_STAIRS.get())
-                .add(ModBlocks.DYEDREAM_BUD_SLAB.get())
-                .add(ModBlocks.DYEDREAM_BUD_WALL.get());
-
+                .add(ModBlocks.LARGE_DYEDREAM_BUD.get());
         // 需要钻石工具挖掘
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.DYEDREAM_ALLOY_BLOCK.get());
@@ -136,15 +128,28 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
 
         tag(BlockTags.STAIRS)
-                .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_STAIRS.get())
-                .add(ModBlocks.DYEDREAM_BUD_STAIRS.get());
+                .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_STAIRS.get());
 
         tag(BlockTags.SLABS)
-                .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_SLAB.get())
-                .add(ModBlocks.DYEDREAM_BUD_SLAB.get());
+                .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_SLAB.get());
 
         tag(BlockTags.WALLS)
-                .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL.get())
+                .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL.get());
+
+        // 建材系列批量添加
+        var budFamily = new BuildingBlockFamily(ModBlocks.DYEDREAM_BUD_BLOCK, ModBlocks.DYEDREAM_BUD_STAIRS, ModBlocks.DYEDREAM_BUD_SLAB, ModBlocks.DYEDREAM_BUD_WALL);
+        var polishedCalciteFamily = new BuildingBlockFamily(ModBlocks.POLISHED_CALCITE, ModBlocks.POLISHED_CALCITE_STAIRS, ModBlocks.POLISHED_CALCITE_SLAB, ModBlocks.POLISHED_CALCITE_WALL);
+        var calciteTilesFamily = new BuildingBlockFamily(ModBlocks.CALCITE_TILES, ModBlocks.CALCITE_TILES_STAIRS, ModBlocks.CALCITE_TILES_SLAB, ModBlocks.CALCITE_TILES_WALL);
+
+        addBuildingFamilyToTags(budFamily);
+        addBuildingFamilyToTags(polishedCalciteFamily);
+        addBuildingFamilyToTags(calciteTilesFamily);
+
+        // 染梦晶芽建材需要铁镐
+        this.tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.DYEDREAM_BUD_BLOCK.get())
+                .add(ModBlocks.DYEDREAM_BUD_STAIRS.get())
+                .add(ModBlocks.DYEDREAM_BUD_SLAB.get())
                 .add(ModBlocks.DYEDREAM_BUD_WALL.get());
 
 
@@ -200,5 +205,16 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(ModBlockTags.FORGE_GLASS_PANE)
                 .addTag(ModBlockTags.MOD_GLASS_PANE);
+    }
+
+    private void addBuildingFamilyToTags(BuildingBlockFamily family) {
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(family.base().get())
+                .add(family.stairs().get())
+                .add(family.slab().get())
+                .add(family.wall().get());
+        this.tag(BlockTags.STAIRS).add(family.stairs().get());
+        this.tag(BlockTags.SLABS).add(family.slab().get());
+        this.tag(BlockTags.WALLS).add(family.wall().get());
     }
 }

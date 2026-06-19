@@ -123,6 +123,14 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.BIG_BUBBLE.get(), "Big Bubble");
         add(ModBlocks.DYEDREAM_LARTERN.get(), "Dye Dream Lantern");
         add(ModBlocks.DYEDREAM_ALLOY_BLOCK.get(), "Dye Dream Alloy Block");
+        add(ModBlocks.POLISHED_CALCITE.get(), "Polished Calcite");
+        add(ModBlocks.POLISHED_CALCITE_STAIRS.get(), "Polished Calcite Stairs");
+        add(ModBlocks.POLISHED_CALCITE_SLAB.get(), "Polished Calcite Slab");
+        add(ModBlocks.POLISHED_CALCITE_WALL.get(), "Polished Calcite Wall");
+        add(ModBlocks.CALCITE_TILES.get(), "Calcite Tiles");
+        add(ModBlocks.CALCITE_TILES_STAIRS.get(), "Calcite Tiles Stairs");
+        add(ModBlocks.CALCITE_TILES_SLAB.get(), "Calcite Tiles Slab");
+        add(ModBlocks.CALCITE_TILES_WALL.get(), "Calcite Tiles Wall");
         add(ModBlocks.ICE_STONE.get(), "Icestone");
         add(ModBlocks.ICE_BUD.get(), "Ice Bud");
         add(ModBlocks.CLAYPAN.get(), "Claypan");

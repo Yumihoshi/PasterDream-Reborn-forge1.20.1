@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.datagen.common;
 import com.pasterdream.pasterdreammod.datagen.util.RecipeHelpers;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
+import com.pasterdream.pasterdreammod.util.BuildingBlockFamily;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -132,15 +133,21 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.DYEDREAM_ALLOY_BLOCK.get());
 
-        dropSelf(ModBlocks.DYEDREAM_BUD_BLOCK.get());
-        dropSelf(ModBlocks.DYEDREAM_BUD_STAIRS.get());
-        add(ModBlocks.DYEDREAM_BUD_SLAB.get(), block -> createSlabItemTable(ModBlocks.DYEDREAM_BUD_SLAB.get()));
-        dropSelf(ModBlocks.DYEDREAM_BUD_WALL.get());
+        buildingFamily(new BuildingBlockFamily(ModBlocks.POLISHED_CALCITE, ModBlocks.POLISHED_CALCITE_STAIRS, ModBlocks.POLISHED_CALCITE_SLAB, ModBlocks.POLISHED_CALCITE_WALL));
+        buildingFamily(new BuildingBlockFamily(ModBlocks.CALCITE_TILES, ModBlocks.CALCITE_TILES_STAIRS, ModBlocks.CALCITE_TILES_SLAB, ModBlocks.CALCITE_TILES_WALL));
+        buildingFamily(new BuildingBlockFamily(ModBlocks.DYEDREAM_BUD_BLOCK, ModBlocks.DYEDREAM_BUD_STAIRS, ModBlocks.DYEDREAM_BUD_SLAB, ModBlocks.DYEDREAM_BUD_WALL));
 
 
         dropSelf(ModBlocks.CLAYPAN.get());
         dropSelf(ModBlocks.DREAM_CAULDRON.get());
 
+    }
+
+    private void buildingFamily(BuildingBlockFamily family) {
+        dropSelf(family.base().get());
+        dropSelf(family.stairs().get());
+        add(family.slab().get(), block -> createSlabItemTable(family.slab().get()));
+        dropSelf(family.wall().get());
     }
 
     @Override

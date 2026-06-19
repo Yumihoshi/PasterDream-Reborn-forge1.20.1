@@ -125,6 +125,14 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.BIG_BUBBLE.get(), "巨型泡泡");
         add(ModBlocks.DYEDREAM_LARTERN.get(), "染梦水晶灯");
         add(ModBlocks.DYEDREAM_ALLOY_BLOCK.get(), "染梦合金块");
+        add(ModBlocks.POLISHED_CALCITE.get(), "磨制方解石");
+        add(ModBlocks.POLISHED_CALCITE_STAIRS.get(), "磨制方解石楼梯");
+        add(ModBlocks.POLISHED_CALCITE_SLAB.get(), "磨制方解石台阶");
+        add(ModBlocks.POLISHED_CALCITE_WALL.get(), "磨制方解石墙");
+        add(ModBlocks.CALCITE_TILES.get(), "方解石瓦");
+        add(ModBlocks.CALCITE_TILES_STAIRS.get(), "方解石瓦楼梯");
+        add(ModBlocks.CALCITE_TILES_SLAB.get(), "方解石瓦台阶");
+        add(ModBlocks.CALCITE_TILES_WALL.get(), "方解石瓦墙");
         add(ModBlocks.ICE_STONE.get(), "冰晶岩");
         add(ModBlocks.ICE_BUD.get(), "冰凌晶芽");
         add(ModBlocks.CLAYPAN.get(), "陶盆");

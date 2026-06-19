@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.datagen.common;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
+import com.pasterdream.pasterdreammod.util.BuildingBlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -175,17 +176,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         directionalBlock(ModBlocks.LARGE_DYEDREAM_BUD.get(), largeBud);
 
         // ===== 染梦水晶建材系列 =====
-
-        var budTex = blockTexture(ModBlocks.DYEDREAM_BUD_BLOCK.get());
-        simpleBlockWithItem(ModBlocks.DYEDREAM_BUD_BLOCK.get(), cubeAll(ModBlocks.DYEDREAM_BUD_BLOCK.get()));
-
-        stairsBlock((StairBlock) ModBlocks.DYEDREAM_BUD_STAIRS.get(), budTex);
-        blockItem(ModBlocks.DYEDREAM_BUD_STAIRS);
-
-        slabBlock((SlabBlock) ModBlocks.DYEDREAM_BUD_SLAB.get(), budTex, budTex);
-        blockItem(ModBlocks.DYEDREAM_BUD_SLAB);
-
-        wallBlock((WallBlock) ModBlocks.DYEDREAM_BUD_WALL.get(), budTex);
+        simpleBuildingFamily(new BuildingBlockFamily(ModBlocks.DYEDREAM_BUD_BLOCK, ModBlocks.DYEDREAM_BUD_STAIRS, ModBlocks.DYEDREAM_BUD_SLAB, ModBlocks.DYEDREAM_BUD_WALL));
 
         // ===== 云朵 =====
         var cloudModel = models().cubeAll(ModBlocks.CLOUD.getId().getPath(), blockTexture(ModBlocks.CLOUD.get())).renderType("translucent");
@@ -212,9 +203,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // ===== 染梦合金块 =====
         simpleBlockWithItem(ModBlocks.DYEDREAM_ALLOY_BLOCK.get(), cubeAll(ModBlocks.DYEDREAM_ALLOY_BLOCK.get()));
 
+        // ===== 方解石系列 =====
+        simpleBuildingFamily(new BuildingBlockFamily(ModBlocks.POLISHED_CALCITE, ModBlocks.POLISHED_CALCITE_STAIRS, ModBlocks.POLISHED_CALCITE_SLAB, ModBlocks.POLISHED_CALCITE_WALL));
+        simpleBuildingFamily(new BuildingBlockFamily(ModBlocks.CALCITE_TILES, ModBlocks.CALCITE_TILES_STAIRS, ModBlocks.CALCITE_TILES_SLAB, ModBlocks.CALCITE_TILES_WALL));
+
         //流体方块
         simpleBlock(ModBlocks.MELTDREAM_LIQUID.get(), models().cubeAll(ModBlocks.MELTDREAM_LIQUID.getId().getPath(), modLoc("block/meltdream_liquid_flowing")));
         simpleBlock(ModBlocks.SHADOW_LIQUID.get(), models().cubeAll(ModBlocks.SHADOW_LIQUID.getId().getPath(), modLoc("block/shadow_liquid_flowing")));
+    }
+
+    private void simpleBuildingFamily(BuildingBlockFamily family) {
+        var tex = blockTexture(family.base().get());
+        simpleBlockWithItem(family.base().get(), cubeAll(family.base().get()));
+        stairsBlock((StairBlock) family.stairs().get(), tex);
+        blockItem(family.stairs());
+        slabBlock((SlabBlock) family.slab().get(), tex, tex);
+        blockItem(family.slab());
+        wallBlock((WallBlock) family.wall().get(), tex);
     }
 
     private <T extends Block> void blockItem(RegistryObject<T> block) {
