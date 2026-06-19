@@ -44,7 +44,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
 
     private void woodRecipes(Consumer<FinishedRecipe> pWriter) {
         // 染梦原木 → 染梦木头
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.DYEDREAM_WOOD.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.DYEDREAM_WOOD.get(), 3)
                 .pattern("aa")
                 .pattern("aa")
                 .define('a', ModItems.DYEDREAM_LOG.get())
