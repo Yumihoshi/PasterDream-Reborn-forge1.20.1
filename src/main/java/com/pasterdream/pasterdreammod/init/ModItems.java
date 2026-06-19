@@ -5,7 +5,6 @@ import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamD
 import com.pasterdream.pasterdreammod.world.item.AmberCandyItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDrinkItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamFoodItem;
-import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -217,16 +216,16 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.DYEDREAM_SAND.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_GLASS = ITEMS.register("dyedream_glass",
             () -> new BlockItem(ModBlocks.DYEDREAM_GLASS.get(), new Item.Properties()));
-    public static final RegistryObject<Item> DYEDREAM_GLASSPANE = ITEMS.register("dyedream_glasspane",
-            () -> new BlockItem(ModBlocks.DYEDREAM_GLASSPANE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DYEDREAM_GLASS_PANE = ITEMS.register("dyedream_glass_pane",
+            () -> new BlockItem(ModBlocks.DYEDREAM_GLASS_PANE.get(), new Item.Properties()));
     public static final RegistryObject<Item> CARVE_DYEDREAM_GLASS = ITEMS.register("carve_dyedream_glass",
             () -> new BlockItem(ModBlocks.CARVE_DYEDREAM_GLASS.get(), new Item.Properties()));
-    public static final RegistryObject<Item> CARVE_DYEDREAM_GLASSPANE = ITEMS.register("carve_dyedream_glasspane",
-            () -> new BlockItem(ModBlocks.CARVE_DYEDREAM_GLASSPANE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CARVE_DYEDREAM_GLASS_PANE = ITEMS.register("carve_dyedream_glass_pane",
+            () -> new BlockItem(ModBlocks.CARVE_DYEDREAM_GLASS_PANE.get(), new Item.Properties()));
     public static final RegistryObject<Item> GOLD_CARVE_DYEDREAM_GLASS = ITEMS.register("gold_carve_dyedream_glass",
             () -> new BlockItem(ModBlocks.GOLD_CARVE_DYEDREAM_GLASS.get(), new Item.Properties()));
-    public static final RegistryObject<Item> GOLD_CARVE_DYEDREAM_GLASSPANE = ITEMS.register("gold_carve_dyedream_glasspane",
-            () -> new BlockItem(ModBlocks.GOLD_CARVE_DYEDREAM_GLASSPANE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> GOLD_CARVE_DYEDREAM_GLASS_PANE = ITEMS.register("gold_carve_dyedream_glass_pane",
+            () -> new BlockItem(ModBlocks.GOLD_CARVE_DYEDREAM_GLASS_PANE.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> SMALL_DYEDREAM_BUD = ITEMS.register("small_dyedream_bud",
             () -> new BlockItem(ModBlocks.SMALL_DYEDREAM_BUD.get(), new Item.Properties()));
