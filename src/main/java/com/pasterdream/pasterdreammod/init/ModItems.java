@@ -2,7 +2,6 @@ package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamDrinkAndFoodProperties;
-import com.pasterdream.pasterdreammod.world.item.AmberCandyItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDrinkItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamFoodItem;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -30,7 +29,10 @@ public class ModItems {
     public static final RegistryObject<Item> DYEDREAM_DUST_PIECE = ITEMS.register("dyedream_dust_piece",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> AMBER_CANDY = ITEMS.register("amber_candy",
-            AmberCandyItem::new);
+            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties()
+                    .food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).alwaysEat()
+                            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 60, 0), 1.0f).build())
+                    .useDuration(16)));
     public static final RegistryObject<Item> PINK_SLIMEBALL = ITEMS.register("pink_slimeball",
             () -> new Item(new Item.Properties()));
 
