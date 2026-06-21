@@ -7,7 +7,7 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
 import java.util.List;
 
-public class AddTooltip
+public class AddToolTip
 {
     public static void addTooltip(ItemTooltipEvent event)
     {
