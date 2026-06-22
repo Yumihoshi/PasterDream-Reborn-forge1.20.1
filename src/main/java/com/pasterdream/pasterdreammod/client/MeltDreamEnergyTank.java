@@ -26,7 +26,7 @@ public class MeltDreamEnergyTank
                 GUIBackGroundRender.rendMeltDreamEnergyBar(guiGraphics, 9, height - 17);
                 GUIBackGroundRender.rendMeltDreamEnergyAmountBar(guiGraphics, 12, height - 13, meltDreamEnergy / maxMeltDreamEnergy);
 
-                String meltDreamEnergyString = meltDreamEnergy + "/" + maxMeltDreamEnergy;
+                String meltDreamEnergyString = String.format("%.1f",meltDreamEnergy) + "/" + String.format("%.0f", maxMeltDreamEnergy);
                 if(Minecraft.getInstance().font.width(meltDreamEnergyString) <= 90)
                 {
                     guiGraphics.drawCenteredString(Minecraft.getInstance().font, meltDreamEnergyString, 46, height - 25, 0xFFFFFFFF);
