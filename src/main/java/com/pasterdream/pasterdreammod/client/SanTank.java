@@ -26,7 +26,7 @@ public class SanTank
                 GUIBackGroundRender.rendSanBar(guiGraphics, width - 34, height - 30);
                 GUIBackGroundRender.rendSanAmountBar(guiGraphics, width - 34, height - 30, sanValue / maxSanValue);
 
-                String sanString = sanValue + "/" + maxSanValue;
+                String sanString = sanValue + "/" + String.format("%.0f", maxSanValue);
                 if(Minecraft.getInstance().font.width(sanString) <= 38)
                 {
                     guiGraphics.drawCenteredString(Minecraft.getInstance().font, sanString, width - 20, height - 38, 0xFFFFFFFF);
