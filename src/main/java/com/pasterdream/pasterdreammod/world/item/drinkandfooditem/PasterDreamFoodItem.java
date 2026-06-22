@@ -4,14 +4,20 @@ import com.pasterdream.pasterdreammod.capability.ModCapabilities;
 import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamDrinkAndFoodProperties;
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class PasterDreamFoodItem extends Item
 {
@@ -25,6 +31,36 @@ public class PasterDreamFoodItem extends Item
         this.useDuration = properties.getUseDuration();
         this.sanAdd = properties.getSanAdd();
         this.meltDreamEnergyAdd = properties.getMeltDreamEnergyAdd();
+    }
+
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag)
+    {
+        super.appendHoverText(stack, level, tooltip, flag);
+
+        if(sanAdd != 0){
+            Component sanTooltip = Component.translatable("tooltip.pasterdreammod.san_value")
+                    .withStyle(ChatFormatting.BLUE)
+                    .append(Component.literal(formatValue(sanAdd))
+                            .withStyle(sanAdd < 0 ? ChatFormatting.RED : ChatFormatting.BLUE));
+            tooltip.add(sanTooltip);
+        }
+        if(meltDreamEnergyAdd != 0){
+            tooltip.add(
+                    Component.translatable("tooltip.pasterdreammod.melt_dream_energy", formatValue(meltDreamEnergyAdd))
+                            .withStyle(ChatFormatting.BLUE)
+            );
+        }
+    }
+
+    private static String formatValue(double value)
+    {
+        if (value == (long) value)
+        {
+            return String.format("%+d", (long) value);
+        }
+        return String.format("%+.1f", value);
     }
 
     @Override

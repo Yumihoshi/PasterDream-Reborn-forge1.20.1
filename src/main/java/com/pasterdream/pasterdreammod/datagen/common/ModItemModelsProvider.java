@@ -90,6 +90,21 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.SANDWICH.get());
         basicItem(ModItems.WAFER_BISCUIT.get());
         basicItem(ModItems.STUFFED_WAFER_COOKIES.get());
+        basicItem(ModItems.GINGERBREAD_MAN.get());
+        basicItem(ModItems.CANDY_CANE.get());
+        basicItem(ModItems.POPPING_CANDY.get());
+        basicItem(ModItems.YINHUL_COTTON_CANDY.get());
+        basicItem(ModItems.MELT_DREAM_COTTON_CANDY.get());
+        basicItem(ModItems.BUBBLE_GUM.get());
+        basicItem(ModItems.LIGHT_ORGAN.get());
+        basicItem(ModItems.JELLYFISH_MUD.get());
+        basicItem(ModItems.JELLYFISH_JELLO.get());
+        basicItem(ModItems.QUEER_SOUP.get());
+        basicItem(ModItems.LEGENDARY_DRAGON_HORN_ICE_CREAM.get());
+        basicItem(ModItems.PINEAPPLE_LOVE_SEA.get());
+        basicItem(ModItems.ELIXIR_BOTTLE.get());
+        basicItem(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get());
+        basicItem(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get());
         basicItem(ModItems.SOUL_DUST.get());
         basicItem(ModItems.SOUL_ESSENCE.get());
         basicItem(ModItems.CHARGED_AMETHYST.get());
@@ -105,11 +120,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
         withExistingParent(ModItems.DYEDREAM_SAPLING.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/dyedream_sapling"));
 
-        fenceItem(ModBlocks.DYEDREAM_PLANKS_FENCE, ModBlocks.DYEDREAM_PLANKS);
-        buttonItem(ModBlocks.DYEDREAM_PLANKS_BUTTON, ModBlocks.DYEDREAM_PLANKS);
-        basicItem(ModItems.DYEDREAM_PLANKS_DOOR.get());
-        withExistingParent(ModItems.DYEDREAM_PLANKS_PANE.getId().getPath(), mcLoc("item/generated"))
-                .texture("layer0", modLoc("block/dyedream_planks_trapdoor"));
+        fenceItem(ModBlocks.DYEDREAM_FENCE, ModBlocks.DYEDREAM_PLANKS);
+        buttonItem(ModBlocks.DYEDREAM_BUTTON, ModBlocks.DYEDREAM_PLANKS);
+        basicItem(ModItems.DYEDREAM_DOOR.get());
+        withExistingParent(ModItems.DYEDREAM_PANE.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/dyedream_trapdoor"));
 
         wallItem(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL, ModBlocks.DYEDREAM_QUARTZ_BLOCK);
 

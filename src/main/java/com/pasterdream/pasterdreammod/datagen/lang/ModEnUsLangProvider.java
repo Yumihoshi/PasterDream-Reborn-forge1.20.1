@@ -78,9 +78,21 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.SANDWICH.get(), "Sandwich");
         add(ModItems.WAFER_BISCUIT.get(), "Wafer Biscuit");
         add(ModItems.STUFFED_WAFER_COOKIES.get(), "Stuffed Wafer Cookies");
-        add(ModItems.SOUL_DUST.get(), "Soul Dust");
-        add(ModItems.SOUL_ESSENCE.get(), "Soul Essence");
-        add(ModItems.CHARGED_AMETHYST.get(), "Charged Amethyst");
+        add(ModItems.GINGERBREAD_MAN.get(), "Gingerbread Man");
+        add(ModItems.CANDY_CANE.get(), "Candy Cane");
+        add(ModItems.POPPING_CANDY.get(), "Popping Candy");
+        add(ModItems.YINHUL_COTTON_CANDY.get(), "Yinhul Cotton Candy");
+        add(ModItems.MELT_DREAM_COTTON_CANDY.get(), "Melt Dream Cotton Candy");
+        add(ModItems.BUBBLE_GUM.get(), "Bubble Gum");
+        add(ModItems.LIGHT_ORGAN.get(), "Light Organ");
+        add(ModItems.JELLYFISH_MUD.get(), "Jellyfish Mud");
+        add(ModItems.JELLYFISH_JELLO.get(), "Jellfish Jello");
+        add(ModItems.QUEER_SOUP.get(), "Queer Soup");
+        add(ModItems.LEGENDARY_DRAGON_HORN_ICE_CREAM.get(), "Legendary Dragon Horn Ice Cream");
+        add(ModItems.ELIXIR_BOTTLE.get(), "Elixir Bottle");
+        add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "Elixir Bottle of Melt Dream");
+        add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "Elixir Bottle of Rage Elixir");
+        add(ModItems.PINEAPPLE_LOVE_SEA.get(), "Pineapple Love Sea");
 
 
 
@@ -114,15 +126,15 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_SLAB.get(), "Dye Dream Quartz Slab");
         add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL.get(), "Dye Dream Quartz Wall");
         add(ModBlocks.DYEDREAM_PLANKS.get(), "Dye Dream Planks");
-        add(ModBlocks.DYEDREAM_PLANKS_STAIRS.get(), "Dye Dream Planks Stairs");
-        add(ModBlocks.DYEDREAM_PLANKS_SLAB.get(), "Dye Dream Planks Slab");
-        add(ModBlocks.DYEDREAM_PLANKS_FENCE.get(), "Dye Dream Planks Fence");
-        add(ModBlocks.DYEDREAM_PLANKS_FENCEGATE.get(), "Dye Dream Planks Fence Gate");
-        add(ModBlocks.DYEDREAM_PLANKS_PANE.get(), "Dye Dream Planks Pane");
-        add(ModBlocks.DYEDREAM_PLANKS_DOOR.get(), "Dye Dream Planks Door");
-        add(ModBlocks.DYEDREAM_PLANKS_TRAPDOOR.get(), "Dye Dream Planks Trapdoor");
-        add(ModBlocks.DYEDREAM_PLANKS_PRESSURE_PLATE.get(), "Dye Dream Planks Pressure Plate");
-        add(ModBlocks.DYEDREAM_PLANKS_BUTTON.get(), "Dye Dream Planks Button");
+        add(ModBlocks.DYEDREAM_STAIRS.get(), "Dye Dream Stairs");
+        add(ModBlocks.DYEDREAM_SLAB.get(), "Dye Dream Slab");
+        add(ModBlocks.DYEDREAM_FENCE.get(), "Dye Dream Fence");
+        add(ModBlocks.DYEDREAM_FENCE_GATE.get(), "Dye Dream Fence Gate");
+        add(ModBlocks.DYEDREAM_PANE.get(), "Dye Dream Pane");
+        add(ModBlocks.DYEDREAM_DOOR.get(), "Dye Dream Door");
+        add(ModBlocks.DYEDREAM_TRAPDOOR.get(), "Dye Dream Trapdoor");
+        add(ModBlocks.DYEDREAM_PRESSURE_PLATE.get(), "Dye Dream Pressure Plate");
+        add(ModBlocks.DYEDREAM_BUTTON.get(), "Dye Dream Button");
         add(ModBlocks.PINK_SLIME_BLOCK.get(), "Pink Slime Block");
         add(ModBlocks.PINK_MUSHROOM_BLOCK.get(), "Pink Mushroom Cap");
         add(ModBlocks.PINK_MUSHROOM_STEM.get(), "Pink Mushroom Stem");
@@ -190,7 +202,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("button.pasterdream.mortarbutton", "grinding");
 
         add("tooltip.pasterdreammod.magic_stone", "§7§oWhat kind of mage doesn't carry a few magic stones?");
-        add("tooltip.pasterdream.右键打开GUI", "§7Click mouse right button to open the GUI.");
+        add("tooltip.pasterdreammod.san_value", "SAN: ");
+        add("tooltip.pasterdreammod.melt_dream_energy", "Melt Dream Energy: %s");
 
     }
 }

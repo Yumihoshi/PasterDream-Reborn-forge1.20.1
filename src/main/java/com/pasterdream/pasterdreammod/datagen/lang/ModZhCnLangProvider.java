@@ -81,6 +81,23 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.SANDWICH.get(), "三明治");
         add(ModItems.WAFER_BISCUIT.get(), "威化饼干");
         add(ModItems.STUFFED_WAFER_COOKIES.get(), "威化夹心");
+        add(ModItems.GINGERBREAD_MAN.get(), "姜饼人");
+        add(ModItems.CANDY_CANE.get(), "拐杖糖");
+        add(ModItems.POPPING_CANDY.get(), "跳跳糖");
+        add(ModItems.YINHUL_COTTON_CANDY.get(), "银狐棉花糖");
+        add(ModItems.MELT_DREAM_COTTON_CANDY.get(), "融梦棉花糖");
+        add(ModItems.BUBBLE_GUM.get(), "泡泡糖");
+        add(ModItems.LIGHT_ORGAN.get(), "发光器官");
+        add(ModItems.JELLYFISH_MUD.get(), "水母泥");
+        add(ModItems.JELLYFISH_JELLO.get(), "水母果冻");
+        add(ModItems.QUEER_SOUP.get(), "奇异炖菜");
+        add(ModItems.LEGENDARY_DRAGON_HORN_ICE_CREAM.get(), "传说龙角冰淇淋");
+        add(ModItems.ELIXIR_BOTTLE.get(), "灵药瓶");
+        add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "融梦灵药瓶");
+        add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "狂暴战意灵药");
+        add(ModItems.PINEAPPLE_LOVE_SEA.get(), "凤梨爱琴海");
+
+
         add(ModItems.SOUL_DUST.get(), "灵魂粉尘");
         add(ModItems.SOUL_ESSENCE.get(), "灵魂精华");
         add(ModItems.CHARGED_AMETHYST.get(), "盈能紫水晶");
@@ -114,15 +131,15 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_SLAB.get(), "染梦石英台阶");
         add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL.get(), "染梦石英墙");
         add(ModBlocks.DYEDREAM_PLANKS.get(), "染梦木板");
-        add(ModBlocks.DYEDREAM_PLANKS_STAIRS.get(), "染梦木板楼梯");
-        add(ModBlocks.DYEDREAM_PLANKS_SLAB.get(), "染梦木板台阶");
-        add(ModBlocks.DYEDREAM_PLANKS_FENCE.get(), "染梦木板栅栏");
-        add(ModBlocks.DYEDREAM_PLANKS_FENCEGATE.get(), "染梦木板栅栏门");
-        add(ModBlocks.DYEDREAM_PLANKS_PANE.get(), "染梦木窗格");
-        add(ModBlocks.DYEDREAM_PLANKS_DOOR.get(), "染梦木门");
-        add(ModBlocks.DYEDREAM_PLANKS_TRAPDOOR.get(), "染梦木板活板门");
-        add(ModBlocks.DYEDREAM_PLANKS_PRESSURE_PLATE.get(), "染梦木板压力板");
-        add(ModBlocks.DYEDREAM_PLANKS_BUTTON.get(), "染梦木板按钮");
+        add(ModBlocks.DYEDREAM_STAIRS.get(), "染梦木楼梯");
+        add(ModBlocks.DYEDREAM_SLAB.get(), "染梦木台阶");
+        add(ModBlocks.DYEDREAM_FENCE.get(), "染梦木栅栏");
+        add(ModBlocks.DYEDREAM_FENCE_GATE.get(), "染梦木栅栏门");
+        add(ModBlocks.DYEDREAM_PANE.get(), "染梦木窗格");
+        add(ModBlocks.DYEDREAM_DOOR.get(), "染梦木门");
+        add(ModBlocks.DYEDREAM_TRAPDOOR.get(), "染梦木活板门");
+        add(ModBlocks.DYEDREAM_PRESSURE_PLATE.get(), "染梦木压力板");
+        add(ModBlocks.DYEDREAM_BUTTON.get(), "染梦木按钮");
         add(ModBlocks.PINK_SLIME_BLOCK.get(), "粉色粘液块");
         add(ModBlocks.PINK_MUSHROOM_BLOCK.get(), "粉顶菌菌盖");
         add(ModBlocks.PINK_MUSHROOM_STEM.get(), "粉顶菌菌柄");
@@ -190,6 +207,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("button.pasterdream.mortarbutton", "研磨");
 
         add("tooltip.pasterdreammod.magic_stone", "§7§o哪个魔法师的兜里不会踹几块魔法石呢？");
-        add("tooltip.pasterdream.右键打开GUI", "§7右键打开GUI");
+        add("tooltip.pasterdreammod.san_value", "SAN值: ");
+        add("tooltip.pasterdreammod.melt_dream_energy", "融梦能量: %s");
+
     }
 }
