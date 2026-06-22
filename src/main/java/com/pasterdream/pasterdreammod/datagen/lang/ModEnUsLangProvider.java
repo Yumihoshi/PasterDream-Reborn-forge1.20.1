@@ -190,6 +190,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("button.pasterdream.mortarbutton", "grinding");
 
         add("tooltip.pasterdreammod.magic_stone", "§7§oWhat kind of mage doesn't carry a few magic stones?");
+        add("tooltip.pasterdream.右键打开GUI", "§7Click mouse right button to open the GUI.");
 
     }
 }
