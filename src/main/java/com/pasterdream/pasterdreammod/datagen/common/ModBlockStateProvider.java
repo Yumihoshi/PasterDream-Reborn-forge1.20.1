@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.LanternBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -205,6 +206,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.DYEDREAM_ICE.get(), cubeAll(ModBlocks.DYEDREAM_ICE.get()));
         simpleBlockWithItem(ModBlocks.DYEDREAM_PACKED_ICE.get(), cubeAll(ModBlocks.DYEDREAM_PACKED_ICE.get()));
         simpleBlockWithItem(ModBlocks.DYEDREAM_SEA_LANTERN.get(), cubeAll(ModBlocks.DYEDREAM_SEA_LANTERN.get()));
+        // 染梦灯笼
+        var lanternStanding = models().withExistingParent("dyedream_lantern", mcLoc("block/template_lantern"))
+                .texture("lantern", modLoc("block/dyedream_lantern")).renderType("cutout");
+        var lanternHanging = models().withExistingParent("dyedream_lantern_hanging", mcLoc("block/template_hanging_lantern"))
+                .texture("lantern", modLoc("block/dyedream_lantern")).renderType("cutout");
+        getVariantBuilder(ModBlocks.DYEDREAM_LANTERN.get())
+                .partialState().with(LanternBlock.HANGING, false).modelForState().modelFile(lanternStanding).addModel()
+                .partialState().with(LanternBlock.HANGING, true).modelForState().modelFile(lanternHanging).addModel();
+        simpleBlockItem(ModBlocks.DYEDREAM_LANTERN.get(), lanternStanding);
 
         // ===== 冰晶岩与冰凌晶芽 =====
         simpleBlockWithItem(ModBlocks.ICE_STONE.get(), cubeAll(ModBlocks.ICE_STONE.get()));

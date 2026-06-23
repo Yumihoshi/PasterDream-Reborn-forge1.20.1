@@ -437,6 +437,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.DARK_CLOUD.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_SEA_LANTERN = ITEMS.register("dyedream_sea_lantern",
             () -> new BlockItem(ModBlocks.DYEDREAM_SEA_LANTERN.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DYEDREAM_LANTERN = ITEMS.register("dyedream_lantern",
+            () -> new BlockItem(ModBlocks.DYEDREAM_LANTERN.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> ICE_STONE = ITEMS.register("ice_stone",
             () -> new BlockItem(ModBlocks.ICE_STONE.get(), new Item.Properties()));
