@@ -94,6 +94,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "Elixir Bottle of Rage Elixir");
         add(ModItems.PINEAPPLE_LOVE_SEA.get(), "Pineapple Love Sea");
         add(ModItems.DYEDREAM_COROLLA.get(), "Dyedream Corolla");
+        add(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "Dream Notes - Dyedream World");
+        add(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "Dream Notes - Lamp Shadow World");
+        add(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get(), "Dream Notes - Wind Journey World");
+
 
 
 
@@ -197,6 +201,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_blocks_tab", "Paster Dream | Blocks");
         add("itemGroup.pasterdream.pasterdream_plants_tab", "Paster Dream | Plants");
         add("itemGroup.pasterdream.pasterdream_equipment_tab", "Paster Dream | Equipment");
+        add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "Paster Dream | Dream Notes");
 
         add("button.pasterdream.mortarbutton", "grinding");
 
@@ -205,5 +210,22 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.san_value", "SAN: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "Melt Dream Energy: ");
 
+        add("tooltip.pasterdream.developerNameList", "§dDeveloper Name List");
+        add("tooltip.pasterdream.dyedreamCreak", "§dDyedream Creak");
+        add("tooltip.pasterdream.dyedreamWorld", "§dDyedream World");
+        add("tooltip.pasterdream.pinkSlime", "§dPink Slime");
+        add("tooltip.pasterdream.whiteCorolla", "§dWhite Corolla");
+        add("tooltip.pasterdream.paleBoneNeedle", "§dPale Bone Needle");
+        add("tooltip.pasterdream.dreamFertilizer", "§dDream Fertilizer");
+        add("tooltip.pasterdream.dreamAccumulator", "§dDream Accumulator");
+
+        add("tooltip.pasterdream.theLurkersInTheShadow", "§8The Lurkers In The Shadow");
+        add("tooltip.pasterdream.infestedChurch", "§8Infested Church");
+        add("tooltip.pasterdream.depositionShadow", "§8Deposition Shadow");
+        add("tooltip.pasterdream.shadowTravelogue", "§8Shadow Travelogue");
+        add("tooltip.pasterdream.shadowDungeon", "§8Shadow Dungeon");
+        add("tooltip.pasterdream.scare", "§8Scare");
+
+        add("tooltip.pasterdream.notHaveWingsBirdHaveSpreadWingsDreamToo", "§aNot Have Wings Bird Have Spread Wings Dream Too");
     }
 }

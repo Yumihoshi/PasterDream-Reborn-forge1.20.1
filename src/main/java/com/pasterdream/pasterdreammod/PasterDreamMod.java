@@ -52,6 +52,7 @@ public class PasterDreamMod
     {
         FluidHandlerResolvers.FluidHandlerResolverRegister();
         ModFluidContainerRelation.registerFluidContainerRelation();
+        ModDreamNotesContentRelation.registerDreamNotesContentRelation();
     }
 
     //在这里输入客户端注册内容

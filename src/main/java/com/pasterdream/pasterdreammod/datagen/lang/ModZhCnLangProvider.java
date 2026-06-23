@@ -103,6 +103,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.CHARGED_AMETHYST.get(), "盈能紫水晶");
         add(ModItems.DYEDREAM_COROLLA.get(), "梦染花冠");
 
+        add(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "寻梦者笔记-染梦世界");
+        add(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "寻梦者笔记-灯影之下");
+        add(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get(), "寻梦者笔记-风之旅途");
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "染梦泥土");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "染梦草方块");
@@ -182,6 +185,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.CLAYPAN.get(), "陶盆");
         add(ModBlocks.DREAM_CAULDRON.get(), "法术工厂");
 
+
         add("fluid.pasterdream.melt_dream_liquid","融梦涌泉");
         add("fluid.pasterdream.shadow_liquid","熔融阴影");
 
@@ -204,6 +208,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_blocks_tab", "帕斯特之梦 | 方块");
         add("itemGroup.pasterdream.pasterdream_plants_tab", "帕斯特之梦 | 植物");
         add("itemGroup.pasterdream.pasterdream_equipment_tab", "帕斯特之梦 | 设备");
+        add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "帕斯特之梦 | 笔记");
 
         add("button.pasterdream.mortarbutton", "研磨");
 
@@ -212,5 +217,22 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.san_value", "SAN值: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "融梦能量: ");
 
+        add("tooltip.pasterdream.developerNameList", "§d开发者名单");
+        add("tooltip.pasterdream.dyedreamCreak", "§d染梦裂隙");
+        add("tooltip.pasterdream.dyedreamWorld", "§d染梦世界");
+        add("tooltip.pasterdream.pinkSlime", "§d粉红史莱姆");
+        add("tooltip.pasterdream.whiteCorolla", "§d苍白雪莲");
+        add("tooltip.pasterdream.paleBoneNeedle", "§d苍白骨针");
+        add("tooltip.pasterdream.dreamFertilizer", "§d染梦肥泥");
+        add("tooltip.pasterdream.dreamAccumulator", "§d蓄梦池");
+
+        add("tooltip.pasterdream.theLurkersInTheShadow", "§8阴影中的潜藏者");
+        add("tooltip.pasterdream.infestedChurch", "§8侵染教堂");
+        add("tooltip.pasterdream.depositionShadow", "§8沉淀阴影");
+        add("tooltip.pasterdream.shadowTravelogue", "§8阴影游记");
+        add("tooltip.pasterdream.shadowDungeon", "§8暗影地牢");
+        add("tooltip.pasterdream.scare", "§8恐惧");
+
+        add("tooltip.pasterdream.notHaveWingsBirdHaveSpreadWingsDreamToo", "§a无翼鸟也有展翅的梦");
     }
 }

@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamDrinkAndFoodProperties;
+import com.pasterdream.pasterdreammod.world.item.dreamnotes.DreamNotesItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDrinkItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamFoodItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
@@ -515,6 +516,10 @@ public class ModItems {
     public static final RegistryObject<Item> DREAM_CAULDRON = ITEMS.register("dream_cauldron", () -> new BlockItem(ModBlocks.DREAM_CAULDRON.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> MORTAR = ITEMS.register("mortar", () -> new MortarItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> DREAM_NOTES_DYEDREAM_WORLD = ITEMS.register("dream_notes_dyedream_world", () -> new DreamNotesItem(new Item.Properties()));
+    public static final RegistryObject<Item> DREAM_NOTES_LAMP_SHADOW_WORLD = ITEMS.register("dream_notes_lamp_shadow_world", () -> new DreamNotesItem(new Item.Properties()));
+    public static final RegistryObject<Item> DREAM_NOTES_WIND_JOURNEY_WORLD = ITEMS.register("dream_notes_wind_journey_world", () -> new DreamNotesItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
