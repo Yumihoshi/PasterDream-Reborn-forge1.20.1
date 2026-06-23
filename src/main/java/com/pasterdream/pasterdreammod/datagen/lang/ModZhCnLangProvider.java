@@ -106,6 +106,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "寻梦者笔记-染梦世界");
         add(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "寻梦者笔记-灯影之下");
         add(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get(), "寻梦者笔记-风之旅途");
+        add(ModItems.BLUE_PRINT.get(), "蓝图");
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "染梦泥土");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "染梦草方块");
@@ -235,5 +236,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.scare", "§8恐惧");
 
         add("tooltip.pasterdream.notHaveWingsBirdHaveSpreadWingsDreamToo", "§a无翼鸟也有展翅的梦");
+
+        add("tooltip.pasterdream.wraponWorkshop", "§b精铸工坊");
     }
 }
