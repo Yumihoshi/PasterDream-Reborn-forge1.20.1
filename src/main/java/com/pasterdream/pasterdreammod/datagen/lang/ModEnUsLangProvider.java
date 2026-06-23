@@ -97,6 +97,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "Dream Notes - Dyedream World");
         add(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "Dream Notes - Lamp Shadow World");
         add(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get(), "Dream Notes - Wind Journey World");
+        add(ModItems.BLUE_PRINT.get(), "Blue Print");
 
 
 
@@ -227,5 +228,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.scare", "§8Scare");
 
         add("tooltip.pasterdream.notHaveWingsBirdHaveSpreadWingsDreamToo", "§aNot Have Wings Bird Have Spread Wings Dream Too");
+
+        add("tooltip.pasterdream.wraponWorkshop", "§bWeapon Work Shop");
     }
 }

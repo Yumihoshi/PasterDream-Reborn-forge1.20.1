@@ -112,6 +112,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get());
         basicItem(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get());
         basicItem(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get());
+        basicItem(ModItems.BLUE_PRINT.get());
 
 
 

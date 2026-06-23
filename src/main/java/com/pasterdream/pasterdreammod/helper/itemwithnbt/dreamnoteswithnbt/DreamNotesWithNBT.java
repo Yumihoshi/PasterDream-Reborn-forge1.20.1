@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.helper.dreamnoteswithnbt;
+package com.pasterdream.pasterdreammod.helper.itemwithnbt.dreamnoteswithnbt;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;

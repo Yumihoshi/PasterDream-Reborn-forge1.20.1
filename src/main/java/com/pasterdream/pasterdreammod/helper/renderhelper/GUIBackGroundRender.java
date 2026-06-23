@@ -66,6 +66,11 @@ public class GUIBackGroundRender
 
     public static ResourceLocation DREAM_NOTES_TEST = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/dream_notes_test.png");
 
+    public static ResourceLocation PREV_BUTTON = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/prev_button.png");
+    public static ResourceLocation PREV_BUTTON_HOVERED = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/prev_button_hover.png");
+    public static ResourceLocation NEXT_BUTTON = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/next_button.png");
+    public static ResourceLocation NEXT_BUTTON_HOVERED = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/next_button_hover.png");
+
     public static void rendPasterDreamInventoryGUI(GuiGraphics guiGraphics, int x, int y)
     {
         guiGraphics.blit(PASTERDREAM_INVENTORY_GUI, x, y, 0, 0, 170, 84, 170, 84);
@@ -230,5 +235,25 @@ public class GUIBackGroundRender
         guiGraphics.blit(dreamNotesResourceLocation, (int)(x / scale), (int)(y / scale), 0, 0, width, height, width, height);
         guiGraphics.pose().popPose();
         RenderSystem.disableBlend();
+    }
+
+    public static void rendPrevButton(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(PREV_BUTTON, x, y, 0, 0, 15, 22, 15, 22);
+    }
+
+    public static void rendPrevButtonHovered(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(PREV_BUTTON_HOVERED, x, y, 0, 0, 15, 22, 15, 22);
+    }
+
+    public static void rendNextButton(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(NEXT_BUTTON, x, y, 0, 0, 15, 22, 15, 22);
+    }
+
+    public static void rendNextButtonHovered(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(NEXT_BUTTON_HOVERED, x, y, 0, 0, 15, 22, 15, 22);
     }
 }
