@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.helper.renderhelper;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
@@ -44,6 +45,26 @@ public class GUIBackGroundRender
     public static ResourceLocation MORTAR_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/mortar/mortar.png");
 
     public static ResourceLocation EMPTY_FLUID_SLOT_BUCKET_SHAPE = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/empty_fluid_slot_bucket_shape.png");
+
+    public static ResourceLocation DEVELOPER_NAME_LIST = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/developer_name_list.png");
+    public static ResourceLocation DYEDREAM_CRACK = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/dyedream_crack.png");
+    public static ResourceLocation DYEDREAM_WORLD = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/dyedream_world.png");
+    public static ResourceLocation PINK_SLIME = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/pink_slime.png");
+    public static ResourceLocation WHITE_COROLLA = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/white_corolla.png");
+    public static ResourceLocation PALE_BONE_NEEDLE = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/pale_bone_needle.png");
+    public static ResourceLocation DREAM_FERTILIZER = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/dream_fertilizer.png");
+    public static ResourceLocation DREAM_ACCUMULATOR = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/dream_accumulator.png");
+
+    public static ResourceLocation THE_LURKERS_IN_THE_SHADOW = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/the_burkers_in_the_shadow.png");
+    public static ResourceLocation INFESTED_CHURCH = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/infested_church.png");
+    public static ResourceLocation DEPOSITION_SHADOW = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/deposition_shadow.png");
+    public static ResourceLocation SHADOW_TRAVELOGUE = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/shadow_travelogue.png");
+    public static ResourceLocation SHADOW_DUNGEON = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/shadow_dungeon.png");
+    public static ResourceLocation SCARE = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/scare.png");
+
+    public static ResourceLocation NOT_HAVE_WINGS_BIRD_HAVE_SPREAD_WINGS_DREAM_TOO = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/not_have_wings_bird_has_spread_wings_dream_too.png");
+
+    public static ResourceLocation DREAM_NOTES_TEST = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/dream_notes_test.png");
 
     public static void rendPasterDreamInventoryGUI(GuiGraphics guiGraphics, int x, int y)
     {
@@ -198,5 +219,16 @@ public class GUIBackGroundRender
     public static void rendEmptyFluidSlotBucketShape(GuiGraphics guiGraphics, int x, int y)
     {
         guiGraphics.blit(EMPTY_FLUID_SLOT_BUCKET_SHAPE, x, y, 0, 0, 16, 16, 16, 16);
+    }
+
+    public static void rendDreamNotes(GuiGraphics guiGraphics, ResourceLocation dreamNotesResourceLocation, int x, int y, int width, int height, float scale)
+    {
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        guiGraphics.pose().pushPose();
+        guiGraphics.pose().scale(scale, scale, 1);
+        guiGraphics.blit(dreamNotesResourceLocation, (int)(x / scale), (int)(y / scale), 0, 0, width, height, width, height);
+        guiGraphics.pose().popPose();
+        RenderSystem.disableBlend();
     }
 }

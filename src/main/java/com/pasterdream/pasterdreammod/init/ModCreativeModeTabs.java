@@ -1,7 +1,9 @@
 package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.helper.dreamnoteswithnbt.DreamNotesWithNBT;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -228,6 +230,33 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CLAYPAN.get());
                         output.accept(ModBlocks.DREAM_CAULDRON.get());
                         output.accept(ModItems.MORTAR.get());
+                    })
+                    .build());
+
+    //寻梦者笔记
+    public static final RegistryObject<CreativeModeTab> PASTERDREAM_DREAM_NOTES_TAB = CREATIVE_MODE_TABS.register("pasterdream_dream_notes_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.pasterdream.pasterdream_dream_notes_tab"))
+                    .icon(() -> new ItemStack(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get()))
+                    .displayItems((parameters, output) ->
+                    {
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "developerNameList"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "dyedreamCreak"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "dyedreamWorld"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "pinkSlime"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "whiteCorolla"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "paleBoneNeedle"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "dreamFertilizer"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "dreamAccumulator"));
+
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "content", "theLurkersInTheShadow"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "content", "infestedChurch"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "content", "depositionShadow"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "content", "shadowTravelogue"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "content", "shadowDungeon"));
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "content", "scare"));
+
+                        output.accept(DreamNotesWithNBT.dreamNotesWithNBT(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get(), "content", "notHaveWingsBirdHaveSpreadWingsDreamToo"));
                     })
                     .build());
 
