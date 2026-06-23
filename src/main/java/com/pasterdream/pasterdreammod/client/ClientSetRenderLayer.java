@@ -10,6 +10,7 @@ public class ClientSetRenderLayer
     public static void register()
     {
         // ===== cutout 渲染（镂空/十字） =====
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.DYEDREAM_LANTERN.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DYEDREAM_PANE.get(), RenderType.cutout());
 
         // ===== translucent 渲染（半透明玻璃） =====

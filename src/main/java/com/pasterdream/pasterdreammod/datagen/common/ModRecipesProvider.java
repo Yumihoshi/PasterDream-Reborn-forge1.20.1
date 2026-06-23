@@ -221,6 +221,16 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('c', ModItems.DYEDREAM_DYE.get())
                 .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
                 .save(pWriter);
+
+        // 染梦灯笼（铁粒围染料，仿原版灯笼配方）
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DYEDREAM_LANTERN.get(), 1)
+                .pattern("aaa")
+                .pattern("aba")
+                .pattern("aaa")
+                .define('a', net.minecraft.world.item.Items.IRON_NUGGET)
+                .define('b', ModItems.DYEDREAM_DYE.get())
+                .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
+                .save(pWriter);
     }
 
     // ===== 染梦水晶建材配方 =====
