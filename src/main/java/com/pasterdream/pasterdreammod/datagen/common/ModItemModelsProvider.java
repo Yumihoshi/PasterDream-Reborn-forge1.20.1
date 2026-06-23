@@ -108,9 +108,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.SOUL_DUST.get());
         basicItem(ModItems.SOUL_ESSENCE.get());
         basicItem(ModItems.CHARGED_AMETHYST.get());
+        basicItem(ModItems.DYEDREAM_COROLLA.get());
         basicItem(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get());
         basicItem(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get());
         basicItem(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get());
+
 
 
 
