@@ -230,10 +230,13 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.pasterdream.pasterdream_equipment_tab"))
                     .icon(() -> new ItemStack(ModBlocks.CLAYPAN.get()))
-                    .displayItems((parameters, output) -> {
+                    .displayItems((parameters, output) ->
+                    {
                         output.accept(ModBlocks.CLAYPAN.get());
                         output.accept(ModBlocks.DREAM_CAULDRON.get());
                         output.accept(ModItems.MORTAR.get());
+                        output.accept(ModBlocks.DYEDREAM_DESK.get());
+                        output.accept(ModBlocks.SHADOW_DESK.get());
                     })
                     .build());
 

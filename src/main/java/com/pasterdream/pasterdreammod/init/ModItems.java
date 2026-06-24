@@ -2,6 +2,8 @@ package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamDrinkAndFoodProperties;
+import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronItem;
+import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronItemRenderer;
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.DreamNotesItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDrinkItem;
@@ -516,14 +518,15 @@ public class ModItems {
 
     //方块实体对应物品
     public static final RegistryObject<Item> CLAYPAN = ITEMS.register("claypan", () -> new BlockItem(ModBlocks.CLAYPAN.get(), new Item.Properties()));
-    public static final RegistryObject<Item> DREAM_CAULDRON = ITEMS.register("dream_cauldron", () -> new BlockItem(ModBlocks.DREAM_CAULDRON.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DREAM_CAULDRON = ITEMS.register("dream_cauldron", () -> new DreamCauldronItem(ModBlocks.DREAM_CAULDRON.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DYEDREAM_DESK = ITEMS.register("dyedream_desk", () -> new BlockItem(ModBlocks.DYEDREAM_DESK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_DESK = ITEMS.register("shadow_desk", () -> new BlockItem(ModBlocks.SHADOW_DESK.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> MORTAR = ITEMS.register("mortar", () -> new MortarItem(new Item.Properties()));
 
     public static final RegistryObject<Item> DREAM_NOTES_DYEDREAM_WORLD = ITEMS.register("dream_notes_dyedream_world", () -> new DreamNotesItem(new Item.Properties()));
     public static final RegistryObject<Item> DREAM_NOTES_LAMP_SHADOW_WORLD = ITEMS.register("dream_notes_lamp_shadow_world", () -> new DreamNotesItem(new Item.Properties()));
     public static final RegistryObject<Item> DREAM_NOTES_WIND_JOURNEY_WORLD = ITEMS.register("dream_notes_wind_journey_world", () -> new DreamNotesItem(new Item.Properties()));
-
     public static final RegistryObject<Item> BLUE_PRINT = ITEMS.register("blue_print", () -> new BluePrintItem(new Item.Properties()));
 
 
