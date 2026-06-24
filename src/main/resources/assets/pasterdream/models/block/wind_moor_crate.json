@@ -1,0 +1,9 @@
+{
+  "parent": "pasterdream:custom/wind_moor_crate",
+  "textures": {
+    "all": "pasterdream:block/wind_moor_crate",
+    "particle": "pasterdream:block/wind_moor_planks",
+    "0": "pasterdream:block/wind_moor_crate"
+  },
+  "render_type": "translucent"
+}

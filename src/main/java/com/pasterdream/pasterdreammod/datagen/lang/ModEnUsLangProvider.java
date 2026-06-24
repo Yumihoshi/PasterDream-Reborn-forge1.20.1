@@ -182,6 +182,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.DREAM_CAULDRON.get(), "Dream Cauldron");
         add(ModBlocks.DYEDREAM_DESK.get(), "Dyedream Desk");
         add(ModBlocks.SHADOW_DESK.get(), "Shadow Desk");
+        add(ModBlocks.WIND_MOOR_CRATE.get(), "Wind Moor Crate");
 
         add(ModBlocks.GOLDENROD.get(), "Goldenrod");
         add(ModBlocks.DYEDREAM_MOSS.get(), "Dyedream Moss");

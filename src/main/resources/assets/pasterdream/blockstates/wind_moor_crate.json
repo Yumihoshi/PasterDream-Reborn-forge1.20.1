@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "pasterdream:block/wind_moor_crate"
+    },
+    "facing=east": {
+      "model": "pasterdream:block/wind_moor_crate",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "pasterdream:block/wind_moor_crate",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pasterdream:block/wind_moor_crate",
+      "y": 270
+    }
+  }
+}

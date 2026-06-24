@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.world.block.desk;
+package com.pasterdream.pasterdreammod.world.block.ItemContainer;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -12,13 +12,11 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
 
-
-public abstract class DeskBlockEntity extends BlockEntity implements MenuProvider, IDeskInventory
+public abstract class ItemContainerBlockEntity extends BlockEntity implements MenuProvider, IItemContainerInventory
 {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(1);
     private final Component displayName;
 
-    public DeskBlockEntity(BlockEntityType<?> type, BlockPos blockPosition, BlockState state, String nameKey)
+    public ItemContainerBlockEntity(BlockEntityType<?> type, BlockPos blockPosition, BlockState state, String nameKey)
     {
         super(type, blockPosition, state);
         this.displayName = Component.translatable(nameKey);
@@ -29,6 +27,10 @@ public abstract class DeskBlockEntity extends BlockEntity implements MenuProvide
     {
         return this.displayName;
     }
+
+    public abstract int setItemStackHandlerSize();
+
+    private final ItemStackHandler itemHandler = new ItemStackHandler(setItemStackHandlerSize());
 
     @Override
     public abstract AbstractContainerMenu createMenu(int id, Inventory inventory, Player player);
