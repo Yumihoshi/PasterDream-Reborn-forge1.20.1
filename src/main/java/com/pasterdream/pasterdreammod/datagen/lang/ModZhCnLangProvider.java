@@ -102,6 +102,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.SOUL_ESSENCE.get(), "灵魂精华");
         add(ModItems.CHARGED_AMETHYST.get(), "盈能紫水晶");
         add(ModItems.DYEDREAM_COROLLA.get(), "梦染花冠");
+        add(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(), "融梦水晶碎片");
 
         add(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "寻梦者笔记-染梦世界");
         add(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "寻梦者笔记-灯影之下");
@@ -186,7 +187,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.ICE_BUD.get(), "冰凌晶芽");
         add(ModBlocks.CLAYPAN.get(), "陶盆");
         add(ModBlocks.DREAM_CAULDRON.get(), "法术工厂");
+        add(ModBlocks.DYEDREAM_DESK.get(), "染梦书桌");
+        add(ModBlocks.SHADOW_DESK.get(), "阴影书桌");
 
+        add(ModBlocks.GOLDENROD.get(), "秋麒麟");
+        add(ModBlocks.DYEDREAM_MOSS.get(), "染梦苔藓");
 
         add("fluid.pasterdream.melt_dream_liquid","融梦涌泉");
         add("fluid.pasterdream.shadow_liquid","熔融阴影");

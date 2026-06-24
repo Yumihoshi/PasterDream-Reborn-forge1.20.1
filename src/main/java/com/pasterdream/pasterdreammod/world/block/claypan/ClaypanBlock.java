@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.world.block.claypan;
 
 import com.pasterdream.pasterdreammod.init.ModBlockEntities;
+import com.pasterdream.pasterdreammod.world.block.desk.dyedreamdesk.DyedreamDeskBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -19,6 +20,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
+
+import static net.minecraft.world.Containers.dropItemStack;
 
 public class ClaypanBlock extends BaseEntityBlock
 {
@@ -65,5 +68,20 @@ public class ClaypanBlock extends BaseEntityBlock
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> type)
     {
         return createTickerHelper(type, ModBlockEntities.CLAYPAN.get(), (lvl, blockPosition, state, blockEntity) -> blockEntity.tick());
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston)
+    {
+        if (!state.is(newState.getBlock()))
+        {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity instanceof DyedreamDeskBlockEntity dyedreamDesk)
+            {
+                dropItemStack(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, dyedreamDesk.getItemHandler().getStackInSlot(0));
+                level.updateNeighbourForOutputSignal(pos, this);
+            }
+            super.onRemove(state, level, pos, newState, movedByPiston);
+        }
     }
 }

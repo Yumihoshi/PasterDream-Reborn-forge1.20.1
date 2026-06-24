@@ -1,11 +1,14 @@
-package com.pasterdream.pasterdreammod.world.block.dreamcauldron;
+package com.pasterdream.pasterdreammod.world.block.desk;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -22,32 +25,23 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
-import org.jetbrains.annotations.Nullable;
 
-import static net.minecraft.world.Containers.dropItemStack;
-
-public class DreamCauldronBlock extends BaseEntityBlock
+public abstract class DeskBlock extends BaseEntityBlock
 {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public DreamCauldronBlock(Properties properties)
+    public DeskBlock(Properties properties)
     {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
-    @Nullable
-    @Override
-    public BlockEntity newBlockEntity(BlockPos blockPosition, BlockState blockState)
-    {
-        return new DreamCauldronBlockEntity(blockPosition, blockState);
-    }
-
     @Override
     public RenderShape getRenderShape(BlockState blockState)
     {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        return RenderShape.MODEL;
     }
 
     @Override
@@ -65,54 +59,49 @@ public class DreamCauldronBlock extends BaseEntityBlock
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context)
     {
-        Direction facing = state.getValue(FACING);
-        if(facing == Direction.NORTH || facing == Direction.SOUTH)
-        {
-            return box(-7, 0, -5, 23, 14, 21);
-        }
-            else
-            {
-                return box(-5, 0, -7, 21, 14, 23);
-            }
+        return box(2, 0, 2, 14, 12, 14);
     }
 
     @Override
-    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPosition, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult)
+    public InteractionResult use(BlockState state, Level level, BlockPos blockPosition, Player player, InteractionHand hand, BlockHitResult result)
     {
         if (!level.isClientSide)
         {
             BlockEntity blockEntity = level.getBlockEntity(blockPosition);
-            if (blockEntity instanceof DreamCauldronBlockEntity dreamCauldron)
+            if (blockEntity instanceof MenuProvider menu)
             {
-                NetworkHooks.openScreen((ServerPlayer) player, dreamCauldron, buf -> buf.writeBlockPos(blockPosition));
+                NetworkHooks.openScreen((ServerPlayer) player, menu, buf -> buf.writeBlockPos(blockPosition));
             }
         }
         return InteractionResult.SUCCESS;
     }
 
-    @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> type)
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type)
     {
         return null;
     }
 
     @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston)
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moved)
     {
         if (!state.is(newState.getBlock()))
         {
-            BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof DreamCauldronBlockEntity dreamCauldron)
+            BlockEntity be = level.getBlockEntity(pos);
+            if (be instanceof IDeskInventory desk)
             {
-                for(int i = 0; i < 4; i++)
+                ItemStackHandler handler = desk.getItemHandler();
+                for (int i = 0; i < handler.getSlots(); i++)
                 {
-                    dropItemStack(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, dreamCauldron.getItemHandler().getStackInSlot(i));
+                    ItemStack stack = handler.getStackInSlot(i);
+                    if (!stack.isEmpty())
+                    {
+                        Containers.dropItemStack(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, stack);
+                    }
                 }
-
                 level.updateNeighbourForOutputSignal(pos, this);
             }
-            super.onRemove(state, level, pos, newState, movedByPiston);
+            super.onRemove(state, level, pos, newState, moved);
         }
     }
 }

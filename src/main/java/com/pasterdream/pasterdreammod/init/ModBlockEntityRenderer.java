@@ -1,16 +1,23 @@
 package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanBlockEntityRenderer;
+import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 public class ModBlockEntityRenderer
 {
-    public static void register(FMLClientSetupEvent event)
+    public static void FMLClientSetupEventRegister(FMLClientSetupEvent event)
     {
         event.enqueueWork(() ->
         {
             BlockEntityRenderers.register(ModBlockEntities.CLAYPAN.get(), ClaypanBlockEntityRenderer::new);
         });
+    }
+
+    public static void EntityRenderersEventRegister(EntityRenderersEvent.RegisterRenderers event)
+    {
+        event.registerBlockEntityRenderer(ModBlockEntities.DREAM_CAULDRON.get(), DreamCauldronBlockEntityRenderer::new);
     }
 }

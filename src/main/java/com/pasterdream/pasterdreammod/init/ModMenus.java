@@ -3,6 +3,10 @@ package com.pasterdream.pasterdreammod.init;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanMenu;
+import com.pasterdream.pasterdreammod.world.block.desk.dyedreamdesk.DyedreamDeskBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.desk.dyedreamdesk.DyedreamDeskMenu;
+import com.pasterdream.pasterdreammod.world.block.desk.shadowdesk.ShadowDeskBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.desk.shadowdesk.ShadowDeskMenu;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronMenu;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarMenu;
@@ -52,6 +56,18 @@ public class ModMenus
         InteractionHand hand = data.readBoolean() ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND;
         ItemStack stack = inventory.player.getItemInHand(hand);
         return new MortarMenu(id, inventory, stack, hand);
+    }));
+
+    public static final RegistryObject<MenuType<DyedreamDeskMenu>> DYEDREAM_DESK = MENUS.register("dyedream_desk", () -> IForgeMenuType.create((windowId, inv, data) ->
+    {
+        BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
+        return new DyedreamDeskMenu(windowId, inv, (DyedreamDeskBlockEntity) blockEntity);
+    }));
+
+    public static final RegistryObject<MenuType<ShadowDeskMenu>> SHADOW_DESK = MENUS.register("shadow_desk", () -> IForgeMenuType.create((windowId, inv, data) ->
+    {
+        BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
+        return new ShadowDeskMenu(windowId, inv, (ShadowDeskBlockEntity) blockEntity);
     }));
 
     public static void register(IEventBus eventBus)
