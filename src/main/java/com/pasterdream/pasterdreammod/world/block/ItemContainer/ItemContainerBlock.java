@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.world.block.desk;
+package com.pasterdream.pasterdreammod.world.block.ItemContainer;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -28,11 +28,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
 
-public abstract class DeskBlock extends BaseEntityBlock
+public abstract class ItemContainerBlock extends BaseEntityBlock
 {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public DeskBlock(Properties properties)
+    public ItemContainerBlock(Properties properties)
     {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
@@ -57,10 +57,7 @@ public abstract class DeskBlock extends BaseEntityBlock
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context)
-    {
-        return box(2, 0, 2, 14, 12, 14);
-    }
+    public abstract VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context);
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos blockPosition, Player player, InteractionHand hand, BlockHitResult result)
@@ -87,10 +84,10 @@ public abstract class DeskBlock extends BaseEntityBlock
     {
         if (!state.is(newState.getBlock()))
         {
-            BlockEntity be = level.getBlockEntity(pos);
-            if (be instanceof IDeskInventory desk)
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity instanceof IItemContainerInventory Crate)
             {
-                ItemStackHandler handler = desk.getItemHandler();
+                ItemStackHandler handler = Crate.getItemHandler();
                 for (int i = 0; i < handler.getSlots(); i++)
                 {
                     ItemStack stack = handler.getStackInSlot(i);

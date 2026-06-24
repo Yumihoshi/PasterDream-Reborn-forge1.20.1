@@ -1,14 +1,14 @@
-package com.pasterdream.pasterdreammod.world.block.desk.dyedreamdesk;
+package com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk;
 
-import com.pasterdream.pasterdreammod.world.block.desk.DeskBlock;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.DeskBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-public class DyedreamDeskBlock extends DeskBlock
+public class ShadowDeskBlock extends DeskBlock
 {
-    public DyedreamDeskBlock(Properties properties)
+    public ShadowDeskBlock(Properties properties)
     {
         super(properties);
     }
@@ -17,6 +17,6 @@ public class DyedreamDeskBlock extends DeskBlock
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state)
     {
-        return new DyedreamDeskBlockEntity(pos, state);
+        return new ShadowDeskBlockEntity(pos, state);
     }
 }

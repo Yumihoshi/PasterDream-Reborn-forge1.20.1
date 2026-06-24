@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.world.block.desk;
+package com.pasterdream.pasterdreammod.world.block.ItemContainer;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
@@ -8,31 +8,38 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
 
-public abstract class DeskMenu<T extends DeskBlockEntity> extends AbstractContainerMenu
+public abstract class ItemContainerMenu<T extends ItemContainerBlockEntity> extends AbstractContainerMenu
 {
     protected final T blockEntity;
     protected final Inventory playerInventory;
 
-    public DeskMenu(MenuType<?> type, int id, Inventory playerInventory, T blockEntity)
+    public ItemContainerMenu(MenuType<?> type, int id, Inventory playerInventory, T blockEntity)
     {
         super(type, id);
         this.blockEntity = blockEntity;
         this.playerInventory = playerInventory;
 
         IItemHandler handler = blockEntity.getItemHandler();
-        this.addSlot(new SlotItemHandler(handler, 0, 77, 5));
+        addContainerSlot(handler);
+        addPlayerInventory(getPlayerInventoryX(), getPlayerInventoryY());
+    }
 
-        //玩家物品栏
+    public abstract int getPlayerInventoryX();
+    public abstract int getPlayerInventoryY();
+    public abstract int getContainerSlotCount();
+    public abstract void addContainerSlot(IItemHandler handler);
+
+    public void addPlayerInventory(int x, int y)
+    {
         for (int i = 0; i < 9; i++)
         {
-            this.addSlot(new Slot(playerInventory, i, 5 + i * 18, 123));
+            this.addSlot(new Slot(playerInventory, i, x + i * 18, y + 58));
         }
 
         for (int i = 0; i < 27; i++)
         {
-            this.addSlot(new Slot(playerInventory, i + 9, 5 + (i % 9) * 18, 65 + (i / 9) * 18));
+            this.addSlot(new Slot(playerInventory, i + 9, x + (i % 9) * 18, y + (i / 9) * 18));
         }
     }
 
@@ -53,17 +60,19 @@ public abstract class DeskMenu<T extends DeskBlockEntity> extends AbstractContai
         ItemStack stack = slot.getItem();
         ItemStack copy = stack.copy();
 
-        if (index == 0)
+        int containerSlotCount = getContainerSlotCount();
+
+        if (index >= 0 && index < containerSlotCount)
         {
-            if (!this.moveItemStackTo(stack, 1, 37, true))
+            if (!this.moveItemStackTo(stack, containerSlotCount, containerSlotCount + 36, true))
             {
                 return ItemStack.EMPTY;
             }
         }
         else
-            if (index >= 1 && index <= 36)
+            if (index >= containerSlotCount && index < containerSlotCount + 36)
             {
-                if (!this.moveItemStackTo(stack, 0, 1, true))
+                if (!this.moveItemStackTo(stack, 0, containerSlotCount, false))
                 {
                     return ItemStack.EMPTY;
                 }
