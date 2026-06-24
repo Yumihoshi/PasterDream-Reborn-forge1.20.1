@@ -4,6 +4,7 @@ import com.pasterdream.pasterdreammod.client.*;
 import com.pasterdream.pasterdreammod.helper.fluidhandler.FluidHandlerResolvers;
 import com.pasterdream.pasterdreammod.helper.tooltipadder.AddToolTip;
 import com.pasterdream.pasterdreammod.init.*;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -41,6 +42,7 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(this::AddItemTooltip);
         MinecraftForge.EVENT_BUS.addListener(this::AddCommand);
         modEventBus.addListener(this::AddOverlays);
+        modEventBus.addListener(this::AddEntityRenderersEvent);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -60,7 +62,7 @@ public class PasterDreamMod
     {
         ClientSetRenderLayer.register();
         ModScreens.register(event);
-        ModBlockEntityRenderer.register(event);
+        ModBlockEntityRenderer.FMLClientSetupEventRegister(event);
     }
 
     private void AddItemTooltip(ItemTooltipEvent event)
@@ -77,5 +79,10 @@ public class PasterDreamMod
     {
         event.registerAboveAll("meltdream_energy", MeltDreamEnergyTank.MELT_DREAM_ENERGY_TANK);
         event.registerAboveAll("san", SanTank.SAN_TANK);
+    }
+
+    private void AddEntityRenderersEvent(EntityRenderersEvent.RegisterRenderers event)
+    {
+        ModBlockEntityRenderer.EntityRenderersEventRegister(event);
     }
 }

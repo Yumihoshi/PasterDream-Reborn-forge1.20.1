@@ -186,6 +186,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.ICE_BUD.get(), "冰凌晶芽");
         add(ModBlocks.CLAYPAN.get(), "陶盆");
         add(ModBlocks.DREAM_CAULDRON.get(), "法术工厂");
+        add(ModBlocks.DYEDREAM_DESK.get(), "染梦书桌");
+        add(ModBlocks.SHADOW_DESK.get(), "阴影书桌");
 
 
         add("fluid.pasterdream.melt_dream_liquid","融梦涌泉");

@@ -273,36 +273,4 @@ public class MortarMenu extends AbstractContainerMenuWithFluidSlot
         FluidStack[] allFluids = getFluidSlots().stream().map(FluidSlot::getFluid).toArray(FluidStack[]::new);
         ModNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) playerInventory.player), new FluidSyncPacket(this.containerId, allFluids));
     }
-
-    @Nullable
-    private GenericPasterDreamRecipeMatchResult findMatchingRecipe()
-    {
-        Level level = playerInventory.player.level();
-
-        //收集所有输入流体
-        List<FluidStack> fluidStacks = new ArrayList<>();
-        for (int i = 0; i < 4; i++)
-        {
-            FluidStack fluidStack = mortarInventory.getFluidTanks()[i].getFluid();
-            if (!fluidStack.isEmpty())
-            {
-                fluidStacks.add(fluidStack.copy());
-            }
-        }
-
-        //收集所有输入物品
-        List<ItemStack> itemStacks = new ArrayList<>();
-        ItemStackHandler handler = mortarInventory.getItemHandler();
-        for (int i = 0; i < 4; i++)
-        {
-            ItemStack itemStack = handler.getStackInSlot(i);
-            if (!itemStack.isEmpty())
-            {
-                itemStacks.add(itemStack.copy());
-            }
-        }
-
-        //遍历配方
-        return level.getRecipeManager().getAllRecipesFor(ModRecipes.MORTAR.get()).stream().map(recipe -> recipe.matchesWithSlots(fluidStacks, itemStacks)).filter(Optional::isPresent).map(Optional::get).findFirst().orElse(null);
-    }
 }

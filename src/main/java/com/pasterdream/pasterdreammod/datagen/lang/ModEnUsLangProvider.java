@@ -180,6 +180,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.ICE_BUD.get(), "Ice Bud");
         add(ModBlocks.CLAYPAN.get(), "Claypan");
         add(ModBlocks.DREAM_CAULDRON.get(), "Dream Cauldron");
+        add(ModBlocks.DYEDREAM_DESK.get(), "Dyedream Desk");
+        add(ModBlocks.SHADOW_DESK.get(), "Shadow Desk");
 
         add("fluid.pasterdream.melt_dream_liquid","Melt Dream Liquid");
         add("fluid.pasterdream.shadow_liquid","Shadow Liquid");

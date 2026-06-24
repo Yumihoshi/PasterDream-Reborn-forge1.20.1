@@ -6,10 +6,7 @@ import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.FluidIngredie
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.ItemIngredient;
 import com.pasterdream.pasterdreammod.init.ModBlockEntities;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
-import com.pasterdream.pasterdreammod.recipe.GenericPasterDreamRecipe;
-import com.pasterdream.pasterdreammod.recipe.GenericPasterDreamRecipeMatchResult;
 import com.pasterdream.pasterdreammod.recipe.recipematchandprocess.*;
-import com.pasterdream.pasterdreammod.world.item.mortar.MortarRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -33,18 +30,24 @@ import net.minecraftforge.fluids.capability.templates.FluidTank;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.animatable.GeoBlockEntity;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvider, IFluidHandlerProvider
+public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvider, IFluidHandlerProvider, GeoBlockEntity
 {
     private static final int FLUID0_CAPACITY = 2000;
     private static final int FLUID1_CAPACITY = 8000;
-    private static final int ITEM_INPUT_SLOTS = 3;
-    private static final int OUTPUT_SLOT_INDEX = 3;
+
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public DreamCauldronBlockEntity(BlockPos pos, BlockState state)
     {
@@ -80,7 +83,7 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
         @Override
         public boolean isItemValid(int slotIndex, ItemStack stack)
         {
-            return slotIndex != OUTPUT_SLOT_INDEX;
+            return slotIndex != 3;
         }
     };
 
@@ -119,23 +122,10 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
         itemHandlerCap.invalidate();
     }
 
-    public boolean canCraft()
-    {
-        GenericPasterDreamRecipeMatchResult result = findMatchingRecipe();
-        if (result == null)
-        {
-            return false;
-        }
-
-        ItemStack output = getOutputFromRecipe(result.recipe());
-        return canFitOutput(output);
-    }
-
     public void craft()
     {
         if (level == null || level.isClientSide)
         {
-
             return;
         }
 
@@ -192,65 +182,6 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
 
         //同步
         setChangedAndSync();
-    }
-
-    //查找匹配的配方，返回匹配结果
-    @Nullable
-    private GenericPasterDreamRecipeMatchResult findMatchingRecipe()
-    {
-        if (level == null)
-        {
-            return null;
-        }
-
-        //收集非空流体
-        List<FluidStack> fluidStacks = new ArrayList<>();
-        for (FluidTank tank : fluidTanks)
-        {
-            FluidStack stack = tank.getFluid();
-            if (!stack.isEmpty())
-            {
-                fluidStacks.add(stack);
-            }
-        }
-
-        //收集非空物品
-        List<ItemStack> itemStacks = new ArrayList<>();
-        for (int i = 0; i < ITEM_INPUT_SLOTS; i++)
-        {
-            ItemStack stack = itemHandler.getStackInSlot(i);
-            if (!stack.isEmpty())
-            {
-                itemStacks.add(stack);
-            }
-        }
-
-        //遍历配方
-        return level.getRecipeManager().getAllRecipesFor(ModRecipes.DREAM_CAULDRON.get()).stream().map(recipe -> recipe.matchesWithSlots(fluidStacks, itemStacks)).filter(Optional::isPresent).map(Optional::get).findFirst().orElse(null);
-    }
-
-    //获取配方输出
-    private ItemStack getOutputFromRecipe(GenericPasterDreamRecipe recipe)
-    {
-        if (!recipe.getOutputItemIngredients().isEmpty())
-        {
-            ItemIngredient itemIngredient = recipe.getOutputItemIngredients().get(0);
-            ItemStack stack = itemIngredient.getItemStack();
-            return stack.copy();
-        }
-        return ItemStack.EMPTY;
-    }
-
-    //检查输出槽是否能容纳
-    private boolean canFitOutput(ItemStack output)
-    {
-        ItemStack existing = itemHandler.getStackInSlot(ITEM_INPUT_SLOTS);
-        if (existing.isEmpty())
-        {
-            return true;
-        }
-
-        return ItemStack.isSameItemSameTags(existing, output) && existing.getCount() + output.getCount() <= existing.getMaxStackSize();
     }
 
     private void setChangedAndSync()
@@ -327,6 +258,18 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
         {
             load(tag);
         }
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache()
+    {
+        return this.cache;
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers)
+    {
+        controllers.add(new AnimationController<GeoAnimatable>(this, "state", 0, event -> PlayState.STOP));
     }
 
     public ItemStackHandler getItemHandler()
