@@ -189,6 +189,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DREAM_CAULDRON.get(), "法术工厂");
         add(ModBlocks.DYEDREAM_DESK.get(), "染梦书桌");
         add(ModBlocks.SHADOW_DESK.get(), "阴影书桌");
+        add(ModBlocks.WIND_MOOR_CRATE.get(), "风泊板条筐");
 
         add(ModBlocks.GOLDENROD.get(), "秋麒麟");
         add(ModBlocks.DYEDREAM_MOSS.get(), "染梦苔藓");

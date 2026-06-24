@@ -1,8 +1,9 @@
 package com.pasterdream.pasterdreammod.init;
 
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.crate.windmoorcrate.WindMoorCrateScreen;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanScreen;
-import com.pasterdream.pasterdreammod.world.block.desk.dyedreamdesk.DyedreamDeskScreen;
-import com.pasterdream.pasterdreammod.world.block.desk.shadowdesk.ShadowDeskScreen;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.dyedreamdesk.DyedreamDeskScreen;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.ShadowDeskScreen;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronScreen;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -19,6 +20,7 @@ public class ModScreens
             MenuScreens.register(ModMenus.MORTAR.get(), MortarScreen::new);
             MenuScreens.register(ModMenus.DYEDREAM_DESK.get(), DyedreamDeskScreen::new);
             MenuScreens.register(ModMenus.SHADOW_DESK.get(), ShadowDeskScreen::new);
+            MenuScreens.register(ModMenus.WIND_MOOR_CRATE.get(), WindMoorCrateScreen::new);
         });
     }
 }

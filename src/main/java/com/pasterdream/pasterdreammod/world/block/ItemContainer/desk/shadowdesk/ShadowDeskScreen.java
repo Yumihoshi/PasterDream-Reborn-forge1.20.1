@@ -1,7 +1,7 @@
-package com.pasterdream.pasterdreammod.world.block.desk.shadowdesk;
+package com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk;
 
 import com.pasterdream.pasterdreammod.helper.renderhelper.GUIBackGroundRender;
-import com.pasterdream.pasterdreammod.world.block.desk.DeskScreen;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.DeskScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +14,7 @@ public class ShadowDeskScreen extends DeskScreen<ShadowDeskMenu>
     }
 
     @Override
-    protected void renderDeskBg(GuiGraphics graphics, int leftPos, int topPos)
+    protected void renderContainerBackground(GuiGraphics graphics, int leftPos, int topPos)
     {
         GUIBackGroundRender.rendShadowDeskGUI(graphics, leftPos + 71, topPos);
     }

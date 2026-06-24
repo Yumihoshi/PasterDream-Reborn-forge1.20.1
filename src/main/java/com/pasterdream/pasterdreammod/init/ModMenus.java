@@ -1,12 +1,14 @@
 package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.crate.windmoorcrate.WindMoorCrateBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.crate.windmoorcrate.WindMoorCrateMenu;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanMenu;
-import com.pasterdream.pasterdreammod.world.block.desk.dyedreamdesk.DyedreamDeskBlockEntity;
-import com.pasterdream.pasterdreammod.world.block.desk.dyedreamdesk.DyedreamDeskMenu;
-import com.pasterdream.pasterdreammod.world.block.desk.shadowdesk.ShadowDeskBlockEntity;
-import com.pasterdream.pasterdreammod.world.block.desk.shadowdesk.ShadowDeskMenu;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.dyedreamdesk.DyedreamDeskBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.dyedreamdesk.DyedreamDeskMenu;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.ShadowDeskBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.ShadowDeskMenu;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronMenu;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarMenu;
@@ -68,6 +70,12 @@ public class ModMenus
     {
         BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
         return new ShadowDeskMenu(windowId, inv, (ShadowDeskBlockEntity) blockEntity);
+    }));
+
+    public static final RegistryObject<MenuType<WindMoorCrateMenu>> WIND_MOOR_CRATE = MENUS.register("wind_moor_crate", () -> IForgeMenuType.create((windowId, inv, data) ->
+    {
+        BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
+        return new WindMoorCrateMenu(windowId, inv, (WindMoorCrateBlockEntity) blockEntity);
     }));
 
     public static void register(IEventBus eventBus)
