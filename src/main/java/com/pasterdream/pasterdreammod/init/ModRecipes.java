@@ -5,6 +5,7 @@ import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipe;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipeSerializer;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipe;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipeSerializer;
+import com.pasterdream.pasterdreammod.world.item.mortar.MortarCraftingRecipe;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarRecipe;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarRecipeSerializer;
 import net.minecraft.core.registries.Registries;
@@ -27,6 +28,7 @@ public class ModRecipes
     public static final RegistryObject<RecipeSerializer<ClaypanRecipe>> CLAYPAN_SERIALIZER = RECIPE_SERIALIZERS.register("claypan", ClaypanRecipeSerializer::new);
     public static final RegistryObject<DreamCauldronRecipeSerializer> DREAM_CAULDRON_SERIALIZER = RECIPE_SERIALIZERS.register("dream_cauldron", DreamCauldronRecipeSerializer::new);
     public static final RegistryObject<MortarRecipeSerializer> MORTAR_SERIALIZER = RECIPE_SERIALIZERS.register("mortar", MortarRecipeSerializer::new);
+    public static final RegistryObject<MortarCraftingRecipe.Serializer> MORTAR_CRAFTING_SERIALIZER = RECIPE_SERIALIZERS.register("mortar_crafting", MortarCraftingRecipe.Serializer::new);
 
     public static void register(IEventBus eventBus)
     {
