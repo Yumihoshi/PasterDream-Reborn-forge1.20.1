@@ -1,9 +1,15 @@
 package com.pasterdream.pasterdreammod.datagen.common;
 
+import com.pasterdream.pasterdreammod.datagen.util.LootHelpers;
 import com.pasterdream.pasterdreammod.datagen.util.RecipeHelpers;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.util.BuildingBlockFamily;
+import com.pasterdream.pasterdreammod.world.block.cropblock.PasterDreamCropBlock;
+import net.minecraft.advancements.critereon.EnchantmentPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -11,11 +17,17 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -32,8 +44,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropOther(ModBlocks.DYEDREAM_FARMLAND.get(), ModItems.DYEDREAM_DIRT.get());
         dropSelf(ModBlocks.DYEDREAM_LOG.get());
         dropSelf(ModBlocks.DYEDREAM_WOOD.get());
-        add(ModBlocks.DYEDREAM_LEAVES.get(), block -> RecipeHelpers.createLeavesDrops(block, ModBlocks.DYEDREAM_SAPLING.get(), ModItems.DYEDREAM_FRUIT.get()));
-        add(ModBlocks.DYEDREAM_WORLDTREE_LEAVES.get(), block -> RecipeHelpers.createLeavesDrops(block, ModBlocks.DYEDREAM_SAPLING.get(), ModItems.DYEDREAM_FRUIT.get()));
+        add(ModBlocks.DYEDREAM_LEAVES.get(), block -> LootHelpers.createLeavesDrops(block, ModBlocks.DYEDREAM_SAPLING.get(), ModItems.DYEDREAM_FRUIT.get()));
+        add(ModBlocks.DYEDREAM_WORLDTREE_LEAVES.get(), block -> LootHelpers.createLeavesDrops(block, ModBlocks.DYEDREAM_SAPLING.get(), ModItems.DYEDREAM_FRUIT.get()));
         dropSelf(ModBlocks.DYEDREAM_SAPLING.get());
 
         add(ModBlocks.DYEDREAM_QUARTZ_ORE.get(),
@@ -120,12 +132,25 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PINK_MUSHROOM.get());
         add(ModBlocks.TALL_PINK_MUSHROOM.get(), block -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         dropSelf((ModBlocks.GOLDENROD.get()));
+        dropSelf((ModBlocks.FERRARIA_CRISPA.get()));
+        dropSelf((ModBlocks.EUSTOMA.get()));
+        dropSelf((ModBlocks.MALVA_SINENSIS_CAVAN.get()));
+        dropSelf(ModBlocks.LINHT_FLOWER.get());
+        dropSelf(ModBlocks.DREAMING_LOTUS.get());
+        dropSelf(ModBlocks.MISTY_DREAMING_LOTUS.get());
+        add(ModBlocks.DREAMING_LOTUS.get(),
+                block -> LootHelpers.createhighflowerDrops(ModBlocks.DREAMING_LOTUS.get()));
+        add(ModBlocks.MISTY_DREAMING_LOTUS.get(),
+                block -> LootHelpers.createhighflowerDrops(ModBlocks.MISTY_DREAMING_LOTUS.get()));
+
         add(ModBlocks.DYEDREAM_MOSS.get(),
-                block -> RecipeHelpers.creategrassesDrops(ModBlocks.DYEDREAM_MOSS.get()));
+                block -> LootHelpers.creategrassesDrops(ModBlocks.DYEDREAM_MOSS.get()));
         add(ModBlocks.STEM_GRASS.get(),
-                block -> RecipeHelpers.creategrassesDrops(ModBlocks.STEM_GRASS.get()));
+                block -> LootHelpers.creategrassesDrops(ModBlocks.STEM_GRASS.get()));
         add(ModBlocks.TALL_STEM_GRASS.get(),
-                block -> RecipeHelpers.createhighgrassesDrops(ModBlocks.STEM_GRASS.get(),ModBlocks.TALL_STEM_GRASS.get()));
+                block -> LootHelpers.createhighgrassesDrops(ModBlocks.STEM_GRASS.get(),ModBlocks.TALL_STEM_GRASS.get()));
+        add(ModBlocks.SINGULARITY_FERN.get(),
+                block -> LootHelpers.creategrassesDrops(ModBlocks.SINGULARITY_FERN.get()));
 
 
         dropSelf(ModBlocks.DYEDREAM_SAND.get());
@@ -174,11 +199,11 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         buildingFamily(new BuildingBlockFamily(ModBlocks.CALCITE_TILES, ModBlocks.CALCITE_TILES_STAIRS, ModBlocks.CALCITE_TILES_SLAB, ModBlocks.CALCITE_TILES_WALL));
         buildingFamily(new BuildingBlockFamily(ModBlocks.DYEDREAM_BUD_BLOCK, ModBlocks.DYEDREAM_BUD_STAIRS, ModBlocks.DYEDREAM_BUD_SLAB, ModBlocks.DYEDREAM_BUD_WALL));
 
-        dropNone(ModBlocks.DYEDREAM_COROLLA_CROP.get());
-        dropNone(ModBlocks.WHITE_COROLLA_CROP.get());
-        dropNone(ModBlocks.LIGHT_BALL_CROP.get());
-        dropNone(ModBlocks.CLOUD_CROP.get());
-        dropNone(ModBlocks.COTTON_CROP.get());
+        generateCropLoot(ModBlocks.DYEDREAM_COROLLA_CROP.get(), ModItems.DYEDREAM_COROLLA.get(), 1, ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get());
+        generateCropLoot(ModBlocks.WHITE_COROLLA_CROP.get(), ModItems.WHITE_COROLLA.get(), 1, ModItems.WHITE_COROLLA_CROP_AGE_1.get());
+        generateCropLoot(ModBlocks.LIGHT_BALL_CROP.get(), ModItems.LIGHT_BALL.get(), 1, ModItems.LIGHT_BALL_CROP_AGE_1.get());
+        generateCropLoot(ModBlocks.CLOUD_CROP.get(), ModItems.CLOUD.get(), 5, ModItems.CLOUD_CROP_AGE_1.get());
+        generateCropLoot(ModBlocks.COTTON_CROP.get(), ModItems.COTTON.get(), 1, ModItems.COTTON_CROP_AGE_1.get());
 
         dropSelf(ModBlocks.QYM_DOLL.get());
         dropSelf(ModBlocks.UUZ_DOLL.get());
@@ -210,6 +235,16 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+    }
+
+    private void generateCropLoot(Block cropBlock, Item productItem, int productCount, Item matureItem)
+    {
+        LootTable.Builder builder = LootTable.lootTable();
+        LootItemCondition.Builder shearsOrSilk = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS)).or(MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1)))));
+        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 1))).when(shearsOrSilk.invert()).add(LootItem.lootTableItem(productItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(productCount)))));
+        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 1))).when(shearsOrSilk).add(LootItem.lootTableItem(matureItem)));
+        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 0))).when(shearsOrSilk).add(LootItem.lootTableItem(cropBlock)));
+        this.add(cropBlock, builder);
     }
 
     protected void dropNone(Block block)

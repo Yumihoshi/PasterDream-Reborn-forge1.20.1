@@ -222,17 +222,29 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.DYEDREAM_SAPLING.get()))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.DYEDREAM_SAPLING.get());
-                        output.accept(ModItems.DYEDREAM_COROLLA_CROP.get());
-                        output.accept(ModItems.WHITE_COROLLA_CROP.get());
-                        output.accept(ModItems.LIGHT_BALL_CROP.get());
-                        output.accept(ModItems.CLOUD_CROP.get());
-                        output.accept(ModItems.COTTON_CROP.get());
+                        output.accept(ModItems.DYEDREAM_COROLLA_CROP_AGE_0.get());
+                        output.accept(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get());
+                        output.accept(ModItems.WHITE_COROLLA_CROP_AGE_0.get());
+                        output.accept(ModItems.WHITE_COROLLA_CROP_AGE_1.get());
+                        output.accept(ModItems.LIGHT_BALL_CROP_AGE_0.get());
+                        output.accept(ModItems.LIGHT_BALL_CROP_AGE_1.get());
+                        output.accept(ModItems.CLOUD_CROP_AGE_0.get());
+                        output.accept(ModItems.CLOUD_CROP_AGE_1.get());
+                        output.accept(ModItems.COTTON_CROP_AGE_0.get());
+                        output.accept(ModItems.COTTON_CROP_AGE_1.get());
                         output.accept(ModItems.PINK_MUSHROOM.get());
                         output.accept(ModItems.TALL_PINK_MUSHROOM.get());
                         output.accept(ModItems.GOLDENROD.get());
                         output.accept(ModItems.DYEDREAM_MOSS.get());
                         output.accept(ModItems.STEM_GRASS.get());
                         output.accept(ModItems.TALL_STEM_GRASS.get());
+                        output.accept(ModItems.FERRARIA_CRISPA.get());
+                        output.accept(ModItems.EUSTOMA.get());
+                        output.accept(ModItems.MALVA_SINENSIS_CAVAN.get());
+                        output.accept(ModItems.LINHT_FLOWER.get());
+                        output.accept(ModItems.DREAMING_LOTUS.get());
+                        output.accept(ModItems.MISTY_DREAMING_LOTUS.get());
+                        output.accept(ModItems.SINGULARITY_FERN.get());
 
                     })
                     .build());
