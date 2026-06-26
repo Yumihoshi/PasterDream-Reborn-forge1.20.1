@@ -121,6 +121,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf((ModBlocks.GOLDENROD.get()));
         add(ModBlocks.DYEDREAM_MOSS.get(),
                 block -> RecipeHelpers.creategrassesDrops(ModBlocks.DYEDREAM_MOSS.get()));
+        add(ModBlocks.STEM_GRASS.get(),
+                block -> RecipeHelpers.creategrassesDrops(ModBlocks.STEM_GRASS.get()));
+        add(ModBlocks.TALL_STEM_GRASS.get(),
+                block -> RecipeHelpers.createhighgrassesDrops(ModBlocks.STEM_GRASS.get(),ModBlocks.TALL_STEM_GRASS.get()));
 
 
         dropSelf(ModBlocks.DYEDREAM_SAND.get());
@@ -169,7 +173,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         buildingFamily(new BuildingBlockFamily(ModBlocks.CALCITE_TILES, ModBlocks.CALCITE_TILES_STAIRS, ModBlocks.CALCITE_TILES_SLAB, ModBlocks.CALCITE_TILES_WALL));
         buildingFamily(new BuildingBlockFamily(ModBlocks.DYEDREAM_BUD_BLOCK, ModBlocks.DYEDREAM_BUD_STAIRS, ModBlocks.DYEDREAM_BUD_SLAB, ModBlocks.DYEDREAM_BUD_WALL));
 
-
+        dropSelf(ModBlocks.QYM_DOLL.get());
+        dropSelf(ModBlocks.UUZ_DOLL.get());
         dropSelf(ModBlocks.CLAYPAN.get());
         dropSelf(ModBlocks.DREAM_CAULDRON.get());
         dropSelf(ModBlocks.DYEDREAM_DESK.get());

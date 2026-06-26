@@ -55,6 +55,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.WIND_MOOR_CRATE.get());
 
         // 可以用镐来挖掘
+
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.DYEDREAM_QUARTZ_ORE.get())
                 .add(ModBlocks.DYEDREAM_DUST_ORE.get())
