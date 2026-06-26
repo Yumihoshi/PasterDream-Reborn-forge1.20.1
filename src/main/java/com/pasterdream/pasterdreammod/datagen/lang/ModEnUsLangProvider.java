@@ -105,6 +105,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "Dye Dream Dirt");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "Dye Dream Grass Block");
+        add(ModBlocks.DYEDREAM_FARMLAND.get(), "Dye Dream Farmland");
         add(ModBlocks.DYEDREAM_LOG.get(), "Dye Dream Log");
         add(ModBlocks.DYEDREAM_WOOD.get(), "Dye Dream Wood");
         add(ModBlocks.DYEDREAM_LEAVES.get(), "Dye Dream Leaves");

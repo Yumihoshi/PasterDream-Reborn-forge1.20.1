@@ -7,8 +7,11 @@ import com.pasterdream.pasterdreammod.init.*;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.ToolActions;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -42,6 +45,7 @@ public class PasterDreamMod
         modEventBus.addListener(this::clientSetup);
         MinecraftForge.EVENT_BUS.addListener(this::AddItemTooltip);
         MinecraftForge.EVENT_BUS.addListener(this::AddCommand);
+        MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onHoeTill);
         modEventBus.addListener(this::AddOverlays);
         modEventBus.addListener(this::AddEntityRenderersEvent);
 
@@ -86,5 +90,13 @@ public class PasterDreamMod
     private void AddEntityRenderersEvent(EntityRenderersEvent.RegisterRenderers event)
     {
         ModBlockEntityRenderer.EntityRenderersEventRegister(event);
+    }
+
+    public static void onHoeTill(BlockEvent.BlockToolModificationEvent event) {
+        if (event.getToolAction() != ToolActions.HOE_TILL) return;
+        Block block = event.getState().getBlock();
+        if (block == ModBlocks.DYEDREAM_GRASS_BLOCK.get() || block == ModBlocks.DYEDREAM_DIRT.get()) {
+            event.setFinalState(ModBlocks.DYEDREAM_FARMLAND.get().defaultBlockState());
+        }
     }
 }

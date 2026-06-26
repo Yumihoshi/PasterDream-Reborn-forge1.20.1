@@ -1,9 +1,11 @@
 package com.pasterdream.pasterdreammod.datagen.common;
 
+import com.google.gson.JsonObject;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.datagen.util.RecipeHelpers;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
+import com.pasterdream.pasterdreammod.init.ModRecipes;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -12,12 +14,27 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.function.Consumer;
 
 public class ModRecipesProvider extends RecipeProvider implements IConditionBuilder {
+
+    /**
+     * 将 ShapelessRecipeBuilder 产出的配方包装为自定义序列化器。
+     * 用于研钵配方——研钵作为工具不消耗。
+     */
+    private void saveMortarCrafting(ShapelessRecipeBuilder builder, Consumer<FinishedRecipe> writer, String name) {
+        builder.save(wrapped -> writer.accept(new FinishedRecipe() {
+            @Override public void serializeRecipeData(JsonObject json) { wrapped.serializeRecipeData(json); }
+            @Override public ResourceLocation getId() { return ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name); }
+            @Override public RecipeSerializer<?> getType() { return ModRecipes.MORTAR_CRAFTING_SERIALIZER.get(); }
+            @Override public JsonObject serializeAdvancement() { return wrapped.serializeAdvancement(); }
+            @Override public ResourceLocation getAdvancementId() { return wrapped.getAdvancementId(); }
+        }), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name));
+    }
 
     public ModRecipesProvider(PackOutput pOutput) {
         super(pOutput);
@@ -115,21 +132,23 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.MORTAR.get()), has(ModItems.MORTAR.get()))
                 .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "mortar_from_mortar"));
 
-        // 染梦染料：粉尘碎片 + 骨粉 + 研钵
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DYEDREAM_DYE.get(), 7)
-                .requires(ModItems.DYEDREAM_DUST_PIECE.get())
-                .requires(Items.BONE_MEAL)
-                .requires(ModItems.MORTAR.get())
-                .unlockedBy(getHasName(ModItems.DYEDREAM_DUST_PIECE.get()), has(ModItems.DYEDREAM_DUST_PIECE.get()))
-                .save(pWriter);
+        // 染梦染料：粉尘碎片 + 骨粉 + 研钵（研钵不消耗）
+        saveMortarCrafting(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DYEDREAM_DYE.get(), 7)
+                        .requires(ModItems.DYEDREAM_DUST_PIECE.get())
+                        .requires(Items.BONE_MEAL)
+                        .requires(ModItems.MORTAR.get())
+                        .unlockedBy(getHasName(ModItems.DYEDREAM_DUST_PIECE.get()), has(ModItems.DYEDREAM_DUST_PIECE.get())),
+                pWriter, "dyedream_dye_from_dust_piece");
 
-        // 染梦染料：粉尘 + 骨块 + 研钵
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DYEDREAM_DYE.get(), 63)
-                .requires(ModItems.DYEDREAM_DUST.get())
-                .requires(Items.BONE_BLOCK)
-                .requires(ModItems.MORTAR.get())
-                .unlockedBy(getHasName(ModItems.DYEDREAM_DUST.get()), has(ModItems.DYEDREAM_DUST.get()))
-                .save(pWriter, PasterDreamMod.MOD_ID + ":dyedream_dye_from_dust");
+        // 染梦染料：粉尘 + 骨块 + 研钵（研钵不消耗）
+        saveMortarCrafting(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DYEDREAM_DYE.get(), 63)
+                        .requires(ModItems.DYEDREAM_DUST.get())
+                        .requires(Items.BONE_BLOCK)
+                        .requires(ModItems.MORTAR.get())
+                        .unlockedBy(getHasName(ModItems.DYEDREAM_DUST.get()), has(ModItems.DYEDREAM_DUST.get())),
+                pWriter, "dyedream_dye_from_dust");
     }
 
     // ===== 染梦玻璃系列配方 =====
@@ -527,12 +546,13 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         // ===== 盐 =====
         RecipeHelpers.storageCompress(pWriter, ModItems.SALT.get(), ModItems.SALT_BLOCK.get(), PasterDreamMod.MOD_ID);
         RecipeHelpers.storageDecompress(pWriter, ModItems.SALT_BLOCK.get(), ModItems.SALT.get(), PasterDreamMod.MOD_ID);
-        // 盐：研钵 + 粗盐
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SALT.get(), 1)
-                .requires(ModItems.MORTAR.get())
-                .requires(ModItems.COARSE_SALT.get())
-                .unlockedBy(getHasName(ModItems.COARSE_SALT.get()), has(ModItems.COARSE_SALT.get()))
-                .save(pWriter, PasterDreamMod.MOD_ID + ":salt_from_coarse_salt");
+        // 盐：研钵 + 粗盐（研钵不消耗）
+        saveMortarCrafting(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SALT.get(), 1)
+                        .requires(ModItems.MORTAR.get())
+                        .requires(ModItems.COARSE_SALT.get())
+                        .unlockedBy(getHasName(ModItems.COARSE_SALT.get()), has(ModItems.COARSE_SALT.get())),
+                pWriter, "salt_from_coarse_salt");
 
         // ===== 灵魂系列 =====
         // 灵魂矿土 → 灵魂粉尘（熔炉 + 高炉）

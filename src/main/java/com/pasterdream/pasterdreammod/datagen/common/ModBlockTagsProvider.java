@@ -33,6 +33,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.DYEDREAM_DIRT.get())
                 .add(ModBlocks.DYEDREAM_GRASS_BLOCK.get())
+                .add(ModBlocks.DYEDREAM_FARMLAND.get())
                 .add(ModBlocks.SOUL_ORE.get())
                 .add(ModBlocks.SALT_BLOCK.get());
 

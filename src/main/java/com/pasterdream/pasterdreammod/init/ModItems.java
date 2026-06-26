@@ -364,6 +364,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.DYEDREAM_DIRT.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_GRASS_BLOCK = ITEMS.register("dyedream_grass_block",
             () -> new BlockItem(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DYEDREAM_FARMLAND = ITEMS.register("dyedream_farmland",
+            () -> new BlockItem(ModBlocks.DYEDREAM_FARMLAND.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_LOG = ITEMS.register("dyedream_log",
             () -> new BlockItem(ModBlocks.DYEDREAM_LOG.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_WOOD = ITEMS.register("dyedream_wood",
