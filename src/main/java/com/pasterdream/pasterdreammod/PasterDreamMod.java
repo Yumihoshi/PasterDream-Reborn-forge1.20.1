@@ -30,6 +30,7 @@ public class PasterDreamMod
 
         ModItems.register(modEventBus);             //注册物品
         ModCreativeModeTabs.register(modEventBus);  //注册创造模式物品栏
+        ModParticleTypes.register(modEventBus);     //注册粒子
         ModBlocks.register(modEventBus);            //注册方块
         ModBlockEntities.register(modEventBus);     //注册方块实体
         ModFluids.register(modEventBus);            //注册流体

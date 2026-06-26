@@ -247,10 +247,28 @@
 
 ---
 
-## 配方文件名映射
+## 维度映射
 
-| 旧配方名 | 新配方名 | 产物 |
-|----------|---------|------|
-| `crafting_0.json` | 待搬运 | 待确认 |
-| `crafting_317.json` | 待搬运 | magic_stone（钻石+灵魂粉尘），依赖 soul_dust 未搬运 |
-| `crafting_318.json` | 待搬运 | magic_stone（冰凌晶芽+灵魂粉尘），依赖 soul_dust 未搬运 |
+| 旧 ID                          | 新 ID                          | 变更说明             | 备注                                                   |
+|-------------------------------|-------------------------------|------------------|------------------------------------------------------|
+| `dyedream_world`              | `dyedream_world`              | 不改，已实现           | `DimensionType` + `NoiseSettings` + `LevelStem` 已完成 datagen |
+| `lamp_shadow_world`           | `lamp_shadow_world`           | 不改，待搬运           | -                                                    |
+| `wind_journey_world`          | `wind_journey_world`          | 不改，待搬运           | -                                                    |
+| `aaroncos_arena_world`        | `aaroncos_arena_world`        | 不改，待搬运           | -                                                    |
+
+---
+
+## 群系映射
+
+| 旧 ID                         | 新 ID                          | 变更说明               | 备注                                |
+|--------------------------------|-------------------------------|--------------------|-----------------------------------|
+| `biome_dyedream_0`             | `dyedream_plains`             | 重命名，已实现            | 染梦平原，`ModBiomes` 中完成 datagen        |
+| `biome_dyedream_1`             | 待搬运                           | -                  | 染梦蘑菇林                             |
+| `biome_dyedream_2`             | 待搬运                           | -                  | 染梦雪原                             |
+| `biome_dyedream_3`             | 待搬运                           | -                  | 染梦冻洋                             |
+| `biome_shadow_0`               | 待搬运                           | -                  | 阴影之地                             |
+| `biome_shadow_1`               | 待搬运                           | -                  | 阴影森林                             |
+| `biome_shadow_2`               | 待搬运                           | -                  | 阴影古迹                             |
+| `wind_journey_biome_0`         | 待搬运                           | -                  | 风泊群岛                             |
+| `wind_journey_biome_1`         | 待搬运                           | -                  | 迷梦云层                             |
+| `aaroncos_arena_biome`         | 待搬运                           | -                  | 亚伦柯斯竞技场                          |
