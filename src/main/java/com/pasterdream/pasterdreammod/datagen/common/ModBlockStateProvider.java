@@ -5,6 +5,7 @@ import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.util.BuildingBlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.*;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -21,6 +22,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         simpleBlockWithItem(ModBlocks.DYEDREAM_DIRT.get(), cubeAll(ModBlocks.DYEDREAM_DIRT.get()));
+
+        farmlandBlock(ModBlocks.DYEDREAM_FARMLAND.get());
 
         var grassBlock = models().cubeBottomTop(
                 ModBlocks.DYEDREAM_GRASS_BLOCK.getId().getPath(),
@@ -287,5 +290,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private <T extends Block> void blockItem(RegistryObject<T> block, String append) {
         simpleBlockItem(block.get(), new ModelFile.UncheckedModelFile(PasterDreamMod.MOD_ID + ":block/" + block.getId().getPath() + append));
+    }
+
+    private void farmlandBlock(Block block) {
+        String baseName = ForgeRegistries.BLOCKS.getKey(block).getPath();
+        ModelFile dry = models().getExistingFile(modLoc("block/" + baseName));
+        ModelFile moist = models().getExistingFile(modLoc("block/" + baseName + "_moist"));
+        getVariantBuilder(block).forAllStates(state -> {
+            int moisture = state.getValue(FarmBlock.MOISTURE);
+            return ConfiguredModel.builder().modelFile(moisture == 7 ? moist : dry).build();
+        });
+        simpleBlockItem(block, dry);
     }
 }

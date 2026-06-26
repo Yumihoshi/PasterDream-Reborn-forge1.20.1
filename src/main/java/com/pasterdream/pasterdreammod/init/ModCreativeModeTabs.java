@@ -138,6 +138,7 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.DYEDREAM_GRASS_BLOCK.get()))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.DYEDREAM_GRASS_BLOCK.get());
+                        output.accept(ModItems.DYEDREAM_FARMLAND.get());
                         output.accept(ModItems.DYEDREAM_DIRT.get());
                         output.accept(ModItems.DYEDREAM_SAND.get());
                         output.accept(ModItems.DYEDREAM_LOG.get());
