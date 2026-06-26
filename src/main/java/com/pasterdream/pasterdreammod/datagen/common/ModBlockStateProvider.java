@@ -236,6 +236,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         var dyedreamMoss = models().cross(ModBlocks.DYEDREAM_MOSS.getId().getPath(), blockTexture(ModBlocks.DYEDREAM_MOSS.get())).renderType("cutout");
         simpleBlock(ModBlocks.DYEDREAM_MOSS.get(), dyedreamMoss);
 
+        var stemGrass = models().cross(ModBlocks.STEM_GRASS.getId().getPath(), blockTexture(ModBlocks.STEM_GRASS.get())).renderType("cutout");
+        simpleBlock(ModBlocks.STEM_GRASS.get(), stemGrass);
+
+        var GrassTallUpper = models().cross(ModBlocks.TALL_STEM_GRASS.getId().getPath() + "_top", modLoc("block/stem_grass")).renderType("cutout");
+        var GrassTallLower = models().cross(ModBlocks.TALL_STEM_GRASS.getId().getPath() + "_bottom", modLoc("block/tall_stem_grass")).renderType("cutout");
+        getVariantBuilder(ModBlocks.TALL_STEM_GRASS.get())
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).addModels(new ConfiguredModel(GrassTallLower))
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).addModels(new ConfiguredModel(GrassTallUpper));
 
         //流体方块
         simpleBlock(ModBlocks.MELTDREAM_LIQUID.get(), models().cubeAll(ModBlocks.MELTDREAM_LIQUID.getId().getPath(), modLoc("block/meltdream_liquid_flowing")));

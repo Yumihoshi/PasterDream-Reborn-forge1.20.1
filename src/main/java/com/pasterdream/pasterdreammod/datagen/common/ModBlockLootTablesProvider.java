@@ -121,6 +121,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf((ModBlocks.GOLDENROD.get()));
         add(ModBlocks.DYEDREAM_MOSS.get(),
                 block -> RecipeHelpers.creategrassesDrops(ModBlocks.DYEDREAM_MOSS.get()));
+        add(ModBlocks.STEM_GRASS.get(),
+                block -> RecipeHelpers.creategrassesDrops(ModBlocks.STEM_GRASS.get()));
+        add(ModBlocks.TALL_STEM_GRASS.get(),
+                block -> RecipeHelpers.createhighgrassesDrops(ModBlocks.STEM_GRASS.get(),ModBlocks.TALL_STEM_GRASS.get()));
 
 
         dropSelf(ModBlocks.DYEDREAM_SAND.get());

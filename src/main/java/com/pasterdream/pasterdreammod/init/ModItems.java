@@ -526,6 +526,12 @@ public class ModItems {
     public static final RegistryObject<Item> DYEDREAM_MOSS = ITEMS.register("dyedream_moss",
             () -> new BlockItem(ModBlocks.DYEDREAM_MOSS.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> STEM_GRASS = ITEMS.register("stem_grass",
+            () -> new BlockItem(ModBlocks.STEM_GRASS.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> TALL_STEM_GRASS = ITEMS.register("tall_stem_grass",
+            () -> new BlockItem(ModBlocks.TALL_STEM_GRASS.get(), new Item.Properties()));
+
     //流体桶物品
     public static final RegistryObject<Item> MELT_DREAM_LIQUID_BUCKET = ITEMS.register("melt_dream_liquid_bucket", () -> new BucketItem(ModFluids.MELT_DREAM_LIQUID, (new Item.Properties()).craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON).craftRemainder(Items.BUCKET)));
     public static final RegistryObject<Item> SHADOW_LIQUID_BUCKET = ITEMS.register("shadow_liquid_bucket", () -> new BucketItem(ModFluids.SHADOW_LIQUID, (new Item.Properties()).craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON)));

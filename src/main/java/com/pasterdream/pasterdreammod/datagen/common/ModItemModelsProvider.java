@@ -161,6 +161,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
 
         withExistingParent(ModItems.DYEDREAM_MOSS.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/dyedream_moss"));
+
+        withExistingParent(ModItems.STEM_GRASS.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/stem_grass"));
+        withExistingParent(ModItems.TALL_STEM_GRASS.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/stem_grass"));
     }
 
     @Override

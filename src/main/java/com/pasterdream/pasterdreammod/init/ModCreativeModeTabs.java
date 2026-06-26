@@ -221,6 +221,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TALL_PINK_MUSHROOM.get());
                         output.accept(ModItems.GOLDENROD.get());
                         output.accept(ModItems.DYEDREAM_MOSS.get());
+                        output.accept(ModItems.STEM_GRASS.get());
+                        output.accept(ModItems.TALL_STEM_GRASS.get());
 
                     })
                     .build());
