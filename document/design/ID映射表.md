@@ -97,14 +97,16 @@
 | `moltengold_block`               | `molten_gold_block`              | 重命名，补下划线                                      | 无需客制化类，直接用 `Block`                                                                                               |
 | `charged_amethyst_block`         | `charged_amethyst_block`         | 不改                                            | 无需客制化类，直接用 `HalfTransparentBlock`                                                                                |
 | `goldenrod`                      | `goldenrod`                      | 不改                                            | 无需客制化类，直接用 `FlowerBlock`                                                                                         |
-| `grass_7`                        | `dyedream_moss`                  | 重命名，染梦苔藓                                      | 无需客制化类，直接用 `FlowerBlock`                                                                                         |
+| `grass_7`                        | `dyedream_moss`                  | 重命名，染梦苔藓                                      | 无需客制化类，直接用 `GrassBlock`                                                                                          |
+| `grass_3`                        | `stem_grass`                     | 重命名，茎草                                        | 无需客制化类，直接用 `GrassBlock`                                                                                          |
+| `grass_4`                        | `tall_stem_grass`                | 重命名，高茎草                                       | 无需客制化类，直接用 `DoublePlantBlock`                                                                                    |
 | `dyedream_desk`                  | `dyedream_desk`                  | 不改                                            | 客制化类 `DyedreamDeskBlock`，含 BlockEntity、Menu、Screen                                                               |
 | `shadow_desk`                    | `shadow_desk`                    | 不改                                            | 客制化类 `ShadowDeskBlock`，含 BlockEntity、Menu、Screen                                                                 |
 | `picnic_basket`                  | `picnic_basket`                  | 不改                                            | 客制化类 `PicnicBusketBlock`，含 BlockEntity、Menu、Screen以及Geckolib特殊渲染                                                 |
 | `shadow_chest`                   | `shadow_chest`                   | 不改                                            | 客制化类 `ShadowChestBlock`，含 BlockEntity、Menu、Screen以及Geckolib特殊渲染                                                  |
 | `windmoor_crate`                 | `wind_moor_crate`                | 重命名，补下划线                                      | 客制化类 `WindMoorCrateBlock`，含 BlockEntity、Menu、Screen                                                              |
-| `qym_doll_0`                     | `qym_doll`                       | 重命名，删除 `_0` 后缀                                              | 客制化类 `QYMDollBlock`，因Geckolib特殊渲染实现空BlockEntity                                                                  |
-| `uuz_doll_0`                     | `uuz_doll`                       | 重命名，删除 `_0` 后缀                                              | 客制化类 `UUZDollBlock`，因Geckolib特殊渲染实现空BlockEntity                                                                  |
+| `qym_doll_0`                     | `qym_doll`                       | 重命名，删除 `_0` 后缀                                | 客制化类 `QYMDollBlock`，因Geckolib特殊渲染实现空BlockEntity                                                                  |
+| `uuz_doll_0`                     | `uuz_doll`                       | 重命名，删除 `_0` 后缀                                | 客制化类 `UUZDollBlock`，因Geckolib特殊渲染实现空BlockEntity                                                                  |
 
 
 

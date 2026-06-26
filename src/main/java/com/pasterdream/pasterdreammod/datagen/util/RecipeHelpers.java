@@ -1,10 +1,7 @@
 package com.pasterdream.pasterdreammod.datagen.util;
 
 import com.pasterdream.pasterdreammod.init.ModItems;
-import net.minecraft.advancements.critereon.EnchantmentPredicate;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.MinMaxBounds;
+import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -16,16 +13,15 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyExplosionDecay;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
-import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
@@ -284,6 +280,23 @@ public final class RecipeHelpers {
                         .add(LootItem.lootTableItem(grasses)
                                 .when(HAS_SHEARS_OR_SILK_TOUCH).otherwise(EmptyLootItem.emptyItem())));
     }
+    /**
+     * 构建高草战利品表：精准采集/剪刀 → x2草
+     */
+    public static LootTable.Builder createhighgrassesDrops(Block grasses,Block highgrasses) {
+        return LootTable.lootTable().withPool(
+                LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(highgrasses)
+                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                        .hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)
+                                        ))
+                        .when(HAS_SHEARS_OR_SILK_TOUCH)
+                        .add(LootItem.lootTableItem(grasses)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
+        );
+    }
+
+
 
     /**
      * 构建带果实掉落的树叶战利品表：精准采集/剪刀 → 树叶自身；否则 → 树苗(时运) + 木棍 + 果实。
