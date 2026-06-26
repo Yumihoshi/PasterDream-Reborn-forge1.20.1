@@ -10,7 +10,8 @@
       "blocks": { "旧ID": "新ID", ... },
       "items":  { "旧ID": "新ID", ... },
       "entities": { ... },
-      "recipes": { "旧配方名": "新配方名", ... }
+      "dimensions": { ... },
+      "biomes": { ... }
     }
 """
 
@@ -26,16 +27,17 @@ SECTION_HEADERS = {
     "方块映射": "blocks",
     "物品映射": "items",
     "实体映射": "entities",
-    "配方文件名映射": "recipes",
+    "维度映射": "dimensions",
+    "群系映射": "biomes",
 }
 
 
-HEADER_TEXTS = {"旧 id", "旧配方名", "新 id", "旧 id", "变更说明", "客制化类处理", "产物"}
+HEADER_TEXTS = {"旧 id", "旧 ID", "旧配方名", "新 id", "新 ID", "变更说明", "客制化类处理", "备注"}
 
 
 def is_header_row(first_cell: str) -> bool:
     """检查第一个单元格是否为表头。"""
-    clean = first_cell.strip("` ").strip().lower()
+    clean = first_cell.strip("` ").strip()
     return clean in HEADER_TEXTS or not clean
 
 
@@ -52,7 +54,6 @@ def parse_table(lines: list[str], col_old: int, col_new: int) -> dict[str, str]:
             continue
         old_id = cells[col_old].strip("` ").strip()
         new_id = cells[col_new].strip("` ").strip()
-        # 跳过表头行和空行
         if is_header_row(old_id):
             continue
         if old_id and new_id:
@@ -68,7 +69,8 @@ def main():
         "blocks": {},
         "items": {},
         "entities": {},
-        "recipes": {},
+        "dimensions": {},
+        "biomes": {},
     }
 
     current_section: str | None = None
@@ -82,9 +84,6 @@ def main():
             if current_section and section_lines:
                 key = SECTION_HEADERS.get(current_section)
                 if key:
-                    # 配方表只有 3 列（旧配方名、新配方名、产物），其余 4 列
-                    col_count = 3 if key == "recipes" else 4
-                    # 旧 ID 在第 0 列，新 ID 在第 1 列
                     result[key].update(parse_table(section_lines, 0, 1))
             current_section = m.group(1).strip()
             section_lines = []

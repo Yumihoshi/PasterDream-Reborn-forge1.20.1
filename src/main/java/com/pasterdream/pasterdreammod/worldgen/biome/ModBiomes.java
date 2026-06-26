@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.worldgen.biome;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.worldgen.ModPlacedFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -32,12 +33,14 @@ public class ModBiomes {
                 .downfall(0.35f)
                 .temperatureAdjustment(Biome.TemperatureModifier.NONE)
                 .specialEffects(new BiomeSpecialEffects.Builder()
-                        .skyColor(7972607)
-                        .fogColor(12638463)
-                        .waterColor(4159204)
-                        .waterFogColor(329011)
-                        .foliageColorOverride(-145678)
-                        .grassColorOverride(-145678)
+                        .skyColor(0x79A6FF)
+                        .fogColor(0xC0D8FF)
+                        .waterColor(0x3F76E4)
+                        .waterFogColor(0x050533)
+                        .foliageColorOverride(0xFFFDC6F2)
+                        .grassColorOverride(0xFFFDC6F2)
+                        .ambientParticle(
+                                new AmbientParticleSettings(ModParticleTypes.LEAVES_PARTICLE.get(), 0.005f))
                         .build())
                 .mobSpawnSettings(new MobSpawnSettings.Builder()
                         .addSpawn(MobCategory.CREATURE,

@@ -31,12 +31,12 @@ public class ModDimensionTypes {
                 384,                        // 总高度
                 384,                        // 逻辑高度（最高建筑高度 = -64+384 = 320）
                 BlockTags.INFINIBURN_OVERWORLD, // 可无限燃烧的方块标签
-                new ResourceLocation("overworld"), // 天空/雾/云效果同主世界
+                ResourceLocation.parse("overworld"), // 天空/雾/云效果同主世界
                 0.5f,                       // 环境光照（原作值）
                 new DimensionType.MonsterSettings(
                         false,              // 猪灵不会僵尸化
-                        true,               // 允许袭击
-                        UniformInt.of(0, 7), // 怪物生成光照判定（UniformInt(0,7)）
+                        false,              // 禁止袭击
+                        UniformInt.of(0, 0), // 怪物生成光照判定（仅天光0，配合群系空怪物列表禁止生成）
                         0                   // 怪物生成方块光照上限
                 )
         ));
