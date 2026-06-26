@@ -86,12 +86,23 @@ tasks.named('processResources', ProcessResources).configure {
             forge_version: forge_version, forge_version_range: forge_version_range,
             loader_version_range: loader_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-            mod_authors: mod_authors, mod_description: mod_description,
+            mod_authors: mod_authors,
     ]
     inputs.properties replaceProperties
 
-    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
-        expand replaceProperties + [project: project]
+    // 用 doLast 手动替换确保 UTF-8 正确，绕过 ForgeGradle 的 encoding bug
+    doLast {
+        def resourceDir = file("${buildDir}/resources/main")
+        ['META-INF/mods.toml', 'pack.mcmeta'].each { path ->
+            def destFile = file("${resourceDir}/${path}")
+            if (destFile.exists()) {
+                def content = destFile.getText('UTF-8')
+                replaceProperties.each { key, value ->
+                    content = content.replace("\${$key}", value.toString())
+                }
+                destFile.setText(content, 'UTF-8')
+            }
+        }
     }
 }
 
