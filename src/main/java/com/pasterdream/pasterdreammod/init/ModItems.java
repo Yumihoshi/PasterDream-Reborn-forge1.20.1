@@ -100,6 +100,14 @@ public class ModItems {
     public static final RegistryObject<Item> BLACK_STICK = ITEMS.register("black_stick",
             () -> new Item(new Item.Properties()));
 
+    // ===== 升级套件 =====
+    public static final RegistryObject<Item> TITANIUM_UPGRADE = ITEMS.register("titanium_upgrade",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON)));
+    public static final RegistryObject<Item> SCULK_UPGRADE = ITEMS.register("sculk_upgrade",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON)));
+    public static final RegistryObject<Item> DYEDREAM_UPGRADE = ITEMS.register("dyedream_upgrade",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON)));
+
     public static final RegistryObject<Item> MELT_DREAM_CRYSTAL_FRAGMENT = ITEMS.register("melt_dream_crystal_fragment",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)) {
                 @Override
