@@ -47,6 +47,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         blackStickRecipes(pWriter);
         materialRecipes(pWriter);
         upgradeKitRecipes(pWriter);
+        moltenGoldToolRecipes(pWriter);
         copperToolRecipes(pWriter);
         copperArmorRecipes(pWriter);
         titaniumToolRecipes(pWriter);
@@ -141,6 +142,36 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('b', Items.CRYING_OBSIDIAN)
                 .unlockedBy(getHasName(Items.CRYING_OBSIDIAN), has(Items.CRYING_OBSIDIAN))
                 .save(pWriter, PasterDreamMod.MOD_ID + ":black_stick_from_crying_obsidian");
+    }
+
+    // ===== 炙焰金工具配方 =====
+
+    private void moltenGoldToolRecipes(Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MOLTEN_GOLD_SWORD.get())
+                .pattern("a").pattern("a").pattern("b")
+                .define('a', ModItems.MOLTEN_GOLD_INGOT.get()).define('b', ModItems.BLACK_STICK.get())
+                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_INGOT.get()), has(ModItems.MOLTEN_GOLD_INGOT.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MOLTEN_GOLD_PICKAXE.get())
+                .pattern("aaa").pattern(" b ").pattern(" b ")
+                .define('a', ModItems.MOLTEN_GOLD_INGOT.get()).define('b', ModItems.BLACK_STICK.get())
+                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_INGOT.get()), has(ModItems.MOLTEN_GOLD_INGOT.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MOLTEN_GOLD_AXE.get())
+                .pattern("aa").pattern("ab").pattern(" b")
+                .define('a', ModItems.MOLTEN_GOLD_INGOT.get()).define('b', ModItems.BLACK_STICK.get())
+                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_INGOT.get()), has(ModItems.MOLTEN_GOLD_INGOT.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MOLTEN_GOLD_SHOVEL.get())
+                .pattern("a").pattern("b").pattern("b")
+                .define('a', ModItems.MOLTEN_GOLD_INGOT.get()).define('b', ModItems.BLACK_STICK.get())
+                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_INGOT.get()), has(ModItems.MOLTEN_GOLD_INGOT.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MOLTEN_GOLD_HOE.get())
+                .pattern("aa").pattern(" b").pattern(" b")
+                .define('a', ModItems.MOLTEN_GOLD_INGOT.get()).define('b', ModItems.BLACK_STICK.get())
+                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_INGOT.get()), has(ModItems.MOLTEN_GOLD_INGOT.get()))
+                .save(pWriter);
     }
 
     // ===== 铜工具配方 =====
@@ -361,6 +392,15 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         RecipeCategory.TOOLS, ModItems.DYEDREAM_HOE.get())
                 .unlocks("has_dyedream_upgrade", has(ModItems.DYEDREAM_UPGRADE.get()))
                 .save(pWriter, PasterDreamMod.MOD_ID + ":dyedream_hoe_smithing");
+
+        // 极锋染梦合金剑
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.DYEDREAM_DUST.get()),
+                        Ingredient.of(ModItems.DYEDREAM_SWORD.get()),
+                        Ingredient.of(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()),
+                        RecipeCategory.COMBAT, ModItems.SHARP_DYEDREAM_SWORD.get())
+                .unlocks("has_melt_dream_crystal_fragment", has(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":dyedream_sharp_sword_smithing");
 
         // 染梦合金锤（工作台合成）
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.DYEDREAM_HAMMER.get())
