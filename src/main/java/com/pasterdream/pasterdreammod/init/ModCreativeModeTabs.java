@@ -132,6 +132,20 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+    // ===== 装备 =====
+    // 升级套件、武器、工具、防具、饰品
+    public static final RegistryObject<CreativeModeTab> PASTERDREAM_GEAR_TAB = CREATIVE_MODE_TABS.register("pasterdream_gear_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.pasterdream.pasterdream_gear_tab"))
+                    .icon(() -> new ItemStack(ModItems.TITANIUM_UPGRADE.get()))
+                    .displayItems((parameters, output) -> {
+                        // 升级套件
+                        output.accept(ModItems.TITANIUM_UPGRADE.get());
+                        output.accept(ModItems.SCULK_UPGRADE.get());
+                        output.accept(ModItems.DYEDREAM_UPGRADE.get());
+                    })
+                    .build());
+
     // ===== 方块 =====
     // 来源: 旧 paster_tab_1 (建筑方块), 按原顺序
     public static final RegistryObject<CreativeModeTab> PASTERDREAM_BLOCKS_TAB = CREATIVE_MODE_TABS.register("pasterdream_blocks_tab",

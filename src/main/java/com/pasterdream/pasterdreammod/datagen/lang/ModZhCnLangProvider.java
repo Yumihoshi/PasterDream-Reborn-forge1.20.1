@@ -107,6 +107,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.COTTON.get(), "棉花");
         add(ModItems.SCULK_HEART.get(), "回响之心");
         add(ModItems.BLACK_STICK.get(), "黑石棍");
+        add(ModItems.TITANIUM_UPGRADE.get(), "钛金升级套件");
+        add(ModItems.SCULK_UPGRADE.get(), "回响升级套件");
+        add(ModItems.DYEDREAM_UPGRADE.get(), "染梦升级套件");
         add(ModItems.DREAM_FERTILIZER.get(), "衍梦肥泥");
         add(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(), "融梦水晶碎片");
 
@@ -244,15 +247,17 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add("itemGroup.pasterdream.pasterdream_food_tab", "帕斯特之梦 | 饮食");
         add("itemGroup.pasterdream.pasterdream_items_tab", "帕斯特之梦 | 物品");
+        add("itemGroup.pasterdream.pasterdream_gear_tab", "帕斯特之梦 | 装备");
+        add("itemGroup.pasterdream.pasterdream_equipment_tab", "帕斯特之梦 | 设备");
         add("itemGroup.pasterdream.pasterdream_blocks_tab", "帕斯特之梦 | 方块");
         add("itemGroup.pasterdream.pasterdream_plants_tab", "帕斯特之梦 | 植物");
-        add("itemGroup.pasterdream.pasterdream_equipment_tab", "帕斯特之梦 | 设备");
         add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "帕斯特之梦 | 笔记");
 
         add("button.pasterdream.mortarbutton", "研磨");
 
         add("tooltip.pasterdreammod.magic_stone", "§7§o哪个魔法师的兜里不会踹几块魔法石呢？");
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7此世间一切拥有灵魂的生物皆有梦\n那些醒来时无法想起的细缕回忆\n破碎并融化被埋藏在世界各处凝结成晶\n等待着被新的灵魂发现");
+        add("tooltip.pasterdreammod.upgrade_kit", "§7用于在锻造台处升级装备 可以保留装备的原有强化属性");
         add("tooltip.pasterdream.右键打开GUI", "§7右键打开GUI");
         add("tooltip.pasterdreammod.san_value", "SAN值: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "融梦能量: ");

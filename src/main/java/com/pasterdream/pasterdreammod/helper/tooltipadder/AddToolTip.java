@@ -21,6 +21,9 @@ public class AddToolTip
         if(stack.is(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get())){
             tooltip.add(Component.translatable("tooltip.pasterdreammod.melt_dream_crystal_fragment"));
         }
+        if(stack.is(ModItems.TITANIUM_UPGRADE.get()) || stack.is(ModItems.SCULK_UPGRADE.get()) || stack.is(ModItems.DYEDREAM_UPGRADE.get())){
+            tooltip.add(Component.translatable("tooltip.pasterdreammod.upgrade_kit"));
+        }
 
     }
 }

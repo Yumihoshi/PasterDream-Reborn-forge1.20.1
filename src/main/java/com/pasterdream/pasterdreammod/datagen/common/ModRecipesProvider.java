@@ -45,6 +45,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         woodRecipes(pWriter);
         dyeConversionRecipes(pWriter);
         blackStickRecipes(pWriter);
+        upgradeKitRecipes(pWriter);
         toolRecipes(pWriter);
         glassRecipes(pWriter);
         iceAndLanternRecipes(pWriter);
@@ -132,6 +133,46 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('b', Items.CRYING_OBSIDIAN)
                 .unlockedBy(getHasName(Items.CRYING_OBSIDIAN), has(Items.CRYING_OBSIDIAN))
                 .save(pWriter, PasterDreamMod.MOD_ID + ":black_stick_from_crying_obsidian");
+    }
+
+    // ===== 升级套件配方 =====
+
+    private void upgradeKitRecipes(Consumer<FinishedRecipe> pWriter) {
+        // 钛金升级套件
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TITANIUM_UPGRADE.get(), 1)
+                .pattern(" a ")
+                .pattern("bcb")
+                .pattern("dbd")
+                .define('a', Items.IRON_INGOT)
+                .define('b', ModItems.TITANIUM_INGOT.get())
+                .define('c', Items.STONE_BUTTON)
+                .define('d', ModItems.BLACK_STICK.get())
+                .unlockedBy(getHasName(ModItems.TITANIUM_INGOT.get()), has(ModItems.TITANIUM_INGOT.get()))
+                .save(pWriter);
+
+        // 回响升级套件
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCULK_UPGRADE.get(), 1)
+                .pattern(" a ")
+                .pattern("bcb")
+                .pattern("dbd")
+                .define('a', Items.IRON_INGOT)
+                .define('b', Items.ECHO_SHARD)
+                .define('c', ModItems.SCULK_HEART.get())
+                .define('d', Items.SCULK_VEIN)
+                .unlockedBy(getHasName(ModItems.SCULK_HEART.get()), has(ModItems.SCULK_HEART.get()))
+                .save(pWriter);
+
+        // 染梦升级套件
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DYEDREAM_UPGRADE.get(), 1)
+                .pattern(" a ")
+                .pattern("bcb")
+                .pattern("dbd")
+                .define('a', Items.IRON_INGOT)
+                .define('b', ModItems.DYEDREAM_ALLOY_INGOT.get())
+                .define('c', Items.GHAST_TEAR)
+                .define('d', ModItems.BLACK_STICK.get())
+                .unlockedBy(getHasName(ModItems.DYEDREAM_ALLOY_INGOT.get()), has(ModItems.DYEDREAM_ALLOY_INGOT.get()))
+                .save(pWriter);
     }
 
     // ===== 染梦染料转化配方 =====
