@@ -119,6 +119,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.TITANIUM_AXE.get(), "Titanium Axe");
         add(ModItems.TITANIUM_SHOVEL.get(), "Titanium Shovel");
         add(ModItems.TITANIUM_HOE.get(), "Titanium Hoe");
+        add(ModItems.MOLTEN_GOLD_SWORD.get(), "Molten Gold Sword");
+        add(ModItems.MOLTEN_GOLD_PICKAXE.get(), "Molten Gold Pickaxe");
+        add(ModItems.MOLTEN_GOLD_AXE.get(), "Molten Gold Axe");
+        add(ModItems.MOLTEN_GOLD_SHOVEL.get(), "Molten Gold Shovel");
+        add(ModItems.MOLTEN_GOLD_HOE.get(), "Molten Gold Hoe");
         add(ModItems.DYEDREAM_SWORD.get(), "Dyedream Sword");
         add(ModItems.DYEDREAM_PICKAXE.get(), "Dyedream Pickaxe");
         add(ModItems.DYEDREAM_AXE.get(), "Dyedream Axe");

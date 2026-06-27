@@ -83,22 +83,27 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         // 工具标签
         tag(ItemTags.SWORDS)
+                .add(ModItems.MOLTEN_GOLD_SWORD.get())
                 .add(ModItems.COPPER_SWORD.get())
                 .add(ModItems.TITANIUM_SWORD.get())
                 .add(ModItems.DYEDREAM_SWORD.get());
         tag(ItemTags.PICKAXES)
+                .add(ModItems.MOLTEN_GOLD_PICKAXE.get())
                 .add(ModItems.COPPER_PICKAXE.get())
                 .add(ModItems.TITANIUM_PICKAXE.get())
                 .add(ModItems.DYEDREAM_PICKAXE.get());
         tag(ItemTags.AXES)
+                .add(ModItems.MOLTEN_GOLD_AXE.get())
                 .add(ModItems.COPPER_AXE.get())
                 .add(ModItems.TITANIUM_AXE.get())
                 .add(ModItems.DYEDREAM_AXE.get());
         tag(ItemTags.SHOVELS)
+                .add(ModItems.MOLTEN_GOLD_SHOVEL.get())
                 .add(ModItems.COPPER_SHOVEL.get())
                 .add(ModItems.TITANIUM_SHOVEL.get())
                 .add(ModItems.DYEDREAM_SHOVEL.get());
         tag(ItemTags.HOES)
+                .add(ModItems.MOLTEN_GOLD_HOE.get())
                 .add(ModItems.COPPER_HOE.get())
                 .add(ModItems.TITANIUM_HOE.get())
                 .add(ModItems.DYEDREAM_HOE.get());

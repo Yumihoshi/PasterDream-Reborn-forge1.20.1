@@ -127,6 +127,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.TITANIUM_AXE.get(), "钛金斧");
         add(ModItems.TITANIUM_SHOVEL.get(), "钛金锹");
         add(ModItems.TITANIUM_HOE.get(), "钛金锄");
+        add(ModItems.MOLTEN_GOLD_SWORD.get(), "炙焰金剑");
+        add(ModItems.MOLTEN_GOLD_PICKAXE.get(), "炙焰金镐");
+        add(ModItems.MOLTEN_GOLD_AXE.get(), "炙焰金斧");
+        add(ModItems.MOLTEN_GOLD_SHOVEL.get(), "炙焰金锹");
+        add(ModItems.MOLTEN_GOLD_HOE.get(), "炙焰金锄");
         add(ModItems.DYEDREAM_SWORD.get(), "染梦合金剑");
         add(ModItems.DYEDREAM_PICKAXE.get(), "染梦合金镐");
         add(ModItems.DYEDREAM_AXE.get(), "染梦合金斧");

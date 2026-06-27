@@ -138,6 +138,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.DYEDREAM_CHESTPLATE.get());
         basicItem(ModItems.DYEDREAM_LEGGINGS.get());
         basicItem(ModItems.DYEDREAM_BOOTS.get());
+        handheldItem(ModItems.MOLTEN_GOLD_SWORD);
+        handheldItem(ModItems.MOLTEN_GOLD_PICKAXE);
+        handheldItem(ModItems.MOLTEN_GOLD_AXE);
+        handheldItem(ModItems.MOLTEN_GOLD_SHOVEL);
+        handheldItem(ModItems.MOLTEN_GOLD_HOE);
         handheldItem(ModItems.TITANIUM_SWORD);
         handheldItem(ModItems.TITANIUM_PICKAXE);
         handheldItem(ModItems.TITANIUM_AXE);
