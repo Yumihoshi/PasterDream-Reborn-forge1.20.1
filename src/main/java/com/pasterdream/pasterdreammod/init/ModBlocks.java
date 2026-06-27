@@ -19,7 +19,11 @@ import com.pasterdream.pasterdreammod.world.block.fluidblock.ShadowLiquidBlock;
 import com.pasterdream.pasterdreammod.world.block.SoulOreBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
@@ -222,12 +226,26 @@ public class ModBlocks {
                     if (belowState.isAir()) return false;
                     return belowState.is(Blocks.CRIMSON_NYLIUM);
                 }
+                @Override
+                public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+                    if (pLevel.isClientSide()) {
+                        return;
+                    }
+                    if (pEntity instanceof LivingEntity livingEntity) {
+                        if (!livingEntity.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 0));
+                        }
+                            if (livingEntity.getRemainingFireTicks() < 20) {
+                                livingEntity.setSecondsOnFire(1);
+                        }
+                    }
+                }
             });
 
     //作物方块
     public static final RegistryObject<Block> DYEDREAM_COROLLA_CROP = BLOCKS.register("dyedream_corolla_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().randomTicks().instabreak()));
     public static final RegistryObject<Block> WHITE_COROLLA_CROP = BLOCKS.register("white_corolla_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).noCollission().randomTicks().instabreak()));
-    public static final RegistryObject<Block> LIGHT_BALL_CROP = BLOCKS.register("light_ball_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().randomTicks().instabreak()));
+    public static final RegistryObject<Block> LIGHT_BALL_CROP = BLOCKS.register("light_ball_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).lightLevel(blockState -> 12).noCollission().randomTicks().instabreak()));
     public static final RegistryObject<Block> CLOUD_CROP = BLOCKS.register("cloud_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).noCollission().randomTicks().instabreak()));
     public static final RegistryObject<Block> COTTON_CROP = BLOCKS.register("cotton_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).noCollission().randomTicks().instabreak()));
 

@@ -24,6 +24,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.Tags;
@@ -60,6 +62,12 @@ public class PasterDreamCropBlock extends BushBlock implements IPlantable
                 level.setBlock(pos, state.setValue(AGE, 1), 2);
             }
         }
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context)
+    {
+        return box(4, 0, 4, 12, 12, 12);
     }
 
     @Override
