@@ -30,7 +30,7 @@ public class SharpSwordSlashParticle extends TextureSheetParticle {
 
     @Override
     public int getLightColor(float partialTick) {
-        return 15728880;
+        return 0xf000f0;
     }
 
     public static class Provider implements ParticleProvider<SimpleParticleType> {
