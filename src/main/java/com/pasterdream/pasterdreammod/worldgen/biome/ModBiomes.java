@@ -82,6 +82,14 @@ public class ModBiomes {
                                 ModPlacedFeatures.LIGHT_BALL_PATCH)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.CLOUD_CROP_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.TITANIUM_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.AMBER_CANDY_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.DYEDREAM_DUST_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.DYEDREAM_QUARTZ_ORE)
                         .build())
                 .build());
 
@@ -108,6 +116,14 @@ public class ModBiomes {
                         .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
                         .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON)
                         // TODO: dyedream_forest_tree feature
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.TITANIUM_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.AMBER_CANDY_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.DYEDREAM_DUST_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.DYEDREAM_QUARTZ_ORE)
                         .build())
                 .build());
 
@@ -145,6 +161,14 @@ public class ModBiomes {
                                 ModPlacedFeatures.DYEDREAM_ICESTONE_BLOBS)
                         .addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION,
                                 FREEZE_TOP_LAYER)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.TITANIUM_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.AMBER_CANDY_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.DYEDREAM_DUST_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.DYEDREAM_QUARTZ_ORE)
                         .build())
                 .build());
 
@@ -177,6 +201,14 @@ public class ModBiomes {
                                 ICEBERG_BLUE)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
                                 ModPlacedFeatures.DYEDREAM_ICESTONE_BLOBS)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.TITANIUM_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.AMBER_CANDY_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.DYEDREAM_DUST_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
+                                ModPlacedFeatures.DYEDREAM_QUARTZ_ORE)
                         .build())
                 .build());
     }
