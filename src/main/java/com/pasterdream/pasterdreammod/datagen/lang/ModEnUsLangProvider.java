@@ -339,6 +339,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.inferno_sword.7", "§7▪ §9Cooldown: 10s");
         add("tooltip.pasterdreammod.inferno_sword.8", "§7Passive:");
         add("tooltip.pasterdreammod.inferno_sword.9", "§7▪ §9Ignites 4s; if burning, adds 3s");
+        add("tooltip.pasterdreammod.melt_dream_tool.1", "While held");
+        add("tooltip.pasterdreammod.melt_dream_tool.2", "§7▪ §bMelt-Repair: 0.01E/1 Durability");
         add("tooltip.pasterdreammod.dyedream_armor.1", "§7Set Bonus: §dDyedream Protection");
         add("tooltip.pasterdreammod.dyedream_armor.2", "§7▪ §9Max Health +4");
         add("tooltip.pasterdreammod.dyedream_armor.3", "§7▪ §9Gain 2 Absorption hearts every 30s");

@@ -347,6 +347,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.inferno_sword.7", "§7▪ §9冷却时间：10秒");
         add("tooltip.pasterdreammod.inferno_sword.8", "§7被动：");
         add("tooltip.pasterdreammod.inferno_sword.9", "§7▪ §9攻击引燃4秒；已燃烧时叠加3秒");
+        add("tooltip.pasterdreammod.melt_dream_tool.1", "手持工具时");
+        add("tooltip.pasterdreammod.melt_dream_tool.2", "§7▪ §b融梦修补：0.01E/1耐久");
         add("tooltip.pasterdreammod.dyedream_armor.1", "§7套装效果：§d染梦守护");
         add("tooltip.pasterdreammod.dyedream_armor.2", "§7▪ §9最大生命值+4");
         add("tooltip.pasterdreammod.dyedream_armor.3", "§7▪ §9每 30 秒获得 2 颗吸收之♡");
