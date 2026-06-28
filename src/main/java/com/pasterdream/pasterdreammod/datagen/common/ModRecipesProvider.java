@@ -488,7 +488,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         Ingredient.of(ModItems.DYEDREAM_DUST.get()),
                         Ingredient.of(ModItems.DYEDREAM_SWORD.get()),
                         Ingredient.of(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()),
-                        RecipeCategory.COMBAT, ModItems.SHARP_DYEDREAM_SWORD.get())
+                        RecipeCategory.COMBAT, ModItems.SHARP_MELT_DREAM_SWORD.get())
                 .unlocks("has_melt_dream_crystal_fragment", has(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()))
                 .save(pWriter, PasterDreamMod.MOD_ID + ":dyedream_sharp_sword_smithing");
 

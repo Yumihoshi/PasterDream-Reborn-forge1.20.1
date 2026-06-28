@@ -18,7 +18,7 @@ import com.pasterdream.pasterdreammod.world.item.armoritem.DyedreamArmorItem;
 import com.pasterdream.pasterdreammod.world.item.DyedreamHammerItem;
 import com.pasterdream.pasterdreammod.world.item.hellfiretool.*;
 import com.pasterdream.pasterdreammod.world.item.moltengoldtool.*;
-import com.pasterdream.pasterdreammod.world.item.SharpDyedreamSwordItem;
+import com.pasterdream.pasterdreammod.world.item.SharpMeltDreamSwordItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -201,8 +201,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> DYEDREAM_HAMMER = ITEMS.register("dyedream_hammer",
             () -> new DyedreamHammerItem(ModToolTiers.DYEDREAM, new Item.Properties().rarity(Rarity.UNCOMMON)));
-    public static final RegistryObject<Item> SHARP_DYEDREAM_SWORD = ITEMS.register("sharp_dyedream_sword",
-            () -> new SharpDyedreamSwordItem(ModToolTiers.DYEDREAM, new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> SHARP_MELT_DREAM_SWORD = ITEMS.register("sharp_melt_dream_sword",
+            () -> new SharpMeltDreamSwordItem(ModToolTiers.MELT_DREAM, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     // ===== 钛金装备 =====
     public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet",

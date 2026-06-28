@@ -137,7 +137,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.DYEDREAM_SHOVEL.get(), "Dyedream Shovel");
         add(ModItems.DYEDREAM_HOE.get(), "Dyedream Hoe");
         add(ModItems.DYEDREAM_HAMMER.get(), "Dyedream Hammer");
-        add(ModItems.SHARP_DYEDREAM_SWORD.get(), "Dyedream Sharp Sword");
+        add(ModItems.SHARP_MELT_DREAM_SWORD.get(), "Dyedream Sharp Sword");
         add(ModItems.TITANIUM_HELMET.get(), "Titanium Helmet");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "Titanium Chestplate");
         add(ModItems.TITANIUM_LEGGINGS.get(), "Titanium Leggings");
@@ -341,11 +341,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.dyedream_armor.2", "§7▪ §9Max Health +4");
         add("tooltip.pasterdreammod.dyedream_armor.3", "§7▪ §9Gain 2 Absorption hearts every 30s");
         add("tooltip.pasterdreammod.dyedream_armor.4", "§7▪ §9Enhances wielded Dyedream tools");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.1", "Inlaid: §dMelt Dream Crystal Fragment");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.2", "Combat Art: §bSora-giri");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.3", "§7▪ §9Slash and launch enemies upward, deals 2+ATK*1.2 bonus damage");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.4", "§7▪ §9Cooldown: 5s");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.5", "§7▪ §9Cooldown reduced to 3s while Dyedream Protection is active");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.1", "Inlaid: §dMelt Dream Crystal Fragment");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.2", "Combat Art: §bSora-giri");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.3", "§7▪ §9Slash and launch enemies upward, deals 2+ATK*1.2 bonus damage");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.4", "§7▪ §9Cooldown: 5s");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.5", "§7▪ §9Cooldown reduced to 3s while Dyedream Protection is active");
         add("tooltip.pasterdreammod.san_value", "SAN: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "Melt Dream Energy: ");
 

@@ -145,7 +145,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.DYEDREAM_SHOVEL.get(), "染梦合金锹");
         add(ModItems.DYEDREAM_HOE.get(), "染梦合金锄");
         add(ModItems.DYEDREAM_HAMMER.get(), "染梦合金锤");
-        add(ModItems.SHARP_DYEDREAM_SWORD.get(), "极锋染梦合金剑");
+        add(ModItems.SHARP_MELT_DREAM_SWORD.get(), "极锋染梦合金剑");
         add(ModItems.TITANIUM_HELMET.get(), "钛金头盔");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "钛金胸甲");
         add(ModItems.TITANIUM_LEGGINGS.get(), "钛金护腿");
@@ -349,11 +349,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.dyedream_armor.2", "§7▪ §9最大生命值+4");
         add("tooltip.pasterdreammod.dyedream_armor.3", "§7▪ §9每 30 秒获得 2 颗吸收之♡");
         add("tooltip.pasterdreammod.dyedream_armor.4", "§7▪ §9增强手持的染梦工具");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.1", "镶嵌：§d融梦水晶碎片");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.2", "战技：§b凌空斩");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.3", "§7▪ §9斩击并将敌人向上击飞 造成2+当前攻击力*1.2点伤害");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.4", "§7▪ §9冷却时间：5秒");
-        add("tooltip.pasterdreammod.sharp_dyedream_sword.5", "§7▪ §9拥有染梦守护效果时 冷却时间缩短为3秒");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.1", "镶嵌：§d融梦水晶碎片");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.2", "战技：§b凌空斩");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.3", "§7▪ §9斩击并将敌人向上击飞 造成2+当前攻击力*1.2点伤害");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.4", "§7▪ §9冷却时间：5秒");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.5", "§7▪ §9拥有染梦守护效果时 冷却时间缩短为3秒");
         add("tooltip.pasterdreammod.san_value", "SAN值: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "融梦能量: ");
 

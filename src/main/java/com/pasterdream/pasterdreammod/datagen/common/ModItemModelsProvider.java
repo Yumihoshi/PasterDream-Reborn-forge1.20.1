@@ -161,7 +161,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.DYEDREAM_SHOVEL);
         handheldItem(ModItems.DYEDREAM_HOE);
         handheldItem(ModItems.DYEDREAM_HAMMER);
-        handheldItem(ModItems.SHARP_DYEDREAM_SWORD);
+        handheldItem(ModItems.SHARP_MELT_DREAM_SWORD);
         basicItem(ModItems.TITANIUM_UPGRADE.get());
         basicItem(ModItems.SCULK_UPGRADE.get());
         basicItem(ModItems.DYEDREAM_UPGRADE.get());

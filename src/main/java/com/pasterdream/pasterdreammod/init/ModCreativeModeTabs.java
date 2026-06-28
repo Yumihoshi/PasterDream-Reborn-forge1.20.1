@@ -141,7 +141,7 @@ public class ModCreativeModeTabs {
     public static final RegistryObject<CreativeModeTab> PASTERDREAM_GEAR_TAB = CREATIVE_MODE_TABS.register("pasterdream_gear_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.pasterdream.pasterdream_gear_tab"))
-                    .icon(() -> new ItemStack(ModItems.SHARP_DYEDREAM_SWORD.get()))
+                    .icon(() -> new ItemStack(ModItems.SHARP_MELT_DREAM_SWORD.get()))
                     .displayItems((parameters, output) -> {
                         // 升级套件
                         output.accept(ModItems.TITANIUM_UPGRADE.get());
@@ -166,7 +166,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TITANIUM_HOE.get());
                         // 染梦合金工具
                         output.accept(ModItems.DYEDREAM_SWORD.get());
-                        output.accept(ModItems.SHARP_DYEDREAM_SWORD.get());
+                        output.accept(ModItems.SHARP_MELT_DREAM_SWORD.get());
                         output.accept(ModItems.DYEDREAM_PICKAXE.get());
                         output.accept(ModItems.DYEDREAM_AXE.get());
                         output.accept(ModItems.DYEDREAM_SHOVEL.get());
