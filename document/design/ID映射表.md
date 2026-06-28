@@ -124,14 +124,14 @@
 | `windmoor_crate`                | `wind_moor_crate`                   | 重命名，补下划线                                      | 客制化类 `WindMoorCrateBlock`，含 BlockEntity、Menu、Screen                                                              |
 | `qym_doll_0`                    | `qym_doll`                          | 重命名，删除 `_0` 后缀                                | 客制化类 `QYMDollBlock`，因Geckolib特殊渲染实现空BlockEntity                                                                  |
 | `uuz_doll_0`                    | `uuz_doll`                          | 重命名，删除 `_0` 后缀                                | 客制化类 `UUZDollBlock`，因Geckolib特殊渲染实现空BlockEntity                                                                  |
-| `crop_0a`                       | 删除                                  |                                               |                                                                                                                  |
-| `crop_0b`                       | `dyedream_corolla_crop`             | 重命名，梦染茶花植株                                    | 客制化类 `PasterdreamCropBlock`                                                                                      |
-| `crop_1a`                       | 删除                                  |                                               |                                                                                                                  |
-| `crop_1b`                       | `white_corolla_crop_age`            | 重命名，苍白雪莲植株                                    | 客制化类 `PasterdreamCropBlock`                                                                                      |
-| `crop_2a`                       | 删除                                  |                                               |                                                                                                                  |
-| `crop_2b`                       | `light_ball_crop_age`               | 重命名，流明堇植株                                     | 客制化类 `PasterdreamCropBlock`                                                                                      |
-| `crop_3a`                       | 删除                                  |                                               |                                                                                                                  |
-| `crop_3b`                       | `cloud_crop_age`                    | 重命名，玲云花植株                                     | 客制化类 `PasterdreamCropBlock`                                                                                      |
+| `crop_0a`                       | `dyedream_corolla_crop`             | 重命名，梦染茶花成熟植株（世界生成用）                            | 客制化类 `PasterDreamCropBlock`                                                                                      |
+| `crop_0b`                       | `dyedream_corolla_crop`             | 重命名，梦染茶花植株（生长阶段，合并至同一方块）                     | 客制化类 `PasterDreamCropBlock`                                                                                      |
+| `crop_1a`                       | `white_corolla_crop`                | 重命名，苍白雪莲成熟植株（世界生成用）                            | 客制化类 `PasterDreamCropBlock`                                                                                      |
+| `crop_1b`                       | `white_corolla_crop`                | 重命名，苍白雪莲植株（生长阶段，合并至同一方块）                     | 客制化类 `PasterDreamCropBlock`                                                                                      |
+| `crop_2a`                       | `light_ball_crop`                   | 重命名，流明堇成熟植株（世界生成用）                             | 客制化类 `PasterDreamCropBlock`                                                                                      |
+| `crop_2b`                       | `light_ball_crop`                   | 重命名，流明堇植株（生长阶段，合并至同一方块）                      | 客制化类 `PasterDreamCropBlock`                                                                                      |
+| `crop_3a`                       | `cloud_crop`                        | 重命名，玲云花成熟植株（世界生成用）                             | 客制化类 `PasterDreamCropBlock`                                                                                      |
+| `crop_3b`                       | `cloud_crop`                        | 重命名，玲云花植株（生长阶段，合并至同一方块）                      | 客制化类 `PasterDreamCropBlock`                                                                                      |
 | `crop_4a`                       | 删除                                  |                                               |                                                                                                                  |
 | `crop_4b`                       | `cotton_crop_age`                   | 重命名，棉花植株                                      | 客制化类 `PasterdreamCropBlock`                                                                                      |
 
@@ -360,12 +360,45 @@
 | 旧 ID                         | 新 ID                          | 变更说明               | 备注                                |
 |--------------------------------|-------------------------------|--------------------|-----------------------------------|
 | `biome_dyedream_0`             | `dyedream_plains`             | 重命名，已实现            | 染梦平原，`ModBiomes` 中完成 datagen        |
-| `biome_dyedream_1`             | 待搬运                           | -                  | 染梦蘑菇林                             |
-| `biome_dyedream_2`             | 待搬运                           | -                  | 染梦雪原                             |
-| `biome_dyedream_3`             | 待搬运                           | -                  | 染梦冻洋                             |
+| `biome_dyedream_1`             | `dyedream_mushroom_mountains`  | 重命名，已实现            | 粉顶菇山地，`ModBiomes` 中完成 datagen       |
+| `biome_dyedream_2`             | `dyedream_snowy_plains`        | 重命名，已实现            | 染梦雪原，`ModBiomes` 中完成 datagen        |
+| `biome_dyedream_3`             | `dyedream_frozen_ocean`        | 重命名，已实现            | 染梦冻洋，`ModBiomes` 中完成 datagen        |
 | `biome_shadow_0`               | 待搬运                           | -                  | 阴影之地                             |
 | `biome_shadow_1`               | 待搬运                           | -                  | 阴影森林                             |
 | `biome_shadow_2`               | 待搬运                           | -                  | 阴影古迹                             |
 | `wind_journey_biome_0`         | 待搬运                           | -                  | 风泊群岛                             |
 | `wind_journey_biome_1`         | 待搬运                           | -                  | 迷梦云层                             |
 | `aaroncos_arena_biome`         | 待搬运                           | -                  | 亚伦柯斯竞技场                          |
+
+---
+
+## 地物映射
+
+### Configured Feature
+
+| 旧 ID                             | 新 ID                              | 变更说明    | 所属群系                |
+|-----------------------------------|-----------------------------------|---------|---------------------|
+| `biome_dyedream_0_tree`           | `dyedream_tree`                   | 重命名，已实现 | 染梦平原                |
+| `biome_dyedream_1_tree`           | 待搬运                               | -       | 粉顶菇山地               |
+| `biome_dyedream_2_tree`           | 待搬运                               | -       | 染梦雪原                |
+| `ground_feature_dyedream_0`       | `dyedream_ice_pillar`             | 重命名，已实现 | 待确认                 |
+| `ground_feature_dyedream_1`       | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_2`       | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_3`       | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_4`       | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_5`       | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_6`       | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_7`       | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_8`       | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_9`       | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_10`      | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_11`      | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_12`      | `dyedream_icestone_blobs`         | 重命名，已实现 | 待确认                 |
+| `ground_feature_dyedream_13`      | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_14`      | 待搬运                               | -       | 待确认                 |
+| `ground_feature_dyedream_15`      | 待搬运                               | -       | 待确认                 |
+| `crop_0a`                         | `dyedream_corolla_patch`            | random_patch(野生梦染茶花) | PL, SP              |
+| `crop_2a`                         | `light_ball_patch`                  | random_patch(野生流明堇) | PL, SP              |
+| `crop_3a`                         | `cloud_crop_patch`                  | random_patch(野生玲云花) | PL, SP              |
+| `ground_feature_shadow_0` ~ `_7`  | 待搬运                               | -       | 阴影维度                |
+| `ground_feature_wind_journey_0` ~ `_6` | 待搬运                            | -       | 风之旅维度               |

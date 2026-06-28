@@ -72,6 +72,16 @@ public class ModBiomes {
                                 MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.DYEDREAM_TREE)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.STEM_GRASS_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.TALL_STEM_GRASS_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.DYEDREAM_COROLLA_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.LIGHT_BALL_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.CLOUD_CROP_PATCH)
                         .build())
                 .build());
 
@@ -127,7 +137,12 @@ public class ModBiomes {
                         .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON)
                         .addFeature(GenerationStep.Decoration.LAKES,
                                 MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND)
-                        // TODO: dyedream_snowy_tree feature
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.DYEDREAM_TREE)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.DYEDREAM_ICE_PILLAR)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.DYEDREAM_ICESTONE_BLOBS)
                         .addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION,
                                 FREEZE_TOP_LAYER)
                         .build())
@@ -160,6 +175,8 @@ public class ModBiomes {
                                 ICEBERG_PACKED)
                         .addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS,
                                 ICEBERG_BLUE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.DYEDREAM_ICESTONE_BLOBS)
                         .build())
                 .build());
     }
