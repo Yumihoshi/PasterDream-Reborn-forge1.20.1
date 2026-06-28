@@ -193,6 +193,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MOLTEN_GOLD_AXE.get());
                         output.accept(ModItems.MOLTEN_GOLD_SHOVEL.get());
                         output.accept(ModItems.MOLTEN_GOLD_HOE.get());
+                        // 狱炎工具
+                        output.accept(ModItems.HELLFIRE_SWORD.get());
+                        output.accept(ModItems.HELLFIRE_PICKAXE.get());
+                        output.accept(ModItems.INFERNO_SWORD.get());
                     })
                     .build());
 

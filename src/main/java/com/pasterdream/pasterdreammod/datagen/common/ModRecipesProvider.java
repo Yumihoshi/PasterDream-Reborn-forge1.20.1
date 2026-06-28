@@ -48,6 +48,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         materialRecipes(pWriter);
         upgradeKitRecipes(pWriter);
         moltenGoldToolRecipes(pWriter);
+        hellfireToolRecipes(pWriter);
         copperToolRecipes(pWriter);
         copperArmorRecipes(pWriter);
         titaniumToolRecipes(pWriter);
@@ -172,6 +173,40 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('a', ModItems.MOLTEN_GOLD_INGOT.get()).define('b', ModItems.BLACK_STICK.get())
                 .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_INGOT.get()), has(ModItems.MOLTEN_GOLD_INGOT.get()))
                 .save(pWriter);
+    }
+
+    // ===== 狱炎工具配方 =====
+
+    private void hellfireToolRecipes(Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.HELLFIRE_SWORD.get())
+                .pattern(" a ")
+                .pattern("bcb")
+                .pattern(" d ")
+                .define('a', Items.BLAZE_POWDER)
+                .define('b', Items.NETHERITE_SCRAP)
+                .define('c', ModItems.MOLTEN_GOLD_SWORD.get())
+                .define('d', ModItems.MOLTEN_GOLD_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_SWORD.get()), has(ModItems.MOLTEN_GOLD_SWORD.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.HELLFIRE_PICKAXE.get())
+                .pattern(" a ")
+                .pattern("bcb")
+                .pattern(" d ")
+                .define('a', Items.BLAZE_POWDER)
+                .define('b', Items.NETHERITE_SCRAP)
+                .define('c', ModItems.MOLTEN_GOLD_PICKAXE.get())
+                .define('d', ModItems.MOLTEN_GOLD_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_PICKAXE.get()), has(ModItems.MOLTEN_GOLD_PICKAXE.get()))
+                .save(pWriter);
+
+        // 融骸狱炎剑
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(Items.NETHER_BRICK),
+                        Ingredient.of(ModItems.HELLFIRE_SWORD.get()),
+                        Ingredient.of(Items.NETHER_STAR),
+                        RecipeCategory.COMBAT, ModItems.INFERNO_SWORD.get())
+                .unlocks("has_nether_star", has(Items.NETHER_STAR))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":inferno_sword_smithing");
     }
 
     // ===== 铜工具配方 =====

@@ -16,6 +16,7 @@ import com.pasterdream.pasterdreammod.world.item.ModArmorMaterials;
 import com.pasterdream.pasterdreammod.world.item.ModToolTiers;
 import com.pasterdream.pasterdreammod.world.item.armoritem.DyedreamArmorItem;
 import com.pasterdream.pasterdreammod.world.item.DyedreamHammerItem;
+import com.pasterdream.pasterdreammod.world.item.hellfiretool.*;
 import com.pasterdream.pasterdreammod.world.item.moltengoldtool.*;
 import com.pasterdream.pasterdreammod.world.item.SharpDyedreamSwordItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
@@ -178,6 +179,14 @@ public class ModItems {
             () -> new MoltenGoldShovelItem(ModToolTiers.MOLTEN_GOLD, 1.5f, -2.9f, new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_GOLD_HOE = ITEMS.register("molten_gold_hoe",
             () -> new MoltenGoldHoeItem(ModToolTiers.MOLTEN_GOLD, -2, -0.5f, new Item.Properties()));
+
+    // ===== 狱炎工具 =====
+    public static final RegistryObject<Item> HELLFIRE_SWORD = ITEMS.register("hellfire_sword",
+            () -> new HellfireSwordItem(ModToolTiers.HELLFIRE, 3, -2.2f, new Item.Properties()));
+    public static final RegistryObject<Item> HELLFIRE_PICKAXE = ITEMS.register("hellfire_pickaxe",
+            () -> new HellfirePickaxeItem(ModToolTiers.HELLFIRE, 1, -2.6f, new Item.Properties()));
+    public static final RegistryObject<Item> INFERNO_SWORD = ITEMS.register("inferno_sword",
+            () -> new InfernoSwordItem(ModToolTiers.HELLFIRE, 4, -2.15f, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> DYEDREAM_HAMMER = ITEMS.register("dyedream_hammer",
             () -> new DyedreamHammerItem(ModToolTiers.DYEDREAM, new Item.Properties().rarity(Rarity.UNCOMMON)));

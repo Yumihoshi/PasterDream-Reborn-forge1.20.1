@@ -19,6 +19,9 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> SHARP_DYEDREAM_SWORD_HIT =
             SOUNDS.register("sharp_dyedream_sword_hit", () -> SoundEvent.createVariableRangeEvent(
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "sharp_dyedream_sword_hit")));
+    public static final RegistryObject<SoundEvent> INFERNO_SWORD_SKILL =
+            SOUNDS.register("inferno_sword_skill", () -> SoundEvent.createVariableRangeEvent(
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "inferno_sword_skill")));
 
     public static void register(IEventBus eventBus) {
         SOUNDS.register(eventBus);
