@@ -49,6 +49,17 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         }), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name));
     }
 
+    /** 有序配方版本 */
+    private void saveNbtPreservingShaped(ShapedRecipeBuilder builder, Consumer<FinishedRecipe> writer, String name) {
+        builder.save(wrapped -> writer.accept(new FinishedRecipe() {
+            @Override public void serializeRecipeData(JsonObject json) { wrapped.serializeRecipeData(json); }
+            @Override public ResourceLocation getId() { return ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name); }
+            @Override public RecipeSerializer<?> getType() { return ModRecipes.NBT_PRESERVING_SHAPED_SERIALIZER.get(); }
+            @Override public JsonObject serializeAdvancement() { return wrapped.serializeAdvancement(); }
+            @Override public ResourceLocation getAdvancementId() { return wrapped.getAdvancementId(); }
+        }), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name));
+    }
+
     public ModRecipesProvider(PackOutput pOutput) {
         super(pOutput);
     }
@@ -191,26 +202,22 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     // ===== 狱炎工具配方 =====
 
     private void hellfireToolRecipes(Consumer<FinishedRecipe> pWriter) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.HELLFIRE_SWORD.get())
-                .pattern(" a ")
-                .pattern("bcb")
-                .pattern(" d ")
+        saveNbtPreservingShaped(ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.HELLFIRE_SWORD.get())
+                .pattern(" a ").pattern("bcb").pattern(" d ")
                 .define('a', Items.BLAZE_POWDER)
                 .define('b', Items.NETHERITE_SCRAP)
                 .define('c', ModItems.MOLTEN_GOLD_SWORD.get())
                 .define('d', ModItems.MOLTEN_GOLD_BLOCK.get())
-                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_SWORD.get()), has(ModItems.MOLTEN_GOLD_SWORD.get()))
-                .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.HELLFIRE_PICKAXE.get())
-                .pattern(" a ")
-                .pattern("bcb")
-                .pattern(" d ")
+                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_SWORD.get()), has(ModItems.MOLTEN_GOLD_SWORD.get())),
+                pWriter, "hellfire_sword");
+        saveNbtPreservingShaped(ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.HELLFIRE_PICKAXE.get())
+                .pattern(" a ").pattern("bcb").pattern(" d ")
                 .define('a', Items.BLAZE_POWDER)
                 .define('b', Items.NETHERITE_SCRAP)
                 .define('c', ModItems.MOLTEN_GOLD_PICKAXE.get())
                 .define('d', ModItems.MOLTEN_GOLD_BLOCK.get())
-                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_PICKAXE.get()), has(ModItems.MOLTEN_GOLD_PICKAXE.get()))
-                .save(pWriter);
+                .unlockedBy(getHasName(ModItems.MOLTEN_GOLD_PICKAXE.get()), has(ModItems.MOLTEN_GOLD_PICKAXE.get())),
+                pWriter, "hellfire_pickaxe");
 
         // 融骸狱炎剑
         SmithingTransformRecipeBuilder.smithing(
