@@ -14,10 +14,10 @@ import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDri
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamFoodItem;
 import com.pasterdream.pasterdreammod.world.item.ModArmorMaterials;
 import com.pasterdream.pasterdreammod.world.item.ModToolTiers;
-import com.pasterdream.pasterdreammod.world.item.DyedreamArmorItem;
+import com.pasterdream.pasterdreammod.world.item.armoritem.DyedreamArmorItem;
 import com.pasterdream.pasterdreammod.world.item.DyedreamHammerItem;
 import com.pasterdream.pasterdreammod.world.item.SharpDyedreamSwordItem;
-import com.pasterdream.pasterdreammod.world.item.SculkArmorItem;
+import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
