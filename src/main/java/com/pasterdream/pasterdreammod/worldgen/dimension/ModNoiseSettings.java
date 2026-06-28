@@ -8,9 +8,7 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
-import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.*;
 
 public class ModNoiseSettings {
 
@@ -21,20 +19,43 @@ public class ModNoiseSettings {
     public static void bootstrap(BootstapContext<NoiseGeneratorSettings> context) {
         // 复用主世界的完整噪声路由器（洞穴、含水层、矿脉、地形起伏等）
         NoiseGeneratorSettings overworld = NoiseGeneratorSettings.overworld(context, false, false);
+        NoiseRouter originalRouter = overworld.noiseRouter();
+
+        DensityFunction baseTerrain = originalRouter.initialDensityWithoutJaggedness();
+        DensityFunction smoothTerrain = DensityFunctions.interpolated(baseTerrain);
+
+        NoiseRouter modifiedRouter = new NoiseRouter(
+                originalRouter.barrierNoise(),
+                DensityFunctions.constant(-1.0D),          //含水层水量（禁用）
+                DensityFunctions.constant(0.0D),          //含水层扩散（禁用）
+                DensityFunctions.constant(0.0D),          //熔岩湖（禁用）
+                originalRouter.temperature(),                       //温度
+                originalRouter.vegetation(),                        //植被
+                originalRouter.continents(),                        //大陆性
+                originalRouter.erosion(),                           //侵蚀
+                originalRouter.depth(),                             //深度
+                originalRouter.ridges(),                            //山脊
+                baseTerrain,                                        //初始密度
+                smoothTerrain,                                      //最终密度
+                DensityFunctions.constant(1.0D),          //矿脉开关→1（禁用）
+                DensityFunctions.constant(1.0D),          //矿脉脊状→1（禁用）
+                DensityFunctions.constant(1.0D)           //矿脉间隙→1（禁用）
+        );
 
         context.register(DYEDREAM_WORLD, new NoiseGeneratorSettings(
-                overworld.noiseSettings(),                       // 噪声采样（-64~320, xz=1, y=2）
-                Blocks.CALCITE.defaultBlockState(),              // 默认方块：方解石（原作）
-                overworld.defaultFluid(),                        // 默认流体：水
-                overworld.noiseRouter(),                         // 主世界噪声路由器
-                makeSurfaceRules(),                              // 染梦平原地表规则
-                overworld.spawnTarget(),                         // 无特殊生成目标
-                overworld.seaLevel(),                            // 海平面 63
+                overworld.noiseSettings(),                      //噪声采样（-64~320, xz=1, y=2）
+                Blocks.CALCITE.defaultBlockState(),             //默认方块：方解石
+                overworld.defaultFluid(),                       //默认流体：水
+                modifiedRouter,                                 //使用修改后的噪声路由器
+                makeSurfaceRules(),                             //染梦平原地表规则
+                overworld.spawnTarget(),                        //无特殊生成目标
+                overworld.seaLevel(),                           //海平面 63
                 overworld.disableMobGeneration(),
                 overworld.aquifersEnabled(),
-                overworld.oreVeinsEnabled(),
+                false,                            //禁用矿脉生成
                 overworld.useLegacyRandomSource()
         ));
+
     }
 
     private static SurfaceRules.RuleSource makeSurfaceRules() {
