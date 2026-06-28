@@ -37,7 +37,7 @@ public class InfernoSwordItem extends SwordItem {
             stack.getOrCreateTag().putBoolean(TAG_SKILL, true);
             player.getCooldowns().addCooldown(this, 200);
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                    ModSounds.SHARP_DYEDREAM_SWORD_USE.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
+                    ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
     }
