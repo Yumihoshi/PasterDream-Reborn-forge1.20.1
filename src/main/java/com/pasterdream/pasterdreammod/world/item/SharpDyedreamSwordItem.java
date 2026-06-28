@@ -1,8 +1,10 @@
 package com.pasterdream.pasterdreammod.world.item;
 
 import com.pasterdream.pasterdreammod.init.ModEffects;
+import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -56,10 +58,16 @@ public class SharpDyedreamSwordItem extends SwordItem {
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (stack.getOrCreateTag().getBoolean(TAG_CHARGED)) {
             stack.getOrCreateTag().putBoolean(TAG_CHARGED, false);
-            target.setDeltaMovement(target.getDeltaMovement().add(0, 0.6, 0));
+            target.setDeltaMovement(target.getDeltaMovement().add(0, 0.8, 0));
             target.hurtMarked = true;
             target.level().playSound(null, target.getX(), target.getY(), target.getZ(),
-                    ModSounds.SHARP_DYEDREAM_SWORD_HIT.get(), target.getSoundSource(), 1.0f, 1.0f);
+                    ModSounds.SHARP_DYEDREAM_SWORD_HIT.get(), target.getSoundSource(), 1.5f, 1.0f);
+            // 脚下粒子爆发：40 个，位置 (x, y+0.3, z)，速度 (0.05, 0.3, 0.05)，速度随机偏移 0.4
+            if (target.level() instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(ModParticleTypes.SHARP_SWORD_SLASH.get(),
+                        target.getX(), target.getY() + 0.3, target.getZ(), 40,
+                        0.15, 0.6, 0.15, 0.6);
+            }
         }
         return super.hurtEnemy(stack, target, attacker);
     }
