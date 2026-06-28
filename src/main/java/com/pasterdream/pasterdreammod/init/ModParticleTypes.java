@@ -15,6 +15,8 @@ public class ModParticleTypes {
 
     public static final RegistryObject<SimpleParticleType> LEAVES_PARTICLE =
             PARTICLE_TYPES.register("leaves_particle", () -> new SimpleParticleType(false));
+    public static final RegistryObject<SimpleParticleType> SHARP_SWORD_SLASH =
+            PARTICLE_TYPES.register("sharp_sword_slash", () -> new SimpleParticleType(false));
 
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);
