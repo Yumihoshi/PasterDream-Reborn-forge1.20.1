@@ -66,10 +66,10 @@ public class ModBiomes {
                         .build())
                 .generationSettings(new BiomeGenerationSettings.Builder(placedFeatures, carvers)
                         .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
-                        .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
-                        .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON)
-                        .addFeature(GenerationStep.Decoration.LAKES,
-                                MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND)
+                        //.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND)
+                        //.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON)
+                        //.addFeature(GenerationStep.Decoration.LAKES,
+                        //       MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.DYEDREAM_TREE)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
