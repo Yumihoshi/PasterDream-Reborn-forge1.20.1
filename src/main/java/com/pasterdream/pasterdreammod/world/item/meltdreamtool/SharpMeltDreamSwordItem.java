@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.world.item;
+package com.pasterdream.pasterdreammod.world.item.meltdreamtool;
 
 import com.pasterdream.pasterdreammod.init.ModEffects;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
@@ -8,6 +8,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -73,6 +74,12 @@ public class SharpMeltDreamSwordItem extends SwordItem {
     }
 
     @Override
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
+        super.inventoryTick(stack, level, entity, slot, selected);
+        MeltDreamToolHelper.onInventoryTick(stack, level, entity, slot, selected);
+    }
+
+    @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
         tooltip.add(Component.translatable("tooltip.pasterdreammod.sharp_melt_dream_sword.1"));
@@ -80,5 +87,6 @@ public class SharpMeltDreamSwordItem extends SwordItem {
         tooltip.add(Component.translatable("tooltip.pasterdreammod.sharp_melt_dream_sword.3"));
         tooltip.add(Component.translatable("tooltip.pasterdreammod.sharp_melt_dream_sword.4"));
         tooltip.add(Component.translatable("tooltip.pasterdreammod.sharp_melt_dream_sword.5"));
+        MeltDreamToolHelper.appendHoverText(stack, level, tooltip, flag);
     }
 }

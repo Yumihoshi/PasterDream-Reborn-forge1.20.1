@@ -17,8 +17,9 @@ import com.pasterdream.pasterdreammod.world.item.ModToolTiers;
 import com.pasterdream.pasterdreammod.world.item.armoritem.DyedreamArmorItem;
 import com.pasterdream.pasterdreammod.world.item.DyedreamHammerItem;
 import com.pasterdream.pasterdreammod.world.item.hellfiretool.*;
+import com.pasterdream.pasterdreammod.world.item.meltdreamtool.*;
 import com.pasterdream.pasterdreammod.world.item.moltengoldtool.*;
-import com.pasterdream.pasterdreammod.world.item.SharpMeltDreamSwordItem;
+import com.pasterdream.pasterdreammod.world.item.meltdreamtool.SharpMeltDreamSwordItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -171,13 +172,13 @@ public class ModItems {
 
     // ===== 融梦水晶工具 =====
     public static final RegistryObject<Item> MELT_DREAM_PICKAXE = ITEMS.register("melt_dream_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.MELT_DREAM, 1, -2.8f, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
+            () -> new MeltDreamPickaxeItem(ModToolTiers.MELT_DREAM, 1, -2.8f, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> MELT_DREAM_AXE = ITEMS.register("melt_dream_axe",
-            () -> new AxeItem(ModToolTiers.MELT_DREAM, 5.5f, -3.0f, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
+            () -> new MeltDreamAxeItem(ModToolTiers.MELT_DREAM, 5.5f, -3.0f, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> MELT_DREAM_SHOVEL = ITEMS.register("melt_dream_shovel",
-            () -> new ShovelItem(ModToolTiers.MELT_DREAM, 1.5f, -3.0f, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
+            () -> new MeltDreamShovelItem(ModToolTiers.MELT_DREAM, 1.5f, -3.0f, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> MELT_DREAM_HOE = ITEMS.register("melt_dream_hoe",
-            () -> new HoeItem(ModToolTiers.MELT_DREAM, -3, 0.5f, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
+            () -> new MeltDreamHoeItem(ModToolTiers.MELT_DREAM, -3, 0.5f, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
 
     // ===== 炙焰金工具 =====
     public static final RegistryObject<Item> MOLTEN_GOLD_SWORD = ITEMS.register("molten_gold_sword",
