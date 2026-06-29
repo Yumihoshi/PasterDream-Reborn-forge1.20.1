@@ -80,7 +80,7 @@ public class PasterDreamCropBlock extends BushBlock implements IPlantable
     }
 
     @Override
-    protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos)
+    public boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos)
     {
         CropBindingContent binding = ModCropRelation.getBinding(this);
         return binding != null && state.is(binding.plantableOnTag());

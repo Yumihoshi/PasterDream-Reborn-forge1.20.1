@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraftforge.common.IPlantable;
 
 public class DyedreamGrassBlock extends Block {
@@ -56,6 +57,9 @@ public class DyedreamGrassBlock extends Block {
 
     @Override
     public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction direction, IPlantable plantable) {
-        return true;
+        if (plantable instanceof BushBlock bush) {
+            return bush.mayPlaceOn(state, world, pos);
+        }
+        return false;
     }
 }

@@ -3,9 +3,9 @@ package com.pasterdream.pasterdreammod.world.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.IceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -36,10 +36,15 @@ public class DyedreamLilyPadBlock extends FlowerBlock {
     }
 
     @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        return mayPlaceOn(level.getBlockState(pos.below()), level, pos.below());
+    }
+
+    @Override
     public boolean mayPlaceOn(BlockState groundState, BlockGetter level, BlockPos pos) {
         FluidState fluidBelow = level.getFluidState(pos);
         FluidState fluidAbove = level.getFluidState(pos.above());
-        return (fluidBelow.getType() == Fluids.WATER || groundState.getBlock() instanceof IceBlock)
+        return fluidBelow.getType() == Fluids.WATER && fluidBelow.isSource()
                 && fluidAbove.getType() == Fluids.EMPTY;
     }
 }
