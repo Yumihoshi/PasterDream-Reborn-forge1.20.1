@@ -209,7 +209,7 @@ public class ModConfiguredFeatures {
                                 new BlockMatchTest(Blocks.CALCITE),
                                 ModBlocks.DYEDREAM_ICE.get().defaultBlockState()
                         )),
-                        35,
+                        64,
                         0.5f
                 )));
         // 染梦浮冰团块 — size=6, PL + MM
@@ -219,7 +219,7 @@ public class ModConfiguredFeatures {
                                 new BlockMatchTest(Blocks.CALCITE),
                                 ModBlocks.DYEDREAM_PACKED_ICE.get().defaultBlockState()
                         )),
-                        35,
+                        64,
                         0.5f
                 )));
         // 原版冰团块 — size=6, SP + FO
@@ -229,7 +229,7 @@ public class ModConfiguredFeatures {
                                 new BlockMatchTest(Blocks.CALCITE),
                                 Blocks.ICE.defaultBlockState()
                         )),
-                        35,
+                        64,
                         0.5f
                 )));
         // 原版浮冰团块 — size=6, SP + FO
@@ -239,7 +239,7 @@ public class ModConfiguredFeatures {
                                 new BlockMatchTest(Blocks.CALCITE),
                                 Blocks.PACKED_ICE.defaultBlockState()
                         )),
-                        35,
+                        64,
                         0.5f
                 )));
         // 方解石团块 — 原作 ground_feature_dyedream_15
