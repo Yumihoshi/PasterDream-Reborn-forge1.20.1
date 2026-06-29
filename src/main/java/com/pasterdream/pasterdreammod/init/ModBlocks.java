@@ -25,12 +25,16 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -195,9 +199,21 @@ public class ModBlocks {
             () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 0, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE)
                     .instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> DREAMING_LOTUS = BLOCKS.register("dreaming_lotus", () -> new DoublePlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()));
+    public static final RegistryObject<Block> DREAMING_LOTUS = BLOCKS.register("dreaming_lotus", () -> new DoublePlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()) {
+        @Override
+        public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+            Vec3 offset = state.getOffset(world, pos);
+            return box(2, 0, 2, 14, 16, 14).move(offset.x, offset.y, offset.z);
+        }
+    });
 
-    public static final RegistryObject<Block> MISTY_DREAMING_LOTUS = BLOCKS.register("misty_dreaming_lotus", () -> new DoublePlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()));
+    public static final RegistryObject<Block> MISTY_DREAMING_LOTUS = BLOCKS.register("misty_dreaming_lotus", () -> new DoublePlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()) {
+        @Override
+        public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+            Vec3 offset = state.getOffset(world, pos);
+            return box(2, 0, 2, 14, 16, 14).move(offset.x, offset.y, offset.z);
+        }
+    });
 
     public static final RegistryObject<Block> DYEDREAM_LILY_PAD = BLOCKS.register("dyedream_lily_pad", DyedreamLilyPadBlock::new);
     public static final RegistryObject<Block> DYEDREAM_LOTUS = BLOCKS.register("dyedream_lotus", DyedreamLotusBlock::new);
@@ -213,7 +229,15 @@ public class ModBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)
                     .lightLevel(s -> 7)
-    ));
+                    .hasPostProcess((bs, br, bp) -> true)
+                    .emissiveRendering((bs, br, bp) -> true)
+    ) {
+        @Override
+        public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+            Vec3 offset = state.getOffset(world, pos);
+            return box(0, 0, 0, 16, 1, 16).move(offset.x, offset.y, offset.z);
+        }
+    });
     public static final RegistryObject<Block> STEM_GRASS = BLOCKS.register("stem_grass", () -> new BushBlock(
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_PINK)
@@ -225,12 +249,22 @@ public class ModBlocks {
                     .pushReaction(PushReaction.DESTROY)
 
     ));
-    public static final RegistryObject<Block> TALL_STEM_GRASS = BLOCKS.register("tall_stem_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()));
+    public static final RegistryObject<Block> TALL_STEM_GRASS = BLOCKS.register("tall_stem_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()) {
+        @Override
+        public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+            Vec3 offset = state.getOffset(world, pos);
+            return box(2, 0, 2, 14, 16, 14).move(offset.x, offset.y, offset.z);
+        }
+    });
     public static final RegistryObject<Block> CRIMSON_THORNS = BLOCKS.register("crimson_thorns", () ->
             new DoublePlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK)
             .instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY).replaceable())
             {
+                @Override
+                public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+                    return box(3, 0, 3, 13, 16, 13);
+                }
                 @Override
                 public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
                     DoubleBlockHalf half = pState.getValue(DoublePlantBlock.HALF);
@@ -303,6 +337,11 @@ public class ModBlocks {
                     .pushReaction(PushReaction.DESTROY)
     ){
         @Override
+        public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+            Vec3 offset = state.getOffset(world, pos);
+            return box(1, 0, 1, 15, 1, 15).move(offset.x, offset.y, offset.z);
+        }
+        @Override
         public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
             BlockPos belowPos = pPos.below();
             BlockState belowState = pLevel.getBlockState(belowPos);
@@ -321,6 +360,11 @@ public class ModBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)
     ){
+        @Override
+        public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+            Vec3 offset = state.getOffset(world, pos);
+            return box(0, 0, 0, 16, 1, 16).move(offset.x, offset.y, offset.z);
+        }
         @Override
         public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
             BlockPos belowPos = pPos.below();
