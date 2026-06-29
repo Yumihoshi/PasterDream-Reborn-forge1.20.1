@@ -83,6 +83,10 @@ public class ModBiomes {
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.DREAMING_LOTUS_PATCH)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.LINHT_FLOWER_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.SINGULARITY_FERN_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.CALCITE_STALICRIPE)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.SMALL_CALCITE_STALICRIPE)
@@ -122,6 +126,10 @@ public class ModBiomes {
                         // TODO: dyedream_forest_tree feature
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.DREAMING_LOTUS_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.LINHT_FLOWER_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.SINGULARITY_FERN_PATCH)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.CALCITE_BOULDER)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
@@ -165,6 +173,12 @@ public class ModBiomes {
                                 ModPlacedFeatures.DYEDREAM_LILY_PATCH)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.DREAMING_LOTUS_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.EDELWEISS_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.LINHT_FLOWER_PATCH)
+                        .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+                                ModPlacedFeatures.SINGULARITY_FERN_PATCH)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.CALCITE_BOULDER)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,

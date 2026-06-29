@@ -51,6 +51,17 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> DREAMING_LOTUS_PATCH =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dreaming_lotus_patch"));
+    public static final ResourceKey<PlacedFeature> EDELWEISS_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "edelweiss_patch"));
+    public static final ResourceKey<PlacedFeature> SINGULARITY_FERN_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "singularity_fern_patch"));
+    public static final ResourceKey<PlacedFeature> LINHT_FLOWER_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "linht_flower_patch"));
+
+
     // ===== 染梦维度矿石 =====
     public static final ResourceKey<PlacedFeature> TITANIUM_ORE =
             ResourceKey.create(Registries.PLACED_FEATURE,
@@ -123,6 +134,8 @@ public class ModPlacedFeatures {
                 List.of(CountPlacement.of(1), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING))));
 
+
+        // === 染梦维度花草 ===
         // 茎草 — WORLD_SURFACE_WG
         context.register(STEM_GRASS_PATCH, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.STEM_GRASS_PATCH),
@@ -162,8 +175,25 @@ public class ModPlacedFeatures {
         //冶梦莲
         context.register(DREAMING_LOTUS_PATCH, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.DREAMING_LOTUS_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
+
+        //雪绒花 — 原作 flower_16: count=5, rarity=32
+        context.register(EDELWEISS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.EDELWEISS_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
+        //奇异蕨 — 原作 flower_14: count=2, rarity=32
+        context.register(SINGULARITY_FERN_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SINGULARITY_FERN_PATCH),
                 List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
+        //苓灯花 — 原作 flower_9: count=2, rarity=32
+        context.register(LINHT_FLOWER_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.LINHT_FLOWER_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
+
 
         //秋麒麟
         context.register(GOLDENROD_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.GOLDENROD_PATCH), List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
