@@ -231,7 +231,6 @@ public final class RecipeHelpers {
      */
     public static void dye(Consumer<FinishedRecipe> writer,ItemLike flower,ItemLike dye) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, dye)
-                .requires(ModItems.GLASS_CUP.get())
                 .requires(flower)
                 .unlockedBy(getHasName(flower), has(flower))
                 .save(writer);
