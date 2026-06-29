@@ -66,6 +66,15 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> VANILLA_PACKED_ICE_BLOBS =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "vanilla_packed_ice_blobs"));
+    // ===== 洞穴晶芽 =====
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_DYEDREAM_BUD_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "small_dyedream_bud_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_DYEDREAM_BUD_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "medium_dyedream_bud_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_DYEDREAM_BUD_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "large_dyedream_bud_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ICE_BUD_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "ice_bud_patch"));
 
     // ==== 染梦维度花草 =====
     // 茎草
@@ -297,7 +306,7 @@ public class ModConfiguredFeatures {
 
         // 冶梦莲 - 原作 flower_11
         context.register(DREAMING_LOTUS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(16, 4, 4,
+                new RandomPatchConfiguration(25, 5, 5,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.DREAMING_LOTUS.get())))));
 
         //雪绒花 — 原作 flower_16
@@ -363,11 +372,24 @@ public class ModConfiguredFeatures {
 
         // ===== 方解石笋（同草类分散生成） =====
         context.register(CALCITE_STALICRIPE, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(32, 16, 16,
+                new RandomPatchConfiguration(48, 8, 8,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.POLISHED_CALCITE_STALICRIPE.get())))));
         context.register(SMALL_CALCITE_STALICRIPE, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(32, 16, 16,
+                new RandomPatchConfiguration(48, 8, 8,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SMALL_POLISHED_CALCITE_STALICRIPE.get())))));
 
+        // ===== 洞穴晶芽 =====
+        context.register(SMALL_DYEDREAM_BUD_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(12, 4, 4,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SMALL_DYEDREAM_BUD.get())))));
+        context.register(MEDIUM_DYEDREAM_BUD_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(12, 4, 4,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.MEDIUM_DYEDREAM_BUD.get())))));
+        context.register(LARGE_DYEDREAM_BUD_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(12, 4, 4,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.LARGE_DYEDREAM_BUD.get())))));
+        context.register(ICE_BUD_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(25, 5, 5,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.ICE_BUD.get())))));
     }
 }

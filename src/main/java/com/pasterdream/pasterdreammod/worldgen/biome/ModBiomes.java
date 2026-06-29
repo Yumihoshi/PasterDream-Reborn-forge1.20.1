@@ -104,6 +104,12 @@ public class ModBiomes {
                                 ModPlacedFeatures.DYEDREAM_DUST_ORE)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
                                 ModPlacedFeatures.DYEDREAM_QUARTZ_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.SMALL_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.MEDIUM_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.LARGE_DYEDREAM_BUD_PATCH)
                         .build())
                 .build());
 
@@ -148,6 +154,12 @@ public class ModBiomes {
                                 ModPlacedFeatures.DYEDREAM_DUST_ORE)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
                                 ModPlacedFeatures.DYEDREAM_QUARTZ_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.SMALL_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.MEDIUM_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.LARGE_DYEDREAM_BUD_PATCH)
                         .build())
                 .build());
 
@@ -205,6 +217,14 @@ public class ModBiomes {
                                 ModPlacedFeatures.DYEDREAM_DUST_ORE)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
                                 ModPlacedFeatures.DYEDREAM_QUARTZ_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.SMALL_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.MEDIUM_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.LARGE_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.ICE_BUD_PATCH)
                         .build())
                 .build());
 
@@ -251,6 +271,14 @@ public class ModBiomes {
                                 ModPlacedFeatures.DYEDREAM_DUST_ORE)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES,
                                 ModPlacedFeatures.DYEDREAM_QUARTZ_ORE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.SMALL_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.MEDIUM_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.LARGE_DYEDREAM_BUD_PATCH)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                                ModPlacedFeatures.ICE_BUD_PATCH)
                         .build())
                 .build());
     }
