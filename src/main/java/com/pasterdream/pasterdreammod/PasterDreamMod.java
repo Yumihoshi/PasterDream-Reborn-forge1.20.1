@@ -48,6 +48,7 @@ public class PasterDreamMod
         ModRecipes.register(modEventBus);           //注册配方
         ModSounds.register(modEventBus);            //注册音效
         ModEffects.register(modEventBus);           //注册药水效果
+        ModTreeDecoratorTypes.register(modEventBus); //注册树木装饰器类型
         ModNetwork.register();                      //注册网络包
 
         modEventBus.addListener(this::commonSetup);
