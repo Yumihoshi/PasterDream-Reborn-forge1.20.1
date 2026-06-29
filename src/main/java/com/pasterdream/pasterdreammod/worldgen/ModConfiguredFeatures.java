@@ -33,57 +33,72 @@ import java.util.List;
 public class ModConfiguredFeatures {
 
     // ===== 染梦平原 =====
+    // 染梦树
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_TREE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_tree"));
+    // 染梦冰柱
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_ICE_PILLAR =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_ice_pillar"));
+    // 冰晶石团块
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_ICESTONE_BLOBS =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_icestone_blobs"));
+    // 茎草
     public static final ResourceKey<ConfiguredFeature<?, ?>> STEM_GRASS_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "stem_grass_patch"));
+    // 高茎草
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_STEM_GRASS_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "tall_stem_grass_patch"));
+    // 梦染茶花
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_COROLLA_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_corolla_patch"));
+    // 流明堇
     public static final ResourceKey<ConfiguredFeature<?, ?>> LIGHT_BALL_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "light_ball_patch"));
+    // 玲云花
     public static final ResourceKey<ConfiguredFeature<?, ?>> CLOUD_CROP_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "cloud_crop_patch"));
+    // 染梦铃兰
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_LILY_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_lily_patch"));
+    // 冶梦莲
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DREAMING_LOTUS_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dreaming_lotus_patch"));
+
     // ===== 染梦维度矿石 =====
+    // 钛矿
     public static final ResourceKey<ConfiguredFeature<?, ?>> TITANIUM_ORE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "titanium_ore"));
+    // 琥珀糖矿
     public static final ResourceKey<ConfiguredFeature<?, ?>> AMBER_CANDY_ORE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "amber_candy_ore"));
+    // 染梦粉尘矿
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_DUST_ORE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_dust_ore"));
+    // 染梦石英矿
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_QUARTZ_ORE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_quartz_ore"));
     // ===== 花卉 / 方解石笋 =====
-    public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_LILY_PATCH =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_lily_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> DREAMING_LOTUS_PATCH =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dreaming_lotus_patch"));
+    // 方解石笋
     public static final ResourceKey<ConfiguredFeature<?, ?>> CALCITE_STALICRIPE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "calcite_stalicripe"));
     public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_CALCITE_STALICRIPE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "small_calcite_stalicripe"));
-
     private static Holder<PlacedFeature> simpleBlockInAir(BlockStateProvider provider) {
         return PlacementUtils.inlinePlaced(
                 Feature.SIMPLE_BLOCK,

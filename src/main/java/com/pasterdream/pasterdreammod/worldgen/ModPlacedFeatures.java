@@ -42,6 +42,12 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> CLOUD_CROP_PATCH =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "cloud_crop_patch"));
+    public static final ResourceKey<PlacedFeature> DYEDREAM_LILY_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_lily_patch"));
+    public static final ResourceKey<PlacedFeature> DREAMING_LOTUS_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dreaming_lotus_patch"));
     // ===== 染梦维度矿石 =====
     public static final ResourceKey<PlacedFeature> TITANIUM_ORE =
             ResourceKey.create(Registries.PLACED_FEATURE,
@@ -56,12 +62,6 @@ public class ModPlacedFeatures {
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_quartz_ore"));
     // ===== 花卉 / 方解石笋 =====
-    public static final ResourceKey<PlacedFeature> DYEDREAM_LILY_PATCH =
-            ResourceKey.create(Registries.PLACED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_lily_patch"));
-    public static final ResourceKey<PlacedFeature> DREAMING_LOTUS_PATCH =
-            ResourceKey.create(Registries.PLACED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dreaming_lotus_patch"));
     public static final ResourceKey<PlacedFeature> CALCITE_STALICRIPE =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "calcite_stalicripe"));
@@ -82,6 +82,10 @@ public class ModPlacedFeatures {
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> cf = context.lookup(Registries.CONFIGURED_FEATURE);
+
+        // CountPlacement.of()是在每个区块内尝试生成多少个
+        // HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(64)))));
+        // 表示生成的Y轴范围
 
         // 染梦树 — MOTION_BLOCKING 高度图 + would_survive
         context.register(DYEDREAM_TREE, new PlacedFeature(
@@ -132,14 +136,24 @@ public class ModPlacedFeatures {
                 List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
 
+        // 染梦铃兰
+        context.register(DYEDREAM_LILY_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_LILY_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
+
+        //冶梦莲
+        context.register(DREAMING_LOTUS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.DREAMING_LOTUS_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
+
         // ===== 染梦维度矿石 =====
         // 钛矿 — 钻石分布: count=7, triangle aboveBottom(-80)~aboveBottom(80)
         context.register(TITANIUM_ORE, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.TITANIUM_ORE),
                 List.of(CountPlacement.of(7), InSquarePlacement.spread(),
-                        HeightRangePlacement.triangle(
-                                VerticalAnchor.aboveBottom(-80),
-                                VerticalAnchor.aboveBottom(80)))));
+                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
         // 琥珀糖矿 — count=10, y=-60~200
         context.register(AMBER_CANDY_ORE, new PlacedFeature(
@@ -159,21 +173,12 @@ public class ModPlacedFeatures {
                 List.of(CountPlacement.of(18), InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(200)))));
 
-        context.register(DYEDREAM_LILY_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_LILY_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
-
-        context.register(DREAMING_LOTUS_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.DREAMING_LOTUS_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
-
+        // 方解石笋
         context.register(CALCITE_STALICRIPE, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.CALCITE_STALICRIPE),
                 List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
-
+        // 方解石笋
         context.register(SMALL_CALCITE_STALICRIPE, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.SMALL_CALCITE_STALICRIPE),
                 List.of(RarityFilter.onAverageOnceEvery(256), InSquarePlacement.spread(),
