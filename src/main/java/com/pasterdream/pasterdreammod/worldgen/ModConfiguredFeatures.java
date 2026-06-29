@@ -19,8 +19,11 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
+import com.pasterdream.pasterdreammod.worldgen.feature.PinkShroomlightTreeDecorator;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import com.pasterdream.pasterdreammod.world.block.cropblock.PasterDreamCropBlock;
@@ -37,6 +40,14 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_TREE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_tree"));
+    // 粉顶菌巨树 (丛林树形态, 2×2)
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_MUSHROOM_TREE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "pink_mushroom_tree"));
+    // 粉顶菌巨菇 (红蘑菇形态, 单株)
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_HUGE_MUSHROOM =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "pink_huge_mushroom"));
     // 染梦冰柱
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_ICE_PILLAR =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
@@ -225,6 +236,25 @@ public class ModConfiguredFeatures {
                         new TwoLayersFeatureSize(1, 0, 2))
                         .ignoreVines()
                         .build()));
+
+        // 粉顶菌巨树 — 2×2 骨粉催熟，丛林树形态
+        context.register(PINK_MUSHROOM_TREE, new ConfiguredFeature<>(Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.PINK_MUSHROOM_STEM.get()),
+                        new MegaJungleTrunkPlacer(7, 2, 12),  // 7~21 格
+                        BlockStateProvider.simple(ModBlocks.PINK_MUSHROOM_BLOCK.get()),
+                        new MegaJungleFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
+                        new TwoLayersFeatureSize(1, 0, 2))
+                        .decorators(List.of(PinkShroomlightTreeDecorator.INSTANCE))
+                        .ignoreVines()
+                        .build()));
+
+        // 粉顶菌巨菇 — 单株骨粉催熟，原版红蘑菇形态
+        context.register(PINK_HUGE_MUSHROOM, new ConfiguredFeature<>(Feature.HUGE_RED_MUSHROOM,
+                new HugeMushroomFeatureConfiguration(
+                        BlockStateProvider.simple(ModBlocks.PINK_MUSHROOM_BLOCK.get()),
+                        BlockStateProvider.simple(ModBlocks.PINK_MUSHROOM_STEM.get()),
+                        3)));
 
         context.register(DYEDREAM_ICE_PILLAR, new ConfiguredFeature<>(Feature.BLOCK_COLUMN,
                 new BlockColumnConfiguration(

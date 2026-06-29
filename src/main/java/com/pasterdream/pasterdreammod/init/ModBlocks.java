@@ -4,6 +4,8 @@ import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.world.behavior.ModTreeGrowers;
 import com.pasterdream.pasterdreammod.world.block.DyedreamFarmlandBlock;
 import com.pasterdream.pasterdreammod.world.block.DyedreamGrassBlock;
+import com.pasterdream.pasterdreammod.world.block.PinkMushroom;
+import com.pasterdream.pasterdreammod.world.block.TallPinkMushroom;
 import com.pasterdream.pasterdreammod.world.block.DyedreamLilyPadBlock;
 import com.pasterdream.pasterdreammod.world.block.DyedreamLotusBlock;
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.crate.picnicbasket.PicnicBasketBlock;
@@ -95,8 +97,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> PINK_MUSHROOM_STEM = BLOCKS.register("pink_mushroom_stem", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(0.3f, 0.1f)));
     public static final RegistryObject<Block> PINK_MUSHROOM_PORES = BLOCKS.register("pink_mushroom_pores", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(0.3f, 0.1f)));
     public static final RegistryObject<Block> PINK_SHROOMLIGHT = BLOCKS.register("pink_shroomlight", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.SHROOMLIGHT).strength(0.5f, 0.2f).lightLevel(s -> 15).noOcclusion()));
-    public static final RegistryObject<Block> PINK_MUSHROOM = BLOCKS.register("pink_mushroom", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SLOWDOWN, 100, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).instabreak().noCollission().noOcclusion().sound(SoundType.FUNGUS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> TALL_PINK_MUSHROOM = BLOCKS.register("tall_pink_mushroom", () -> new DoublePlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).instabreak().noCollission().noOcclusion().sound(SoundType.FUNGUS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()));
+    public static final RegistryObject<Block> PINK_MUSHROOM = BLOCKS.register("pink_mushroom", () -> new PinkMushroom(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).instabreak().noCollission().noOcclusion().sound(SoundType.FUNGUS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> TALL_PINK_MUSHROOM = BLOCKS.register("tall_pink_mushroom", () -> new TallPinkMushroom(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).instabreak().noCollission().noOcclusion().sound(SoundType.FUNGUS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()));
     // ===== 染梦玻璃系列 =====
     public static final RegistryObject<Block> DYEDREAM_SAND = BLOCKS.register("dyedream_sand", () -> new FallingBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).instrument(NoteBlockInstrument.SNARE).sound(SoundType.SAND).strength(0.5f)));
     public static final RegistryObject<Block> DYEDREAM_GLASS = BLOCKS.register("dyedream_glass", () -> new GlassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).sound(SoundType.GLASS).strength(0.1f, 0f).lightLevel(s -> 15).noOcclusion()));
