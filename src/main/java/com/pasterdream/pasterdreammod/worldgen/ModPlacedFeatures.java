@@ -74,7 +74,11 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LINHT_FLOWER_PATCH =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "linht_flower_patch"));
-
+    // ===== 洞穴晶芽 =====
+    public static final ResourceKey<PlacedFeature> SMALL_DYEDREAM_BUD_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "small_dyedream_bud_patch"));
+    public static final ResourceKey<PlacedFeature> MEDIUM_DYEDREAM_BUD_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "medium_dyedream_bud_patch"));
+    public static final ResourceKey<PlacedFeature> LARGE_DYEDREAM_BUD_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "large_dyedream_bud_patch"));
+    public static final ResourceKey<PlacedFeature> ICE_BUD_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "ice_bud_patch"));
 
     // ===== 染梦维度矿石 =====
     public static final ResourceKey<PlacedFeature> TITANIUM_ORE =
@@ -304,5 +308,13 @@ public class ModPlacedFeatures {
                 cf.getOrThrow(ModConfiguredFeatures.SMALL_CALCITE_STALICRIPE),
                 List.of(CountPlacement.of(20), InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(320)))));
+
+        // ===== 洞穴晶芽 =====
+        // 染梦晶芽 x3 — 所有群系,
+        context.register(SMALL_DYEDREAM_BUD_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.SMALL_DYEDREAM_BUD_PATCH), List.of(CountPlacement.of(6), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(320)))));
+        context.register(MEDIUM_DYEDREAM_BUD_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.MEDIUM_DYEDREAM_BUD_PATCH), List.of(CountPlacement.of(6), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(320)))));
+        context.register(LARGE_DYEDREAM_BUD_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.LARGE_DYEDREAM_BUD_PATCH), List.of(CountPlacement.of(6), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(320)))));
+        // 冰晶芽 — SP+FO,
+        context.register(ICE_BUD_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.ICE_BUD_PATCH), List.of(CountPlacement.of(6), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(320)))));
     }
 }
