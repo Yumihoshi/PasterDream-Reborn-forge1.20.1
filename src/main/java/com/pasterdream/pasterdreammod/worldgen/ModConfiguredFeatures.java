@@ -50,6 +50,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> CALCITE_BOULDER =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "calcite_boulder"));
+
+    // ==== 染梦维度花草 =====
     // 茎草
     public static final ResourceKey<ConfiguredFeature<?, ?>> STEM_GRASS_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
@@ -78,6 +80,20 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DREAMING_LOTUS_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dreaming_lotus_patch"));
+    // 雪绒花
+    public static final ResourceKey<ConfiguredFeature<?, ?>> EDELWEISS_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "edelweiss_patch"));
+    // 奇异蕨
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SINGULARITY_FERN_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "singularity_fern_patch"));
+    // 苓灯花
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LINHT_FLOWER_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "linht_flower_patch"));
+
+    // ===== 原版维度花草 =====
     public static final ResourceKey<ConfiguredFeature<?, ?>> GOLDENROD_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "goldenrod_patch"));
     public static final ResourceKey<ConfiguredFeature<?, ?>> FERRARIA_CRISPA_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "ferraria_crispa_patch"));
     public static final ResourceKey<ConfiguredFeature<?, ?>> MALVA_SINENSIS_CAVAN_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "malva_sinensis_cavan_patch"));
@@ -86,8 +102,6 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> RYE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "rye_patch"));
     public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_COROLLA_CROP_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_corolla_crop_patch"));
     public static final ResourceKey<ConfiguredFeature<?, ?>> COTTON_CROP_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "cotton_crop_patch"));
-
-
 
     // ===== 染梦维度矿石 =====
     // 钛矿
@@ -176,6 +190,7 @@ public class ModConfiguredFeatures {
         context.register(CALCITE_BOULDER, new ConfiguredFeature<>(Feature.FOREST_ROCK,
                 new BlockStateConfiguration(Blocks.CALCITE.defaultBlockState())));
 
+        // ===== 染梦维度花草 =====
         // 茎草 — 原作 grass_3（分散生成）
         // 三个参数是：尝试生成次数，水平扩散半径，垂直扩散半径
         context.register(STEM_GRASS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
@@ -204,14 +219,29 @@ public class ModConfiguredFeatures {
                 new RandomPatchConfiguration(20, 5, 5,
                         simpleBlockInAir(BlockStateProvider.simple(
                         ModBlocks.CLOUD_CROP.get().defaultBlockState().setValue(PasterDreamCropBlock.AGE, 1))))));
+
         // 染梦铃兰 - 原作 flower_13
         context.register(DYEDREAM_LILY_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(20, 5, 5,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.DYEDREAM_LILY_OF_THE_VALLEY.get())))));
+
         // 冶梦莲 - 原作 flower_11
         context.register(DREAMING_LOTUS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(25, 5, 5,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.DREAMING_LOTUS.get())))));
+
+        //雪绒花 — 原作 flower_16
+        context.register(EDELWEISS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(25, 6, 6,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.EDELWEISS.get())))));
+        //奇异蕨 — 原作 flower_14
+        context.register(SINGULARITY_FERN_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(20, 5, 5,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SINGULARITY_FERN.get())))));
+        //苓灯花 — 原作 flower_9
+        context.register(LINHT_FLOWER_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(20, 5, 5,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.LINHT_FLOWER.get())))));
 
 
         //秋麒麟
