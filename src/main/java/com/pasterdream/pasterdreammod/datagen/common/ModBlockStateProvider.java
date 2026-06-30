@@ -302,6 +302,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         var singularity_fern = models().cross(ModBlocks.SINGULARITY_FERN.getId().getPath(), blockTexture(ModBlocks.SINGULARITY_FERN.get())).renderType("cutout");
         simpleBlock(ModBlocks.SINGULARITY_FERN.get(), singularity_fern);
 
+        // 染梦海草
+        var dyedreamSeagrass = models().cross(ModBlocks.DYEDREAM_SEAGRASS.getId().getPath(), blockTexture(ModBlocks.DYEDREAM_SEAGRASS.get())).renderType("cutout");
+        simpleBlock(ModBlocks.DYEDREAM_SEAGRASS.get(), dyedreamSeagrass);
+
         // 染梦睡莲 / 染梦莲花 (custom Blockbench models)
         simpleBlock(ModBlocks.DYEDREAM_LILY_PAD.get(), models().getExistingFile(modLoc("block/dyedream_lily_pad")));
         simpleBlock(ModBlocks.DYEDREAM_LOTUS.get(), models().getExistingFile(modLoc("block/dyedream_lotus")));

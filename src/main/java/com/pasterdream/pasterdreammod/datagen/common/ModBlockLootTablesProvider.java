@@ -186,6 +186,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         );
         add(ModBlocks.POLISHED_CALCITE_STALICRIPE.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(net.minecraft.world.item.Items.AIR)));
         add(ModBlocks.SMALL_POLISHED_CALCITE_STALICRIPE.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(net.minecraft.world.item.Items.AIR)));
+        add(ModBlocks.DYEDREAM_SEAGRASS.get(),
+                block -> LootHelpers.creategrassesDrops(ModBlocks.DYEDREAM_SEAGRASS.get()));
 
         dropSelf(ModBlocks.DYEDREAM_SAND.get());
         add(ModBlocks.DYEDREAM_GLASS.get(),
