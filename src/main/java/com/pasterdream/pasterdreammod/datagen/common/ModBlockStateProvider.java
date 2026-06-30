@@ -170,6 +170,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // ===== 染梦晶芽系列 =====
 
+        var buddingModel = models().cubeAll(ModBlocks.DYEDREAM_BUDDING_BLOCK.getId().getPath(), blockTexture(ModBlocks.DYEDREAM_BUDDING_BLOCK.get()));
+        simpleBlockWithItem(ModBlocks.DYEDREAM_BUDDING_BLOCK.get(), buddingModel);
+
         var smallBud = models().cross(ModBlocks.SMALL_DYEDREAM_BUD.getId().getPath(), blockTexture(ModBlocks.SMALL_DYEDREAM_BUD.get())).renderType("cutout");
         directionalBlock(ModBlocks.SMALL_DYEDREAM_BUD.get(), smallBud);
 

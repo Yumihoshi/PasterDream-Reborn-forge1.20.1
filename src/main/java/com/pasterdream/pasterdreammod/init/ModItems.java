@@ -572,6 +572,8 @@ public class ModItems {
     public static final RegistryObject<Item> GOLD_CARVE_DYEDREAM_GLASS_PANE = ITEMS.register("gold_carve_dyedream_glass_pane",
             () -> new BlockItem(ModBlocks.GOLD_CARVE_DYEDREAM_GLASS_PANE.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> DYEDREAM_BUDDING_BLOCK = ITEMS.register("dyedream_budding_block",
+            () -> new BlockItem(ModBlocks.DYEDREAM_BUDDING_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> SMALL_DYEDREAM_BUD = ITEMS.register("small_dyedream_bud",
             () -> new BlockItem(ModBlocks.SMALL_DYEDREAM_BUD.get(), new Item.Properties()));
     public static final RegistryObject<Item> MEDIUM_DYEDREAM_BUD = ITEMS.register("medium_dyedream_bud",
