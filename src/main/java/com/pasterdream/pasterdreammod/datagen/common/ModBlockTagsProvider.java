@@ -65,6 +65,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_QUARTZ_ORE.get())
                 .add(ModBlocks.DYEDREAM_DUST_ORE.get())
                 .add(ModBlocks.AMBER_CANDY_ORE.get())
+                .add(ModBlocks.DYEDREAM_BUDDING_BLOCK.get())
                 .add(ModBlocks.SMALL_DYEDREAM_BUD.get())
                 .add(ModBlocks.MEDIUM_DYEDREAM_BUD.get())
                 .add(ModBlocks.LARGE_DYEDREAM_BUD.get())
@@ -158,6 +159,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         // 需要铁工具挖掘
         tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.DYEDREAM_BUDDING_BLOCK.get())
                 .add(ModBlocks.DYEDREAM_DUST_ORE.get())
                 .add(ModBlocks.SMALL_DYEDREAM_BUD.get())
                 .add(ModBlocks.MEDIUM_DYEDREAM_BUD.get())

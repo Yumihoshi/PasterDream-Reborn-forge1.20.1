@@ -208,6 +208,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.CARVE_DYEDREAM_GLASS_PANE.get(), "Carved Dye Dream Glass Pane");
         add(ModBlocks.GOLD_CARVE_DYEDREAM_GLASS.get(), "Gilded Carved Dye Dream Glass");
         add(ModBlocks.GOLD_CARVE_DYEDREAM_GLASS_PANE.get(), "Gilded Carved Dye Dream Glass Pane");
+        add(ModBlocks.DYEDREAM_BUDDING_BLOCK.get(), "Budding Dye Dream");
         add(ModBlocks.SMALL_DYEDREAM_BUD.get(), "Small Dye Dream Bud");
         add(ModBlocks.MEDIUM_DYEDREAM_BUD.get(), "Medium Dye Dream Bud");
         add(ModBlocks.LARGE_DYEDREAM_BUD.get(), "Large Dye Dream Bud");
