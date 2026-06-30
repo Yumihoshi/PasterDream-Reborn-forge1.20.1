@@ -892,6 +892,12 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         RecipeCategory.MISC, ModBlocks.PINK_MUSHROOM.get().asItem(), 2)
                 .unlockedBy(getHasName(ModBlocks.TALL_PINK_MUSHROOM.get()), has(ModBlocks.TALL_PINK_MUSHROOM.get()))
                 .save(pWriter, PasterDreamMod.MOD_ID + ":pink_mushroom_from_tall_pink_mushroom_stonecutting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.TALL_PINK_MUSHROOM.get(), 1)
+                .requires(ModBlocks.PINK_MUSHROOM.get())
+                .requires(Items.BONE_MEAL)
+                .unlockedBy(getHasName(ModBlocks.PINK_MUSHROOM.get()), has(ModBlocks.PINK_MUSHROOM.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":tall_pink_mushroom_from_bone_meal");
     }
 
     // ===== 粉色粘液配方 =====

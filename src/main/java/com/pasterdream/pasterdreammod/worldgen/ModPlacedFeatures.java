@@ -283,16 +283,18 @@ public class ModPlacedFeatures {
                 List.of(CountPlacement.of(3), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
 
-        // 粉顶菌巨树 — MOTION_BLOCKING 高度图
+        // 粉顶菌巨树 — MOTION_BLOCKING 高度图，避免水上生成
         context.register(PINK_MUSHROOM_TREE, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.PINK_MUSHROOM_TREE),
                 List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING))));
 
-        // 粉顶菌巨菇 — MOTION_BLOCKING 高度图
+        // 粉顶菌巨菇 — MOTION_BLOCKING 高度图，避免水上生成
         context.register(PINK_HUGE_MUSHROOM, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.PINK_HUGE_MUSHROOM),
                 List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING))));
 
         // 粉顶菌 (小型地表) — WORLD_SURFACE_WG
