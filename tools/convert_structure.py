@@ -38,7 +38,8 @@ def find_mapping(program_dir):
     candidates = [
         program_dir / "mapping.json",
         program_dir / "document" / "design" / "mapping.json",
-        program_dir.parent / "document" / "design" / "mapping.json",   # 从 tools/ 运行时
+        program_dir.parent / "document" / "design" / "mapping.json",         # 从 tools/ 运行时
+        program_dir.parent.parent / "document" / "design" / "mapping.json",  # 从 tools/dist/ 运行时
     ]
     for mapping_path in candidates:
         if mapping_path.exists():

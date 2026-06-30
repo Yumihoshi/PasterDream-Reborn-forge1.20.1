@@ -38,7 +38,7 @@ mc_temp/
 .log/
 dirt_temp/
 
-# PyInstaller 编译产物
-dist/
-build/
-*.spec
+# PyInstaller 编译产物（仅项目根目录）
+/dist/
+/build/
+/*.spec

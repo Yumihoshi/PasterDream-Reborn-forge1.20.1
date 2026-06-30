@@ -19,8 +19,15 @@ import json
 import re
 from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).resolve().parent          # tools/
-PROJECT_ROOT = SCRIPT_DIR.parent                      # 项目根目录
+import sys
+
+if getattr(sys, "frozen", False):
+    EXE_DIR = Path(sys.executable).resolve().parent    # tools/dist/
+    PROJECT_ROOT = EXE_DIR.parent.parent               # 项目根目录
+else:
+    SCRIPT_DIR = Path(__file__).resolve().parent        # tools/
+    PROJECT_ROOT = SCRIPT_DIR.parent
+
 MD_PATH = PROJECT_ROOT / "document" / "design" / "ID映射表.md"
 OUT_PATH = PROJECT_ROOT / "document" / "design" / "mapping.json"
 
