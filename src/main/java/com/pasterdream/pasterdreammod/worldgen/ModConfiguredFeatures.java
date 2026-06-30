@@ -21,6 +21,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.LakeFeature;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
@@ -56,6 +57,10 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_PACKED_ICE_PILLAR =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_packed_ice_pillar"));
+    // 雪块底水池 — 原作 ground_feature_dyedream_1
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SNOWY_WATER_POOL =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "snowy_water_pool"));
     // ===== 团块 =====
     // 冰晶石团块
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_ICE_STONE_BLOBS =
@@ -285,6 +290,13 @@ public class ModConfiguredFeatures {
                         Direction.UP,
                         BlockPredicate.matchesBlocks(Blocks.AIR),
                         false
+                )));
+
+        // 雪块底水池 — 原作 ground_feature_dyedream_1
+        context.register(SNOWY_WATER_POOL, new ConfiguredFeature<>(Feature.LAKE,
+                new LakeFeature.Configuration(
+                        BlockStateProvider.simple(Blocks.WATER),
+                        BlockStateProvider.simple(Blocks.SNOW_BLOCK)
                 )));
 
 

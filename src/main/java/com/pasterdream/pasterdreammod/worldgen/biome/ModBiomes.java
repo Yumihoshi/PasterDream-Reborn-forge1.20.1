@@ -210,6 +210,9 @@ public class ModBiomes {
                         .build())
                 .generationSettings(new BiomeGenerationSettings.Builder(placedFeatures, carvers)
                         .addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
+                        // 雪块底水池 — 原作 ground_feature_dyedream_1
+                        .addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES,
+                                ModPlacedFeatures.SNOWY_WATER_POOL)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                                 ModPlacedFeatures.DYEDREAM_TREE)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,

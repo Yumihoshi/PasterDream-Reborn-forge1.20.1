@@ -29,6 +29,10 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> DYEDREAM_PACKED_ICE_PILLAR =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_packed_ice_pillar"));
+    // 雪块底水池 — 原作 ground_feature_dyedream_1
+    public static final ResourceKey<PlacedFeature> SNOWY_WATER_POOL =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "snowy_water_pool"));
     public static final ResourceKey<PlacedFeature> DYEDREAM_ICE_STONE_BLOBS =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_ice_stone_blobs"));
@@ -202,6 +206,12 @@ public class ModPlacedFeatures {
 
         context.register(DYEDREAM_PACKED_ICE_PILLAR, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_PACKED_ICE_PILLAR),
+                List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.MOTION_BLOCKING))));
+
+        // 雪块底水池 — 原作 ground_feature_dyedream_1, 每2区块平均1个
+        context.register(SNOWY_WATER_POOL, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SNOWY_WATER_POOL),
                 List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING))));
 
