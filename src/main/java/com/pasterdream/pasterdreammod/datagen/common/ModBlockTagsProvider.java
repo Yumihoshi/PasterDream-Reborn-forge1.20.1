@@ -150,10 +150,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_LILY_PAD.get())
                 .add(ModBlocks.DYEDREAM_LOTUS.get());
 
-        tag(BlockTags.SMALL_FLOWERS)
-                .add(ModBlocks.DYEDREAM_LILY_PAD.get())
-                .add(ModBlocks.DYEDREAM_LOTUS.get());
-
         // 需要石头工具挖掘
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.ICE_BUD.get())

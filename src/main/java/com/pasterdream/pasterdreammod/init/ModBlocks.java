@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.world.behavior.ModTreeGrowers;
+import com.pasterdream.pasterdreammod.world.block.*;
 import com.pasterdream.pasterdreammod.world.block.DyedreamFarmlandBlock;
 import com.pasterdream.pasterdreammod.world.block.DyedreamGrassBlock;
 import com.pasterdream.pasterdreammod.world.block.PinkMushroom;
@@ -20,7 +21,6 @@ import com.pasterdream.pasterdreammod.world.block.doll.uuzdoll.UUZDollBlock;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlock;
 import com.pasterdream.pasterdreammod.world.block.fluidblock.MeltDreamLiquidBlock;
 import com.pasterdream.pasterdreammod.world.block.fluidblock.ShadowLiquidBlock;
-import com.pasterdream.pasterdreammod.world.block.SoulOreBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -335,7 +335,6 @@ public class ModBlocks {
                     .noCollission()
                     .noOcclusion()
                     .sound(SoundType.CALCITE)
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)
     ){
         @Override
@@ -359,7 +358,6 @@ public class ModBlocks {
                     .noCollission()
                     .noOcclusion()
                     .sound(SoundType.CALCITE)
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)
     ){
         @Override
@@ -375,7 +373,7 @@ public class ModBlocks {
             return belowState.is(Blocks.CALCITE);
         }
     });
-
+    public static final RegistryObject<Block> DYEDREAM_SEAGRASS = BLOCKS.register("dyedream_seagrass", DyedreamSeagrassBlock::new);
 
     //作物方块
     public static final RegistryObject<Block> DYEDREAM_COROLLA_CROP = BLOCKS.register("dyedream_corolla_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().randomTicks().instabreak()));
