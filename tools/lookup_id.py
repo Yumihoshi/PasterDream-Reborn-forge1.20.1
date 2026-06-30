@@ -10,8 +10,13 @@ import json
 import sys
 from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).resolve().parent          # tools/
-PROJECT_ROOT = SCRIPT_DIR.parent                      # 项目根目录
+if getattr(sys, "frozen", False):
+    EXE_DIR = Path(sys.executable).resolve().parent    # tools/dist/
+    PROJECT_ROOT = EXE_DIR.parent.parent               # 项目根目录
+else:
+    SCRIPT_DIR = Path(__file__).resolve().parent        # tools/
+    PROJECT_ROOT = SCRIPT_DIR.parent
+
 MAPPING = PROJECT_ROOT / "document" / "design" / "mapping.json"
 
 
