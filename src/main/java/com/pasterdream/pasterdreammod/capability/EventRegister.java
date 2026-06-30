@@ -9,11 +9,15 @@ import com.pasterdream.pasterdreammod.network.meltdreamenergy.MaxMeltDreamEnergy
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
 import com.pasterdream.pasterdreammod.network.san.MaxSanSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
+import com.pasterdream.pasterdreammod.tag.ModItemTags;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.TagsUpdatedEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -83,6 +87,16 @@ public class EventRegister
                 player.getCapability(ModCapabilities.SAN).ifPresent(capability -> SanSyncPacket.sendToPlayer(player, capability));
                 player.getCapability(ModCapabilities.SAN).ifPresent(capability -> MaxSanSyncPacket.sendToPlayer(player, capability));
             }
+        }
+    }
+
+    /** 在标签加载/更新后，将 compostable 标签中的物品自动注册到堆肥桶 */
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public static class ComposterHandler {
+        @SubscribeEvent
+        public static void onTagsUpdated(TagsUpdatedEvent event) {
+            BuiltInRegistries.ITEM.getTagOrEmpty(ModItemTags.COMPOSTABLE)
+                    .forEach(holder -> ComposterBlock.COMPOSTABLES.put(holder.value(), 0.65f));
         }
     }
 }

@@ -111,6 +111,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.TITANIUM_HOE.get())
                 .add(ModItems.DYEDREAM_HOE.get());
 
+        tag(ModItemTags.COMPOSTABLE)
+                .add(ModBlocks.PINK_MUSHROOM_BLOCK.get().asItem())
+                .add(ModBlocks.PINK_MUSHROOM_STEM.get().asItem())
+                .add(ModBlocks.PINK_SHROOMLIGHT.get().asItem())
+                .add(ModBlocks.PINK_MUSHROOM_PORES.get().asItem());
+
         //植株底下的方块
         tag(TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("pasterdream", "dyedream_dirt")))
                 .add(ModItems.DYEDREAM_DIRT.get())
