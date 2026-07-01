@@ -172,6 +172,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get());
         basicItem(ModItems.BLUE_PRINT.get());
         basicItem(ModItems.REED_ROD.get());
+        basicItem(ModItems.BLUE_HEART_OF_THE_SEA.get());
+        basicItem(ModItems.ELDER_GUARDIAN_SCALE.get());
         basicItem(ModItems.RED_DEW.get());
         basicItem(ModItems.BLUE_DEW.get());
         basicItem(ModItems.MELT_DREAM_COIN.get());

@@ -96,6 +96,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "融梦灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "狂暴战意灵药");
         add(ModItems.PINEAPPLE_LOVE_SEA.get(), "凤梨爱琴海");
+        add(ModItems.BLUE_HEART_OF_THE_SEA.get(), "蔚蓝海洋之心");
+        add(ModItems.ELDER_GUARDIAN_SCALE.get(), "远古守卫者鳞片");
         add(ModItems.RED_DEW.get(), "鲜红露滴");
         add(ModItems.BLUE_DEW.get(), "蔚蓝露滴");
 

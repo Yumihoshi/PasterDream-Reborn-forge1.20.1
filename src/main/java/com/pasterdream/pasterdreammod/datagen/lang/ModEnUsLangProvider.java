@@ -93,6 +93,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "Elixir Bottle of Melt Dream");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "Elixir Bottle of Rage Elixir");
         add(ModItems.PINEAPPLE_LOVE_SEA.get(), "Pineapple Love Sea");
+        add(ModItems.BLUE_HEART_OF_THE_SEA.get(), "Blue Heart Of The Sea");
+        add(ModItems.ELDER_GUARDIAN_SCALE.get(), "Elder Guardian Scale");
         add(ModItems.RED_DEW.get(), "Red Dew");
         add(ModItems.BLUE_DEW.get(), "Blue Dew");
         add(ModItems.DYEDREAM_COROLLA.get(), "Dyedream Corolla");

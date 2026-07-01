@@ -525,6 +525,10 @@ public class ModItems {
     // ===== 露滴 =====
     public static final RegistryObject<Item> RED_DEW = ITEMS.register("red_dew",
             () -> new RedDewItem());
+    public static final RegistryObject<Item> BLUE_HEART_OF_THE_SEA = ITEMS.register("blue_heart_of_the_sea",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ELDER_GUARDIAN_SCALE = ITEMS.register("elder_guardian_scale",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BLUE_DEW = ITEMS.register("blue_dew",
             () -> new BlueDewItem());
 

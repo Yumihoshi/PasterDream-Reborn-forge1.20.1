@@ -315,6 +315,8 @@
 | `dream_fertilizer`             | `dream_fertilizer`                          | 不改                                                        | 无需客制化类，直接用 `Item`                           |
 | `reedrod`                      | `reed_rod`                                  | 重命名，补下划线                                                  | 无需客制化类，直接用 `Item`                           |
 | `red_dew_0`                    | `red_dew`                                   | 重命名，去除 `_0` 后缀                                            | 客制化类 `RedDewItem`，DRINK 动画 + 瞬间治疗效果           |
+| `blue_heart_of_the_sea`        | `blue_heart_of_the_sea`                     | 不改                                                        | 无需客制化类，直接用 `Item`                           |
+| `elder_guardian_scale`         | `elder_guardian_scale`                      | 不改                                                        | 无需客制化类，直接用 `Item`                           |
 | `blue_dew`                     | `blue_dew`                                  | 不改                                                        | 客制化类 `BlueDewItem`，DRINK 动画 + 水下呼吸效果           |
 
 
