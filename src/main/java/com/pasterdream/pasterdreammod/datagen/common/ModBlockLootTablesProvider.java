@@ -190,6 +190,9 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         add(ModBlocks.REED.get(),
                 block -> LootHelpers.createShearsOrSilkTouchSelfElseItem(ModBlocks.REED.get(),ModItems.REED_ROD.get(),1.0F,3.0F));
 
+        add(ModBlocks.DYEDREAM_VINE.get(),
+                block -> LootHelpers.createShearsOrSilkTouchSelfElseItem(ModBlocks.DYEDREAM_VINE.get(),ModItems.DYEDREAM_FRUIT.get(),0.0F,2.0F));
+
         dropSelf(ModBlocks.DYEDREAM_SAND.get());
         add(ModBlocks.DYEDREAM_GLASS.get(),
                 block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(net.minecraft.world.item.Items.AIR)));

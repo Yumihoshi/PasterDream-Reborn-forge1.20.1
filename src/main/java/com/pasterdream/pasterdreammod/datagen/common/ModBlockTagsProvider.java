@@ -271,6 +271,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
 
         //植株底下的方块
+        // 可攀爬方块（藤蔓、梯子等）
+        tag(BlockTags.CLIMBABLE)
+                .add(ModBlocks.DYEDREAM_VINE.get());
+
         tag(TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath("pasterdream", "dyedream_dirt")))
                 .add(ModBlocks.DYEDREAM_DIRT.get())
                 .add(ModBlocks.DYEDREAM_GRASS_BLOCK.get());

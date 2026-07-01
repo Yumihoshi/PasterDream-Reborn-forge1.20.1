@@ -270,6 +270,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("block/dyedream_seagrass"));
         withExistingParent(ModItems.REED.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/reed"));
+        withExistingParent(ModItems.DYEDREAM_VINE.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/dyedream_vine"));
     }
 
     @Override

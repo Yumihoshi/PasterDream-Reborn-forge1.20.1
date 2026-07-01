@@ -284,6 +284,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         var reed = models().cross(ModBlocks.REED.getId().getPath(), blockTexture(ModBlocks.REED.get())).renderType("cutout");
         simpleBlock(ModBlocks.REED.get(), reed);
+        var Dyedream_vine = models().cross(ModBlocks.DYEDREAM_VINE.getId().getPath(), blockTexture(ModBlocks.DYEDREAM_VINE.get())).renderType("cutout");
+        simpleBlock(ModBlocks.DYEDREAM_VINE.get(), Dyedream_vine);
 
 
 
