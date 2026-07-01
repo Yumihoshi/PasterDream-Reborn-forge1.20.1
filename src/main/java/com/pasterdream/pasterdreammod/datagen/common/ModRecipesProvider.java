@@ -74,6 +74,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         moltenGoldToolRecipes(pWriter);
         hellfireToolRecipes(pWriter);
         meltDreamToolRecipes(pWriter);
+        tideSwordRecipes(pWriter);
         copperToolRecipes(pWriter);
         copperArmorRecipes(pWriter);
         titaniumToolRecipes(pWriter);
@@ -791,6 +792,31 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         .requires(ModItems.MORTAR.get())
                         .unlockedBy(getHasName(ModItems.DYEDREAM_DUST.get()), has(ModItems.DYEDREAM_DUST.get())),
                 pWriter, "dyedream_dye_from_dust");
+    }
+
+    // ===== 引潮剑配方 =====
+
+    private void tideSwordRecipes(Consumer<FinishedRecipe> pWriter) {
+        // 引潮剑
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TIDE_SWORD.get())
+                .pattern(" ab")
+                .pattern("aca")
+                .pattern("da ")
+                .define('a', Items.PRISMARINE_SHARD)
+                .define('b', Items.PRISMARINE_CRYSTALS)
+                .define('c', Items.TRIDENT)
+                .define('d', ModItems.ELDER_GUARDIAN_SCALE.get())
+                .unlockedBy(getHasName(ModItems.ELDER_GUARDIAN_SCALE.get()), has(ModItems.ELDER_GUARDIAN_SCALE.get()))
+                .save(pWriter);
+
+        // 『北海若』引潮 (锻造台)
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(Items.PRISMARINE_CRYSTALS),
+                Ingredient.of(ModItems.TIDE_SWORD.get()),
+                Ingredient.of(ModItems.BLUE_HEART_OF_THE_SEA.get()),
+                RecipeCategory.COMBAT, ModItems.BEIHAI_RUO_TIDE_SWORD.get())
+                .unlocks("has_tide_sword", has(ModItems.TIDE_SWORD.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":beihai_ruo_tide_sword_smithing");
     }
 
     // ===== 染梦玻璃系列配方 =====

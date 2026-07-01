@@ -290,7 +290,11 @@
     "dream_fertilizer": "dream_fertilizer",
     "reedrod": "reed_rod",
     "red_dew_0": "red_dew",
-    "blue_dew": "blue_dew"
+    "blue_heart_of_the_sea": "blue_heart_of_the_sea",
+    "elder_guardian_scale": "elder_guardian_scale",
+    "blue_dew": "blue_dew",
+    "tide_sword": "tide_sword",
+    "true_tide_sword": "beihai_ruo_tide_sword"
   },
   "entities": {},
   "dimensions": {
