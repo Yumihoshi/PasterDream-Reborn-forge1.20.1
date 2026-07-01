@@ -213,6 +213,9 @@ public class ModCreativeModeTabs {
                         // 独立武器
                         output.accept(ModItems.TIDE_SWORD.get());
                         output.accept(ModItems.BEIHAI_RUO_TIDE_SWORD.get());
+                        output.accept(ModItems.KUSANAGI.get());
+                        output.accept(ModItems.MURAKUMO_KUSANAGI.get());
+                        output.accept(ModItems.SWORD_EMBRYO.get());
                     })
                     .build());
 

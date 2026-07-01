@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.hellfiretool;
 
+import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -38,6 +39,9 @@ public class InfernoSwordItem extends SwordItem {
             player.getCooldowns().addCooldown(this, 200);
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
                     ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
+            if (level instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(ModParticleTypes.BUFF_0_PARTICLE.get(), player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);
+            }
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
     }

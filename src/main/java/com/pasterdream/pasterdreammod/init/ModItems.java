@@ -26,6 +26,8 @@ import com.pasterdream.pasterdreammod.world.item.moltengoldtool.*;
 import com.pasterdream.pasterdreammod.world.item.meltdreamtool.SharpMeltDreamSwordItem;
 import com.pasterdream.pasterdreammod.world.item.tidetool.BeihaiRuoTideSwordItem;
 import com.pasterdream.pasterdreammod.world.item.tidetool.TideSwordItem;
+import com.pasterdream.pasterdreammod.world.item.grasstool.KusanagiItem;
+import com.pasterdream.pasterdreammod.world.item.grasstool.MurakumoKusanagiItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
 import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
@@ -35,6 +37,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -232,8 +235,14 @@ public class ModItems {
     // ===== 独立武器 =====
     public static final RegistryObject<Item> TIDE_SWORD = ITEMS.register("tide_sword",
             () -> new TideSwordItem(ModToolTiers.TIDE_SWORD, 3, -2.8f, new Item.Properties().rarity(Rarity.UNCOMMON)));
-    public static final RegistryObject<Item> BEIHAI_RUO_TIDE_SWORD = ITEMS.register("beihai_ruo_tide_sword",
+    public static final RegistryObject<Item> BEIHAI_RUO_TIDE_SWORD = ITEMS.register("beihairuo_tide_sword",
             () -> new BeihaiRuoTideSwordItem(ModToolTiers.BEIHAI_RUO_TIDE_SWORD, 3, -2.8f, new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> KUSANAGI = ITEMS.register("kusanagi",
+            () -> new KusanagiItem(ModToolTiers.KUSANAGI, 3, -2.5f, new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> MURAKUMO_KUSANAGI = ITEMS.register("murakumo_kusanagi",
+            () -> new MurakumoKusanagiItem(ModToolTiers.MURAKUMO_KUSANAGI, 3, -2.5f, new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> SWORD_EMBRYO = ITEMS.register("sword_embryo",
+            () -> new SwordItem(Tiers.IRON, 3, -2.4f, new Item.Properties()));
 
     // ===== 钛金装备 =====
     public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet",

@@ -75,6 +75,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         hellfireToolRecipes(pWriter);
         meltDreamToolRecipes(pWriter);
         tideSwordRecipes(pWriter);
+        grassSwordRecipe(pWriter);
         copperToolRecipes(pWriter);
         copperArmorRecipes(pWriter);
         titaniumToolRecipes(pWriter);
@@ -794,6 +795,21 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 pWriter, "dyedream_dye_from_dust");
     }
 
+    // ===== 草薙配方 =====
+
+    private void grassSwordRecipe(Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.KUSANAGI.get())
+                .pattern(" ab")
+                .pattern("aca")
+                .pattern("da ")
+                .define('a', ModItems.JUNGLE_SPORE.get())
+                .define('b', Items.SPORE_BLOSSOM)
+                .define('c', ModItems.SWORD_EMBRYO.get())
+                .define('d', Items.EMERALD_BLOCK)
+                .unlockedBy(getHasName(ModItems.JUNGLE_SPORE.get()), has(ModItems.JUNGLE_SPORE.get()))
+                .save(pWriter);
+    }
+
     // ===== 引潮剑配方 =====
 
     private void tideSwordRecipes(Consumer<FinishedRecipe> pWriter) {
@@ -816,7 +832,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 Ingredient.of(ModItems.BLUE_HEART_OF_THE_SEA.get()),
                 RecipeCategory.COMBAT, ModItems.BEIHAI_RUO_TIDE_SWORD.get())
                 .unlocks("has_tide_sword", has(ModItems.TIDE_SWORD.get()))
-                .save(pWriter, PasterDreamMod.MOD_ID + ":beihai_ruo_tide_sword_smithing");
+                .save(pWriter, PasterDreamMod.MOD_ID + ":beihairuo_tide_sword_smithing");
     }
 
     // ===== 染梦玻璃系列配方 =====

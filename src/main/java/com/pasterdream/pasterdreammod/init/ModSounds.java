@@ -28,6 +28,9 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> COIN_EXCHANGE =
             SOUNDS.register("coin_exchange", () -> SoundEvent.createVariableRangeEvent(
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "coin_exchange")));
+    public static final RegistryObject<SoundEvent> SKILL0 =
+            SOUNDS.register("skill0", () -> SoundEvent.createVariableRangeEvent(
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "skill0")));
 
     public static void register(IEventBus eventBus) {
         SOUNDS.register(eventBus);
