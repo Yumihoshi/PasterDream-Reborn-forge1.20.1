@@ -415,6 +415,17 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     // ===== 材料配方 =====
 
     private void materialRecipes(Consumer<FinishedRecipe> pWriter) {
+        // 蔚蓝海洋之心
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BLUE_HEART_OF_THE_SEA.get(), 1)
+                .pattern("aba")
+                .pattern("bcb")
+                .pattern("aba")
+                .define('a', Items.GLOW_INK_SAC)
+                .define('b', ModItems.BLUE_DEW.get())
+                .define('c', Items.HEART_OF_THE_SEA)
+                .unlockedBy(getHasName(Items.HEART_OF_THE_SEA), has(Items.HEART_OF_THE_SEA))
+                .save(pWriter);
+
         // 线轴
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SPOOL.get(), 1)
                 .pattern(" a ")
