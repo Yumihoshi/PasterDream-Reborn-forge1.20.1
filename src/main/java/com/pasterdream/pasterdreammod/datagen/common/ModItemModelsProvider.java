@@ -162,6 +162,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.DYEDREAM_HOE);
         handheldItem(ModItems.DYEDREAM_HAMMER);
         handheldItem(ModItems.SHARP_MELT_DREAM_SWORD);
+        handheldItem(ModItems.TIDE_SWORD);
+        handheldItem(ModItems.BEIHAI_RUO_TIDE_SWORD);
         basicItem(ModItems.TITANIUM_UPGRADE.get());
         basicItem(ModItems.SCULK_UPGRADE.get());
         basicItem(ModItems.DYEDREAM_UPGRADE.get());
@@ -172,6 +174,12 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get());
         basicItem(ModItems.BLUE_PRINT.get());
         basicItem(ModItems.REED_ROD.get());
+        basicItem(ModItems.BLUE_HEART_OF_THE_SEA.get());
+        basicItem(ModItems.ELDER_GUARDIAN_SCALE.get());
+        basicItem(ModItems.RED_DEW.get());
+        basicItem(ModItems.BLUE_DEW.get());
+        basicItem(ModItems.MELT_DREAM_COIN.get());
+        basicItem(ModItems.MELT_DREAM_COIN_PILE.get());
         basicItem(ModItems.JUNGLE_SPORE.get());
 
         basicItem(ModItems.DYEDREAM_COROLLA_CROP_AGE_0.get());

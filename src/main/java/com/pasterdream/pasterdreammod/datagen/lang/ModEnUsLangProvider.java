@@ -93,6 +93,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "Elixir Bottle of Melt Dream");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "Elixir Bottle of Rage Elixir");
         add(ModItems.PINEAPPLE_LOVE_SEA.get(), "Pineapple Love Sea");
+        add(ModItems.BLUE_HEART_OF_THE_SEA.get(), "Blue Heart Of The Sea");
+        add(ModItems.ELDER_GUARDIAN_SCALE.get(), "Elder Guardian Scale");
+        add(ModItems.RED_DEW.get(), "Red Dew");
+        add(ModItems.BLUE_DEW.get(), "Blue Dew");
         add(ModItems.DYEDREAM_COROLLA.get(), "Dyedream Corolla");
         add(ModItems.WHITE_COROLLA.get(), "White Corolla");
         add(ModItems.LIGHT_BALL.get(), "Light Ball");
@@ -138,6 +142,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.DYEDREAM_HOE.get(), "Dyedream Hoe");
         add(ModItems.DYEDREAM_HAMMER.get(), "Dyedream Hammer");
         add(ModItems.SHARP_MELT_DREAM_SWORD.get(), "Dyedream Sharp Sword");
+        add(ModItems.TIDE_SWORD.get(), "Tide Sword");
+        add(ModItems.BEIHAI_RUO_TIDE_SWORD.get(), "Beihai Ruo Tide Sword");
         add(ModItems.TITANIUM_HELMET.get(), "Titanium Helmet");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "Titanium Chestplate");
         add(ModItems.TITANIUM_LEGGINGS.get(), "Titanium Leggings");
@@ -156,6 +162,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get(), "Dream Notes - Wind Journey World");
         add(ModItems.BLUE_PRINT.get(), "Blue Print");
         add(ModItems.REED_ROD.get(), "Reed Rod");
+        add(ModItems.MELT_DREAM_COIN.get(), "Melt Dream Coin");
+        add(ModItems.MELT_DREAM_COIN_PILE.get(), "Melt Dream Coin Pile");
         add(ModItems.JUNGLE_SPORE.get(), "Jungle Spore");
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "Dye Dream Dirt");
@@ -359,6 +367,16 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.3", "§7▪ §9Slash and launch enemies upward, deals 2+ATK*1.2 bonus damage");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.4", "§7▪ §9Cooldown: 5s");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.5", "§7▪ §9Cooldown reduced to 3s while Dyedream Protection is active");
+        add("tooltip.pasterdreammod.tide_sword.1", "Inlaid: §7None");
+        add("tooltip.pasterdreammod.tide_sword.2", "§7▪ §9Grants Water Breathing while held");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.1", "Inlaid: §3Heart of the Sea");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.2", "Combat Art: §3Surging Current");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.3", "§7▪ §9Dash forward in water, 80% damage reduction during dash");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.4", "§7▪ §9Triggers on-hit when target is in water");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.5", "§7▪ §9Deals 3+ATK*1.2 bonus damage");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.6", "§7▪ §9Cooldown: 2.5s");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.7", "§7Passive:");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.8", "§7▪ §9Grants Water Breathing while held");
         add("tooltip.pasterdreammod.san_value", "SAN: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "Melt Dream Energy: ");
 
@@ -386,5 +404,14 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("biome.pasterdream.dyedream_mushroom_mountains","Dyedream Mushroom Mountains");
         add("biome.pasterdream.dyedream_snowy_plains","Dyedream Snowy Plains");
         add("biome.pasterdream.dyedream_frozen_ocean","Dyedream Frozen Ocean");
+
+        // Dew Tooltip
+        add("tooltip.pasterdream.drink_effect", "§7When consumed:");
+        add("tooltip.pasterdream.red_dew.effect", "§7▪ §9Instant Health I");
+        add("tooltip.pasterdream.blue_dew.effect", "§7▪ §9Water Breathing I (1:00)");
+
+        add("tooltip.pasterdream.melt_dream_coin", "§7Right-click with 10+ to combine into a coin pile");
+        add("tooltip.pasterdream.melt_dream_coin_pile", "§7Right-click to split into 10 Melt Dream Coins");
+        add("tooltip.pasterdream.melt_dream_coin.value", "§7▪ §6Face Value : ");
     }
 }

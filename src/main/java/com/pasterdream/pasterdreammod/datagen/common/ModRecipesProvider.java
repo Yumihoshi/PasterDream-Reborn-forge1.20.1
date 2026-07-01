@@ -74,6 +74,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         moltenGoldToolRecipes(pWriter);
         hellfireToolRecipes(pWriter);
         meltDreamToolRecipes(pWriter);
+        tideSwordRecipes(pWriter);
         copperToolRecipes(pWriter);
         copperArmorRecipes(pWriter);
         titaniumToolRecipes(pWriter);
@@ -415,6 +416,17 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     // ===== 材料配方 =====
 
     private void materialRecipes(Consumer<FinishedRecipe> pWriter) {
+        // 蔚蓝海洋之心
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BLUE_HEART_OF_THE_SEA.get(), 1)
+                .pattern("aba")
+                .pattern("bcb")
+                .pattern("aba")
+                .define('a', Items.GLOW_INK_SAC)
+                .define('b', ModItems.BLUE_DEW.get())
+                .define('c', Items.HEART_OF_THE_SEA)
+                .unlockedBy(getHasName(Items.HEART_OF_THE_SEA), has(Items.HEART_OF_THE_SEA))
+                .save(pWriter);
+
         // 线轴
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SPOOL.get(), 1)
                 .pattern(" a ")
@@ -780,6 +792,31 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         .requires(ModItems.MORTAR.get())
                         .unlockedBy(getHasName(ModItems.DYEDREAM_DUST.get()), has(ModItems.DYEDREAM_DUST.get())),
                 pWriter, "dyedream_dye_from_dust");
+    }
+
+    // ===== 引潮剑配方 =====
+
+    private void tideSwordRecipes(Consumer<FinishedRecipe> pWriter) {
+        // 引潮剑
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TIDE_SWORD.get())
+                .pattern(" ab")
+                .pattern("aca")
+                .pattern("da ")
+                .define('a', Items.PRISMARINE_SHARD)
+                .define('b', Items.PRISMARINE_CRYSTALS)
+                .define('c', Items.TRIDENT)
+                .define('d', ModItems.ELDER_GUARDIAN_SCALE.get())
+                .unlockedBy(getHasName(ModItems.ELDER_GUARDIAN_SCALE.get()), has(ModItems.ELDER_GUARDIAN_SCALE.get()))
+                .save(pWriter);
+
+        // 『北海若』引潮 (锻造台)
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(Items.PRISMARINE_CRYSTALS),
+                Ingredient.of(ModItems.TIDE_SWORD.get()),
+                Ingredient.of(ModItems.BLUE_HEART_OF_THE_SEA.get()),
+                RecipeCategory.COMBAT, ModItems.BEIHAI_RUO_TIDE_SWORD.get())
+                .unlocks("has_tide_sword", has(ModItems.TIDE_SWORD.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":beihai_ruo_tide_sword_smithing");
     }
 
     // ===== 染梦玻璃系列配方 =====
@@ -1590,7 +1627,19 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('a', ModItems.REED_ROD.get())
                 .unlockedBy(getHasName(ModItems.REED_ROD.get()), has(ModItems.REED_ROD.get()))
                 .save(pWriter);
+
+        // 鲜红露滴合成配方
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RED_DEW.get(), 1)
+                .requires(ModItems.GLASS_CUP_OF_COOKED_DYEDREAM_FLOWER_TEA.get())
+                .requires(Items.GLISTERING_MELON_SLICE)
+                .requires(Items.GOLDEN_APPLE)
+                .requires(Items.HONEY_BOTTLE)
+                .requires(Items.RED_DYE)
+                .unlockedBy(getHasName(ModItems.GLASS_CUP_OF_COOKED_DYEDREAM_FLOWER_TEA.get()),
+                        has(ModItems.GLASS_CUP_OF_COOKED_DYEDREAM_FLOWER_TEA.get()))
+                .save(pWriter);
     }
+
     // ===== 配方工具方法 =====
 
     private void dyeConversion(Consumer<FinishedRecipe> writer, ItemLike material, ItemLike result) {

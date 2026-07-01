@@ -9,6 +9,8 @@ import com.pasterdream.pasterdreammod.world.block.doll.qymdoll.QYMDollItem;
 import com.pasterdream.pasterdreammod.world.block.doll.uuzdoll.UUZDollItem;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronItem;
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
+import com.pasterdream.pasterdreammod.world.item.BlueDewItem;
+import com.pasterdream.pasterdreammod.world.item.RedDewItem;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.DreamNotesItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDrinkItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamFoodItem;
@@ -20,8 +22,11 @@ import com.pasterdream.pasterdreammod.world.item.hellfiretool.*;
 import com.pasterdream.pasterdreammod.world.item.meltdreamtool.*;
 import com.pasterdream.pasterdreammod.world.item.moltengoldtool.*;
 import com.pasterdream.pasterdreammod.world.item.meltdreamtool.SharpMeltDreamSwordItem;
+import com.pasterdream.pasterdreammod.world.item.tidetool.BeihaiRuoTideSwordItem;
+import com.pasterdream.pasterdreammod.world.item.tidetool.TideSwordItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
+import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -98,6 +103,11 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CHARGED_AMETHYST = ITEMS.register("charged_amethyst",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> MELT_DREAM_COIN = ITEMS.register("melt_dream_coin",
+            () -> new MeltDreamCoinItem(new Item.Properties(), false));
+    public static final RegistryObject<Item> MELT_DREAM_COIN_PILE = ITEMS.register("melt_dream_coin_pile",
+            () -> new MeltDreamCoinItem(new Item.Properties(), true));
 
     public static final RegistryObject<Item> DREAM_FERTILIZER = ITEMS.register("dream_fertilizer", () -> new Item(new Item.Properties()));
 
@@ -216,6 +226,12 @@ public class ModItems {
             () -> new DyedreamHammerItem(ModToolTiers.DYEDREAM, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> SHARP_MELT_DREAM_SWORD = ITEMS.register("sharp_melt_dream_sword",
             () -> new SharpMeltDreamSwordItem(ModToolTiers.MELT_DREAM, new Item.Properties().rarity(Rarity.RARE)));
+
+    // ===== 独立武器 =====
+    public static final RegistryObject<Item> TIDE_SWORD = ITEMS.register("tide_sword",
+            () -> new TideSwordItem(ModToolTiers.TIDE_SWORD, 3, -2.8f, new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> BEIHAI_RUO_TIDE_SWORD = ITEMS.register("beihai_ruo_tide_sword",
+            () -> new BeihaiRuoTideSwordItem(ModToolTiers.BEIHAI_RUO_TIDE_SWORD, 3, -2.8f, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     // ===== 钛金装备 =====
     public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet",
@@ -517,6 +533,15 @@ public class ModItems {
             () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().sanAdd(15).rarity(Rarity.UNCOMMON)
                     .food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5f).alwaysEat().build())));
 
+    // ===== 露滴 =====
+    public static final RegistryObject<Item> RED_DEW = ITEMS.register("red_dew",
+            () -> new RedDewItem());
+    public static final RegistryObject<Item> BLUE_HEART_OF_THE_SEA = ITEMS.register("blue_heart_of_the_sea",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ELDER_GUARDIAN_SCALE = ITEMS.register("elder_guardian_scale",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLUE_DEW = ITEMS.register("blue_dew",
+            () -> new BlueDewItem());
 
     // ===== 方块物品 =====
 

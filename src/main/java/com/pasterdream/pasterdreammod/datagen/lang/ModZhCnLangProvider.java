@@ -96,6 +96,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "融梦灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "狂暴战意灵药");
         add(ModItems.PINEAPPLE_LOVE_SEA.get(), "凤梨爱琴海");
+        add(ModItems.BLUE_HEART_OF_THE_SEA.get(), "蔚蓝海洋之心");
+        add(ModItems.ELDER_GUARDIAN_SCALE.get(), "远古守卫者鳞片");
+        add(ModItems.RED_DEW.get(), "鲜红露滴");
+        add(ModItems.BLUE_DEW.get(), "蔚蓝露滴");
 
 
         add(ModItems.SOUL_DUST.get(), "灵魂粉尘");
@@ -146,6 +150,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.DYEDREAM_HOE.get(), "染梦合金锄");
         add(ModItems.DYEDREAM_HAMMER.get(), "染梦合金锤");
         add(ModItems.SHARP_MELT_DREAM_SWORD.get(), "极锋染梦合金剑");
+        add(ModItems.TIDE_SWORD.get(), "引潮剑");
+        add(ModItems.BEIHAI_RUO_TIDE_SWORD.get(), "『北海若』引潮");
         add(ModItems.TITANIUM_HELMET.get(), "钛金头盔");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "钛金胸甲");
         add(ModItems.TITANIUM_LEGGINGS.get(), "钛金护腿");
@@ -167,6 +173,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.BLUE_PRINT.get(), "蓝图");
         add(ModItems.REED_ROD.get(), "芦苇杆");
         add(ModItems.JUNGLE_SPORE.get(), "丛林孢子");
+        add(ModItems.MELT_DREAM_COIN.get(), "融梦星币");
+        add(ModItems.MELT_DREAM_COIN_PILE.get(), "融梦星币堆");
+        add(ModBlocks.DYEDREAM_VINE.get(), "染梦藤蔓");
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "染梦泥土");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "染梦草方块");
@@ -367,6 +376,16 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.3", "§7▪ §9斩击并将敌人向上击飞 造成2+当前攻击力*1.2点伤害");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.4", "§7▪ §9冷却时间：5秒");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.5", "§7▪ §9拥有染梦守护效果时 冷却时间缩短为3秒");
+        add("tooltip.pasterdreammod.tide_sword.1", "镶嵌：§7无");
+        add("tooltip.pasterdreammod.tide_sword.2", "§7▪ §9手持武器时获得水下呼吸效果");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.1", "镶嵌：§3海洋之心");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.2", "战技：§3涌流剑技");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.3", "§7▪ §9在水中向指针方向冲刺 冲刺期间免疫80%的伤害");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.4", "§7▪ §9攻击的目标处于水时触发");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.5", "§7▪ §9攻击造成3+当前攻击力*1.2点伤害");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.6", "§7▪ §9冷却时间：2.5秒");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.7", "被动：");
+        add("tooltip.pasterdreammod.beihai_ruo_tide_sword.8", "§7▪ §9手持武器时获得水下呼吸效果");
         add("tooltip.pasterdreammod.san_value", "SAN值: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "融梦能量: ");
 
@@ -508,5 +527,14 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("book.pasterdream.清晨的新风_第1页", "这是新的一天的开始，也是新的风向的到来。\n\n伴随着风铃的声音，飘落的羽毛，以及从东方升起的阳光。\n\n风是属于这里的恩赐，顺应风的方向将是我们探索的助力，而逆风将可能使我们寸步难行。\n\n风不仅指引我们旅途的方向，也是一种特殊的钥匙。");
         add("book.pasterdream.清晨的新风_第2页", "风只会在新的方向到来的时候吹拂，无法通过任何方式预言。\n\n如果错过了清晨风的指引，或是在这个梦境之外无法用身体去感受，风向标可以跨越现实与梦来告诉你当今的风向。\n\n以及在这里散落的一些宝藏，将可以改变风对我们的影响。");
         add("book.pasterdream.清晨的新风_第3页", "还有许多风的秘密... 也许风会在某时某刻向我们揭晓。\n\n\nBy 琴雨梦");
+
+        // 露滴 Tooltip
+        add("tooltip.pasterdream.drink_effect", "§7饮用后获得效果:");
+        add("tooltip.pasterdream.red_dew.effect", "§7▪ §9瞬间治疗I");
+        add("tooltip.pasterdream.blue_dew.effect", "§7▪ §9水下呼吸I (1:00)");
+
+        add("tooltip.pasterdream.melt_dream_coin", "§7右键使用10个以上可合成为融梦星币堆");
+        add("tooltip.pasterdream.melt_dream_coin_pile", "§7右键使用可分解为10个融梦星币");
+        add("tooltip.pasterdream.melt_dream_coin.value", "§7▪ §6价值面额 : ");
     }
 }

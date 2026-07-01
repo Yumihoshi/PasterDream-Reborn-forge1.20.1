@@ -217,6 +217,35 @@ public class ModConfiguredFeatures {
         );
     }
 
+    private static final List<Block> DYEDREAM_BUD_GROUND = List.of(
+            ModBlocks.DYEDREAM_DIRT.get(),
+            ModBlocks.DYEDREAM_GRASS_BLOCK.get(),
+            Blocks.CALCITE,
+            ModBlocks.DYEDREAM_BUDDING_BLOCK.get()
+    );
+
+    /** 冰晶芽地面：不含母岩 */
+    private static final List<Block> ICE_BUD_GROUND = List.of(
+            ModBlocks.DYEDREAM_DIRT.get(),
+            ModBlocks.DYEDREAM_GRASS_BLOCK.get(),
+            ModBlocks.ICE_STONE.get(),
+            Blocks.CALCITE
+    );
+
+    /** 晶芽专用的生成辅助：同时检查目标位置为空气、下方方块在允许列表内 */
+    private static Holder<PlacedFeature> simpleBudInAir(BlockStateProvider provider, List<Block> groundBlocks) {
+        return PlacementUtils.inlinePlaced(
+                Feature.SIMPLE_BLOCK,
+                new SimpleBlockConfiguration(provider),
+                BlockPredicateFilter.forPredicate(
+                        BlockPredicate.allOf(List.of(
+                                BlockPredicate.matchesBlocks(Blocks.AIR),
+                                BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), groundBlocks)
+                        ))
+                )
+        );
+    }
+
     private static Holder<PlacedFeature> simpleBlockInWater(BlockStateProvider provider) {
         return PlacementUtils.inlinePlaced(
                 Feature.SIMPLE_BLOCK,
@@ -277,6 +306,7 @@ public class ModConfiguredFeatures {
                         new TwoLayersFeatureSize(1, 0, 2))
                         .decorators(List.of(PinkShroomlightTreeDecorator.INSTANCE))
                         .ignoreVines()
+                        .dirt(BlockStateProvider.simple(ModBlocks.DYEDREAM_DIRT.get()))
                         .build()));
 
         // 粉顶菌巨菇 — 单株骨粉催熟，使用自定义特征附加菌光体
@@ -541,15 +571,15 @@ public class ModConfiguredFeatures {
         // ===== 洞穴晶芽 =====
         context.register(SMALL_DYEDREAM_BUD_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(12, 4, 4,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SMALL_DYEDREAM_BUD.get())))));
+                        simpleBudInAir(BlockStateProvider.simple(ModBlocks.SMALL_DYEDREAM_BUD.get()), DYEDREAM_BUD_GROUND))));
         context.register(MEDIUM_DYEDREAM_BUD_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(12, 4, 4,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.MEDIUM_DYEDREAM_BUD.get())))));
+                        simpleBudInAir(BlockStateProvider.simple(ModBlocks.MEDIUM_DYEDREAM_BUD.get()), DYEDREAM_BUD_GROUND))));
         context.register(LARGE_DYEDREAM_BUD_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(12, 4, 4,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.LARGE_DYEDREAM_BUD.get())))));
+                        simpleBudInAir(BlockStateProvider.simple(ModBlocks.LARGE_DYEDREAM_BUD.get()), DYEDREAM_BUD_GROUND))));
         context.register(ICE_BUD_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(25, 5, 5,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.ICE_BUD.get())))));
+                        simpleBudInAir(BlockStateProvider.simple(ModBlocks.ICE_BUD.get()), ICE_BUD_GROUND))));
     }
 }

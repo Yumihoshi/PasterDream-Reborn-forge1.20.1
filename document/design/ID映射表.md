@@ -236,6 +236,8 @@
 | `soul_essence`                 | `soul_essence`                              | 不改                                                        | 无需客制化类，直接用 `Item`                           |
 | `charged_amethyst`             | `charged_amethyst`                          | 不改                                                        | 无需客制化类，直接用 `Item`                           |
 | `meltdream_crystal_0`          | `melt_dream_crystal_fragment`               | 重命名，添加下划线和`fragment`，去除`_0`                               | 无需客制化类，直接用 `Item`                           |
+| `dream_coin_0`                 | `melt_dream_coin`                           | 重命名，`dream_coin_0` → `melt_dream_coin`（融梦星币）           | 客制化类 `MeltDreamCoinItem`，右键合成为堆 + 丢弃音效 + ToolTip |
+| `dream_coin_1`                 | `melt_dream_coin_pile`                      | 重命名，`dream_coin_1` → `melt_dream_coin_pile`（融梦星币堆）     | 客制化类 `MeltDreamCoinItem`，右键分解 + 音效 + ToolTip       |
 | `dreamnotes_0`                 | `dream_notes_dyedream_world`                | 整个物品机制重做，合并相同类型，使用NBT区分（NBT内容使用特殊绑定框架）                    | 客制化类 `DreamNotesItem`                       |
 | `dreamnotes_1`                 | 删除                                          | -                                                         | -                                           |
 | `dreamnotes_2`                 | 删除                                          | -                                                         | -                                           |
@@ -313,6 +315,12 @@
 | `cotton`                       | `cotton`                                    | 不改                                                        | 无需客制化类，直接用 `Item`                           |
 | `dream_fertilizer`             | `dream_fertilizer`                          | 不改                                                        | 无需客制化类，直接用 `Item`                           |
 | `reedrod`                      | `reed_rod`                                  | 重命名，补下划线                                                  | 无需客制化类，直接用 `Item`                           |
+| `red_dew_0`                    | `red_dew`                                   | 重命名，去除 `_0` 后缀                                            | 客制化类 `RedDewItem`，DRINK 动画 + 瞬间治疗效果           |
+| `blue_heart_of_the_sea`        | `blue_heart_of_the_sea`                     | 不改                                                        | 无需客制化类，直接用 `Item`                           |
+| `elder_guardian_scale`         | `elder_guardian_scale`                      | 不改                                                        | 无需客制化类，直接用 `Item`                           |
+| `blue_dew`                     | `blue_dew`                                  | 不改                                                        | 客制化类 `BlueDewItem`，DRINK 动画 + 水下呼吸效果           |
+| `tide_sword`                   | `tide_sword`                                | 不改                                                        | 客制化类 `TideSwordItem`，手持时获得水下呼吸效果               |
+| `true_tide_sword`              | `beihai_ruo_tide_sword`                     | 重命名，`true_tide_sword` → `beihai_ruo_tide_sword`（『北海若』引潮） | 客制化类 `BeihaiRuoTideSwordItem`，水中冲刺 + 战技伤害       |
 
 
 

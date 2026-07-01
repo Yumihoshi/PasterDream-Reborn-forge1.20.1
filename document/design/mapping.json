@@ -104,6 +104,7 @@
     "dyedream_lily_pad": "dyedream_lily_pad",
     "dyedream_lotus": "dyedream_lotus",
     "dyedream_seagrass": "dyedream_seagrass",
+    "vine_0": "dyedream_vine",
     "dyedream_desk": "dyedream_desk",
     "shadow_desk": "shadow_desk",
     "picnic_basket": "picnic_basket",
@@ -210,6 +211,8 @@
     "soul_essence": "soul_essence",
     "charged_amethyst": "charged_amethyst",
     "meltdream_crystal_0": "melt_dream_crystal_fragment",
+    "dream_coin_0": "melt_dream_coin",
+    "dream_coin_1": "melt_dream_coin_pile",
     "dreamnotes_0": "dream_notes_dyedream_world",
     "dreamnotes_1": "删除",
     "dreamnotes_2": "删除",
@@ -285,7 +288,13 @@
     "lightball": "light_ball",
     "cotton": "cotton",
     "dream_fertilizer": "dream_fertilizer",
-    "reedrod": "reed_rod"
+    "reedrod": "reed_rod",
+    "red_dew_0": "red_dew",
+    "blue_heart_of_the_sea": "blue_heart_of_the_sea",
+    "elder_guardian_scale": "elder_guardian_scale",
+    "blue_dew": "blue_dew",
+    "tide_sword": "tide_sword",
+    "true_tide_sword": "beihai_ruo_tide_sword"
   },
   "entities": {},
   "dimensions": {

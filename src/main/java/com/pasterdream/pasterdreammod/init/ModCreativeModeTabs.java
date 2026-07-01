@@ -79,6 +79,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get());
                         output.accept(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get());
                         output.accept(ModItems.PINEAPPLE_LOVE_SEA.get());
+                        output.accept(ModItems.RED_DEW.get());
+                        output.accept(ModItems.BLUE_DEW.get());
                         output.accept(ModItems.GLASS_JAR_OF_GOLDENROD_TEA.get());
                         output.accept(ModItems.LEGENDARY_DRAGON_HORN_ICE_CREAM.get());
                         output.accept(ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get());
@@ -134,6 +136,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FABRIC.get());
                         output.accept(ModItems.PROTECT_DECK.get());
                         output.accept(ModItems.REED_ROD.get());
+                        output.accept(ModItems.BLUE_HEART_OF_THE_SEA.get());
+                        output.accept(ModItems.ELDER_GUARDIAN_SCALE.get());
+                        output.accept(ModItems.MELT_DREAM_COIN.get());
+                        output.accept(ModItems.MELT_DREAM_COIN_PILE.get());
                         output.accept(ModItems.JUNGLE_SPORE.get());
                     })
                     .build());
@@ -204,6 +210,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MELT_DREAM_AXE.get());
                         output.accept(ModItems.MELT_DREAM_SHOVEL.get());
                         output.accept(ModItems.MELT_DREAM_HOE.get());
+                        // 独立武器
+                        output.accept(ModItems.TIDE_SWORD.get());
+                        output.accept(ModItems.BEIHAI_RUO_TIDE_SWORD.get());
                     })
                     .build());
 
