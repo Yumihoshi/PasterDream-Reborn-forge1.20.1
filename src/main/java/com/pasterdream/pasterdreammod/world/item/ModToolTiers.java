@@ -46,6 +46,10 @@ public enum ModToolTiers implements Tier {
     TIDE_SWORD(1561, 4.0F, 4.5F, 1, 11,
             () -> Ingredient.of(Items.PRISMARINE_CRYSTALS)),
 
+    // 北海若引潮
+    BEIHAI_RUO_TIDE_SWORD(1561, 4.0F, 5.0F, 1, 11,
+            () -> Ingredient.of(Items.PRISMARINE_CRYSTALS)),
+
     // 朔漠
     DESERT_SWORD(1561, 1.0F, 7.0F, 1, 8,
             Ingredient::of),
@@ -79,9 +83,6 @@ public enum ModToolTiers implements Tier {
 
     // TRUE_GRASS_SWORD(1311, 1.0F, 3.5F, 1, 16,
     //         () -> Ingredient.of(Items.JUNGLE_SPORE)),  // TODO: jungle_spore 不存在
-
-    // TRUE_TIDE_SWORD(1561, 4.0F, 5.0F, 1, 11,
-    //         () -> Ingredient.of(Items.PRISMARINE_CRYSTALS)),  // 与 TIDE_SWORD 同级，可用后者替代
 
     // TRUE_DESERT_SWORD(1561, 1.0F, 8.0F, 1, 8,
     //         () -> Ingredient.of()),  // 与 DESERT_SWORD 同级，可用后者替代

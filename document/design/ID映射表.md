@@ -318,6 +318,8 @@
 | `blue_heart_of_the_sea`        | `blue_heart_of_the_sea`                     | 不改                                                        | 无需客制化类，直接用 `Item`                           |
 | `elder_guardian_scale`         | `elder_guardian_scale`                      | 不改                                                        | 无需客制化类，直接用 `Item`                           |
 | `blue_dew`                     | `blue_dew`                                  | 不改                                                        | 客制化类 `BlueDewItem`，DRINK 动画 + 水下呼吸效果           |
+| `tide_sword`                   | `tide_sword`                                | 不改                                                        | 客制化类 `TideSwordItem`，手持时获得水下呼吸效果               |
+| `true_tide_sword`              | `beihai_ruo_tide_sword`                     | 重命名，`true_tide_sword` → `beihai_ruo_tide_sword`（『北海若』引潮） | 客制化类 `BeihaiRuoTideSwordItem`，水中冲刺 + 战技伤害       |
 
 
 

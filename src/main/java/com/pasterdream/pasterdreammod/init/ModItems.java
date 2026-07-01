@@ -22,6 +22,8 @@ import com.pasterdream.pasterdreammod.world.item.hellfiretool.*;
 import com.pasterdream.pasterdreammod.world.item.meltdreamtool.*;
 import com.pasterdream.pasterdreammod.world.item.moltengoldtool.*;
 import com.pasterdream.pasterdreammod.world.item.meltdreamtool.SharpMeltDreamSwordItem;
+import com.pasterdream.pasterdreammod.world.item.tidetool.BeihaiRuoTideSwordItem;
+import com.pasterdream.pasterdreammod.world.item.tidetool.TideSwordItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
 import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
@@ -221,6 +223,12 @@ public class ModItems {
             () -> new DyedreamHammerItem(ModToolTiers.DYEDREAM, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> SHARP_MELT_DREAM_SWORD = ITEMS.register("sharp_melt_dream_sword",
             () -> new SharpMeltDreamSwordItem(ModToolTiers.MELT_DREAM, new Item.Properties().rarity(Rarity.RARE)));
+
+    // ===== 独立武器 =====
+    public static final RegistryObject<Item> TIDE_SWORD = ITEMS.register("tide_sword",
+            () -> new TideSwordItem(ModToolTiers.TIDE_SWORD, 3, -2.8f, new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> BEIHAI_RUO_TIDE_SWORD = ITEMS.register("beihai_ruo_tide_sword",
+            () -> new BeihaiRuoTideSwordItem(ModToolTiers.BEIHAI_RUO_TIDE_SWORD, 3, -2.8f, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     // ===== 钛金装备 =====
     public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet",

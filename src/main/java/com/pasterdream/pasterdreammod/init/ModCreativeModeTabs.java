@@ -209,6 +209,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MELT_DREAM_AXE.get());
                         output.accept(ModItems.MELT_DREAM_SHOVEL.get());
                         output.accept(ModItems.MELT_DREAM_HOE.get());
+                        // 独立武器
+                        output.accept(ModItems.TIDE_SWORD.get());
+                        output.accept(ModItems.BEIHAI_RUO_TIDE_SWORD.get());
                     })
                     .build());
 
