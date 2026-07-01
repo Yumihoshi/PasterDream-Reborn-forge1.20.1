@@ -75,6 +75,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         hellfireToolRecipes(pWriter);
         meltDreamToolRecipes(pWriter);
         tideSwordRecipes(pWriter);
+        grassSwordRecipe(pWriter);
         copperToolRecipes(pWriter);
         copperArmorRecipes(pWriter);
         titaniumToolRecipes(pWriter);
@@ -792,6 +793,21 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         .requires(ModItems.MORTAR.get())
                         .unlockedBy(getHasName(ModItems.DYEDREAM_DUST.get()), has(ModItems.DYEDREAM_DUST.get())),
                 pWriter, "dyedream_dye_from_dust");
+    }
+
+    // ===== 草薙配方 =====
+
+    private void grassSwordRecipe(Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.KUSANAGI.get())
+                .pattern(" ab")
+                .pattern("aca")
+                .pattern("da ")
+                .define('a', ModItems.JUNGLE_SPORE.get())
+                .define('b', Items.SPORE_BLOSSOM)
+                .define('c', ModItems.SWORD_EMBRYO.get())
+                .define('d', Items.EMERALD_BLOCK)
+                .unlockedBy(getHasName(ModItems.JUNGLE_SPORE.get()), has(ModItems.JUNGLE_SPORE.get()))
+                .save(pWriter);
     }
 
     // ===== 引潮剑配方 =====

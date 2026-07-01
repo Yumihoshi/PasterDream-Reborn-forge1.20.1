@@ -39,8 +39,12 @@ public enum ModToolTiers implements Tier {
     // ==== 独立武器 ====
 
     // 草薙
-    // GRASS_SWORD(874, 1.0F, 3.0F, 1, 16,
-    //         () -> Ingredient.of(Items.JUNGLE_SPORE)),  // TODO: jungle_spore 不存在
+    KUSANAGI(874, 1.0F, 3.0F, 1, 16,
+            () -> Ingredient.of(ModItems.JUNGLE_SPORE.get())),
+
+    // 『天丛云』草薙
+    MURAKUMO_KUSANAGI(1311, 1.0F, 3.5F, 1, 16,
+            () -> Ingredient.of(ModItems.JUNGLE_SPORE.get())),
 
     // 引潮
     TIDE_SWORD(1561, 4.0F, 4.5F, 1, 11,
@@ -80,9 +84,6 @@ public enum ModToolTiers implements Tier {
 
     // TRUEST_MOLTENGOLD_SWORD(1255, 1.0F, 3.0F, 1, 23,
     //         () -> Ingredient.of(ModItems.MOLTEN_GOLD_INGOT.get())),  // 与 TRUE_MOLTENGOLD 同级，可用后者替代
-
-    // TRUE_GRASS_SWORD(1311, 1.0F, 3.5F, 1, 16,
-    //         () -> Ingredient.of(Items.JUNGLE_SPORE)),  // TODO: jungle_spore 不存在
 
     // TRUE_DESERT_SWORD(1561, 1.0F, 8.0F, 1, 8,
     //         () -> Ingredient.of()),  // 与 DESERT_SWORD 同级，可用后者替代

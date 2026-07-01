@@ -322,6 +322,9 @@
 | `blue_dew`                     | `blue_dew`                                  | 不改                                                        | 客制化类 `BlueDewItem`，DRINK 动画 + 水下呼吸效果           |
 | `tide_sword`                   | `tide_sword`                                | 不改                                                        | 客制化类 `TideSwordItem`，手持时获得水下呼吸效果               |
 | `true_tide_sword`              | `beihai_ruo_tide_sword`                     | 重命名，`true_tide_sword` → `beihai_ruo_tide_sword`（『北海若』引潮） | 客制化类 `BeihaiRuoTideSwordItem`，水中冲刺 + 战技伤害       |
+| `grass_sword`                  | `kusanagi`                                  | 重命名，`grass_sword` → `kusanagi`（草薙）                   | 客制化类 `KusanagiItem`，中毒 + 击杀200进化机制               |
+| `true_grass_sword`             | `murakumo_kusanagi`                         | 重命名，`true_grass_sword` → `murakumo_kusanagi`（『天丛云』草薙） | 客制化类 `MurakumoKusanagiItem`，战技：极致锋利（首次命中额外伤害）     |
+| `sword_embryo_0`               | `sword_embryo`                              | 重命名，`sword_embryo_0` → `sword_embryo`（失落之剑），去 `_0` 后缀 | 直接用 `SwordItem`(Tiers.IRON)，铁质可用的剑                     |
 
 
 

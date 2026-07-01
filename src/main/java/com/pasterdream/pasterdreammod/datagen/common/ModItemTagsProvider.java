@@ -90,7 +90,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.HELLFIRE_SWORD.get())
                 .add(ModItems.INFERNO_SWORD.get())
                 .add(ModItems.TIDE_SWORD.get())
-                .add(ModItems.BEIHAI_RUO_TIDE_SWORD.get());
+                .add(ModItems.BEIHAI_RUO_TIDE_SWORD.get())
+                .add(ModItems.KUSANAGI.get())
+                .add(ModItems.MURAKUMO_KUSANAGI.get())
+                .add(ModItems.SWORD_EMBRYO.get());
         tag(ItemTags.PICKAXES)
                 .add(ModItems.MOLTEN_GOLD_PICKAXE.get())
                 .add(ModItems.COPPER_PICKAXE.get())

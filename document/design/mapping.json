@@ -105,6 +105,7 @@
     "dyedream_lotus": "dyedream_lotus",
     "dyedream_seagrass": "dyedream_seagrass",
     "vine_0": "dyedream_vine",
+    "jungle_spore_plant": "jungle_sporangium",
     "dyedream_desk": "dyedream_desk",
     "shadow_desk": "shadow_desk",
     "picnic_basket": "picnic_basket",
@@ -233,6 +234,7 @@
     "spool": "spool",
     "fabric": "fabric",
     "protect_deck": "protect_deck",
+    "jungle_spore": "jungle_spore",
     "titanium_upgrade": "titanium_upgrade",
     "sculk_upgrade": "sculk_upgrade",
     "dyedream_upgrade": "dyedream_upgrade",
@@ -294,7 +296,9 @@
     "elder_guardian_scale": "elder_guardian_scale",
     "blue_dew": "blue_dew",
     "tide_sword": "tide_sword",
-    "true_tide_sword": "beihai_ruo_tide_sword"
+    "true_tide_sword": "beihai_ruo_tide_sword",
+    "grass_sword": "kusanagi",
+    "true_grass_sword": "murakumo_kusanagi"
   },
   "entities": {},
   "dimensions": {

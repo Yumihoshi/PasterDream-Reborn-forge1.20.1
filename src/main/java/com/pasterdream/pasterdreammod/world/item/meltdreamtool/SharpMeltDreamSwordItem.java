@@ -47,6 +47,9 @@ public class SharpMeltDreamSwordItem extends SwordItem {
                 player.getCooldowns().addCooldown(this, cooldownTicks);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(),
                         ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), player.getSoundSource(), 1.0f, 1.0f);
+                if (level instanceof ServerLevel serverLevel) {
+                    serverLevel.sendParticles(ModParticleTypes.BUFF_0_PARTICLE.get(), player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);
+                }
             }
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);

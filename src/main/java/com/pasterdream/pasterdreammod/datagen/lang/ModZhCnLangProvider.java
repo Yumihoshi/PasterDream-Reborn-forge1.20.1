@@ -152,6 +152,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.SHARP_MELT_DREAM_SWORD.get(), "极锋染梦合金剑");
         add(ModItems.TIDE_SWORD.get(), "引潮剑");
         add(ModItems.BEIHAI_RUO_TIDE_SWORD.get(), "『北海若』引潮");
+        add(ModItems.KUSANAGI.get(), "草薙");
+        add(ModItems.MURAKUMO_KUSANAGI.get(), "『天丛云』草薙");
+        add(ModItems.SWORD_EMBRYO.get(), "失落之剑");
         add(ModItems.TITANIUM_HELMET.get(), "钛金头盔");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "钛金胸甲");
         add(ModItems.TITANIUM_LEGGINGS.get(), "钛金护腿");
@@ -386,6 +389,16 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.6", "§7▪ §9冷却时间：2.5秒");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.7", "被动：");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.8", "§7▪ §9手持武器时获得水下呼吸效果");
+        add("tooltip.pasterdreammod.kusanagi.1", "镶嵌：§7无");
+        add("tooltip.pasterdreammod.kusanagi.2", "§7▪ §9攻击施加中毒效果");
+        add("tooltip.pasterdreammod.kusanagi.evolve", "武器成长到了新的阶段");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.1", "镶嵌：§7200亡魂");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.2", "战技：§b极致锋利");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.3", "§7▪ §9首次攻击目标时触发");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.4", "§7▪ §9攻击造成7+武器锋利等级*武器基础面板/2点伤害");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.5", "§7▪ §9冷却时间：4秒");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.6", "被动：");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.7", "§7▪ §9攻击施加更长时间的中毒效果");
         add("tooltip.pasterdreammod.san_value", "SAN值: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "融梦能量: ");
 

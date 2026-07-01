@@ -144,6 +144,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.SHARP_MELT_DREAM_SWORD.get(), "Dyedream Sharp Sword");
         add(ModItems.TIDE_SWORD.get(), "Tide Sword");
         add(ModItems.BEIHAI_RUO_TIDE_SWORD.get(), "Beihai Ruo Tide Sword");
+        add(ModItems.KUSANAGI.get(), "Kusanagi");
+        add(ModItems.MURAKUMO_KUSANAGI.get(), "Murakumo Kusanagi");
+        add(ModItems.SWORD_EMBRYO.get(), "Sword Embryo");
         add(ModItems.TITANIUM_HELMET.get(), "Titanium Helmet");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "Titanium Chestplate");
         add(ModItems.TITANIUM_LEGGINGS.get(), "Titanium Leggings");
@@ -378,6 +381,16 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.6", "§7▪ §9Cooldown: 2.5s");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.7", "§7Passive:");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.8", "§7▪ §9Grants Water Breathing while held");
+        add("tooltip.pasterdreammod.kusanagi.1", "Inlaid: §7None");
+        add("tooltip.pasterdreammod.kusanagi.2", "§7▪ §9Applies Poison on hit");
+        add("tooltip.pasterdreammod.kusanagi.evolve", "The weapon has grown to a new stage");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.1", "Inlaid: §7200 Souls");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.2", "Combat Art: §bExtreme Sharpness");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.3", "§7▪ §9Triggers on first hit against a target");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.4", "§7▪ §9Deals 7+Sharpness*BaseATK/2 bonus damage");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.5", "§7▪ §9Cooldown: 4s");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.6", "§7Passive:");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.7", "§7▪ §9Applies longer Poison on hit");
         add("tooltip.pasterdreammod.san_value", "SAN: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "Melt Dream Energy: ");
 

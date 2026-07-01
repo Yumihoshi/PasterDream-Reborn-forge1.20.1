@@ -1,9 +1,11 @@
 package com.pasterdream.pasterdreammod.world.item.tidetool;
 
+import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -43,8 +45,10 @@ public class BeihaiRuoTideSwordItem extends SwordItem {
             Level level = target.level();
             if (!level.isClientSide()) {
                 level.playSound(null, target.blockPosition(), ModSounds.SHARP_MELT_DREAM_SWORD_HIT.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
+                level.playSound(null, target.blockPosition(), SoundEvents.BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundSource.NEUTRAL, 0.8f, 1.0f);
             } else {
                 level.playLocalSound(target.getX(), target.getY(), target.getZ(), ModSounds.SHARP_MELT_DREAM_SWORD_HIT.get(), SoundSource.NEUTRAL, 1.0f, 1.0f, false);
+                level.playLocalSound(target.getX(), target.getY(), target.getZ(), SoundEvents.BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundSource.NEUTRAL, 0.8f, 1.0f, false);
             }
             if (level instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ParticleTypes.BUBBLE, target.getX(), target.getY(), target.getZ(), 64, 1.5, 1.8, 1.5, 0.2);
@@ -85,7 +89,7 @@ public class BeihaiRuoTideSwordItem extends SwordItem {
             stack.getOrCreateTag().putDouble("paster_atk", pasterAtk);
             stack.getOrCreateTag().putDouble("skill_multiplier", 1.0);
             if (level instanceof ServerLevel serverLevel) {
-                serverLevel.sendParticles(ParticleTypes.BUBBLE, player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);
+                serverLevel.sendParticles(ModParticleTypes.BUFF_0_PARTICLE.get(), player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);
             }
             if (!level.isClientSide()) {
                 level.playSound(null, player.blockPosition(), ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), SoundSource.PLAYERS, 0.8f, 1.0f);

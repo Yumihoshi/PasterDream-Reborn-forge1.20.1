@@ -13,5 +13,8 @@
   },
   "coin_exchange": {
     "sounds": [{"name": "pasterdream:coin_exchange", "stream": false}]
+  },
+  "skill0": {
+    "sounds": [{"name": "pasterdream:skill0", "stream": false}]
   }
 }
