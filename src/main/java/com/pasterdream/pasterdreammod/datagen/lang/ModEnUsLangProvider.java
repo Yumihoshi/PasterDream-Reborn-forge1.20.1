@@ -156,6 +156,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get(), "Dream Notes - Wind Journey World");
         add(ModItems.BLUE_PRINT.get(), "Blue Print");
         add(ModItems.REED_ROD.get(), "Reed Rod");
+        add(ModItems.JUNGLE_SPORE.get(), "Jungle Spore");
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "Dye Dream Dirt");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "Dye Dream Grass Block");

@@ -134,6 +134,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FABRIC.get());
                         output.accept(ModItems.PROTECT_DECK.get());
                         output.accept(ModItems.REED_ROD.get());
+                        output.accept(ModItems.JUNGLE_SPORE.get());
                     })
                     .build());
 
