@@ -235,7 +235,7 @@ public class ModItems {
     // ===== 独立武器 =====
     public static final RegistryObject<Item> TIDE_SWORD = ITEMS.register("tide_sword",
             () -> new TideSwordItem(ModToolTiers.TIDE_SWORD, 3, -2.8f, new Item.Properties().rarity(Rarity.UNCOMMON)));
-    public static final RegistryObject<Item> BEIHAI_RUO_TIDE_SWORD = ITEMS.register("beihai_ruo_tide_sword",
+    public static final RegistryObject<Item> BEIHAI_RUO_TIDE_SWORD = ITEMS.register("beihairuo_tide_sword",
             () -> new BeihaiRuoTideSwordItem(ModToolTiers.BEIHAI_RUO_TIDE_SWORD, 3, -2.8f, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> KUSANAGI = ITEMS.register("kusanagi",
             () -> new KusanagiItem(ModToolTiers.KUSANAGI, 3, -2.5f, new Item.Properties().rarity(Rarity.UNCOMMON)));

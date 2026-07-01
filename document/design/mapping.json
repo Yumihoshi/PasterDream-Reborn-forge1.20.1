@@ -296,9 +296,10 @@
     "elder_guardian_scale": "elder_guardian_scale",
     "blue_dew": "blue_dew",
     "tide_sword": "tide_sword",
-    "true_tide_sword": "beihai_ruo_tide_sword",
+    "true_tide_sword": "beihairuo_tide_sword",
     "grass_sword": "kusanagi",
-    "true_grass_sword": "murakumo_kusanagi"
+    "true_grass_sword": "murakumo_kusanagi",
+    "sword_embryo_0": "sword_embryo"
   },
   "entities": {},
   "dimensions": {

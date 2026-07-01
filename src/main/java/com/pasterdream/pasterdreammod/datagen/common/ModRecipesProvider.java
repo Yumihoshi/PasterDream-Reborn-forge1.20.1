@@ -832,7 +832,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 Ingredient.of(ModItems.BLUE_HEART_OF_THE_SEA.get()),
                 RecipeCategory.COMBAT, ModItems.BEIHAI_RUO_TIDE_SWORD.get())
                 .unlocks("has_tide_sword", has(ModItems.TIDE_SWORD.get()))
-                .save(pWriter, PasterDreamMod.MOD_ID + ":beihai_ruo_tide_sword_smithing");
+                .save(pWriter, PasterDreamMod.MOD_ID + ":beihairuo_tide_sword_smithing");
     }
 
     // ===== 染梦玻璃系列配方 =====
