@@ -166,6 +166,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get(), "寻梦者笔记-风之旅途");
         add(ModItems.BLUE_PRINT.get(), "蓝图");
         add(ModItems.REED_ROD.get(), "芦苇杆");
+        add(ModBlocks.DYEDREAM_VINE.get(), "染梦藤蔓");
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "染梦泥土");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "染梦草方块");

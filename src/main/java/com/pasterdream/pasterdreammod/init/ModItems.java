@@ -766,6 +766,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> REED = ITEMS.register("reed",
         () -> new BlockItem(ModBlocks.REED.get(), new Item.Properties()));//g1
+
+    public static final RegistryObject<Item> DYEDREAM_VINE = ITEMS.register("dyedream_vine",
+            () -> new BlockItem(ModBlocks.DYEDREAM_VINE.get(), new Item.Properties()));
     //作物方块物品
     public static final RegistryObject<Item> DYEDREAM_COROLLA_CROP_AGE_0 = ITEMS.register("dyedream_corolla_crop_age_0", () -> new BlockItem(ModBlocks.DYEDREAM_COROLLA_CROP.get(), new Item.Properties()));
     public static final RegistryObject<Item> WHITE_COROLLA_CROP_AGE_0 = ITEMS.register("white_corolla_crop_age_0", () -> new BlockItem(ModBlocks.WHITE_COROLLA_CROP.get(), new Item.Properties()));

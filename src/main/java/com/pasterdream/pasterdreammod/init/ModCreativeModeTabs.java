@@ -335,6 +335,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DYEDREAM_LOTUS.get());
                         output.accept(ModItems.DYEDREAM_SEAGRASS.get());
                         output.accept(ModItems.REED.get());
+                        output.accept(ModItems.DYEDREAM_VINE.get());
                     })
                     .build());
 

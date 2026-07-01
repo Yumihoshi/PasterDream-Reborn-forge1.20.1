@@ -393,6 +393,7 @@ public class ModBlocks {
             return box(0, 0, 0, 16, 8, 16).move(offset.x, offset.y, offset.z);
         }
     });
+    public static final RegistryObject<Block> DYEDREAM_VINE = BLOCKS.register("dyedream_vine", DyedreamVineBlock::new);
     //作物方块
     public static final RegistryObject<Block> DYEDREAM_COROLLA_CROP = BLOCKS.register("dyedream_corolla_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().randomTicks().instabreak()));
     public static final RegistryObject<Block> WHITE_COROLLA_CROP = BLOCKS.register("white_corolla_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).noCollission().randomTicks().instabreak()));

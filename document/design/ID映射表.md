@@ -121,6 +121,7 @@
 | `dyedream_lily_pad`              | `dyedream_lily_pad`                 | 不改                                            | 客制化类 `DyedreamLilyPadBlock`，覆写 getShape/getFlammability/canSurvive/mayPlaceOn 等                                  |
 | `dyedream_lotus`                 | `dyedream_lotus`                    | 不改                                            | 客制化类 `DyedreamLotusBlock`，覆写 getShape/getFlammability/canSurvive/mayPlaceOn 等                                    |
 | `dyedream_seagrass`              | `dyedream_seagrass`                 | 不改                                            | 客制化类 `DyedreamSeagrassBlock`，覆写 getShape/getFlammability/canSurvive/mayPlaceOn 等                                 |
+| `vine_0`                         | `dyedream_vine`                     | 重命名，染梦藤蔓                                      | 客制化类 `DyedreamVineBlock`，覆写 getShape/getFlammability/canSurvive/mayPlaceOn 等                                     |
 | `dyedream_desk`                  | `dyedream_desk`                     | 不改                                            | 客制化类 `DyedreamDeskBlock`，含 BlockEntity、Menu、Screen                                                               |
 | `shadow_desk`                    | `shadow_desk`                       | 不改                                            | 客制化类 `ShadowDeskBlock`，含 BlockEntity、Menu、Screen                                                                 |
 | `picnic_basket`                  | `picnic_basket`                     | 不改                                            | 客制化类 `PicnicBusketBlock`，含 BlockEntity、Menu、Screen以及Geckolib特殊渲染                                                 |
@@ -136,8 +137,9 @@
 | `crop_2b`                        | `light_ball_crop`                   | 重命名，流明堇植株（生长阶段，合并至同一方块）                       | 客制化类 `PasterDreamCropBlock`                                                                                      |
 | `crop_3a`                        | `cloud_crop`                        | 重命名，玲云花成熟植株（世界生成用）                            | 客制化类 `PasterDreamCropBlock`                                                                                      |
 | `crop_3b`                        | `cloud_crop`                        | 重命名，玲云花植株（生长阶段，合并至同一方块）                       | 客制化类 `PasterDreamCropBlock`                                                                                      |
-| `crop_4a`                        | `cotton_crop_age`                   | 重命名，棉花植株（生长阶段，合并至同一方块）                | 客制化类 `PasterdreamCropBlock`                                                                                   |
+| `crop_4a`                        | `cotton_crop_age`                   | 重命名，棉花植株（生长阶段，合并至同一方块）                        | 客制化类 `PasterdreamCropBlock`                                                                                      |
 | `crop_4b`                        | `cotton_crop_age`                   | 重命名，棉花植株                                      | 客制化类 `PasterdreamCropBlock`                                                                                      |
+
 
 
 
