@@ -25,6 +25,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.RAW_TITANIUM.get(), "Raw Titanium");
         add(ModItems.DYEDREAM_ALLOY_NUGGET.get(), "Dye Dream Alloy Nugget");
         add(ModItems.MORTAR.get(), "Mortar");
+        add(ModItems.PLIERS.get(), "Pliers");
         add(ModItems.DYEDREAM_DYE.get(), "Dye Dream Dye");
         add(ModItems.DYEDREAM_BUD_NUGGET.get(), "Dye Dream Bud Nugget");
         add(ModItems.GLASS_JAR.get(), "Glass Jar");
@@ -458,5 +459,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.melt_dream_coin", "§7Right-click with 10+ to combine into a coin pile");
         add("tooltip.pasterdream.melt_dream_coin_pile", "§7Right-click to split into 10 Melt Dream Coins");
         add("tooltip.pasterdream.melt_dream_coin.value", "§7▪ §6Face Value : ");
+
+        add("tooltip.pasterdream.pliers.1", "§7▪ §9Can harvest crops and plants");
+        add("tooltip.pasterdream.pliers.2", "§7▪ §9Sneak + right-click to collect blocks in plier_plants tag");
     }
 }

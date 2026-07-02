@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.world.block.cropblock;
 
 import com.pasterdream.pasterdreammod.init.ModCropRelation;
 import com.pasterdream.pasterdreammod.init.ModItems;
+import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -110,7 +111,7 @@ public class PasterDreamCropBlock extends BushBlock implements IPlantable
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
 
-        if (state.getValue(AGE) == 1 && held.is(Tags.Items.SHEARS))
+        if (state.getValue(AGE) == 1 && (held.is(Tags.Items.SHEARS) || held.is(ModItems.PLIERS.get())))
         {
             if (!level.isClientSide)
             {
@@ -121,6 +122,8 @@ public class PasterDreamCropBlock extends BushBlock implements IPlantable
                     level.setBlock(pos, state.setValue(AGE, 0), 2);
                     held.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
                     level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    if (level instanceof ServerLevel serverLevel)
+                        serverLevel.sendParticles(ModParticleTypes.DUST_0_PARTICLE.get(), pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 10, 0.5, 0.5, 0.5, 0.1);
                 }
             }
             return InteractionResult.sidedSuccess(level.isClientSide);

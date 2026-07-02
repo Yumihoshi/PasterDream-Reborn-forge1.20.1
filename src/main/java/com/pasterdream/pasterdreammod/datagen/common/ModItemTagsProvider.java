@@ -130,6 +130,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.DYEDREAM_GRASS_BLOCK.get());
 
         tag(TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("pasterdream", "white_corolla_can_place_on")))
-                .add(Items.SNOW_BLOCK);
+                .add(Items.SNOW_BLOCK)
+                .addTag(ItemTags.DIRT);
     }
 }
