@@ -296,7 +296,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_DIRT.get())
                 .add(ModBlocks.DYEDREAM_GRASS_BLOCK.get());
 
-
+        //不可被流体破坏的无碰撞箱方块
+        tag(TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "fluid_can_not_brush_nocollission_block")))
+                .add(ModBlocks.DYEDREAM_CRACK.get())
+                .add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get());
     }
 
     private void addBuildingFamilyToTags(BuildingBlockFamily family) {
