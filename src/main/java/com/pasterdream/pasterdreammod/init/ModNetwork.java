@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.network.*;
+import com.pasterdream.pasterdreammod.network.animationstatechange.AnimationStateChangePacket;
 import com.pasterdream.pasterdreammod.network.debugsword.DebugBlockActionPacket;
 import com.pasterdream.pasterdreammod.network.fluidslot.FluidSlotInteractPacket;
 import com.pasterdream.pasterdreammod.network.fluidslot.FluidSoundPacket;
@@ -45,6 +46,8 @@ public class ModNetwork
         CHANNEL.registerMessage(id++, SanSyncPacket.class, SanSyncPacket::encode, SanSyncPacket::decode, SanSyncPacket::handle);
         CHANNEL.registerMessage(id++, IsSanEnableSyncPacket.class, IsSanEnableSyncPacket::encode, IsSanEnableSyncPacket::decode, IsSanEnableSyncPacket::handle);
         CHANNEL.registerMessage(id++, MaxSanSyncPacket.class, MaxSanSyncPacket::encode, MaxSanSyncPacket::decode, MaxSanSyncPacket::handle);
+
+        CHANNEL.registerMessage(id++, AnimationStateChangePacket.class, AnimationStateChangePacket::encode, AnimationStateChangePacket::decode, AnimationStateChangePacket::handle);
     }
 
     public static void sendMeltDreamEnergySyncPacketToPlayer(MeltDreamEnergySyncPacket packet, ServerPlayer player)

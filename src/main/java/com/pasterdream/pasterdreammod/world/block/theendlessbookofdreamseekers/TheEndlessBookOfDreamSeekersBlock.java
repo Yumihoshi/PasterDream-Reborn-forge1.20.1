@@ -14,12 +14,10 @@ import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -67,9 +65,9 @@ public class TheEndlessBookOfDreamSeekersBlock extends BaseEntityBlock
         if (!level.isClientSide)
         {
             BlockEntity blockEntity = level.getBlockEntity(blockPosition);
-            if (blockEntity instanceof TheEndlessBookOfDreamSeekersBlockEntity bookEntity)
+            if (blockEntity instanceof TheEndlessBookOfDreamSeekersBlockEntity theEndlessBookOfDreamSeekersBlockEntity)
             {
-                LazyOptional<IItemHandler> capability = bookEntity.getCapability(ForgeCapabilities.ITEM_HANDLER);
+                LazyOptional<IItemHandler> capability = theEndlessBookOfDreamSeekersBlockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER);
                 capability.ifPresent(handler ->
                 {
                     ItemStack stackInSlot = handler.getStackInSlot(0);
@@ -77,6 +75,7 @@ public class TheEndlessBookOfDreamSeekersBlock extends BaseEntityBlock
                     {
                         ItemStack copy = stackInSlot.copy();
                         Block.popResource(level, blockPosition, copy);
+                        theEndlessBookOfDreamSeekersBlockEntity.setAnimationState(1);
                     }
                 });
             }
