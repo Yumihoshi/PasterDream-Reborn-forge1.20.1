@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.capability.meltdreamenergy;
 
 import com.pasterdream.pasterdreammod.capability.ModCapabilities;
+import com.pasterdream.pasterdreammod.network.meltdreamenergy.MaxMeltDreamEnergySyncPacket;
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
 import net.minecraft.server.level.ServerPlayer;
 
@@ -36,12 +37,11 @@ public class MeltDreamEnergyHelper
         return meltDreamEnergyValue.get();
     }
 
-    public static void setPlayerMeltDreamEnergyIsNeedAndSync(ServerPlayer player, boolean isNeed)
+    public static void setPlayerMeltDreamEnergyIsNeed(ServerPlayer player, boolean isNeed)
     {
         player.getCapability(ModCapabilities.MELT_DREAM_ENERGY).ifPresent(capability ->
         {
             capability.setIsOrNotNeedConsumeDreamEnergy(isNeed);
-            MeltDreamEnergySyncPacket.sendToPlayer(player, capability);
         });
     }
 
@@ -60,7 +60,7 @@ public class MeltDreamEnergyHelper
         player.getCapability(ModCapabilities.MELT_DREAM_ENERGY).ifPresent(capability ->
         {
             capability.setMaxMeltDreamEnergy(meltDreamEnergyValue);
-            MeltDreamEnergySyncPacket.sendToPlayer(player, capability);
+            MaxMeltDreamEnergySyncPacket.sendToPlayer(player, capability);
         });
     }
 
@@ -69,7 +69,7 @@ public class MeltDreamEnergyHelper
         player.getCapability(ModCapabilities.MELT_DREAM_ENERGY).ifPresent(capability ->
         {
             capability.addMaxMeltDreamEnergy(meltDreamEnergyValue);
-            MeltDreamEnergySyncPacket.sendToPlayer(player, capability);
+            MaxMeltDreamEnergySyncPacket.sendToPlayer(player, capability);
         });
     }
 

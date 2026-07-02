@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.capability.san;
 
 import com.pasterdream.pasterdreammod.capability.ModCapabilities;
+import com.pasterdream.pasterdreammod.network.san.MaxSanSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import net.minecraft.server.level.ServerPlayer;
 
@@ -36,12 +37,11 @@ public class SanHelper
         return sanValue.get();
     }
 
-    public static void setIsSanEnabledAndSync(ServerPlayer player, boolean isEnabled)
+    public static void setIsSanEnabled(ServerPlayer player, boolean isEnabled)
     {
         player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
         {
             capability.setIsSanEnable(isEnabled);
-            SanSyncPacket.sendToPlayer(player, capability);
         });
     }
 
@@ -60,7 +60,7 @@ public class SanHelper
         player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
         {
             capability.setMaxSanValue(maxSanValue);
-            SanSyncPacket.sendToPlayer(player, capability);
+            MaxSanSyncPacket.sendToPlayer(player, capability);
         });
     }
 
@@ -69,7 +69,7 @@ public class SanHelper
         player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
         {
             capability.addMaxSanValue(maxSanValue);
-            SanSyncPacket.sendToPlayer(player, capability);
+            MaxSanSyncPacket.sendToPlayer(player, capability);
         });
     }
 

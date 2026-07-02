@@ -15,7 +15,7 @@ public class IsSanEnabled
     {
         ServerPlayer player = EntityArgument.getPlayer(context, "player");
         boolean isEnabled = BoolArgumentType.getBool(context, "boolean");
-        SanHelper.setIsSanEnabledAndSync(player, isEnabled);
+        SanHelper.setIsSanEnabled(player, isEnabled);
         context.getSource().sendSuccess(() -> Component.translatable("已将 " + player.getName().getString() + " 的精神值使能状态设置为 " + isEnabled), true);
         return 1;
     }
