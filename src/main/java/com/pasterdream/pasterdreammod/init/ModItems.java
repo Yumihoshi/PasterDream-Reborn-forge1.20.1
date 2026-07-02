@@ -27,6 +27,8 @@ import com.pasterdream.pasterdreammod.world.item.moltengoldtool.*;
 import com.pasterdream.pasterdreammod.world.item.meltdreamtool.SharpMeltDreamSwordItem;
 import com.pasterdream.pasterdreammod.world.item.tidetool.BeihaiRuoTideSwordItem;
 import com.pasterdream.pasterdreammod.world.item.tidetool.TideSwordItem;
+import com.pasterdream.pasterdreammod.world.item.deserttool.DesertSwordItem;
+import com.pasterdream.pasterdreammod.world.item.deserttool.ChenjingmenDesertSwordItem;
 import com.pasterdream.pasterdreammod.world.item.grasstool.KusanagiItem;
 import com.pasterdream.pasterdreammod.world.item.grasstool.MurakumoKusanagiItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
@@ -243,7 +245,13 @@ public class ModItems {
     public static final RegistryObject<Item> MURAKUMO_KUSANAGI = ITEMS.register("murakumo_kusanagi",
             () -> new MurakumoKusanagiItem(ModToolTiers.MURAKUMO_KUSANAGI, 3, -2.5f, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> SWORD_EMBRYO = ITEMS.register("sword_embryo",
-            () -> new SwordItem(Tiers.IRON, 3, -2.4f, new Item.Properties()));
+            () -> new SwordItem(Tiers.IRON, 1, -2.4f, new Item.Properties()));
+
+    // ===== 朔漠系列 =====
+    public static final RegistryObject<Item> DESERT_SWORD = ITEMS.register("desert_sword",
+            () -> new DesertSwordItem(ModToolTiers.DESERT_SWORD, 3, -3.1f, new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> CHENJINGMEN_DESERT_SWORD = ITEMS.register("chenjingmen_desert_sword",
+            () -> new ChenjingmenDesertSwordItem(ModToolTiers.CHENJINGMEN_DESERT_SWORD, 3, -3.1f, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     // ===== 钛金装备 =====
     public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet",

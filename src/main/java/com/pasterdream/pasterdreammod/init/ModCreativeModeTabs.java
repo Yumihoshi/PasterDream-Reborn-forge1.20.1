@@ -216,6 +216,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.KUSANAGI.get());
                         output.accept(ModItems.MURAKUMO_KUSANAGI.get());
                         output.accept(ModItems.SWORD_EMBRYO.get());
+                        output.accept(ModItems.DESERT_SWORD.get());
+                        output.accept(ModItems.CHENJINGMEN_DESERT_SWORD.get());
                     })
                     .build());
 
