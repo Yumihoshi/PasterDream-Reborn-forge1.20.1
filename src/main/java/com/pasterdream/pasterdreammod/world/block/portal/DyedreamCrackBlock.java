@@ -140,4 +140,10 @@ public class DyedreamCrackBlock extends DirectionalBlock
             template.placeInWorld(level, structureOrigin, structureOrigin, settings, level.getRandom(), 2);
         });
     }
+
+    @Override
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext)
+    {
+        return false;
+    }
 }
