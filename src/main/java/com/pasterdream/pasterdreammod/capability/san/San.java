@@ -21,7 +21,32 @@ public class San implements ISan
     @Override
     public void addSanValue(double delta)
     {
-        setSanValue(sanValue + delta);
+        if(isEnabled)
+        {
+            if(delta < 0)
+            {
+                if(sanValue + delta >= 0)
+                {
+                    setSanValue(sanValue + delta);
+                }
+                    else
+                    {
+                        setSanValue(0);
+                    }
+            }
+            else
+                if(delta > 0)
+                {
+                    if(sanValue + delta <= maxSanValue)
+                    {
+                        setSanValue(sanValue + delta);
+                    }
+                        else
+                        {
+                            setSanValue(maxSanValue);
+                        }
+                }
+        }
     }
 
     @Override

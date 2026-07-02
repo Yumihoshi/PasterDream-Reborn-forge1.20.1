@@ -3,7 +3,7 @@ package com.pasterdream.pasterdreammod.capability.meltdreamenergy;
 public class MeltDreamEnergy implements IMeltDreamEnergy
 {
     private double meltDreamEnergy = 0.0;
-    private boolean isNotNeedConsume = false;
+    private boolean isNeedConsume = true;
     private double maxMeltDreamEnergy = 100.0;
 
     @Override
@@ -21,19 +21,37 @@ public class MeltDreamEnergy implements IMeltDreamEnergy
     @Override
     public void addMeltDreamEnergy(double delta)
     {
-        setMeltDreamEnergy(meltDreamEnergy + delta);
+        if(delta < 0)
+        {
+            if(isNeedConsume)
+            {
+                setMeltDreamEnergy(meltDreamEnergy + delta);
+            }
+        }
+        else
+            if(delta > 0)
+            {
+                if(meltDreamEnergy + delta <= maxMeltDreamEnergy)
+                {
+                    setMeltDreamEnergy(meltDreamEnergy + delta);
+                }
+                    else
+                    {
+                        setMeltDreamEnergy(maxMeltDreamEnergy);
+                    }
+            }
     }
 
     @Override
-    public void setIsOrNotNeedConsumeDreamEnergy(boolean isNotNeedConsume)
+    public void setIsOrNotNeedConsumeDreamEnergy(boolean isNeedConsume)
     {
-        this.isNotNeedConsume = isNotNeedConsume;
+        this.isNeedConsume = isNeedConsume;
     }
 
     @Override
     public boolean getIsOrNotNeedConsumeDreamEnergy()
     {
-        return isNotNeedConsume;
+        return isNeedConsume;
     }
 
     @Override
@@ -58,7 +76,7 @@ public class MeltDreamEnergy implements IMeltDreamEnergy
     public void copyValueFromOtherMeltDreamEnergy(IMeltDreamEnergy other)
     {
         this.meltDreamEnergy = other.getMeltDreamEnergy();
-        this.isNotNeedConsume = other.getIsOrNotNeedConsumeDreamEnergy();
+        this.isNeedConsume = other.getIsOrNotNeedConsumeDreamEnergy();
         this.maxMeltDreamEnergy = other.getMaxMeltDreamEnergy();
     }
 }
