@@ -147,6 +147,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.KUSANAGI.get(), "Kusanagi");
         add(ModItems.MURAKUMO_KUSANAGI.get(), "Murakumo Kusanagi");
         add(ModItems.SWORD_EMBRYO.get(), "Sword Embryo");
+        add(ModItems.DESERT_SWORD.get(), "Desert Greatsword");
+        add(ModItems.CHENJINGMEN_DESERT_SWORD.get(), "Chenjingmen Desert");
         add(ModItems.TITANIUM_HELMET.get(), "Titanium Helmet");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "Titanium Chestplate");
         add(ModItems.TITANIUM_LEGGINGS.get(), "Titanium Leggings");
@@ -411,6 +413,15 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.murakumo_kusanagi.5", "§7▪ §9Cooldown: 4s");
         add("tooltip.pasterdreammod.murakumo_kusanagi.6", "§7Passive:");
         add("tooltip.pasterdreammod.murakumo_kusanagi.7", "§7▪ §9Applies longer Poison on hit");
+        add("tooltip.pasterdreammod.desert_sword.1", "Inlaid: §7None");
+        add("tooltip.pasterdreammod.desert_sword.2", "§7▪ §9Move Speed -15% and Resistance +20% while held");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.1", "Inlaid: §eLonely Family Letter");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.2", "Combat Art: §eDesperate Counterattack");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.3", "§7▪ §9Grants brief Absorption when skill is activated");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.4", "§7▪ §9Deals 5+(LostHP%*2+1)*ATK bonus damage on hit");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.5", "§7▪ §9Cooldown: 10s");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.6", "Passive:");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.7", "§7▪ §9Move Speed -15% and Resistance +20% while held");
         add("tooltip.pasterdreammod.san_value", "SAN: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "Melt Dream Energy: ");
 

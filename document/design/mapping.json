@@ -122,7 +122,9 @@
     "crop_3a": "cloud_crop",
     "crop_3b": "cloud_crop",
     "crop_4a": "cotton_crop_age",
-    "crop_4b": "cotton_crop_age"
+    "crop_4b": "cotton_crop_age",
+    "dyedream_crack": "dyedream_crack",
+    "the_endless_book_of_dream_seekers": "the_endless_book_of_dream_seekers"
   },
   "items": {
     "amber_candy": "amber_candy",
@@ -299,7 +301,10 @@
     "true_tide_sword": "beihairuo_tide_sword",
     "grass_sword": "kusanagi",
     "true_grass_sword": "murakumo_kusanagi",
-    "sword_embryo_0": "sword_embryo"
+    "sword_embryo_0": "sword_embryo",
+    "desert_sword": "desert_sword",
+    "true_desert_sword": "chenjingmen_desert_sword",
+    "create_sword": "debug_sword"
   },
   "entities": {},
   "dimensions": {

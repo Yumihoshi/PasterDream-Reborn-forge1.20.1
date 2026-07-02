@@ -58,6 +58,10 @@ public enum ModToolTiers implements Tier {
     DESERT_SWORD(1561, 1.0F, 7.0F, 1, 8,
             Ingredient::of),
 
+    // 沉荆门朔漠
+    CHENJINGMEN_DESERT_SWORD(1561, 1.0F, 8.0F, 1, 8,
+            Ingredient::of),
+
     // 影刃
     // SHADOW_SWORD(1771, 0.0F, 8.0F, 1, 10,
     //         () -> Ingredient.of(ModItems.NIGHTMARE_FUEL.get())),  // TODO: nightmare_fuel 未注册
@@ -84,9 +88,6 @@ public enum ModToolTiers implements Tier {
 
     // TRUEST_MOLTENGOLD_SWORD(1255, 1.0F, 3.0F, 1, 23,
     //         () -> Ingredient.of(ModItems.MOLTEN_GOLD_INGOT.get())),  // 与 TRUE_MOLTENGOLD 同级，可用后者替代
-
-    // TRUE_DESERT_SWORD(1561, 1.0F, 8.0F, 1, 8,
-    //         () -> Ingredient.of()),  // 与 DESERT_SWORD 同级，可用后者替代
 
     // CREATIVE_SWORD(100, 4.0F, 6.0F, 1, 2,
     //         () -> Ingredient.of()),  // 调试武器，暂不搬运

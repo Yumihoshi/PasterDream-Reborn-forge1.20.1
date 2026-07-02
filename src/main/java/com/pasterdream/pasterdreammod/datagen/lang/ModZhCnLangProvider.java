@@ -155,6 +155,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.KUSANAGI.get(), "草薙");
         add(ModItems.MURAKUMO_KUSANAGI.get(), "『天丛云』草薙");
         add(ModItems.SWORD_EMBRYO.get(), "失落之剑");
+        add(ModItems.DESERT_SWORD.get(), "朔漠大剑");
+        add(ModItems.CHENJINGMEN_DESERT_SWORD.get(), "『沉荆门』朔漠");
         add(ModItems.TITANIUM_HELMET.get(), "钛金头盔");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "钛金胸甲");
         add(ModItems.TITANIUM_LEGGINGS.get(), "钛金护腿");
@@ -419,6 +421,15 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.murakumo_kusanagi.5", "§7▪ §9冷却时间：4秒");
         add("tooltip.pasterdreammod.murakumo_kusanagi.6", "被动：");
         add("tooltip.pasterdreammod.murakumo_kusanagi.7", "§7▪ §9攻击施加更长时间的中毒效果");
+        add("tooltip.pasterdreammod.desert_sword.1", "镶嵌：§7无");
+        add("tooltip.pasterdreammod.desert_sword.2", "§7▪ §9手持武器时移速-15% 抗性+20%");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.1", "镶嵌：§e沉寂家书");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.2", "战技：§e绝地反击");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.3", "§7▪ §9技能开启时获得短暂的生命吸收效果");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.4", "§7▪ §9攻击造成5+(已损失生命百分比*2+1)*当前攻击力点伤害");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.5", "§7▪ §9冷却时间：10秒");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.6", "被动：");
+        add("tooltip.pasterdreammod.chenjingmen_desert_sword.7", "§7▪ §9手持武器时移速-15% 抗性+20%");
         add("tooltip.pasterdreammod.san_value", "SAN值: ");
         add("tooltip.pasterdreammod.melt_dream_energy", "融梦能量: ");
 
