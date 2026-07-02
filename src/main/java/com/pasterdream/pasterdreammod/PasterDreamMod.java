@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod;
 
 import com.pasterdream.pasterdreammod.client.*;
 import com.pasterdream.pasterdreammod.helper.fluidhandler.FluidHandlerResolvers;
+import com.pasterdream.pasterdreammod.helper.sanbiomeratemanager.SanBiomeRateManager;
 import com.pasterdream.pasterdreammod.helper.tooltipadder.AddToolTip;
 import com.pasterdream.pasterdreammod.event.ModMobDrops;
 import com.pasterdream.pasterdreammod.init.*;
@@ -11,6 +12,7 @@ import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ToolActions;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import com.pasterdream.pasterdreammod.world.item.ModToolTiers;
@@ -60,6 +62,7 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onLivingHurt);
         modEventBus.addListener(this::AddOverlays);
         modEventBus.addListener(this::AddEntityRenderersEvent);
+        MinecraftForge.EVENT_BUS.addListener(this::onAddReloadListeners);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -102,6 +105,11 @@ public class PasterDreamMod
     private void AddEntityRenderersEvent(EntityRenderersEvent.RegisterRenderers event)
     {
         ModBlockEntityRenderer.EntityRenderersEventRegister(event);
+    }
+
+    private void onAddReloadListeners(AddReloadListenerEvent event)
+    {
+        event.addListener(SanBiomeRateManager.INSTANCE);
     }
 
     // 染梦耕地相关
