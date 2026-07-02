@@ -15,7 +15,7 @@ public class IsNotNeed
     {
         ServerPlayer player = EntityArgument.getPlayer(context, "player");
         boolean isNeed = BoolArgumentType.getBool(context, "boolean");
-        MeltDreamEnergyHelper.setPlayerMeltDreamEnergyIsNeedAndSync(player, isNeed);
+        MeltDreamEnergyHelper.setPlayerMeltDreamEnergyIsNeed(player, isNeed);
         context.getSource().sendSuccess(() -> Component.translatable("已将 " + player.getName().getString() + " 的融梦能量消耗使能状态设置为 " + isNeed), true);
         return 1;
     }
