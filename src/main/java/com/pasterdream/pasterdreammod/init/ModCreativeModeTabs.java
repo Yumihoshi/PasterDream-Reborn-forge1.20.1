@@ -373,6 +373,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CLAYPAN.get());
                         output.accept(ModBlocks.DREAM_CAULDRON.get());
                         output.accept(ModItems.MORTAR.get());
+                        output.accept(ModItems.PLIERS.get());
                         output.accept(ModBlocks.DYEDREAM_DESK.get());
                         output.accept(ModBlocks.SHADOW_DESK.get());
                         output.accept(ModBlocks.PICNIC_BASKET.get());

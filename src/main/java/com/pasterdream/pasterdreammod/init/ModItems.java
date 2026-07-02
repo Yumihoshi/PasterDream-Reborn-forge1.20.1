@@ -34,6 +34,7 @@ import com.pasterdream.pasterdreammod.world.item.grasstool.MurakumoKusanagiItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
 import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
+import com.pasterdream.pasterdreammod.world.item.PliersItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -562,6 +563,11 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BLUE_DEW = ITEMS.register("blue_dew",
             () -> new BlueDewItem());
+
+    // ===== 园艺钳 =====
+    public static final RegistryObject<Item> PLIERS = ITEMS.register("pliers",
+            () -> new PliersItem(new Item.Properties()));
+
 
     // ===== 方块物品 =====
 

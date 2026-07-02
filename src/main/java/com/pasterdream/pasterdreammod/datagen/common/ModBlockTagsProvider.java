@@ -280,7 +280,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_GRASS_BLOCK.get());
 
         tag(TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath("pasterdream", "white_corolla_can_place_on")))
-                .add(Blocks.SNOW_BLOCK);
+                .add(Blocks.SNOW_BLOCK)
+                .addTag(BlockTags.DIRT);
 
 
         // 暂时无法自动填充到
@@ -295,6 +296,37 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(ModBlockTags.DYEDREAM_GROUND_PLANTS_CAN_SPAWN_ON)
                 .add(ModBlocks.DYEDREAM_DIRT.get())
                 .add(ModBlocks.DYEDREAM_GRASS_BLOCK.get());
+
+        tag(ModBlockTags.PLIER_PLANTS)
+                .add(ModBlocks.STEM_GRASS.get())
+                .add(ModBlocks.TALL_STEM_GRASS.get())
+                .add(ModBlocks.DYEDREAM_MOSS.get())
+                .add(ModBlocks.SINGULARITY_FERN.get())
+                .add(ModBlocks.DYEDREAM_LILY_PAD.get())
+                .add(ModBlocks.DYEDREAM_SEAGRASS.get())
+                .add(ModBlocks.DYEDREAM_VINE.get())
+                .add(ModBlocks.DYEDREAM_LOTUS.get())
+                .add(ModBlocks.DREAMING_LOTUS.get())
+                .add(ModBlocks.MISTY_DREAMING_LOTUS.get())
+                .add(ModBlocks.GOLDENROD.get())
+                .add(ModBlocks.FERRARIA_CRISPA.get())
+                .add(ModBlocks.EUSTOMA.get())
+                .add(ModBlocks.MALVA_SINENSIS_CAVAN.get())
+                .add(ModBlocks.LINHT_FLOWER.get())
+                .add(ModBlocks.DYEDREAM_LILY_OF_THE_VALLEY.get())
+                .add(ModBlocks.BLAZE_FLOWER.get())
+                .add(ModBlocks.WHITE_ORCHID_FLOWER.get())
+                .add(ModBlocks.EDELWEISS.get())
+                .add(ModBlocks.NIPPY_EDELWEISS.get())
+                .add(ModBlocks.CRIMSON_THORNS.get())
+                .add(ModBlocks.REED.get())
+                .add(ModBlocks.OATS.get())
+                .add(ModBlocks.RYE.get())
+                .add(ModBlocks.POLISHED_CALCITE_STALICRIPE.get())
+                .add(ModBlocks.SMALL_POLISHED_CALCITE_STALICRIPE.get())
+                .add(ModBlocks.JUNGLE_SPORANGIUM.get())
+                .add(ModBlocks.PINK_MUSHROOM.get())
+                .add(ModBlocks.TALL_PINK_MUSHROOM.get());
 
 
     }

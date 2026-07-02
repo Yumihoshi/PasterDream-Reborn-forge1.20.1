@@ -16,5 +16,8 @@
   },
   "skill0": {
     "sounds": [{"name": "pasterdream:skill0", "stream": false}]
+  },
+  "pliers0": {
+    "sounds": [{"name": "pasterdream:pliers0", "stream": false}]
   }
 }
