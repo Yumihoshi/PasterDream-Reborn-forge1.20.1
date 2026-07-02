@@ -35,4 +35,51 @@ public class SanHelper
         });
         return sanValue.get();
     }
+
+    public static void setIsSanEnabledAndSync(ServerPlayer player, boolean isEnabled)
+    {
+        player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
+        {
+            capability.setIsSanEnable(isEnabled);
+            SanSyncPacket.sendToPlayer(player, capability);
+        });
+    }
+
+    public static boolean getIsSanEnabled(ServerPlayer player)
+    {
+        AtomicReference<Boolean> isEnabled = new AtomicReference<>(null);
+        player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
+        {
+            isEnabled.set(capability.getIsSanEnabled());
+        });
+        return isEnabled.get();
+    }
+
+    public static void setPlayerMaxSanAndSync(ServerPlayer player, double maxSanValue)
+    {
+        player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
+        {
+            capability.setMaxSanValue(maxSanValue);
+            SanSyncPacket.sendToPlayer(player, capability);
+        });
+    }
+
+    public static void addPlayerMaxSanAndSync(ServerPlayer player, double maxSanValue)
+    {
+        player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
+        {
+            capability.addMaxSanValue(maxSanValue);
+            SanSyncPacket.sendToPlayer(player, capability);
+        });
+    }
+
+    public static double getPlayerMaxSan(ServerPlayer player)
+    {
+        AtomicReference<Double> maxSanValue = new AtomicReference<>(null);
+        player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
+        {
+            maxSanValue.set(capability.getMaxSanValue());
+        });
+        return maxSanValue.get();
+    }
 }

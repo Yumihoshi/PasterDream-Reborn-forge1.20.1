@@ -1,12 +1,15 @@
 package com.pasterdream.pasterdreammod.world.item.drinkandfooditem;
 
 import com.pasterdream.pasterdreammod.capability.ModCapabilities;
+import com.pasterdream.pasterdreammod.capability.meltdreamenergy.MeltDreamEnergyHelper;
+import com.pasterdream.pasterdreammod.capability.san.SanHelper;
 import com.pasterdream.pasterdreammod.helper.fluidcontainercapability.FluidContainerRegistry;
 import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamDrinkAndFoodProperties;
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -88,25 +91,16 @@ public class PasterDreamDrinkItem extends Item
             }
         }
 
-        if (!level.isClientSide && entity instanceof Player player)
+        if (!level.isClientSide && entity instanceof ServerPlayer player)
         {
-
             if (sanAdd != 0)
             {
-                player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
-                {
-                    capability.addSanValue(sanAdd);
-                    SanSyncPacket.sendToPlayer(player, capability);
-                });
+                SanHelper.addPlayerSanAndSync(player, sanAdd);
             }
 
             if (meltDreamEnergyAdd != 0)
             {
-                player.getCapability(ModCapabilities.MELT_DREAM_ENERGY).ifPresent(capability ->
-                {
-                    capability.addMeltDreamEnergy(meltDreamEnergyAdd);
-                    MeltDreamEnergySyncPacket.sendToPlayer(player, capability);
-                });
+                MeltDreamEnergyHelper.addPlayerMeltDreamEnergyAndSync(player, meltDreamEnergyAdd);
             }
         }
 
