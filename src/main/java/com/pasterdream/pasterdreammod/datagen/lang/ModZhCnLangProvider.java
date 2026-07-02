@@ -25,6 +25,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.RAW_TITANIUM.get(), "粗钛");
         add(ModItems.DYEDREAM_ALLOY_NUGGET.get(), "染梦合金粒");
         add(ModItems.MORTAR.get(), "研钵");
+        add(ModItems.PLIERS.get(), "园艺钳");
         add(ModItems.DYEDREAM_DYE.get(), "染梦染料");
         add(ModItems.DYEDREAM_BUD_NUGGET.get(), "染梦晶芽粒");
         add(ModItems.GLASS_JAR_OF_YEAST.get(), "酵母");
@@ -580,5 +581,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.melt_dream_coin", "§7右键使用10个以上可合成为融梦星币堆");
         add("tooltip.pasterdream.melt_dream_coin_pile", "§7右键使用可分解为10个融梦星币");
         add("tooltip.pasterdream.melt_dream_coin.value", "§7▪ §6价值面额 : ");
+
+        add("tooltip.pasterdream.pliers.1", "§7▪ §9可以收获作物和植物");
+        add("tooltip.pasterdream.pliers.2", "§7▪ §9潜行+右键可收集plier_plants标签中的方块");
     }
 }

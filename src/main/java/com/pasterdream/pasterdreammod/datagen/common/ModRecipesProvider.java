@@ -793,6 +793,17 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         .requires(ModItems.MORTAR.get())
                         .unlockedBy(getHasName(ModItems.DYEDREAM_DUST.get()), has(ModItems.DYEDREAM_DUST.get())),
                 pWriter, "dyedream_dye_from_dust");
+
+        // 园艺钳
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PLIERS.get(), 1)
+                .pattern(" a ")
+                .pattern("b a")
+                .pattern("cb ")
+                .define('a', Items.IRON_INGOT)
+                .define('b', Items.STICK)
+                .define('c', ItemTags.PLANKS)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
     }
 
     // ===== 草薙配方 =====
@@ -1653,6 +1664,35 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(Items.RED_DYE)
                 .unlockedBy(getHasName(ModItems.GLASS_CUP_OF_COOKED_DYEDREAM_FLOWER_TEA.get()),
                         has(ModItems.GLASS_CUP_OF_COOKED_DYEDREAM_FLOWER_TEA.get()))
+                .save(pWriter);
+
+        // 羊毛 + 园艺钳 → 线
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.STRING, 2)
+                .requires(ItemTags.WOOL)
+                .requires(ModItems.PLIERS.get())
+                .unlockedBy(getHasName(ModItems.PLIERS.get()), has(ModItems.PLIERS.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "string_from_wool_and_pliers"));
+
+        // 成熟作物 → 产物分解
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DYEDREAM_COROLLA.get(), 1)
+                .requires(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get())
+                .unlockedBy(getHasName(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get()), has(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.WHITE_COROLLA.get(), 1)
+                .requires(ModItems.WHITE_COROLLA_CROP_AGE_1.get())
+                .unlockedBy(getHasName(ModItems.WHITE_COROLLA_CROP_AGE_1.get()), has(ModItems.WHITE_COROLLA_CROP_AGE_1.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.LIGHT_BALL.get(), 1)
+                .requires(ModItems.LIGHT_BALL_CROP_AGE_1.get())
+                .unlockedBy(getHasName(ModItems.LIGHT_BALL_CROP_AGE_1.get()), has(ModItems.LIGHT_BALL_CROP_AGE_1.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CLOUD.get(), 5)
+                .requires(ModItems.CLOUD_CROP_AGE_1.get())
+                .unlockedBy(getHasName(ModItems.CLOUD_CROP_AGE_1.get()), has(ModItems.CLOUD_CROP_AGE_1.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COTTON.get(), 1)
+                .requires(ModItems.COTTON_CROP_AGE_1.get())
+                .unlockedBy(getHasName(ModItems.COTTON_CROP_AGE_1.get()), has(ModItems.COTTON_CROP_AGE_1.get()))
                 .save(pWriter);
     }
 

@@ -292,10 +292,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
     private void generateCropLoot(Block cropBlock, Item productItem, int productCount, Item matureItem)
     {
         LootTable.Builder builder = LootTable.lootTable();
-        LootItemCondition.Builder shearsOrSilk = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS)).or(MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1)))));
-        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 1))).when(shearsOrSilk.invert()).add(LootItem.lootTableItem(productItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(productCount)))));
-        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 1))).when(shearsOrSilk).add(LootItem.lootTableItem(matureItem)));
-        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 0))).when(shearsOrSilk).add(LootItem.lootTableItem(cropBlock)));
+        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 1))).add(LootItem.lootTableItem(matureItem)));
+        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 0))).add(LootItem.lootTableItem(cropBlock)));
         this.add(cropBlock, builder);
     }
 

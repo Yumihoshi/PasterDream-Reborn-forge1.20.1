@@ -31,6 +31,9 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> SKILL0 =
             SOUNDS.register("skill0", () -> SoundEvent.createVariableRangeEvent(
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "skill0")));
+    public static final RegistryObject<SoundEvent> PLIERS0 =
+            SOUNDS.register("pliers0", () -> SoundEvent.createVariableRangeEvent(
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "pliers0")));
 
     public static void register(IEventBus eventBus) {
         SOUNDS.register(eventBus);
