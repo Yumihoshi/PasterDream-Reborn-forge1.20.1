@@ -23,6 +23,8 @@ public class ModParticleTypes {
             PARTICLE_TYPES.register("spore_particle", () -> new SimpleParticleType(false));
     public static final RegistryObject<SimpleParticleType> BUFF_0_PARTICLE =
             PARTICLE_TYPES.register("buff_0_particle", () -> new SimpleParticleType(false));
+    public static final RegistryObject<SimpleParticleType> SOUL_PARTICLE =
+            PARTICLE_TYPES.register("soul_particle", () -> new SimpleParticleType(false));
 
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);

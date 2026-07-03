@@ -20,6 +20,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 『融骸』狱炎剑 —— 右键蓄力融骸斩击，伤害转为熔岩类型，清除目标的引燃造成额外伤害。
@@ -57,7 +58,7 @@ public class InfernoSwordItem extends SwordItem {
             target.level().playSound(null, target.getX(), target.getY(), target.getZ(),
                     ModSounds.SKILL2.get(), SoundSource.NEUTRAL, 1.5f, 1.0f);
             target.level().playSound(null, target.getX(), target.getY(), target.getZ(),
-                    ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1.0f, 1.0f);
+                    Objects.requireNonNull(ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.dragon_fireball.explode"))), SoundSource.NEUTRAL, 1.0f, 1.0f);
             // 熔岩粒子
             if (target.level() instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ParticleTypes.LAVA, target.getX(), target.getY(), target.getZ(),
