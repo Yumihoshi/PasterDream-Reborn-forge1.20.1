@@ -465,9 +465,10 @@ public class ModPlacedFeatures {
         context.register(REED_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.REED_PATCH), List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
 
         //烈焰花
-        context.register(BLAZE_FLOWER_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.BLAZE_FLOWER_PATCH), List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
-        //赤荆棘（因为算作危险植物，理应有更低的生成权重）
-        context.register(CRIMSON_THORNS_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.CRIMSON_THORNS_PATCH), List.of(RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
+        context.register(BLAZE_FLOWER_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.BLAZE_FLOWER_PATCH), List.of(CountPlacement.of(16), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(35), VerticalAnchor.absolute(90)))));
+
+        //赤荆棘
+        context.register(CRIMSON_THORNS_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.CRIMSON_THORNS_PATCH), List.of(CountPlacement.of(16), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(35), VerticalAnchor.absolute(90)))));
 
         //深层钛矿石
         context.register(DEEPSLATE_TITANIUM_ORE_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.DEEPSLATE_TITANIUM_ORE_PATCH), List.of(CountPlacement.of(8), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0)))));
