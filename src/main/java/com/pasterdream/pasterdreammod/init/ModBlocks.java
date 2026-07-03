@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.tag.ModBlockTags;
 import com.pasterdream.pasterdreammod.world.behavior.ModTreeGrowers;
 import com.pasterdream.pasterdreammod.world.block.*;
 import com.pasterdream.pasterdreammod.world.block.DyedreamFarmlandBlock;
@@ -191,7 +192,7 @@ public class ModBlocks {
                     BlockPos belowPos = pPos.below();
                     BlockState belowState = pLevel.getBlockState(belowPos);
                     if (belowState.isAir()) return false;
-                    return belowState.is(Blocks.CRIMSON_NYLIUM);
+                    return belowState.is(ModBlockTags.BLAZE_FLOWER_CAN_PLACE_ON);
                 }
             });
     public static final RegistryObject<Block> WHITE_ORCHID_FLOWER = BLOCKS.register("white_orchid_flower",
@@ -281,7 +282,7 @@ public class ModBlocks {
                     BlockPos belowPos = pPos.below();
                     BlockState belowState = pLevel.getBlockState(belowPos);
                     if (belowState.isAir()) return false;
-                    return belowState.is(Blocks.CRIMSON_NYLIUM);
+                    return belowState.is(ModBlockTags.CRIMSON_THORNS_CAN_PLACE_ON);
                 }
                 @Override
                 public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
@@ -418,6 +419,16 @@ public class ModBlocks {
             return box(4, 0, 4, 12, 12, 12).move(offset.x, offset.y, offset.z);
         }
     });
+
+    public static final RegistryObject<Block> FOURLEAF_CLOVER = BLOCKS.register("fourleaf_clover",
+            () -> new FlowerBlock(() -> MobEffects.LUCK, 0, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN)
+                    .instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)) {
+                @Override
+                public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+                    Vec3 offset = state.getOffset(world, pos);
+                    return box(4, 0, 4, 12, 5, 12).move(offset.x, offset.y, offset.z);
+                }
+            });
     //作物方块
     public static final RegistryObject<Block> DYEDREAM_COROLLA_CROP = BLOCKS.register("dyedream_corolla_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().randomTicks().instabreak()));
     public static final RegistryObject<Block> WHITE_COROLLA_CROP = BLOCKS.register("white_corolla_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).noCollission().randomTicks().instabreak()));

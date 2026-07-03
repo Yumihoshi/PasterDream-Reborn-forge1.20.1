@@ -15,6 +15,8 @@ public class ModBlockTags {
     public static final TagKey<Block> DYEDREAM_BUD_CAN_SPAWN_ON = create("dyedream_bud_can_spawn_on");
     public static final TagKey<Block> DYEDREAM_GROUND_PLANTS_CAN_SPAWN_ON = create("dyedream_ground_plants_can_spawn_on");
     public static final TagKey<Block> PLIER_PLANTS = create("plier_plants");
+    public static final TagKey<Block> CRIMSON_THORNS_CAN_PLACE_ON = create("crimson_thorns_can_place_on");
+    public static final TagKey<Block> BLAZE_FLOWER_CAN_PLACE_ON = create("blaze_flower_can_place_on");
     private static TagKey<Block> create(String pName) {
         return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, pName));
     }

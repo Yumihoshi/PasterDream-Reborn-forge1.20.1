@@ -349,7 +349,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RYE.get());
                         output.accept(ModItems.OATS.get());
                         output.accept(ModItems.GOLDENROD.get());
-
+                        output.accept(ModItems.FOURLEAF_CLOVER.get());
                         output.accept(ModItems.BLAZE_FLOWER.get());
                         output.accept(ModItems.CRIMSON_THORNS.get());
 

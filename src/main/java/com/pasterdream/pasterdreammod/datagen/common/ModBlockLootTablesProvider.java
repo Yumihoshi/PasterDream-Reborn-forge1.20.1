@@ -196,6 +196,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         add(ModBlocks.JUNGLE_SPORANGIUM.get(),
                 block -> LootHelpers.createShearsOrSilkTouchSelfElseItem(ModBlocks.JUNGLE_SPORANGIUM.get(),ModItems.JUNGLE_SPORE.get(),1.0F,1.0F));
 
+        dropSelf(ModBlocks.FOURLEAF_CLOVER.get());
+
         dropSelf(ModBlocks.DYEDREAM_SAND.get());
         add(ModBlocks.DYEDREAM_GLASS.get(),
                 block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(net.minecraft.world.item.Items.AIR)));
