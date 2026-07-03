@@ -151,7 +151,7 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_UPGRADE = ITEMS.register("titanium_upgrade",
             () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON)));
     public static final RegistryObject<Item> SCULK_UPGRADE = ITEMS.register("sculk_upgrade",
-            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON)));
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> DYEDREAM_UPGRADE = ITEMS.register("dyedream_upgrade",
             () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON)));
 
@@ -266,13 +266,13 @@ public class ModItems {
 
     // ===== 回响装备 =====
     public static final RegistryObject<Item> SCULK_HELMET = ITEMS.register("sculk_helmet",
-            () -> new SculkArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.HELMET, new Item.Properties()));
+            () -> new SculkArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.HELMET, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> SCULK_CHESTPLATE = ITEMS.register("sculk_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant()));
+            () -> new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> SCULK_LEGGINGS = ITEMS.register("sculk_leggings",
-            () -> new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant()));
+            () -> new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> SCULK_BOOTS = ITEMS.register("sculk_boots",
-            () -> new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant()));
+            () -> new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().rarity(Rarity.UNCOMMON)));
 
     // ===== 染梦合金装备 =====
     public static final RegistryObject<Item> DYEDREAM_HELMET = ITEMS.register("dyedream_helmet",
