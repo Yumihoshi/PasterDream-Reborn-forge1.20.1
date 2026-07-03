@@ -310,6 +310,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_SEAGRASS.get(), "染梦海草");
         add(ModBlocks.REED.get(), "芦苇");
         add(ModBlocks.JUNGLE_SPORANGIUM.get(), "丛林孢子囊");
+        add(ModBlocks.FOURLEAF_CLOVER.get(),"四叶草");
 
         add(ModItems.DEBUG_SWORD.get(), "调试之剑");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get(), "破碎粒子提供方块0");

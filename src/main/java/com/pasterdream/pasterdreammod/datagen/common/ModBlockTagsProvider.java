@@ -270,7 +270,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(ModBlockTags.MOD_GLASS_PANE);
 
 
-        //植株底下的方块
         // 可攀爬方块（藤蔓、梯子等）
         tag(BlockTags.CLIMBABLE)
                 .add(ModBlocks.DYEDREAM_VINE.get());
@@ -283,6 +282,15 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.SNOW_BLOCK)
                 .addTag(BlockTags.DIRT);
 
+        tag(ModBlockTags.CRIMSON_THORNS_CAN_PLACE_ON)
+                .add(Blocks.CRIMSON_NYLIUM)
+                .add(Blocks.NETHERRACK)
+                .add(Blocks.MAGMA_BLOCK);
+
+        tag(ModBlockTags.BLAZE_FLOWER_CAN_PLACE_ON)
+                .add(Blocks.CRIMSON_NYLIUM)
+                .add(Blocks.NETHERRACK)
+                .add(Blocks.MAGMA_BLOCK);
 
         // 暂时无法自动填充到
         tag(ModBlockTags.DYEDREAM_BUD_CAN_SPAWN_ON)
