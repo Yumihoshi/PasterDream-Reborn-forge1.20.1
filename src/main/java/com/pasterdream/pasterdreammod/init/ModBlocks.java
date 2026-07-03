@@ -29,6 +29,8 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -294,6 +296,10 @@ public class ModBlocks {
                                 livingEntity.setSecondsOnFire(1);
                         }
                     }
+                }
+                @Override
+                public BlockPathTypes getBlockPathType(BlockState state, BlockGetter level, BlockPos pos, Mob mob) {
+                    return BlockPathTypes.DAMAGE_FIRE;
                 }
             });
     public static final RegistryObject<Block> OATS = BLOCKS.register("oats", () -> new BushBlock(
