@@ -44,10 +44,10 @@ public class BeihaiRuoTideSwordItem extends SwordItem {
         if (stack.getOrCreateTag().getBoolean("skill")) {
             Level level = target.level();
             if (!level.isClientSide()) {
-                level.playSound(null, target.blockPosition(), ModSounds.SHARP_MELT_DREAM_SWORD_HIT.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
+                level.playSound(null, target.blockPosition(), ModSounds.SKILL1.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
                 level.playSound(null, target.blockPosition(), SoundEvents.BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundSource.NEUTRAL, 0.8f, 1.0f);
             } else {
-                level.playLocalSound(target.getX(), target.getY(), target.getZ(), ModSounds.SHARP_MELT_DREAM_SWORD_HIT.get(), SoundSource.NEUTRAL, 1.0f, 1.0f, false);
+                level.playLocalSound(target.getX(), target.getY(), target.getZ(), ModSounds.SKILL1.get(), SoundSource.NEUTRAL, 1.0f, 1.0f, false);
                 level.playLocalSound(target.getX(), target.getY(), target.getZ(), SoundEvents.BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundSource.NEUTRAL, 0.8f, 1.0f, false);
             }
             if (level instanceof ServerLevel serverLevel) {
@@ -92,9 +92,9 @@ public class BeihaiRuoTideSwordItem extends SwordItem {
                 serverLevel.sendParticles(ModParticleTypes.BUFF_0_PARTICLE.get(), player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);
             }
             if (!level.isClientSide()) {
-                level.playSound(null, player.blockPosition(), ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
+                level.playSound(null, player.blockPosition(), ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
             } else {
-                level.playLocalSound(player.getX(), player.getY(), player.getZ(), ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), SoundSource.PLAYERS, 0.8f, 1.0f, false);
+                level.playLocalSound(player.getX(), player.getY(), player.getZ(), ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f, false);
             }
         }
 
