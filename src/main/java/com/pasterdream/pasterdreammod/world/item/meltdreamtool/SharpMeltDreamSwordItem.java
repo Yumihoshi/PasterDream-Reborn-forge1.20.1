@@ -46,7 +46,7 @@ public class SharpMeltDreamSwordItem extends SwordItem {
                 stack.getOrCreateTag().putBoolean(TAG_CHARGED, true);
                 player.getCooldowns().addCooldown(this, cooldownTicks);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                        ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), player.getSoundSource(), 1.0f, 1.0f);
+                        ModSounds.SWORD1.get(), player.getSoundSource(), 1.0f, 1.0f);
                 if (level instanceof ServerLevel serverLevel) {
                     serverLevel.sendParticles(ModParticleTypes.BUFF_0_PARTICLE.get(), player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);
                 }
@@ -65,7 +65,7 @@ public class SharpMeltDreamSwordItem extends SwordItem {
             target.setDeltaMovement(target.getDeltaMovement().add(0, 0.8, 0));
             target.hurtMarked = true;
             target.level().playSound(null, target.getX(), target.getY(), target.getZ(),
-                    ModSounds.SHARP_MELT_DREAM_SWORD_HIT.get(), target.getSoundSource(), 1.5f, 1.0f);
+                    ModSounds.SKILL1.get(), target.getSoundSource(), 1.5f, 1.0f);
             // 脚下粒子爆发：40 个，位置 (x, y+0.3, z)，速度 (0.05, 0.3, 0.05)，速度随机偏移 0.4
             if (target.level() instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ModParticleTypes.SHARP_SWORD_SLASH.get(),

@@ -5,6 +5,8 @@ import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -38,7 +40,7 @@ public class InfernoSwordItem extends SwordItem {
             stack.getOrCreateTag().putBoolean(TAG_SKILL, true);
             player.getCooldowns().addCooldown(this, 200);
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                    ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
+                    ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
             if (level instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ModParticleTypes.BUFF_0_PARTICLE.get(), player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);
             }
@@ -53,9 +55,9 @@ public class InfernoSwordItem extends SwordItem {
             stack.getOrCreateTag().putBoolean(TAG_SKILL, false);
             // 龙息爆炸 + skill2 音效
             target.level().playSound(null, target.getX(), target.getY(), target.getZ(),
-                    ModSounds.INFERNO_SWORD_SKILL.get(), SoundSource.NEUTRAL, 1.5f, 1.0f);
+                    ModSounds.SKILL2.get(), SoundSource.NEUTRAL, 1.5f, 1.0f);
             target.level().playSound(null, target.getX(), target.getY(), target.getZ(),
-                    net.minecraft.sounds.SoundEvents.GENERIC_EXPLODE, SoundSource.NEUTRAL, 1.0f, 1.0f);
+                    ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1.0f, 1.0f);
             // 熔岩粒子
             if (target.level() instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ParticleTypes.LAVA, target.getX(), target.getY(), target.getZ(),

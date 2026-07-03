@@ -288,6 +288,9 @@
 | `moltengold_axe`               | `molten_gold_axe`                           | 重命名，加下划线                                                  | 客制化类 `MoltenGoldAxeItem`                         |
 | `moltengold_shovel`            | `molten_gold_shovel`                        | 重命名，加下划线                                                  | 客制化类 `MoltenGoldShovelItem`                      |
 | `moltengold_hoe`               | `molten_gold_hoe`                           | 重命名，加下划线                                                  | 客制化类 `MoltenGoldHoeItem`                         |
+| `true_moltengold_sword`        | `hellfire_sword`                            | 重命名，`true_moltengold_sword` → `hellfire_sword`（狱炎剑）     | 客制化类 `HellfireSwordItem`                         |
+| `true_moltengold_pickaxe`      | `hellfire_pickaxe`                          | 重命名，`true_moltengold_pickaxe` → `hellfire_pickaxe`（狱炎镐） | 客制化类 `HellfirePickaxeItem`                       |
+| `truest_moltengold_sword`      | `inferno_sword`                             | 重命名，`truest_moltengold_sword` → `inferno_sword`（『融骸』狱炎剑） | 客制化类 `InfernoSwordItem`                          |
 | `titanium_armor_helmet`        | `titanium_helmet`                           | 删除 `armor` 字段                                             | 无需客制化类，直接用 `ArmorItem`                           |
 | `titanium_armor_chestplate`    | `titanium_chestplate`                       | 删除 `armor` 字段                                             | 无需客制化类，直接用 `ArmorItem`                           |
 | `titanium_armor_leggings`      | `titanium_leggings`                         | 删除 `armor` 字段                                             | 无需客制化类，直接用 `ArmorItem`                           |

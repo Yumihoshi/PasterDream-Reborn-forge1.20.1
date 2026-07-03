@@ -42,7 +42,7 @@ public class ChenjingmenDesertSwordItem extends SwordItem {
         if (stack.getOrCreateTag().getBoolean("skill")) {
             Level level = target.level();
             level.playSound(null, target.getX(), target.getY(), target.getZ(),
-                    ModSounds.SHARP_MELT_DREAM_SWORD_HIT.get(), target.getSoundSource(), 1.5f, 1.0f);
+                    ModSounds.SKILL1.get(), target.getSoundSource(), 1.5f, 1.0f);
             if (level instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, target.getX(), target.getY(), target.getZ(), 64, 1.5, 1.8, 1.5, 0.2);
                 serverLevel.sendParticles(ModParticleTypes.DUST_0_PARTICLE.get(), target.getX(), target.getY(), target.getZ(), 64, 1.5, 1.8, 1.5, 0.2);
@@ -80,7 +80,7 @@ public class ChenjingmenDesertSwordItem extends SwordItem {
             }
 
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                    ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), player.getSoundSource(), 0.8f, 1.0f);
+                    ModSounds.SWORD1.get(), player.getSoundSource(), 0.8f, 1.0f);
 
             player.swing(InteractionHand.MAIN_HAND, true);
             player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);

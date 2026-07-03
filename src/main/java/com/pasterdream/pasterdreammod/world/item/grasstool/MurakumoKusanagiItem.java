@@ -35,10 +35,10 @@ public class MurakumoKusanagiItem extends SwordItem {
         if (stack.getOrCreateTag().getBoolean("skill")) {
             if (!level.isClientSide()) {
                 level.playSound(null, target.blockPosition(), SoundEvents.DOLPHIN_AMBIENT_WATER, SoundSource.NEUTRAL, 1.5f, 1.0f);
-                level.playSound(null, target.blockPosition(), ModSounds.SHARP_MELT_DREAM_SWORD_HIT.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
+                level.playSound(null, target.blockPosition(), ModSounds.SKILL1.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
             } else {
                 level.playLocalSound(target.getX(), target.getY(), target.getZ(), SoundEvents.DOLPHIN_AMBIENT_WATER, SoundSource.NEUTRAL, 1.5f, 1.0f, false);
-                level.playLocalSound(target.getX(), target.getY(), target.getZ(), ModSounds.SHARP_MELT_DREAM_SWORD_HIT.get(), SoundSource.NEUTRAL, 1.0f, 1.0f, false);
+                level.playLocalSound(target.getX(), target.getY(), target.getZ(), ModSounds.SKILL1.get(), SoundSource.NEUTRAL, 1.0f, 1.0f, false);
             }
             if (level instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ModParticleTypes.DUST_0_PARTICLE.get(), target.getX(), target.getY(), target.getZ(), 64, 1.5, 1.8, 1.5, 0.2);
@@ -73,9 +73,9 @@ public class MurakumoKusanagiItem extends SwordItem {
                 serverLevel.sendParticles(ModParticleTypes.BUFF_0_PARTICLE.get(), player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);
             }
             if (!level.isClientSide()) {
-                level.playSound(null, player.blockPosition(), ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
+                level.playSound(null, player.blockPosition(), ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
             } else {
-                level.playLocalSound(player.getX(), player.getY(), player.getZ(), ModSounds.SHARP_MELT_DREAM_SWORD_USE.get(), SoundSource.PLAYERS, 0.8f, 1.0f, false);
+                level.playLocalSound(player.getX(), player.getY(), player.getZ(), ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f, false);
             }
             player.swing(InteractionHand.MAIN_HAND, true);
             player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
