@@ -515,9 +515,9 @@ public class ModConfiguredFeatures {
         context.register(REED_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(24, 6, 5, simpleBlockInAir(BlockStateProvider.simple(ModBlocks.REED.get())))));
 
         //烈焰花
-        context.register(BLAZE_FLOWER_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(12, 6, 3, simpleBudInAir(BlockStateProvider.simple(ModBlocks.BLAZE_FLOWER.get()), CRIMSON_FOREST_GROUND))));
+        context.register(BLAZE_FLOWER_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(12, 6, 7, simpleBudInAir(BlockStateProvider.simple(ModBlocks.BLAZE_FLOWER.get()), CRIMSON_FOREST_GROUND))));
         //赤荆棘
-        context.register(CRIMSON_THORNS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(24, 16, 5, simpleBudInAir(BlockStateProvider.simple(ModBlocks.CRIMSON_THORNS.get()), CRIMSON_FOREST_GROUND))));
+        context.register(CRIMSON_THORNS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(24, 16, 10, simpleBudInAir(BlockStateProvider.simple(ModBlocks.CRIMSON_THORNS.get()), CRIMSON_FOREST_GROUND))));
 
         //深层钛矿石
         context.register(DEEPSLATE_TITANIUM_ORE_PATCH, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(oreTargets(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), DEEPSLATE_TITANIUM_ORE_CAN_REPLACE), 8, 0f)));
