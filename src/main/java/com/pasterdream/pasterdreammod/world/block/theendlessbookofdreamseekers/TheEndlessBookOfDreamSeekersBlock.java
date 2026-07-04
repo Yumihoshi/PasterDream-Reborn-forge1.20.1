@@ -2,6 +2,8 @@ package com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -76,6 +78,7 @@ public class TheEndlessBookOfDreamSeekersBlock extends BaseEntityBlock
                         ItemStack copy = stackInSlot.copy();
                         Block.popResource(level, blockPosition, copy);
                         theEndlessBookOfDreamSeekersBlockEntity.setAnimationState(1);
+                        level.playSound(null, blockPosition, SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1.0f, 1.0f);
                     }
                 });
             }

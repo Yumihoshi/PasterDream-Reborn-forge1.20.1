@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.TagParser;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -88,7 +89,7 @@ public class ItemIngredient
         {
             try
             {
-                nbt = net.minecraft.nbt.TagParser.parseTag(obj.get("nbt").getAsString());
+                nbt = TagParser.parseTag(obj.get("nbt").getAsString());
             }
                 catch (Exception e)
                 {
@@ -187,7 +188,9 @@ public class ItemIngredient
 
     public ItemStack getItemStack()
     {
-        return new ItemStack(item, count, nbt);
+        ItemStack itemStack = new ItemStack(item, count);
+        itemStack.setTag(nbt);
+        return itemStack;
     }
 
     public List<ItemStack> getListItemStackFromTag()
@@ -201,7 +204,9 @@ public class ItemIngredient
             {
                 for (Item item : tagItem)
                 {
-                    itemStacks.add(new ItemStack(item, count, nbt));
+                    ItemStack itemStack = new ItemStack(item, count);
+                    itemStack.setTag(nbt);
+                    itemStacks.add(itemStack);
                 }
             }
         }

@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.recipe.recipematchandprocess;
+package com.pasterdream.pasterdreammod.recipe.genericrecipe.recipematchandprocess;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -77,13 +77,13 @@ public class RecipeProcesser
                         matchedInputFluidStacks.set(i, FluidStack.EMPTY);
                         break;
                     }
-                    else
-                    {
-                        machineInputFluidStacks.set(j, FluidStack.EMPTY);
-                        matchedFluidAmount -= machineFluidAmount;
-                        matchedInputFluidStack.setAmount(matchedFluidAmount);
-                        matchedInputFluidStacks.set(i, matchedInputFluidStack);
-                    }
+                        else
+                        {
+                            machineInputFluidStacks.set(j, FluidStack.EMPTY);
+                            matchedFluidAmount -= machineFluidAmount;
+                            matchedInputFluidStack.setAmount(matchedFluidAmount);
+                            matchedInputFluidStacks.set(i, matchedInputFluidStack);
+                        }
                 }
 
             }

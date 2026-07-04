@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.recipe;
+package com.pasterdream.pasterdreammod.recipe.genericrecipe;
 
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.FluidIngredient;
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.ItemIngredient;

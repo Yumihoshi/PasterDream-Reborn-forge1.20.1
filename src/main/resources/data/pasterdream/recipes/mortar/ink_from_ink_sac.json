@@ -1,0 +1,17 @@
+{
+  "type": "pasterdream:mortar",
+  "itemInputs":
+  [
+    {
+      "item": "minecraft:ink_sac",
+      "count": 1
+    }
+  ],
+  "fluidOutputs":
+  [
+    {
+      "fluid": "pasterdream:ink",
+      "amount": 250
+    }
+  ]
+}

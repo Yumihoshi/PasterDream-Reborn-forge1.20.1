@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.recipe.recipematchandprocess;
+package com.pasterdream.pasterdreammod.recipe.genericrecipe.recipematchandprocess;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;

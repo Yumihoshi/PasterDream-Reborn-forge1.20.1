@@ -8,6 +8,7 @@ import com.pasterdream.pasterdreammod.world.block.cropblock.MatureCropItem;
 import com.pasterdream.pasterdreammod.world.block.doll.qymdoll.QYMDollItem;
 import com.pasterdream.pasterdreammod.world.block.doll.uuzdoll.UUZDollItem;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronItem;
+import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableItem;
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersItem;
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
 import com.pasterdream.pasterdreammod.world.item.BlueDewItem;
@@ -311,6 +312,9 @@ public class ModItems {
     public static final RegistryObject<Item> GLASS_JAR_OF_GOLDENROD_TEA = ITEMS.register("glass_jar_of_goldenrod_tea", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().nutrition(1)./*effect().  实现“秋麒麟茶I效果后添加在这里”*/alwaysEat().build()).useDuration(24)));
     public static final RegistryObject<Item> GLASS_JAR_OF_DYEDREAM_PERFUME = ITEMS.register("glass_jar_of_dyedream_perfume",
             () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder()./*effect(). 实现染梦香水效果后添加*/alwaysEat().build()).useDuration(24)));
+    public static final RegistryObject<Item> GLASS_JAR_OF_INK = ITEMS.register("glass_jar_of_ink", () -> new Item(new Item.Properties().craftRemainder(ModItems.GLASS_JAR.get())));
+
+
     // ===== 玻璃杯系列 =====
     public static final RegistryObject<Item> GLASS_CUP = ITEMS.register("glass_cup", () -> new Item(new Item.Properties()));
 
@@ -861,6 +865,8 @@ public class ModItems {
     public static final RegistryObject<Item> SHADOW_CHEST = ITEMS.register("shadow_chest", () -> new ShadowChestItem(ModBlocks.SHADOW_CHEST.get(), new Item.Properties()));
     public static final RegistryObject<Item> WIND_MOOR_CRATE = ITEMS.register("wind_moor_crate", () -> new BlockItem(ModBlocks.WIND_MOOR_CRATE.get(), new Item.Properties()));
     public static final RegistryObject<Item> THE_ENDLESS_BOOK_OF_DREAM_SEEKERS = ITEMS.register("the_endless_book_of_dream_seekers", () -> new TheEndlessBookOfDreamSeekersItem(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FEATHER_PEN = ITEMS.register("feather_pen", () -> new Item(new Item.Properties().durability(8)));
+    public static final RegistryObject<Item> RESEARCH_TABLE = ITEMS.register("research_table", () -> new ResearchTableItem(ModBlocks.RESEARCH_TABLE.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> MORTAR = ITEMS.register("mortar", () -> new MortarItem(new Item.Properties()));
 

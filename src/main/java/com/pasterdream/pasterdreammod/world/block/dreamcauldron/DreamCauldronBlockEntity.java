@@ -5,8 +5,11 @@ import com.pasterdream.pasterdreammod.helper.fluidhandler.IFluidHandlerProvider;
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.FluidIngredient;
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.ItemIngredient;
 import com.pasterdream.pasterdreammod.init.ModBlockEntities;
+import com.pasterdream.pasterdreammod.init.ModNetwork;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
-import com.pasterdream.pasterdreammod.recipe.recipematchandprocess.*;
+import com.pasterdream.pasterdreammod.network.animationstatechange.AnimationStateChangePacket;
+import com.pasterdream.pasterdreammod.recipe.genericrecipe.recipematchandprocess.*;
+import com.pasterdream.pasterdreammod.world.block.geckolibblock.AnimatableSync;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -28,12 +31,14 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.templates.FluidTank;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
@@ -41,12 +46,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvider, IFluidHandlerProvider, GeoBlockEntity
+public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvider, IFluidHandlerProvider, GeoBlockEntity, AnimatableSync
 {
     private static final int FLUID0_CAPACITY = 2000;
     private static final int FLUID1_CAPACITY = 8000;
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+    private int animationState = 0;
 
     public DreamCauldronBlockEntity(BlockPos pos, BlockState state)
     {
@@ -181,6 +187,7 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
 
         //同步
         setChangedAndSync();
+        setAnimationState(1);
     }
 
     private void setChangedAndSync()
@@ -264,7 +271,47 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers)
     {
-        controllers.add(new AnimationController<GeoAnimatable>(this, "state", 0, event -> PlayState.STOP));
+        controllers.add(new AnimationController<>(this, "state", 0, this::stateController));
+    }
+
+    private PlayState stateController(AnimationState<DreamCauldronBlockEntity> state)
+    {
+        AnimationController<DreamCauldronBlockEntity> controller = state.getController();
+
+        if(animationState == 0)
+        {
+            controller.setAnimation(RawAnimation.begin().thenLoop("0"));
+        }
+            else
+            {
+                controller.setAnimation(RawAnimation.begin().thenPlay("1"));
+                if(controller.getAnimationState() == AnimationController.State.STOPPED)
+                {
+                    animationState = 0;
+                }
+            }
+
+        return PlayState.CONTINUE;
+    }
+
+    public void setAnimationState(int state)
+    {
+        this.animationState = state;
+        if (level != null && !level.isClientSide)
+        {
+            sendAnimationSync();
+        }
+    }
+
+    private void sendAnimationSync()
+    {
+        AnimationStateChangePacket packet = new AnimationStateChangePacket(this.worldPosition, this.animationState);
+        ModNetwork.CHANNEL.send(PacketDistributor.TRACKING_CHUNK.with(() -> level.getChunkAt(this.worldPosition)), packet);
+    }
+
+    public int getAnimationState()
+    {
+        return animationState;
     }
 
     public ItemStackHandler getItemHandler()

@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.recipe;
+package com.pasterdream.pasterdreammod.recipe.genericrecipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -6,7 +6,6 @@ import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.FluidIngredie
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.ItemIngredient;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
 import java.util.ArrayList;

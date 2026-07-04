@@ -130,6 +130,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GLASS_JAR_OF_WIND_PLANT_EXTRACT.get());
                         output.accept(ModItems.MELT_DREAM_LIQUID_BUCKET.get());
                         output.accept(ModItems.SHADOW_LIQUID_BUCKET.get());
+                        output.accept(ModItems.GLASS_JAR_OF_INK.get());
                         output.accept(ModItems.SCULK_HEART.get());
                         output.accept(ModItems.BLACK_STICK.get());
                         output.accept(ModItems.SPOOL.get());
@@ -380,6 +381,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SHADOW_CHEST.get());
                         output.accept(ModBlocks.WIND_MOOR_CRATE.get());
                         output.accept(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get());
+                        output.accept(ModItems.FEATHER_PEN.get());
+                        output.accept(ModBlocks.RESEARCH_TABLE.get());
                     })
                     .build());
 

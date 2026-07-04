@@ -10,6 +10,7 @@ import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.
 import com.pasterdream.pasterdreammod.world.block.doll.qymdoll.QYMDollBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.doll.uuzdoll.UUZDollBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,6 +32,7 @@ public class ModBlockEntities
     public static final RegistryObject<BlockEntityType<ShadowChestBlockEntity>> SHADOW_CHEST = BLOCK_ENTITIES.register("shadow_chest", () -> BlockEntityType.Builder.of(ShadowChestBlockEntity::new, ModBlocks.SHADOW_CHEST.get()).build(null));
     public static final RegistryObject<BlockEntityType<WindMoorCrateBlockEntity>> WIND_MOOR_CRATE = BLOCK_ENTITIES.register("wind_moor_crate", () -> BlockEntityType.Builder.of(WindMoorCrateBlockEntity::new, ModBlocks.WIND_MOOR_CRATE.get()).build(null));
     public static final RegistryObject<BlockEntityType<TheEndlessBookOfDreamSeekersBlockEntity>> THE_ENDLESS_BOOK_OF_DREAM_SEEKERS = BLOCK_ENTITIES.register("the_endless_book_of_dream_seekers", () -> BlockEntityType.Builder.of(TheEndlessBookOfDreamSeekersBlockEntity::new, ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ResearchTableBlockEntity>> RESEARCH_TABLE = BLOCK_ENTITIES.register("research_table", () -> BlockEntityType.Builder.of(ResearchTableBlockEntity::new, ModBlocks.RESEARCH_TABLE.get()).build(null));
 
     public static void register(IEventBus eventBus)
     {

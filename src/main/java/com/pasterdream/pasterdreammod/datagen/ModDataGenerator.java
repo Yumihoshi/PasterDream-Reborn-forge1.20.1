@@ -50,6 +50,8 @@ public class ModDataGenerator {
         generator.addProvider(event.includeServer(),
                 new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
+        generator.addProvider(event.includeServer(), new ModFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
+
         generator.addProvider(event.includeServer(), new ModBiomeTagsProvider(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModBiomeModifierProvider(packOutput, lookupProvider));
 

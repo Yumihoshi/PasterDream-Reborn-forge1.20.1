@@ -1,0 +1,32 @@
+{
+  "type": "pasterdream:mortar",
+  "fluidInputs":
+  [
+    {
+      "fluid": "minecraft:water",
+      "amount": 125
+    },
+    {
+      "fluid": "pasterdream:yeast",
+      "amount": 125
+    }
+  ],
+  "itemInputs":
+  [
+    {
+      "item": "minecraft:sugar",
+      "count": 1
+    },
+    {
+      "tag": "forge:flour",
+      "count": 1
+    }
+  ],
+  "fluidOutputs":
+  [
+    {
+      "fluid": "pasterdream:yeast",
+      "amount": 500
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-package com.pasterdream.pasterdreammod.recipe.recipematchandprocess;
+package com.pasterdream.pasterdreammod.recipe.genericrecipe.recipematchandprocess;
 
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.FluidIngredient;
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.ItemIngredient;

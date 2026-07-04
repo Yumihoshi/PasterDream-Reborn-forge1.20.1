@@ -3,7 +3,7 @@ package com.pasterdream.pasterdreammod.world.item.mortar;
 import com.google.gson.JsonObject;
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.FluidIngredient;
 import com.pasterdream.pasterdreammod.helper.pasterdreamingredient.ItemIngredient;
-import com.pasterdream.pasterdreammod.recipe.GenericPasterDreamRecipeSerializer;
+import com.pasterdream.pasterdreammod.recipe.genericrecipe.GenericPasterDreamRecipeSerializer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 

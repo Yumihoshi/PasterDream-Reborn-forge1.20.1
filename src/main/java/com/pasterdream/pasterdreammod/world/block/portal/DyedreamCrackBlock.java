@@ -1,9 +1,11 @@
 package com.pasterdream.pasterdreammod.world.block.portal;
 
+import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -73,7 +75,7 @@ public class DyedreamCrackBlock extends DirectionalBlock
     }
 
     @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity)
+    public void entityInside(BlockState state, Level level, BlockPos blockPosition, Entity entity)
     {
         if (!level.isClientSide && entity instanceof ServerPlayer player)
         {
@@ -82,7 +84,8 @@ public class DyedreamCrackBlock extends DirectionalBlock
                 return;
             }
 
-            teleportToDreamDimension(player, state, pos);
+            level.playSound(null, blockPosition, ModSounds.DYEDREAM_CRACK.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
+            teleportToDreamDimension(player, state, blockPosition);
 
             player.setPortalCooldown(20);
         }

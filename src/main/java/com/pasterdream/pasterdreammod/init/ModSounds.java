@@ -35,6 +35,9 @@ public class ModSounds {
             SOUNDS.register("pliers0", () -> SoundEvent.createVariableRangeEvent(
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "pliers0")));
 
+    public static final RegistryObject<SoundEvent> DOLL = SOUNDS.register("doll", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "doll")));
+    public static final RegistryObject<SoundEvent> DYEDREAM_CRACK = SOUNDS.register("dyedream_crack", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_crack")));
+
     public static void register(IEventBus eventBus) {
         SOUNDS.register(eventBus);
     }

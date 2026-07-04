@@ -12,6 +12,8 @@ import com.pasterdream.pasterdreammod.network.meltdreamenergy.MaxMeltDreamEnergy
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
 import com.pasterdream.pasterdreammod.network.mortar.MortarCraftPacket;
 import com.pasterdream.pasterdreammod.network.mortar.MortarNbtSyncPacket;
+import com.pasterdream.pasterdreammod.network.researchtable.ResearchTableCopyPacket;
+import com.pasterdream.pasterdreammod.network.researchtable.ResearchTableResearchPacket;
 import com.pasterdream.pasterdreammod.network.san.IsSanEnableSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.MaxSanSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
@@ -36,6 +38,8 @@ public class ModNetwork
         CHANNEL.registerMessage(id++, DreamCauldronCraftPacket.class, DreamCauldronCraftPacket::encode, DreamCauldronCraftPacket::decode, DreamCauldronCraftPacket::handle);
         CHANNEL.registerMessage(id++, MortarNbtSyncPacket.class, MortarNbtSyncPacket::encode, MortarNbtSyncPacket::decode, MortarNbtSyncPacket::handle);
         CHANNEL.registerMessage(id++, MortarCraftPacket.class, MortarCraftPacket::encode, MortarCraftPacket::decode, MortarCraftPacket::handle);
+        CHANNEL.registerMessage(id++, ResearchTableCopyPacket.class, ResearchTableCopyPacket::encode, ResearchTableCopyPacket::decode, ResearchTableCopyPacket::handle);
+        CHANNEL.registerMessage(id++, ResearchTableResearchPacket.class, ResearchTableResearchPacket::encode, ResearchTableResearchPacket::decode, ResearchTableResearchPacket::handle);
 
         CHANNEL.registerMessage(id++, DebugBlockActionPacket.class, DebugBlockActionPacket::encode, DebugBlockActionPacket::decode, DebugBlockActionPacket::handle);
 

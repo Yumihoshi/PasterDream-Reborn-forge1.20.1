@@ -132,5 +132,13 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("pasterdream", "white_corolla_can_place_on")))
                 .add(Items.SNOW_BLOCK)
                 .addTag(ItemTags.DIRT);
+
+        tag(TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("pasterdream", "dream_notes")))
+                .add(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get())
+                .add(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get())
+                .add(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get());
+
+        tag(TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("forge", "pen")))
+                .add(ModItems.FEATHER_PEN.get());
     }
 }
