@@ -50,6 +50,20 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider
                 .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "swamp"))
                 .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "mangrove_swamp"));
 
+        tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "can_rye_spawn_biome")))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "windswept_hills"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "plains"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "windswept_forest"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "meadow"));
+
+        tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "can_cotton_spawn_biome")))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "windswept_hills"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "plains"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "windswept_forest"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "meadow"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "taiga"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "dark_forest"));
+
         tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_world_biome")))
                 .addOptional(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_plains"))
                 .addOptional(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_mushroom_mountains"))

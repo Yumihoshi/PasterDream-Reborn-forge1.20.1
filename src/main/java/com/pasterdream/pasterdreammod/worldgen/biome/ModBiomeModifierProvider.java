@@ -49,9 +49,11 @@ public class ModBiomeModifierProvider implements DataProvider
             addPatch(entries, "malva_sinensis_cavan_patch", ModPlacedFeatures.MALVA_SINENSIS_CAVAN_PATCH, featureLookup, flowerFieldTag);
             addPatch(entries, "eustoma_patch", ModPlacedFeatures.EUSTOMA_PATCH, featureLookup, BiomeTags.IS_JUNGLE);
             addPatch(entries, "oats_patch", ModPlacedFeatures.OATS_PATCH, featureLookup, BiomeTags.IS_OVERWORLD);
-            addPatch(entries, "rye_patch", ModPlacedFeatures.RYE_PATCH, featureLookup, BiomeTags.IS_OVERWORLD);
+            TagKey<Biome> ryeSpawnTag = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "can_rye_spawn_biome"));
+            addPatch(entries, "rye_patch", ModPlacedFeatures.RYE_PATCH, featureLookup, ryeSpawnTag);
             addPatch(entries, "white_corolla_crop_patch", ModPlacedFeatures.WHITE_COROLLA_CROP_PATCH, featureLookup, TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "can_white_corolla_spawn_biome")));
-            addPatch(entries, "cotton_crop_patch", ModPlacedFeatures.COTTON_CROP_PATCH, featureLookup, BiomeTags.IS_OVERWORLD);
+            TagKey<Biome> cottonSpawnTag = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "can_cotton_spawn_biome"));
+            addPatch(entries, "cotton_crop_patch", ModPlacedFeatures.COTTON_CROP_PATCH, featureLookup, cottonSpawnTag);
 
             addPatch(entries, "jungle_sporangium_patch", ModPlacedFeatures.JUNGLE_SPORANGIUM_PATCH, featureLookup, BiomeTags.IS_JUNGLE);
 
