@@ -103,6 +103,7 @@ public class ModJEIPlugin implements IModPlugin
         fluidStacks.add(new FluidStack(ModFluids.WATERMELON_JUICE.get(),1000));
         fluidStacks.add(new FluidStack(ModFluids.WIND_PLANT_EXTRACT.get(),1000));
         fluidStacks.add(new FluidStack(ModFluids.YEAST.get(),1000));
+        fluidStacks.add(new FluidStack(ModFluids.INK.get(), 1000));
 
         registration.addExtraIngredients(ForgeTypes.FLUID_STACK, fluidStacks);
     }

@@ -40,6 +40,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.GLASS_JAR_OF_DREAM_JUICE.get(), "梦境果汁");
         add(ModItems.GLASS_JAR_OF_GOLDENROD_TEA.get(), "秋麒麟茶");
         add(ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get(), "染梦香水");
+        add(ModItems.GLASS_JAR_OF_INK.get(), "墨水罐");
+        add(ModItems.FEATHER_PEN.get(), "羽毛笔");
         add(ModItems.MELT_DREAM_LIQUID_BUCKET.get(), "融梦涌泉桶");
         add(ModItems.SHADOW_LIQUID_BUCKET.get(), "熔融阴影桶");
         add(ModItems.GLASS_CUP.get(), "玻璃杯");
@@ -271,6 +273,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_CHEST.get(), "浸影宝盒");
         add(ModBlocks.WIND_MOOR_CRATE.get(), "风泊板条筐");
         add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get(), "寻梦者的永恒书卷");
+        add(ModBlocks.RESEARCH_TABLE.get(), "研究台");
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "梦染茶花植株");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "成熟的梦染茶花植株");
         add(ModBlocks.WHITE_COROLLA_CROP.get(), "苍白雪莲植株");
@@ -333,6 +336,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("fluid.pasterdream.watermelon_juice","西瓜汁（流体）");
         add("fluid.pasterdream.wind_plant_extract","风植萃取液（流体）");
         add("fluid.pasterdream.yeast","酵母（流体）");
+        add("fluid.pasterdream.ink","墨水罐（流体）");
 
         add("itemGroup.pasterdream.pasterdream_food_tab", "帕斯特之梦 | 饮食");
         add("itemGroup.pasterdream.pasterdream_items_tab", "帕斯特之梦 | 物品");
@@ -344,6 +348,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_dream_debug_tab", "帕斯特之梦 | 调试栏");
 
         add("button.pasterdream.mortarbutton", "研磨");
+        add("button.pasterdream.copy_button", "复制");
+        add("button.pasterdream.research_button", "研究");
 
         add("tooltip.pasterdreammod.magic_stone", "§7§o哪个魔法师的兜里不会踹几块魔法石呢？");
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7此世间一切拥有灵魂的生物皆有梦\n那些醒来时无法想起的细缕回忆\n破碎并融化被埋藏在世界各处凝结成晶\n等待着被新的灵魂发现");

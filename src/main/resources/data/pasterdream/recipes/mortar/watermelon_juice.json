@@ -1,0 +1,17 @@
+{
+  "type": "pasterdream:mortar",
+  "itemInputs":
+  [
+    {
+      "item": "minecraft:melon_slice",
+      "count": 1
+    }
+  ],
+  "fluidOutputs":
+  [
+    {
+      "fluid": "pasterdream:watermelon_juice",
+      "amount": 375
+    }
+  ]
+}

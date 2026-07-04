@@ -1,0 +1,25 @@
+{
+  "type": "pasterdream:mortar",
+  "itemInputs":
+  [
+    {
+      "item": "pasterdream:dyedream_fruit",
+      "count": 1
+    },
+    {
+      "item": "pasterdream:dyedream_dust_piece",
+      "count": 1
+    },
+    {
+      "item": "pasterdream:amber_candy",
+      "count": 1
+    }
+  ],
+  "fluidOutputs":
+  [
+    {
+      "fluid": "pasterdream:dyedream_juice",
+      "amount": 375
+    }
+  ]
+}

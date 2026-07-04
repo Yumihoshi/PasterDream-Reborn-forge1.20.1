@@ -1,0 +1,24 @@
+{
+  "type": "pasterdream:mortar",
+  "fluidInputs":
+  [
+    {
+      "fluid": "minecraft:water",
+      "amount": 125
+    }
+  ],
+  "itemInputs":
+  [
+    {
+      "item": "minecraft:black_dye",
+      "count": 1
+    }
+  ],
+  "fluidOutputs":
+  [
+    {
+      "fluid": "pasterdream:ink",
+      "amount": 250
+    }
+  ]
+}

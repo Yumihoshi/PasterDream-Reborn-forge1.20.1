@@ -7,6 +7,7 @@ import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanScreen;
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.dyedreamdesk.DyedreamDeskScreen;
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.ShadowDeskScreen;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronScreen;
+import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableScreen;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -25,6 +26,7 @@ public class ModScreens
             MenuScreens.register(ModMenus.PICNIC_BASKET.get(), PicnicBasketScreen::new);
             MenuScreens.register(ModMenus.SHADOW_CHEST.get(), ShadowChestScreen::new);
             MenuScreens.register(ModMenus.WIND_MOOR_CRATE.get(), WindMoorCrateScreen::new);
+            MenuScreens.register(ModMenus.RESEARCH_TABLE.get(), ResearchTableScreen::new);
         });
     }
 }

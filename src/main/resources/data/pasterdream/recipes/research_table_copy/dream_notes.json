@@ -1,0 +1,32 @@
+{
+  "type": "pasterdream:research_table_copy",
+  "fluidInputs":
+  [
+    {
+      "fluidTag": "forge:ink",
+      "amount": 25
+    }
+  ],
+  "pen":
+  [
+    {
+      "tag": "forge:pen",
+      "count": 1,
+      "nbt":"{Damage:1}"
+    }
+  ],
+  "sourceBook":
+  [
+    {
+      "tag": "pasterdream:dream_notes",
+      "count": 1
+    }
+  ],
+  "material":
+  [
+    {
+      "item": "pasterdream:parchment",
+      "count": 1
+    }
+  ]
+}

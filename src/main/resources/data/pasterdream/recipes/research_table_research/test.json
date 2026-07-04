@@ -1,0 +1,32 @@
+{
+  "type": "pasterdream:research_table_research",
+  "fluidInputs":
+  [
+    {
+      "fluidTag": "forge:ink",
+      "amount": 25
+    }
+  ],
+  "pen":
+  [
+    {
+      "tag": "forge:pen",
+      "count": 1,
+      "nbt":"{Damage:1}"
+    }
+  ],
+  "unresolvedNote":
+  [
+    {
+      "item": "minecraft:paper",
+      "count": 1
+    }
+  ],
+  "output":
+  [
+    {
+      "item": "pasterdream:dream_notes_lamp_shadow_world",
+      "count": 1
+    }
+  ]
+}

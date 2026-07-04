@@ -1,15 +1,16 @@
 package com.pasterdream.pasterdreammod.world.block.doll;
 
 import com.pasterdream.pasterdreammod.capability.ModCapabilities;
+import com.pasterdream.pasterdreammod.init.ModSounds;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -81,6 +82,8 @@ public abstract class DollBlock extends BaseEntityBlock
             {
                 capability.addSanValue(1);
                 SanSyncPacket.sendToPlayer(serverPlayer, capability);
+                ((DollBlockEntity)level.getBlockEntity(blockPosition)).setAnimationState(1);
+                level.playSound(null, blockPosition, ModSounds.DOLL.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
             });
         }
         return InteractionResult.SUCCESS;

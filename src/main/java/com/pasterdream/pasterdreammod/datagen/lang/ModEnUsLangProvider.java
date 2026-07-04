@@ -37,6 +37,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get(), "Glass Jar of Dyedream Perfume");
         add(ModItems.GLASS_JAR_OF_DREAM_JUICE.get(), "Glass Jar of Dream Juice");
         add(ModItems.GLASS_JAR_OF_GOLDENROD_TEA.get(), "Glass Jar of Goldenrod Tea");
+        add(ModItems.GLASS_JAR_OF_INK.get(), "Glass Jar of Ink");
+        add(ModItems.FEATHER_PEN.get(), "Feather Pen");
         add(ModItems.MELT_DREAM_LIQUID_BUCKET.get(), "Meltdream Liquid Bucket");
         add(ModItems.SHADOW_LIQUID_BUCKET.get(), "Shadow Liquid Bucket");
         add(ModItems.GLASS_CUP.get(), "Glass Cup");
@@ -261,6 +263,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_CHEST.get(), "Shadow Chest");
         add(ModBlocks.WIND_MOOR_CRATE.get(), "Wind Moor Crate");
         add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get(), "The Endless Book Of Dream Seekers");
+        add(ModBlocks.RESEARCH_TABLE.get(), "Research Table");
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "Dyedream Corolla");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "Mature Dyedream Corolla");
         add(ModBlocks.WHITE_COROLLA_CROP.get(), "White Corolla Crop");
@@ -325,6 +328,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("fluid.pasterdream.watermelon_juice","Watermelon Juice(fluid)");
         add("fluid.pasterdream.wind_plant_extract","Wind Plant Extract(fluid)");
         add("fluid.pasterdream.yeast","Yeast(fluid)");
+        add("fluid.pasterdream.ink","Ink(fluid)");
 
         add("itemGroup.pasterdream.pasterdream_food_tab", "Paster Dream | Food & Drinks");
         add("itemGroup.pasterdream.pasterdream_items_tab", "Paster Dream | Items");
@@ -336,6 +340,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_dream_debug_tab", "Paster Dream | Debug");
 
         add("button.pasterdream.mortarbutton", "grinding");
+        add("button.pasterdream.copy_button", "Copy");
+        add("button.pasterdream.research_button", "Research");
 
         add("tooltip.pasterdreammod.magic_stone", "§7§oWhat kind of mage doesn't carry a few magic stones?");
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7All creatures with souls in this world have dreams\nThose fleeting memories that cannot be recalled upon waking\nShatter and melt, buried across the world, condensing into crystals\nWaiting to be discovered by new souls");

@@ -1,8 +1,11 @@
 package com.pasterdream.pasterdreammod.world.block.dreamcauldron;
 
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -85,6 +88,7 @@ public class DreamCauldronBlock extends BaseEntityBlock
             if (blockEntity instanceof DreamCauldronBlockEntity dreamCauldron)
             {
                 NetworkHooks.openScreen((ServerPlayer) player, dreamCauldron, buf -> buf.writeBlockPos(blockPosition));
+                level.playSound(null, blockPosition, SoundEvents.BREWING_STAND_BREW, SoundSource.BLOCKS, 1.0f, 1.0f);
             }
         }
         return InteractionResult.SUCCESS;

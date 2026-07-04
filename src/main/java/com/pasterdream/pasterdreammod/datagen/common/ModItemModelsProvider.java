@@ -30,6 +30,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.PINK_SLIMEBALL.get());
 
         basicItem(ModItems.MORTAR.get());
+        basicItem(ModItems.FEATHER_PEN.get());
         handheldItem(ModItems.PLIERS);
         basicItem(ModItems.DYEDREAM_DYE.get());
         basicItem(ModItems.DYEDREAM_BUD_NUGGET.get());
@@ -51,6 +52,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.GLASS_JAR_OF_DREAM_JUICE.get());
         basicItem(ModItems.GLASS_JAR_OF_GOLDENROD_TEA.get());
         basicItem(ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get());
+        basicItem(ModItems.GLASS_JAR_OF_INK.get());
         basicItem(ModItems.GLASS_CUP.get());
         basicItem(ModItems.GLASS_CUP_OF_APPLE_JUICE.get());
         basicItem(ModItems.GLASS_CUP_OF_COOKED_DYEDREAM_FLOWER_TEA.get());

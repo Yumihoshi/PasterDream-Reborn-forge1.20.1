@@ -15,6 +15,8 @@ import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.ShadowDeskMenu;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronMenu;
+import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableMenu;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarMenu;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.inventory.MenuType;
@@ -77,6 +79,12 @@ public class ModMenus
     {
         BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
         return new WindMoorCrateMenu(windowId, inv, (WindMoorCrateBlockEntity) blockEntity);
+    }));
+
+    public static final RegistryObject<MenuType<ResearchTableMenu>> RESEARCH_TABLE = MENUS.register("research_table", () -> IForgeMenuType.create((windowId, inv, data) ->
+    {
+        BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
+        return new ResearchTableMenu(windowId, inv, (ResearchTableBlockEntity) blockEntity);
     }));
 
     public static void register(IEventBus eventBus)

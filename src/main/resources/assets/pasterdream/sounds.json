@@ -19,5 +19,13 @@
   },
   "pliers0": {
     "sounds": [{"name": "pasterdream:pliers0", "stream": false}]
+  },
+  "dyedream_crack":
+  {
+    "sounds": [{"name": "pasterdream:dyedream_crack", "stream": false}]
+  },
+  "doll":
+  {
+    "sounds": [{"name": "pasterdream:doll", "stream": false}]
   }
 }
