@@ -87,5 +87,6 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                                 ConstantValue.exactly(1.0F))))
                         )
         );
+
     }
 }
