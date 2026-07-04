@@ -230,9 +230,9 @@ public class ModConfiguredFeatures {
             ModBlocks.DYEDREAM_BUDDING_BLOCK.get()
     );
 
-    /** 绯红森林地面 */
+    /** 绯红森林地面（可生成在绯红菌岩，下界岩，岩浆块上） */
     private static final List<Block> CRIMSON_FOREST_GROUND = List.of(
-            Blocks.CRIMSON_NYLIUM
+            Blocks.CRIMSON_NYLIUM,Blocks.NETHERRACK,Blocks.MAGMA_BLOCK
     );
 
     /** 冰晶芽地面：不含母岩 */
