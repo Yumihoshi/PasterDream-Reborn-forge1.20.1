@@ -28,7 +28,7 @@ public class FluidIngredient
     @Nullable
     private final CompoundTag nbt;
 
-    private FluidIngredient(@Nullable Fluid fluid, @Nullable TagKey<Fluid> tag, int amount, @Nullable CompoundTag nbt)
+    public FluidIngredient(@Nullable Fluid fluid, @Nullable TagKey<Fluid> tag, int amount, @Nullable CompoundTag nbt)
     {
         this.fluid = fluid;
         this.tag = tag;

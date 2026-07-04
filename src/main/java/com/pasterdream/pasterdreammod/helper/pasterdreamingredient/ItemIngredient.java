@@ -26,7 +26,7 @@ public class ItemIngredient
     @Nullable
     private final CompoundTag nbt;
 
-    private ItemIngredient(@Nullable Item item, @Nullable TagKey<Item> tag, int count, @Nullable CompoundTag nbt)
+    public ItemIngredient(@Nullable Item item, @Nullable TagKey<Item> tag, int count, @Nullable CompoundTag nbt)
     {
         this.item = item;
         this.tag = tag;
