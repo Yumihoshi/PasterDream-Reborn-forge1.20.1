@@ -75,6 +75,11 @@ public abstract class ItemContainerBlock extends BaseEntityBlock
         if (!level.isClientSide)
         {
             BlockEntity blockEntity = level.getBlockEntity(blockPosition);
+            if (blockEntity instanceof ItemContainerBlockEntity containerBlockEntity)
+            {
+                // 在打开容器前先尝试从战利品表生成物品
+                containerBlockEntity.unpackLootTable(player);
+            }
             if (blockEntity instanceof MenuProvider menu)
             {
                 NetworkHooks.openScreen((ServerPlayer) player, menu, buf -> buf.writeBlockPos(blockPosition));
