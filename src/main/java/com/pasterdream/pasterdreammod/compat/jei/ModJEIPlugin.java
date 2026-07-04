@@ -7,6 +7,10 @@ import com.pasterdream.pasterdreammod.compat.jei.dreamcauldronrecipe.DreamCauldr
 import com.pasterdream.pasterdreammod.compat.jei.dreamcauldronrecipe.DreamCauldronRecipeCategory;
 import com.pasterdream.pasterdreammod.compat.jei.mortarrecipe.MortarJEIRecipe;
 import com.pasterdream.pasterdreammod.compat.jei.mortarrecipe.MortarRecipeCategory;
+import com.pasterdream.pasterdreammod.compat.jei.researchtablecopy.ResearchTableCopyJEIRecipe;
+import com.pasterdream.pasterdreammod.compat.jei.researchtablecopy.ResearchTableCopyRecipeCategory;
+import com.pasterdream.pasterdreammod.compat.jei.researchtableresearch.ResearchTableResearchJEIRecipe;
+import com.pasterdream.pasterdreammod.compat.jei.researchtableresearch.ResearchTableResearchRecipeCategory;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModFluids;
 import com.pasterdream.pasterdreammod.init.ModItems;
@@ -14,6 +18,8 @@ import com.pasterdream.pasterdreammod.init.ModRecipes;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipe;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanScreen;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipe;
+import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableCopyRecipe;
+import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableResearchRecipe;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarRecipe;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarScreen;
 import mezz.jei.api.IModPlugin;
@@ -55,6 +61,12 @@ public class ModJEIPlugin implements IModPlugin
 
             List<MortarRecipe> mortarRecipes = recipeManager.getAllRecipesFor(ModRecipes.MORTAR.get());
             registration.addRecipes(MortarRecipeCategory.MORTAR_RECIPE_TYPE, mortarRecipes.stream().map(MortarJEIRecipe::new).collect(Collectors.toList()));
+
+            List<ResearchTableCopyRecipe> researchTableCopyRecipes = recipeManager.getAllRecipesFor(ModRecipes.RESEARCH_TABLE_COPY.get());
+            registration.addRecipes(ResearchTableCopyRecipeCategory.RESEARCH_TABLE_COPY_RECIPE_TYPE, researchTableCopyRecipes.stream().map(ResearchTableCopyJEIRecipe::new).collect(Collectors.toList()));
+
+            List<ResearchTableResearchRecipe> researchTableResearchRecipes = recipeManager.getAllRecipesFor(ModRecipes.RESEARCH_TABLE_RESEARCH.get());
+            registration.addRecipes(ResearchTableResearchRecipeCategory.RESEARCH_TABLE_RESEARCH_RECIPE_TYPE, researchTableResearchRecipes.stream().map(ResearchTableResearchJEIRecipe::new).collect(Collectors.toList()));
         }
     }
 
@@ -71,6 +83,8 @@ public class ModJEIPlugin implements IModPlugin
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.CLAYPAN.get()), ClaypanRecipeCategory.CLAYPAN_RECIPE_TYPE);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.DREAM_CAULDRON.get()), DreamCauldronRecipeCategory.DREAM_CAULDRON_RECIPE_TYPE);
         registration.addRecipeCatalyst(new ItemStack(ModItems.MORTAR.get()), MortarRecipeCategory.MORTAR_RECIPE_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.RESEARCH_TABLE.get()), ResearchTableCopyRecipeCategory.RESEARCH_TABLE_COPY_RECIPE_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.RESEARCH_TABLE.get()), ResearchTableResearchRecipeCategory.RESEARCH_TABLE_RESEARCH_RECIPE_TYPE);
     }
 
     @Override
@@ -79,6 +93,8 @@ public class ModJEIPlugin implements IModPlugin
         registration.addRecipeCategories(new ClaypanRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new DreamCauldronRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new MortarRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new ResearchTableCopyRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new ResearchTableResearchRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     //将流体添加至JEI物品列表

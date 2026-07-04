@@ -81,7 +81,8 @@ public class ResearchTableResearchRecipeProcessor
         else
             if (ItemStack.isSameItemSameTags(machineOutput, output) && machineOutput.getCount() + output.getCount() <= output.getMaxStackSize())
             {
-                return new ResearchTableResearchRecipeInventory(lessFluidStack, lessPen, lessUnresolvedNote, new ItemStack(output.getItem(), machineOutput.getCount() + output.getCount(), output.getTag()));
+                output.setCount(machineOutput.getCount() + output.getCount());
+                return new ResearchTableResearchRecipeInventory(lessFluidStack, lessPen, lessUnresolvedNote, output);
             }
                 else
                 {

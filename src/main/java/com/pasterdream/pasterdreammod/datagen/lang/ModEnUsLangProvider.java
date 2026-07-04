@@ -458,6 +458,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("biome.pasterdream.dyedream_snowy_plains","Dyedream Snowy Plains");
         add("biome.pasterdream.dyedream_frozen_ocean","Dyedream Frozen Ocean");
 
+        add("recipe.pasterdream.copy", "Copy");
+        add("recipe.pasterdream.research", "Research");
+
         // Dew Tooltip
         add("tooltip.pasterdream.drink_effect", "§7When consumed:");
         add("tooltip.pasterdream.red_dew.effect", "§7▪ §9Instant Health I");
