@@ -473,5 +473,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add("tooltip.pasterdream.pliers.1", "§7▪ §9Can harvest crops and plants");
         add("tooltip.pasterdream.pliers.2", "§7▪ §9Sneak + right-click to collect blocks in plier_plants tag");
+
+        // Broken Note
+        add(ModItems.BROKEN_NOTE.get(), "Broken Note");
+        add(ModItems.UNKNOWN_NOTE.get(), "Unknown Note");
+        add("tooltip.pasterdream.broken_note", "§7We still need to learn more...");
+        add("tooltip.pasterdream.unknown_note.1", "Unknown Content");
+        add("tooltip.pasterdream.unknown_note.2", "§7Needs to be analyzed at a §eResearch Table");
     }
 }

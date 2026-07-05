@@ -1,6 +1,6 @@
-package com.pasterdream.pasterdreammod.client.particle;
+package com.pasterdream.pasterdreammod.init;
 
-import com.pasterdream.pasterdreammod.init.ModParticleTypes;
+import com.pasterdream.pasterdreammod.client.particle.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

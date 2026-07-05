@@ -143,6 +143,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GLASS_JAR_OF_INK.get());
                         output.accept(ModItems.SCULK_HEART.get());
                         output.accept(ModItems.BLACK_STICK.get());
+                        output.accept(ModItems.BROKEN_NOTE.get());
+                        output.accept(ModItems.UNKNOWN_NOTE.get());
                     })
                     .build());
 

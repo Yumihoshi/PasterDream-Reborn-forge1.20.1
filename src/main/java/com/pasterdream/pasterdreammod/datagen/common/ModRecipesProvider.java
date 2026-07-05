@@ -1700,6 +1700,12 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(Items.HONEYCOMB)
                 .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .save(pWriter);
+
+        // 4x 笔记残页 -> 未解析的笔记
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.UNKNOWN_NOTE.get(), 1)
+                .requires(ModItems.BROKEN_NOTE.get(), 4)
+                .unlockedBy(getHasName(ModItems.BROKEN_NOTE.get()), has(ModItems.BROKEN_NOTE.get()))
+                .save(pWriter);
     }
 
     // ===== 配方工具方法 =====
