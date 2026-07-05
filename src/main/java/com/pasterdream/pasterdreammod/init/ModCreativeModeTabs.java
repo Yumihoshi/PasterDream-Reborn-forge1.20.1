@@ -147,6 +147,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.UNKNOWN_NOTE.get());
                         output.accept(ModItems.PALE_BONENEEDLE.get());
                         output.accept(ModItems.ROOTS_PALE_BONENEEDLE.get());
+                        // 饰品
+                        output.accept(ModItems.EMBRYO_CHARM.get());
                     })
                     .build());
 
@@ -224,6 +226,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SWORD_EMBRYO.get());
                         output.accept(ModItems.DESERT_SWORD.get());
                         output.accept(ModItems.CHENJINGMEN_DESERT_SWORD.get());
+                        // 饰品
+                        output.accept(ModItems.GOLD_CHARM.get());
                     })
                     .build());
 

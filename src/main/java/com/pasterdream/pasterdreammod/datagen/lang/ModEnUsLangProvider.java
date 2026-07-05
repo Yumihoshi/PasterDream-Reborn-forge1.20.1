@@ -489,5 +489,21 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.roots_pale_boneneedle.2", "§7Sneak + right-click to set a waypoint");
         add("tooltip.pasterdream.roots_pale_boneneedle.3", "§7If no waypoint is set, returns to spawn by default");
         add("message.pasterdream.roots_pale_boneneedle.waypoint_set", "Waypoint recorded");
+
+        // Custom Rarity
+        add("rarity.pasterdream.common", "Common");
+        add("rarity.pasterdream.excellent", "Excellent");
+        add("rarity.pasterdream.superior", "Superior");
+        add("rarity.pasterdream.master", "Master");
+        add("rarity.pasterdream.ancient", "Ancient");
+        add("rarity.pasterdream.epic", "Epic");
+        add("rarity.pasterdream.legendary", "Legendary");
+        add("rarity.pasterdream.miracle", "Miracle");
+        add("tooltip.pasterdream.quality", "Quality: %s %s");
+
+        // Charms
+        add(ModItems.EMBRYO_CHARM.get(), "Embryo Charm");
+        add(ModItems.GOLD_CHARM.get(), "Gold Charm");
+        add("tooltip.pasterdream.gold_charm.piglin", "§7▪ §9Makes piglins neutral");
     }
 }

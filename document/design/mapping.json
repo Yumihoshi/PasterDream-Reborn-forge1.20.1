@@ -313,7 +313,9 @@
     "unknownnotes_0": "unknown_note",
     "pale_boneneedle": "pale_boneneedle",
     "roots_pale_boneneedle": "roots_pale_boneneedle",
-    "create_sword": "debug_sword"
+    "create_sword": "debug_sword",
+    "embryo_charm": "embryo_charm",
+    "gold_charm": "gold_charm"
   },
   "entities": {},
   "dimensions": {
