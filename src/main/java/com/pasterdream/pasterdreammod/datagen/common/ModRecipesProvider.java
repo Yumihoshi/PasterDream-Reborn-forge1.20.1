@@ -1720,6 +1720,24 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(Items.ECHO_SHARD)
                 .unlockedBy(getHasName(ModItems.PALE_BONENEEDLE.get()), has(ModItems.PALE_BONENEEDLE.get()))
                 .save(pWriter);
+
+        // 护身符原胚 = 线 + 灵魂精华 + 钛金粒
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMBRYO_CHARM.get(), 1)
+                .pattern("a")
+                .pattern("b")
+                .pattern("c")
+                .define('a', Items.STRING)
+                .define('b', ModItems.SOUL_ESSENCE.get())
+                .define('c', ModItems.TITANIUM_NUGGET.get())
+                .unlockedBy(getHasName(ModItems.SOUL_ESSENCE.get()), has(ModItems.SOUL_ESSENCE.get()))
+                .save(pWriter);
+
+        // 纯金护身符 = 护身符原胚 + 金锭
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GOLD_CHARM.get(), 1)
+                .requires(ModItems.EMBRYO_CHARM.get())
+                .requires(Items.GOLD_INGOT)
+                .unlockedBy(getHasName(ModItems.EMBRYO_CHARM.get()), has(ModItems.EMBRYO_CHARM.get()))
+                .save(pWriter);
     }
 
     // ===== 配方工具方法 =====

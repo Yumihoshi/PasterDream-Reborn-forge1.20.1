@@ -337,6 +337,8 @@
 | `pale_boneneedle`              | `pale_boneneedle`                           | 不改                                                           | 客制化类 `PaleBoneneedleItem`，右键使用从梦维度传送至重生点                  |
 | `roots_pale_boneneedle`        | `roots_pale_boneneedle`                     | 不改                                                           | 客制化类 `RootsPaleBoneneedleItem`，潜行右键设置标记点，右键传送到标记点       |
 | `create_sword`                 | `debug_sword`                               | 重命名                                                           | 客制化类 `DebugSwordItem`                                   |
+| `embryo_charm`                 | `embryo_charm`                              | 不改                                                            | 客制化类 `EmbryoCharmItem`，实现 `ICurioItem` 可装备于 charm 插槽          |
+| `gold_charm`                   | `gold_charm`                                | 不改                                                            | 客制化类 `GoldCharmItem`，实现 `ICurioItem`，装备时使猪灵中立 + 品质提示行    |
 
 
 

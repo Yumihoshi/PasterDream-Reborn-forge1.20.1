@@ -611,5 +611,21 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.roots_pale_boneneedle.2", "§7潜行右键以设置标记点");
         add("tooltip.pasterdream.roots_pale_boneneedle.3", "§7如未设置标记将默认返回重生点");
         add("message.pasterdream.roots_pale_boneneedle.waypoint_set", "已记录坐标点");
+
+        // 自定义稀有度
+        add("rarity.pasterdream.common", "普通");
+        add("rarity.pasterdream.excellent", "优秀");
+        add("rarity.pasterdream.superior", "精良");
+        add("rarity.pasterdream.master", "大师");
+        add("rarity.pasterdream.ancient", "上古");
+        add("rarity.pasterdream.epic", "史诗");
+        add("rarity.pasterdream.legendary", "传说");
+        add("rarity.pasterdream.miracle", "神迹");
+        add("tooltip.pasterdream.quality", "品质: %s %s");
+
+        // 饰品
+        add(ModItems.EMBRYO_CHARM.get(), "护身符原胚");
+        add(ModItems.GOLD_CHARM.get(), "纯金护身符");
+        add("tooltip.pasterdream.gold_charm.piglin", "§7▪ §9使猪灵保持中立");
     }
 }
