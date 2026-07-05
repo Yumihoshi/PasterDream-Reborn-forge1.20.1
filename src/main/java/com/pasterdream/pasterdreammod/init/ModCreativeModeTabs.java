@@ -145,6 +145,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLACK_STICK.get());
                         output.accept(ModItems.BROKEN_NOTE.get());
                         output.accept(ModItems.UNKNOWN_NOTE.get());
+                        output.accept(ModItems.PALE_BONENEEDLE.get());
+                        output.accept(ModItems.ROOTS_PALE_BONENEEDLE.get());
                     })
                     .build());
 

@@ -477,8 +477,17 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Broken Note
         add(ModItems.BROKEN_NOTE.get(), "Broken Note");
         add(ModItems.UNKNOWN_NOTE.get(), "Unknown Note");
+        add(ModItems.PALE_BONENEEDLE.get(), "Pale Boneneedle");
+        add(ModItems.ROOTS_PALE_BONENEEDLE.get(), "Roots Pale Boneneedle");
         add("tooltip.pasterdream.broken_note", "§7We still need to learn more...");
         add("tooltip.pasterdream.unknown_note.1", "Unknown Content");
         add("tooltip.pasterdream.unknown_note.2", "§7Needs to be analyzed at a §eResearch Table");
+
+        // Pale Boneneedle
+        add("tooltip.pasterdream.pale_boneneedle", "§7Awakens you from dreams...");
+        add("tooltip.pasterdream.roots_pale_boneneedle.1", "§7Awakens you from dreams... and returns to the marked location");
+        add("tooltip.pasterdream.roots_pale_boneneedle.2", "§7Sneak + right-click to set a waypoint");
+        add("tooltip.pasterdream.roots_pale_boneneedle.3", "§7If no waypoint is set, returns to spawn by default");
+        add("message.pasterdream.roots_pale_boneneedle.waypoint_set", "Waypoint recorded");
     }
 }

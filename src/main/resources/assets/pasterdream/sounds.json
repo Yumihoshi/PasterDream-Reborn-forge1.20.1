@@ -27,5 +27,9 @@
   "doll":
   {
     "sounds": [{"name": "pasterdream:doll", "stream": false}]
+  },
+  "dream0":
+  {
+    "sounds": [{"name": "pasterdream:dream0", "stream": false}]
   }
 }

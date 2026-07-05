@@ -599,8 +599,17 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 笔记残页
         add(ModItems.BROKEN_NOTE.get(), "笔记残页");
         add(ModItems.UNKNOWN_NOTE.get(), "未解析的笔记");
+        add(ModItems.PALE_BONENEEDLE.get(), "苍白骨针");
+        add(ModItems.ROOTS_PALE_BONENEEDLE.get(), "溯源苍白骨针");
         add("tooltip.pasterdream.broken_note", "§7我们还需要了解更多...");
         add("tooltip.pasterdream.unknown_note.1", "未知内容");
         add("tooltip.pasterdream.unknown_note.2", "§7需要使用§e研究台§7解析笔记");
+
+        // 苍白骨针
+        add("tooltip.pasterdream.pale_boneneedle", "§7让你从梦中清醒...");
+        add("tooltip.pasterdream.roots_pale_boneneedle.1", "§7让你从梦中清醒...并回到标记的位置");
+        add("tooltip.pasterdream.roots_pale_boneneedle.2", "§7潜行右键以设置标记点");
+        add("tooltip.pasterdream.roots_pale_boneneedle.3", "§7如未设置标记将默认返回重生点");
+        add("message.pasterdream.roots_pale_boneneedle.waypoint_set", "已记录坐标点");
     }
 }
