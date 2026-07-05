@@ -403,37 +403,4 @@
 | `wind_journey_biome_1`         | 待搬运                           | -                  | 迷梦云层                             |
 | `aaroncos_arena_biome`         | 待搬运                           | -                  | 亚伦柯斯竞技场                          |
 
----
 
-## 地物映射
-
-### Configured Feature
-
-| 旧 ID                             | 新 ID                              | 变更说明    | 所属群系                |
-|-----------------------------------|-----------------------------------|---------|---------------------|
-| `biome_dyedream_0_tree`           | `dyedream_tree`                   | 重命名，已实现 | 染梦平原                |
-| `biome_dyedream_1_tree`           | 待搬运                               | -       | 粉顶菇山地               |
-| `biome_dyedream_2_tree`           | 待搬运                               | -       | 染梦雪原                |
-| `ground_feature_dyedream_0`       | `dyedream_ice_pillar`             | 重命名，已实现 | 待确认                 |
-| `ground_feature_dyedream_1`       | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_2`       | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_3`       | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_4`       | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_5`       | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_6`       | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_7`       | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_8`       | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_9`       | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_10`      | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_11`      | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_12`      | `dyedream_icestone_blobs`         | 重命名，已实现 | 待确认                 |
-| `dyedream_lily_pad`              | `dyedream_lily_pad`               | 不改，已实现 | 染梦维度水域               |
-| `dyedream_lotus`                 | `dyedream_lotus`                  | 不改，已实现 | 染梦维度水域               |
-| `ground_feature_dyedream_13`      | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_14`      | 待搬运                               | -       | 待确认                 |
-| `ground_feature_dyedream_15`      | 待搬运                               | -       | 待确认                 |
-| `crop_0a`                         | `dyedream_corolla_patch`            | random_patch(野生梦染茶花) | PL, SP              |
-| `crop_2a`                         | `light_ball_patch`                  | random_patch(野生流明堇) | PL, SP              |
-| `crop_3a`                         | `cloud_crop_patch`                  | random_patch(野生玲云花) | PL, SP              |
-| `ground_feature_shadow_0` ~ `_7`  | 待搬运                               | -       | 阴影维度                |
-| `ground_feature_wind_journey_0` ~ `_6` | 待搬运                            | -       | 风之旅维度               |
