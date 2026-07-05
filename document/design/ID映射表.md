@@ -332,6 +332,8 @@
 | `sword_embryo_0`               | `sword_embryo`                              | 重命名，`sword_embryo_0` → `sword_embryo`（失落之剑），去 `_0` 后缀         | 直接用 `SwordItem`(Tiers.IRON)，铁质可用的剑                      |
 | `desert_sword`                 | `desert_sword`                              | 不改                                                            | 客制化类 `DesertSwordItem`，手持时获得缓慢+抗性提升效果                   |
 | `true_desert_sword`            | `chenjingmen_desert_sword`                  | 重命名，`true_desert_sword` → `chenjingmen_desert_sword`（『沉荆门』朔漠） | 客制化类 `ChenjingmenDesertSwordItem`，战技：绝地反击（基于已损生命造成额外伤害） |
+| `brokennotes_0`                | `broken_note`                               | 重命名，去除 word-glueing 和 `_0` 后缀                                  | 无需客制化类，Tooltip 通过 `AddToolTip` 添加                            |
+| `unknownnotes_0`               | `unknown_note`                              | 重命名，去除 word-glueing 和 `_0` 后缀                                  | 无需客制化类，Tooltip 通过 `AddToolTip` 添加                            |
 | `create_sword`                 | `debug_sword`                               | 重命名                                                           | 客制化类 `DebugSwordItem`                                   |
 
 

@@ -595,5 +595,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add("tooltip.pasterdream.pliers.1", "§7▪ §9可以收获作物和植物");
         add("tooltip.pasterdream.pliers.2", "§7▪ §9潜行+右键可收集plier_plants标签中的方块");
+
+        // 笔记残页
+        add(ModItems.BROKEN_NOTE.get(), "笔记残页");
+        add(ModItems.UNKNOWN_NOTE.get(), "未解析的笔记");
+        add("tooltip.pasterdream.broken_note", "§7我们还需要了解更多...");
+        add("tooltip.pasterdream.unknown_note.1", "未知内容");
+        add("tooltip.pasterdream.unknown_note.2", "§7需要使用§e研究台§7解析笔记");
     }
 }
