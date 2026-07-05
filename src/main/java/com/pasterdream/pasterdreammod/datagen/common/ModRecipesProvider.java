@@ -1694,6 +1694,12 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(ModItems.COTTON_CROP_AGE_1.get())
                 .unlockedBy(getHasName(ModItems.COTTON_CROP_AGE_1.get()), has(ModItems.COTTON_CROP_AGE_1.get()))
                 .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PERGAMYN.get(), 1)
+                .requires(Items.PAPER)
+                .requires(Items.HONEYCOMB)
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
+                .save(pWriter);
     }
 
     // ===== 配方工具方法 =====
