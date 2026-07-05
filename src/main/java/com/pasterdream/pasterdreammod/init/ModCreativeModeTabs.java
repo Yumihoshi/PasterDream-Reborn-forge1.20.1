@@ -86,6 +86,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get());
                         output.accept(ModItems.LIGHT_ORGAN.get());
                         output.accept(ModItems.ODD_BACON_AND_EGG.get());
+                        output.accept(ModItems.JUNGLE_SPORE.get());
 
                     })
                     .build());
@@ -103,6 +104,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DYEDREAM_DYE.get());
                         output.accept(ModItems.DYEDREAM_BUD_NUGGET.get());
                         output.accept(ModItems.DYEDREAM_QUARTZ.get());
+                        output.accept(ModItems.MELT_DREAM_COIN.get());
+                        output.accept(ModItems.MELT_DREAM_COIN_PILE.get());
                         output.accept(ModItems.RAW_TITANIUM.get());
                         output.accept(ModItems.RAW_MOLTEN_GOLD.get());
                         output.accept(ModItems.TITANIUM_INGOT.get());
@@ -121,8 +124,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LIGHT_BALL.get());
                         output.accept(ModItems.DYEDREAM_COROLLA.get());
                         output.accept(ModItems.WHITE_COROLLA.get());
-                        output.accept(ModItems.COTTON.get());
+                        output.accept(ModItems.BLUE_HEART_OF_THE_SEA.get());
+                        output.accept(ModItems.ELDER_GUARDIAN_SCALE.get());
                         output.accept(ModItems.CHARGED_AMETHYST.get());
+                        output.accept(ModItems.PROTECT_DECK.get());
+                        output.accept(ModItems.COTTON.get());
+                        output.accept(ModItems.SPOOL.get());
+                        output.accept(ModItems.FABRIC.get());
+                        output.accept(ModItems.PERGAMYN.get());
+                        output.accept(ModItems.REED_ROD.get());
                         output.accept(ModItems.RYE_SEED.get());
                         output.accept(ModItems.FLOUR.get());
                         output.accept(ModItems.SALT.get());
@@ -133,15 +143,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GLASS_JAR_OF_INK.get());
                         output.accept(ModItems.SCULK_HEART.get());
                         output.accept(ModItems.BLACK_STICK.get());
-                        output.accept(ModItems.SPOOL.get());
-                        output.accept(ModItems.FABRIC.get());
-                        output.accept(ModItems.PROTECT_DECK.get());
-                        output.accept(ModItems.REED_ROD.get());
-                        output.accept(ModItems.BLUE_HEART_OF_THE_SEA.get());
-                        output.accept(ModItems.ELDER_GUARDIAN_SCALE.get());
-                        output.accept(ModItems.MELT_DREAM_COIN.get());
-                        output.accept(ModItems.MELT_DREAM_COIN_PILE.get());
-                        output.accept(ModItems.JUNGLE_SPORE.get());
                     })
                     .build());
 

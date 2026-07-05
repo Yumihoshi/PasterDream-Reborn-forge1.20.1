@@ -183,6 +183,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.JUNGLE_SPORE.get(), "丛林孢子");
         add(ModItems.MELT_DREAM_COIN.get(), "融梦星币");
         add(ModItems.MELT_DREAM_COIN_PILE.get(), "融梦星币堆");
+        add(ModItems.PERGAMYN.get(), "羊皮纸");
 
         add(ModBlocks.DYEDREAM_DIRT.get(), "染梦泥土");
         add(ModBlocks.DYEDREAM_GRASS_BLOCK.get(), "染梦草方块");

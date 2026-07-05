@@ -189,6 +189,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.MELT_DREAM_COIN.get());
         basicItem(ModItems.MELT_DREAM_COIN_PILE.get());
         basicItem(ModItems.JUNGLE_SPORE.get());
+        basicItem(ModItems.PERGAMYN.get());
 
         basicItem(ModItems.DYEDREAM_COROLLA_CROP_AGE_0.get());
         basicItem(ModItems.WHITE_COROLLA_CROP_AGE_0.get());
