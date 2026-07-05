@@ -35,7 +35,9 @@ import com.pasterdream.pasterdreammod.world.item.grasstool.MurakumoKusanagiItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
 import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
+import com.pasterdream.pasterdreammod.world.item.PaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.PliersItem;
+import com.pasterdream.pasterdreammod.world.item.RootsPaleBoneneedleItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -130,6 +132,11 @@ public class ModItems {
             () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> BLACK_STICK = ITEMS.register("black_stick",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> PALE_BONENEEDLE = ITEMS.register("pale_boneneedle",
+            () -> new PaleBoneneedleItem());
+    public static final RegistryObject<Item> ROOTS_PALE_BONENEEDLE = ITEMS.register("roots_pale_boneneedle",
+            () -> new RootsPaleBoneneedleItem());
 
     public static final RegistryObject<Item> SPOOL = ITEMS.register("spool",
             () -> new Item(new Item.Properties()));
@@ -574,6 +581,11 @@ public class ModItems {
     public static final RegistryObject<Item> PLIERS = ITEMS.register("pliers",
             () -> new PliersItem(new Item.Properties()));
 
+    public static final RegistryObject<Item> BROKEN_NOTE = ITEMS.register("broken_note", () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
+    public static final RegistryObject<Item> UNKNOWN_NOTE = ITEMS.register("unknown_note", () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
+
+
+
 
     // ===== 方块物品 =====
 
@@ -877,8 +889,6 @@ public class ModItems {
     public static final RegistryObject<Item> DREAM_NOTES_WIND_JOURNEY_WORLD = ITEMS.register("dream_notes_wind_journey_world", () -> new DreamNotesItem(new Item.Properties()));
     public static final RegistryObject<Item> BLUE_PRINT = ITEMS.register("blue_print", () -> new BluePrintItem(new Item.Properties()));
 
-    public static final RegistryObject<Item> BROKEN_NOTE = ITEMS.register("broken_note", () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
-    public static final RegistryObject<Item> UNKNOWN_NOTE = ITEMS.register("unknown_note", () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
 
     public static final RegistryObject<Item> DEBUG_SWORD = ITEMS.register("debug_sword", () -> new DebugSwordItem());
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0 = ITEMS.register("model_break_particle_provider_block_0", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get(), new Item.Properties()));

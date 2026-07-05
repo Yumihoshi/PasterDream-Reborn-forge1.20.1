@@ -1706,6 +1706,20 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(ModItems.BROKEN_NOTE.get(), 4)
                 .unlockedBy(getHasName(ModItems.BROKEN_NOTE.get()), has(ModItems.BROKEN_NOTE.get()))
                 .save(pWriter);
+
+        // 苍白骨针 = 骨头 + 苍白花冠
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PALE_BONENEEDLE.get(), 1)
+                .requires(Items.BONE)
+                .requires(ModItems.WHITE_COROLLA.get())
+                .unlockedBy(getHasName(ModItems.WHITE_COROLLA.get()), has(ModItems.WHITE_COROLLA.get()))
+                .save(pWriter);
+        // 溯源苍白骨针 = 苍白骨针 + 末影珍珠 + 回响碎片
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ROOTS_PALE_BONENEEDLE.get(), 1)
+                .requires(ModItems.PALE_BONENEEDLE.get())
+                .requires(Items.ENDER_PEARL)
+                .requires(Items.ECHO_SHARD)
+                .unlockedBy(getHasName(ModItems.PALE_BONENEEDLE.get()), has(ModItems.PALE_BONENEEDLE.get()))
+                .save(pWriter);
     }
 
     // ===== 配方工具方法 =====

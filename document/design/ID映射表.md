@@ -334,6 +334,8 @@
 | `true_desert_sword`            | `chenjingmen_desert_sword`                  | 重命名，`true_desert_sword` → `chenjingmen_desert_sword`（『沉荆门』朔漠） | 客制化类 `ChenjingmenDesertSwordItem`，战技：绝地反击（基于已损生命造成额外伤害） |
 | `brokennotes_0`                | `broken_note`                               | 重命名，去除 word-glueing 和 `_0` 后缀                                  | 无需客制化类，Tooltip 通过 `AddToolTip` 添加                            |
 | `unknownnotes_0`               | `unknown_note`                              | 重命名，去除 word-glueing 和 `_0` 后缀                                  | 无需客制化类，Tooltip 通过 `AddToolTip` 添加                            |
+| `pale_boneneedle`              | `pale_boneneedle`                           | 不改                                                           | 客制化类 `PaleBoneneedleItem`，右键使用从梦维度传送至重生点                  |
+| `roots_pale_boneneedle`        | `roots_pale_boneneedle`                     | 不改                                                           | 客制化类 `RootsPaleBoneneedleItem`，潜行右键设置标记点，右键传送到标记点       |
 | `create_sword`                 | `debug_sword`                               | 重命名                                                           | 客制化类 `DebugSwordItem`                                   |
 
 

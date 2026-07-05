@@ -194,6 +194,9 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.BROKEN_NOTE.get());
         basicItem(ModItems.UNKNOWN_NOTE.get());
 
+        basicItem(ModItems.PALE_BONENEEDLE.get());
+        basicItem(ModItems.ROOTS_PALE_BONENEEDLE.get());
+
         basicItem(ModItems.DYEDREAM_COROLLA_CROP_AGE_0.get());
         basicItem(ModItems.WHITE_COROLLA_CROP_AGE_0.get());
         basicItem(ModItems.LIGHT_BALL_CROP_AGE_0.get());
