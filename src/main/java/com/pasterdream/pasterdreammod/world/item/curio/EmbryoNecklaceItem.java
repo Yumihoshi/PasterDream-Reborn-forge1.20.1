@@ -11,8 +11,8 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class EmbryoCharmItem extends Item implements ICurioItem {
-    public EmbryoCharmItem() {
+public class EmbryoNecklaceItem extends Item implements ICurioItem {
+    public EmbryoNecklaceItem() {
         super(new Item.Properties().stacksTo(1).rarity(Rarity.COMMON));
     }
     @Override
