@@ -145,6 +145,11 @@ public class ModPlacedFeatures {
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_lotus"));
 
+    // ===== 方解石尖锥 =====
+    public static final ResourceKey<PlacedFeature> CALCITE_SPIKE =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "calcite_spike"));
+
     // ===== 方解石笋 =====
     public static final ResourceKey<PlacedFeature> CALCITE_STALICRIPE =
             ResourceKey.create(Registries.PLACED_FEATURE,
@@ -294,6 +299,13 @@ public class ModPlacedFeatures {
                 cf.getOrThrow(ModConfiguredFeatures.CALCITE_BOULDER),
                 List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
                         // 避免水上生成(水深不超过0)
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
+
+        // 方解石尖锥 — 原作 stone_pillar_0/1 结构，平均每 8 区块一个
+        context.register(CALCITE_SPIKE, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.CALCITE_SPIKE),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
                         SurfaceWaterDepthFilter.forMaxDepth(0),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
 
