@@ -332,13 +332,19 @@
 | `sword_embryo_0`               | `sword_embryo`                              | 重命名，`sword_embryo_0` → `sword_embryo`（失落之剑），去 `_0` 后缀         | 直接用 `SwordItem`(Tiers.IRON)，铁质可用的剑                      |
 | `desert_sword`                 | `desert_sword`                              | 不改                                                            | 客制化类 `DesertSwordItem`，手持时获得缓慢+抗性提升效果                   |
 | `true_desert_sword`            | `chenjingmen_desert_sword`                  | 重命名，`true_desert_sword` → `chenjingmen_desert_sword`（『沉荆门』朔漠） | 客制化类 `ChenjingmenDesertSwordItem`，战技：绝地反击（基于已损生命造成额外伤害） |
-| `brokennotes_0`                | `broken_note`                               | 重命名，去除 word-glueing 和 `_0` 后缀                                  | 无需客制化类，Tooltip 通过 `AddToolTip` 添加                            |
-| `unknownnotes_0`               | `unknown_note`                              | 重命名，去除 word-glueing 和 `_0` 后缀                                  | 无需客制化类，Tooltip 通过 `AddToolTip` 添加                            |
-| `pale_boneneedle`              | `pale_boneneedle`                           | 不改                                                           | 客制化类 `PaleBoneneedleItem`，右键使用从梦维度传送至重生点                  |
-| `roots_pale_boneneedle`        | `roots_pale_boneneedle`                     | 不改                                                           | 客制化类 `RootsPaleBoneneedleItem`，潜行右键设置标记点，右键传送到标记点       |
 | `create_sword`                 | `debug_sword`                               | 重命名                                                           | 客制化类 `DebugSwordItem`                                   |
-| `embryo_charm`                 | `embryo_charm`                              | 不改                                                            | 客制化类 `EmbryoCharmItem`，实现 `ICurioItem` 可装备于 charm 插槽          |
-| `gold_charm`                   | `gold_charm`                                | 不改                                                            | 客制化类 `GoldCharmItem`，实现 `ICurioItem`，装备时使猪灵中立 + 品质提示行    |
+| `lootstable_create_0`          | `loot_generator`                            | 重命名                                                           | 客制化类 `DebugSwordItem`                                   |
+| `lootstable_create_1`          | 删除                                          | -                                                             | 客制化类 `LootGeneratorItem`                                |
+| `lootstable_create_2`          | 删除                                          | -                                                             | -                                                       |
+| `lootstable_create_3`          | 删除                                          | -                                                             | -                                                       |
+| `lootstable_create_4`          | 删除                                          | -                                                             | -                                                       |
+| `lootstable_create_5`          | 删除                                          | -                                                             | -                                                       |
+| `lootstable_create_6`          | 删除                                          | -                                                             | -                                                       |
+| `lootstable_create_7`          | 删除                                          | -                                                             | -                                                       |
+| `lootstable_create_8`          | 删除                                          | -                                                             | -                                                       |
+| `lootstable_create_9`          | 删除                                          | -                                                             | -                                                       |
+| `embryo_charm`                 | `embryo_charm`                              | 不改                                                            | 客制化类 `EmbryoCharmItem`，实现 `ICurioItem` 可装备于 charm 插槽    |
+| `gold_charm`                   | `gold_charm`                                | 不改                                                            | 客制化类 `GoldCharmItem`，实现 `ICurioItem`，装备时使猪灵中立 + 品质提示行   |
 
 
 

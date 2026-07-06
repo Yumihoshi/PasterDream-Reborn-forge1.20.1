@@ -465,6 +465,7 @@ public class ModCreativeModeTabs {
                     .displayItems((parameters, output) ->
                     {
                         output.accept(ModItems.DEBUG_SWORD.get());
+                        output.accept(ModItems.LOOT_GENERATOR.get());
                         output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get());
                         output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get());
                         output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get());

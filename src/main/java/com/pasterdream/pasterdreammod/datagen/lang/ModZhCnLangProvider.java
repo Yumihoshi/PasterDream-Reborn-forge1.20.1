@@ -317,6 +317,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.FOURLEAF_CLOVER.get(),"四叶草");
 
         add(ModItems.DEBUG_SWORD.get(), "调试之剑");
+        add(ModItems.LOOT_GENERATOR.get(), "战利品生成器");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get(), "破碎粒子提供方块0");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get(), "破碎粒子提供方块1");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get(), "破碎粒子提供方块2");
@@ -362,6 +363,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.左键方块：模拟破坏此方块", "§7左键方块：模拟破坏此方块");
         add("tooltip.pasterdream.右键实体：在聊天框打印此实体NBT", "§7右键实体：在聊天框打印此实体NBT");
         add("tooltip.pasterdream.右键方块：在聊天框打印此方块BlockState和NBT", "§7右键方块：在聊天框打印此方块BlockState和NBT");
+        add("tooltip.pasterdream.用于生成战利品，对着箱子点击右键以生成", "§7用于生成战利品，对着箱子点击右键以生成");
+        add("tooltip.pasterdream.当前设置战利品表：", "§7当前设置战利品表：");
+        add("tooltip.pasterdream.loot_table.not_set", "§7未设置");
+        add("tooltip.pasterdream.loot_generator.usage.shift", "§7对容器使用Shift+右键以在容器生成战利品");
 
         add("option.pasterdream.Q: 模拟无工具破坏", "Q: 模拟无工具破坏");
         add("option.pasterdream.W: 模拟下界合金镐破坏", "W: 模拟下界合金镐破坏");
