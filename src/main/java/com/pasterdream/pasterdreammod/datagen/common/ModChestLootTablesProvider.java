@@ -164,6 +164,10 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
                                                 UniformGenerator.between(1.0F, 5.0F))))
+                                .add(LootItem.lootTableItem(ModItems.DOUGH_WITH_EGG.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_FRUIT.get())
                                         .setWeight(2)
                                         .apply(SetItemCountFunction.setCount(
@@ -280,6 +284,10 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                 // 装备&工具，固定1抽取，不提供额外抽取次数（部分物品未加入，暂时加入已加入物品到战利品表）
                                 .setBonusRolls(ConstantValue.exactly(0.0F))
                                 .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.PALE_BONENEEDLE.get())
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
                                 .add(LootItem.lootTableItem(ModItems.MORTAR.get())
                                         .setWeight(2)
                                         .apply(SetItemCountFunction.setCount(
@@ -442,9 +450,9 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
         consumer.accept(
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/dyedream_relic_chest_loot_rare"),//原loots_relic_1
                 LootTable.lootTable()
-                        // 染梦物品，固定2抽取，幸运影响系数0.15
+                        // 染梦物品，固定1抽取，幸运影响系数0.2
                         .withPool(LootPool.lootPool()
-                                .setBonusRolls(ConstantValue.exactly(0.15F))
+                                .setBonusRolls(ConstantValue.exactly(0.2F))
                                 .setRolls(ConstantValue.exactly(2.0F))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_DUST_PIECE.get())
                                         .setWeight(4)
@@ -453,13 +461,13 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(ModItems.PINK_SLIME_BLOCK.get())
                                         .setWeight(3)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 3.0F))))
+                                                UniformGenerator.between(1.0F, 2.0F))))
                                 .add(LootItem.lootTableItem(ModItems.MELT_DREAM_COIN.get())
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 2.0F))))
+                                                UniformGenerator.between(1.0F, 3.0F))))
                                 .add(EmptyLootItem.emptyItem()
-                                        .setWeight(5))
+                                        .setWeight(9))
                         )
                         // 植物，固定2抽取，幸运影响系数0.1
                         .withPool(LootPool.lootPool()
@@ -511,10 +519,14 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
                                                 UniformGenerator.between(1.0F, 5.0F))))
+                                .add(LootItem.lootTableItem(ModItems.DOUGH_WITH_EGG.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_FRUIT.get())
                                         .setWeight(2)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 4.0F))))
+                                                UniformGenerator.between(1.0F, 3.0F))))
                                 .add(LootItem.lootTableItem(ModItems.CAKE_BASE.get())
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
@@ -576,23 +588,23 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(ModItems.POLISHED_CALCITE.get())
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 32.0F))))
+                                                UniformGenerator.between(1.0F, 24.0F))))
                                 .add(LootItem.lootTableItem(ModItems.CALCITE_TILES.get())
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 32.0F))))
+                                                UniformGenerator.between(1.0F, 24.0F))))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_QUARTZ.get())
                                         .setWeight(2)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 16.0F))))
+                                                UniformGenerator.between(1.0F, 24.0F))))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_QUARTZ_BLOCK.get())
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 32.0F))))
+                                                UniformGenerator.between(1.0F, 24.0F))))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_GLASS.get())
                                         .setWeight(2)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 32.0F))))
+                                                UniformGenerator.between(1.0F, 24.0F))))
                                 .add(LootItem.lootTableItem(ModItems.CARVE_DYEDREAM_GLASS.get())
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
@@ -612,21 +624,25 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_LOG.get())
                                         .setWeight(2)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 32.0F))))
+                                                UniformGenerator.between(1.0F, 24.0F))))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_PLANKS.get())
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 32.0F))))
+                                                UniformGenerator.between(1.0F, 24.0F))))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_SAND.get())
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 32.0F))))
+                                                UniformGenerator.between(1.0F, 24.0F))))
 
                         )
                         .withPool(LootPool.lootPool()
-                                // 装备&工具，固定1抽取，不提供额外抽取次数（部分物品未加入，暂时加入已加入物品到战利品表）
-                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                // 装备&工具，固定1抽取，幸运修正系数0.1
+                                .setBonusRolls(ConstantValue.exactly(0.1F))
                                 .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.PALE_BONENEEDLE.get())
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
                                 .add(LootItem.lootTableItem(ModItems.MORTAR.get())
                                         .setWeight(2)
                                         .apply(SetItemCountFunction.setCount(
@@ -718,7 +734,7 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                         .apply(SetItemCountFunction.setCount(
                                                 ConstantValue.exactly(1.0F))))
                                 .add(EmptyLootItem.emptyItem()
-                                        .setWeight(90))
+                                        .setWeight(80))
                         )
                         .withPool(LootPool.lootPool()
                                 // 染梦装备，固定1抽取，幸运影响系数1（概率太低了，所以加了幸运影响系数）
@@ -782,6 +798,150 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                         .setWeight(3))
                         )
 
+        );
+        consumer.accept(
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/fisherman_hut_chest"),//原loots_relic_5
+                LootTable.lootTable()
+                        // 水产，改为固定2次抽取，不受幸运影响
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                .setRolls(ConstantValue.exactly(2.0F))
+                                .add(LootItem.lootTableItem(Items.COD)
+                                        .setWeight(3)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 6.0F))))
+                                .add(LootItem.lootTableItem(Items.SALMON)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(Items.TROPICAL_FISH)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.PUFFERFISH)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.SEAGRASS)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(2.0F, 7.0F))))
+                                .add(LootItem.lootTableItem(Items.KELP)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 5.0F))))
+                                .add(LootItem.lootTableItem(Items.SEA_PICKLE)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 3.0F))))
+                        )
+                        //食材，抽取1次，无幸运修正
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.GLASS_JAR_OF_WATER.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(Items.WATER_BUCKET)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(ModItems.COARSE_SALT.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(4.0F, 8.0F))))
+                        )
+                        //杂物，抽取1次，无幸运修正
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(Items.INK_SAC)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.STRING)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.SCUTE)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.FISHING_ROD)
+                                        .setWeight(1)
+                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(
+                                                        UniformGenerator.between(10.0F, 20.0F))
+                                                .allowTreasure()))
+                                .add(LootItem.lootTableItem(Items.NAME_TAG)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(ModItems.FABRIC.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.BOOK)
+                                        .setWeight(1)
+                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(
+                                                        UniformGenerator.between(1.0F, 20.0F))
+                                                .allowTreasure()))
+                        )
+                        //真活鱼真好吃，抽取1次，无幸运修正
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.WAFER_BISCUIT.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(ModItems.STUFFED_WAFER_COOKIES.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.BEETROOT_SOUP)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.DRIED_KELP)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(Items.BREAD)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(ModItems.BREAD_SLICE.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                        )
+                        //食物，抽取1次，无幸运修正
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(Items.COD_BUCKET)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.SALMON_BUCKET)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.PUFFERFISH_BUCKET)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.TROPICAL_FISH_BUCKET)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.AXOLOTL_BUCKET)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                        )
+                // 钓鱼宝匣暂未加入
         );
     }
 }

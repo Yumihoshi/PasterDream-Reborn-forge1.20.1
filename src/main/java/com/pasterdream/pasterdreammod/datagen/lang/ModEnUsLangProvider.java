@@ -359,6 +359,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.当前设置战利品表：", "§7Current loot table settings:");
         add("tooltip.pasterdream.loot_table.not_set", "§7No set");
         add("tooltip.pasterdream.loot_generator.usage.shift", "§7Use Shift + Right Click on the container to generate loot in the container");
+
+        add("message.pasterdream.loot_generator.no_loot_table", "§cLoot generator has no loot table set");
+        add("message.pasterdream.loot_generator.not_container", "§cTarget block is not a container");
+        add("message.pasterdream.loot_generator.loot_table_not_found", "§cLoot table %s does not exist");
+        add("message.pasterdream.loot_generator.loot_table_set", "§aContainer cleared and loot table set: %s, will generate when opened");
         add("option.pasterdream.Q: 模拟无工具破坏", "Q: Simulate Break Without Tool");
         add("option.pasterdream.W: 模拟下界合金镐破坏", "W: Simulate Break With Netherite Pickaxe");
         add("option.pasterdream.E: 模拟下界合金镐时运III破坏", "E: Simulate Break With Fortune III Netherite Pickaxe");

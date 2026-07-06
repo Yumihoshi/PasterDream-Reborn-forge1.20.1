@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.init;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.blueprintwithnbt.BluePrintWithNBT;
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.dreamnoteswithnbt.DreamNotesWithNBT;
+import com.pasterdream.pasterdreammod.helper.itemwithnbt.lootgeneratorwithnbt.LootGeneratorWithNBT;
 import com.pasterdream.pasterdreammod.world.item.blueprints.AddBluePrintContentListTag;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.NBTBookRegisterToCreativeModTab;
 import net.minecraft.core.registries.Registries;
@@ -466,6 +467,10 @@ public class ModCreativeModeTabs {
                     {
                         output.accept(ModItems.DEBUG_SWORD.get());
                         output.accept(ModItems.LOOT_GENERATOR.get());
+                        output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/picnic_basket"));
+                        output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/dyedream_relic_chest_loot_common"));
+                        output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/dyedream_relic_chest_loot_rare"));
+                        output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/fisherman_hut_chest"));
                         output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get());
                         output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get());
                         output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get());

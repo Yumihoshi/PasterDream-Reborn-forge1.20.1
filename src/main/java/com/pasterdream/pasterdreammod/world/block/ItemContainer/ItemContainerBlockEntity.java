@@ -138,6 +138,18 @@ public abstract class ItemContainerBlockEntity extends BlockEntity implements Me
         }
     }
 
+    /**
+     * 设置战利品表，容器下次打开时自动生成战利品（原版结构箱子风格）
+     * @param lootTable 战利品表 ResourceLocation
+     * @param seed 随机种子，用于控制生成结果；若为 0 则自动使用方块坐标
+     */
+    public void setLootTable(@Nullable ResourceLocation lootTable, long seed)
+    {
+        this.lootTable = lootTable;
+        this.lootTableSeed = seed != 0L ? seed : this.worldPosition.asLong();
+        this.setChanged();
+    }
+
     @Override
     public void load(CompoundTag tag)
     {
