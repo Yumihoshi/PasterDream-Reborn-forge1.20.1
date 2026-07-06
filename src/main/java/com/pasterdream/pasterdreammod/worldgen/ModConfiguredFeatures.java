@@ -67,6 +67,10 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_ICE_STONE_BLOBS =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_ice_stone_blobs"));
+    // 方解石尖锥 — 原作 stone_pillar_0 / stone_pillar_1 结构的 Feature 替代
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CALCITE_SPIKE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "calcite_spike"));
     // 方解石团块 — 原作 ground_feature_dyedream_15
     public static final ResourceKey<ConfiguredFeature<?, ?>> CALCITE_BOULDER =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
@@ -348,6 +352,10 @@ public class ModConfiguredFeatures {
                         BlockPredicate.matchesBlocks(Blocks.AIR),
                         false
                 )));
+
+        // 方解石尖锥 — 原作 stone_pillar_0 / stone_pillar_1 结构, 使用自定义 CalciteSpikeFeature
+        context.register(CALCITE_SPIKE, new ConfiguredFeature<>(ModFeatures.CALCITE_SPIKE.get(),
+                NoneFeatureConfiguration.INSTANCE));
 
         // 雪块底水池 — 原作 ground_feature_dyedream_1
         context.register(SNOWY_WATER_POOL, new ConfiguredFeature<>(Feature.LAKE,

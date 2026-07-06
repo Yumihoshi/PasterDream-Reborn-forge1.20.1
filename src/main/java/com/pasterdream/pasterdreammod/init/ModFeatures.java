@@ -1,9 +1,11 @@
 package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.worldgen.feature.CalciteSpikeFeature;
 import com.pasterdream.pasterdreammod.worldgen.feature.PinkHugeMushroomFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -17,6 +19,10 @@ public class ModFeatures {
     public static final RegistryObject<Feature<HugeMushroomFeatureConfiguration>> PINK_HUGE_MUSHROOM =
             FEATURES.register("pink_huge_mushroom",
                     () -> new PinkHugeMushroomFeature(HugeMushroomFeatureConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> CALCITE_SPIKE =
+            FEATURES.register("calcite_spike",
+                    () -> new CalciteSpikeFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
