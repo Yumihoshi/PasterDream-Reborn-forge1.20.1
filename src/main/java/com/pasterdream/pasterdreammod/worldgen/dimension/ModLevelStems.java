@@ -58,75 +58,79 @@ public class ModLevelStems {
         Holder<DimensionType> dimType = dimensionTypes.getOrThrow(ModDimensionTypes.DYEDREAM_WORLD);
         Holder<NoiseGeneratorSettings> dimNoise = noiseSettings.getOrThrow(ModNoiseSettings.DYEDREAM_WORLD);
 
-        // 多噪声群系源（按温度/湿度/大陆性/侵蚀/怪异度分布群系）
-        // 格式: [temperature, humidity, continentalness, erosion, weirdness], depth, offset
-        Climate.ParameterList<Holder<Biome>> biomeParams = new Climate.ParameterList<>(List.of(
-                // 染梦平原 — 原作: T[-0.35,0.1] H[-0.1,0.3] C[-0.11,0.5] E[-0.19,0.3] W[-0.85,0.2]
+        // 多噪声群系源 — 参数值域[-2,2]，大陆性C是海洋/陆地的唯一区分维度
+        //  群系     温度          湿度          大陆性         侵蚀          怪异度
+        //  冻洋  T[-2.0,2.0]  H[-2.0,2.0]  C[-2.0,-0.19]  E[-2.0,2.0]  W[-2.0,-0.5]
+        //  暖洋  T[-2.0,2.0]  H[-2.0,2.0]  C[-2.0,-0.19]  E[-2.0,2.0]  W[-0.5, 2.0]
+        //  雪原  T[-2.0,-0.5] H[-2.0,0.5]  C[-0.19,2.0]  E[-0.5,2.0]  W[-2.0,2.0]
+        //  平原  T[-0.7,0.7]  H[-2.0,2.0]  C[-0.19,2.0]  E[-2.0,2.0]  W[-2.0,2.0]
+        //  菇山  T[ 0.5,2.0]  H[-0.5,2.0]  C[-0.19,2.0]  E[-0.5,2.0]  W[-2.0,2.0]
+        //  估算占比: 冻洋~17% 暖洋~28% 雪原~13% 平原~30% 菇山~13%
+        Climate.ParameterList<Holder<Biome>> biomeParams = new Climate.ParameterList<>(List.<Pair<Climate.ParameterPoint, Holder<Biome>>>of(
+                // 染梦冻洋 — 暖/寒海域由怪异度[-2.0,-0.5]定义
                 Pair.of(
                         new Climate.ParameterPoint(
-                                Climate.Parameter.span(-0.35F, 0.1F),
-                                Climate.Parameter.span(-0.0999F, 0.3F),
-                                Climate.Parameter.span(-0.11F, 0.5F),
-                                Climate.Parameter.span(-0.19F, 0.3F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
+                                Climate.Parameter.span(-2.0F, -0.19F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
                                 Climate.Parameter.point(0.0F),
-                                Climate.Parameter.span(-0.85F, 0.2F),
-                                0L
-                        ),
-                        dyedreamPlains
-                ),
-                // 粉顶菇山地 — 原作: T[0.1,0.5] H[0.3,1.2] C[0.5,1.2] E[0.25,0.7] W[0.2,0.6]
-                Pair.of(
-                        new Climate.ParameterPoint(
-                                Climate.Parameter.span(0.1F, 0.5F),
-                                Climate.Parameter.span(0.3F, 1.2F),
-                                Climate.Parameter.span(0.5F, 1.2F),
-                                Climate.Parameter.span(0.25F, 0.7F),
-                                Climate.Parameter.point(0.0F),
-                                Climate.Parameter.span(0.2F, 0.6F),
-                                0L
-                        ),
-                        dyedreamMushroomMountains
-                ),
-                // 染梦雪原 — 原作: T[-1.5,-0.4] H[-0.35,-0.1] C[0.2,0.5] E[0.7,1.0] W[0.2,1.0]
-                // 注：已适当扩大范围避免群系过于零碎
-                Pair.of(
-                        new Climate.ParameterPoint(
-                                Climate.Parameter.span(-1.2F, -0.15F),
-                                Climate.Parameter.span(-0.4F, 0.2F),
-                                Climate.Parameter.span(0.05F, 0.55F),
-                                Climate.Parameter.span(0.35F, 1.0F),
-                                Climate.Parameter.point(0.0F),
-                                Climate.Parameter.span(0.0F, 1.0F),
-                                0L
-                        ),
-                        dyedreamSnowyPlains
-                ),
-                // 染梦冻洋 — 原作: T[0.5,1.0] H[-1,1] C[-1.05,-0.11] E[-1,1] W[-1,-0.85]
-                // 注：continentalness 限定海洋范围[-1.05,-0.19]，不再与平原海岸线重叠
-                Pair.of(
-                        new Climate.ParameterPoint(
-                                Climate.Parameter.span(0.5F, 1.0F),
-                                Climate.Parameter.span(-1.0F, 1.0F),
-                                Climate.Parameter.span(-1.05F, -0.19F),
-                                Climate.Parameter.span(-1.0F, 1.0F),
-                                Climate.Parameter.point(0.0F),
-                                Climate.Parameter.span(-1.0F, -0.85F),
+                                Climate.Parameter.span(-2.0F, -0.5F),
                                 0L
                         ),
                         dyedreamFrozenOcean
                 ),
-                // 染梦海洋 — 与冻洋争夺海洋空间，weirdness 相邻区间
+                // 染梦海洋 — 怪异度[-0.5,2.0]与冻洋互补
                 Pair.of(
                         new Climate.ParameterPoint(
-                                Climate.Parameter.span(0.5F, 1.0F),
-                                Climate.Parameter.span(-1.0F, 1.0F),
-                                Climate.Parameter.span(-1.05F, -0.19F),
-                                Climate.Parameter.span(-1.0F, 1.0F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
+                                Climate.Parameter.span(-2.0F, -0.19F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
                                 Climate.Parameter.point(0.0F),
-                                Climate.Parameter.span(-0.45F, 0.0F),
+                                Climate.Parameter.span(-0.5F, 2.0F),
                                 0L
                         ),
                         dyedreamOcean
+                ),
+                // 染梦雪原 — 寒冷陆地 T[-2.0,-0.5] H[-2.0,0.5] E[-0.5,2.0]
+                Pair.of(
+                        new Climate.ParameterPoint(
+                                Climate.Parameter.span(-2.0F, -0.5F),
+                                Climate.Parameter.span(-2.0F, 0.5F),
+                                Climate.Parameter.span(-0.19F, 2.0F),
+                                Climate.Parameter.span(-0.5F, 2.0F),
+                                Climate.Parameter.point(0.0F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
+                                0L
+                        ),
+                        dyedreamSnowyPlains
+                ),
+                // 染梦平原 — 陆地主体 T[-0.7,0.7] H[-2.0,2.0] E[-2.0,2.0]
+                Pair.of(
+                        new Climate.ParameterPoint(
+                                Climate.Parameter.span(-0.7F, 0.7F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
+                                Climate.Parameter.span(-0.19F, 2.0F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
+                                Climate.Parameter.point(0.0F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
+                                0L
+                        ),
+                        dyedreamPlains
+                ),
+                // 粉顶菇山地 — 温暖高地 T[0.5,2.0] H[-0.5,2.0] E[-0.5,2.0]
+                Pair.of(
+                        new Climate.ParameterPoint(
+                                Climate.Parameter.span(0.5F, 2.0F),
+                                Climate.Parameter.span(-0.5F, 2.0F),
+                                Climate.Parameter.span(-0.19F, 2.0F),
+                                Climate.Parameter.span(-0.5F, 2.0F),
+                                Climate.Parameter.point(0.0F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
+                                0L
+                        ),
+                        dyedreamMushroomMountains
                 )
         ));
         MultiNoiseBiomeSource biomeSource = createMultiNoiseSource(biomeParams);
