@@ -21,7 +21,7 @@ public class DyedreamLilyPadBlock extends FlowerBlock {
     public DyedreamLilyPadBlock() {
         super(() -> MobEffects.WATER_BREATHING, 100,
                 BlockBehaviour.Properties.of()
-                        .mapColor(MapColor.PLANT)
+                        .mapColor(MapColor.COLOR_PINK)
                         .sound(SoundType.LILY_PAD)
                         .instabreak()
                         .noCollission()
