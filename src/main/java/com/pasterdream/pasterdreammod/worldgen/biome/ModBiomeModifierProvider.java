@@ -72,18 +72,26 @@ public class ModBiomeModifierProvider implements DataProvider
             addPatch(entries, "dyedream_lily_pad_biome_modifier", ModPlacedFeatures.DYEDREAM_LILY_PAD_PATCH, featureLookup, dyedreamWorldTag);
             addPatch(entries, "dyedream_lotus_biome_modifier", ModPlacedFeatures.DYEDREAM_LOTUS_PATCH, featureLookup, dyedreamWorldTag);
 
+            // 方解石尖锥 — 表面结构 step
+            addFeature(entries, "calcite_spike", ModPlacedFeatures.CALCITE_SPIKE, featureLookup, dyedreamWorldTag, GenerationStep.Decoration.SURFACE_STRUCTURES);
+
             return saveAll(cache, entries);
         });
     }
 
     private void addPatch(Map<ResourceLocation, JsonObject> map, String name, ResourceKey<PlacedFeature> featureKey, HolderLookup.RegistryLookup<PlacedFeature> featureLookup, TagKey<Biome> biomeTag)
     {
+        addFeature(map, name, featureKey, featureLookup, biomeTag, GenerationStep.Decoration.VEGETAL_DECORATION);
+    }
+
+    private void addFeature(Map<ResourceLocation, JsonObject> map, String name, ResourceKey<PlacedFeature> featureKey, HolderLookup.RegistryLookup<PlacedFeature> featureLookup, TagKey<Biome> biomeTag, GenerationStep.Decoration step)
+    {
         ResourceLocation featureId = featureKey.location();
         JsonObject json = new JsonObject();
         json.addProperty("type", "forge:add_features");
         json.addProperty("biomes", "#" + biomeTag.location());
         json.addProperty("features", featureId.toString());
-        json.addProperty("step", GenerationStep.Decoration.VEGETAL_DECORATION.getName());
+        json.addProperty("step", step.getName());
         map.put(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name), json);
     }
 
