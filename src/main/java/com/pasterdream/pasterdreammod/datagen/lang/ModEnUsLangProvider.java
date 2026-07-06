@@ -514,5 +514,17 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.EMBRYO_CHARM.get(), "Embryo Charm");
         add(ModItems.GOLD_CHARM.get(), "Gold Charm");
         add("tooltip.pasterdream.gold_charm.piglin", "§7▪ §9Makes piglins neutral");
+        //Necklaces
+        add(ModItems.EMBRYO_NECKLACE.get(), "Embryo Necklace");
+        //Rings
+        add(ModItems.EMBRYO_RING.get(), "Embryo Ring");
+        //Belts
+        add(ModItems.EMBRYO_BELT.get(), "Embryo Belt");
+        //Embryo
+        add("tooltip.pasterdream.embryo.tooltip1", "§f▪ §7Introduction");
+        add("tooltip.pasterdream.embryo.tooltip2", "§7A curios embryo made from titanium and soul essence");
+        add("tooltip.pasterdream.embryo.tooltip3", "§7Using titanium's life affinity and the spiritual connection of soul essence");
+        add("tooltip.pasterdream.embryo.tooltip4", "§7Allow you to strengthen yourself through accessories made from physical materials");
+        add("tooltip.pasterdream.embryo.hold_shift", "§7Hold [§rShift§7] to view the description");
     }
 }

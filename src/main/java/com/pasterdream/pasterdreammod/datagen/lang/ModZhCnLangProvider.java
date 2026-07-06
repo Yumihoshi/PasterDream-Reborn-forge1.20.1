@@ -633,9 +633,22 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("rarity.pasterdream.miracle", "神迹");
         add("tooltip.pasterdream.quality", "品质: %s %s");
 
-        // 饰品
+        // 护符
         add(ModItems.EMBRYO_CHARM.get(), "护身符原胚");
         add(ModItems.GOLD_CHARM.get(), "纯金护身符");
         add("tooltip.pasterdream.gold_charm.piglin", "§7▪ §9使猪灵保持中立");
+        // 项链
+        add(ModItems.EMBRYO_NECKLACE.get(), "项链原胚");
+        // 戒指
+        add(ModItems.EMBRYO_RING.get(), "戒指原胚");
+        // 腰带
+        add(ModItems.EMBRYO_BELT.get(), "腰带原胚");
+
+        //原胚
+        add("tooltip.pasterdream.embryo.tooltip1", "§f▪ §7简介");
+        add("tooltip.pasterdream.embryo.tooltip2", "§7钛金属和灵魂精华而制作的饰品原胚");
+        add("tooltip.pasterdream.embryo.tooltip3", "§7利用钛的生命亲和性和灵魂精华的精神连携作用");
+        add("tooltip.pasterdream.embryo.tooltip4", "§7使得可以通过用物质实体制作成的饰品来强化自身");
+        add("tooltip.pasterdream.embryo.hold_shift", "§7按住[§rShift§7]键查看简介");
     }
 }

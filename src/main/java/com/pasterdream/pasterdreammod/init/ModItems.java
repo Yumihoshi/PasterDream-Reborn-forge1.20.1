@@ -13,6 +13,7 @@ import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.T
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
 import com.pasterdream.pasterdreammod.world.item.BlueDewItem;
 import com.pasterdream.pasterdreammod.world.item.RedDewItem;
+import com.pasterdream.pasterdreammod.world.item.curio.*;
 import com.pasterdream.pasterdreammod.world.item.debugsword.DebugSwordItem;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.DreamNotesItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDrinkItem;
@@ -39,8 +40,6 @@ import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
 import com.pasterdream.pasterdreammod.world.item.PaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.PliersItem;
 import com.pasterdream.pasterdreammod.world.item.RootsPaleBoneneedleItem;
-import com.pasterdream.pasterdreammod.world.item.curio.GoldCharmItem;
-import com.pasterdream.pasterdreammod.world.item.curio.EmbryoCharmItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -587,11 +586,23 @@ public class ModItems {
     public static final RegistryObject<Item> BROKEN_NOTE = ITEMS.register("broken_note", () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
     public static final RegistryObject<Item> UNKNOWN_NOTE = ITEMS.register("unknown_note", () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
 
-    // ===== 饰品 =====
+    // ===== 饰品（护符） =====
     public static final RegistryObject<Item> EMBRYO_CHARM = ITEMS.register("embryo_charm",
             EmbryoCharmItem::new);
     public static final RegistryObject<Item> GOLD_CHARM = ITEMS.register("gold_charm",
             GoldCharmItem::new);
+
+    // ===== 饰品（项链） =====
+    public static final RegistryObject<Item> EMBRYO_NECKLACE = ITEMS.register("embryo_necklace",
+            EmbryoNecklaceItem::new);
+
+    // ===== 饰品（戒指） =====
+    public static final RegistryObject<Item> EMBRYO_RING = ITEMS.register("embryo_ring",
+            EmbryoRingItem::new);
+
+    // ===== 饰品（腰带） =====
+    public static final RegistryObject<Item> EMBRYO_BELT = ITEMS.register("embryo_belt",
+            EmbryoBeltItem::new);
 
     // ===== 方块物品 =====
 

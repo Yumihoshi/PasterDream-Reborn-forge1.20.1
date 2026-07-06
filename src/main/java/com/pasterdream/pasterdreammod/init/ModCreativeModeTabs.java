@@ -150,6 +150,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ROOTS_PALE_BONENEEDLE.get());
                         // 饰品
                         output.accept(ModItems.EMBRYO_CHARM.get());
+                        output.accept(ModItems.EMBRYO_NECKLACE.get());
+                        output.accept(ModItems.EMBRYO_RING.get());
+                        output.accept(ModItems.EMBRYO_BELT.get());
                     })
                     .build());
 
