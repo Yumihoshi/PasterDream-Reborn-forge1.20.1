@@ -1,10 +1,10 @@
 package com.pasterdream.pasterdreammod.world.item.lootgenerator;
 
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.IItemContainerInventory;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.ItemContainerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -14,16 +14,13 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.Nullable;
-
 import java.util.List;
+import java.util.Random;
 
 public class LootGeneratorItem extends Item
 {
@@ -89,7 +86,18 @@ public class LootGeneratorItem extends Item
                 return InteractionResult.FAIL;
             }
 
-            IItemHandler itemHandler = getItemHandler(level, pos, context.getClickedFace());
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity == null)
+            {
+                if (!level.isClientSide)
+                {
+                    player.displayClientMessage(
+                            Component.translatable("message.pasterdream.loot_generator.not_container"), true);
+                }
+                return InteractionResult.FAIL;
+            }
+
+            IItemHandler itemHandler = getItemHandler(blockEntity, context.getClickedFace());
             if (itemHandler == null)
             {
                 if (!level.isClientSide)
@@ -102,8 +110,8 @@ public class LootGeneratorItem extends Item
 
             if (!level.isClientSide)
             {
-                LootTable loottable = level.getServer().getLootData().getLootTable(lootTableRL);
-                if (loottable == LootTable.EMPTY)
+                // 检查战利品表是否存在
+                if (level.getServer().getLootData().getLootTable(lootTableRL) == LootTable.EMPTY)
                 {
                     player.displayClientMessage(
                             Component.translatable("message.pasterdream.loot_generator.loot_table_not_found",
@@ -111,28 +119,14 @@ public class LootGeneratorItem extends Item
                     return InteractionResult.FAIL;
                 }
 
-                LootParams.Builder paramsBuilder = new LootParams.Builder((ServerLevel) level)
-                        .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos));
-                if (player != null)
-                {
-                    paramsBuilder.withLuck(player.getLuck())
-                            .withParameter(LootContextParams.THIS_ENTITY, player);
-                }
-                LootParams params = paramsBuilder.create(LootContextParamSets.CHEST);
-                List<ItemStack> items = loottable.getRandomItems(params);
-
-                for (ItemStack lootStack : items)
-                {
-                    if (lootStack.isEmpty()) continue;
-                    for (int slot = 0; slot < itemHandler.getSlots(); slot++)
-                    {
-                        lootStack = itemHandler.insertItem(slot, lootStack, false);
-                        if (lootStack.isEmpty()) break;
-                    }
-                }
+                // 清空容器 + 写入 LootTable NBT
+                clearContainer(itemHandler);
+                long randomSeed = new Random().nextLong();
+                setContainerLootTable(blockEntity, lootTableRL, randomSeed);
 
                 player.displayClientMessage(
-                        Component.translatable("message.pasterdream.loot_generator.loot_generated"), true);
+                        Component.translatable("message.pasterdream.loot_generator.loot_table_set",
+                                lootTableRL.toString()), true);
             }
 
             return InteractionResult.sidedSuccess(level.isClientSide);
@@ -142,20 +136,45 @@ public class LootGeneratorItem extends Item
     }
 
     /**
-     * 尝试从目标方块获取 IItemHandler，优先使用模组自己的容器接口，其次使用 Forge 能力系统
+     * 尝试从方块实体获取 IItemHandler
      */
     @Nullable
-    private static IItemHandler getItemHandler(Level level, BlockPos pos, net.minecraft.core.Direction side)
+    private static IItemHandler getItemHandler(BlockEntity blockEntity, net.minecraft.core.Direction side)
     {
-        BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity == null) return null;
-
         if (blockEntity instanceof IItemContainerInventory containerInventory)
         {
             return containerInventory.getItemHandler();
         }
-
         return blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER, side).orElse(null);
+    }
+
+    /**
+     * 清空容器所有槽位的物品
+     */
+    private static void clearContainer(IItemHandler itemHandler)
+    {
+        for (int slot = 0; slot < itemHandler.getSlots(); slot++)
+        {
+            ItemStack stackInSlot = itemHandler.getStackInSlot(slot);
+            if (!stackInSlot.isEmpty())
+            {
+                itemHandler.extractItem(slot, stackInSlot.getCount(), false);
+            }
+        }
+    }
+    /**
+     * 为容器写入 LootTable NBT 标签（原版结构箱子风格），容器下次打开时自动生成战利品
+     */
+    private static void setContainerLootTable(BlockEntity blockEntity, ResourceLocation lootTable, long seed)
+    {
+        if (blockEntity instanceof ItemContainerBlockEntity modContainer)
+        {
+            modContainer.setLootTable(lootTable, seed);
+        }
+        else if (blockEntity instanceof RandomizableContainerBlockEntity vanillaContainer)
+        {
+            vanillaContainer.setLootTable(lootTable, seed);
+        }
     }
 
     @Override
