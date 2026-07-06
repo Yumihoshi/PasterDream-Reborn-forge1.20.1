@@ -213,6 +213,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.GOLD_CHARM.get());
 
         basicItem(ModItems.DEBUG_SWORD.get());
+        basicItem(ModItems.LOOT_GENERATOR.get());
 
         withExistingParent(ModItems.PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/pink_mushroom"));
