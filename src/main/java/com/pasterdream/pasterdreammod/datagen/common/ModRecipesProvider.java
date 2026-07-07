@@ -97,6 +97,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         calciteRecipes(pWriter);
         foodRecipes(pWriter);
         othersRecipes(pWriter);
+        curioRecipes(pWriter);
     }
 
     // ===== 染梦木建材配方 =====
@@ -1721,6 +1722,10 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.PALE_BONENEEDLE.get()), has(ModItems.PALE_BONENEEDLE.get()))
                 .save(pWriter);
 
+    }
+
+    // ===== 饰品配方 =====
+    private void curioRecipes(Consumer<FinishedRecipe> pWriter) {
         // 护身符原胚 = 线 + 灵魂精华 + 钛金粒
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMBRYO_CHARM.get(), 1)
                 .pattern("a")
@@ -1732,11 +1737,69 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.SOUL_ESSENCE.get()), has(ModItems.SOUL_ESSENCE.get()))
                 .save(pWriter);
 
+        // 项链原胚 = 钛金粒 ×5 + 灵魂精华
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMBRYO_NECKLACE.get(), 1)
+                .pattern("aaa")
+                .pattern("a a")
+                .pattern(" b ")
+                .define('a', ModItems.TITANIUM_NUGGET.get())
+                .define('b', ModItems.SOUL_ESSENCE.get())
+                .unlockedBy(getHasName(ModItems.SOUL_ESSENCE.get()), has(ModItems.SOUL_ESSENCE.get()))
+                .save(pWriter);
+
+        // 戒指原胚 = 钛金粒 ×3 + 灵魂精华
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMBRYO_RING.get(), 1)
+                .pattern(" a ")
+                .pattern("b b")
+                .pattern(" b ")
+                .define('a', ModItems.SOUL_ESSENCE.get())
+                .define('b', ModItems.TITANIUM_NUGGET.get())
+                .unlockedBy(getHasName(ModItems.SOUL_ESSENCE.get()), has(ModItems.SOUL_ESSENCE.get()))
+                .save(pWriter);
+
+        // 腰带原胚 = 钛金粒 ×5 + 灵魂精华
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMBRYO_BELT.get(), 1)
+                .pattern("aaa")
+                .pattern("aba")
+                .define('a', ModItems.TITANIUM_NUGGET.get())
+                .define('b', ModItems.SOUL_ESSENCE.get())
+                .unlockedBy(getHasName(ModItems.SOUL_ESSENCE.get()), has(ModItems.SOUL_ESSENCE.get()))
+                .save(pWriter);
+
         // 纯金护身符 = 护身符原胚 + 金锭
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GOLD_CHARM.get(), 1)
                 .requires(ModItems.EMBRYO_CHARM.get())
                 .requires(Items.GOLD_INGOT)
                 .unlockedBy(getHasName(ModItems.EMBRYO_CHARM.get()), has(ModItems.EMBRYO_CHARM.get()))
+                .save(pWriter);
+
+        // 业火项链 = 项链原胚 + 炙焰金锭 + 烈焰棒 + 烈焰花
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.FIRE_NECKLACE.get(), 1)
+                .requires(ModItems.EMBRYO_NECKLACE.get())
+                .requires(ModItems.MOLTEN_GOLD_INGOT.get())
+                .requires(Items.BLAZE_ROD)
+                .requires(ModItems.BLAZE_FLOWER.get())
+                .unlockedBy(getHasName(ModItems.EMBRYO_NECKLACE.get()), has(ModItems.EMBRYO_NECKLACE.get()))
+                .save(pWriter);
+
+        // 生命项链 = 项链原胚 + 金锭 + 鲜红露滴 + 粉心形巧克力 + 染梦染料
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.HEALTH_NECKLACE.get(), 1)
+                .requires(ModItems.EMBRYO_NECKLACE.get())
+                .requires(Items.GOLD_INGOT)
+                .requires(ModItems.RED_DEW.get())
+                .requires(ModItems.PINK_HEART_CHOCOLATE.get())
+                .requires(ModItems.DYEDREAM_DYE.get())
+                .unlockedBy(getHasName(ModItems.EMBRYO_NECKLACE.get()), has(ModItems.EMBRYO_NECKLACE.get()))
+                .save(pWriter);
+
+        // 雪兔脚项链 = 项链原胚 + 兔子脚 + 细雪桶 + 钻石 + 下界疣
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RABBIT_FOOT_NECKLACE.get(), 1)
+                .requires(ModItems.EMBRYO_NECKLACE.get())
+                .requires(Items.RABBIT_FOOT)
+                .requires(Items.POWDER_SNOW_BUCKET)
+                .requires(Items.DIAMOND)
+                .requires(Items.NETHER_WART)
+                .unlockedBy(getHasName(ModItems.EMBRYO_NECKLACE.get()), has(ModItems.EMBRYO_NECKLACE.get()))
                 .save(pWriter);
     }
 

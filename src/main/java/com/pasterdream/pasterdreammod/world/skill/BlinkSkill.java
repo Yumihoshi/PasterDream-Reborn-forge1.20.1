@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
 
-public class TeleportationSkill {
+public class BlinkSkill {
 
     public static void execute(Player player) {
         if (player == null || player.level().isClientSide()) return;
@@ -18,9 +18,9 @@ public class TeleportationSkill {
 
         if (!creative) {
             if (player.getFoodData().getFoodLevel() <= 6) return;
-            if (player.hasEffect(ModEffects.TELEPORTATION_COOLDOWN.get())) return;
+            if (player.hasEffect(ModEffects.BLINK_COOLDOWN.get())) return;
 
-            double consume = getAttributeValue(player, ModAttributes.TELEPORTATION_CONSUME.get(), 1.0);
+            double consume = getAttributeValue(player, ModAttributes.BLINK_CONSUME.get(), 1.0);
             player.causeFoodExhaustion((float) (3 * consume));
 
             doDisplacement(player);
@@ -33,7 +33,7 @@ public class TeleportationSkill {
     }
 
     private static void doDisplacement(Player player) {
-        double range = getAttributeValue(player, ModAttributes.TELEPORTATION_RANGE.get(), 1.0);
+        double range = getAttributeValue(player, ModAttributes.BLINK_RANGE.get(), 1.0);
         Vec3 look = player.getLookAngle();
         Vec3 delta;
 
@@ -52,18 +52,17 @@ public class TeleportationSkill {
     }
 
     private static void applyCooldown(Player player) {
-        double cd = getAttributeValue(player, ModAttributes.TELEPORTATION_CD.get(), 1.0);
+        double cd = getAttributeValue(player, ModAttributes.BLINK_CD.get(), 1.0);
         boolean hasElytra = player.getItemBySlot(EquipmentSlot.CHEST).is(Items.ELYTRA);
         // TODO: also check for 波波鸡饰品 (boboji) when ported
         int duration = hasElytra ? (int) (100 * cd) : (int) (50 * cd);
-        player.addEffect(new MobEffectInstance(ModEffects.TELEPORTATION_COOLDOWN.get(), duration, 0,
+        player.addEffect(new MobEffectInstance(ModEffects.BLINK_COOLDOWN.get(), duration, 0,
                 false, false));
     }
 
     private static void applyEvasionBuff(Player player) {
         player.addEffect(new MobEffectInstance(ModEffects.EVASION_BUFF.get(), 6, 0,
                 false, false));
-        // TODO: extend duration when 十字项链/回避衣装 is equipped
     }
 
     private static double getAttributeValue(Player player, net.minecraft.world.entity.ai.attributes.Attribute attr, double fallback) {

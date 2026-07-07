@@ -1,6 +1,6 @@
 package com.pasterdream.pasterdreammod.init;
 
-import com.pasterdream.pasterdreammod.network.skill.TeleportationPacket;
+import com.pasterdream.pasterdreammod.network.skill.BlinkPacket;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
@@ -13,12 +13,12 @@ import org.lwjgl.glfw.GLFW;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModKeyMappings {
 
-    public static final KeyMapping TELEPORTATION = new KeyMapping(
-            "key.pasterdream.teleportation", GLFW.GLFW_KEY_C, "key.categories.pasterdream");
+    public static final KeyMapping BLINK = new KeyMapping(
+            "key.pasterdream.blink", GLFW.GLFW_KEY_C, "key.categories.pasterdream");
 
     @SubscribeEvent
     public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
-        event.register(TELEPORTATION);
+        event.register(BLINK);
     }
 
     @Mod.EventBusSubscriber({Dist.CLIENT})
@@ -26,8 +26,8 @@ public class ModKeyMappings {
         @SubscribeEvent
         public static void onClientTick(TickEvent.ClientTickEvent event) {
             if (Minecraft.getInstance().screen == null && Minecraft.getInstance().player != null) {
-                while (ModKeyMappings.TELEPORTATION.consumeClick()) {
-                    ModNetwork.CHANNEL.sendToServer(new TeleportationPacket());
+                while (ModKeyMappings.BLINK.consumeClick()) {
+                    ModNetwork.CHANNEL.sendToServer(new BlinkPacket());
                 }
             }
         }

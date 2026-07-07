@@ -232,6 +232,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHENJINGMEN_DESERT_SWORD.get());
                         // 饰品
                         output.accept(ModItems.GOLD_CHARM.get());
+                        output.accept(ModItems.RABBIT_FOOT_NECKLACE.get());
+                        output.accept(ModItems.FEATHER_NECKLACE.get());
+                        output.accept(ModItems.HEALTH_NECKLACE.get());
+                        output.accept(ModItems.FIRE_NECKLACE.get());
+                        output.accept(ModItems.CROSS_NECKLACE.get());
                     })
                     .build());
 
