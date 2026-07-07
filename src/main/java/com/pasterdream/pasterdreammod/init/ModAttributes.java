@@ -28,6 +28,10 @@ public class ModAttributes {
             ATTRIBUTES.register("teleportation_range", () -> new RangedAttribute(
                     "attribute.pasterdream.teleportation_range", 1.0, 0.0, 10.0).setSyncable(true));
 
+    public static final RegistryObject<Attribute> SAN_VARIABILITY =
+            ATTRIBUTES.register("san_variability", () -> new RangedAttribute(
+                    "attribute.pasterdream.san_variability", 0.0, -120000.0, 120000.0).setSyncable(true));
+
     public static void register(IEventBus eventBus) {
         ATTRIBUTES.register(eventBus);
     }
@@ -37,5 +41,6 @@ public class ModAttributes {
         event.add(EntityType.PLAYER, TELEPORTATION_CD.get());
         event.add(EntityType.PLAYER, TELEPORTATION_CONSUME.get());
         event.add(EntityType.PLAYER, TELEPORTATION_RANGE.get());
+        event.add(EntityType.PLAYER, SAN_VARIABILITY.get());
     }
 }
