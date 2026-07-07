@@ -1,10 +1,11 @@
 package com.pasterdream.pasterdreammod.world.item.curio;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
 import com.pasterdream.pasterdreammod.world.item.ModRarities;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
@@ -26,11 +27,32 @@ public class HealthNecklaceItem extends Item implements ICurioItem {
     }
 
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> modifiers = HashMultimap.create();
-        modifiers.put(Attributes.MAX_HEALTH,
-                new AttributeModifier(HEALTH_UUID, "Health necklace max health", 4.0, AttributeModifier.Operation.ADDITION));
-        return modifiers;
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        if (slotContext.entity() != null) {
+            AttributeInstance health = slotContext.entity().getAttribute(Attributes.MAX_HEALTH);
+            if (health != null) {
+                health.addPermanentModifier(new AttributeModifier(HEALTH_UUID,
+                        "Health necklace max health", 2.0, AttributeModifier.Operation.ADDITION));
+            }
+        }
+    }
+
+    @Override
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        if (slotContext.entity() != null) {
+            AttributeInstance health = slotContext.entity().getAttribute(Attributes.MAX_HEALTH);
+            if (health != null) {
+                health.removeModifier(HEALTH_UUID);
+            }
+        }
+    }
+
+    @Override
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        LivingEntity entity = slotContext.entity();
+        if (entity == null || entity.level().isClientSide()) return;
+
+        entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 2, 0, false, false));
     }
 
     @Override
@@ -46,5 +68,7 @@ public class HealthNecklaceItem extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> list, TooltipFlag flag) {
         list.add(ModRarities.qualityTooltip(ModRarities.EXCELLENT));
+        list.add(Component.translatable("tooltip.pasterdream.health_necklace.effect1"));
+        list.add(Component.translatable("tooltip.pasterdream.health_necklace.effect2"));
     }
 }

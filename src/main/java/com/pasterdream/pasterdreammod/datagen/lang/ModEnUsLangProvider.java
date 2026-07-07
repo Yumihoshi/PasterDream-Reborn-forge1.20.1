@@ -559,6 +559,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.feather_necklace.effect1", "§7▪ §9-0.05 Blink Consumption");
         add("tooltip.pasterdream.feather_necklace.effect2", "§7▪ §9+0.2 Blink Range");
         add(ModItems.HEALTH_NECKLACE.get(), "Health Necklace");
+        add("tooltip.pasterdream.health_necklace.effect1", "§7▪ §9+2 Max Health");
+        add("tooltip.pasterdream.health_necklace.effect2", "§7▪ §9Grants Regeneration I");
         add(ModItems.FIRE_NECKLACE.get(), "Fire Necklace");
         add("tooltip.pasterdream.fire_necklace.effect1", "§7▪ §9Leaves a trail of fire while walking");
         add("tooltip.pasterdream.fire_necklace.effect2", "§7▪ §9Grants Haste II while on fire");

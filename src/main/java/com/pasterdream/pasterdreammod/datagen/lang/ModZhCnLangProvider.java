@@ -682,6 +682,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.feather_necklace.effect1", "§7▪ §9-0.05 瞬身术消耗");
         add("tooltip.pasterdream.feather_necklace.effect2", "§7▪ §9+0.2 瞬身术距离");
         add(ModItems.HEALTH_NECKLACE.get(), "生命项链");
+        add("tooltip.pasterdream.health_necklace.effect1", "§7▪ §9+2最大生命值");
+        add("tooltip.pasterdream.health_necklace.effect2", "§7▪ §9获得生命恢复I");
         add(ModItems.FIRE_NECKLACE.get(), "业火项链");
         add("tooltip.pasterdream.fire_necklace.effect1", "§7▪ §9行走会留下火焰");
         add("tooltip.pasterdream.fire_necklace.effect2", "§7▪ §9处于燃烧状态下获得急迫II效果");
