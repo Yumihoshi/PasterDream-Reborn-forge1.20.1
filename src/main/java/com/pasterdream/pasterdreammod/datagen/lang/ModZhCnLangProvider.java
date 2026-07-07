@@ -642,6 +642,15 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.SEA_CHARM.get(), "海波护身符");
         add(ModItems.CARAPAX_CHARM.get(), "龟壳护身符");
         add(ModItems.WORLDTREE_SEEDPOD.get(), "世界树种荚");
+        add(ModItems.GARLAND.get(), "花环");
+        add(ModItems.FOURLEAF_CLOVER_CURIO.get(), "幸运四叶草");
+        add("tooltip.pasterdream.fourleaf_clover_curio.flavor", "§7§o哪片叶子代表着幸运？");
+        add(ModItems.SNOW_VOW_HEAD.get(), "雪下的誓言");
+        add("tooltip.pasterdream.snow_vow_head.effect.area", "§7▪ §9使附近直径7格内的玩家获得效果");
+        add("tooltip.pasterdream.snow_vow_head.effect.bonus", "§7▪ §9幸运+3 免疫燃烧与冻结");
+        add("effect.pasterdream.snow_vow_buff", "雪下的誓言");
+        add("tooltip.pasterdream.fourleaf_clover_curio.effect.health", "§7▪ §9+1 最大生命值");
+        add("tooltip.pasterdream.fourleaf_clover_curio.effect.luck", "§7▪ §9+6 幸运");
         add("tooltip.pasterdream.worldtree_seedpod.condition", "§7▪ §9在染梦世界 露天环境 身处高度y>160 白天 脚下为染梦世界树树叶");
         add("tooltip.pasterdream.worldtree_seedpod.hunger", "§7▪ §4持续降低饱和度");
         add("tooltip.pasterdream.worldtree_seedpod.energy", "§7▪ §9融梦能量+360/h");

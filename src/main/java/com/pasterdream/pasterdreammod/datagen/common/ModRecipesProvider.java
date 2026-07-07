@@ -1833,6 +1833,15 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.EMBRYO_NECKLACE.get()), has(ModItems.EMBRYO_NECKLACE.get()))
                 .save(pWriter);
 
+        // 花环 = 小花 ×8
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GARLAND.get(), 1)
+                .pattern("aaa")
+                .pattern("a a")
+                .pattern("aaa")
+                .define('a', Ingredient.of(ItemTags.SMALL_FLOWERS))
+                .unlockedBy(getHasName(Items.POPPY), has(ItemTags.SMALL_FLOWERS))
+                .save(pWriter);
+
         // 自然腰带 = 发光浆果 + 藤蔓
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.NATURE_BELT.get(), 1)
                 .pattern("aba")
