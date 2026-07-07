@@ -3,7 +3,9 @@ package com.pasterdream.pasterdreammod.init;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.world.effect.DyedreamArmorBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.DyedreamUpBuffEffect;
+import com.pasterdream.pasterdreammod.world.effect.EvasionBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.SculkArmorBuffEffect;
+import com.pasterdream.pasterdreammod.world.effect.TeleportationCooldownEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,6 +24,10 @@ public class ModEffects {
             EFFECTS.register("dyedream_armor_buff", DyedreamArmorBuffEffect::new);
     public static final RegistryObject<MobEffect> DYEDREAM_UP_BUFF =
             EFFECTS.register("dyedream_up_buff", DyedreamUpBuffEffect::new);
+    public static final RegistryObject<MobEffect> EVASION_BUFF =
+            EFFECTS.register("evasion_buff", EvasionBuffEffect::new);
+    public static final RegistryObject<MobEffect> TELEPORTATION_COOLDOWN =
+            EFFECTS.register("teleportation_cooldown", TeleportationCooldownEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);

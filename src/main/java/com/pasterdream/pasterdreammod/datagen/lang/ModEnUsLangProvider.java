@@ -526,5 +526,15 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.embryo.tooltip3", "§7Using titanium's life affinity and the spiritual connection of soul essence");
         add("tooltip.pasterdream.embryo.tooltip4", "§7Allow you to strengthen yourself through accessories made from physical materials");
         add("tooltip.pasterdream.embryo.hold_shift", "§7Hold [§rShift§7] to view the description");
+
+        // Teleportation Skill
+        add("key.pasterdream.teleportation", "Teleportation");
+        add("key.categories.pasterdream", "PasterDream");
+        add("effect.pasterdream.evasion_buff", "Evasion");
+        add("effect.pasterdream.teleportation_cooldown", "Teleportation Cooldown");
+        add("attribute.pasterdream.teleportation_cd", "Teleportation Cooldown");
+        add("attribute.pasterdream.teleportation_consume", "Teleportation Hunger Cost");
+        add("attribute.pasterdream.teleportation_range", "Teleportation Distance");
+        add("subtitles.pasterdream.evasion", "Evasion");
     }
 }
