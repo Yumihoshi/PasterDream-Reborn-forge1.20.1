@@ -591,6 +591,14 @@ public class ModItems {
             EmbryoCharmItem::new);
     public static final RegistryObject<Item> GOLD_CHARM = ITEMS.register("gold_charm",
             GoldCharmItem::new);
+    public static final RegistryObject<Item> ENDEYE_CHARM = ITEMS.register("endeye_charm",
+            EndeyeCharmItem::new);
+    public static final RegistryObject<Item> SEA_CHARM = ITEMS.register("sea_charm",
+            SeaCharmItem::new);
+    public static final RegistryObject<Item> CARAPAX_CHARM = ITEMS.register("carapax_charm",
+            CarapaxCharmItem::new);
+    public static final RegistryObject<Item> WORLDTREE_SEEDPOD = ITEMS.register("worldtree_seedpod",
+            WorldtreeSeedpodItem::new);
 
     // ===== 饰品（项链） =====
     public static final RegistryObject<Item> EMBRYO_NECKLACE = ITEMS.register("embryo_necklace",

@@ -514,6 +514,15 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.EMBRYO_CHARM.get(), "Embryo Charm");
         add(ModItems.GOLD_CHARM.get(), "Gold Charm");
         add("tooltip.pasterdream.gold_charm.piglin", "§7▪ §9Makes piglins neutral");
+        add(ModItems.ENDEYE_CHARM.get(), "Endeye Charm");
+        add("tooltip.pasterdream.endeye_charm.enderman", "§7▪ §9Makes endermen neutral");
+        add(ModItems.SEA_CHARM.get(), "Sea Charm");
+        add(ModItems.CARAPAX_CHARM.get(), "Carapax Charm");
+        add(ModItems.WORLDTREE_SEEDPOD.get(), "Worldtree Seedpod");
+        add("tooltip.pasterdream.worldtree_seedpod.condition", "§7▪ §9In Dyedream World, open sky, Y>160, daytime, standing on Worldtree Leaves");
+        add("tooltip.pasterdream.worldtree_seedpod.hunger", "§7▪ §4Constantly increases exhaustion");
+        add("tooltip.pasterdream.worldtree_seedpod.energy", "§7▪ §9Melt Dream Energy +360/h");
+        add("tooltip.pasterdream.worldtree_seedpod.flavor", "§7§o-- Leaves fall to root, pods burst to crown");
         //Necklaces
         add(ModItems.EMBRYO_NECKLACE.get(), "Embryo Necklace");
         add(ModItems.RABBIT_FOOT_NECKLACE.get(), "Rabbit Foot Necklace");

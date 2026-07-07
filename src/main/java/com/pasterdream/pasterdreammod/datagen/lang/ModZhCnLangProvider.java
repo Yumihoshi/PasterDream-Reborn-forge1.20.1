@@ -637,6 +637,15 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.EMBRYO_CHARM.get(), "护身符原胚");
         add(ModItems.GOLD_CHARM.get(), "纯金护身符");
         add("tooltip.pasterdream.gold_charm.piglin", "§7▪ §9使猪灵保持中立");
+        add(ModItems.ENDEYE_CHARM.get(), "邪眼护身符");
+        add("tooltip.pasterdream.endeye_charm.enderman", "§7▪ §9使末影人保持中立");
+        add(ModItems.SEA_CHARM.get(), "海波护身符");
+        add(ModItems.CARAPAX_CHARM.get(), "龟壳护身符");
+        add(ModItems.WORLDTREE_SEEDPOD.get(), "世界树种荚");
+        add("tooltip.pasterdream.worldtree_seedpod.condition", "§7▪ §9在染梦世界 露天环境 身处高度y>160 白天 脚下为染梦世界树树叶");
+        add("tooltip.pasterdream.worldtree_seedpod.hunger", "§7▪ §4持续降低饱和度");
+        add("tooltip.pasterdream.worldtree_seedpod.energy", "§7▪ §9融梦能量+360/h");
+        add("tooltip.pasterdream.worldtree_seedpod.flavor", "§7§o-- 落叶归根 裂荚归冠");
         // 项链
         add(ModItems.EMBRYO_NECKLACE.get(), "项链原胚");
         add(ModItems.RABBIT_FOOT_NECKLACE.get(), "雪兔脚项链");

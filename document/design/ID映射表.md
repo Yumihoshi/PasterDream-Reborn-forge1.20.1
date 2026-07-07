@@ -345,6 +345,10 @@
 | `lootstable_create_9`          | 删除                                          | -                                                             | -                                                          |
 | `embryo_charm`                 | `embryo_charm`                              | 不改                                                            | 客制化类 `EmbryoCharmItem`，实现 `ICurioItem` 可装备于 charm 插槽       |
 | `gold_charm`                   | `gold_charm`                                | 不改                                                            | 客制化类 `GoldCharmItem`，实现 `ICurioItem`，装备时使猪灵中立 + 品质提示行      |
+| `endeye_charm`                 | `endeye_charm`                              | 不改                                                            | 客制化类 `EndeyeCharmItem`，实现 `ICurioItem`，装备时使末影人中立                |
+| `sea_charm`                    | `sea_charm`                                 | 不改                                                            | 客制化类 `SeaCharmItem`，实现 `ICurioItem`，+30% 游泳速度、理智光环 +0.96，禁止重复装备 |
+| `carapax_charm`                | `carapax_charm`                             | 不改                                                            | 客制化类 `CarapaxCharmItem`，实现 `ICurioItem`，-8% 移动速度、+2 护甲、+1 盔甲韧性，禁止重复装备 |
+| `worldtree_seedpod`            | `worldtree_seedpod`                         | 不改                                                            | 客制化类 `WorldtreeSeedpodItem`，实现 `ICurioItem`，染梦世界树环境持续消耗饱食度 + 融梦能量 |
 | `embryo_ring`                  | `embryo_ring`                               | 不改                                                            | 客制化类 `EmbryoRingItem`，实现 `ICurioItem` 可装备于 ring 插槽         |
 | `embryo_necklace`              | `embryo_necklace`                           | 不改                                                            | 客制化类 `EmbryoNecklaceItem`，实现 `ICurioItem` 可装备于 necklace 插槽 |
 | `embryo_belt`                  | `embryo_belt`                               | 不改                                                            | 客制化类 `EmbryoBeltItem`，实现 `ICurioItem` 可装备于 belt 插槽         |
