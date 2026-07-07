@@ -93,6 +93,8 @@ public class ModConfiguredFeatures {
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "vanilla_packed_ice_blobs"));
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_MOSS_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_moss_patch"));
+    // 染梦藤蔓
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_VINE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_vine_patch"));
     // ===== 云团柱 =====
     public static final ResourceKey<ConfiguredFeature<?, ?>> CLOUD_PILLAR_SMALL = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "cloud_pillar_small"));
     public static final ResourceKey<ConfiguredFeature<?, ?>> CLOUD_PILLAR_LARGE = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "cloud_pillar_large"));
@@ -224,6 +226,28 @@ public class ModConfiguredFeatures {
                 Feature.SIMPLE_BLOCK,
                 new SimpleBlockConfiguration(provider),
                 BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Blocks.AIR))
+        );
+    }
+
+    /** 染梦藤蔓柱 — 向上生长 2-4 格，仅生成在染梦地表方块上 */
+    private static Holder<PlacedFeature> dyedreamVineColumn() {
+        return PlacementUtils.inlinePlaced(
+                Feature.BLOCK_COLUMN,
+                new BlockColumnConfiguration(
+                        List.of(new BlockColumnConfiguration.Layer(
+                                UniformInt.of(2, 4),
+                                BlockStateProvider.simple(ModBlocks.DYEDREAM_VINE.get())
+                        )),
+                        Direction.UP,
+                        BlockPredicate.matchesBlocks(Blocks.AIR),
+                        false
+                ),
+                BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Blocks.AIR)),
+                BlockPredicateFilter.forPredicate(
+                        BlockPredicate.matchesBlocks(
+                                Direction.DOWN.getNormal(),
+                                ModBlocks.DYEDREAM_GRASS_BLOCK.get(),
+                                ModBlocks.DYEDREAM_DIRT.get()))
         );
     }
 
@@ -571,6 +595,11 @@ public class ModConfiguredFeatures {
         context.register(DYEDREAM_MOSS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(48, 8, 8,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.DYEDREAM_MOSS.get())))));
+
+        // 染梦藤蔓 — 原作 vine_0: random_patch tries=64 xz=7 y=3, block_column 2-4格
+        context.register(DYEDREAM_VINE_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(64, 7, 3,
+                        dyedreamVineColumn())));
 
         // ===== 云团柱 =====
         // 小云团柱 — 原作 ground_feature_dyedream_2: tries=64, xz=2, y=24

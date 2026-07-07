@@ -102,6 +102,10 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> DYEDREAM_SEAGRASS_PATCH =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_seagrass_patch"));
+    // 染梦藤蔓 — 原作 vine_0
+    public static final ResourceKey<PlacedFeature> DYEDREAM_VINE_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_vine_patch"));
     public static final ResourceKey<PlacedFeature> DYEDREAM_LILY_PATCH =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_lily_patch"));
@@ -355,6 +359,13 @@ public class ModPlacedFeatures {
         context.register(TALL_PINK_MUSHROOM_PATCH, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.TALL_PINK_MUSHROOM_PATCH),
                 List.of(CountPlacement.of(3), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        // 染梦藤蔓 — 原作 vine_0: count=1 rarity=16 → 平均每16区块1簇
+        context.register(DYEDREAM_VINE_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_VINE_PATCH),
+                List.of(CountPlacement.of(1), RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
                         ON_DYEDREAM_GROUND)));
 
