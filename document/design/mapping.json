@@ -339,7 +339,11 @@
     "cross_necklace": "cross_necklace",
     "nature_belt": "nature_belt",
     "traveler_belt": "traveler_belt",
-    "dream_traveler_belt": "dream_traveler_belt"
+    "dream_traveler_belt": "dream_traveler_belt",
+    "light_butterfly_curio": "light_butterfly_curio",
+    "bright_butterfly_curio": "bright_butterfly_curio",
+    "white_crystal": "white_crystal",
+    "boboji_curio": "boboji_curio"
   },
   "entities": {},
   "dimensions": {

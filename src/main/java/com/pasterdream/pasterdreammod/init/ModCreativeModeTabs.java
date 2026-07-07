@@ -125,6 +125,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LIGHT_BALL.get());
                         output.accept(ModItems.DYEDREAM_COROLLA.get());
                         output.accept(ModItems.WHITE_COROLLA.get());
+                        output.accept(ModItems.WHITE_CRYSTAL.get());
                         output.accept(ModItems.BLUE_HEART_OF_THE_SEA.get());
                         output.accept(ModItems.ELDER_GUARDIAN_SCALE.get());
                         output.accept(ModItems.CHARGED_AMETHYST.get());
@@ -239,6 +240,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GARLAND.get());
                         output.accept(ModItems.FOURLEAF_CLOVER_CURIO.get());
                         output.accept(ModItems.SNOW_VOW_HEAD.get());
+                        output.accept(ModItems.LIGHT_BUTTERFLY_CURIO.get());
+                        output.accept(ModItems.BRIGHT_BUTTERFLY_CURIO.get());
+                        output.accept(ModItems.BOBOJI_CURIO.get());
                         output.accept(ModItems.RABBIT_FOOT_NECKLACE.get());
                         output.accept(ModItems.FEATHER_NECKLACE.get());
                         output.accept(ModItems.HEALTH_NECKLACE.get());

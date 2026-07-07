@@ -1875,6 +1875,14 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('d', ModItems.MISTY_DREAMING_LOTUS.get())
                 .unlockedBy(getHasName(ModItems.TRAVELER_BELT.get()), has(ModItems.TRAVELER_BELT.get()))
                 .save(pWriter);
+
+        // 光明飞蝶 = 夜明蝶 + 白厄水晶 + 灵魂精华
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BRIGHT_BUTTERFLY_CURIO.get(), 1)
+                .requires(ModItems.LIGHT_BUTTERFLY_CURIO.get())
+                .requires(ModItems.WHITE_CRYSTAL.get())
+                .requires(ModItems.SOUL_ESSENCE.get())
+                .unlockedBy(getHasName(ModItems.LIGHT_BUTTERFLY_CURIO.get()), has(ModItems.LIGHT_BUTTERFLY_CURIO.get()))
+                .save(pWriter);
     }
 
     // ===== 配方工具方法 =====

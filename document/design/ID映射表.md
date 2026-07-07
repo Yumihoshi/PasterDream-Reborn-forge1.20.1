@@ -363,6 +363,10 @@
 | `nature_belt`                   | `nature_belt`                               | 不改                                                            | 客制化类 `NatureBeltItem`，实现 `ICurioItem`，理智光环 +0.48/分钟 + 耐久消耗 |
 | `traveler_belt`                 | `traveler_belt`                             | 不改                                                            | 客制化类 `TravelerBeltItem`，实现 `ICurioItem`，瞬身术消耗 -0.5 + 禁止重复装备 |
 | `dream_traveler_belt`           | `dream_traveler_belt`                       | 不改                                                            | 客制化类 `DreamTravelerBeltItem`，实现 `ICurioItem`，+3% 移动速度 + 瞬身术冷却 -0.1 + 禁止重复装备 |
+| `light_butterfly_curio`         | `light_butterfly_curio`                     | 不改                                                            | 客制化类 `LightButterflyCurioItem`，实现 `ICurioItem`，低亮度环境消耗融梦能量获得夜视 |
+| `bright_butterfly_curio`        | `bright_butterfly_curio`                    | 不改                                                            | 客制化类 `BrightButterflyCurioItem`，实现 `ICurioItem`，低亮度夜视 + 免疫黑暗效果 |
+| `white_crystal`                 | `white_crystal`                             | 不改                                                            | 客制化类 `WhiteCrystalItem`，制作白厄剑的核心材料 |
+| `boboji_curio`                  | `boboji_curio`                              | 不改                                                            | 客制化类 `BobojiCurioItem`，实现 `ICurioItem`，+5%速度、+0.1瞬身术距离、-0.2冷却、-0.4消耗，禁止重复装备 |
 
 
 ---
