@@ -10,7 +10,9 @@ import top.theillusivec4.curios.api.SlotTypePreset;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModCuriosSlots {
+
     @SubscribeEvent
+    @SuppressWarnings({"deprecation", "removal"})
     public static void enqueueIMC(final InterModEnqueueEvent event) {
         InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE,
                 () -> SlotTypePreset.HEAD.getMessageBuilder().size(1).build());
