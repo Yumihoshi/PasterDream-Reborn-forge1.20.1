@@ -1,11 +1,14 @@
 package com.pasterdream.pasterdreammod.world.block.portal;
 
+import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -72,6 +75,23 @@ public class DyedreamCrackBlock extends DirectionalBlock
     public BlockState mirror(BlockState state, Mirror mirror)
     {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
+    }
+
+    @Override
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean moving) {
+        super.onPlace(state, level, pos, oldState, moving);
+        level.scheduleTick(pos, this, 10);
+    }
+
+    @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        level.sendParticles(ModParticleTypes.CRACK_0_PARTICLE.get(),
+                pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1,
+                12, 0.5, 0.5, 0.2, 0.1);
+        if (random.nextFloat() < 0.2f) {
+            level.playSound(null, pos, SoundEvents.AMETHYST_BLOCK_RESONATE, SoundSource.BLOCKS, 0.5f, 1.0f);
+        }
+        level.scheduleTick(pos, this, 10);
     }
 
     @Override
