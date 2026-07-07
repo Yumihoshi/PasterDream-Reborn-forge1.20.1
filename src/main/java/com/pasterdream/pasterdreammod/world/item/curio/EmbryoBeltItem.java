@@ -18,13 +18,13 @@ public class EmbryoBeltItem extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> list, TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
+            list.add(Component.translatable("tooltip.pasterdream.introduction.tooltip"));
             list.add(Component.translatable("tooltip.pasterdream.embryo.tooltip1"));
             list.add(Component.translatable("tooltip.pasterdream.embryo.tooltip2"));
             list.add(Component.translatable("tooltip.pasterdream.embryo.tooltip3"));
-            list.add(Component.translatable("tooltip.pasterdream.embryo.tooltip4"));
         }
         else {
-            list.add(Component.translatable("tooltip.pasterdream.embryo.hold_shift"));
+            list.add(Component.translatable("tooltip.pasterdream.hold_shift"));
         }
     }
 }

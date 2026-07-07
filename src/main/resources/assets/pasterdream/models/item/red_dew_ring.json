@@ -1,0 +1,11 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pasterdream:item/red_dew_ring_lv1"
+  },
+  "overrides": [
+    { "predicate": { "pasterdream:lv": 0.5  }, "model": "pasterdream:item/red_dew_ring_lv2" },
+    { "predicate": { "pasterdream:lv": 0.66 }, "model": "pasterdream:item/red_dew_ring_lv3" },
+    { "predicate": { "pasterdream:lv": 0.75 }, "model": "pasterdream:item/red_dew_ring_lv4" }
+  ]
+}

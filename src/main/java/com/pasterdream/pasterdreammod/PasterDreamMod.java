@@ -7,6 +7,9 @@ import com.pasterdream.pasterdreammod.helper.tooltipadder.AddToolTip;
 import com.pasterdream.pasterdreammod.event.ModMobDrops;
 import com.pasterdream.pasterdreammod.event.PlayerEvents;
 import com.pasterdream.pasterdreammod.init.*;
+import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
@@ -88,6 +91,16 @@ public class PasterDreamMod
         ClientSetRenderLayer.register();
         ModScreens.register(event);
         ModBlockEntityRenderer.FMLClientSetupEventRegister(event);
+        event.enqueueWork(this::registerItemProperties);
+    }
+
+    private void registerItemProperties()
+    {
+        ItemProperties.register(
+                ModItems.RED_DEW_RING.get(),
+                ResourceLocation.fromNamespaceAndPath(MOD_ID, "lv"),
+                (stack, level, entity, seed) -> RedDewRingItem.getPredicateValue(RedDewRingItem.getLv(stack))
+        );
     }
 
     private void AddItemTooltip(ItemTooltipEvent event)
