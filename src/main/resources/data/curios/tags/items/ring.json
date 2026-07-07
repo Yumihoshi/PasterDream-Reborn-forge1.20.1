@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "minecraft:air",
-    "pasterdream:embryo_ring"
+    "pasterdream:embryo_ring",
+    "pasterdream:red_dew_ring"
   ]
 }

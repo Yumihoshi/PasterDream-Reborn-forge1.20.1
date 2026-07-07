@@ -567,6 +567,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.cross_necklace.effect", "§7▪ §9Extends Blink evasion duration to 0.5s");
         //Rings
         add(ModItems.EMBRYO_RING.get(), "Embryo Ring");
+        add(ModItems.RED_DEW_RING.get(), "Red Dew Ring");
+        add("tooltip.pasterdream.red_dew_ring.lv", "§7Level: §bLv.%s");
+        add("tooltip.pasterdream.red_dew_ring.effect", "§7▪ §9+§9%s§9Max Health");
         //Belts
         add(ModItems.EMBRYO_BELT.get(), "Embryo Belt");
         add(ModItems.NATURE_BELT.get(), "Nature Belt");
@@ -580,7 +583,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.embryo.tooltip2", "§7A curios embryo made from titanium and soul essence");
         add("tooltip.pasterdream.embryo.tooltip3", "§7Using titanium's life affinity and the spiritual connection of soul essence");
         add("tooltip.pasterdream.embryo.tooltip4", "§7Allow you to strengthen yourself through accessories made from physical materials");
-        add("tooltip.pasterdream.embryo.hold_shift", "§7Hold [§rShift§7] to view the description");
+        add("tooltip.pasterdream.hold_shift", "§7Hold [§rShift§7] to view the description");
 
         // Blink Skill
         add("key.pasterdream.blink", "Blink");
