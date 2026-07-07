@@ -650,5 +650,15 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.embryo.tooltip3", "§7利用钛的生命亲和性和灵魂精华的精神连携作用");
         add("tooltip.pasterdream.embryo.tooltip4", "§7使得可以通过用物质实体制作成的饰品来强化自身");
         add("tooltip.pasterdream.embryo.hold_shift", "§7按住[§rShift§7]键查看简介");
+
+        // 瞬身术
+        add("key.pasterdream.teleportation", "瞬身术");
+        add("key.categories.pasterdream", "帕斯特之梦");
+        add("effect.pasterdream.evasion_buff", "回避");
+        add("effect.pasterdream.teleportation_cooldown", "瞬身术冷却");
+        add("attribute.pasterdream.teleportation_cd", "瞬身术冷却");
+        add("attribute.pasterdream.teleportation_consume", "瞬身术消耗");
+        add("attribute.pasterdream.teleportation_range", "瞬身术距离");
+        add("subtitles.pasterdream.evasion", "瞬身术: 回避");
     }
 }

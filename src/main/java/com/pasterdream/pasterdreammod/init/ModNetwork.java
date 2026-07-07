@@ -14,6 +14,7 @@ import com.pasterdream.pasterdreammod.network.mortar.MortarCraftPacket;
 import com.pasterdream.pasterdreammod.network.mortar.MortarNbtSyncPacket;
 import com.pasterdream.pasterdreammod.network.researchtable.ResearchTableCopyPacket;
 import com.pasterdream.pasterdreammod.network.researchtable.ResearchTableResearchPacket;
+import com.pasterdream.pasterdreammod.network.skill.TeleportationPacket;
 import com.pasterdream.pasterdreammod.network.san.IsSanEnableSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.MaxSanSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
@@ -52,6 +53,8 @@ public class ModNetwork
         CHANNEL.registerMessage(id++, MaxSanSyncPacket.class, MaxSanSyncPacket::encode, MaxSanSyncPacket::decode, MaxSanSyncPacket::handle);
 
         CHANNEL.registerMessage(id++, AnimationStateChangePacket.class, AnimationStateChangePacket::encode, AnimationStateChangePacket::decode, AnimationStateChangePacket::handle);
+
+        CHANNEL.registerMessage(id++, TeleportationPacket.class, TeleportationPacket::encode, TeleportationPacket::decode, TeleportationPacket::handle);
     }
 
     public static void sendMeltDreamEnergySyncPacketToPlayer(MeltDreamEnergySyncPacket packet, ServerPlayer player)

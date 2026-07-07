@@ -5,6 +5,7 @@ import com.pasterdream.pasterdreammod.helper.fluidhandler.FluidHandlerResolvers;
 import com.pasterdream.pasterdreammod.helper.sanbiomeratemanager.SanBiomeRateManager;
 import com.pasterdream.pasterdreammod.helper.tooltipadder.AddToolTip;
 import com.pasterdream.pasterdreammod.event.ModMobDrops;
+import com.pasterdream.pasterdreammod.event.PlayerEvents;
 import com.pasterdream.pasterdreammod.init.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -49,6 +50,7 @@ public class PasterDreamMod
         ModRecipes.register(modEventBus);           //注册配方
         ModSounds.register(modEventBus);            //注册音效
         ModEffects.register(modEventBus);           //注册药水效果
+        ModAttributes.register(modEventBus);        //注册属性
         ModTreeDecoratorTypes.register(modEventBus); //注册树木装饰器类型
         ModFeatures.register(modEventBus);          //注册自定义特征
         ModNetwork.register();                      //注册网络包
@@ -60,6 +62,8 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onHoeTill);
         MinecraftForge.EVENT_BUS.addListener(ModMobDrops::onLivingDrops);
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onLivingHurt);
+        MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onLivingHurt);
+        MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerTick);
         modEventBus.addListener(this::AddOverlays);
         modEventBus.addListener(this::AddEntityRenderersEvent);
         MinecraftForge.EVENT_BUS.addListener(this::onAddReloadListeners);

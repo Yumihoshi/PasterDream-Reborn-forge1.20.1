@@ -31,5 +31,9 @@
   "dream0":
   {
     "sounds": [{"name": "pasterdream:dream0", "stream": false}]
+  },
+  "evasion":
+  {
+    "sounds": [{"name": "pasterdream:evasion", "stream": false}]
   }
 }
