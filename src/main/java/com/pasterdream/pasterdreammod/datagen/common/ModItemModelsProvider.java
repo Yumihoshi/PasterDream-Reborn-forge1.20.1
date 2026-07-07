@@ -211,6 +211,10 @@ public class ModItemModelsProvider extends ItemModelProvider {
 
         basicItem(ModItems.EMBRYO_CHARM.get());
         basicItem(ModItems.GOLD_CHARM.get());
+        basicItem(ModItems.ENDEYE_CHARM.get());
+        basicItem(ModItems.SEA_CHARM.get());
+        basicItem(ModItems.CARAPAX_CHARM.get());
+        basicItem(ModItems.WORLDTREE_SEEDPOD.get());
         basicItem(ModItems.EMBRYO_NECKLACE.get());
         basicItem(ModItems.EMBRYO_RING.get());
         basicItem(ModItems.EMBRYO_BELT.get());

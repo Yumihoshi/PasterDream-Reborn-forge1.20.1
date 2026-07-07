@@ -1766,6 +1766,37 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.SOUL_ESSENCE.get()), has(ModItems.SOUL_ESSENCE.get()))
                 .save(pWriter);
 
+        // 龟壳护身符 = 海草 + 鳞甲 + 护身符原胚
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CARAPAX_CHARM.get(), 1)
+                .pattern("aba")
+                .pattern("bcb")
+                .pattern("aba")
+                .define('a', Items.SEAGRASS)
+                .define('b', Items.SCUTE)
+                .define('c', ModItems.EMBRYO_CHARM.get())
+                .unlockedBy(getHasName(ModItems.EMBRYO_CHARM.get()), has(ModItems.EMBRYO_CHARM.get()))
+                .save(pWriter);
+
+        // 海波护身符 = 水瓶玻璃罐 + 青金石 + 护身符原胚 + 海洋之心
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SEA_CHARM.get(), 1)
+                .pattern("aba")
+                .pattern("bcb")
+                .pattern("ada")
+                .define('a', ModItems.GLASS_JAR_OF_WATER.get())
+                .define('b', Items.LAPIS_LAZULI)
+                .define('c', ModItems.EMBRYO_CHARM.get())
+                .define('d', Items.HEART_OF_THE_SEA)
+                .unlockedBy(getHasName(ModItems.EMBRYO_CHARM.get()), has(ModItems.EMBRYO_CHARM.get()))
+                .save(pWriter);
+
+        // 邪眼护身符 = 护身符原胚 + 末影之眼 + 紫颂花
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDEYE_CHARM.get(), 1)
+                .requires(ModItems.EMBRYO_CHARM.get())
+                .requires(Items.ENDER_EYE)
+                .requires(Items.CHORUS_FLOWER)
+                .unlockedBy(getHasName(ModItems.EMBRYO_CHARM.get()), has(ModItems.EMBRYO_CHARM.get()))
+                .save(pWriter);
+
         // 纯金护身符 = 护身符原胚 + 金锭
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GOLD_CHARM.get(), 1)
                 .requires(ModItems.EMBRYO_CHARM.get())
