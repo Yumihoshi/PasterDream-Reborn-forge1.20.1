@@ -237,6 +237,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HEALTH_NECKLACE.get());
                         output.accept(ModItems.FIRE_NECKLACE.get());
                         output.accept(ModItems.CROSS_NECKLACE.get());
+                        output.accept(ModItems.NATURE_BELT.get());
+                        output.accept(ModItems.TRAVELER_BELT.get());
+                        output.accept(ModItems.DREAM_TRAVELER_BELT.get());
                     })
                     .build());
 

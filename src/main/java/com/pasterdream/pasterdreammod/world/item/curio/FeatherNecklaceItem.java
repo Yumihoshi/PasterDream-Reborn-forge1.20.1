@@ -1,11 +1,9 @@
 package com.pasterdream.pasterdreammod.world.item.curio;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
 import com.pasterdream.pasterdreammod.init.ModAttributes;
 import com.pasterdream.pasterdreammod.world.item.ModRarities;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -27,13 +25,33 @@ public class FeatherNecklaceItem extends Item implements ICurioItem {
     }
 
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> modifiers = HashMultimap.create();
-        modifiers.put(ModAttributes.BLINK_CONSUME.get(),
-                new AttributeModifier(CONSUME_MODIFIER_UUID, "Feather necklace consume", -0.05, AttributeModifier.Operation.ADDITION));
-        modifiers.put(ModAttributes.BLINK_RANGE.get(),
-                new AttributeModifier(RANGE_MODIFIER_UUID, "Feather necklace range", 0.2, AttributeModifier.Operation.ADDITION));
-        return modifiers;
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        if (slotContext.entity() != null) {
+            AttributeInstance consumeAttr = slotContext.entity().getAttribute(ModAttributes.BLINK_CONSUME.get());
+            if (consumeAttr != null) {
+                consumeAttr.addPermanentModifier(new AttributeModifier(CONSUME_MODIFIER_UUID,
+                        "Feather necklace consume", -0.05, AttributeModifier.Operation.ADDITION));
+            }
+            AttributeInstance rangeAttr = slotContext.entity().getAttribute(ModAttributes.BLINK_RANGE.get());
+            if (rangeAttr != null) {
+                rangeAttr.addPermanentModifier(new AttributeModifier(RANGE_MODIFIER_UUID,
+                        "Feather necklace range", 0.2, AttributeModifier.Operation.ADDITION));
+            }
+        }
+    }
+
+    @Override
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        if (slotContext.entity() != null) {
+            AttributeInstance consumeAttr = slotContext.entity().getAttribute(ModAttributes.BLINK_CONSUME.get());
+            if (consumeAttr != null) {
+                consumeAttr.removeModifier(CONSUME_MODIFIER_UUID);
+            }
+            AttributeInstance rangeAttr = slotContext.entity().getAttribute(ModAttributes.BLINK_RANGE.get());
+            if (rangeAttr != null) {
+                rangeAttr.removeModifier(RANGE_MODIFIER_UUID);
+            }
+        }
     }
 
     @Override
@@ -49,5 +67,7 @@ public class FeatherNecklaceItem extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> list, TooltipFlag flag) {
         list.add(ModRarities.qualityTooltip(ModRarities.EXCELLENT));
+        list.add(Component.translatable("tooltip.pasterdream.feather_necklace.effect1"));
+        list.add(Component.translatable("tooltip.pasterdream.feather_necklace.effect2"));
     }
 }

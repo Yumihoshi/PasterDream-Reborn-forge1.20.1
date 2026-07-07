@@ -353,6 +353,9 @@
 | `health_0_necklace`             | `health_necklace`                           | 重命名，去除 `_0`                                               | 客制化类 `HealthNecklaceItem`，实现 `ICurioItem`，+4 最大生命值，禁止重复装备 |
 | `fire_0_necklace`               | `fire_necklace`                             | 重命名，去除 `_0`                                               | 客制化类 `FireNecklaceItem`，实现 `ICurioItem`，行走留火焰 + 防火 + 燃烧时急迫 II |
 | `cross_necklace`                | `cross_necklace`                            | 不改                                                            | 客制化类 `CrossNecklaceItem`，实现 `ICurioItem`，瞬身术回避时间延长至 0.4s |
+| `nature_belt`                   | `nature_belt`                               | 不改                                                            | 客制化类 `NatureBeltItem`，实现 `ICurioItem`，理智光环 +0.48/分钟 + 耐久消耗 |
+| `traveler_belt`                 | `traveler_belt`                             | 不改                                                            | 客制化类 `TravelerBeltItem`，实现 `ICurioItem`，瞬身术消耗 -0.5 + 禁止重复装备 |
+| `dream_traveler_belt`           | `dream_traveler_belt`                       | 不改                                                            | 客制化类 `DreamTravelerBeltItem`，实现 `ICurioItem`，+3% 移动速度 + 瞬身术冷却 -0.1 + 禁止重复装备 |
 
 
 ---

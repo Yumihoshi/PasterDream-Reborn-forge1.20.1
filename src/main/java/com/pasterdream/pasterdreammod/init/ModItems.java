@@ -613,6 +613,12 @@ public class ModItems {
     // ===== 饰品（腰带） =====
     public static final RegistryObject<Item> EMBRYO_BELT = ITEMS.register("embryo_belt",
             EmbryoBeltItem::new);
+    public static final RegistryObject<Item> NATURE_BELT = ITEMS.register("nature_belt",
+            NatureBeltItem::new);
+    public static final RegistryObject<Item> TRAVELER_BELT = ITEMS.register("traveler_belt",
+            TravelerBeltItem::new);
+    public static final RegistryObject<Item> DREAM_TRAVELER_BELT = ITEMS.register("dream_traveler_belt",
+            DreamTravelerBeltItem::new);
 
     // ===== 方块物品 =====
 

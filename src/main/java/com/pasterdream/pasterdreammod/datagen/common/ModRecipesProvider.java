@@ -1801,6 +1801,40 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(Items.NETHER_WART)
                 .unlockedBy(getHasName(ModItems.EMBRYO_NECKLACE.get()), has(ModItems.EMBRYO_NECKLACE.get()))
                 .save(pWriter);
+
+        // 自然腰带 = 发光浆果 + 藤蔓
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.NATURE_BELT.get(), 1)
+                .pattern("aba")
+                .pattern("b b")
+                .pattern("aba")
+                .define('a', Items.GLOW_BERRIES)
+                .define('b', Items.VINE)
+                .unlockedBy(getHasName(Items.GLOW_BERRIES), has(Items.GLOW_BERRIES))
+                .save(pWriter);
+
+        // 旅者腰带 = 腰带原胚 + 织物 + 皮革 + 钻石
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TRAVELER_BELT.get(), 1)
+                .pattern(" a ")
+                .pattern("bcb")
+                .pattern(" d ")
+                .define('a', ModItems.FABRIC.get())
+                .define('b', Items.LEATHER)
+                .define('c', ModItems.EMBRYO_BELT.get())
+                .define('d', Items.DIAMOND)
+                .unlockedBy(getHasName(ModItems.EMBRYO_BELT.get()), has(ModItems.EMBRYO_BELT.get()))
+                .save(pWriter);
+
+        // 迷梦旅者腰带 = 旅者腰带 + 染梦染料 + 染梦粉尘 + 迷梦睡莲
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DREAM_TRAVELER_BELT.get(), 1)
+                .pattern("aba")
+                .pattern("bcb")
+                .pattern("ada")
+                .define('a', ModItems.DYEDREAM_DYE.get())
+                .define('b', ModItems.DYEDREAM_DUST.get())
+                .define('c', ModItems.TRAVELER_BELT.get())
+                .define('d', ModItems.MISTY_DREAMING_LOTUS.get())
+                .unlockedBy(getHasName(ModItems.TRAVELER_BELT.get()), has(ModItems.TRAVELER_BELT.get()))
+                .save(pWriter);
     }
 
     // ===== 配方工具方法 =====
