@@ -295,7 +295,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
     private void generateCropLoot(Block cropBlock, Item productItem, int productCount, Item matureItem)
     {
         LootTable.Builder builder = LootTable.lootTable();
-        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 1))).add(LootItem.lootTableItem(matureItem)));
+        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 1)))
+                .add(LootItem.lootTableItem(productItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(productCount)))));
         builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 0))).add(LootItem.lootTableItem(cropBlock)));
         this.add(cropBlock, builder);
     }
