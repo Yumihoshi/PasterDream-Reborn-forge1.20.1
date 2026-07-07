@@ -29,12 +29,12 @@ public class DreamTravelerBeltItem extends Item implements ICurioItem {
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (slotContext.entity() != null) {
             AttributeInstance speedAttr = slotContext.entity().getAttribute(Attributes.MOVEMENT_SPEED);
-            if (speedAttr != null) {
+            if (speedAttr != null && speedAttr.getModifier(MOVEMENT_SPEED_UUID) == null) {
                 speedAttr.addPermanentModifier(new AttributeModifier(MOVEMENT_SPEED_UUID,
                         "Dream traveler belt movement speed", 0.03, AttributeModifier.Operation.MULTIPLY_BASE));
             }
             AttributeInstance cdAttr = slotContext.entity().getAttribute(ModAttributes.BLINK_CD.get());
-            if (cdAttr != null) {
+            if (cdAttr != null && cdAttr.getModifier(BLINK_CD_UUID) == null) {
                 cdAttr.addPermanentModifier(new AttributeModifier(BLINK_CD_UUID,
                         "Dream traveler belt blink cd", -0.1, AttributeModifier.Operation.ADDITION));
             }

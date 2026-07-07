@@ -109,10 +109,13 @@ public class RedDewRingItem extends Item implements ICurioItem {
         if (entity != null && !entity.level().isClientSide()) {
             var attr = entity.getAttribute(Attributes.MAX_HEALTH);
             if (attr != null) {
-                attr.removeModifier(HEALTH_MODIFIER_UUID);
-                attr.addPermanentModifier(
-                        new AttributeModifier(HEALTH_MODIFIER_UUID, "Red dew ring health",
-                                lv, AttributeModifier.Operation.ADDITION));
+                var existing = attr.getModifier(HEALTH_MODIFIER_UUID);
+                if (existing == null || existing.getAmount() != lv) {
+                    attr.removeModifier(HEALTH_MODIFIER_UUID);
+                    attr.addPermanentModifier(
+                            new AttributeModifier(HEALTH_MODIFIER_UUID, "Red dew ring health",
+                                    lv, AttributeModifier.Operation.ADDITION));
+                }
             }
         }
     }

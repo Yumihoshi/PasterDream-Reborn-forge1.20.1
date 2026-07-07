@@ -31,22 +31,22 @@ public class BobojiCurioItem extends Item implements ICurioItem {
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (slotContext.entity() != null) {
             AttributeInstance blinkCd = slotContext.entity().getAttribute(ModAttributes.BLINK_CD.get());
-            if (blinkCd != null) {
+            if (blinkCd != null && blinkCd.getModifier(BLINK_CD_UUID) == null) {
                 blinkCd.addPermanentModifier(new AttributeModifier(BLINK_CD_UUID,
                         "Boboji blink cd", -0.2, AttributeModifier.Operation.ADDITION));
             }
             AttributeInstance blinkRange = slotContext.entity().getAttribute(ModAttributes.BLINK_RANGE.get());
-            if (blinkRange != null) {
+            if (blinkRange != null && blinkRange.getModifier(BLINK_RANGE_UUID) == null) {
                 blinkRange.addPermanentModifier(new AttributeModifier(BLINK_RANGE_UUID,
                         "Boboji blink range", 0.1, AttributeModifier.Operation.ADDITION));
             }
             AttributeInstance blinkConsume = slotContext.entity().getAttribute(ModAttributes.BLINK_CONSUME.get());
-            if (blinkConsume != null) {
+            if (blinkConsume != null && blinkConsume.getModifier(BLINK_CONSUME_UUID) == null) {
                 blinkConsume.addPermanentModifier(new AttributeModifier(BLINK_CONSUME_UUID,
                         "Boboji blink consume", -0.4, AttributeModifier.Operation.ADDITION));
             }
             AttributeInstance moveSpeed = slotContext.entity().getAttribute(Attributes.MOVEMENT_SPEED);
-            if (moveSpeed != null) {
+            if (moveSpeed != null && moveSpeed.getModifier(MOVEMENT_SPEED_UUID) == null) {
                 moveSpeed.addPermanentModifier(new AttributeModifier(MOVEMENT_SPEED_UUID,
                         "Boboji movement speed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE));
             }
