@@ -348,6 +348,11 @@
 | `embryo_ring`                  | `embryo_ring`                               | 不改                                                            | 客制化类 `EmbryoRingItem`，实现 `ICurioItem` 可装备于 ring 插槽         |
 | `embryo_necklace`              | `embryo_necklace`                           | 不改                                                            | 客制化类 `EmbryoNecklaceItem`，实现 `ICurioItem` 可装备于 necklace 插槽 |
 | `embryo_belt`                  | `embryo_belt`                               | 不改                                                            | 客制化类 `EmbryoBeltItem`，实现 `ICurioItem` 可装备于 belt 插槽         |
+| `rabbit_0_necklace`             | `rabbit_foot_necklace`                      | 重命名，去除 `_0`，`rabbit_0` → `rabbit_foot`                  | 客制化类 `RabbitFootNecklaceItem`，实现 `ICurioItem`，curioTick 给予跳跃提升 II，onEquip +1 幸运值 |
+| `feather_necklace`              | `feather_necklace`                          | 不改                                                            | 客制化类 `FeatherNecklaceItem`，实现 `ICurioItem`，修改瞬身术消耗/距离属性，禁止重复装备 |
+| `health_0_necklace`             | `health_necklace`                           | 重命名，去除 `_0`                                               | 客制化类 `HealthNecklaceItem`，实现 `ICurioItem`，+4 最大生命值，禁止重复装备 |
+| `fire_0_necklace`               | `fire_necklace`                             | 重命名，去除 `_0`                                               | 客制化类 `FireNecklaceItem`，实现 `ICurioItem`，行走留火焰 + 防火 + 燃烧时急迫 II |
+| `cross_necklace`                | `cross_necklace`                            | 不改                                                            | 客制化类 `CrossNecklaceItem`，实现 `ICurioItem`，瞬身术回避时间延长至 0.4s |
 
 
 ---

@@ -639,6 +639,16 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.gold_charm.piglin", "§7▪ §9使猪灵保持中立");
         // 项链
         add(ModItems.EMBRYO_NECKLACE.get(), "项链原胚");
+        add(ModItems.RABBIT_FOOT_NECKLACE.get(), "雪兔脚项链");
+        add("tooltip.pasterdream.rabbit_foot_necklace.effect", "§7▪ §9获得跳跃提升II与+1幸运值");
+        add(ModItems.FEATHER_NECKLACE.get(), "轻羽护符");
+        add(ModItems.HEALTH_NECKLACE.get(), "生命项链");
+        add(ModItems.FIRE_NECKLACE.get(), "业火项链");
+        add("tooltip.pasterdream.fire_necklace.effect1", "§7▪ §9行走会留下火焰");
+        add("tooltip.pasterdream.fire_necklace.effect2", "§7▪ §9处于燃烧状态下获得急迫II效果");
+        add("tooltip.pasterdream.fire_necklace.effect3", "§7▪ §9获得防火效果");
+        add(ModItems.CROSS_NECKLACE.get(), "十字章项链");
+        add("tooltip.pasterdream.cross_necklace.effect", "§7▪ §9瞬身术的回避时间延长至0.5秒");
         // 戒指
         add(ModItems.EMBRYO_RING.get(), "戒指原胚");
         // 腰带
@@ -652,13 +662,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.embryo.hold_shift", "§7按住[§rShift§7]键查看简介");
 
         // 瞬身术
-        add("key.pasterdream.teleportation", "瞬身术");
+        add("key.pasterdream.blink", "瞬身术");
         add("key.categories.pasterdream", "帕斯特之梦");
         add("effect.pasterdream.evasion_buff", "回避");
-        add("effect.pasterdream.teleportation_cooldown", "瞬身术冷却");
-        add("attribute.pasterdream.teleportation_cd", "瞬身术冷却");
-        add("attribute.pasterdream.teleportation_consume", "瞬身术消耗");
-        add("attribute.pasterdream.teleportation_range", "瞬身术距离");
+        add("effect.pasterdream.blink_cooldown", "瞬身术冷却");
+        add("attribute.pasterdream.blink_cd", "瞬身术冷却");
+        add("attribute.pasterdream.blink_consume", "瞬身术消耗");
+        add("attribute.pasterdream.blink_range", "瞬身术距离");
         add("attribute.pasterdream.san_variability", "理智变化率");
         add("subtitles.pasterdream.evasion", "瞬身术: 回避");
     }

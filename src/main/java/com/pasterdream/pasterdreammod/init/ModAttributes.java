@@ -18,15 +18,15 @@ public class ModAttributes {
     public static final DeferredRegister<Attribute> ATTRIBUTES =
             DeferredRegister.create(ForgeRegistries.ATTRIBUTES, PasterDreamMod.MOD_ID);
 
-    public static final RegistryObject<Attribute> TELEPORTATION_CD =
-            ATTRIBUTES.register("teleportation_cd", () -> new RangedAttribute(
-                    "attribute.pasterdream.teleportation_cd", 1.0, 0.0, 10.0).setSyncable(true));
-    public static final RegistryObject<Attribute> TELEPORTATION_CONSUME =
-            ATTRIBUTES.register("teleportation_consume", () -> new RangedAttribute(
-                    "attribute.pasterdream.teleportation_consume", 1.0, 0.0, 10.0).setSyncable(true));
-    public static final RegistryObject<Attribute> TELEPORTATION_RANGE =
-            ATTRIBUTES.register("teleportation_range", () -> new RangedAttribute(
-                    "attribute.pasterdream.teleportation_range", 1.0, 0.0, 10.0).setSyncable(true));
+    public static final RegistryObject<Attribute> BLINK_CD =
+            ATTRIBUTES.register("blink_cd", () -> new RangedAttribute(
+                    "attribute.pasterdream.blink_cd", 1.0, 0.0, 10.0).setSyncable(true));
+    public static final RegistryObject<Attribute> BLINK_CONSUME =
+            ATTRIBUTES.register("blink_consume", () -> new RangedAttribute(
+                    "attribute.pasterdream.blink_consume", 1.0, 0.0, 10.0).setSyncable(true));
+    public static final RegistryObject<Attribute> BLINK_RANGE =
+            ATTRIBUTES.register("blink_range", () -> new RangedAttribute(
+                    "attribute.pasterdream.blink_range", 1.0, 0.0, 10.0).setSyncable(true));
 
     public static final RegistryObject<Attribute> SAN_VARIABILITY =
             ATTRIBUTES.register("san_variability", () -> new RangedAttribute(
@@ -38,9 +38,9 @@ public class ModAttributes {
 
     @SubscribeEvent
     public static void addAttributes(EntityAttributeModificationEvent event) {
-        event.add(EntityType.PLAYER, TELEPORTATION_CD.get());
-        event.add(EntityType.PLAYER, TELEPORTATION_CONSUME.get());
-        event.add(EntityType.PLAYER, TELEPORTATION_RANGE.get());
+        event.add(EntityType.PLAYER, BLINK_CD.get());
+        event.add(EntityType.PLAYER, BLINK_CONSUME.get());
+        event.add(EntityType.PLAYER, BLINK_RANGE.get());
         event.add(EntityType.PLAYER, SAN_VARIABILITY.get());
     }
 }

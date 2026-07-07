@@ -6,9 +6,9 @@ import net.minecraft.world.effect.MobEffectCategory;
 /**
  * 瞬身术冷却标记，存在期间无法再次使用瞬身术。
  */
-public class TeleportationCooldownEffect extends MobEffect {
+public class BlinkCooldownEffect extends MobEffect {
 
-    public TeleportationCooldownEffect() {
+    public BlinkCooldownEffect() {
         super(MobEffectCategory.NEUTRAL, 0x808080);
     }
 }

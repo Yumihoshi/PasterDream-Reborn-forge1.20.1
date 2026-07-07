@@ -516,6 +516,16 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.gold_charm.piglin", "§7▪ §9Makes piglins neutral");
         //Necklaces
         add(ModItems.EMBRYO_NECKLACE.get(), "Embryo Necklace");
+        add(ModItems.RABBIT_FOOT_NECKLACE.get(), "Rabbit Foot Necklace");
+        add("tooltip.pasterdream.rabbit_foot_necklace.effect", "§7▪ §9Grants Jump Boost II & +1 Luck");
+        add(ModItems.FEATHER_NECKLACE.get(), "Feather Necklace");
+        add(ModItems.HEALTH_NECKLACE.get(), "Health Necklace");
+        add(ModItems.FIRE_NECKLACE.get(), "Fire Necklace");
+        add("tooltip.pasterdream.fire_necklace.effect1", "§7▪ §9Leaves a trail of fire while walking");
+        add("tooltip.pasterdream.fire_necklace.effect2", "§7▪ §9Grants Haste II while on fire");
+        add("tooltip.pasterdream.fire_necklace.effect3", "§7▪ §9Grants Fire Resistance");
+        add(ModItems.CROSS_NECKLACE.get(), "Cross Necklace");
+        add("tooltip.pasterdream.cross_necklace.effect", "§7▪ §9Extends Blink evasion duration to 0.5s");
         //Rings
         add(ModItems.EMBRYO_RING.get(), "Embryo Ring");
         //Belts
@@ -527,14 +537,14 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.embryo.tooltip4", "§7Allow you to strengthen yourself through accessories made from physical materials");
         add("tooltip.pasterdream.embryo.hold_shift", "§7Hold [§rShift§7] to view the description");
 
-        // Teleportation Skill
-        add("key.pasterdream.teleportation", "Teleportation");
+        // Blink Skill
+        add("key.pasterdream.blink", "Blink");
         add("key.categories.pasterdream", "PasterDream");
         add("effect.pasterdream.evasion_buff", "Evasion");
-        add("effect.pasterdream.teleportation_cooldown", "Teleportation Cooldown");
-        add("attribute.pasterdream.teleportation_cd", "Teleportation Cooldown");
-        add("attribute.pasterdream.teleportation_consume", "Teleportation Hunger Cost");
-        add("attribute.pasterdream.teleportation_range", "Teleportation Distance");
+        add("effect.pasterdream.blink_cooldown", "Blink Cooldown");
+        add("attribute.pasterdream.blink_cd", "Blink Cooldown");
+        add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
+        add("attribute.pasterdream.blink_range", "Blink Distance");
         add("attribute.pasterdream.san_variability", "Sanity Variability");
         add("subtitles.pasterdream.evasion", "Evasion");
     }

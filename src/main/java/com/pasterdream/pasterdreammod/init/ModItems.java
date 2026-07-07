@@ -595,6 +595,16 @@ public class ModItems {
     // ===== 饰品（项链） =====
     public static final RegistryObject<Item> EMBRYO_NECKLACE = ITEMS.register("embryo_necklace",
             EmbryoNecklaceItem::new);
+    public static final RegistryObject<Item> RABBIT_FOOT_NECKLACE = ITEMS.register("rabbit_foot_necklace",
+            RabbitFootNecklaceItem::new);
+    public static final RegistryObject<Item> FEATHER_NECKLACE = ITEMS.register("feather_necklace",
+            FeatherNecklaceItem::new);
+    public static final RegistryObject<Item> HEALTH_NECKLACE = ITEMS.register("health_necklace",
+            HealthNecklaceItem::new);
+    public static final RegistryObject<Item> FIRE_NECKLACE = ITEMS.register("fire_necklace",
+            FireNecklaceItem::new);
+    public static final RegistryObject<Item> CROSS_NECKLACE = ITEMS.register("cross_necklace",
+            CrossNecklaceItem::new);
 
     // ===== 饰品（戒指） =====
     public static final RegistryObject<Item> EMBRYO_RING = ITEMS.register("embryo_ring",
