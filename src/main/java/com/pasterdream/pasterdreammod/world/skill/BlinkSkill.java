@@ -54,7 +54,6 @@ public class BlinkSkill {
     private static void applyCooldown(Player player) {
         double cd = getAttributeValue(player, ModAttributes.BLINK_CD.get(), 1.0);
         boolean hasElytra = player.getItemBySlot(EquipmentSlot.CHEST).is(Items.ELYTRA);
-        // TODO: also check for 波波鸡饰品 (boboji) when ported
         int duration = hasElytra ? (int) (100 * cd) : (int) (50 * cd);
         player.addEffect(new MobEffectInstance(ModEffects.BLINK_COOLDOWN.get(), duration, 0,
                 false, false));

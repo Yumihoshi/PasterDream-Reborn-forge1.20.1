@@ -113,6 +113,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.CHARGED_AMETHYST.get());
         basicItem(ModItems.DYEDREAM_COROLLA.get());
         basicItem(ModItems.WHITE_COROLLA.get());
+        basicItem(ModItems.WHITE_CRYSTAL.get());
         basicItem(ModItems.LIGHT_BALL.get());
         basicItem(ModItems.COTTON.get());
         basicItem(ModItems.SCULK_HEART.get());
@@ -218,6 +219,9 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.GARLAND.get());
         basicItem(ModItems.FOURLEAF_CLOVER_CURIO.get());
         basicItem(ModItems.SNOW_VOW_HEAD.get());
+        basicItem(ModItems.LIGHT_BUTTERFLY_CURIO.get());
+        basicItem(ModItems.BRIGHT_BUTTERFLY_CURIO.get());
+        basicItem(ModItems.BOBOJI_CURIO.get());
         basicItem(ModItems.EMBRYO_NECKLACE.get());
         basicItem(ModItems.EMBRYO_RING.get());
         basicItem(ModItems.EMBRYO_BELT.get());

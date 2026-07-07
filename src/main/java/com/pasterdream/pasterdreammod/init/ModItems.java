@@ -40,6 +40,7 @@ import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
 import com.pasterdream.pasterdreammod.world.item.PaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.PliersItem;
 import com.pasterdream.pasterdreammod.world.item.RootsPaleBoneneedleItem;
+import com.pasterdream.pasterdreammod.world.item.WhiteCrystalItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -127,6 +128,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> DYEDREAM_COROLLA = ITEMS.register("dyedream_corolla", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WHITE_COROLLA = ITEMS.register("white_corolla", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WHITE_CRYSTAL = ITEMS.register("white_crystal",
+            WhiteCrystalItem::new);
     public static final RegistryObject<Item> LIGHT_BALL = ITEMS.register("light_ball", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> COTTON = ITEMS.register("cotton", () -> new Item(new Item.Properties()));
 
@@ -605,6 +608,12 @@ public class ModItems {
             FourleafCloverCurioItem::new);
     public static final RegistryObject<Item> SNOW_VOW_HEAD = ITEMS.register("snow_vow_head",
             SnowVowHeadItem::new);
+    public static final RegistryObject<Item> LIGHT_BUTTERFLY_CURIO = ITEMS.register("light_butterfly_curio",
+            LightButterflyCurioItem::new);
+    public static final RegistryObject<Item> BRIGHT_BUTTERFLY_CURIO = ITEMS.register("bright_butterfly_curio",
+            BrightButterflyCurioItem::new);
+    public static final RegistryObject<Item> BOBOJI_CURIO = ITEMS.register("boboji_curio",
+            BobojiCurioItem::new);
 
     // ===== 饰品（项链） =====
     public static final RegistryObject<Item> EMBRYO_NECKLACE = ITEMS.register("embryo_necklace",
