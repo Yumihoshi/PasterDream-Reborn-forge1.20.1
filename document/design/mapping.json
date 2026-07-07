@@ -329,7 +329,10 @@
     "feather_necklace": "feather_necklace",
     "health_0_necklace": "health_necklace",
     "fire_0_necklace": "fire_necklace",
-    "cross_necklace": "cross_necklace"
+    "cross_necklace": "cross_necklace",
+    "nature_belt": "nature_belt",
+    "traveler_belt": "traveler_belt",
+    "dream_traveler_belt": "dream_traveler_belt"
   },
   "entities": {},
   "dimensions": {

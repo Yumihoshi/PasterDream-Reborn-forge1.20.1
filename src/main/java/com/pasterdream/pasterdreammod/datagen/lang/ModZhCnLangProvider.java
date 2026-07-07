@@ -642,6 +642,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.RABBIT_FOOT_NECKLACE.get(), "雪兔脚项链");
         add("tooltip.pasterdream.rabbit_foot_necklace.effect", "§7▪ §9获得跳跃提升II与+1幸运值");
         add(ModItems.FEATHER_NECKLACE.get(), "轻羽护符");
+        add("tooltip.pasterdream.feather_necklace.effect1", "§7▪ §9-0.05 瞬身术消耗");
+        add("tooltip.pasterdream.feather_necklace.effect2", "§7▪ §9+0.2 瞬身术距离");
         add(ModItems.HEALTH_NECKLACE.get(), "生命项链");
         add(ModItems.FIRE_NECKLACE.get(), "业火项链");
         add("tooltip.pasterdream.fire_necklace.effect1", "§7▪ §9行走会留下火焰");
@@ -653,6 +655,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.EMBRYO_RING.get(), "戒指原胚");
         // 腰带
         add(ModItems.EMBRYO_BELT.get(), "腰带原胚");
+        add(ModItems.NATURE_BELT.get(), "自然腰带");
+        add(ModItems.TRAVELER_BELT.get(), "旅者腰带");
+        add("tooltip.pasterdream.traveler_belt.effect", "§7▪ §9-0.5 瞬身术消耗");
+        add(ModItems.DREAM_TRAVELER_BELT.get(), "迷梦旅者腰带");
+        add("tooltip.pasterdream.dream_traveler_belt.effect1", "§7▪ §9+3% 移动速度");
+        add("tooltip.pasterdream.dream_traveler_belt.effect2", "§7▪ §9-0.1 瞬身术冷却");
 
         //原胚
         add("tooltip.pasterdream.embryo.tooltip1", "§f▪ §7简介");
@@ -669,7 +677,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");
-        add("attribute.pasterdream.san_variability", "理智变化率");
+        add("attribute.pasterdream.san_variability", "理智光环");
         add("subtitles.pasterdream.evasion", "瞬身术: 回避");
     }
 }

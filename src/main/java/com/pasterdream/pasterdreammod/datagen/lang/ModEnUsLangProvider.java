@@ -519,6 +519,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.RABBIT_FOOT_NECKLACE.get(), "Rabbit Foot Necklace");
         add("tooltip.pasterdream.rabbit_foot_necklace.effect", "§7▪ §9Grants Jump Boost II & +1 Luck");
         add(ModItems.FEATHER_NECKLACE.get(), "Feather Necklace");
+        add("tooltip.pasterdream.feather_necklace.effect1", "§7▪ §9-0.05 Blink Consumption");
+        add("tooltip.pasterdream.feather_necklace.effect2", "§7▪ §9+0.2 Blink Range");
         add(ModItems.HEALTH_NECKLACE.get(), "Health Necklace");
         add(ModItems.FIRE_NECKLACE.get(), "Fire Necklace");
         add("tooltip.pasterdream.fire_necklace.effect1", "§7▪ §9Leaves a trail of fire while walking");
@@ -530,6 +532,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.EMBRYO_RING.get(), "Embryo Ring");
         //Belts
         add(ModItems.EMBRYO_BELT.get(), "Embryo Belt");
+        add(ModItems.NATURE_BELT.get(), "Nature Belt");
+        add(ModItems.TRAVELER_BELT.get(), "Traveler Belt");
+        add("tooltip.pasterdream.traveler_belt.effect", "§7▪ §9-0.5 Blink Consumption");
+        add(ModItems.DREAM_TRAVELER_BELT.get(), "Dream Traveler Belt");
+        add("tooltip.pasterdream.dream_traveler_belt.effect1", "§7▪ §9+3% Movement Speed");
+        add("tooltip.pasterdream.dream_traveler_belt.effect2", "§7▪ §9-0.1 Blink Cooldown");
         //Embryo
         add("tooltip.pasterdream.embryo.tooltip1", "§f▪ §7Introduction");
         add("tooltip.pasterdream.embryo.tooltip2", "§7A curios embryo made from titanium and soul essence");
