@@ -27,7 +27,7 @@ public class TravelerBeltItem extends Item implements ICurioItem {
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (slotContext.entity() != null) {
             AttributeInstance attr = slotContext.entity().getAttribute(ModAttributes.BLINK_CONSUME.get());
-            if (attr != null) {
+            if (attr != null && attr.getModifier(BLINK_CONSUME_UUID) == null) {
                 attr.addPermanentModifier(new AttributeModifier(BLINK_CONSUME_UUID,
                         "Traveler belt blink consume", -0.5, AttributeModifier.Operation.ADDITION));
             }

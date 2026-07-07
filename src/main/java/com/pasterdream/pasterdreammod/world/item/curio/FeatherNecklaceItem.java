@@ -28,12 +28,12 @@ public class FeatherNecklaceItem extends Item implements ICurioItem {
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (slotContext.entity() != null) {
             AttributeInstance consumeAttr = slotContext.entity().getAttribute(ModAttributes.BLINK_CONSUME.get());
-            if (consumeAttr != null) {
+            if (consumeAttr != null && consumeAttr.getModifier(CONSUME_MODIFIER_UUID) == null) {
                 consumeAttr.addPermanentModifier(new AttributeModifier(CONSUME_MODIFIER_UUID,
                         "Feather necklace consume", -0.05, AttributeModifier.Operation.ADDITION));
             }
             AttributeInstance rangeAttr = slotContext.entity().getAttribute(ModAttributes.BLINK_RANGE.get());
-            if (rangeAttr != null) {
+            if (rangeAttr != null && rangeAttr.getModifier(RANGE_MODIFIER_UUID) == null) {
                 rangeAttr.addPermanentModifier(new AttributeModifier(RANGE_MODIFIER_UUID,
                         "Feather necklace range", 0.2, AttributeModifier.Operation.ADDITION));
             }

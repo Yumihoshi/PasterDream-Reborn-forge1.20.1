@@ -30,7 +30,7 @@ public class HealthNecklaceItem extends Item implements ICurioItem {
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
         if (slotContext.entity() != null) {
             AttributeInstance health = slotContext.entity().getAttribute(Attributes.MAX_HEALTH);
-            if (health != null) {
+            if (health != null && health.getModifier(HEALTH_UUID) == null) {
                 health.addPermanentModifier(new AttributeModifier(HEALTH_UUID,
                         "Health necklace max health", 2.0, AttributeModifier.Operation.ADDITION));
             }
