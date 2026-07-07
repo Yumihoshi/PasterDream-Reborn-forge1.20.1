@@ -236,6 +236,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SEA_CHARM.get());
                         output.accept(ModItems.CARAPAX_CHARM.get());
                         output.accept(ModItems.WORLDTREE_SEEDPOD.get());
+                        output.accept(ModItems.GARLAND.get());
+                        output.accept(ModItems.FOURLEAF_CLOVER_CURIO.get());
+                        output.accept(ModItems.SNOW_VOW_HEAD.get());
                         output.accept(ModItems.RABBIT_FOOT_NECKLACE.get());
                         output.accept(ModItems.FEATHER_NECKLACE.get());
                         output.accept(ModItems.HEALTH_NECKLACE.get());

@@ -599,6 +599,12 @@ public class ModItems {
             CarapaxCharmItem::new);
     public static final RegistryObject<Item> WORLDTREE_SEEDPOD = ITEMS.register("worldtree_seedpod",
             WorldtreeSeedpodItem::new);
+    public static final RegistryObject<Item> GARLAND = ITEMS.register("garland",
+            GarlandItem::new);
+    public static final RegistryObject<Item> FOURLEAF_CLOVER_CURIO = ITEMS.register("fourleaf_clover_curio",
+            FourleafCloverCurioItem::new);
+    public static final RegistryObject<Item> SNOW_VOW_HEAD = ITEMS.register("snow_vow_head",
+            SnowVowHeadItem::new);
 
     // ===== 饰品（项链） =====
     public static final RegistryObject<Item> EMBRYO_NECKLACE = ITEMS.register("embryo_necklace",

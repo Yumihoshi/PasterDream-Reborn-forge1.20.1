@@ -6,6 +6,7 @@ import com.pasterdream.pasterdreammod.world.effect.DyedreamUpBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.EvasionBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.SculkArmorBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.BlinkCooldownEffect;
+import com.pasterdream.pasterdreammod.world.effect.SnowVowBuffEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,6 +29,8 @@ public class ModEffects {
             EFFECTS.register("evasion_buff", EvasionBuffEffect::new);
     public static final RegistryObject<MobEffect> BLINK_COOLDOWN =
             EFFECTS.register("blink_cooldown", BlinkCooldownEffect::new);
+    public static final RegistryObject<MobEffect> SNOW_VOW_BUFF =
+            EFFECTS.register("snow_vow_buff", SnowVowBuffEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);

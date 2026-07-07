@@ -519,6 +519,15 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.SEA_CHARM.get(), "Sea Charm");
         add(ModItems.CARAPAX_CHARM.get(), "Carapax Charm");
         add(ModItems.WORLDTREE_SEEDPOD.get(), "Worldtree Seedpod");
+        add(ModItems.GARLAND.get(), "Garland");
+        add(ModItems.FOURLEAF_CLOVER_CURIO.get(), "Fourleaf Clover");
+        add("tooltip.pasterdream.fourleaf_clover_curio.flavor", "§7§oWhich leaf represents luck?");
+        add(ModItems.SNOW_VOW_HEAD.get(), "Snow Vow");
+        add("tooltip.pasterdream.snow_vow_head.effect.area", "§7▪ §9Grants nearby players within 7 blocks an effect");
+        add("tooltip.pasterdream.snow_vow_head.effect.bonus", "§7▪ §9Luck +3  Immune to burning and freezing");
+        add("effect.pasterdream.snow_vow_buff", "Snow Vow");
+        add("tooltip.pasterdream.fourleaf_clover_curio.effect.health", "§7▪ §9+1 Max Health");
+        add("tooltip.pasterdream.fourleaf_clover_curio.effect.luck", "§7▪ §9+6 Luck");
         add("tooltip.pasterdream.worldtree_seedpod.condition", "§7▪ §9In Dyedream World, open sky, Y>160, daytime, standing on Worldtree Leaves");
         add("tooltip.pasterdream.worldtree_seedpod.hunger", "§7▪ §4Constantly increases exhaustion");
         add("tooltip.pasterdream.worldtree_seedpod.energy", "§7▪ §9Melt Dream Energy +360/h");
