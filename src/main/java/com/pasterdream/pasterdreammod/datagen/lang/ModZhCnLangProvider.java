@@ -659,6 +659,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("attribute.pasterdream.teleportation_cd", "瞬身术冷却");
         add("attribute.pasterdream.teleportation_consume", "瞬身术消耗");
         add("attribute.pasterdream.teleportation_range", "瞬身术距离");
+        add("attribute.pasterdream.san_variability", "理智变化率");
         add("subtitles.pasterdream.evasion", "瞬身术: 回避");
     }
 }

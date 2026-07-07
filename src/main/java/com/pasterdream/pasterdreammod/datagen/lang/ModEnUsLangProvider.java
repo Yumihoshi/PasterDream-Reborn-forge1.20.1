@@ -535,6 +535,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("attribute.pasterdream.teleportation_cd", "Teleportation Cooldown");
         add("attribute.pasterdream.teleportation_consume", "Teleportation Hunger Cost");
         add("attribute.pasterdream.teleportation_range", "Teleportation Distance");
+        add("attribute.pasterdream.san_variability", "Sanity Variability");
         add("subtitles.pasterdream.evasion", "Evasion");
     }
 }
