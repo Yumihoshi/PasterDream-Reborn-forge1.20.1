@@ -55,6 +55,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -148,9 +149,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> PALE_BONENEEDLE = ITEMS.register("pale_boneneedle",
-            () -> new PaleBoneneedleItem());
+            PaleBoneneedleItem::new);
     public static final RegistryObject<Item> ROOTS_PALE_BONENEEDLE = ITEMS.register("roots_pale_boneneedle",
-            () -> new RootsPaleBoneneedleItem());
+            RootsPaleBoneneedleItem::new);
 
     public static final RegistryObject<Item> SPOOL = ITEMS.register("spool",
             () -> new Item(new Item.Properties()));
@@ -311,7 +312,7 @@ public class ModItems {
     public static final RegistryObject<Item> MELT_DREAM_CRYSTAL_FRAGMENT = ITEMS.register("melt_dream_crystal_fragment",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)) {
                 @Override
-                public boolean isFoil(ItemStack stack) {
+                public boolean isFoil(@NotNull ItemStack stack) {
                     return true;
                 }
             });
@@ -372,7 +373,7 @@ public class ModItems {
     public static final RegistryObject<Item> GLASS_CUP_OF_UNCOOKED_DYEDREAM_FLOWER_TEA = ITEMS.register("glass_cup_of_uncooked_dyedream_flower_tea", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> GLASS_CUP_OF_COOKED_DYEDREAM_FLOWER_TEA = ITEMS.register("glass_cup_of_cooked_dyedream_flower_tea", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(MobEffects.HEAL, 1, 0), 1.0f).alwaysEat().build())) {
         @Override
-        public boolean isFoil(ItemStack stack) {
+        public boolean isFoil(@NotNull ItemStack stack) {
             return true;
         }
     });
@@ -610,13 +611,13 @@ public class ModItems {
 
     // ===== 露滴 =====
     public static final RegistryObject<Item> RED_DEW = ITEMS.register("red_dew",
-            () -> new RedDewItem());
+            RedDewItem::new);
     public static final RegistryObject<Item> BLUE_HEART_OF_THE_SEA = ITEMS.register("blue_heart_of_the_sea",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> ELDER_GUARDIAN_SCALE = ITEMS.register("elder_guardian_scale",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BLUE_DEW = ITEMS.register("blue_dew",
-            () -> new BlueDewItem());
+            BlueDewItem::new);
 
     // ===== 园艺钳 =====
     public static final RegistryObject<Item> PLIERS = ITEMS.register("pliers",
@@ -993,8 +994,8 @@ public class ModItems {
     public static final RegistryObject<Item> BLUE_PRINT = ITEMS.register("blue_print", () -> new BluePrintItem(new Item.Properties()));
 
 
-    public static final RegistryObject<Item> DEBUG_SWORD = ITEMS.register("debug_sword", () -> new DebugSwordItem());
-    public static final RegistryObject<Item> LOOT_GENERATOR = ITEMS.register("loot_generator", () -> new LootGeneratorItem());
+    public static final RegistryObject<Item> DEBUG_SWORD = ITEMS.register("debug_sword", DebugSwordItem::new);
+    public static final RegistryObject<Item> LOOT_GENERATOR = ITEMS.register("loot_generator", LootGeneratorItem::new);
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0 = ITEMS.register("model_break_particle_provider_block_0", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get(), new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1 = ITEMS.register("model_break_particle_provider_block_1", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get(), new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2 = ITEMS.register("model_break_particle_provider_block_2", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get(), new Item.Properties()));
