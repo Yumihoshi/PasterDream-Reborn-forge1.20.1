@@ -331,7 +331,14 @@ public class ModItems {
             player.getPersistentData().putBoolean("pasterdream:dream_juice_drank", true);
         }
     });
-    public static final RegistryObject<Item> GLASS_JAR_OF_GOLDENROD_TEA = ITEMS.register("glass_jar_of_goldenrod_tea", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().nutrition(1)./*effect().  实现“秋麒麟茶I效果后添加在这里”*/alwaysEat().build()).useDuration(24)));
+    public static final RegistryObject<Item> GLASS_JAR_OF_GOLDENROD_TEA = ITEMS.register("glass_jar_of_goldenrod_tea",
+            () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().nutrition(1).effect(() -> new MobEffectInstance(ModEffects.GOLDENROD_TEA_BUFF.get(), 3600, 0), 1.0f).alwaysEat().build()).useDuration(24)) {
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                    super.appendHoverText(stack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.pasterdreammod.goldenrod_tea"));
+                }
+            });
     public static final RegistryObject<Item> GLASS_JAR_OF_DYEDREAM_PERFUME = ITEMS.register("glass_jar_of_dyedream_perfume",
             () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(ModEffects.DYEDREAM_PERFUME_BUFF.get(), 1200, 0), 1.0f).alwaysEat().build()).useDuration(24)) {
                 @Override
