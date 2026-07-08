@@ -357,6 +357,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("button.pasterdream.research_button", "研究");
 
         add("tooltip.pasterdreammod.magic_stone", "§7§o哪个魔法师的兜里不会踹几块魔法石呢？");
+        add("tooltip.pasterdreammod.goldenrod_tea", "§d持续移除饥饿与反胃效果");
         add("tooltip.pasterdreammod.dyedream_perfume", "§d清空未睡眠天数，幻翼不会攻击你");
         add("tooltip.pasterdreammod.dyedream_perfume.flavor", "§7§o当你在思考为什么香水要用来喝时\n或许应该先考虑你现在正在做梦？");
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7此世间一切拥有灵魂的生物皆有梦\n那些醒来时无法想起的细缕回忆\n破碎并融化被埋藏在世界各处凝结成晶\n等待着被新的灵魂发现");
@@ -733,6 +734,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.evasion_buff", "回避");
         add("effect.pasterdream.blink_cooldown", "瞬身术冷却");
         add("effect.pasterdream.dyedream_perfume_buff", "染梦香水");
+        add("effect.pasterdream.goldenrod_tea_buff", "秋麒麟茶");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");
