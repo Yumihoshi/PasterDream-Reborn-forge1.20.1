@@ -654,6 +654,8 @@ public class ModItems {
             BobojiCurioItem::new);
     public static final RegistryObject<Item> QYM_BUTTERFLY_STAR_HAIRPIN = ITEMS.register("qym_butterfly_star_hairpin",
             QymButterflyStarHairpinItem::new);
+    public static final RegistryObject<Item> HIYORI_BUTTERFLY_HAIRPIN = ITEMS.register("hiyori_butterfly_hairpin",
+            HiyoriButterflyHairpinItem::new);
 
     // ===== 饰品（项链） =====
     public static final RegistryObject<Item> EMBRYO_NECKLACE = ITEMS.register("embryo_necklace",
@@ -676,6 +678,8 @@ public class ModItems {
             RedDewRingItem::new);
     public static final RegistryObject<Item> STRIKE_RING = ITEMS.register("strike_ring",
             StrikeRingItem::new);
+    public static final RegistryObject<Item> ALLKINDS_RING = ITEMS.register("allkinds_ring",
+            AllkindsRingItem::new);
     // ===== 饰品（腰带） =====
     public static final RegistryObject<Item> EMBRYO_BELT = ITEMS.register("embryo_belt",
             EmbryoBeltItem::new);

@@ -657,6 +657,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.QYM_BUTTERFLY_STAR_HAIRPIN.get(), "琴雨梦的蝴蝶星发卡");
         add("tooltip.pasterdream.qym_butterfly_star_hairpin.effect", "§7▪ §9所有生物不会主动攻击你");
         add("tooltip.pasterdream.qym_butterfly_star_hairpin.lore", "§7§o如果你瞄准夜空的星星，即使迷失，也是在星辰之间。");
+        add(ModItems.HIYORI_BUTTERFLY_HAIRPIN.get(), "妃爱的蝴蝶结发夹");
+        add("tooltip.pasterdream.hiyori_butterfly_hairpin.lore", "§7§o-- 因为常轨脱离 所以creative");
+        add(ModItems.ALLKINDS_RING.get(), "万象神戒");
+        add("tooltip.pasterdream.allkinds_ring.flavor", "§7§o聚万象之力 铸以此戒");
+        add("tooltip.pasterdream.allkinds_ring.lore", "§7§o-- 斯卓贝莉·黛欧恩");
         add(ModItems.LIGHT_BUTTERFLY_CURIO.get(), "夜明蝶");
         add("tooltip.pasterdream.light_butterfly_curio.effect", "§7▪ §9自身处于低亮度环境下获得夜视");
         add("tooltip.pasterdream.light_butterfly_curio.energy", "§7▪ §4融梦能量消耗：0.24/min");
