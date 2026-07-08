@@ -33,6 +33,10 @@
 - 搬运 `hiyori_butterfly_hairpin`（妃爱的蝴蝶结发夹），品质 EPIC，head 槽位，+2 最大生命值 / +15 幸运 / +0.96 理智光环，`pasterdream.luck` 改为原版 `generic.luck`
 - 搬运 `allkinds_ring`（万象神戒），品质 LEGENDARY，ring 槽位，+4 生命 / +2 攻击 / +0.1 攻速 / +0.2 触及距离 / +0.5 方块触及 / +5% 移速，跳过战技系统属性（skillCd/skillMultiplier/teleportationCd）
 
+**效果**
+- 搬运 `cook_buff`（料理），+1.2 理智光环/级，方案 B：`applyEffectTick` + Player 检查，避免非玩家实体因 SAN_VARIABILITY 属性未注册而崩溃
+- 给 15 种食品添加料理 buff：各色包蛋饼(1min)/巧克力抹茶蛋糕(1min)/培根煎蛋(1min)/奇怪培根煎蛋(2min)/瑞士卷(1min)/三明治(1min)/夹心华夫饼(1min)/姜饼人(1min)/拐杖糖(1min)/染梦果包蛋饼(1min)/菠萝爱海(5min)
+
 **世界生成**
 - 添加染梦海洋生物群系
 - 添加方解石尖锥地物生成功能
