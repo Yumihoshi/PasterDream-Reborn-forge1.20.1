@@ -1,0 +1,9 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pasterdream:item/strike_ring_lv1"
+  },
+  "overrides": [
+    { "predicate": { "pasterdream:lv": 0.5  }, "model": "pasterdream:item/strike_ring_lv2" }
+  ]
+}

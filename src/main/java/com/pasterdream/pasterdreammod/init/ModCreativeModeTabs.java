@@ -6,6 +6,7 @@ import com.pasterdream.pasterdreammod.helper.itemwithnbt.dreamnoteswithnbt.Dream
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.lootgeneratorwithnbt.LootGeneratorWithNBT;
 import com.pasterdream.pasterdreammod.world.item.blueprints.AddBluePrintContentListTag;
 import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
+import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.NBTBookRegisterToCreativeModTab;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -257,6 +258,9 @@ public class ModCreativeModeTabs {
                         output.accept(RedDewRingItem.createWithLv(ModItems.RED_DEW_RING.get(), 2));
                         output.accept(RedDewRingItem.createWithLv(ModItems.RED_DEW_RING.get(), 3));
                         output.accept(RedDewRingItem.createWithLv(ModItems.RED_DEW_RING.get(), 4));
+                        output.accept(StrikeRingItem.createWithLv(ModItems.STRIKE_RING.get(), 1));
+                        output.accept(StrikeRingItem.createWithLv(ModItems.STRIKE_RING.get(), 2));
+
                     })
                     .build());
 
