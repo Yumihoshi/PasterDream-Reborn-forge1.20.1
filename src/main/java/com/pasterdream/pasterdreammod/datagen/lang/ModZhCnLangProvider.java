@@ -747,6 +747,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.blink_cooldown", "瞬身术冷却");
         add("effect.pasterdream.dyedream_perfume_buff", "染梦香水");
         add("effect.pasterdream.goldenrod_tea_buff", "秋麒麟茶");
+        add("effect.pasterdream.cook_buff", "料理");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");
