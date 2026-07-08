@@ -696,9 +696,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 戒指
         add(ModItems.EMBRYO_RING.get(), "戒指原胚");
         add(ModItems.RED_DEW_RING.get(), "红露滴戒指");
-        add("tooltip.pasterdream.red_dew_ring.lv", "§7§bLv.%s");
-        add("tooltip.pasterdream.red_dew_ring.effect", "§7▪ §9+§9%s最大生命值");
-        add("tooltip.pasterdream.red_dew_ring.tooltip", "§7红露滴戒指只能佩戴一枚");
+        add(ModItems.STRIKE_RING.get(), "强击戒指");
+        add("tooltip.pasterdream.red_dew_ring.effect", "§7▪ §9+%s最大生命值");
+        add("tooltip.pasterdream.strike_ring.effect", "§7▪ §9+%s攻击伤害");
+
         // 腰带
         add(ModItems.EMBRYO_BELT.get(), "腰带原胚");
         add(ModItems.NATURE_BELT.get(), "自然腰带");
@@ -713,6 +714,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.embryo.tooltip1", "§7钛金属和灵魂精华而制作的饰品原胚");
         add("tooltip.pasterdream.embryo.tooltip2", "§7利用钛的生命亲和性和灵魂精华的精神连携作用");
         add("tooltip.pasterdream.embryo.tooltip3", "§7使得可以通过用物质实体制作成的饰品来强化自身");
+
+
+        //饰品工具提示
+        add("tooltip.pasterdream.lv", "§7§b等级：Lv.%s");
+        add("tooltip.pasterdream.only_one.tooltip", "§7该饰品在饰品栏只能装备一个");
         add("tooltip.pasterdream.hold_shift", "§7按住[§rShift§7]键查看简介");
 
         // 瞬身术
