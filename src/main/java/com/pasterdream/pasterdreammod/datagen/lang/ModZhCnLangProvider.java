@@ -650,6 +650,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.SNOW_VOW_HEAD.get(), "雪下的誓言");
         add("tooltip.pasterdream.snow_vow_head.effect.area", "§7▪ §9使附近直径7格内的玩家获得效果");
         add("tooltip.pasterdream.snow_vow_head.effect.bonus", "§7▪ §9幸运+3 免疫燃烧与冻结");
+        add(ModItems.QYM_BUTTERFLY_STAR_HAIRPIN.get(), "琴雨梦的蝴蝶星发卡");
+        add("tooltip.pasterdream.qym_butterfly_star_hairpin.effect", "§7▪ §9所有生物不会主动攻击你");
+        add("tooltip.pasterdream.qym_butterfly_star_hairpin.lore", "§7§o如果你瞄准夜空的星星，即使迷失，也是在星辰之间。");
         add(ModItems.LIGHT_BUTTERFLY_CURIO.get(), "夜明蝶");
         add("tooltip.pasterdream.light_butterfly_curio.effect", "§7▪ §9自身处于低亮度环境下获得夜视");
         add("tooltip.pasterdream.light_butterfly_curio.energy", "§7▪ §4融梦能量消耗：0.24/min");

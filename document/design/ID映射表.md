@@ -367,6 +367,7 @@
 | `bright_butterfly_curio`        | `bright_butterfly_curio`                    | 不改                                                            | 客制化类 `BrightButterflyCurioItem`，实现 `ICurioItem`，低亮度夜视 + 免疫黑暗效果 |
 | `white_crystal`                 | `white_crystal`                             | 不改                                                            | 客制化类 `WhiteCrystalItem`，制作白厄剑的核心材料 |
 | `boboji_curio`                  | `boboji_curio`                              | 不改                                                            | 客制化类 `BobojiCurioItem`，实现 `ICurioItem`，+5%速度、+0.1瞬身术距离、-0.2冷却、-0.4消耗，禁止重复装备 |
+| `qym_head`                      | `qym_butterfly_star_hairpin`                | 重命名，`qym_head` → `qym_butterfly_star_hairpin`               | 客制化类 `QymButterflyStarHairpinItem`，实现 `ICurioItem`，所有生物不主动攻击（可反击），品质 MIRACLE，防火 |
 
 
 ---

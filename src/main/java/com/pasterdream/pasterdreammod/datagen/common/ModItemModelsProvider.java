@@ -219,6 +219,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.GARLAND.get());
         basicItem(ModItems.FOURLEAF_CLOVER_CURIO.get());
         basicItem(ModItems.SNOW_VOW_HEAD.get());
+        basicItem(ModItems.QYM_BUTTERFLY_STAR_HAIRPIN.get());
         basicItem(ModItems.LIGHT_BUTTERFLY_CURIO.get());
         basicItem(ModItems.BRIGHT_BUTTERFLY_CURIO.get());
         basicItem(ModItems.BOBOJI_CURIO.get());

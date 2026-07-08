@@ -241,6 +241,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GARLAND.get());
                         output.accept(ModItems.FOURLEAF_CLOVER_CURIO.get());
                         output.accept(ModItems.SNOW_VOW_HEAD.get());
+                        output.accept(ModItems.QYM_BUTTERFLY_STAR_HAIRPIN.get());
                         output.accept(ModItems.LIGHT_BUTTERFLY_CURIO.get());
                         output.accept(ModItems.BRIGHT_BUTTERFLY_CURIO.get());
                         output.accept(ModItems.BOBOJI_CURIO.get());
