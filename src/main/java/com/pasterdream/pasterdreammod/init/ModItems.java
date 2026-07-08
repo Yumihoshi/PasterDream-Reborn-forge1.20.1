@@ -614,6 +614,8 @@ public class ModItems {
             BrightButterflyCurioItem::new);
     public static final RegistryObject<Item> BOBOJI_CURIO = ITEMS.register("boboji_curio",
             BobojiCurioItem::new);
+    public static final RegistryObject<Item> QYM_BUTTERFLY_STAR_HAIRPIN = ITEMS.register("qym_butterfly_star_hairpin",
+            QymButterflyStarHairpinItem::new);
 
     // ===== 饰品（项链） =====
     public static final RegistryObject<Item> EMBRYO_NECKLACE = ITEMS.register("embryo_necklace",
