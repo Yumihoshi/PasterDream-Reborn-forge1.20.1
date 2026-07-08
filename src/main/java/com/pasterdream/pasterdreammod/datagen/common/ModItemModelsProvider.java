@@ -300,7 +300,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("block/edelweiss"));
         withExistingParent(ModItems.NIPPY_EDELWEISS.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/nippy_edelweiss"));
-
+        withExistingParent(ModItems.LIGHT_BALL.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/light_ball"));
 
         withExistingParent(ModItems.DYEDREAM_MOSS.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/dyedream_moss"));
