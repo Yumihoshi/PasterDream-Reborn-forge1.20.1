@@ -20,11 +20,15 @@ import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanScreen;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipe;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableCopyRecipe;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableResearchRecipe;
+import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
+import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
+import com.pasterdream.pasterdreammod.world.item.lootgenerator.LootGeneratorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarRecipe;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarScreen;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.forge.ForgeTypes;
+import mezz.jei.api.ingredients.subtypes.IIngredientSubtypeInterpreter;
 import mezz.jei.api.registration.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -95,6 +99,25 @@ public class ModJEIPlugin implements IModPlugin
         registration.addRecipeCategories(new MortarRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new ResearchTableCopyRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new ResearchTableResearchRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+    }
+
+    @Override
+    public void registerItemSubtypes(ISubtypeRegistration registration)
+    {
+        registration.registerSubtypeInterpreter(
+                ModItems.RED_DEW_RING.get(),
+                (stack, context) -> String.valueOf(RedDewRingItem.getLv(stack)));
+
+        registration.registerSubtypeInterpreter(
+                ModItems.STRIKE_RING.get(),
+                (stack, context) -> String.valueOf(StrikeRingItem.getLv(stack)));
+
+        registration.registerSubtypeInterpreter(
+                ModItems.LOOT_GENERATOR.get(),
+                (stack, context) -> {
+                    ResourceLocation table = LootGeneratorItem.getLootTable(stack);
+                    return table != null ? table.toString() : IIngredientSubtypeInterpreter.NONE;
+                });
     }
 
     //将流体添加至JEI物品列表
