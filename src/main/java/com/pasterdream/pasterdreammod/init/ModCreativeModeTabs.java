@@ -509,6 +509,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3.get());
                     }).build());
 
+    // ===== 拓展 =====
+    // 来源: 旧 paster_tab_9
+    public static final RegistryObject<CreativeModeTab> PASTERDREAM_EXPANSION_TAB = CREATIVE_MODE_TABS.register("pasterdream_expansion_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.pasterdream.pasterdream_expansion_tab"))
+                    .icon(() -> new ItemStack(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ModItems.DUKE_COIN_CURIO.get());
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
