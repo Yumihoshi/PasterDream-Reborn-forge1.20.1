@@ -538,6 +538,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.QYM_BUTTERFLY_STAR_HAIRPIN.get(), "QYM's Butterfly Star Hairpin");
         add("tooltip.pasterdream.qym_butterfly_star_hairpin.effect", "§7▪ §9All mobs will not actively attack you");
         add("tooltip.pasterdream.qym_butterfly_star_hairpin.lore", "§7§oIf you aim for the stars in the night sky, even if you get lost, you are still among them.");
+        add(ModItems.HIYORI_BUTTERFLY_HAIRPIN.get(), "Hiyori Butterfly Hairpin");
+        add("tooltip.pasterdream.hiyori_butterfly_hairpin.lore", "§7§o-- Hamidashi, therefore Creative");
+        add(ModItems.ALLKINDS_RING.get(), "Allkinds Ring");
+        add("tooltip.pasterdream.allkinds_ring.flavor", "§7§oGather the power of all things, forge this ring");
+        add("tooltip.pasterdream.allkinds_ring.lore", "§7§o-- Szuperlina Deonne");
         add(ModItems.LIGHT_BUTTERFLY_CURIO.get(), "Light Butterfly Curio");
         add("tooltip.pasterdream.light_butterfly_curio.effect", "§7▪ §9Grants Night Vision in low light");
         add("tooltip.pasterdream.light_butterfly_curio.energy", "§7▪ §4Melt Dream Energy cost: 0.24/min");

@@ -514,9 +514,11 @@ public class ModCreativeModeTabs {
     public static final RegistryObject<CreativeModeTab> PASTERDREAM_EXPANSION_TAB = CREATIVE_MODE_TABS.register("pasterdream_expansion_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.pasterdream.pasterdream_expansion_tab"))
-                    .icon(() -> new ItemStack(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()))
+                    .icon(() -> new ItemStack(ModItems.HIYORI_BUTTERFLY_HAIRPIN.get()))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.DUKE_COIN_CURIO.get());
+                        output.accept(ModItems.HIYORI_BUTTERFLY_HAIRPIN.get());
+                        output.accept(ModItems.ALLKINDS_RING.get());
                     })
                     .build());
 

@@ -351,7 +351,9 @@
     "white_crystal": "white_crystal",
     "boboji_curio": "boboji_curio",
     "duke_coin_curio": "duke_coin_curio",
-    "qym_head": "qym_butterfly_star_hairpin"
+    "qym_head": "qym_butterfly_star_hairpin",
+    "hiyori_head": "hiyori_butterfly_hairpin",
+    "allkinds_ring": "allkinds_ring"
   },
   "entities": {},
   "dimensions": {

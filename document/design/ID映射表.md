@@ -375,6 +375,8 @@
 | `boboji_curio`                 | `boboji_curio`                              | 不改                                                            | 客制化类 `BobojiCurioItem`，实现 `ICurioItem`，+5%速度、+0.1瞬身术距离、-0.2冷却、-0.4消耗，禁止重复装备                      |
 | `duke_coin_curio`              | `duke_coin_curio`                           | 不改                                                            | 客制化类 `DukeCoinCurioItem`，实现 `ICurioItem`，+7 幸运值、+7 瞬身术冷却，禁止重复装备                                    |
 | `qym_head`                     | `qym_butterfly_star_hairpin`                | 重命名，`qym_head` → `qym_butterfly_star_hairpin`                 | 客制化类 `QymButterflyStarHairpinItem`，实现 `ICurioItem`，所有生物不主动攻击（可反击），品质 MIRACLE，防火                  |
+| `hiyori_head`                  | `hiyori_butterfly_hairpin`                  | 重命名，`hiyori_head` → `hiyori_butterfly_hairpin`               | 客制化类 `HiyoriButterflyHairpinItem`，实现 `ICurioItem`，+2 最大生命值、+15 幸运、+0.96 理智光环，品质 EPIC，禁止重复装备           |
+| `allkinds_ring`                | `allkinds_ring`                             | 不改                                                             | 客制化类 `AllkindsRingItem`，实现 `ICurioItem`，+4 生命、+2 攻击、+0.1 攻速、+0.2 触及、+0.5 方块触及、+5% 移速，品质 LEGENDARY，跳过战技属性 |
 
 
 ---
