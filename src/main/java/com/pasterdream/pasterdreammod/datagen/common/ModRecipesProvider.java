@@ -8,6 +8,7 @@ import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -18,6 +19,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class ModRecipesProvider extends RecipeProvider implements IConditionBuilder {
@@ -58,6 +60,107 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
             @Override public JsonObject serializeAdvancement() { return wrapped.serializeAdvancement(); }
             @Override public ResourceLocation getAdvancementId() { return wrapped.getAdvancementId(); }
         }), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name));
+    }
+
+    /**
+     * 有序配方——产物带NBT+可选原料NBT匹配。
+     * resultNbt为null时产物不带NBT；
+     * nbtKeys传或空Map表示原料不做NBT限制。
+     */
+    private void saveShapedWithNbt(ShapedRecipeBuilder builder, Consumer<FinishedRecipe> writer,
+                                   String name, CompoundTag resultNbt,
+                                   Map<Character, CompoundTag> nbtKeys) {
+        builder.save(wrapped -> writer.accept(new FinishedRecipe() {
+            @Override
+            public void serializeRecipeData(JsonObject json) {
+                wrapped.serializeRecipeData(json);
+                // 产物加NBT（兼容result为字符串或对象两种格式）
+                injectResultNbt(json, resultNbt);
+                // 指定key的原料改写为forge:partial_nbt格式
+                injectKeyNbt(json, nbtKeys);
+            }
+            @Override public ResourceLocation getId() {
+                return ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name);
+            }
+            @Override public RecipeSerializer<?> getType() { return RecipeSerializer.SHAPED_RECIPE; }
+            @Override public JsonObject serializeAdvancement() { return wrapped.serializeAdvancement(); }
+            @Override public ResourceLocation getAdvancementId() { return wrapped.getAdvancementId(); }
+        }), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name));
+    }
+
+    /**
+     * 无序配方——产物带 NBT + 可选原料 NBT 匹配。
+     * resultNbt为null时产物不带NBT；
+     * nbtIndices传null或空Map表示原料不做NBT限制。
+     */
+    private void saveShapelessWithNbt(ShapelessRecipeBuilder builder, Consumer<FinishedRecipe> writer,
+                                      String name, CompoundTag resultNbt,
+                                      Map<Integer, CompoundTag> nbtIndices) {
+        builder.save(wrapped -> writer.accept(new FinishedRecipe() {
+            @Override
+            public void serializeRecipeData(JsonObject json) {
+                wrapped.serializeRecipeData(json);
+                // 产物加 NBT（兼容 result 为字符串或对象两种格式）
+                injectResultNbt(json, resultNbt);
+                // 指定位置的原料改写为 forge:partial_nbt 格式
+                injectIngredientsNbt(json, nbtIndices);
+            }
+            @Override public ResourceLocation getId() {
+                return ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name);
+            }
+            @Override public RecipeSerializer<?> getType() { return RecipeSerializer.SHAPELESS_RECIPE; }
+            @Override public JsonObject serializeAdvancement() { return wrapped.serializeAdvancement(); }
+            @Override public ResourceLocation getAdvancementId() { return wrapped.getAdvancementId(); }
+        }), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name));
+    }
+    /** 产物加 NBT：兼容 "result": "modid:item"（字符串）和 "result": {...} */
+    private static void injectResultNbt(JsonObject json, CompoundTag nbt) {
+        if (nbt == null || !json.has("result")) return;
+        var resultEl = json.get("result");
+        if (resultEl.isJsonObject()) {
+            resultEl.getAsJsonObject().addProperty("nbt", nbt.toString());
+        } else if (resultEl.isJsonPrimitive()) {
+            JsonObject obj = new JsonObject();
+            obj.addProperty("item", resultEl.getAsString());
+            obj.addProperty("nbt", nbt.toString());
+            json.add("result", obj);
+        }
+    }
+
+    /** 有序配方 key 原料加 NBT 匹配 */
+    private static void injectKeyNbt(JsonObject json, Map<Character, CompoundTag> nbtKeys) {
+        if (nbtKeys == null || nbtKeys.isEmpty()) return;
+        if (!json.has("key")) return;
+        JsonObject keyObj = json.getAsJsonObject("key");
+        for (var entry : nbtKeys.entrySet()) {
+            String key = String.valueOf(entry.getKey());
+            if (keyObj.has(key)) {
+                var el = keyObj.get(key);
+                if (el.isJsonObject()) {
+                    JsonObject ingredient = el.getAsJsonObject();
+                    ingredient.addProperty("type", "forge:partial_nbt");
+                    ingredient.addProperty("nbt", entry.getValue().toString());
+                }
+            }
+        }
+    }
+
+    /** 无序配方原料按索引加 NBT 匹配 */
+    private static void injectIngredientsNbt(JsonObject json, Map<Integer, CompoundTag> nbtIndices) {
+        if (nbtIndices == null || nbtIndices.isEmpty()) return;
+        if (!json.has("ingredients")) return;
+        var ingredients = json.getAsJsonArray("ingredients");
+        for (var entry : nbtIndices.entrySet()) {
+            int idx = entry.getKey();
+            if (idx >= 0 && idx < ingredients.size()) {
+                var el = ingredients.get(idx);
+                if (el.isJsonObject()) {
+                    JsonObject ingredient = el.getAsJsonObject();
+                    ingredient.addProperty("type", "forge:partial_nbt");
+                    ingredient.addProperty("nbt", entry.getValue().toString());
+                }
+            }
+        }
     }
 
     public ModRecipesProvider(PackOutput pOutput) {
@@ -1883,6 +1986,63 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(ModItems.SOUL_ESSENCE.get())
                 .unlockedBy(getHasName(ModItems.LIGHT_BUTTERFLY_CURIO.get()), has(ModItems.LIGHT_BUTTERFLY_CURIO.get()))
                 .save(pWriter);
+
+        //4个红露滴戒指配方
+        CompoundTag lv1Nbt = new CompoundTag();
+        lv1Nbt.putInt("lv", 1);
+        CompoundTag lv2Nbt = new CompoundTag();
+        lv2Nbt.putInt("lv", 2);
+        CompoundTag lv3Nbt = new CompoundTag();
+        lv3Nbt.putInt("lv", 3);
+        CompoundTag lv4Nbt = new CompoundTag();
+        lv4Nbt.putInt("lv", 4);
+
+        saveShapelessWithNbt(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RED_DEW_RING.get())
+                        .requires(ModItems.EMBRYO_RING.get())
+                        .requires(Items.GOLD_INGOT)
+                        .requires(ModItems.RED_DEW.get())
+                        .unlockedBy(getHasName(ModItems.EMBRYO_RING.get()), has(ModItems.EMBRYO_RING.get())),
+                pWriter, "red_dew_ring_lv1", lv1Nbt, null);
+
+        saveShapelessWithNbt(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RED_DEW_RING.get())
+                        .requires(ModItems.RED_DEW_RING.get())
+                        .requires(ModItems.DYEDREAM_DUST.get())
+                        .requires(ModItems.RED_DEW.get())
+                        .unlockedBy(getHasName(ModItems.RED_DEW_RING.get()), has(ModItems.RED_DEW_RING.get())),
+                pWriter, "red_dew_ring_lv2", lv2Nbt, Map.of(0, lv1Nbt));
+
+        saveShapelessWithNbt(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RED_DEW_RING.get())
+                        .requires(ModItems.RED_DEW_RING.get())
+                        .requires(ModItems.DYEDREAM_DUST.get())
+                        .requires(ModItems.RED_DEW.get())
+                        .requires(ModItems.MELT_DREAM_LIQUID_BUCKET.get())
+                        .unlockedBy(getHasName(ModItems.RED_DEW_RING.get()), has(ModItems.RED_DEW_RING.get())),
+                pWriter, "red_dew_ring_lv3", lv3Nbt, Map.of(0, lv2Nbt));
+
+        //2个强击戒指配方
+        saveShapedWithNbt(ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STRIKE_RING.get(), 1)
+                .pattern(" c ")
+                .pattern("bab")
+                .pattern(" b ")
+                .define('a', ModItems.EMBRYO_RING.get())
+                .define('b', Items.COPPER_INGOT)
+                .define('c', Items.BLAZE_POWDER)
+                .unlockedBy(getHasName(ModItems.EMBRYO_RING.get()), has(ModItems.EMBRYO_RING.get())),
+                pWriter, "strike_ring_lv1", lv1Nbt, null);
+
+        saveShapedWithNbt(ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STRIKE_RING.get(), 1)
+                        .pattern("cbc")
+                        .pattern("bab")
+                        .pattern("cbc")
+                        .define('a', ModItems.STRIKE_RING.get())
+                        .define('b', ModItems.MOLTEN_GOLD_INGOT.get())
+                        .define('c', Items.BLAZE_ROD)
+                        .unlockedBy(getHasName(ModItems.STRIKE_RING.get()), has(ModItems.STRIKE_RING.get())),
+                pWriter, "strike_ring_lv2", lv2Nbt, Map.of('a', lv1Nbt));
+
     }
 
     // ===== 配方工具方法 =====
@@ -1908,5 +2068,4 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
                 .save(writer, PasterDreamMod.MOD_ID + ":" + getItemName(result) + "_from_dye");
     }
-
 }
