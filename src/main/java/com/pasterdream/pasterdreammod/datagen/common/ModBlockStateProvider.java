@@ -290,6 +290,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.JUNGLE_SPORANGIUM.get(),Jungle_sporangium);
         var Fourleaf_clover = models().cross(ModBlocks.FOURLEAF_CLOVER.getId().getPath(), blockTexture(ModBlocks.FOURLEAF_CLOVER.get())).renderType("cutout");
         simpleBlock(ModBlocks.FOURLEAF_CLOVER.get(),Fourleaf_clover);
+        var light_ball = models().cross(ModBlocks.LIGHT_BALL.getId().getPath(), blockTexture(ModBlocks.LIGHT_BALL.get())).renderType("cutout");
+        simpleBlock(ModBlocks.LIGHT_BALL.get(),light_ball);
 
 
         //植株方块
