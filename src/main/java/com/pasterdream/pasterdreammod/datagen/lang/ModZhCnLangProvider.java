@@ -357,6 +357,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("button.pasterdream.research_button", "研究");
 
         add("tooltip.pasterdreammod.magic_stone", "§7§o哪个魔法师的兜里不会踹几块魔法石呢？");
+        add("tooltip.pasterdreammod.dyedream_perfume", "§d清空未睡眠天数，幻翼不会攻击你");
+        add("tooltip.pasterdreammod.dyedream_perfume.flavor", "§7§o当你在思考为什么香水要用来喝时\n或许应该先考虑你现在正在做梦？");
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7此世间一切拥有灵魂的生物皆有梦\n那些醒来时无法想起的细缕回忆\n破碎并融化被埋藏在世界各处凝结成晶\n等待着被新的灵魂发现");
         add("tooltip.pasterdreammod.upgrade_kit", "§7用于在锻造台处升级装备 可以保留装备的原有强化属性");
         add("tooltip.pasterdream.右键打开GUI", "§7右键打开GUI");
@@ -724,12 +726,30 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 瞬身术
         add("key.pasterdream.blink", "瞬身术");
         add("key.categories.pasterdream", "帕斯特之梦");
+        add("effect.pasterdream.cheer_up_buff", "振奋");
+        add("effect.pasterdream.lethargy_buff", "不振");
+        add("effect.pasterdream.trance_buff", "恍惚");
+        add("effect.pasterdream.insand_buff", "疯狂");
         add("effect.pasterdream.evasion_buff", "回避");
         add("effect.pasterdream.blink_cooldown", "瞬身术冷却");
+        add("effect.pasterdream.dyedream_perfume_buff", "染梦香水");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");
         add("attribute.pasterdream.san_variability", "理智光环");
         add("subtitles.pasterdream.evasion", "瞬身术: 回避");
+
+        // 低San效果指令
+        add("command.pasterdream.lowsan.overlay", "低San屏幕覆盖层");
+        add("command.pasterdream.lowsan.overlay.set", "低San屏幕覆盖层已%s");
+        add("command.pasterdream.lowsan.overlay.get", "%s: %s");
+        add("command.pasterdream.lowsan.jitter", "低San画面抖动");
+        add("command.pasterdream.lowsan.jitter.set", "低San画面抖动已%s");
+        add("command.pasterdream.lowsan.jitter.get", "%s: %s");
+        add("command.pasterdream.lowsan.sound", "低San疯狂音效");
+        add("command.pasterdream.lowsan.sound.set", "低San疯狂音效已%s");
+        add("command.pasterdream.lowsan.sound.get", "%s: %s");
+        add("command.pasterdream.lowsan.enabled", "启用");
+        add("command.pasterdream.lowsan.disabled", "禁用");
     }
 }

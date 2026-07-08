@@ -35,5 +35,9 @@
   "evasion":
   {
     "sounds": [{"name": "pasterdream:evasion", "stream": false}]
+  },
+  "losemind0":
+  {
+    "sounds": [{"name": "pasterdream:losemind0", "stream": false}]
   }
 }

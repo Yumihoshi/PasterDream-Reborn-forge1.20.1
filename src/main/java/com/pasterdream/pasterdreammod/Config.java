@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-// 一个示例配置类。这不是必需的，但建议使用一个来保持配置有序。
-// 演示如何使用 Forge 的配置 API
 @Mod.EventBusSubscriber(modid = PasterDreamMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config
 {
@@ -31,7 +29,6 @@ public class Config
             .comment("魔法数字的介绍信息")
             .define("magicNumberIntroduction", "The magic number is... ");
 
-    // 一个字符串列表，被视作物品的资源位置
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS = BUILDER
             .comment("在通用初始化时记录日志的物品列表。")
             .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), Config::validateItemName);
@@ -42,6 +39,11 @@ public class Config
     public static int magicNumber;
     public static String magicNumberIntroduction;
     public static Set<Item> items;
+
+    // === 低 San 效果开关（可通过 /pasterdreamdebug lowsan 指令运行时切换） ===
+    public static boolean lowSanOverlay = true;
+    public static boolean lowSanJitter = true;
+    public static boolean lowSanSound = true;
 
     private static boolean validateItemName(final Object obj)
     {
@@ -55,7 +57,6 @@ public class Config
         magicNumber = MAGIC_NUMBER.get();
         magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
 
-        // 将字符串列表转换为物品集合
         items = ITEM_STRINGS.get().stream()
                 .map(itemName -> ForgeRegistries.ITEMS.getValue(ResourceLocation.parse(itemName)))
                 .collect(Collectors.toSet());

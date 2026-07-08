@@ -349,6 +349,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("button.pasterdream.research_button", "Research");
 
         add("tooltip.pasterdreammod.magic_stone", "§7§oWhat kind of mage doesn't carry a few magic stones?");
+        add("tooltip.pasterdreammod.dyedream_perfume", "§dClears insomnia and prevents phantom attacks");
+        add("tooltip.pasterdreammod.dyedream_perfume.flavor", "§7§oWhen you're wondering why perfume is meant to be drunk,\nmaybe you should first consider: are you dreaming?");
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7All creatures with souls in this world have dreams\nThose fleeting memories that cannot be recalled upon waking\nShatter and melt, buried across the world, condensing into crystals\nWaiting to be discovered by new souls");
         add("tooltip.pasterdreammod.upgrade_kit", "§7Used at the smithing table to upgrade equipment Can preserve the original enhancement properties of the equipment");
         add("tooltip.pasterdream.右键打开GUI", "§7Press right mouse button to open GUI");
@@ -598,12 +600,30 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Blink Skill
         add("key.pasterdream.blink", "Blink");
         add("key.categories.pasterdream", "PasterDream");
+        add("effect.pasterdream.cheer_up_buff", "Cheer Up");
+        add("effect.pasterdream.lethargy_buff", "Lethargy");
+        add("effect.pasterdream.trance_buff", "Trance");
+        add("effect.pasterdream.insand_buff", "Insanity");
         add("effect.pasterdream.evasion_buff", "Evasion");
         add("effect.pasterdream.blink_cooldown", "Blink Cooldown");
+        add("effect.pasterdream.dyedream_perfume_buff", "Dyedream Perfume");
         add("attribute.pasterdream.blink_cd", "Blink Cooldown");
         add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
         add("attribute.pasterdream.blink_range", "Blink Distance");
         add("attribute.pasterdream.san_variability", "Sanity Variability");
         add("subtitles.pasterdream.evasion", "Evasion");
+
+        // Low San effect commands
+        add("command.pasterdream.lowsan.overlay", "Low San screen overlay");
+        add("command.pasterdream.lowsan.overlay.set", "Low San screen overlay set to %s");
+        add("command.pasterdream.lowsan.overlay.get", "%s: %s");
+        add("command.pasterdream.lowsan.jitter", "Low San screen jitter");
+        add("command.pasterdream.lowsan.jitter.set", "Low San screen jitter set to %s");
+        add("command.pasterdream.lowsan.jitter.get", "%s: %s");
+        add("command.pasterdream.lowsan.sound", "Low San insanity sound");
+        add("command.pasterdream.lowsan.sound.set", "Low San insanity sound set to %s");
+        add("command.pasterdream.lowsan.sound.get", "%s: %s");
+        add("command.pasterdream.lowsan.enabled", "enabled");
+        add("command.pasterdream.lowsan.disabled", "disabled");
     }
 }

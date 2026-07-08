@@ -4,6 +4,27 @@
 
 ### 新增
 
+**San 阈值状态效果系统**
+- 搬运 4 个由 San 百分比决定的状态效果，接入 `SanAuraHandler`：
+  - `cheer_up_buff`（振奋）— San ≥ 90% 时给予，-0.1 瞬身术冷却 / +5% 移速 / +5% 攻速
+  - `lethargy_buff`（不振）— San 40%~60% 时给予，+0.5 瞬身术冷却 / -1% 移速 / -10% 攻速
+  - `trance_buff`（恍惚）— San 20%~40% 时给予，+1.0 瞬身术冷却 / -2% 移速 / -20% 攻速 / -1 攻击力
+  - `insand_buff`（疯狂）— San < 20% 时给予，三级强度（<10% / <1%），属性大幅减益 + 客户端画面效果
+- 源版阈值从固定值（≤60/≤40/≤20）改为百分比判定（San/maxSan）
+- 去掉未搬运的 `SKILLCD` 属性，`TELEPORTATIONCD` 替换为 `BLINK_CD`
+
+**低 San 客户端效果**
+- `LoseMind` HUD 覆盖层：San < 20% 时屏幕逐渐浮现 `lose_mind_gui.png`，三级渐进 alpha
+- 画面抖动：疯狂 II 级（±0.3°/±0.2°）和 III 级（±1.0°/±0.7°），客户端执行
+- 音效：疯狂 II 级以上周期性播放 `losemind0.ogg`（69s ambient，自动循环/停止）
+- 效果开关配置（`Config.lowSanOverlay` / `lowSanJitter` / `lowSanSound`）
+- 指令 `/pasterdreamdebug san lowsan overlay|jitter|sound set|get` 运行时切换
+
+**San 系统全局开关**
+- `SanAuraHandler` 入口检查 `isSanEnabled`，禁用时跳过全部 San 计算和阈值效果
+- `SanTank` HUD 禁用时隐藏
+- 现有食物/饮品/饰品均已受 `San.addSanValue()` 内置检查保护
+
 **世界生成**
 - 添加染梦海洋生物群系
 - 添加方解石尖锥地物生成功能
@@ -42,6 +63,7 @@
 - 搬运白厄水晶（材料物品，制作白厄剑的核心材料）
 - 搬运啵啵鸡的华丽飞羽（通用饰品，品质传说，+5% 速度、+0.1 瞬身术距离、-0.2 瞬身术冷却、-0.4 瞬身术消耗，属性通过 onEquip 附加而非 getAttributeModifiers 自动生成 tooltip）
 - 搬运琴雨梦的蝴蝶星发卡（头部饰品，品质神迹，所有生物不主动攻击玩家但可反击，防火属性）
+- 搬运染梦香水效果（`dyedream_perfume_buff`）：饮用后清空未睡眠天数、幻翼不再攻击，配合 `PhantomTargetMixin` 被动拦截幻翼目标锁定
 - 瞬身术与啵啵鸡饰品解耦，冷却公式统一为属性驱动，不再硬编码特定物品检测
 - 搬运强击戒指与露滴戒指系列饰品
 - 添加笔记残页和未解析笔记物品
@@ -82,6 +104,8 @@
 - 修正北海若引潮剑的命名规范
 - 修复部分错误配方
 - 赤荆棘加入路径类型覆写，让生物尝试避开
+- 修复 `PasterDreamDrinkItem` 中 `FluidContainerRegistry.getEntryForFillToEmpty()` 返回 null 导致 NPE 崩溃
+
 
 ### 重构
 - 瞬身术相关类重命名为 Blink（TeleportationSkill → BlinkSkill 等）

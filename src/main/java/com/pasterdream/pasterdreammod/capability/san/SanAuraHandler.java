@@ -1,13 +1,16 @@
 package com.pasterdream.pasterdreammod.capability.san;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.capability.ModCapabilities;
 import com.pasterdream.pasterdreammod.helper.sanbiomeratemanager.SanBiomeRateManager;
 import com.pasterdream.pasterdreammod.init.ModAttributes;
+import com.pasterdream.pasterdreammod.init.ModEffects;
 import com.pasterdream.pasterdreammod.world.san.SanEnvironmentModifier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,8 +20,7 @@ import net.minecraftforge.fml.common.Mod;
  * 理智光环处理器：每 tick 评估环境修正与属性叠加，驱动 San 值变化。
  * <p>
  * 数据流：装备/效果/环境 → SAN_VARIABILITY 属性 → 每 tick 转化率 → San Capability
- * <p>
- * TODO: 低 San 惩罚效果（debuff）将重新设计，暂不接入。
+ * → 根据 San 百分比施加对应的阈值效果。
  */
 @Mod.EventBusSubscriber(modid = PasterDreamMod.MOD_ID)
 public class SanAuraHandler {
@@ -31,6 +33,7 @@ public class SanAuraHandler {
         if (event.phase != TickEvent.Phase.END || !(event.player instanceof ServerPlayer player)) {
             return;
         }
+        if (!SanHelper.getIsSanEnabled(player)) return;
 
         Level level = player.level();
         BlockPos pos = player.blockPosition();
@@ -56,6 +59,19 @@ public class SanAuraHandler {
             SanHelper.addPlayerSanAndSync(player, totalRate);
         }
 
-        // TODO: 低 San debuff 检查 → 未来重新设计后接入
+        // 5. San 阈值效果
+        player.getCapability(ModCapabilities.SAN).ifPresent(cap -> {
+            double ratio = cap.getSanValue() / cap.getMaxSanValue();
+            if (ratio >= 0.9) {
+                player.addEffect(new MobEffectInstance(ModEffects.CHEER_UP_BUFF.get(), 20, 0, false, false));
+            } else if (ratio < 0.6 && ratio >= 0.4) {
+                player.addEffect(new MobEffectInstance(ModEffects.LETHARGY_BUFF.get(), 20, 0, false, false));
+            } else if (ratio < 0.4 && ratio >= 0.2) {
+                player.addEffect(new MobEffectInstance(ModEffects.TRANCE_BUFF.get(), 20, 0, false, false));
+            } else if (ratio < 0.2) {
+                int lv = ratio < 0.01 ? 2 : ratio < 0.1 ? 1 : 0;
+                player.addEffect(new MobEffectInstance(ModEffects.INSAND_BUFF.get(), 20, lv, false, false));
+            }
+        });
     }
 }

@@ -10,13 +10,13 @@ public class SanTank
 {
     public static final IGuiOverlay SAN_TANK = (gui, guiGraphics, partialTick, width, height) ->
     {
-        if (Minecraft.getInstance().player == null || Minecraft.getInstance().options.hideGui)
-        {
-            return;
-        }
+        var player = Minecraft.getInstance().player;
+        if (player == null || Minecraft.getInstance().options.hideGui) return;
 
-        Minecraft.getInstance().player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
+        player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
         {
+            if (!capability.getIsSanEnabled()) return;
+
             double sanValue = capability.getSanValue();
             double maxSanValue = capability.getMaxSanValue();
 
