@@ -224,6 +224,14 @@ public class ModBlocks {
         }
     });
 
+    public static final RegistryObject<Block> LIGHT_BALL = BLOCKS.register("light_ball", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.SWEET_BERRY_BUSH).instabreak().lightLevel(s -> 13).noCollission().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+            .isRedstoneConductor((bs, br, bp) -> false)){
+        @Override
+        public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+            return box(5, 5, 5, 11, 11, 11);
+        }
+    });
+
     public static final RegistryObject<Block> DYEDREAM_LILY_PAD = BLOCKS.register("dyedream_lily_pad", DyedreamLilyPadBlock::new);
     public static final RegistryObject<Block> DYEDREAM_LOTUS = BLOCKS.register("dyedream_lotus", DyedreamLotusBlock::new);
 

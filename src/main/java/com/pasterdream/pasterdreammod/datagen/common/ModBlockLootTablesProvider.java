@@ -198,6 +198,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         dropOther(ModBlocks.FOURLEAF_CLOVER.get(), ModItems.FOURLEAF_CLOVER_CURIO.get());
 
+        dropSelf(ModBlocks.LIGHT_BALL.get());
+
         dropSelf(ModBlocks.DYEDREAM_SAND.get());
         add(ModBlocks.DYEDREAM_GLASS.get(),
                 block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(net.minecraft.world.item.Items.AIR)));

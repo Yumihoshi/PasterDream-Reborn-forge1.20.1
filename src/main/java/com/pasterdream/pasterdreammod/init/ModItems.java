@@ -138,7 +138,8 @@ public class ModItems {
     public static final RegistryObject<Item> WHITE_COROLLA = ITEMS.register("white_corolla", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WHITE_CRYSTAL = ITEMS.register("white_crystal",
             WhiteCrystalItem::new);
-    public static final RegistryObject<Item> LIGHT_BALL = ITEMS.register("light_ball", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LIGHT_BALL = ITEMS.register("light_ball",
+            () -> new BlockItem(ModBlocks.LIGHT_BALL.get(), new Item.Properties()));
     public static final RegistryObject<Item> COTTON = ITEMS.register("cotton", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SCULK_HEART = ITEMS.register("sculk_heart",
