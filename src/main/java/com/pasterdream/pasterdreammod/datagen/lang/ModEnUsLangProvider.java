@@ -573,8 +573,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         //Rings
         add(ModItems.EMBRYO_RING.get(), "Embryo Ring");
         add(ModItems.RED_DEW_RING.get(), "Red Dew Ring");
-        add("tooltip.pasterdream.red_dew_ring.lv", "§7Level: §bLv.%s");
-        add("tooltip.pasterdream.red_dew_ring.effect", "§7▪ §9+§9%s§9Max Health");
+        add(ModItems.STRIKE_RING.get(), "Strike Ring");
+        add("tooltip.pasterdream.red_dew_ring.effect", "§7▪ §9+%sMax Health");
+        add("tooltip.pasterdream.strike_ring.effect", "§7▪ §9+%s Attack Damage");
+
         //Belts
         add(ModItems.EMBRYO_BELT.get(), "Embryo Belt");
         add(ModItems.NATURE_BELT.get(), "Nature Belt");
@@ -584,10 +586,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.dream_traveler_belt.effect1", "§7▪ §9+3% Movement Speed");
         add("tooltip.pasterdream.dream_traveler_belt.effect2", "§7▪ §9-0.1 Blink Cooldown");
         //Embryo
-        add("tooltip.pasterdream.embryo.tooltip1", "§f▪ §7Introduction");
-        add("tooltip.pasterdream.embryo.tooltip2", "§7A curios embryo made from titanium and soul essence");
-        add("tooltip.pasterdream.embryo.tooltip3", "§7Using titanium's life affinity and the spiritual connection of soul essence");
-        add("tooltip.pasterdream.embryo.tooltip4", "§7Allow you to strengthen yourself through accessories made from physical materials");
+        add("tooltip.pasterdream.introduction.tooltip", "§f▪ §7Introduction");
+        add("tooltip.pasterdream.embryo.tooltip1", "§7A curios embryo made from titanium and soul essence");
+        add("tooltip.pasterdream.embryo.tooltip2", "§7Using titanium's life affinity and the spiritual connection of soul essence");
+        add("tooltip.pasterdream.embryo.tooltip3", "§7Allow you to strengthen yourself through accessories made from physical materials");
+        //curios tooltips
+        add("tooltip.pasterdream.lv", "§7Level: §bLv.%s");
+        add("tooltip.pasterdream.only_one.tooltip", "§7Only one of this curios can be equipped in the curios slot.");
         add("tooltip.pasterdream.hold_shift", "§7Hold [§rShift§7] to view the description");
 
         // Blink Skill

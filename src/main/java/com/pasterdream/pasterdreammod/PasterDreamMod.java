@@ -8,6 +8,7 @@ import com.pasterdream.pasterdreammod.event.ModMobDrops;
 import com.pasterdream.pasterdreammod.event.PlayerEvents;
 import com.pasterdream.pasterdreammod.init.*;
 import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
+import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -100,6 +101,11 @@ public class PasterDreamMod
                 ModItems.RED_DEW_RING.get(),
                 ResourceLocation.fromNamespaceAndPath(MOD_ID, "lv"),
                 (stack, level, entity, seed) -> RedDewRingItem.getPredicateValue(RedDewRingItem.getLv(stack))
+        );
+        ItemProperties.register(
+                ModItems.STRIKE_RING.get(),
+                ResourceLocation.fromNamespaceAndPath(MOD_ID, "lv"),
+                (stack, level, entity, seed) -> StrikeRingItem.getPredicateValue(StrikeRingItem.getLv(stack))
         );
     }
 
