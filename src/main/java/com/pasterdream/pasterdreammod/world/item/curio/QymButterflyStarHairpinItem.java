@@ -30,14 +30,6 @@ public class QymButterflyStarHairpinItem extends Item implements ICurioItem {
         clearNearbyMobTargets(slotContext);
     }
 
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        Level level = slotContext.entity().level();
-        if (level.isClientSide()) return;
-        if (slotContext.entity().tickCount % 20 != 0) return;
-        clearNearbyMobTargets(slotContext);
-    }
-
     private void clearNearbyMobTargets(SlotContext slotContext) {
         var player = slotContext.entity();
         AABB range = new AABB(player.blockPosition()).inflate(CLEAR_RANGE);
