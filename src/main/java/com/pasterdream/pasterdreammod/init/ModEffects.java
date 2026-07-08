@@ -6,6 +6,7 @@ import com.pasterdream.pasterdreammod.world.effect.InsandBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.LethargyBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.TranceBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.DyedreamArmorBuffEffect;
+import com.pasterdream.pasterdreammod.world.effect.DyedreamPerfumeBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.DyedreamUpBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.EvasionBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.SculkArmorBuffEffect;
@@ -29,6 +30,8 @@ public class ModEffects {
             EFFECTS.register("dyedream_armor_buff", DyedreamArmorBuffEffect::new);
     public static final RegistryObject<MobEffect> DYEDREAM_UP_BUFF =
             EFFECTS.register("dyedream_up_buff", DyedreamUpBuffEffect::new);
+    public static final RegistryObject<MobEffect> DYEDREAM_PERFUME_BUFF =
+            EFFECTS.register("dyedream_perfume_buff", DyedreamPerfumeBuffEffect::new);
     public static final RegistryObject<MobEffect> EVASION_BUFF =
             EFFECTS.register("evasion_buff", EvasionBuffEffect::new);
     public static final RegistryObject<MobEffect> BLINK_COOLDOWN =

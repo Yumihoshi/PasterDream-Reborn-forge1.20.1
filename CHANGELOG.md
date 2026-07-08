@@ -25,12 +25,6 @@
 - `SanTank` HUD 禁用时隐藏
 - 现有食物/饮品/饰品均已受 `San.addSanValue()` 内置检查保护
 
-### 修复
-
-- 修复 `PasterDreamDrinkItem` 中 `FluidContainerRegistry.getEntryForFillToEmpty()` 返回 null 导致 NPE 崩溃
-
-### 新增
-
 **世界生成**
 - 添加染梦海洋生物群系
 - 添加方解石尖锥地物生成功能
@@ -69,6 +63,7 @@
 - 搬运白厄水晶（材料物品，制作白厄剑的核心材料）
 - 搬运啵啵鸡的华丽飞羽（通用饰品，品质传说，+5% 速度、+0.1 瞬身术距离、-0.2 瞬身术冷却、-0.4 瞬身术消耗，属性通过 onEquip 附加而非 getAttributeModifiers 自动生成 tooltip）
 - 搬运琴雨梦的蝴蝶星发卡（头部饰品，品质神迹，所有生物不主动攻击玩家但可反击，防火属性）
+- 搬运染梦香水效果（`dyedream_perfume_buff`）：饮用后清空未睡眠天数、幻翼不再攻击，配合 `PhantomTargetMixin` 被动拦截幻翼目标锁定
 - 瞬身术与啵啵鸡饰品解耦，冷却公式统一为属性驱动，不再硬编码特定物品检测
 - 搬运强击戒指与露滴戒指系列饰品
 - 添加笔记残页和未解析笔记物品
@@ -109,6 +104,8 @@
 - 修正北海若引潮剑的命名规范
 - 修复部分错误配方
 - 赤荆棘加入路径类型覆写，让生物尝试避开
+- 修复 `PasterDreamDrinkItem` 中 `FluidContainerRegistry.getEntryForFillToEmpty()` 返回 null 导致 NPE 崩溃
+
 
 ### 重构
 - 瞬身术相关类重命名为 Blink（TeleportationSkill → BlinkSkill 等）

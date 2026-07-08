@@ -41,7 +41,13 @@ import com.pasterdream.pasterdreammod.world.item.PaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.PliersItem;
 import com.pasterdream.pasterdreammod.world.item.RootsPaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.WhiteCrystalItem;
+
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.monster.Phantom;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -54,6 +60,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 public class ModItems {
 
@@ -325,7 +333,27 @@ public class ModItems {
     });
     public static final RegistryObject<Item> GLASS_JAR_OF_GOLDENROD_TEA = ITEMS.register("glass_jar_of_goldenrod_tea", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().nutrition(1)./*effect().  实现“秋麒麟茶I效果后添加在这里”*/alwaysEat().build()).useDuration(24)));
     public static final RegistryObject<Item> GLASS_JAR_OF_DYEDREAM_PERFUME = ITEMS.register("glass_jar_of_dyedream_perfume",
-            () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder()./*effect(). 实现染梦香水效果后添加*/alwaysEat().build()).useDuration(24)));
+            () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(ModEffects.DYEDREAM_PERFUME_BUFF.get(), 1200, 0), 1.0f).alwaysEat().build()).useDuration(24)) {
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                    super.appendHoverText(stack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.pasterdreammod.dyedream_perfume"));
+                    tooltip.add(Component.translatable("tooltip.pasterdreammod.dyedream_perfume.flavor"));
+                }
+
+                @Override
+                protected void onDrinkSpecial(Player player, Level level) {
+                    if (player instanceof ServerPlayer serverPlayer) {
+                        serverPlayer.getStats().setValue(serverPlayer, Stats.CUSTOM.get(Stats.TIME_SINCE_REST), 0);
+                        AABB range = player.getBoundingBox().inflate(64.0D);
+                        for (Phantom phantom : level.getEntitiesOfClass(Phantom.class, range)) {
+                            if (phantom.getTarget() == player) {
+                                phantom.setTarget(null);
+                            }
+                        }
+                    }
+                }
+            });
     public static final RegistryObject<Item> GLASS_JAR_OF_INK = ITEMS.register("glass_jar_of_ink", () -> new Item(new Item.Properties().craftRemainder(ModItems.GLASS_JAR.get())));
 
 
