@@ -351,6 +351,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_plants_tab", "帕斯特之梦 | 植物");
         add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "帕斯特之梦 | 笔记");
         add("itemGroup.pasterdream.pasterdream_dream_debug_tab", "帕斯特之梦 | 调试栏");
+        add("itemGroup.pasterdream.pasterdream_expansion_tab", "帕斯特之梦 | 拓展栏");
+
 
         add("button.pasterdream.mortarbutton", "研磨");
         add("button.pasterdream.copy_button", "复制");
@@ -648,11 +650,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.CARAPAX_CHARM.get(), "龟壳护身符");
         add(ModItems.WORLDTREE_SEEDPOD.get(), "世界树种荚");
         add(ModItems.GARLAND.get(), "花环");
-        add(ModItems.FOURLEAF_CLOVER_CURIO.get(), "幸运四叶草");
-        add("tooltip.pasterdream.fourleaf_clover_curio.flavor", "§7§o哪片叶子代表着幸运？");
+
         add(ModItems.SNOW_VOW_HEAD.get(), "雪下的誓言");
         add("tooltip.pasterdream.snow_vow_head.effect.area", "§7▪ §9使附近直径7格内的玩家获得效果");
-        add("tooltip.pasterdream.snow_vow_head.effect.bonus", "§7▪ §9幸运+3 免疫燃烧与冻结");
+        add("tooltip.pasterdream.snow_vow_head.effect.bonus", "§7▪ §9+3 幸运值 免疫燃烧与冻结");
         add(ModItems.QYM_BUTTERFLY_STAR_HAIRPIN.get(), "琴雨梦的蝴蝶星发卡");
         add("tooltip.pasterdream.qym_butterfly_star_hairpin.effect", "§7▪ §9所有生物不会主动攻击你");
         add("tooltip.pasterdream.qym_butterfly_star_hairpin.lore", "§7§o如果你瞄准夜空的星星，即使迷失，也是在星辰之间。");
@@ -674,12 +675,18 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.boboji_curio.lore", "§7§o谨以此献给曾陪伴我的它");
         add("tooltip.pasterdream.boboji_curio.dedication", "§7§o-- 一只名为啵啵鸡的黄绿色虎皮鹦鹉");
         add("effect.pasterdream.snow_vow_buff", "雪下的誓言");
+        add(ModItems.FOURLEAF_CLOVER_CURIO.get(), "幸运四叶草");
+        add("tooltip.pasterdream.fourleaf_clover_curio.flavor", "§7§o哪片叶子代表着幸运？");
         add("tooltip.pasterdream.fourleaf_clover_curio.effect.health", "§7▪ §9+1 最大生命值");
-        add("tooltip.pasterdream.fourleaf_clover_curio.effect.luck", "§7▪ §9+6 幸运");
+        add("tooltip.pasterdream.fourleaf_clover_curio.effect.luck", "§7▪ §9+6 幸运值");
         add("tooltip.pasterdream.worldtree_seedpod.condition", "§7▪ §9在染梦世界 露天环境 身处高度y>160 白天 脚下为染梦世界树树叶");
         add("tooltip.pasterdream.worldtree_seedpod.hunger", "§7▪ §4持续降低饱和度");
         add("tooltip.pasterdream.worldtree_seedpod.energy", "§7▪ §9融梦能量+360/h");
         add("tooltip.pasterdream.worldtree_seedpod.flavor", "§7§o-- 落叶归根 裂荚归冠");
+        add("item.pasterdream.duke_coin_curio", "公爵赌场币");
+        add("tooltip.pasterdream.duke_coin_curio.effect.luck", "§7▪ §9+7 幸运值");
+        add("tooltip.pasterdream.duke_coin_curio.effect.blink_cd", "§7▪ §c+7 瞬身术冷却");
+        add("tooltip.pasterdream.duke_coin_curio.flavor", "§7§o-- 7 Days to Die");
         // 项链
         add(ModItems.EMBRYO_NECKLACE.get(), "项链原胚");
         add(ModItems.RABBIT_FOOT_NECKLACE.get(), "雪兔脚项链");
