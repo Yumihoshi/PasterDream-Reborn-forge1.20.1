@@ -724,6 +724,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 瞬身术
         add("key.pasterdream.blink", "瞬身术");
         add("key.categories.pasterdream", "帕斯特之梦");
+        add("effect.pasterdream.cheer_up_buff", "振奋");
+        add("effect.pasterdream.lethargy_buff", "不振");
+        add("effect.pasterdream.trance_buff", "恍惚");
+        add("effect.pasterdream.insand_buff", "疯狂");
         add("effect.pasterdream.evasion_buff", "回避");
         add("effect.pasterdream.blink_cooldown", "瞬身术冷却");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
@@ -731,5 +735,18 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("attribute.pasterdream.blink_range", "瞬身术距离");
         add("attribute.pasterdream.san_variability", "理智光环");
         add("subtitles.pasterdream.evasion", "瞬身术: 回避");
+
+        // 低San效果指令
+        add("command.pasterdream.lowsan.overlay", "低San屏幕覆盖层");
+        add("command.pasterdream.lowsan.overlay.set", "低San屏幕覆盖层已%s");
+        add("command.pasterdream.lowsan.overlay.get", "%s: %s");
+        add("command.pasterdream.lowsan.jitter", "低San画面抖动");
+        add("command.pasterdream.lowsan.jitter.set", "低San画面抖动已%s");
+        add("command.pasterdream.lowsan.jitter.get", "%s: %s");
+        add("command.pasterdream.lowsan.sound", "低San疯狂音效");
+        add("command.pasterdream.lowsan.sound.set", "低San疯狂音效已%s");
+        add("command.pasterdream.lowsan.sound.get", "%s: %s");
+        add("command.pasterdream.lowsan.enabled", "启用");
+        add("command.pasterdream.lowsan.disabled", "禁用");
     }
 }

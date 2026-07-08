@@ -598,6 +598,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Blink Skill
         add("key.pasterdream.blink", "Blink");
         add("key.categories.pasterdream", "PasterDream");
+        add("effect.pasterdream.cheer_up_buff", "Cheer Up");
+        add("effect.pasterdream.lethargy_buff", "Lethargy");
+        add("effect.pasterdream.trance_buff", "Trance");
+        add("effect.pasterdream.insand_buff", "Insanity");
         add("effect.pasterdream.evasion_buff", "Evasion");
         add("effect.pasterdream.blink_cooldown", "Blink Cooldown");
         add("attribute.pasterdream.blink_cd", "Blink Cooldown");
@@ -605,5 +609,18 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("attribute.pasterdream.blink_range", "Blink Distance");
         add("attribute.pasterdream.san_variability", "Sanity Variability");
         add("subtitles.pasterdream.evasion", "Evasion");
+
+        // Low San effect commands
+        add("command.pasterdream.lowsan.overlay", "Low San screen overlay");
+        add("command.pasterdream.lowsan.overlay.set", "Low San screen overlay set to %s");
+        add("command.pasterdream.lowsan.overlay.get", "%s: %s");
+        add("command.pasterdream.lowsan.jitter", "Low San screen jitter");
+        add("command.pasterdream.lowsan.jitter.set", "Low San screen jitter set to %s");
+        add("command.pasterdream.lowsan.jitter.get", "%s: %s");
+        add("command.pasterdream.lowsan.sound", "Low San insanity sound");
+        add("command.pasterdream.lowsan.sound.set", "Low San insanity sound set to %s");
+        add("command.pasterdream.lowsan.sound.get", "%s: %s");
+        add("command.pasterdream.lowsan.enabled", "enabled");
+        add("command.pasterdream.lowsan.disabled", "disabled");
     }
 }

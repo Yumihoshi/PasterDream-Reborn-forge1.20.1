@@ -4,6 +4,33 @@
 
 ### 新增
 
+**San 阈值状态效果系统**
+- 搬运 4 个由 San 百分比决定的状态效果，接入 `SanAuraHandler`：
+  - `cheer_up_buff`（振奋）— San ≥ 90% 时给予，-0.1 瞬身术冷却 / +5% 移速 / +5% 攻速
+  - `lethargy_buff`（不振）— San 40%~60% 时给予，+0.5 瞬身术冷却 / -1% 移速 / -10% 攻速
+  - `trance_buff`（恍惚）— San 20%~40% 时给予，+1.0 瞬身术冷却 / -2% 移速 / -20% 攻速 / -1 攻击力
+  - `insand_buff`（疯狂）— San < 20% 时给予，三级强度（<10% / <1%），属性大幅减益 + 客户端画面效果
+- 源版阈值从固定值（≤60/≤40/≤20）改为百分比判定（San/maxSan）
+- 去掉未搬运的 `SKILLCD` 属性，`TELEPORTATIONCD` 替换为 `BLINK_CD`
+
+**低 San 客户端效果**
+- `LoseMind` HUD 覆盖层：San < 20% 时屏幕逐渐浮现 `lose_mind_gui.png`，三级渐进 alpha
+- 画面抖动：疯狂 II 级（±0.3°/±0.2°）和 III 级（±1.0°/±0.7°），客户端执行
+- 音效：疯狂 II 级以上周期性播放 `losemind0.ogg`（69s ambient，自动循环/停止）
+- 效果开关配置（`Config.lowSanOverlay` / `lowSanJitter` / `lowSanSound`）
+- 指令 `/pasterdreamdebug san lowsan overlay|jitter|sound set|get` 运行时切换
+
+**San 系统全局开关**
+- `SanAuraHandler` 入口检查 `isSanEnabled`，禁用时跳过全部 San 计算和阈值效果
+- `SanTank` HUD 禁用时隐藏
+- 现有食物/饮品/饰品均已受 `San.addSanValue()` 内置检查保护
+
+### 修复
+
+- 修复 `PasterDreamDrinkItem` 中 `FluidContainerRegistry.getEntryForFillToEmpty()` 返回 null 导致 NPE 崩溃
+
+### 新增
+
 **世界生成**
 - 添加染梦海洋生物群系
 - 添加方解石尖锥地物生成功能

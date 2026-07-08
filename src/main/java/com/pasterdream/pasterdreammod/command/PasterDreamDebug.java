@@ -7,6 +7,7 @@ import com.pasterdream.pasterdreammod.command.meltdreamenergy.IsNotNeed;
 import com.pasterdream.pasterdreammod.command.meltdreamenergy.MaxMeltDreamEnergy;
 import com.pasterdream.pasterdreammod.command.meltdreamenergy.MeltDreamEnergy;
 import com.pasterdream.pasterdreammod.command.san.IsSanEnabled;
+import com.pasterdream.pasterdreammod.command.san.LowSanEffect;
 import com.pasterdream.pasterdreammod.command.san.MaxSan;
 import com.pasterdream.pasterdreammod.command.san.San;
 import net.minecraft.commands.CommandSourceStack;
@@ -73,6 +74,25 @@ public class PasterDreamDebug
                                                 .then(Commands.argument("boolean", BoolArgumentType.bool())
                                                         .executes(IsSanEnabled::setIsEnabled)))
                                         .then(Commands.literal("get")
-                                                .executes(IsSanEnabled::getIsEnabled))))));
+                                                .executes(IsSanEnabled::getIsEnabled))))
+                        .then(Commands.literal("lowsan")
+                                .then(Commands.literal("overlay")
+                                        .then(Commands.literal("set")
+                                                .then(Commands.argument("boolean", BoolArgumentType.bool())
+                                                        .executes(LowSanEffect::setOverlay)))
+                                        .then(Commands.literal("get")
+                                                .executes(LowSanEffect::getOverlay)))
+                                .then(Commands.literal("jitter")
+                                        .then(Commands.literal("set")
+                                                .then(Commands.argument("boolean", BoolArgumentType.bool())
+                                                        .executes(LowSanEffect::setJitter)))
+                                        .then(Commands.literal("get")
+                                                .executes(LowSanEffect::getJitter)))
+                                .then(Commands.literal("sound")
+                                        .then(Commands.literal("set")
+                                                .then(Commands.argument("boolean", BoolArgumentType.bool())
+                                                        .executes(LowSanEffect::setSound)))
+                                        .then(Commands.literal("get")
+                                                .executes(LowSanEffect::getSound))))));
     }
 }
