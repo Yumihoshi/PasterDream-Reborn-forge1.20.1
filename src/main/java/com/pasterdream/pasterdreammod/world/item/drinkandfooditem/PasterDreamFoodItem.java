@@ -50,6 +50,33 @@ public class PasterDreamFoodItem extends Item
         {
             tooltip.add(Component.translatable("tooltip.pasterdreammod.melt_dream_energy").withStyle(ChatFormatting.BLUE).append(Component.literal(formatValue(meltDreamEnergyAdd))).withStyle(ChatFormatting.BLUE));
         }
+
+        FoodProperties food = this.getFoodProperties();
+        if (food != null)
+        {
+            for (var effectPair : food.getEffects())
+            {
+                MobEffectInstance instance = effectPair.getFirst();
+                float probability = effectPair.getSecond();
+                Component text = Component.translatable(instance.getDescriptionId());
+                int amp = instance.getAmplifier();
+                if (amp > 0)
+                {
+                    text = Component.translatable("potion.withAmplifier", text,
+                            Component.translatable("potion.potency." + amp));
+                }
+                if (!instance.endsWithin(20))
+                {
+                    text = Component.translatable("potion.withDuration", text,
+                            Component.literal(formatTickDuration(instance.getDuration())));
+                }
+                if (probability < 1.0f)
+                {
+                    text = Component.literal((int)(probability * 100) + "% ").append(text);
+                }
+                tooltip.add(text.copy().withStyle(instance.getEffect().getCategory().getTooltipFormatting()));
+            }
+        }
     }
 
     private static String formatValue(double value)
@@ -59,6 +86,14 @@ public class PasterDreamFoodItem extends Item
             return String.format("%+d", (long) value);
         }
         return String.format("%+.1f", value);
+    }
+
+    private static String formatTickDuration(int ticks)
+    {
+        int seconds = ticks / 20;
+        int minutes = seconds / 60;
+        seconds = seconds % 60;
+        return minutes > 0 ? String.format("%d:%02d", minutes, seconds) : String.format("0:%02d", seconds);
     }
 
     @Override
