@@ -27,7 +27,7 @@ public class SharpMeltDreamSwordItem extends SwordItem {
     private static final String TAG_CHARGED = "SharpCharged";
 
     public SharpMeltDreamSwordItem(Tier tier, Properties properties) {
-        super(tier, 4, -2.4f, properties);
+        super(tier, 4, -2.4f, properties.fireResistant());
     }
 
     /**
