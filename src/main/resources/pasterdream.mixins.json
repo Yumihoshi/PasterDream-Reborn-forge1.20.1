@@ -3,7 +3,11 @@
   "package": "com.pasterdream.pasterdreammod.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "pasterdream.refmap.json",
-  "mixins": ["BlockStateBaseMixin","PhantomTargetMixin","GoldenrodTeaBuffMixin","FishingLootMixin"],
+  "mixins": [
+    "BlockStateBaseMixin",
+    "PhantomTargetMixin",
+    "GoldenrodTeaBuffMixin"
+  ],
   "client": [],
   "server": [],
   "minVersion": "0.8"

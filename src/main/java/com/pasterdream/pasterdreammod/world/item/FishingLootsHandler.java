@@ -1,44 +1,39 @@
-package com.pasterdream.pasterdreammod.mixin;
+package com.pasterdream.pasterdreammod.world.item;
 
+import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModItems;
-import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import net.minecraftforge.event.entity.player.ItemFishedEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
-@Mixin(FishingHook.class)
-public class FishingLootMixin {
+@Mod.EventBusSubscriber(modid = PasterDreamMod.MOD_ID)
+public class FishingLootsHandler {
 
-    @Redirect(method = "retrieve",
-            at = @At(value = "INVOKE",
-                    target = "Lnet/minecraft/world/level/storage/loot/LootTable;getRandomItems(Lnet/minecraft/world/level/storage/loot/LootParams;)Lit/unimi/dsi/fastutil/objects/ObjectArrayList;"))
-    private ObjectArrayList<ItemStack> addFishingTreasure(LootTable table, LootParams params) {
-        ObjectArrayList<ItemStack> loot = table.getRandomItems(params);
+    @SubscribeEvent
+    public static void onItemFished(ItemFishedEvent event) {
+        FishingHook hook = event.getHookEntity();
+        if (hook == null) return;
 
-        Entity entity = params.getParamOrNull(LootContextParams.THIS_ENTITY);
-        if (!(entity instanceof FishingHook hook)) return loot;
-
-        Vec3 origin = params.getParamOrNull(LootContextParams.ORIGIN);
-        if (origin == null) return loot;
-
-        BlockPos pos = BlockPos.containing(origin);
         Level level = hook.level();
+        if (level.isClientSide) return;
+
+        Vec3 origin = hook.position();
+        BlockPos pos = BlockPos.containing(origin);
 
         // 环境幸运值
         double luck = 1.0;
@@ -66,7 +61,7 @@ public class FishingLootMixin {
                 luck -= 0.9;
             }
             if (living.getAttribute(Attributes.LUCK) != null) {
-                luck += living.getAttributeValue(Attributes.LUCK) * 0.08;
+                luck += living.getAttributeValue(Attributes.LUCK) * 0.1;
             }
             int fishingLuckLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FISHING_LUCK, living.getMainHandItem());
             if (fishingLuckLevel > 0) {
@@ -98,14 +93,26 @@ public class FishingLootMixin {
             }
         }
 
-        if (treasure == null) return loot;
+        if (treasure == null) return;
 
-        // super 变体：幸运值越高概率越大，luck >= 3 时封顶 10%
+        // super 变体：幸运值越高概率越大，luck >= 16.7 时封顶 50%
         if (Math.random() < Math.min(luck * 0.03, 0.5)) {
             treasure.getOrCreateTag().putBoolean("deep_treasure_super", true);
         }
 
-        loot.add(treasure);
-        return loot;
+        // 直接生成掉落物到世界中
+        if (level instanceof ServerLevel serverLevel) {
+            Entity target = owner != null ? owner : hook;
+            double x = origin.x;
+            double y = origin.y;
+            double z = origin.z;
+            double dx = target.getX() - x;
+            double dy = target.getY() - y;
+            double dz = target.getZ() - z;
+            ItemEntity itemEntity = new ItemEntity(serverLevel, x, y, z, treasure);
+            itemEntity.setPickUpDelay(5);
+            itemEntity.setDeltaMovement(dx * 0.1, dy * 0.1 + Math.sqrt(Math.sqrt(dx * dx + dy * dy + dz * dz)) * 0.08, dz * 0.1);
+            serverLevel.addFreshEntity(itemEntity);
+        }
     }
 }
