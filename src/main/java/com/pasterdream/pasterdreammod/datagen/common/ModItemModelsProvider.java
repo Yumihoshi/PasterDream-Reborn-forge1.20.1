@@ -171,11 +171,14 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.KUSANAGI);
         handheldItem(ModItems.MURAKUMO_KUSANAGI);
         handheldItem(ModItems.SWORD_EMBRYO);
+        handheldItem(ModItems.THERMAL_DAGGER);
         handheldItem(ModItems.DESERT_SWORD);
         handheldItem(ModItems.CHENJINGMEN_DESERT_SWORD);
         basicItem(ModItems.TITANIUM_UPGRADE.get());
         basicItem(ModItems.SCULK_UPGRADE.get());
         basicItem(ModItems.DYEDREAM_UPGRADE.get());
+        basicItem(ModItems.ATTACK_ENHANCE_STONE.get());
+        basicItem(ModItems.LUCK_ENHANCE_STONE.get());
         basicItem(ModItems.DREAM_FERTILIZER.get());
         basicItem(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get());
         basicItem(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get());

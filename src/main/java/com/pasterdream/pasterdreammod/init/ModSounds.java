@@ -43,6 +43,7 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> SWEET_DREAM_MUSIC = SOUNDS.register("sweet_dream_music", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "sweet_dream_music")));
     public static final RegistryObject<SoundEvent> SNOWFALL_DREAM_MUSIC = SOUNDS.register("snowfall_dream_music", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "snowfall_dream_music")));
+    public static final RegistryObject<SoundEvent> THERMAL_DAGGER = SOUNDS.register("thermal_dagger", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "thermal_dagger")));
 
     public static void register(IEventBus eventBus) {
         SOUNDS.register(eventBus);
