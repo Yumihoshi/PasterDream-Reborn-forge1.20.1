@@ -10,18 +10,14 @@ import com.pasterdream.pasterdreammod.world.block.doll.uuzdoll.UUZDollItem;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronItem;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableItem;
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersItem;
+import com.pasterdream.pasterdreammod.world.item.*;
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
-import com.pasterdream.pasterdreammod.world.item.BlueDewItem;
-import com.pasterdream.pasterdreammod.world.item.RedDewItem;
 import com.pasterdream.pasterdreammod.world.item.curio.*;
 import com.pasterdream.pasterdreammod.world.item.debugsword.DebugSwordItem;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.DreamNotesItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDrinkItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamFoodItem;
-import com.pasterdream.pasterdreammod.world.item.ModArmorMaterials;
-import com.pasterdream.pasterdreammod.world.item.ModToolTiers;
 import com.pasterdream.pasterdreammod.world.item.armoritem.DyedreamArmorItem;
-import com.pasterdream.pasterdreammod.world.item.DyedreamHammerItem;
 import com.pasterdream.pasterdreammod.world.item.hellfiretool.*;
 import com.pasterdream.pasterdreammod.world.item.lootgenerator.LootGeneratorItem;
 import com.pasterdream.pasterdreammod.world.item.meltdreamtool.*;
@@ -1039,12 +1035,17 @@ public class ModItems {
     public static final RegistryObject<Item> SNOWFALL_DREAM_MUSIC_DISC = ITEMS.register("snowfall_dream_music_disc",
             () -> new RecordItem(0, ModSounds.SNOWFALL_DREAM_MUSIC, new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 2520));
 
-    public static final RegistryObject<Item> DEBUG_SWORD = ITEMS.register("debug_sword", DebugSwordItem::new);
-    public static final RegistryObject<Item> LOOT_GENERATOR = ITEMS.register("loot_generator", LootGeneratorItem::new);
+    //调试工具
+    public static final RegistryObject<Item> DEBUG_SWORD = ITEMS.register("debug_sword", () -> new DebugSwordItem());
+    public static final RegistryObject<Item> LOOT_GENERATOR = ITEMS.register("loot_generator", () -> new LootGeneratorItem());
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0 = ITEMS.register("model_break_particle_provider_block_0", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get(), new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1 = ITEMS.register("model_break_particle_provider_block_1", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get(), new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2 = ITEMS.register("model_break_particle_provider_block_2", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get(), new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3 = ITEMS.register("model_break_particle_provider_block_3", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3.get(), new Item.Properties()));
+
+    //特殊道具
+    public static final RegistryObject<Item> SAND_OF_TIME = ITEMS.register("sand_of_time", () -> new SandofTimeItem());
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
