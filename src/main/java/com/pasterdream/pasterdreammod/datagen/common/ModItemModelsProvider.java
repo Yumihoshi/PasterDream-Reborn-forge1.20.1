@@ -171,6 +171,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.KUSANAGI);
         handheldItem(ModItems.MURAKUMO_KUSANAGI);
         handheldItem(ModItems.SWORD_EMBRYO);
+        handheldItem(ModItems.THERMAL_DAGGER);
         handheldItem(ModItems.DESERT_SWORD);
         handheldItem(ModItems.CHENJINGMEN_DESERT_SWORD);
         basicItem(ModItems.TITANIUM_UPGRADE.get());

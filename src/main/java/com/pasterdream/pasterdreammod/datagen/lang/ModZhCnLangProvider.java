@@ -166,6 +166,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.KUSANAGI.get(), "草薙");
         add(ModItems.MURAKUMO_KUSANAGI.get(), "『天丛云』草薙");
         add(ModItems.SWORD_EMBRYO.get(), "失落之剑");
+        add(ModItems.THERMAL_DAGGER.get(), "热能匕首");
         add(ModItems.DESERT_SWORD.get(), "朔漠大剑");
         add(ModItems.CHENJINGMEN_DESERT_SWORD.get(), "『沉荆门』朔漠");
         add(ModItems.TITANIUM_HELMET.get(), "钛金头盔");
@@ -371,6 +372,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7此世间一切拥有灵魂的生物皆有梦\n那些醒来时无法想起的细缕回忆\n破碎并融化被埋藏在世界各处凝结成晶\n等待着被新的灵魂发现");
         add("tooltip.pasterdreammod.upgrade_kit", "§7用于在锻造台处升级装备 可以保留装备的原有强化属性");
         add("tooltip.pasterdream.enhance_stone.usage", "§7用于在精铸工坊中强化合成原胚");
+        add("tooltip.pasterdream.thermal_dagger.swim", "§7▪ §9主手时 +0.5 游泳速度");
+        add("tooltip.pasterdream.thermal_dagger", "§7§o-- 深海迷航");
         add("tooltip.pasterdream.attack_enhance_stone.effect", "§7▪ §9攻击力+0.1~+0.5");
         add("tooltip.pasterdream.luck_enhance_stone.effect", "§7▪ §9幸运+1~+2");
         add("tooltip.pasterdream.右键打开GUI", "§7右键打开GUI");

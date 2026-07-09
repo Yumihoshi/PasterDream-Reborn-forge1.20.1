@@ -524,6 +524,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DUKE_COIN_CURIO.get());
                         output.accept(ModItems.HIYORI_BUTTERFLY_HAIRPIN.get());
                         output.accept(ModItems.ALLKINDS_RING.get());
+                        output.accept(ModItems.THERMAL_DAGGER.get());
                     })
                     .build());
 

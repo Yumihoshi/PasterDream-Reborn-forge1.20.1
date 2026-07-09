@@ -158,6 +158,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.KUSANAGI.get(), "Kusanagi");
         add(ModItems.MURAKUMO_KUSANAGI.get(), "Murakumo Kusanagi");
         add(ModItems.SWORD_EMBRYO.get(), "Sword Embryo");
+        add(ModItems.THERMAL_DAGGER.get(), "Thermal Dagger");
         add(ModItems.DESERT_SWORD.get(), "Desert Greatsword");
         add(ModItems.CHENJINGMEN_DESERT_SWORD.get(), "Chenjingmen Desert");
         add(ModItems.TITANIUM_HELMET.get(), "Titanium Helmet");
@@ -367,6 +368,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7All creatures with souls in this world have dreams\nThose fleeting memories that cannot be recalled upon waking\nShatter and melt, buried across the world, condensing into crystals\nWaiting to be discovered by new souls");
         add("tooltip.pasterdreammod.upgrade_kit", "§7Used at the smithing table to upgrade equipment Can preserve the original enhancement properties of the equipment");
         add("tooltip.pasterdream.enhance_stone.usage", "§7Used to enhance synthesis embryos at the Weapon Workshop");
+        add("tooltip.pasterdream.thermal_dagger.swim", "§7▪ §9+0.5 Swim Speed when in main hand");
+        add("tooltip.pasterdream.thermal_dagger", "§7§o-- Subnautica");
         add("tooltip.pasterdream.attack_enhance_stone.effect", "§7▪ §9Attack Damage +0.1~+0.5");
         add("tooltip.pasterdream.luck_enhance_stone.effect", "§7▪ §9Luck +1~+2");
         add("tooltip.pasterdream.右键打开GUI", "§7Press right mouse button to open GUI");

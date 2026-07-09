@@ -40,6 +40,7 @@ import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
 import com.pasterdream.pasterdreammod.world.item.PaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.PliersItem;
 import com.pasterdream.pasterdreammod.world.item.RootsPaleBoneneedleItem;
+import com.pasterdream.pasterdreammod.world.item.ThermalDaggerItem;
 import com.pasterdream.pasterdreammod.world.item.WhiteCrystalItem;
 
 import net.minecraft.network.chat.Component;
@@ -283,6 +284,8 @@ public class ModItems {
             () -> new SharpMeltDreamSwordItem(ModToolTiers.MELT_DREAM, new Item.Properties().rarity(Rarity.RARE)));
 
     // ===== 独立武器 =====
+    public static final RegistryObject<Item> THERMAL_DAGGER = ITEMS.register("thermal_dagger",
+            () -> new ThermalDaggerItem(new Item.Properties()));
     public static final RegistryObject<Item> TIDE_SWORD = ITEMS.register("tide_sword",
             () -> new TideSwordItem(ModToolTiers.TIDE_SWORD, 3, -2.8f, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> BEIHAI_RUO_TIDE_SWORD = ITEMS.register("beihairuo_tide_sword",

@@ -47,5 +47,8 @@
   "snowfall_dream_music":
   {
     "sounds": [{"name": "pasterdream:snowfall_dream_music", "stream": true}]
+  },
+  "thermal_dagger": {
+    "sounds": [{"name": "pasterdream:thermal_dagger", "stream": false}]
   }
 }
