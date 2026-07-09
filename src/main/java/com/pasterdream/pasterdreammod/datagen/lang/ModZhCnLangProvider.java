@@ -98,6 +98,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE.get(), "灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "融梦灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "狂暴战意灵药");
+        add(ModItems.SWEET_DREAM_MUSIC_DISC.get(), "音乐唱片");
+        add(ModItems.SWEET_DREAM_MUSIC_DISC.get().getDescriptionId() + ".desc", "PasterDream - 甜蜜的梦");
+        add(ModItems.SNOWFALL_DREAM_MUSIC_DISC.get(), "音乐唱片");
+        add(ModItems.SNOWFALL_DREAM_MUSIC_DISC.get().getDescriptionId() + ".desc", "PasterDream - 落雪之梦");
         add(ModItems.PINEAPPLE_LOVE_SEA.get(), "凤梨爱琴海");
         add(ModItems.BLUE_HEART_OF_THE_SEA.get(), "蔚蓝海洋之心");
         add(ModItems.ELDER_GUARDIAN_SCALE.get(), "远古守卫者鳞片");

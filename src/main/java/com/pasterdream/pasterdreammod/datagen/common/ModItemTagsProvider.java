@@ -141,5 +141,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         tag(TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("forge", "pen")))
                 .add(ModItems.FEATHER_PEN.get());
+
+        // 音乐唱片
+        tag(ItemTags.MUSIC_DISCS)
+                .add(ModItems.SWEET_DREAM_MUSIC_DISC.get())
+                .add(ModItems.SNOWFALL_DREAM_MUSIC_DISC.get());
     }
 }

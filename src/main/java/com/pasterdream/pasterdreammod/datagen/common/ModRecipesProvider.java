@@ -1825,6 +1825,28 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.PALE_BONENEEDLE.get()), has(ModItems.PALE_BONENEEDLE.get()))
                 .save(pWriter);
 
+        // 甜蜜的梦音乐唱片 = dyedream_dye + dyedream_alloy_nugget + soul_essence
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SWEET_DREAM_MUSIC_DISC.get(), 1)
+                .pattern("aba")
+                .pattern("bcb")
+                .pattern("aba")
+                .define('a', ModItems.DYEDREAM_DYE.get())
+                .define('b', ModItems.DYEDREAM_ALLOY_NUGGET.get())
+                .define('c', ModItems.SOUL_ESSENCE.get())
+                .unlockedBy(getHasName(ModItems.SOUL_ESSENCE.get()), has(ModItems.SOUL_ESSENCE.get()))
+                .save(pWriter);
+
+        // 落雪之梦音乐唱片 = snowball + dyedream_alloy_nugget + soul_essence
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SNOWFALL_DREAM_MUSIC_DISC.get(), 1)
+                .pattern("aba")
+                .pattern("bcb")
+                .pattern("aba")
+                .define('a', Items.SNOWBALL)
+                .define('b', ModItems.DYEDREAM_ALLOY_NUGGET.get())
+                .define('c', ModItems.SOUL_ESSENCE.get())
+                .unlockedBy(getHasName(ModItems.SOUL_ESSENCE.get()), has(ModItems.SOUL_ESSENCE.get()))
+                .save(pWriter);
+
     }
 
     // ===== 饰品配方 =====
