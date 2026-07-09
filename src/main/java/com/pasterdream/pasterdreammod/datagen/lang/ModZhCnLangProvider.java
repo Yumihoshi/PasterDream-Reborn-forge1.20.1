@@ -647,6 +647,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 其他道具
         add(ModItems.SAND_OF_TIME.get(), "时之沙");
         add("message.pasterdream.sand_of_time.cooldown", "这个时之沙辛苦工作了一天之后，正在休息，还需要%s秒才能恢复");
+        add("tooltip.pasterdream.sand_of_time.1", "§7右键使用以跳跃世界时间更替昼夜");
+        add("tooltip.pasterdream.sand_of_time.2", "§7该物品在使用后，会进入%s§7秒的冷却");
+        add("tooltip.pasterdream.sand_of_time.3", "§7§o-- 沙漏将会记得 我们所遗忘的时光");
 
 
         // 自定义稀有度

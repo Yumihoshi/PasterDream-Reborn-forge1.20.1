@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.world.item;
 
 import com.pasterdream.pasterdreammod.Config;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -51,7 +53,11 @@ public class SandofTimeItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Level level, List<Component> list, TooltipFlag flag) {
-
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+        int cooldownTime = Config.timeOfSandCooldownSeconds;
+        tooltip.add(Component.translatable("tooltip.pasterdream.sand_of_time.1"));
+        tooltip.add(Component.translatable("tooltip.pasterdream.sand_of_time.2",cooldownTime).withStyle(ChatFormatting.BLUE));
+        tooltip.add(Component.translatable("tooltip.pasterdream.sand_of_time.3"));
     }
 }
