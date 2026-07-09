@@ -83,6 +83,7 @@ public class San implements ISan
     public void copyValueFromOtherSan(ISan other)
     {
         this.sanValue = other.getSanValue();
+        this.maxSanValue = other.getMaxSanValue();
         this.isEnabled = other.getIsSanEnabled();
     }
 }

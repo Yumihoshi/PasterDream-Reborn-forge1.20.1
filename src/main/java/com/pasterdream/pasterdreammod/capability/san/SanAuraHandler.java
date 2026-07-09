@@ -13,6 +13,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -73,5 +74,23 @@ public class SanAuraHandler {
                 player.addEffect(new MobEffectInstance(ModEffects.INSAND_BUFF.get(), 20, lv, false, false));
             }
         });
+    }
+
+    /**
+     * 玩家死亡重生后，继承旧 capability 数据并将 San 值恢复到当前上限。
+     */
+    @SubscribeEvent
+    public static void onPlayerClone(PlayerEvent.Clone event) {
+        if (!event.isWasDeath() || !(event.getEntity() instanceof ServerPlayer newPlayer)) {
+            return;
+        }
+        event.getOriginal().reviveCaps();
+        event.getOriginal().getCapability(ModCapabilities.SAN).ifPresent(oldCap ->
+            newPlayer.getCapability(ModCapabilities.SAN).ifPresent(newCap -> {
+                newCap.copyValueFromOtherSan(oldCap);
+                newCap.setSanValue(newCap.getMaxSanValue());
+            })
+        );
+        event.getOriginal().invalidateCaps();
     }
 }
