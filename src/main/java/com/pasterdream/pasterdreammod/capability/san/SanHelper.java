@@ -29,7 +29,7 @@ public class SanHelper
 
     public static double getPlayerSan(ServerPlayer player)
     {
-        AtomicReference<Double> sanValue = new AtomicReference<>(null);
+        AtomicReference<Double> sanValue = new AtomicReference<>(0.0);
         player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
         {
             sanValue.set(capability.getSanValue());
@@ -47,7 +47,7 @@ public class SanHelper
 
     public static boolean getIsSanEnabled(ServerPlayer player)
     {
-        AtomicReference<Boolean> isEnabled = new AtomicReference<>(null);
+        AtomicReference<Boolean> isEnabled = new AtomicReference<>(false);
         player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
         {
             isEnabled.set(capability.getIsSanEnabled());
@@ -75,7 +75,7 @@ public class SanHelper
 
     public static double getPlayerMaxSan(ServerPlayer player)
     {
-        AtomicReference<Double> maxSanValue = new AtomicReference<>(null);
+        AtomicReference<Double> maxSanValue = new AtomicReference<>(0.0);
         player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
         {
             maxSanValue.set(capability.getMaxSanValue());
