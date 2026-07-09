@@ -36,6 +36,7 @@ import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
 import com.pasterdream.pasterdreammod.world.item.PaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.PliersItem;
 import com.pasterdream.pasterdreammod.world.item.RootsPaleBoneneedleItem;
+import com.pasterdream.pasterdreammod.world.item.DeepTreasureItem;
 import com.pasterdream.pasterdreammod.world.item.ThermalDaggerItem;
 import com.pasterdream.pasterdreammod.world.item.WhiteCrystalItem;
 
@@ -169,6 +170,16 @@ public class ModItems {
                     .food(new FoodProperties.Builder().nutrition(1).saturationMod(0).build())));
     public static final RegistryObject<Item> PERGAMYN = ITEMS.register("pergamyn",
             () -> new Item(new Item.Properties()));
+
+    // ===== 深海秘宝 =====
+    public static final RegistryObject<Item> DEEP_SEA_TREASURE = ITEMS.register("deep_sea_treasure",
+            () -> new DeepTreasureItem(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON),
+                    "pasterdream:chests/deep_sea_treasure",
+                    "pasterdream:chests/deep_sea_treasure_super"));
+    public static final RegistryObject<Item> DYEDREAM_DEEP_TREASURE = ITEMS.register("dyedream_deep_treasure",
+            () -> new DeepTreasureItem(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON),
+                    "pasterdream:chests/dyedream_deep_treasure",
+                    "pasterdream:chests/dyedream_deep_treasure_super"));
 
     // ===== 升级套件 =====
     public static final RegistryObject<Item> TITANIUM_UPGRADE = ITEMS.register("titanium_upgrade",

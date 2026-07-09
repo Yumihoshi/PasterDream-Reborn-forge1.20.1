@@ -245,6 +245,8 @@
     "enhance_stone_0": "attack_enhance_stone",
     "enhance_stone_1": "luck_enhance_stone",
     "thermal_dagger": "thermal_dagger",
+    "deep_treasure_0": "deep_sea_treasure",
+    "deep_treasure_1": "dyedream_deep_treasure",
     "copper_sword": "copper_sword",
     "copper_pickaxe": "copper_pickaxe",
     "copper_axe": "copper_axe",
@@ -358,7 +360,8 @@
     "hiyori_head": "hiyori_butterfly_hairpin",
     "allkinds_ring": "allkinds_ring",
     "sweetdream_disc": "sweet_dream_music_disc",
-    "snowfalldream_disc": "snowfall_dream_music_disc"
+    "snowfalldream_disc": "snowfall_dream_music_disc",
+    "time_hourglass": "sand_of_time"
   },
   "entities": {},
   "dimensions": {

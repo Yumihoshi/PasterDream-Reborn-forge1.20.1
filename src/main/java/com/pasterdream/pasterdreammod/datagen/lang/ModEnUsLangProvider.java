@@ -118,6 +118,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.TITANIUM_UPGRADE.get(), "Titanium Upgrade");
         add(ModItems.SCULK_UPGRADE.get(), "Sculk Upgrade");
         add(ModItems.DYEDREAM_UPGRADE.get(), "Dyedream Upgrade");
+        add(ModItems.DEEP_SEA_TREASURE.get(), "Deep Sea Treasure");
+        add(ModItems.DYEDREAM_DEEP_TREASURE.get(), "Dyedream Deep Treasure");
         add(ModItems.ATTACK_ENHANCE_STONE.get(), "Attack Enhance Stone");
         add(ModItems.LUCK_ENHANCE_STONE.get(), "Luck Enhance Stone");
         add(ModItems.COPPER_SWORD.get(), "Copper Sword");
@@ -370,6 +372,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.enhance_stone.usage", "§7Used to enhance synthesis embryos at the Weapon Workshop");
         add("tooltip.pasterdream.thermal_dagger.swim", "§7▪ §9+0.5 Swim Speed when in main hand");
         add("tooltip.pasterdream.thermal_dagger", "§7§o-- Subnautica");
+        add("tooltip.pasterdream.deep_treasure", "§7Splashing waves push us into the distance");
         add("tooltip.pasterdream.attack_enhance_stone.effect", "§7▪ §9Attack Damage +0.1~+0.5");
         add("tooltip.pasterdream.luck_enhance_stone.effect", "§7▪ §9Luck +1~+2");
         add("tooltip.pasterdream.右键打开GUI", "§7Press right mouse button to open GUI");
