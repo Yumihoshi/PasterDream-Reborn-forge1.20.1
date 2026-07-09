@@ -181,6 +181,26 @@ public class ModItems {
     public static final RegistryObject<Item> DYEDREAM_UPGRADE = ITEMS.register("dyedream_upgrade",
             () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON)));
 
+    // ===== 强化石 =====
+    public static final RegistryObject<Item> ATTACK_ENHANCE_STONE = ITEMS.register("attack_enhance_stone",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON)) {
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                    super.appendHoverText(stack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.pasterdream.enhance_stone.usage"));
+                    tooltip.add(Component.translatable("tooltip.pasterdream.attack_enhance_stone.effect"));
+                }
+            });
+    public static final RegistryObject<Item> LUCK_ENHANCE_STONE = ITEMS.register("luck_enhance_stone",
+            () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON)) {
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                    super.appendHoverText(stack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.pasterdream.enhance_stone.usage"));
+                    tooltip.add(Component.translatable("tooltip.pasterdream.luck_enhance_stone.effect"));
+                }
+            });
+
     // ===== 铜工具 =====
     public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword",
             () -> new SwordItem(ModToolTiers.COPPER, 3, -2.4f, new Item.Properties()));

@@ -118,6 +118,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.TITANIUM_UPGRADE.get(), "Titanium Upgrade");
         add(ModItems.SCULK_UPGRADE.get(), "Sculk Upgrade");
         add(ModItems.DYEDREAM_UPGRADE.get(), "Dyedream Upgrade");
+        add(ModItems.ATTACK_ENHANCE_STONE.get(), "Attack Enhance Stone");
+        add(ModItems.LUCK_ENHANCE_STONE.get(), "Luck Enhance Stone");
         add(ModItems.COPPER_SWORD.get(), "Copper Sword");
         add(ModItems.COPPER_PICKAXE.get(), "Copper Pickaxe");
         add(ModItems.COPPER_AXE.get(), "Copper Axe");
@@ -364,6 +366,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.dyedream_perfume.flavor", "§7§oWhen you're wondering why perfume is meant to be drunk,\nmaybe you should first consider: are you dreaming?");
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7All creatures with souls in this world have dreams\nThose fleeting memories that cannot be recalled upon waking\nShatter and melt, buried across the world, condensing into crystals\nWaiting to be discovered by new souls");
         add("tooltip.pasterdreammod.upgrade_kit", "§7Used at the smithing table to upgrade equipment Can preserve the original enhancement properties of the equipment");
+        add("tooltip.pasterdream.enhance_stone.usage", "§7Used to enhance synthesis embryos at the Weapon Workshop");
+        add("tooltip.pasterdream.attack_enhance_stone.effect", "§7▪ §9Attack Damage +0.1~+0.5");
+        add("tooltip.pasterdream.luck_enhance_stone.effect", "§7▪ §9Luck +1~+2");
         add("tooltip.pasterdream.右键打开GUI", "§7Press right mouse button to open GUI");
         add("tooltip.pasterdream.此方块仅用于提供粒子效果，生存模式无法获取", "§7This block only use to provide particle effect, Can't get on Survival mode");
         add("tooltip.pasterdream.左键实体：直接删除此实体", "§7Left Button Press Entity: Delete This Entity");

@@ -126,6 +126,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.TITANIUM_UPGRADE.get(), "钛金升级套件");
         add(ModItems.SCULK_UPGRADE.get(), "回响升级套件");
         add(ModItems.DYEDREAM_UPGRADE.get(), "染梦升级套件");
+        add(ModItems.ATTACK_ENHANCE_STONE.get(), "攻击强化石");
+        add(ModItems.LUCK_ENHANCE_STONE.get(), "幸运强化石");
         add(ModItems.COPPER_SWORD.get(), "铜剑");
         add(ModItems.COPPER_PICKAXE.get(), "铜镐");
         add(ModItems.COPPER_AXE.get(), "铜斧");
@@ -368,6 +370,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.dyedream_perfume.flavor", "§7§o当你在思考为什么香水要用来喝时\n或许应该先考虑你现在正在做梦？");
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7此世间一切拥有灵魂的生物皆有梦\n那些醒来时无法想起的细缕回忆\n破碎并融化被埋藏在世界各处凝结成晶\n等待着被新的灵魂发现");
         add("tooltip.pasterdreammod.upgrade_kit", "§7用于在锻造台处升级装备 可以保留装备的原有强化属性");
+        add("tooltip.pasterdream.enhance_stone.usage", "§7用于在精铸工坊中强化合成原胚");
+        add("tooltip.pasterdream.attack_enhance_stone.effect", "§7▪ §9攻击力+0.1~+0.5");
+        add("tooltip.pasterdream.luck_enhance_stone.effect", "§7▪ §9幸运+1~+2");
         add("tooltip.pasterdream.右键打开GUI", "§7右键打开GUI");
         add("tooltip.pasterdream.此方块仅用于提供粒子效果，生存模式无法获取", "§7此方块仅用于提供粒子效果，生存模式无法获取");
         add("tooltip.pasterdream.左键实体：直接删除此实体", "§7左键实体：直接删除此实体");

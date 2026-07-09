@@ -173,6 +173,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TITANIUM_UPGRADE.get());
                         output.accept(ModItems.SCULK_UPGRADE.get());
                         output.accept(ModItems.DYEDREAM_UPGRADE.get());
+                        output.accept(ModItems.ATTACK_ENHANCE_STONE.get());
+                        output.accept(ModItems.LUCK_ENHANCE_STONE.get());
                         // 铜工具
                         output.accept(ModItems.COPPER_SWORD.get());
                         output.accept(ModItems.COPPER_PICKAXE.get());
