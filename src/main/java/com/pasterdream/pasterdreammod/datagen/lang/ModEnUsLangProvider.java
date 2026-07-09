@@ -528,6 +528,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         //Other Items
         add(ModItems.SAND_OF_TIME.get(), "Time of Sand");
         add("message.pasterdream.sand_of_time.cooldown", "This Sand of Time is resting after a hard day of work and needs %s seconds to recover");
+        add("tooltip.pasterdream.sand_of_time.1", "§7Right click to change through the world's day and night");
+        add("tooltip.pasterdream.sand_of_time.2", "§7This item will go into cooldown for %s §7seconds after use");
+        add("tooltip.pasterdream.sand_of_time.3", "§7§o-- The hourglass will remember the time we forgot");
 
         // Custom Rarity
         add("rarity.pasterdream.common", "Common");
