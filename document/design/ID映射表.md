@@ -377,6 +377,8 @@
 | `qym_head`                     | `qym_butterfly_star_hairpin`                | 重命名，`qym_head` → `qym_butterfly_star_hairpin`                 | 客制化类 `QymButterflyStarHairpinItem`，实现 `ICurioItem`，所有生物不主动攻击（可反击），品质 MIRACLE，防火                  |
 | `hiyori_head`                  | `hiyori_butterfly_hairpin`                  | 重命名，`hiyori_head` → `hiyori_butterfly_hairpin`               | 客制化类 `HiyoriButterflyHairpinItem`，实现 `ICurioItem`，+2 最大生命值、+15 幸运、+0.96 理智光环，品质 EPIC，禁止重复装备           |
 | `allkinds_ring`                | `allkinds_ring`                             | 不改                                                             | 客制化类 `AllkindsRingItem`，实现 `ICurioItem`，+4 生命、+2 攻击、+0.1 攻速、+0.2 触及、+0.5 方块触及、+5% 移速，品质 LEGENDARY，跳过战技属性 |
+| `sweetdream_disc`              | `sweet_dream_music_disc`                    | 重命名，修复 word glueing + `_disc` → `_music_disc`              | 无需客制化类，直接用 `RecordItem`（旧类无有效覆写）                                                                   |
+| `snowfalldream_disc`           | `snowfall_dream_music_disc`                 | 重命名，修复 word glueing + `_disc` → `_music_disc`              | 无需客制化类，直接用 `RecordItem`（旧类无有效覆写）                                                                   |
 
 
 ---

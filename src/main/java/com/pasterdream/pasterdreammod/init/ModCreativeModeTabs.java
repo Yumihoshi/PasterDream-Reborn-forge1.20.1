@@ -156,6 +156,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.EMBRYO_NECKLACE.get());
                         output.accept(ModItems.EMBRYO_RING.get());
                         output.accept(ModItems.EMBRYO_BELT.get());
+                        // 音乐唱片
+                        output.accept(ModItems.SWEET_DREAM_MUSIC_DISC.get());
+                        output.accept(ModItems.SNOWFALL_DREAM_MUSIC_DISC.get());
                     })
                     .build());
 

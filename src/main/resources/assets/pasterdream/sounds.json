@@ -39,5 +39,13 @@
   "losemind0":
   {
     "sounds": [{"name": "pasterdream:losemind0", "stream": false}]
+  },
+  "sweet_dream_music":
+  {
+    "sounds": [{"name": "pasterdream:sweet_dream_music", "stream": true}]
+  },
+  "snowfall_dream_music":
+  {
+    "sounds": [{"name": "pasterdream:snowfall_dream_music", "stream": true}]
   }
 }

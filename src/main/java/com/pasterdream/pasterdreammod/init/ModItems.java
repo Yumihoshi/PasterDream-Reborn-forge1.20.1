@@ -53,6 +53,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
@@ -1008,6 +1009,12 @@ public class ModItems {
     public static final RegistryObject<Item> DREAM_NOTES_WIND_JOURNEY_WORLD = ITEMS.register("dream_notes_wind_journey_world", () -> new DreamNotesItem(new Item.Properties()));
     public static final RegistryObject<Item> BLUE_PRINT = ITEMS.register("blue_print", () -> new BluePrintItem(new Item.Properties()));
 
+
+    // ===== 音乐唱片 =====
+    public static final RegistryObject<Item> SWEET_DREAM_MUSIC_DISC = ITEMS.register("sweet_dream_music_disc",
+            () -> new RecordItem(0, ModSounds.SWEET_DREAM_MUSIC, new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 2220));
+    public static final RegistryObject<Item> SNOWFALL_DREAM_MUSIC_DISC = ITEMS.register("snowfall_dream_music_disc",
+            () -> new RecordItem(0, ModSounds.SNOWFALL_DREAM_MUSIC, new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 2520));
 
     public static final RegistryObject<Item> DEBUG_SWORD = ITEMS.register("debug_sword", DebugSwordItem::new);
     public static final RegistryObject<Item> LOOT_GENERATOR = ITEMS.register("loot_generator", LootGeneratorItem::new);
