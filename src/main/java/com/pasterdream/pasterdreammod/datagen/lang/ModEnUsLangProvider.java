@@ -522,6 +522,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.roots_pale_boneneedle.3", "§7If no waypoint is set, returns to spawn by default");
         add("message.pasterdream.roots_pale_boneneedle.waypoint_set", "Waypoint recorded");
 
+        //Other Items
+        add(ModItems.SAND_OF_TIME.get(), "Time of Sand");
+        add("message.pasterdream.sand_of_time.cooldown", "This Sand of Time is resting after a hard day of work and needs %s seconds to recover");
+
         // Custom Rarity
         add("rarity.pasterdream.common", "Common");
         add("rarity.pasterdream.excellent", "Excellent");

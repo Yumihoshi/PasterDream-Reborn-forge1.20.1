@@ -151,6 +151,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.UNKNOWN_NOTE.get());
                         output.accept(ModItems.PALE_BONENEEDLE.get());
                         output.accept(ModItems.ROOTS_PALE_BONENEEDLE.get());
+                        output.accept(ModItems.SAND_OF_TIME.get());
                         // 饰品
                         output.accept(ModItems.EMBRYO_CHARM.get());
                         output.accept(ModItems.EMBRYO_NECKLACE.get());
@@ -430,6 +431,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get());
                         output.accept(ModItems.FEATHER_PEN.get());
                         output.accept(ModBlocks.RESEARCH_TABLE.get());
+                        output.accept(ModItems.SAND_OF_TIME.get());
                     })
                     .build());
 
@@ -508,10 +510,10 @@ public class ModCreativeModeTabs {
                         output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/dyedream_relic_chest_loot_common"));
                         output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/dyedream_relic_chest_loot_rare"));
                         output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/fisherman_hut_chest"));
-                        output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get());
-                        output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get());
-                        output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get());
-                        output.accept(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3.get());
+                        output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get());
+                        output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get());
+                        output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get());
+                        output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3.get());
                     }).build());
 
     // ===== 拓展 =====
