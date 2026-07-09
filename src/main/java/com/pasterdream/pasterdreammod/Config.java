@@ -33,12 +33,20 @@ public class Config
             .comment("在通用初始化时记录日志的物品列表。")
             .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
+    // === 时之沙 ===
+    private static final ForgeConfigSpec.IntValue TIME_OF_SAND_COOLDOWN = BUILDER
+            .comment("时之沙切换昼夜的冷却时间（秒），默认 300 秒（5 分钟）")
+            .defineInRange("timeOfSandCooldownSeconds", 300, 0, Integer.MAX_VALUE);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean logDirtBlock;
     public static int magicNumber;
     public static String magicNumberIntroduction;
     public static Set<Item> items;
+
+    // === 时之沙 ===
+    public static int timeOfSandCooldownSeconds;
 
     // === 低 San 效果开关（可通过 /pasterdreamdebug lowsan 指令运行时切换） ===
     public static boolean lowSanOverlay = true;
@@ -56,6 +64,7 @@ public class Config
         logDirtBlock = LOG_DIRT_BLOCK.get();
         magicNumber = MAGIC_NUMBER.get();
         magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
+        timeOfSandCooldownSeconds = TIME_OF_SAND_COOLDOWN.get();
 
         items = ITEM_STRINGS.get().stream()
                 .map(itemName -> ForgeRegistries.ITEMS.getValue(ResourceLocation.parse(itemName)))

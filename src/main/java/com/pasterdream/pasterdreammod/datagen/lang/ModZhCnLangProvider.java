@@ -641,6 +641,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.roots_pale_boneneedle.3", "§7如未设置标记将默认返回重生点");
         add("message.pasterdream.roots_pale_boneneedle.waypoint_set", "已记录坐标点");
 
+        // 其他道具
+        add(ModItems.SAND_OF_TIME.get(), "时之沙");
+        add("message.pasterdream.sand_of_time.cooldown", "这个时之沙辛苦工作了一天之后，正在休息，还需要%s秒才能恢复");
+
+
         // 自定义稀有度
         add("rarity.pasterdream.common", "普通");
         add("rarity.pasterdream.excellent", "优秀");
