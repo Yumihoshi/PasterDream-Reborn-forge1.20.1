@@ -126,6 +126,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.TITANIUM_UPGRADE.get(), "钛金升级套件");
         add(ModItems.SCULK_UPGRADE.get(), "回响升级套件");
         add(ModItems.DYEDREAM_UPGRADE.get(), "染梦升级套件");
+        add(ModItems.DEEP_SEA_TREASURE.get(), "深海秘宝");
+        add(ModItems.DYEDREAM_DEEP_TREASURE.get(), "染梦深海秘宝");
         add(ModItems.ATTACK_ENHANCE_STONE.get(), "攻击强化石");
         add(ModItems.LUCK_ENHANCE_STONE.get(), "幸运强化石");
         add(ModItems.COPPER_SWORD.get(), "铜剑");
@@ -374,6 +376,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.enhance_stone.usage", "§7用于在精铸工坊中强化合成原胚");
         add("tooltip.pasterdream.thermal_dagger.swim", "§7▪ §9主手时 +0.5 游泳速度");
         add("tooltip.pasterdream.thermal_dagger", "§7§o-- 深海迷航");
+        add("tooltip.pasterdream.deep_treasure", "§7飞溅的浪花将我们推向远方");
         add("tooltip.pasterdream.attack_enhance_stone.effect", "§7▪ §9攻击力+0.1~+0.5");
         add("tooltip.pasterdream.luck_enhance_stone.effect", "§7▪ §9幸运+1~+2");
         add("tooltip.pasterdream.右键打开GUI", "§7右键打开GUI");

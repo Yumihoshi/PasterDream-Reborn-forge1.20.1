@@ -4,6 +4,7 @@ import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.blueprintwithnbt.BluePrintWithNBT;
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.dreamnoteswithnbt.DreamNotesWithNBT;
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.lootgeneratorwithnbt.LootGeneratorWithNBT;
+import com.pasterdream.pasterdreammod.world.item.DeepTreasureItem;
 import com.pasterdream.pasterdreammod.world.item.blueprints.AddBluePrintContentListTag;
 import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
 import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
@@ -119,6 +120,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MOLTEN_GOLD_NUGGET.get());
                         output.accept(ModItems.DYEDREAM_ALLOY_NUGGET.get());
                         output.accept(ModItems.SOUL_DUST.get());
+                        output.accept(ModItems.DEEP_SEA_TREASURE.get());
+                        output.accept(DeepTreasureItem.createSuper(ModItems.DEEP_SEA_TREASURE.get()));
+                        output.accept(ModItems.DYEDREAM_DEEP_TREASURE.get());
+                        output.accept(DeepTreasureItem.createSuper(ModItems.DYEDREAM_DEEP_TREASURE.get()));
                         output.accept(ModItems.SOUL_ESSENCE.get());
                         output.accept(ModItems.MAGIC_STONE.get());
                         output.accept(ModItems.PINK_SLIMEBALL.get());

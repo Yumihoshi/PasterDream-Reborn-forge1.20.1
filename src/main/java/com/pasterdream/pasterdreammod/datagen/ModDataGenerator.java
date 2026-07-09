@@ -41,7 +41,8 @@ public class ModDataGenerator {
         generator.addProvider(event.includeServer(), new ModRecipesProvider(packOutput));
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(ModBlockLootTablesProvider::new, LootContextParamSets.BLOCK),
-                new LootTableProvider.SubProviderEntry(ModChestLootTablesProvider::new, LootContextParamSets.CHEST)
+                new LootTableProvider.SubProviderEntry(ModChestLootTablesProvider::new, LootContextParamSets.CHEST),
+                new LootTableProvider.SubProviderEntry(ModDeepTreasureLootTablesProvider::new, LootContextParamSets.CHEST)
         )));
 
         BlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(),
