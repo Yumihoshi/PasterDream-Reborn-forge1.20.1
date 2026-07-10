@@ -42,11 +42,11 @@
   },
   "sweet_dream_music":
   {
-    "sounds": [{"name": "pasterdream:sweet_dream_music", "stream": true}]
+    "sounds": [{"name": "pasterdream:sweet_dream_music", "stream": true, "volume": 0.3}]
   },
   "snowfall_dream_music":
   {
-    "sounds": [{"name": "pasterdream:snowfall_dream_music", "stream": true}]
+    "sounds": [{"name": "pasterdream:snowfall_dream_music", "stream": true, "volume": 0.3}]
   },
   "thermal_dagger": {
     "sounds": [{"name": "pasterdream:thermal_dagger", "stream": false}]

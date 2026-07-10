@@ -401,7 +401,7 @@
 | `dyedreamup_buff`                 | `dyedream_up_buff`                | 重命名，加下划线          | 标记效果，已实现                    |
 | `dyedream_armor_buff`             | `dyedream_armor_buff`             | 不改               | `DyedreamArmorBuffEffect`   |
 | `sculk_armor_buff`                | `sculk_armor_buff`                | 不改               | `SculkArmorBuffEffect`      |
-| `dreamwish_buff`                  | 待搬运                               | -                | -                           |
+| `dreamwish_buff`                  | `dream_wish_buff`                  | 重命名，加下划线          | `DreamWishBuffEffect`，标记效果          |
 | `expup_buff`                      | 待搬运                               | -                | -                           |
 | `cheerup_buff`                    | `cheer_up_buff`                   | 重命名，加下划线          | `CheerUpBuffEffect`，San≥90%给予      |
 | `lethargy_buff`                   | `lethargy_buff`                    | 不改                  | `LethargyBuffEffect`，San 40%~60%时给予  |

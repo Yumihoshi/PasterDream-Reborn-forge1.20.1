@@ -13,6 +13,7 @@ import com.pasterdream.pasterdreammod.world.effect.GoldenrodTeaBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.SculkArmorBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.BlinkCooldownEffect;
 import com.pasterdream.pasterdreammod.world.effect.CookBuffEffect;
+import com.pasterdream.pasterdreammod.world.effect.DreamWishBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.SnowVowBuffEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -52,6 +53,8 @@ public class ModEffects {
             EFFECTS.register("insand_buff", InsandBuffEffect::new);
     public static final RegistryObject<MobEffect> COOK_BUFF =
             EFFECTS.register("cook_buff", CookBuffEffect::new);
+    public static final RegistryObject<MobEffect> DREAM_WISH_BUFF =
+            EFFECTS.register("dream_wish_buff", DreamWishBuffEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);
