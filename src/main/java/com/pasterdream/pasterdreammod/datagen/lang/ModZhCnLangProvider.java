@@ -650,6 +650,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.sand_of_time.1", "§7右键使用以跳跃世界时间更替昼夜");
         add("tooltip.pasterdream.sand_of_time.2", "§7该物品在使用后，会进入%s§7秒的冷却");
         add("tooltip.pasterdream.sand_of_time.3", "§7§o-- 沙漏将会记得 我们所遗忘的时光");
+        add("tooltip.pasterdream.sand_of_time.4", "还剩%s秒冷却");
+        add("tooltip.pasterdream.sand_of_time.5", "§a力量已恢复，可以切换昼夜");
 
 
         // 自定义稀有度

@@ -57,7 +57,24 @@ public class SandofTimeItem extends Item {
         super.appendHoverText(stack, level, tooltip, flag);
         int cooldownTime = Config.timeOfSandCooldownSeconds;
         tooltip.add(Component.translatable("tooltip.pasterdream.sand_of_time.1"));
-        tooltip.add(Component.translatable("tooltip.pasterdream.sand_of_time.2",cooldownTime).withStyle(ChatFormatting.BLUE));
+        tooltip.add(Component.translatable("tooltip.pasterdream.sand_of_time.2", cooldownTime).withStyle(ChatFormatting.BLUE));
         tooltip.add(Component.translatable("tooltip.pasterdream.sand_of_time.3"));
+
+        // 显示剩余冷却时间
+        if (level != null) {
+            long now = level.getGameTime();
+            long lastUse = stack.getOrCreateTag().getLong(TAG_COOLDOWN);
+            int cooldownTicks = cooldownTime * 20;
+            long remainingTicks = cooldownTicks - (now - lastUse);
+
+            if (remainingTicks > 0) {
+                int remainingSeconds = (int) Math.ceil(remainingTicks / 20.0);
+                tooltip.add(Component.translatable("tooltip.pasterdream.sand_of_time.4", remainingSeconds)
+                        .withStyle(ChatFormatting.GOLD));
+            } else {
+                tooltip.add(Component.translatable("tooltip.pasterdream.sand_of_time.5")
+                        .withStyle(ChatFormatting.GREEN));
+            }
+        }
     }
 }
