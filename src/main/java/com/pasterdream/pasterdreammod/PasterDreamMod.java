@@ -68,6 +68,7 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onLivingHurt);
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onLivingHurt);
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerTick);
+        MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerSleepInBed);
         modEventBus.addListener(this::AddOverlays);
         modEventBus.addListener(this::AddEntityRenderersEvent);
         MinecraftForge.EVENT_BUS.addListener(this::onAddReloadListeners);

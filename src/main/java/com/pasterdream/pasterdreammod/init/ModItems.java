@@ -372,6 +372,9 @@ public class ModItems {
         {
             //设置玩家标记，用于床交互时传送至染梦世界
             player.getPersistentData().putBoolean("pasterdream:dream_juice_drank", true);
+            if (!level.isClientSide()) {
+                player.addEffect(new MobEffectInstance(ModEffects.DREAM_WISH_BUFF.get(), 1800, 0));
+            }
         }
     });
     public static final RegistryObject<Item> GLASS_JAR_OF_GOLDENROD_TEA = ITEMS.register("glass_jar_of_goldenrod_tea",

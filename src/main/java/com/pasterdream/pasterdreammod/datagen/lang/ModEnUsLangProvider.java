@@ -653,6 +653,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.dyedream_perfume_buff", "Dyedream Perfume");
         add("effect.pasterdream.goldenrod_tea_buff", "Goldenrod Tea");
         add("effect.pasterdream.cook_buff", "Cook");
+        add("effect.pasterdream.dream_wish_buff", "Dream Wish");
         add("attribute.pasterdream.blink_cd", "Blink Cooldown");
         add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
         add("attribute.pasterdream.blink_range", "Blink Distance");
