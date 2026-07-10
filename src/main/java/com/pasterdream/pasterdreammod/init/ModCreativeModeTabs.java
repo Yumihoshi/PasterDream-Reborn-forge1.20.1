@@ -273,7 +273,8 @@ public class ModCreativeModeTabs {
                         output.accept(RedDewRingItem.createWithLv(ModItems.RED_DEW_RING.get(), 4));
                         output.accept(StrikeRingItem.createWithLv(ModItems.STRIKE_RING.get(), 1));
                         output.accept(StrikeRingItem.createWithLv(ModItems.STRIKE_RING.get(), 2));
-
+                        output.accept(ModItems.STORAGE_BAG.get());
+                        output.accept(ModItems.LARGE_STORAGE_BAG.get());
                     })
                     .build());
 

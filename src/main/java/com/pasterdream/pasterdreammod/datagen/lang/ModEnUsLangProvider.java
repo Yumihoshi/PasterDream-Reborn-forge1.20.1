@@ -533,6 +533,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.sand_of_time.3", "§7§o-- The hourglass will remember the time we forgot");
         add("tooltip.pasterdream.sand_of_time.4", "%s seconds remaining");
         add("tooltip.pasterdream.sand_of_time.5", "§aReady to use");
+        add(ModItems.STORAGE_BAG.get(), "Storage Bag");
+        add(ModItems.LARGE_STORAGE_BAG.get(), "Large Storage Bag");
+        add("tooltip.pasterdream.storage_bag.tooltip", "§7A regular bag with 9 storage slots");
+        add("tooltip.pasterdream.large_storage_bag.tooltip1", "§7Use Ender powers to expand the bag's storage, giving it 25 slots");
+
 
         // Custom Rarity
         add("rarity.pasterdream.common", "Common");
