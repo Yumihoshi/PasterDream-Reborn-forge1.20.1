@@ -9,7 +9,6 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -49,16 +48,11 @@ public class ModDeepTreasureLootTablesProvider implements LootTableSubProvider {
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
                                 .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
-                                        .setWeight(1)
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))))
                                 .add(LootItem.lootTableItem(Items.HONEY_BOTTLE)
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
-                                .add(LootItem.lootTableItem(Items.BOOK)
-                                        .setWeight(7)
-                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(
-                                                UniformGenerator.between(1.0F, 30.0F)).allowTreasure()))
                                 .add(LootItem.lootTableItem(Items.INK_SAC)
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
@@ -150,11 +144,9 @@ public class ModDeepTreasureLootTablesProvider implements LootTableSubProvider {
                         .withPool(LootPool.lootPool()
                                 .setBonusRolls(ConstantValue.exactly(0.1F))
                                 .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(Items.BOOK)
+                                .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
                                         .setWeight(1)
-                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(
-                                                UniformGenerator.between(20.0F, 30.0F)).allowTreasure()))
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F))))
                         )
         );
 
@@ -186,11 +178,9 @@ public class ModDeepTreasureLootTablesProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(ModItems.MELT_DREAM_COIN.get())
                                         .setWeight(2)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                .add(LootItem.lootTableItem(Items.BOOK)
-                                        .setWeight(3)
-                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(
-                                                UniformGenerator.between(1.0F, 30.0F)).allowTreasure()))
+                                .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F))))
                         )
                         .withPool(LootPool.lootPool()
                                 .setBonusRolls(ConstantValue.exactly(0.1F))
@@ -260,11 +250,9 @@ public class ModDeepTreasureLootTablesProvider implements LootTableSubProvider {
                         .withPool(LootPool.lootPool()
                                 .setBonusRolls(ConstantValue.exactly(0.1F))
                                 .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(Items.BOOK)
+                                .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
                                         .setWeight(1)
-                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(
-                                                UniformGenerator.between(20.0F, 30.0F)).allowTreasure()))
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F))))
                         )
         );
     }
