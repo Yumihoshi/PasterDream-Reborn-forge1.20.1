@@ -74,5 +74,17 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider
                 .addOptional(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_snowy_plains"))
                 .addOptional(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_frozen_ocean"))
                 .addOptional(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_ocean"));
+
+        tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "can_campsite_spawn_biome")))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "plains"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "forest"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "taiga"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "cherry_grove"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "savanna"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "meadow"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "flower_forest"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "jungle"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "sparse_jungle"))
+                .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "dark_forest"));
     }
 }

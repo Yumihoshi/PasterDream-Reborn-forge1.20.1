@@ -941,7 +941,14 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                         .apply(SetItemCountFunction.setCount(
                                                 ConstantValue.exactly(1.0F))))
                         )
-                // 钓鱼宝匣暂未加入
+                        //钓鱼宝匣，抽取1次，0.25幸运修正系数
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.25F))
+                                .setRolls(ConstantValue.exactly(2.0F))
+                                .add(LootItem.lootTableItem(ModItems.DEEP_SEA_TREASURE.get())
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                        )
         );
     }
 }
