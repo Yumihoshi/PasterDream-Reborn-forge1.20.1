@@ -6,6 +6,7 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.pasterdream.pasterdreammod.command.meltdreamenergy.IsNotNeed;
 import com.pasterdream.pasterdreammod.command.meltdreamenergy.MaxMeltDreamEnergy;
 import com.pasterdream.pasterdreammod.command.meltdreamenergy.MeltDreamEnergy;
+import com.pasterdream.pasterdreammod.command.music.MusicDebug;
 import com.pasterdream.pasterdreammod.command.san.IsSanEnabled;
 import com.pasterdream.pasterdreammod.command.san.LowSanEffect;
 import com.pasterdream.pasterdreammod.command.san.MaxSan;
@@ -93,6 +94,9 @@ public class PasterDreamDebug
                                                 .then(Commands.argument("boolean", BoolArgumentType.bool())
                                                         .executes(LowSanEffect::setSound)))
                                         .then(Commands.literal("get")
-                                                .executes(LowSanEffect::getSound))))));
+                                                .executes(LowSanEffect::getSound)))))
+                .then(Commands.literal("music")
+                        .then(Commands.literal("check")
+                                .executes(MusicDebug::checkMusic))));
     }
 }

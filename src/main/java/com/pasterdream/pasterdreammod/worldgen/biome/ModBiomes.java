@@ -4,12 +4,15 @@ import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.worldgen.ModPlacedFeatures;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.Carvers;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.Music;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
@@ -34,6 +37,25 @@ public class ModBiomes {
     public static final ResourceKey<Biome> DYEDREAM_OCEAN =
             ResourceKey.create(Registries.BIOME,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_ocean"));
+
+    private static final ResourceKey<SoundEvent> SWEET_DREAM_MUSIC_KEY =
+            ResourceKey.create(Registries.SOUND_EVENT,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "sweet_dream_music"));
+    private static final ResourceKey<SoundEvent> SNOWFALL_DREAM_MUSIC_KEY =
+            ResourceKey.create(Registries.SOUND_EVENT,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "snowfall_dream_music"));
+    private static final int MUSIC_MIN_DELAY = 12000;
+    private static final int MUSIC_MAX_DELAY = 24000;
+
+    private static Music warmMusic() {
+        return new Music(BuiltInRegistries.SOUND_EVENT.getHolderOrThrow(SWEET_DREAM_MUSIC_KEY),
+                MUSIC_MIN_DELAY, MUSIC_MAX_DELAY, true);
+    }
+
+    private static Music coldMusic() {
+        return new Music(BuiltInRegistries.SOUND_EVENT.getHolderOrThrow(SNOWFALL_DREAM_MUSIC_KEY),
+                MUSIC_MIN_DELAY, MUSIC_MAX_DELAY, true);
+    }
 
     private static final ResourceKey<PlacedFeature> FREEZE_TOP_LAYER =
             ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.withDefaultNamespace("freeze_top_layer"));
@@ -128,7 +150,8 @@ public class ModBiomes {
         BiomeSpecialEffects.Builder effects = commonEffects()
                 .foliageColorOverride(0xFFFDC6F2)
                 .grassColorOverride(0xFFFDC6F2)
-                .ambientParticle(new AmbientParticleSettings(ModParticleTypes.LEAVES_PARTICLE.get(), 0.005f));
+                .ambientParticle(new AmbientParticleSettings(ModParticleTypes.LEAVES_PARTICLE.get(), 0.005f))
+                .backgroundMusic(warmMusic());
 
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
         addLandSharedFeatures(gen);
@@ -165,7 +188,8 @@ public class ModBiomes {
         BiomeSpecialEffects.Builder effects = commonEffects()
                 .foliageColorOverride(0xFFFCB3ED)
                 .grassColorOverride(0xFFFFABEE)
-                .ambientParticle(new AmbientParticleSettings(ModParticleTypes.LEAVES_PARTICLE.get(), 0.005f));
+                .ambientParticle(new AmbientParticleSettings(ModParticleTypes.LEAVES_PARTICLE.get(), 0.005f))
+                .backgroundMusic(warmMusic());
 
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
         addLandSharedFeatures(gen);
@@ -196,7 +220,8 @@ public class ModBiomes {
                                               HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeSpecialEffects.Builder effects = commonEffects();
         applyColdFoliage(effects);
-        effects.ambientParticle(new AmbientParticleSettings(ParticleTypes.SNOWFLAKE, 0.01f));
+        effects.ambientParticle(new AmbientParticleSettings(ParticleTypes.SNOWFLAKE, 0.01f))
+                .backgroundMusic(coldMusic());
 
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
         addLandSharedFeatures(gen);
@@ -232,7 +257,8 @@ public class ModBiomes {
                                               HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeSpecialEffects.Builder effects = commonEffects();
         applyColdFoliage(effects);
-        effects.ambientParticle(new AmbientParticleSettings(ParticleTypes.SNOWFLAKE, 0.005f));
+        effects.ambientParticle(new AmbientParticleSettings(ParticleTypes.SNOWFLAKE, 0.005f))
+                .backgroundMusic(coldMusic());
 
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
         gen.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, ModPlacedFeatures.DYEDREAM_SEAGRASS_PATCH)
@@ -262,7 +288,8 @@ public class ModBiomes {
         BiomeSpecialEffects.Builder effects = commonEffects()
                 .foliageColorOverride(0xFFFDC6F2)
                 .grassColorOverride(0xFFFDC6F2)
-                .ambientParticle(new AmbientParticleSettings(ModParticleTypes.LEAVES_PARTICLE.get(), 0.003f));
+                .ambientParticle(new AmbientParticleSettings(ModParticleTypes.LEAVES_PARTICLE.get(), 0.003f))
+                .backgroundMusic(warmMusic());
 
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
         gen.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, ModPlacedFeatures.DYEDREAM_SEAGRASS_PATCH)
