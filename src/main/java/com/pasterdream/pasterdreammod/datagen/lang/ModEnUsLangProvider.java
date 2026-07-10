@@ -318,6 +318,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.FOURLEAF_CLOVER.get(),"fourleaf clover");
 
         add(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(), "Melt Dream Crystal Fragment");
+        add(ModItems.MELT_DREAM_AURORIAN_STEEL.get(), "Melt Dream Aurorian Steel");
+        add("tooltip.pasterdreammod.melt_dream_aurorian_steel", "§7§oKids, did you ask?");
+
 
         add(ModItems.DEBUG_SWORD.get(), "Debug Sword");
         add(ModItems.LOOT_GENERATOR.get(), "Loot Generator");

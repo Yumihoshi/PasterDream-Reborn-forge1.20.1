@@ -120,6 +120,9 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_MOLTEN_GOLD = ITEMS.register("raw_molten_gold",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> MELT_DREAM_AURORIAN_STEEL = ITEMS.register("melt_dream_aurorian_steel",
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+
     public static final RegistryObject<Item> MAGIC_STONE = ITEMS.register("magic_stone",
             () -> new Item(new Item.Properties()));
 

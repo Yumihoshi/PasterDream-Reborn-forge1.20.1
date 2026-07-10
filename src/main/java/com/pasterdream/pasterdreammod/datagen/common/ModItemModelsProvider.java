@@ -184,6 +184,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.DYEDREAM_DEEP_TREASURE.get());
         basicItem(ModItems.DREAM_FERTILIZER.get());
         basicItem(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get());
+        basicItem(ModItems.MELT_DREAM_AURORIAN_STEEL.get());
         basicItem(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get());
         basicItem(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get());
         basicItem(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get());
