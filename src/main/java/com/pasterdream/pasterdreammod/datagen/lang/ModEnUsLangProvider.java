@@ -531,6 +531,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.sand_of_time.1", "§7Right click to change through the world's day and night");
         add("tooltip.pasterdream.sand_of_time.2", "§7This item will go into cooldown for %s §7seconds after use");
         add("tooltip.pasterdream.sand_of_time.3", "§7§o-- The hourglass will remember the time we forgot");
+        add("tooltip.pasterdream.sand_of_time.4", "%s seconds remaining");
+        add("tooltip.pasterdream.sand_of_time.5", "§aReady to use");
 
         // Custom Rarity
         add("rarity.pasterdream.common", "Common");
