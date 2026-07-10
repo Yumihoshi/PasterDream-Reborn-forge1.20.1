@@ -652,7 +652,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.sand_of_time.3", "§7§o-- 沙漏将会记得 我们所遗忘的时光");
         add("tooltip.pasterdream.sand_of_time.4", "还剩%s秒冷却");
         add("tooltip.pasterdream.sand_of_time.5", "§a力量已恢复，可以切换昼夜");
-
+        add(ModItems.STORAGE_BAG.get(), "便携储物袋");
+        add(ModItems.LARGE_STORAGE_BAG.get(), "大型便携储物袋");
+        add("tooltip.pasterdream.storage_bag.tooltip", "§7一个普普通通的袋子，拥有9格储物栏");
+        add("tooltip.pasterdream.large_storage_bag.tooltip1", "§7使用末影力量以拓展袋子的储量，拥有25格储物栏");
 
         // 自定义稀有度
         add("rarity.pasterdream.common", "普通");

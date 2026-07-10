@@ -9,6 +9,8 @@ import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronScreen;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableScreen;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarScreen;
+import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.StorageBagScreen;
+import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.LargeStorageBagScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -27,6 +29,8 @@ public class ModScreens
             MenuScreens.register(ModMenus.SHADOW_CHEST.get(), ShadowChestScreen::new);
             MenuScreens.register(ModMenus.WIND_MOOR_CRATE.get(), WindMoorCrateScreen::new);
             MenuScreens.register(ModMenus.RESEARCH_TABLE.get(), ResearchTableScreen::new);
+            MenuScreens.register(ModMenus.STORAGE_BAG.get(), StorageBagScreen::new);
+            MenuScreens.register(ModMenus.LARGE_STORAGE_BAG.get(), LargeStorageBagScreen::new);
         });
     }
 }

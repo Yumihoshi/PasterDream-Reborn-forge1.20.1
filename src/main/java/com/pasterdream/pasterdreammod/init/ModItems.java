@@ -11,6 +11,8 @@ import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronIte
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableItem;
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersItem;
 import com.pasterdream.pasterdreammod.world.item.*;
+import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.StorageBagItem;
+import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.LargeStorageBagItem;
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
 import com.pasterdream.pasterdreammod.world.item.curio.*;
 import com.pasterdream.pasterdreammod.world.item.debugsword.DebugSwordItem;
@@ -1061,6 +1063,8 @@ public class ModItems {
 
     //特殊道具
     public static final RegistryObject<Item> SAND_OF_TIME = ITEMS.register("sand_of_time", () -> new SandofTimeItem());
+    public static final RegistryObject<Item> STORAGE_BAG = ITEMS.register("storage_bag", () -> new StorageBagItem());
+    public static final RegistryObject<Item> LARGE_STORAGE_BAG = ITEMS.register("large_storage_bag", () -> new LargeStorageBagItem());
 
 
     public static void register(IEventBus eventBus) {
