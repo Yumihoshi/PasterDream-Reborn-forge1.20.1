@@ -13,7 +13,7 @@ public class MeltDreamLiquidFluidType extends PasterDreamBaseFluidType
 
     public MeltDreamLiquidFluidType()
     {
-        super(Properties.create().canSwim(false).canDrown(false).pathType(BlockPathTypes.LAVA).adjacentPathType(null).motionScale(0.007).lightLevel(12).viscosity(100).temperature(10).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY).sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "block/meltdream_liquid_still"), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "block/meltdream_liquid_flowing"), 0XFFFFFFFF);
+        super(Properties.create().canSwim(false).canDrown(false).pathType(BlockPathTypes.LAVA).adjacentPathType(null).motionScale(0.007).lightLevel(12).viscosity(100).temperature(10).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY).sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "block/melt_dream_liquid_still"), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "block/melt_dream_liquid_flowing"), 0XFFFFFFFF);
     }
 
     @Override

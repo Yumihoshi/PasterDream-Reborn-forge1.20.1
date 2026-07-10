@@ -452,7 +452,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> COTTON_CROP = BLOCKS.register("cotton_crop", () -> new PasterDreamCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).noCollission().randomTicks().instabreak()));
 
     //流体方块
-    public static final RegistryObject<Block> MELTDREAM_LIQUID = BLOCKS.register("meltdream_liquid", MeltDreamLiquidBlock::new);
+    public static final RegistryObject<Block> MELTDREAM_LIQUID = BLOCKS.register("melt_dream_liquid", MeltDreamLiquidBlock::new);
     public static final RegistryObject<Block> SHADOW_LIQUID = BLOCKS.register("shadow_liquid", ShadowLiquidBlock::new);
 
     //方块实体对应方块
