@@ -661,6 +661,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("command.pasterdream.lowsan.sound", "Low San insanity sound");
         add("command.pasterdream.lowsan.sound.set", "Low San insanity sound set to %s");
         add("command.pasterdream.lowsan.sound.get", "%s: %s");
+        add("item.pasterdream.star_wish_rod", "Star's Wish Rod");
+        add("tooltip.pasterdream.star_wish_rod.desc", "§7▪ §9Grants an extra Super deep-sea treasure when fishing");
+        add("tooltip.pasterdream.star_wish_rod", "§7§O --Fish as numerous as stars");
         add("command.pasterdream.lowsan.enabled", "enabled");
         add("command.pasterdream.lowsan.disabled", "disabled");
     }

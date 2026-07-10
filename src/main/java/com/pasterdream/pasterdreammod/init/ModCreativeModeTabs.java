@@ -206,6 +206,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DYEDREAM_SHOVEL.get());
                         output.accept(ModItems.DYEDREAM_HOE.get());
                         output.accept(ModItems.DYEDREAM_HAMMER.get());
+                        // 钓竿
+                        output.accept(ModItems.STAR_WISH_ROD.get());
                         // 钛金装备
                         output.accept(ModItems.TITANIUM_HELMET.get());
                         output.accept(ModItems.TITANIUM_CHESTPLATE.get());

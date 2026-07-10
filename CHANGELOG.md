@@ -4,6 +4,19 @@
 
 ### 新增
 
+**钓鱼深海秘宝系统**
+- 重构钓鱼战利品为 loot table 注入方式（`FishingLootsHandler`），通过 `LootTableLoadEvent` 向 FISHING 战利品表注入深海秘宝 sub-table，不依赖 Mixin 或 `ItemFishedEvent`，对所有钓鱼方式（原版、水产养殖、车万女仆等）均可生效
+- 双层概率结构：主池 `weight=10, quality=2` 受 player luck 影响，sub-table 内 `normal(30,0) + super(1,1)` 使 super 变体比例随 luck 增长
+- 覆盖主世界全部 9 个 ocean 变体群系 + 染梦维度 2 个海洋群系（`dyedream_frozen_ocean` / `dyedream_ocean`），1.20.1 不支持 biome tag 故逐个列出
+- datagen：`ModFishingLootTablesProvider` 生成 sub-table JSON
+
+**星者祈愿钓竿（star_wish_rod）**
+- 搬运并重写 `StarWishRodItem`，继承 `FishingRodItem`，移除原作 MCreator Procedure 依赖
+- Lure+5 自带加成（等效 Lure V 等鱼速度），写入 `use()` 方法，不依赖外部 Mixin/事件
+- 通过 `star_fishing_rods` 物品标签 + 战利品表 `MatchTool` 条件，手持时额外必出 super 变体
+- 修复原作无法在附魔台附魔的 bug（显式 `isEnchantable() = true`）
+- 出杆切换模型（cast predicate），在 `PasterDreamMod.registerItemProperties()` 中注册
+
 **创造模式物品栏**
 - 新增"帕斯特之梦 | 拓展栏"（Paster Dream | Expansion），来源旧 `paster_tab_9`
 

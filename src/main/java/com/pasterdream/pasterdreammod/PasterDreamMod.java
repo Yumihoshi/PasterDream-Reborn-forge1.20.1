@@ -97,6 +97,20 @@ public class PasterDreamMod
 
     private void registerItemProperties()
     {
+        // 星者祈愿钓竿出杆切换模型（原版 cast predicate 仅注册在 Items.FISHING_ROD 上）
+        ItemProperties.register(
+                ModItems.STAR_WISH_ROD.get(),
+                ResourceLocation.parse("cast"),
+                (stack, level, entity, seed) -> {
+                    if (entity == null) return 0.0F;
+                    boolean held = entity.getMainHandItem() == stack || entity.getOffhandItem() == stack;
+                    if (entity instanceof net.minecraft.world.entity.player.Player player) {
+                        return held && player.fishing != null ? 1.0F : 0.0F;
+                    }
+                    return 0.0F;
+                }
+        );
+
         ItemProperties.register(
                 ModItems.RED_DEW_RING.get(),
                 ResourceLocation.fromNamespaceAndPath(MOD_ID, "lv"),
