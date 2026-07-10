@@ -143,6 +143,8 @@
 | `crop_4b`                           | `cotton_crop_age`                   | 重命名，棉花植株                                      | 客制化类 `PasterdreamCropBlock`                                                                                      |
 | `dyedream_crack`                    | `dyedream_crack`                    | 不改                                            | 客制化类 `DyedreamCrackBlock`                                                                                        |
 | `the_endless_book_of_dream_seekers` | `the_endless_book_of_dream_seekers` | 不改                                            | 客制化类 `TheEndlessBookOfDreamSeekersBlock`                                                                         |
+| `meltdream_liquid`                 | `melt_dream_liquid`                 | 重命名，补下划线                                      | 流体方块，合并变体，使用统一Fluid注册                                                                                          |
+| `shadow_liquid`                    | `shadow_liquid`                     | 不改                                            | 流体方块，合并变体，使用统一Fluid注册                                                                                          |
 
 
 ---
@@ -410,17 +412,6 @@
 | `fondillusion_buff`               | 待搬运                               | -                | -                           |
 
 ---
-## 流体映射
-
-| 旧 ID               | 新 ID                | 变更说明 | 客制化类处理            |
-|--------------------|---------------------|----|-------------------|
-| `meltdream_liquid` | `melt_dream_liquid` | 不改 | 合并变体，使用统一Fluid的注册 |
-| `shadow_liquid`    | `shadow_liquid`     | 不改 | 合并变体，使用统一Fluid的注册 |
-
-
----
-
-
 
 ## 实体映射
 
