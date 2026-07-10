@@ -142,6 +142,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("forge", "pen")))
                 .add(ModItems.FEATHER_PEN.get());
 
+        // 星者祈愿钓竿标签 —— 手持此类钓竿时深海秘宝必出 super 变体
+        tag(TagKey.create(Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "star_fishing_rods")))
+                .add(ModItems.STAR_WISH_ROD.get());
+
         // 音乐唱片
         tag(ItemTags.MUSIC_DISCS)
                 .add(ModItems.SWEET_DREAM_MUSIC_DISC.get())

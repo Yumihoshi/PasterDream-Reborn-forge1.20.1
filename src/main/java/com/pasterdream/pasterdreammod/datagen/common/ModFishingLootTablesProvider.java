@@ -2,12 +2,14 @@ package com.pasterdream.pasterdreammod.datagen.common;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModItems;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -15,21 +17,22 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetNbtFunction;
 import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.item.Item;
 
 import java.util.function.BiConsumer;
 
 /**
  * 钓鱼深海秘宝战利品表 datagen provider。
  * <p>
- * 每个 biome 一个 pool，带 location_check 条件过滤维度+群系。
- * pool 内用 quality 权重分离普通/super 变体，使 super 比例受 luck 影响：
- * <pre>
- *   normal: weight=30, quality=0
- *   super:  weight=1,  quality=1
- * </pre>
- * luck=1 时 super ≈ 6%，luck=5 时 ≈ 17%，逼近原作 min(luck*3%, 50%)。
- * 1.20.1 的 LocationPredicate 不支持 biome tag，因此逐个列出具体 biome。
+ * 每个 biome 两个 pool：
+ * <ol>
+ *   <li>基础池 —— normal(weight=30,q=0) + super(weight=1,q=1)，super 比例随 luck 增长</li>
+ *   <li>星者祈愿池 —— 仅手持星者祈愿时生效，必出 super 变体<br>
+ *       用物品 tag {@code pasterdream:star_fishing_rods} 匹配，该 tag 应在
+ *       {@code ModItemTagsProvider} 中定义</li>
+ * </ol>
  */
 public class ModFishingLootTablesProvider implements LootTableSubProvider {
 
@@ -37,15 +40,20 @@ public class ModFishingLootTablesProvider implements LootTableSubProvider {
             ResourceKey.create(Registries.DIMENSION,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_world"));
 
+    private static final TagKey<Item> STAR_FISHING_RODS =
+            TagKey.create(Registries.ITEM,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "star_fishing_rods"));
+
     @Override
     public void generate(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         // 深海秘宝 —— 主世界全部 9 个 ocean 变体群系
         LootTable.Builder deepSea = LootTable.lootTable();
         for (String biome : new String[]{"ocean", "deep_ocean", "warm_ocean", "lukewarm_ocean", "cold_ocean",
                 "deep_lukewarm_ocean", "deep_cold_ocean", "frozen_ocean", "deep_frozen_ocean"}) {
-            deepSea.withPool(oceanPool(ModItems.DEEP_SEA_TREASURE.get(), Level.OVERWORLD,
-                    ResourceKey.create(Registries.BIOME,
-                            ResourceLocation.fromNamespaceAndPath("minecraft", biome))));
+            ResourceKey<Biome> biomeKey = ResourceKey.create(Registries.BIOME,
+                    ResourceLocation.fromNamespaceAndPath("minecraft", biome));
+            deepSea.withPool(basePool(ModItems.DEEP_SEA_TREASURE.get(), Level.OVERWORLD, biomeKey));
+            deepSea.withPool(starRodPool(ModItems.DEEP_SEA_TREASURE.get(), Level.OVERWORLD, biomeKey));
         }
         consumer.accept(
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/deep_sea_treasure"),
@@ -55,9 +63,10 @@ public class ModFishingLootTablesProvider implements LootTableSubProvider {
         // 染梦深海秘宝 —— 染梦维度 2 个海洋群系
         LootTable.Builder dyedreamDeepSea = LootTable.lootTable();
         for (String biome : new String[]{"dyedream_frozen_ocean", "dyedream_ocean"}) {
-            dyedreamDeepSea.withPool(oceanPool(ModItems.DYEDREAM_DEEP_TREASURE.get(), DYEDREAM_WORLD,
-                    ResourceKey.create(Registries.BIOME,
-                            ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, biome))));
+            ResourceKey<Biome> biomeKey = ResourceKey.create(Registries.BIOME,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, biome));
+            dyedreamDeepSea.withPool(basePool(ModItems.DYEDREAM_DEEP_TREASURE.get(), DYEDREAM_WORLD, biomeKey));
+            dyedreamDeepSea.withPool(starRodPool(ModItems.DYEDREAM_DEEP_TREASURE.get(), DYEDREAM_WORLD, biomeKey));
         }
         consumer.accept(
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/dyedream_deep_treasure"),
@@ -65,11 +74,8 @@ public class ModFishingLootTablesProvider implements LootTableSubProvider {
         );
     }
 
-    /**
-     * 构建单个 biome 的 pool：location_check 过滤维度+群系，
-     * quality 权重分离 normal/super，使 super 比例受 luck 影响。
-     */
-    private static LootPool.Builder oceanPool(net.minecraft.world.item.Item item, ResourceKey<Level> dimension, ResourceKey<Biome> biome) {
+    /** 基础池：normal(30,0) + super(1,1)，super 比例随 luck 增长 */
+    private static LootPool.Builder basePool(net.minecraft.world.item.Item item, ResourceKey<Level> dimension, ResourceKey<Biome> biome) {
         return LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(1.0F))
                 .when(LocationCheck.checkLocation(
@@ -79,6 +85,22 @@ public class ModFishingLootTablesProvider implements LootTableSubProvider {
                 ))
                 .add(LootItem.lootTableItem(item).setWeight(30).setQuality(0))
                 .add(LootItem.lootTableItem(item).setWeight(1).setQuality(1)
+                        .apply(SetNbtFunction.setTag(superTag())));
+    }
+
+    /** 星者祈愿池：仅手持 tag 内钓竿时生效，必出 super 变体 */
+    private static LootPool.Builder starRodPool(net.minecraft.world.item.Item item, ResourceKey<Level> dimension, ResourceKey<Biome> biome) {
+        return LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(1.0F))
+                .when(LocationCheck.checkLocation(
+                        LocationPredicate.Builder.location()
+                                .setDimension(dimension)
+                                .setBiome(biome)
+                ))
+                .when(MatchTool.toolMatches(
+                        ItemPredicate.Builder.item().of(STAR_FISHING_RODS)
+                ))
+                .add(LootItem.lootTableItem(item).setWeight(1).setQuality(0)
                         .apply(SetNbtFunction.setTag(superTag())));
     }
 

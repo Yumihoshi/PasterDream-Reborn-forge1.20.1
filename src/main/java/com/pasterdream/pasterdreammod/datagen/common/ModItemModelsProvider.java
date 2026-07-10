@@ -165,6 +165,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.DYEDREAM_SHOVEL);
         handheldItem(ModItems.DYEDREAM_HOE);
         handheldItem(ModItems.DYEDREAM_HAMMER);
+        // star_wish_rod 模型为手动 JSON（含 cast 覆层），不走 datagen
         handheldItem(ModItems.SHARP_MELT_DREAM_SWORD);
         handheldItem(ModItems.TIDE_SWORD);
         handheldItem(ModItems.BEIHAI_RUO_TIDE_SWORD);
