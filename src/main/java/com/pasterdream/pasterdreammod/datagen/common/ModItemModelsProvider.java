@@ -250,6 +250,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.SNOWFALL_DREAM_MUSIC_DISC.get());
 
         basicItem(ModItems.SAND_OF_TIME.get());
+        basicItem(ModItems.STORAGE_BAG.get());
+        basicItem(ModItems.LARGE_STORAGE_BAG.get());
 
         withExistingParent(ModItems.PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/pink_mushroom"));

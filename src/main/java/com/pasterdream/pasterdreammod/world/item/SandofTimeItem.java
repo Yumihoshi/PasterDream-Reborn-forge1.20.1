@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.world.item;
 
 import com.pasterdream.pasterdreammod.Config;
+import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -47,7 +48,7 @@ public class SandofTimeItem extends Item {
             long newTime = isDay ? 18000 : 1000;
             serverLevel.setDayTime(newTime);
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                    SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.PLAYERS, 1.0f, isDay ? 0.5f : 1.5f);
+                    ModSounds.EVASION.get(), SoundSource.PLAYERS, 1.0f, 1.5f);
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
     }

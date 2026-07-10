@@ -18,6 +18,8 @@ import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronMen
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableMenu;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarMenu;
+import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.StorageBagMenu;
+import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.LargeStorageBagMenu;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
@@ -86,6 +88,9 @@ public class ModMenus
         BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
         return new ResearchTableMenu(windowId, inv, (ResearchTableBlockEntity) blockEntity);
     }));
+
+    public static final RegistryObject<MenuType<StorageBagMenu>> STORAGE_BAG = MENUS.register("storage_bag", () -> IForgeMenuType.create(StorageBagMenu::new));
+    public static final RegistryObject<MenuType<LargeStorageBagMenu>> LARGE_STORAGE_BAG = MENUS.register("large_storage_bag", () -> IForgeMenuType.create(LargeStorageBagMenu::new));
 
     public static void register(IEventBus eventBus)
     {
