@@ -268,8 +268,8 @@
 | `enhance_stone_0`              | `attack_enhance_stone`                      | 重命名，`enhance_stone_0` → `attack_enhance_stone`（攻击强化石）         | 无需客制化类，直接用 `Item`，tooltip 说明攻击力加成                                                                        |
 | `enhance_stone_1`              | `luck_enhance_stone`                        | 重命名，`enhance_stone_1` → `luck_enhance_stone`（幸运强化石）           | 无需客制化类，直接用 `Item`，tooltip 说明幸运加成                                                                         |
 | `thermal_dagger`               | `thermal_dagger`                            | 不改                                                            | 客制化类 `ThermalDaggerItem`，攻击时播放音效并生成气泡粒子，tooltip "深海迷航"                                                   |
-| `deep_treasure_0`              | `deep_sea_treasure`                         | 重命名，`deep_treasure_0` → `deep_sea_treasure`（深海秘宝）              | 客制化类 `DeepTreasureItem`，右键开启战利品表，NBT `deep_treasure_super` 区分超级变体                                         |
-| `deep_treasure_1`              | `dyedream_deep_treasure`                    | 重命名，`deep_treasure_1` → `dyedream_deep_treasure`（染梦深海秘宝）      | 客制化类 `DeepTreasureItem`，同上                                                                              |
+| `deep_treasure_0`              | `deep_sea_treasure`                         | 重命名，`deep_treasure_0` → `deep_sea_treasure`（深海秘宝）             | 客制化类 `DeepTreasureItem`，右键开启战利品表，NBT `deep_treasure_super` 区分超级变体                                        |
+| `deep_treasure_1`              | `dyedream_deep_treasure`                    | 重命名，`deep_treasure_1` → `dyedream_deep_treasure`（染梦深海秘宝）      | 客制化类 `DeepTreasureItem`，同上                                                                               |
 | `copper_sword`                 | `copper_sword`                              | 不改                                                            | 无需客制化类，直接用 `SwordItem`                                                                                   |
 | `copper_pickaxe`               | `copper_pickaxe`                            | 不改                                                            | 无需客制化类，直接用 `PickaxeItem`                                                                                 |
 | `copper_axe`                   | `copper_axe`                                | 不改                                                            | 无需客制化类，直接用 `AxeItem`                                                                                     |
@@ -385,7 +385,9 @@
 | `sweetdream_disc`              | `sweet_dream_music_disc`                    | 重命名，修复 word glueing + `_disc` → `_music_disc`                 | 无需客制化类，直接用 `RecordItem`（旧类无有效覆写）                                                                         |
 | `snowfalldream_disc`           | `snowfall_dream_music_disc`                 | 重命名，修复 word glueing + `_disc` → `_music_disc`                 | 无需客制化类，直接用 `RecordItem`（旧类无有效覆写）                                                                         |
 | `time_hourglass`               | `sand_of_time`                              | 重命名，时之沙                                                       | 客制化类 `SandofTimeItem`,使用NBT标签控制冷却时间                                                                      |
-| `star_wish_rod`                | `star_wish_rod`                             | 不改                                                            | 客制化类 `StarWishRodItem`，继承 FishingRodItem，Lure+5 加成、附魔能力10、抗火、出杆切换模型，通过 star_fishing_rods 物品标签激活深海秘宝额外池                  |
+| `star_wish_rod`                | `star_wish_rod`                             | 不改                                                            | 客制化类 `StarWishRodItem`，继承 FishingRodItem，Lure+5 加成、附魔能力10、抗火、出杆切换模型，通过 star_fishing_rods 物品标签激活深海秘宝额外池   |
+| `storage_bag`                  | `storage_bag`                               | 不改                                                            | 客制化类 `StorageBagItem`，储物袋之间不再能镶套                                                                         |
+| `storage_bag_0`                | `large_storage_bag`                         | 重命名                                                           | 客制化类 `LargeStorageBagItem`，储物袋之间不再能镶套（计划加入套动物功能）                                                         |
 
 ---
 
