@@ -39,6 +39,7 @@ import com.pasterdream.pasterdreammod.world.item.PaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.PliersItem;
 import com.pasterdream.pasterdreammod.world.item.RootsPaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.DeepTreasureItem;
+import com.pasterdream.pasterdreammod.world.item.StarWishRodItem;
 import com.pasterdream.pasterdreammod.world.item.ThermalDaggerItem;
 import com.pasterdream.pasterdreammod.world.item.WhiteCrystalItem;
 
@@ -182,6 +183,10 @@ public class ModItems {
             () -> new DeepTreasureItem(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON),
                     "pasterdream:chests/dyedream_deep_treasure",
                     "pasterdream:chests/dyedream_deep_treasure_super"));
+
+    // ===== 星者祈愿钓竿 =====
+    public static final RegistryObject<Item> STAR_WISH_ROD = ITEMS.register("star_wish_rod",
+            StarWishRodItem::new);
 
     // ===== 升级套件 =====
     public static final RegistryObject<Item> TITANIUM_UPGRADE = ITEMS.register("titanium_upgrade",
