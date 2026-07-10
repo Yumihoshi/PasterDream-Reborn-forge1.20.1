@@ -49,12 +49,12 @@ public class ModBiomes {
 
     private static Music warmMusic() {
         return new Music(BuiltInRegistries.SOUND_EVENT.getHolderOrThrow(SWEET_DREAM_MUSIC_KEY),
-                MUSIC_MIN_DELAY, MUSIC_MAX_DELAY, true);
+                MUSIC_MIN_DELAY, MUSIC_MAX_DELAY, false);
     }
 
     private static Music coldMusic() {
         return new Music(BuiltInRegistries.SOUND_EVENT.getHolderOrThrow(SNOWFALL_DREAM_MUSIC_KEY),
-                MUSIC_MIN_DELAY, MUSIC_MAX_DELAY, true);
+                MUSIC_MIN_DELAY, MUSIC_MAX_DELAY, false);
     }
 
     private static final ResourceKey<PlacedFeature> FREEZE_TOP_LAYER =
@@ -105,12 +105,18 @@ public class ModBiomes {
 
     /** 所有群系共享的 6 种植被装饰 */
     private static void addCommonVegetation(BiomeGenerationSettings.Builder builder) {
+        addCommonVegetation(builder, true);
+    }
+
+    private static void addCommonVegetation(BiomeGenerationSettings.Builder builder, boolean includeSeaPickle) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.DYEDREAM_MOSS_PATCH)
                 .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CORAL_TREE_PATCH)
                 .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CORAL_CLAW_PATCH)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CORAL_MUSHROOM_PATCH)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SEA_PICKLE_PATCH)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CALCITE_BOULDER);
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CORAL_MUSHROOM_PATCH);
+        if (includeSeaPickle) {
+            builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SEA_PICKLE_PATCH);
+        }
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CALCITE_BOULDER);
     }
 
     /** 陆地群系共享：洞穴 + 海草 + 3 种花朵 */
@@ -138,7 +144,11 @@ public class ModBiomes {
 
     /** 统一收尾：添加共享的矿石、晶芽、植被 */
     private static void finishGeneration(BiomeGenerationSettings.Builder builder) {
-        addCommonVegetation(builder);
+        finishGeneration(builder, true);
+    }
+
+    private static void finishGeneration(BiomeGenerationSettings.Builder builder, boolean includeSeaPickle) {
+        addCommonVegetation(builder, includeSeaPickle);
         addCommonOres(builder);
         addCommonBuds(builder);
     }
@@ -236,7 +246,7 @@ public class ModBiomes {
                 .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CLOUD_PILLAR_LARGE);
         addColdOresAndBuds(gen);
         gen.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, FREEZE_TOP_LAYER);
-        finishGeneration(gen);
+        finishGeneration(gen, false);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
