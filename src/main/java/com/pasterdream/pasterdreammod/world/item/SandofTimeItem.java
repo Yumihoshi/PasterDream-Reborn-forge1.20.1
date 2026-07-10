@@ -9,6 +9,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -22,9 +23,30 @@ import java.util.List;
 public class SandofTimeItem extends Item {
 
     private static final String TAG_COOLDOWN = "TimeCooldown";
+    private static final String TAG_READY = "Ready";
 
     public SandofTimeItem() {
         super(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+    }
+
+    @Override
+    public boolean isFoil(ItemStack stack) {
+        return stack.getOrCreateTag().getBoolean(TAG_READY);
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
+        if (!level.isClientSide) {
+            long now = level.getGameTime();
+            long lastUse = stack.getOrCreateTag().getLong(TAG_COOLDOWN);
+            int cooldownTicks = Config.timeOfSandCooldownSeconds * 20;
+            boolean ready = lastUse > 0 && (now - lastUse >= cooldownTicks);
+            boolean currentFlag = stack.getOrCreateTag().getBoolean(TAG_READY);
+            if (ready != currentFlag) {
+                stack.getOrCreateTag().putBoolean(TAG_READY, ready);
+            }
+        }
+        super.inventoryTick(stack, level, entity, slot, selected);
     }
 
     @Override

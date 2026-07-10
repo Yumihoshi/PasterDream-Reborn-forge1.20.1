@@ -24,7 +24,7 @@ public class NbtPreservingShapedRecipe extends ShapedRecipe {
         ItemStack result = super.assemble(container, registryAccess);
         for (int i = 0; i < container.getContainerSize(); i++) {
             ItemStack stack = container.getItem(i);
-            if (stack.hasTag() && stack.isDamageableItem()) {
+            if (stack.hasTag()) {
                 result.setTag(stack.getTag().copy());
                 break;
             }
