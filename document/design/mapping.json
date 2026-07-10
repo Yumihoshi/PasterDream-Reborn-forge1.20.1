@@ -125,7 +125,9 @@
     "crop_4a": "cotton_crop_age",
     "crop_4b": "cotton_crop_age",
     "dyedream_crack": "dyedream_crack",
-    "the_endless_book_of_dream_seekers": "the_endless_book_of_dream_seekers"
+    "the_endless_book_of_dream_seekers": "the_endless_book_of_dream_seekers",
+    "meltdream_liquid": "melt_dream_liquid",
+    "shadow_liquid": "shadow_liquid"
   },
   "items": {
     "amber_candy": "amber_candy",
@@ -362,7 +364,9 @@
     "sweetdream_disc": "sweet_dream_music_disc",
     "snowfalldream_disc": "snowfall_dream_music_disc",
     "time_hourglass": "sand_of_time",
-    "star_wish_rod": "star_wish_rod"
+    "star_wish_rod": "star_wish_rod",
+    "storage_bag": "storage_bag",
+    "storage_bag_0": "large_storage_bag"
   },
   "entities": {},
   "dimensions": {
