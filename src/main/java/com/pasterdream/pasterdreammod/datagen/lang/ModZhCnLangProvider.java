@@ -810,7 +810,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.terra_blade.desc2", "§7▪ §9每段造成2+当前攻击力*0.7点伤害");
         add("tooltip.pasterdream.terra_blade.desc3", "§7▪ §9第三段剑气获得翻倍的属性加成");
         add("tooltip.pasterdream.terra_blade.desc4", "§7▪ §9冷却时间：5秒");
-        add("tooltip.pasterdream.terra_blade.desc5", "§7▪ §9融梦能量消耗：0.3");
+        add("tooltip.pasterdream.terra_blade.desc5", "§7▪ §9融梦能量消耗：§c0.3");
         add("tooltip.pasterdream.terra_blade.no_energy", "融梦能量不足");
 
         // 泰拉浮岛模型
