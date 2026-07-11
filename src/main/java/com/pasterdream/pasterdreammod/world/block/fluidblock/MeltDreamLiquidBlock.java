@@ -1,7 +1,9 @@
 package com.pasterdream.pasterdreammod.world.block.fluidblock;
 
 import com.pasterdream.pasterdreammod.init.ModFluids;
+import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
@@ -28,7 +30,7 @@ public class MeltDreamLiquidBlock extends LiquidBlock
     public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random)
     {
         super.tick(blockstate, world, pos, random);
-        //粒子效果    //MeltdreamLiquidPr0Procedure.execute(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ());
+        world.sendParticles((SimpleParticleType) ModParticleTypes.MELTDREAM_CRYSTAL_PARTICLE.get(), pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5, 4, 0.4, 0.4, 0.4, 0.1);
         world.scheduleTick(pos, this, 5);
     }
 }

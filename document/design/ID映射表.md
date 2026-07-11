@@ -146,6 +146,7 @@
 | `lost_sword_block`                  | `lost_sword_tomb`                   | 重命名，删除冗余 `_block` 后缀，改用语义化 `tomb`            | 客制化类 `LostSwordTombBlock`，含 BlockEntity 存储拔剑计数器                                                               |
 | `meltdream_liquid`                 | `melt_dream_liquid`                 | 重命名，补下划线                                      | 流体方块，合并变体，使用统一Fluid注册                                                                                          |
 | `shadow_liquid`                    | `shadow_liquid`                     | 不改                                            | 流体方块，合并变体，使用统一Fluid注册                                                                                          |
+| `life_crystal`                     | `life_crystal`                      | 不改                                            | 客制化类 `LifeCrystalBlock`，因Geckolib特殊渲染+右键吸收+2最大生命值                                                              |
 
 
 ---

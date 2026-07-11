@@ -443,6 +443,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RESEARCH_TABLE.get());
                         output.accept(ModBlocks.LOST_SWORD_TOMB.get());
                         output.accept(ModItems.SAND_OF_TIME.get());
+                        output.accept(ModItems.LIFE_CRYSTAL.get());
                     })
                     .build());
 

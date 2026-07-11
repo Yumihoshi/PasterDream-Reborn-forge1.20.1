@@ -13,6 +13,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add(ModItems.LIFE_CRYSTAL.get(), "生命水晶");
+        add("message.pasterdream.life_crystal.already_used", "你已经吸收过生命水晶了！");
+        add("message.pasterdream.life_crystal.absorbed", "生命水晶破碎并涌入你的体内 §a最大生命值+2");
         add(ModItems.DYEDREAM_QUARTZ.get(), "染梦石英");
         add(ModItems.DYEDREAM_DUST.get(), "染梦粉尘");
         add(ModItems.DYEDREAM_DUST_PIECE.get(), "小撮染梦粉尘");
