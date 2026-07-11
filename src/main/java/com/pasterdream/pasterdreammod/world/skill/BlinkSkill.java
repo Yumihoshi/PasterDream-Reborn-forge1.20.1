@@ -56,7 +56,7 @@ public class BlinkSkill {
         boolean hasElytra = player.getItemBySlot(EquipmentSlot.CHEST).is(Items.ELYTRA);
         int duration = hasElytra ? (int) (100 * cd) : (int) (50 * cd);
         player.addEffect(new MobEffectInstance(ModEffects.BLINK_COOLDOWN.get(), duration, 0,
-                false, false));
+                false, false, false));
     }
 
     private static void applyEvasionBuff(Player player) {
