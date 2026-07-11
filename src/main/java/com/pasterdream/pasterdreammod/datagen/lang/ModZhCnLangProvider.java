@@ -290,6 +290,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.WIND_MOOR_CRATE.get(), "风泊板条筐");
         add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get(), "寻梦者的永恒书卷");
         add(ModBlocks.RESEARCH_TABLE.get(), "研究台");
+        add(ModBlocks.LOST_SWORD_TOMB.get(), "失落剑冢");
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "梦染茶花植株");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "成熟的梦染茶花植株");
         add(ModBlocks.WHITE_COROLLA_CROP.get(), "苍白雪莲植株");
@@ -825,5 +826,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.terra_floating_island.desc1", "§7▪ §9大地之刃战技冷却时间 -60%");
         add("tooltip.pasterdream.terra_floating_island.desc2", "§7▪ §9剑气攻击力属性加成倍率 +30%");
         add("tooltip.pasterdream.terra_floating_island.desc3", "§7▪ §9泰拉剑技融梦能量消耗 -0.2");
+
+        add("message.pasterdream.lost_sword_tomb.lack_strength", "你的力气不足以拔出这柄剑");
+        add("tooltip.pasterdream.lost_sword_tomb", "§7既然拔不出来，那就带着石头用吧！");
     }
 }

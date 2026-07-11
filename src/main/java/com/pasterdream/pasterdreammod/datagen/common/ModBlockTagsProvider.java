@@ -88,6 +88,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL.get())
                 .add(ModBlocks.CLAYPAN.get())
                 .add(ModBlocks.DREAM_CAULDRON.get())
+                .add(ModBlocks.LOST_SWORD_TOMB.get())
                 .add(ModBlocks.DYEDREAM_ALLOY_BLOCK.get())
                 .add(ModBlocks.RAW_TITANIUM_BLOCK.get())
                 .add(ModBlocks.TITANIUM_BLOCK.get())

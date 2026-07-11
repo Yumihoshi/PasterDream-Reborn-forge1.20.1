@@ -278,6 +278,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.WIND_MOOR_CRATE.get(), "Wind Moor Crate");
         add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get(), "The Endless Book Of Dream Seekers");
         add(ModBlocks.RESEARCH_TABLE.get(), "Research Table");
+        add(ModBlocks.LOST_SWORD_TOMB.get(), "Lost Sword Tomb");
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "Dyedream Corolla");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "Mature Dyedream Corolla");
         add(ModBlocks.WHITE_COROLLA_CROP.get(), "White Corolla Crop");
@@ -700,5 +701,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.terra_floating_island.desc1", "§7▪ §9Terra Sword Skill cooldown -60%");
         add("tooltip.pasterdream.terra_floating_island.desc2", "§7▪ §9Sword wave damage attribute bonus +30%");
         add("tooltip.pasterdream.terra_floating_island.desc3", "§7▪ §9Terra Sword Skill energy cost -0.2");
+
+        add("message.pasterdream.lost_sword_tomb.lack_strength", "Your strength is not enough to pull out this sword");
+        add("tooltip.pasterdream.lost_sword_tomb", "§7If you can't pull it out, just use it with the stone!");
     }
 }

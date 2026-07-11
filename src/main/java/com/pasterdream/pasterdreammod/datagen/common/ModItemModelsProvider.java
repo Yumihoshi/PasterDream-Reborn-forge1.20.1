@@ -297,6 +297,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         withExistingParent(ModItems.ICE_BUD.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/ice_bud"));
 
+        withExistingParent(ModItems.LOST_SWORD_TOMB.getId().getPath(), modLoc("block/lost_sword_tomb"));
+
         withExistingParent(ModItems.GOLDENROD.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/goldenrod"));
         withExistingParent(ModItems.FERRARIA_CRISPA.getId().getPath(), mcLoc("item/generated"))

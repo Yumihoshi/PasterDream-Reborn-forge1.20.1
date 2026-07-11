@@ -441,6 +441,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get());
                         output.accept(ModItems.FEATHER_PEN.get());
                         output.accept(ModBlocks.RESEARCH_TABLE.get());
+                        output.accept(ModBlocks.LOST_SWORD_TOMB.get());
                         output.accept(ModItems.SAND_OF_TIME.get());
                     })
                     .build());
