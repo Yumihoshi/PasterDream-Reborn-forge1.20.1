@@ -172,6 +172,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.THERMAL_DAGGER.get(), "热能匕首");
         add(ModItems.DESERT_SWORD.get(), "朔漠大剑");
         add(ModItems.CHENJINGMEN_DESERT_SWORD.get(), "『沉荆门』朔漠");
+        add(ModItems.BROKEN_HERO_SWORD.get(), "断裂英雄剑");
         add(ModItems.TITANIUM_HELMET.get(), "钛金头盔");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "钛金胸甲");
         add(ModItems.TITANIUM_LEGGINGS.get(), "钛金护腿");
