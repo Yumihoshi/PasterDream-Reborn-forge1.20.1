@@ -283,6 +283,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.RESEARCH_TABLE.get(), "Research Table");
         add(ModBlocks.LOST_SWORD_TOMB.get(), "Lost Sword Tomb");
         add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "Golden Fox Sculpture");
+        add(ModBlocks.FOX_SCULPTURE.get(), "Fox Sculpture");
         add(ModBlocks.DESERT_HERO_TOMB.get(), "Desert Hero Tomb");
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "Dyedream Corolla");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "Mature Dyedream Corolla");
