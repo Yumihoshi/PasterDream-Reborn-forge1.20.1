@@ -805,12 +805,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         // 大地之刃
         add(ModItems.TERRA_BLADE.get(), "大地之刃");
-        add("tooltip.pasterdream.terra_blade.skill_name", "战技：§e泰拉剑技");
-        add("tooltip.pasterdream.terra_blade.desc1", "§7▪ §9右键向前方释放3段剑气");
-        add("tooltip.pasterdream.terra_blade.desc2", "§7▪ §9每段造成2+当前攻击力*0.7点伤害");
-        add("tooltip.pasterdream.terra_blade.desc3", "§7▪ §9第三段剑气获得翻倍的属性加成");
-        add("tooltip.pasterdream.terra_blade.desc4", "§7▪ §9冷却时间：5秒");
-        add("tooltip.pasterdream.terra_blade.desc5", "§7▪ §9融梦能量消耗：§c0.3");
+        add("tooltip.pasterdream.terra_blade.skill_name", "战技：§a泰拉剑技");
+        add("tooltip.pasterdream.terra_blade.desc1", "§7▪ §9右键以强化下3次攻击为剑气攻击");
+        add("tooltip.pasterdream.terra_blade.desc2", "§7▪ §9技能开启后共可向自身朝向挥出3次剑气");
+        add("tooltip.pasterdream.terra_blade.desc3", "§7▪ §9每段造成2+当前攻击力*0.7点伤害");
+        add("tooltip.pasterdream.terra_blade.desc4", "§7▪ §9第三段剑气获得翻倍的属性加成");
+        add("tooltip.pasterdream.terra_blade.desc5", "§7▪ §9冷却时间：5秒 | 融梦能量消耗：§c0.3");
         add("tooltip.pasterdream.terra_blade.no_energy", "融梦能量不足");
 
         // 泰拉浮岛模型
