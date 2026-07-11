@@ -677,5 +677,21 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.star_wish_rod", "§7§O --Fish as numerous as stars");
         add("command.pasterdream.lowsan.enabled", "enabled");
         add("command.pasterdream.lowsan.disabled", "disabled");
+
+        // Terra Blade
+        add(ModItems.TERRA_BLADE.get(), "Terra Blade");
+        add("tooltip.pasterdream.terra_blade.skill_name", "Combat Art: §eTerra Sword Skill");
+        add("tooltip.pasterdream.terra_blade.desc1", "§7▪ §9Right-click to unleash 3 sword waves forward");
+        add("tooltip.pasterdream.terra_blade.desc2", "§7▪ §9Each wave deals 2+ATK*0.7 damage");
+        add("tooltip.pasterdream.terra_blade.desc3", "§7▪ §9Third wave gets doubled attribute bonus");
+        add("tooltip.pasterdream.terra_blade.desc4", "§7▪ §9Cooldown: 5s");
+        add("tooltip.pasterdream.terra_blade.desc5", "§7▪ §9Melt Dream Energy Cost: 0.3");
+        add("tooltip.pasterdream.terra_blade.no_energy", "Not enough Melt Dream Energy");
+
+        // Terra Floating Island
+        add(ModItems.TERRA_FLOATING_ISLAND.get(), "Terra Floating Island");
+        add("tooltip.pasterdream.terra_floating_island.desc1", "§7▪ §9Terra Sword Skill cooldown -60%");
+        add("tooltip.pasterdream.terra_floating_island.desc2", "§7▪ §9Sword wave damage attribute bonus +30%");
+        add("tooltip.pasterdream.terra_floating_island.desc3", "§7▪ §9Terra Sword Skill energy cost -0.2");
     }
 }

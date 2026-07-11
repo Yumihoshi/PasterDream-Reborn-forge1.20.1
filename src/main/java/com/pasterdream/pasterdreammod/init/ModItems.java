@@ -30,6 +30,7 @@ import com.pasterdream.pasterdreammod.world.item.tidetool.BeihaiRuoTideSwordItem
 import com.pasterdream.pasterdreammod.world.item.tidetool.TideSwordItem;
 import com.pasterdream.pasterdreammod.world.item.deserttool.DesertSwordItem;
 import com.pasterdream.pasterdreammod.world.item.deserttool.ChenjingmenDesertSwordItem;
+import com.pasterdream.pasterdreammod.world.item.TerraBladeItem;
 import com.pasterdream.pasterdreammod.world.item.grasstool.KusanagiItem;
 import com.pasterdream.pasterdreammod.world.item.grasstool.MurakumoKusanagiItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
@@ -313,6 +314,10 @@ public class ModItems {
             () -> new MurakumoKusanagiItem(ModToolTiers.MURAKUMO_KUSANAGI, 3, -2.5f, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> SWORD_EMBRYO = ITEMS.register("sword_embryo",
             () -> new SwordItem(Tiers.IRON, 1, -2.4f, new Item.Properties()));
+
+    // 大地之刃
+    public static final RegistryObject<Item> TERRA_BLADE = ITEMS.register("terra_blade",
+            () -> new TerraBladeItem(ModToolTiers.TERRA_SWORD, 3, -2.4f, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     // ===== 朔漠系列 =====
     public static final RegistryObject<Item> DESERT_SWORD = ITEMS.register("desert_sword",
@@ -718,6 +723,8 @@ public class ModItems {
             QymButterflyStarHairpinItem::new);
     public static final RegistryObject<Item> HIYORI_BUTTERFLY_HAIRPIN = ITEMS.register("hiyori_butterfly_hairpin",
             HiyoriButterflyHairpinItem::new);
+    public static final RegistryObject<Item> TERRA_FLOATING_ISLAND = ITEMS.register("terra_floating_island",
+            TerraFloatingIslandItem::new);
 
     // ===== 饰品（项链） =====
     public static final RegistryObject<Item> EMBRYO_NECKLACE = ITEMS.register("embryo_necklace",

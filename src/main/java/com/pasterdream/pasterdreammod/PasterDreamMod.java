@@ -9,6 +9,7 @@ import com.pasterdream.pasterdreammod.event.PlayerEvents;
 import com.pasterdream.pasterdreammod.init.*;
 import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
 import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
+import com.pasterdream.pasterdreammod.client.renderer.TerraswordWaveRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -57,6 +58,7 @@ public class PasterDreamMod
         ModAttributes.register(modEventBus);        //注册属性
         ModTreeDecoratorTypes.register(modEventBus); //注册树木装饰器类型
         ModFeatures.register(modEventBus);          //注册自定义特征
+        ModEntities.register(modEventBus);          //注册实体
         ModNetwork.register();                      //注册网络包
 
         modEventBus.addListener(this::commonSetup);
@@ -144,6 +146,7 @@ public class PasterDreamMod
     private void AddEntityRenderersEvent(EntityRenderersEvent.RegisterRenderers event)
     {
         ModBlockEntityRenderer.EntityRenderersEventRegister(event);
+        event.registerEntityRenderer(ModEntities.TERRASWORD_WAVE.get(), TerraswordWaveRenderer::new);
     }
 
     private void onAddReloadListeners(AddReloadListenerEvent event)
