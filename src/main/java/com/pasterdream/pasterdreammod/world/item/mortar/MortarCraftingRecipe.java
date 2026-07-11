@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.mortar;
 
+import com.pasterdream.pasterdreammod.helper.ContainerBalanceHelper;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
 import net.minecraft.core.NonNullList;
@@ -23,11 +24,16 @@ public class MortarCraftingRecipe extends ShapelessRecipe {
         NonNullList<ItemStack> remaining = NonNullList.withSize(container.getContainerSize(), ItemStack.EMPTY);
         for (int i = 0; i < remaining.size(); i++) {
             ItemStack stack = container.getItem(i);
-            if (stack.is(ModItems.MORTAR.get())) {
-                remaining.set(i, stack.copyWithCount(1));
+            if (!stack.isEmpty()) {
+                remaining.set(i, stack.getItem().getCraftingRemainingItem(stack));
             }
         }
-        return remaining;
+        for (int i = 0; i < remaining.size(); i++) {
+            if (container.getItem(i).is(ModItems.MORTAR.get())) {
+                remaining.set(i, container.getItem(i).copyWithCount(1));
+            }
+        }
+        return ContainerBalanceHelper.balance(container, getResultItem(RegistryAccess.EMPTY), remaining, getIngredients());
     }
 
     @Override

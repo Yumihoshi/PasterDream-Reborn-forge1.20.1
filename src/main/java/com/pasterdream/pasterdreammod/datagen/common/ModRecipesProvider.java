@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.datagen.common;
 import com.google.gson.JsonObject;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.datagen.util.RecipeHelpers;
+import com.pasterdream.pasterdreammod.helper.ContainerBalanceHelper;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
@@ -13,16 +14,22 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
 public class ModRecipesProvider extends RecipeProvider implements IConditionBuilder {
+
+    /** 自动收集的容器配方校验列表，在 buildRecipes 末尾统一执行。 */
+    private final List<Runnable> containerValidations = new ArrayList<>();
 
     /**
      * 将 ShapelessRecipeBuilder 产出的配方包装为自定义序列化器。
@@ -60,6 +67,37 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
             @Override public JsonObject serializeAdvancement() { return wrapped.serializeAdvancement(); }
             @Override public ResourceLocation getAdvancementId() { return wrapped.getAdvancementId(); }
         }), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name));
+    }
+
+    /**
+     * 保存无序配方并自动注册容器配平校验。
+     * 输入参数为 (产物, 产物数量, 原料1, 数量1, 原料2, 数量2, ...)
+     */
+    private void saveContainerBalancedShapeless(ShapelessRecipeBuilder builder, Consumer<FinishedRecipe> writer,
+                                                 String name, ItemLike result, int resultCount, Object... inputs) {
+        containerValidations.add(() -> {
+            ItemStack[] stacks = new ItemStack[inputs.length / 2];
+            for (int i = 0; i < inputs.length; i += 2) {
+                stacks[i / 2] = new ItemStack((ItemLike) inputs[i], (int) inputs[i + 1]);
+            }
+            ContainerBalanceHelper.validateOrThrow(name, new ItemStack(result, resultCount), stacks);
+        });
+        saveNbtPreserving(builder, writer, name);
+    }
+
+    /**
+     * 保存有序配方并自动注册容器配平校验。
+     */
+    private void saveContainerBalancedShaped(ShapedRecipeBuilder builder, Consumer<FinishedRecipe> writer,
+                                              String name, ItemLike result, int resultCount, Object... inputs) {
+        containerValidations.add(() -> {
+            ItemStack[] stacks = new ItemStack[inputs.length / 2];
+            for (int i = 0; i < inputs.length; i += 2) {
+                stacks[i / 2] = new ItemStack((ItemLike) inputs[i], (int) inputs[i + 1]);
+            }
+            ContainerBalanceHelper.validateOrThrow(name, new ItemStack(result, resultCount), stacks);
+        });
+        saveNbtPreservingShaped(builder, writer, name);
     }
 
     /**
@@ -201,6 +239,10 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         foodRecipes(pWriter);
         othersRecipes(pWriter);
         curioRecipes(pWriter);
+
+
+        // 校验所有涉及容器的配方是否能配平
+        validateContainerBalance();
     }
 
     // ===== 染梦木建材配方 =====
@@ -1457,15 +1499,22 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Items.GLASS_PANE))
                 .save(pWriter);
 
-        // 重做酵母合成配方
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_YEAST.get(), 4)
-                .requires(ModItems.GLASS_JAR.get(), 4)
-                .requires(ModItems.FLOUR.get(), 1)
-                .requires(ModItems.GLASS_JAR_OF_WATER.get(), 1)
-                .requires(ModItems.GLASS_JAR_OF_YEAST.get(), 1)
-                .requires(Items.SUGAR, 1)
-                .unlockedBy(getHasName(ModItems.GLASS_JAR.get()), has(ModItems.GLASS_JAR.get()))
-                .save(pWriter);
+        // 重做酵母合成配方（产物罐子数多于输入空罐子数，自动配平）
+        saveContainerBalancedShapeless(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_YEAST.get(), 4)
+                        .requires(ModItems.GLASS_JAR.get(), 2)
+                        .requires(ModItems.FLOUR.get(), 1)
+                        .requires(ModItems.GLASS_JAR_OF_WATER.get(), 1)
+                        .requires(ModItems.GLASS_JAR_OF_YEAST.get(), 1)
+                        .requires(Items.SUGAR, 1)
+                        .unlockedBy(getHasName(ModItems.GLASS_JAR.get()), has(ModItems.GLASS_JAR.get())),
+                pWriter, "glass_jar_of_yeast",
+                ModItems.GLASS_JAR_OF_YEAST.get(), 4,
+                ModItems.GLASS_JAR.get(), 2,
+                ModItems.FLOUR.get(), 1,
+                ModItems.GLASS_JAR_OF_WATER.get(), 1,
+                ModItems.GLASS_JAR_OF_YEAST.get(), 1,
+                Items.SUGAR, 1);
 
         // 水罐合成配方
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_WATER.get(), 8)
@@ -1723,24 +1772,50 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.MELT_DREAM_LIQUID_BUCKET.get()), has(ModItems.MELT_DREAM_LIQUID_BUCKET.get()))
                 .save(pWriter);
 
-        //秋麒麟茶合成配方
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_GOLDENROD_TEA.get(), 1)
-                .requires(ModItems.GOLDENROD.get(),1)
-                .requires(ModItems.GLASS_JAR_OF_WATER.get(),1)
-                .requires(ModItems.GLASS_JAR.get(),1)
-                .unlockedBy(getHasName(ModItems.GOLDENROD.get()), has(ModItems.GOLDENROD.get()))
-                .save(pWriter);
+        //秋麒麟茶合成配方（空罐子由水罐 remainder 配平抵消）
+        saveContainerBalancedShapeless(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_GOLDENROD_TEA.get(), 1)
+                        .requires(ModItems.GOLDENROD.get(),1)
+                        .requires(ModItems.GLASS_JAR_OF_WATER.get(),1)
+                        .unlockedBy(getHasName(ModItems.GOLDENROD.get()), has(ModItems.GOLDENROD.get())),
+                pWriter, "glass_jar_of_goldenrod_tea",
+                ModItems.GLASS_JAR_OF_GOLDENROD_TEA.get(), 1,
+                ModItems.GOLDENROD.get(), 1,
+                ModItems.GLASS_JAR_OF_WATER.get(), 1);
 
-        // 染梦香水合成配方
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get(), 1)
-                .requires(ModItems.GLASS_JAR_OF_WATER.get(),1)
-                .requires(ModItems.GLASS_JAR.get(),1)
-                .requires(ModItems.DYEDREAM_DUST_PIECE.get(),1)
-                .requires(Items.FERMENTED_SPIDER_EYE,1)
-                .requires(ModItems.PINK_MUSHROOM.get(),1)
-                .requires(ModItems.DYEDREAM_MOSS.get(),1)
-                .unlockedBy(getHasName(ModItems.GLASS_JAR_OF_WATER.get()), has(ModItems.GLASS_JAR_OF_WATER.get()))
-                .save(pWriter);
+        // 染梦香水合成配方（空罐子由水罐 remainder 配平抵消）
+        saveContainerBalancedShapeless(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get(), 1)
+                        .requires(ModItems.GLASS_JAR_OF_WATER.get(),1)
+                        .requires(ModItems.DYEDREAM_DUST_PIECE.get(),1)
+                        .requires(Items.FERMENTED_SPIDER_EYE,1)
+                        .requires(ModItems.PINK_MUSHROOM.get(),1)
+                        .requires(ModItems.DYEDREAM_MOSS.get(),1)
+                        .unlockedBy(getHasName(ModItems.GLASS_JAR_OF_WATER.get()), has(ModItems.GLASS_JAR_OF_WATER.get())),
+                pWriter, "glass_jar_of_dyedream_perfume",
+                ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get(), 1,
+                ModItems.GLASS_JAR_OF_WATER.get(), 1,
+                ModItems.DYEDREAM_DUST_PIECE.get(), 1,
+                Items.FERMENTED_SPIDER_EYE, 1,
+                ModItems.PINK_MUSHROOM.get(), 1,
+                ModItems.DYEDREAM_MOSS.get(), 1);
+
+        // 梦果汁合成配方（产物是填充罐子，自动配平容器）
+        saveContainerBalancedShapeless(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_DREAM_JUICE.get(), 1)
+                        .requires(ModItems.GLASS_JAR_OF_WATER.get(),1)
+                        .requires(Items.BLUE_DYE,1)
+                        .requires(Items.PINK_DYE,1)
+                        .requires(Items.PURPLE_DYE,1)
+                        .requires(ModItems.DYEDREAM_DYE.get(),1)
+                        .unlockedBy(getHasName(ModItems.GLASS_JAR_OF_WATER.get()), has(ModItems.GLASS_JAR_OF_WATER.get())),
+                pWriter, "glass_jar_of_dream_juice",
+                ModItems.GLASS_JAR_OF_DREAM_JUICE.get(), 1,
+                ModItems.GLASS_JAR_OF_WATER.get(), 1,
+                Items.BLUE_DYE, 1,
+                Items.PINK_DYE, 1,
+                Items.PURPLE_DYE, 1,
+                ModItems.DYEDREAM_DYE.get(), 1);
 
         // 奇异炖菜合成配方
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.QUEER_SOUP.get(), 1)
@@ -2086,6 +2161,18 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         .unlockedBy(getHasName(ModItems.STRIKE_RING.get()), has(ModItems.STRIKE_RING.get())),
                 pWriter, "strike_ring_lv2", lv2Nbt, Map.of('a', lv1Nbt));
 
+    }
+
+    // ===== 容器配平校验 =====
+
+    /**
+     * 校验所有通过 {@link #saveContainerBalancedShapeless} / {@link #saveContainerBalancedShaped}
+     * 注册的容器配方是否能配平。各配方在构建时已自动加入校验列表，此处统一执行。
+     */
+    private void validateContainerBalance() {
+        for (Runnable validation : containerValidations) {
+            validation.run();
+        }
     }
 
     // ===== 配方工具方法 =====

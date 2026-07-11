@@ -363,9 +363,9 @@ public class ModItems {
     public static final RegistryObject<Item> GLASS_JAR_OF_WATER = ITEMS.register("glass_jar_of_water", () -> new PasterDreamDrinkItem((PasterDreamDrinkAndFoodProperties) new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().alwaysEat().build()).useDuration(24).craftRemainder(ModItems.GLASS_JAR.get())));
     public static final RegistryObject<Item> GLASS_JAR_OF_MILK = ITEMS.register("glass_jar_of_milk", () -> new PasterDreamDrinkItem((PasterDreamDrinkAndFoodProperties) new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().alwaysEat().build()).useDuration(24).craftRemainder(ModItems.GLASS_JAR.get())));
     public static final RegistryObject<Item> GLASS_JAR_OF_YEAST = ITEMS.register("glass_jar_of_yeast", () -> new Item(new Item.Properties().craftRemainder(ModItems.GLASS_JAR.get())));
-    public static final RegistryObject<Item> GLASS_JAR_OF_GUIDING_DRUG = ITEMS.register("glass_jar_of_guiding_drug", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> GLASS_JAR_OF_WIND_PLANT_EXTRACT = ITEMS.register("glass_jar_of_wind_plant_extract", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> GLASS_JAR_OF_DREAM_JUICE = ITEMS.register("glass_jar_of_dream_juice", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().stacksTo(8).food(new FoodProperties.Builder().alwaysEat().build()).useDuration(24))
+    public static final RegistryObject<Item> GLASS_JAR_OF_GUIDING_DRUG = ITEMS.register("glass_jar_of_guiding_drug", () -> new Item(new Item.Properties().craftRemainder(ModItems.GLASS_JAR.get())));
+    public static final RegistryObject<Item> GLASS_JAR_OF_WIND_PLANT_EXTRACT = ITEMS.register("glass_jar_of_wind_plant_extract", () -> new Item(new Item.Properties().craftRemainder(ModItems.GLASS_JAR.get())));
+    public static final RegistryObject<Item> GLASS_JAR_OF_DREAM_JUICE = ITEMS.register("glass_jar_of_dream_juice", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().stacksTo(8).food(new FoodProperties.Builder().alwaysEat().build()).useDuration(24).craftRemainder(ModItems.GLASS_JAR.get()))
     {
         @Override
         protected void onDrinkSpecial(Player player, Level level)
@@ -378,7 +378,7 @@ public class ModItems {
         }
     });
     public static final RegistryObject<Item> GLASS_JAR_OF_GOLDENROD_TEA = ITEMS.register("glass_jar_of_goldenrod_tea",
-            () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().nutrition(1).effect(() -> new MobEffectInstance(ModEffects.GOLDENROD_TEA_BUFF.get(), 3600, 0), 1.0f).alwaysEat().build()).useDuration(24)) {
+            () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().nutrition(1).effect(() -> new MobEffectInstance(ModEffects.GOLDENROD_TEA_BUFF.get(), 3600, 0), 1.0f).alwaysEat().build()).useDuration(24).craftRemainder(ModItems.GLASS_JAR.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
                     super.appendHoverText(stack, level, tooltip, flag);
@@ -386,7 +386,7 @@ public class ModItems {
                 }
             });
     public static final RegistryObject<Item> GLASS_JAR_OF_DYEDREAM_PERFUME = ITEMS.register("glass_jar_of_dyedream_perfume",
-            () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(ModEffects.DYEDREAM_PERFUME_BUFF.get(), 1200, 0), 1.0f).alwaysEat().build()).useDuration(24)) {
+            () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(ModEffects.DYEDREAM_PERFUME_BUFF.get(), 1200, 0), 1.0f).alwaysEat().build()).useDuration(24).craftRemainder(ModItems.GLASS_JAR.get())) {
                 @Override
                 public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
                     super.appendHoverText(stack, level, tooltip, flag);

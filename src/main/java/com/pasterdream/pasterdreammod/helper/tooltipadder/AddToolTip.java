@@ -49,6 +49,9 @@ public class AddToolTip
         if(stack.is(ModItems.MELT_DREAM_AURORIAN_STEEL.get())){
             tooltip.add(Component.translatable("tooltip.pasterdreammod.melt_dream_aurorian_steel"));
         }
+        if(stack.is(ModItems.GLASS_JAR_OF_DREAM_JUICE.get())){
+            tooltip.add(Component.translatable("tooltip.pasterdreammod.glass_jar_of_dream_juice"));
+        }
 
     }
 }
