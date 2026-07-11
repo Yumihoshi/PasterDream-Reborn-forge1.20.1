@@ -247,13 +247,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DESERT_SWORD.get());
                         output.accept(ModItems.CHENJINGMEN_DESERT_SWORD.get());
                         output.accept(ModItems.BROKEN_HERO_SWORD.get());
-                        output.accept(ModItems.TERRA_BLADE.get());
                         // 饰品
                         output.accept(ModItems.GOLD_CHARM.get());
                         output.accept(ModItems.ENDEYE_CHARM.get());
                         output.accept(ModItems.SEA_CHARM.get());
                         output.accept(ModItems.CARAPAX_CHARM.get());
-                        output.accept(ModItems.TERRA_FLOATING_ISLAND.get());
                         output.accept(ModItems.WORLDTREE_SEEDPOD.get());
                         output.accept(ModItems.GARLAND.get());
                         output.accept(ModItems.FOURLEAF_CLOVER_CURIO.get());
@@ -540,6 +538,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ALLKINDS_RING.get());
                         output.accept(ModItems.THERMAL_DAGGER.get());
                         output.accept(ModItems.MELT_DREAM_AURORIAN_STEEL.get());
+                        output.accept(ModItems.TERRA_BLADE.get());
+                        output.accept(ModItems.TERRA_FLOATING_ISLAND.get());
                     })
                     .build());
 
