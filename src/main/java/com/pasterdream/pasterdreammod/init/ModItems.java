@@ -17,6 +17,7 @@ import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.LargeStorageBagIt
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
 import com.pasterdream.pasterdreammod.world.item.curio.*;
 import com.pasterdream.pasterdreammod.world.item.FadedBlessingOfCeciliaItem;
+import com.pasterdream.pasterdreammod.world.item.curio.KaichuOmamoriItem;
 import com.pasterdream.pasterdreammod.world.item.debugsword.DebugSwordItem;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.DreamNotesItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDrinkItem;
@@ -765,6 +766,9 @@ public class ModItems {
     public static final RegistryObject<Item> DREAM_TRAVELER_BELT = ITEMS.register("dream_traveler_belt",
             DreamTravelerBeltItem::new);
 
+    // ===== 饰品（胸饰） =====
+    public static final RegistryObject<Item> KAICHU_OMAMORI = ITEMS.register("kaichu_omamori",
+            KaichuOmamoriItem::new);
     // ===== 方块物品 =====
 
     public static final RegistryObject<Item> DYEDREAM_DIRT = ITEMS.register("dyedream_dirt",

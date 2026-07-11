@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.world.entity.FoxFireEntity;
 import com.pasterdream.pasterdreammod.world.entity.TerraswordWaveEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -27,6 +28,15 @@ public class ModEntities {
                     .fireImmune()
                     .sized(0.1f, 0.1f));
 
+    public static final RegistryObject<EntityType<FoxFireEntity>> FOX_FIRE = register("fox_fire",
+            EntityType.Builder.<FoxFireEntity>of(FoxFireEntity::new, MobCategory.MISC)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
+                    .setCustomClientFactory(FoxFireEntity::new)
+                    .fireImmune()
+                    .sized(1f, 1f));
+
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> builder) {
         return REGISTRY.register(name, () -> builder.build(name));
     }
@@ -38,10 +48,12 @@ public class ModEntities {
     @SubscribeEvent
     public static void init(FMLCommonSetupEvent event) {
         event.enqueueWork(TerraswordWaveEntity::init);
+        event.enqueueWork(FoxFireEntity::init);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(TERRASWORD_WAVE.get(), TerraswordWaveEntity.createAttributes().build());
+        event.put(FOX_FIRE.get(), FoxFireEntity.createAttributes().build());
     }
 }
