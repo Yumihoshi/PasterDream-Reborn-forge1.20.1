@@ -38,5 +38,8 @@ public class ClientSetRenderLayer
 
         // ===== 冰凌晶芽 =====
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_BUD.get(), RenderType.cutout());
+
+        // ===== 失落剑冢 =====
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LOST_SWORD_TOMB.get(), RenderType.cutout());
     }
 }

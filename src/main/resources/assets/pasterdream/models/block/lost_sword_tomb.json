@@ -1,0 +1,10 @@
+{
+  "parent": "pasterdream:custom/lost_sword_tomb",
+  "textures": {
+    "all": "pasterdream:block/lost_sword",
+    "particle": "pasterdream:block/model_break_particle_provider_block_3",
+    "1": "pasterdream:block/lost_sword",
+    "2": "pasterdream:block/lost_sword"
+  },
+  "render_type": "cutout"
+}
