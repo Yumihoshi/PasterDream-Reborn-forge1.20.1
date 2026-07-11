@@ -20,5 +20,7 @@ public class ModParticles {
         event.registerSpriteSet(ModParticleTypes.CRACK_0_PARTICLE.get(), CrackParticle.Provider::new);
         event.registerSpriteSet(ModParticleTypes.TERRASWORD_WAVE_PARTICLE.get(), TerraswordWaveParticle.Provider::new);
         event.registerSpriteSet(ModParticleTypes.MELTDREAM_CRYSTAL_PARTICLE.get(), MeltdreamCrystalParticle.Provider::new);
+        event.registerSpriteSet(ModParticleTypes.FOX_FIRE_0_PARTICLE.get(), FoxFire0Particle.Provider::new);
+        event.registerSpriteSet(ModParticleTypes.FOX_FIRE_1_PARTICLE.get(), FoxFire1Particle.Provider::new);
     }
 }

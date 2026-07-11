@@ -1,9 +1,10 @@
 package com.pasterdream.pasterdreammod.world.entity;
 
 import com.pasterdream.pasterdreammod.init.ModEntities;
+import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
+
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -179,9 +180,9 @@ public class FoxFireEntity extends PathfinderMob implements GeoEntity {
                 double x = this.getX() + Math.cos(angle) * dist;
                 double z = this.getZ() + Math.sin(angle) * dist;
                 double y = this.getY() + level.random.nextDouble() * height;
-                serverLevel.sendParticles(ParticleTypes.FLAME,
+                serverLevel.sendParticles(ModParticleTypes.FOX_FIRE_0_PARTICLE.get(),
                         x, y, z, 1, 0.1, 0.1, 0.1, 0.02);
-                serverLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
+                serverLevel.sendParticles(ModParticleTypes.FOX_FIRE_1_PARTICLE.get(),
                         x, y, z, 1, 0.1, 0.1, 0.1, 0.01);
             }
         }

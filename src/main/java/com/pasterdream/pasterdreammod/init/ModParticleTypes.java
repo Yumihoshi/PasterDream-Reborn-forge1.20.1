@@ -31,6 +31,10 @@ public class ModParticleTypes {
             PARTICLE_TYPES.register("terrasword_wave_particle", () -> new SimpleParticleType(false));
     public static final RegistryObject<SimpleParticleType> MELTDREAM_CRYSTAL_PARTICLE =
             PARTICLE_TYPES.register("meltdream_crystal_particle", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> FOX_FIRE_0_PARTICLE =
+            PARTICLE_TYPES.register("fox_fire_0_particle", () -> new SimpleParticleType(false));
+    public static final RegistryObject<SimpleParticleType> FOX_FIRE_1_PARTICLE =
+            PARTICLE_TYPES.register("fox_fire_1_particle", () -> new SimpleParticleType(false));
 
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);
