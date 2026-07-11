@@ -698,6 +698,19 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.qym_butterfly_star_hairpin.lore", "§7§o如果你瞄准夜空的星星，即使迷失，也是在星辰之间。");
         add(ModItems.HIYORI_BUTTERFLY_HAIRPIN.get(), "妃爱的蝴蝶结发夹");
         add("tooltip.pasterdream.hiyori_butterfly_hairpin.lore", "§7§o-- 因为常轨脱离 所以creative");
+
+        add(ModItems.KAICHU_OMAMORI.get(), "怀中御守");
+        add("tooltip.pasterdream.kaichu_omamori.effect.foxfire", "§7▪ §9对12*12区域范围内生成狐火立场");
+        add("tooltip.pasterdream.kaichu_omamori.effect.vulnerable", "§7▪ §9使除玩家外的生物受到20%的易伤和缓慢效果");
+        add("tooltip.pasterdream.kaichu_omamori.effect.regen", "§7▪ §9给予玩家生命恢复");
+        add("tooltip.pasterdream.kaichu_omamori.effect.duration", "§7▪ §9持续时间 20秒");
+        add("tooltip.pasterdream.kaichu_omamori.effect.energy_cost", "§f▪ §4融梦能量 -5");
+        add("tooltip.pasterdream.kaichu_omamori.effect.cooldown", "§7▪ §9冷却时间 8 秒");
+        add("tooltip.pasterdream.kaichu_omamori.equip", "§9当装备时：");
+        add("tooltip.pasterdream.kaichu_omamori.immune", "§7▪ §9每30秒，你获得一次闪避攻击的机会");
+        add("tooltip.pasterdream.kaichu_omamori.luck", "§7▪ §9+5幸运");
+        add("tooltip.pasterdream.kaichu_omamori.flavor", "§o§7 -- Alirea定制物品");
+
         add(ModItems.ALLKINDS_RING.get(), "万象神戒");
         add("tooltip.pasterdream.allkinds_ring.flavor", "§7§o聚万象之力 铸以此戒");
         add("tooltip.pasterdream.allkinds_ring.lore", "§7§o-- 斯卓贝莉·黛欧恩");

@@ -53,5 +53,8 @@
   },
   "sword_wave": {
     "sounds": [{"name": "pasterdream:sword_wave", "stream": false}]
+  },
+  "fox_fire": {
+    "sounds": [{"name": "pasterdream:fox_fire", "stream": false}]
   }
 }
