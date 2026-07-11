@@ -164,6 +164,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.THERMAL_DAGGER.get(), "Thermal Dagger");
         add(ModItems.DESERT_SWORD.get(), "Desert Greatsword");
         add(ModItems.CHENJINGMEN_DESERT_SWORD.get(), "Chenjingmen Desert");
+        add(ModItems.BROKEN_HERO_SWORD.get(), "Broken Hero Sword");
         add(ModItems.TITANIUM_HELMET.get(), "Titanium Helmet");
         add(ModItems.TITANIUM_CHESTPLATE.get(), "Titanium Chestplate");
         add(ModItems.TITANIUM_LEGGINGS.get(), "Titanium Leggings");

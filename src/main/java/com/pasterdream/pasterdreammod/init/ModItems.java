@@ -319,6 +319,8 @@ public class ModItems {
             () -> new DesertSwordItem(ModToolTiers.DESERT_SWORD, 3, -3.1f, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> CHENJINGMEN_DESERT_SWORD = ITEMS.register("chenjingmen_desert_sword",
             () -> new ChenjingmenDesertSwordItem(ModToolTiers.CHENJINGMEN_DESERT_SWORD, 3, -3.1f, new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> BROKEN_HERO_SWORD = ITEMS.register("broken_hero_sword",
+            () -> new SwordItem(ModToolTiers.BROKEN_HERO_SWORD, 3, -2.4f, new Item.Properties().fireResistant()));
 
     // ===== 钛金装备 =====
     public static final RegistryObject<Item> TITANIUM_HELMET = ITEMS.register("titanium_helmet",
