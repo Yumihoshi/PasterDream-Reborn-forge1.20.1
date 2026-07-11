@@ -9,6 +9,7 @@ import com.pasterdream.pasterdreammod.event.PlayerEvents;
 import com.pasterdream.pasterdreammod.init.*;
 import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
 import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
+import com.pasterdream.pasterdreammod.client.renderer.FoxFireRenderer;
 import com.pasterdream.pasterdreammod.client.renderer.TerraswordWaveRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
@@ -68,6 +69,7 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onHoeTill);
         MinecraftForge.EVENT_BUS.addListener(ModMobDrops::onLivingDrops);
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onLivingHurt);
+        MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onFoxFireVulnerableHurt);
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onLivingHurt);
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerTick);
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerSleepInBed);
@@ -147,6 +149,7 @@ public class PasterDreamMod
     {
         ModBlockEntityRenderer.EntityRenderersEventRegister(event);
         event.registerEntityRenderer(ModEntities.TERRASWORD_WAVE.get(), TerraswordWaveRenderer::new);
+        event.registerEntityRenderer(ModEntities.FOX_FIRE.get(), FoxFireRenderer::new);
     }
 
     private void onAddReloadListeners(AddReloadListenerEvent event)
@@ -173,6 +176,14 @@ public class PasterDreamMod
                             || tiered.getTier() == ModToolTiers.MELT_DREAM)) {
                 event.setAmount(event.getAmount() * 1.5f);
             }
+        }
+    }
+
+    // 狐火易伤：被狐火立场标记的生物受到 +20% 伤害
+    public static void onFoxFireVulnerableHurt(LivingHurtEvent event) {
+        if (event.getEntity().getPersistentData().getBoolean("pasterdream:fox_fire_vulnerable")) {
+            event.getEntity().getPersistentData().remove("pasterdream:fox_fire_vulnerable");
+            event.setAmount(event.getAmount() * 1.2f);
         }
     }
 }

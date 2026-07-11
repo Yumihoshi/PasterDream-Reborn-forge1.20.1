@@ -538,6 +538,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DUKE_COIN_CURIO.get());
                         output.accept(ModItems.HIYORI_BUTTERFLY_HAIRPIN.get());
                         output.accept(ModItems.ALLKINDS_RING.get());
+                        output.accept(ModItems.KAICHU_OMAMORI.get());
                         output.accept(ModItems.THERMAL_DAGGER.get());
                         output.accept(ModItems.MELT_DREAM_AURORIAN_STEEL.get());
                         output.accept(ModItems.TERRA_BLADE.get());
