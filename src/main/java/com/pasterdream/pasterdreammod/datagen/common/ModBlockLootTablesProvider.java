@@ -269,6 +269,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.RESEARCH_TABLE.get());
 
         dropSelf(ModBlocks.LOST_SWORD_TOMB.get());
+        dropSelf(ModBlocks.LIFE_CRYSTAL.get());
 
         dropSelf(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get());
         dropSelf(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get());

@@ -56,5 +56,8 @@
   },
   "fox_fire": {
     "sounds": [{"name": "pasterdream:fox_fire", "stream": false}]
+  },
+  "life_crystal": {
+    "sounds": [{"name": "pasterdream:life_crystal", "stream": false}]
   }
 }

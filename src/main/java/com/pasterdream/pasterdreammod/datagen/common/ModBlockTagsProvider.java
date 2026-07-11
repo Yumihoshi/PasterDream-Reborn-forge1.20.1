@@ -311,6 +311,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_CRACK.get())
                 .add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get());
       
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.LIFE_CRYSTAL.get());
+
         tag(ModBlockTags.PLIER_PLANTS)
                 .add(ModBlocks.STEM_GRASS.get())
                 .add(ModBlocks.TALL_STEM_GRASS.get())
