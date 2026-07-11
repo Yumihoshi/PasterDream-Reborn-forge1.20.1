@@ -247,6 +247,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.TRAVELER_BELT.get());
         basicItem(ModItems.DREAM_TRAVELER_BELT.get());
         basicItem(ModItems.DUKE_COIN_CURIO.get());
+        basicItem(ModItems.BLESSING_OF_CECILIA.get());
+        basicItem(ModItems.FADED_BLESSING_OF_CECILIA.get());
 
         basicItem(ModItems.DEBUG_SWORD.get());
         basicItem(ModItems.LOOT_GENERATOR.get());

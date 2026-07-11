@@ -682,6 +682,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.CARAPAX_CHARM.get(), "龟壳护身符");
         add(ModItems.WORLDTREE_SEEDPOD.get(), "世界树种荚");
         add(ModItems.GARLAND.get(), "花环");
+        add(ModItems.BLESSING_OF_CECILIA.get(), "塞西莉娅的加护");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect1", "§7▪ §9获得5秒的伤害免疫与速度II");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect2", "§7▪ §9并在10秒内获得抗性提升V、生命恢复X与伤害吸收V");
+        add("tooltip.pasterdream.blessing_of_cecilia.lore", "§7§o--我会守护你，直到永远...");
+        add(ModItems.FADED_BLESSING_OF_CECILIA.get(), "失色塞西莉娅的加护");
+        add("tooltip.pasterdream.faded_blessing_of_cecilia.hint", "§7或许我们应该亲手将它浸泡于融梦涌泉");
 
         add(ModItems.SNOW_VOW_HEAD.get(), "雪下的誓言");
         add("tooltip.pasterdream.snow_vow_head.effect.area", "§7▪ §9使附近直径7格内的玩家获得效果");
@@ -781,6 +787,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.goldenrod_tea_buff", "秋麒麟茶");
         add("effect.pasterdream.cook_buff", "料理");
         add("effect.pasterdream.dream_wish_buff", "美梦祈愿");
+        add("effect.pasterdream.cecilia_blessing_buff", "塞西莉娅的加护");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");

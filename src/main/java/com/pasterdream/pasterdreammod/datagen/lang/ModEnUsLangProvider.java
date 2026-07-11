@@ -565,6 +565,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.CARAPAX_CHARM.get(), "Carapax Charm");
         add(ModItems.WORLDTREE_SEEDPOD.get(), "Worldtree Seedpod");
         add(ModItems.GARLAND.get(), "Garland");
+        add(ModItems.BLESSING_OF_CECILIA.get(), "Blessing of Cecilia");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect1", "§7▪ §9Grants 5s of damage immunity and Speed II");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect2", "§7▪ §9Grants 10s of Resistance V, Regeneration X and Absorption V");
+        add("tooltip.pasterdream.blessing_of_cecilia.lore", "§7§o--I will protect you, forever and ever...");
+        add(ModItems.FADED_BLESSING_OF_CECILIA.get(), "Faded Blessing of Cecilia");
+        add("tooltip.pasterdream.faded_blessing_of_cecilia.hint", "§7Perhaps we should submerge it in Melt Dream Spring");
         add(ModItems.FOURLEAF_CLOVER_CURIO.get(), "Fourleaf Clover");
         add("tooltip.pasterdream.fourleaf_clover_curio.flavor", "§7§oWhich leaf represents luck?");
         add(ModItems.SNOW_VOW_HEAD.get(), "Snow Vow");
@@ -656,6 +662,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.goldenrod_tea_buff", "Goldenrod Tea");
         add("effect.pasterdream.cook_buff", "Cook");
         add("effect.pasterdream.dream_wish_buff", "Dream Wish");
+        add("effect.pasterdream.cecilia_blessing_buff", "Blessing of Cecilia");
         add("attribute.pasterdream.blink_cd", "Blink Cooldown");
         add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
         add("attribute.pasterdream.blink_range", "Blink Distance");

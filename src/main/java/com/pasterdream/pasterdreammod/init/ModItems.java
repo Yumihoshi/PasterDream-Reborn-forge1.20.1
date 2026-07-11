@@ -15,6 +15,7 @@ import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.StorageBagItem;
 import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.LargeStorageBagItem;
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
 import com.pasterdream.pasterdreammod.world.item.curio.*;
+import com.pasterdream.pasterdreammod.world.item.FadedBlessingOfCeciliaItem;
 import com.pasterdream.pasterdreammod.world.item.debugsword.DebugSwordItem;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.DreamNotesItem;
 import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamDrinkItem;
@@ -725,6 +726,10 @@ public class ModItems {
             HiyoriButterflyHairpinItem::new);
     public static final RegistryObject<Item> TERRA_FLOATING_ISLAND = ITEMS.register("terra_floating_island",
             TerraFloatingIslandItem::new);
+    public static final RegistryObject<Item> BLESSING_OF_CECILIA = ITEMS.register("blessing_of_cecilia",
+            BlessingOfCeciliaItem::new);
+    public static final RegistryObject<Item> FADED_BLESSING_OF_CECILIA = ITEMS.register("faded_blessing_of_cecilia",
+            FadedBlessingOfCeciliaItem::new);
 
     // ===== 饰品（项链） =====
     public static final RegistryObject<Item> EMBRYO_NECKLACE = ITEMS.register("embryo_necklace",
