@@ -199,6 +199,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TITANIUM_AXE.get());
                         output.accept(ModItems.TITANIUM_SHOVEL.get());
                         output.accept(ModItems.TITANIUM_HOE.get());
+                        // 钛金装备
+                        output.accept(ModItems.TITANIUM_HELMET.get());
+                        output.accept(ModItems.TITANIUM_CHESTPLATE.get());
+                        output.accept(ModItems.TITANIUM_LEGGINGS.get());
+                        output.accept(ModItems.TITANIUM_BOOTS.get());
                         // 染梦合金工具
                         output.accept(ModItems.DYEDREAM_SWORD.get());
                         output.accept(ModItems.SHARP_MELT_DREAM_SWORD.get());
@@ -207,23 +212,23 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DYEDREAM_SHOVEL.get());
                         output.accept(ModItems.DYEDREAM_HOE.get());
                         output.accept(ModItems.DYEDREAM_HAMMER.get());
-                        // 钓竿
-                        output.accept(ModItems.STAR_WISH_ROD.get());
-                        // 钛金装备
-                        output.accept(ModItems.TITANIUM_HELMET.get());
-                        output.accept(ModItems.TITANIUM_CHESTPLATE.get());
-                        output.accept(ModItems.TITANIUM_LEGGINGS.get());
-                        output.accept(ModItems.TITANIUM_BOOTS.get());
-                        // 回响装备
-                        output.accept(ModItems.SCULK_HELMET.get());
-                        output.accept(ModItems.SCULK_CHESTPLATE.get());
-                        output.accept(ModItems.SCULK_LEGGINGS.get());
-                        output.accept(ModItems.SCULK_BOOTS.get());
                         // 染梦合金装备
                         output.accept(ModItems.DYEDREAM_HELMET.get());
                         output.accept(ModItems.DYEDREAM_CHESTPLATE.get());
                         output.accept(ModItems.DYEDREAM_LEGGINGS.get());
                         output.accept(ModItems.DYEDREAM_BOOTS.get());
+                        // 融梦水晶工具
+                        output.accept(ModItems.MELT_DREAM_PICKAXE.get());
+                        output.accept(ModItems.MELT_DREAM_AXE.get());
+                        output.accept(ModItems.MELT_DREAM_SHOVEL.get());
+                        output.accept(ModItems.MELT_DREAM_HOE.get());
+                        // 钓竿
+                        output.accept(ModItems.STAR_WISH_ROD.get());
+                        // 回响装备
+                        output.accept(ModItems.SCULK_HELMET.get());
+                        output.accept(ModItems.SCULK_CHESTPLATE.get());
+                        output.accept(ModItems.SCULK_LEGGINGS.get());
+                        output.accept(ModItems.SCULK_BOOTS.get());
                         // 炙焰金工具
                         output.accept(ModItems.MOLTEN_GOLD_SWORD.get());
                         output.accept(ModItems.MOLTEN_GOLD_PICKAXE.get());
@@ -234,11 +239,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HELLFIRE_SWORD.get());
                         output.accept(ModItems.HELLFIRE_PICKAXE.get());
                         output.accept(ModItems.INFERNO_SWORD.get());
-                        // 融梦水晶工具
-                        output.accept(ModItems.MELT_DREAM_PICKAXE.get());
-                        output.accept(ModItems.MELT_DREAM_AXE.get());
-                        output.accept(ModItems.MELT_DREAM_SHOVEL.get());
-                        output.accept(ModItems.MELT_DREAM_HOE.get());
                         // 独立武器
                         output.accept(ModItems.TIDE_SWORD.get());
                         output.accept(ModItems.BEIHAI_RUO_TIDE_SWORD.get());
