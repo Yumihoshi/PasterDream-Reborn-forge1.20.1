@@ -16,6 +16,7 @@ import com.pasterdream.pasterdreammod.world.effect.CookBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.DreamWishBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.SnowVowBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.CeciliaBlessingBuff;
+import com.pasterdream.pasterdreammod.world.effect.RestBuffEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -58,6 +59,8 @@ public class ModEffects {
             EFFECTS.register("dream_wish_buff", DreamWishBuffEffect::new);
     public static final RegistryObject<MobEffect> CECILIA_BLESSING_BUFF =
             EFFECTS.register("cecilia_blessing_buff", CeciliaBlessingBuff::new);
+    public static final RegistryObject<MobEffect> REST_BUFF =
+            EFFECTS.register("rest_buff", RestBuffEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);
