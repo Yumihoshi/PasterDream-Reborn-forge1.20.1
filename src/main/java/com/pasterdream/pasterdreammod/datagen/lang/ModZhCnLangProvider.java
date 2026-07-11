@@ -294,7 +294,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get(), "寻梦者的永恒书卷");
         add(ModBlocks.RESEARCH_TABLE.get(), "研究台");
         add(ModBlocks.LOST_SWORD_TOMB.get(), "失落剑冢");
-        add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "狐狸雕像");
+        add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "金狐狸雕像");
+        add(ModBlocks.FOX_SCULPTURE.get(), "狐狸雕像");
         add(ModBlocks.DESERT_HERO_TOMB.get(), "荒漠英雄之墓");
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "融梦水晶箱");
         add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get(), "打开的融梦水晶箱");
@@ -692,10 +693,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.WORLDTREE_SEEDPOD.get(), "世界树种荚");
         add(ModItems.GARLAND.get(), "花环");
         add(ModItems.BLESSING_OF_CECILIA.get(), "塞西莉娅的加护");
-        add("tooltip.pasterdream.blessing_of_cecilia.effect1", "§7▪ §9获得5秒的伤害免疫与速度II");
-        add("tooltip.pasterdream.blessing_of_cecilia.effect2", "§7▪ §9并在10秒内获得抗性提升V、生命恢复X与伤害吸收V");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect0", "§7▪ §9常驻：抗性提升II");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect1", "§7 受到致命伤害时：");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect2", "§7▪ §9获得5秒的伤害免疫");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect3", "§7▪ §9并在10秒内获得抗性提升V、生命恢复X、伤害吸收V与速度II");
         add("tooltip.pasterdream.blessing_of_cecilia.lore", "§7§o--我会守护你，直到永远...");
         add(ModItems.FADED_BLESSING_OF_CECILIA.get(), "失色塞西莉娅的加护");
+        add("tooltip.pasterdream.faded_blessing_of_cecilia.effect0", "§7▪ §9常驻：抗性提升II");
         add("tooltip.pasterdream.faded_blessing_of_cecilia.hint", "§7或许我们应该亲手将它浸泡于融梦涌泉");
 
         add(ModItems.SNOW_VOW_HEAD.get(), "雪下的誓言");
@@ -810,6 +814,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.cook_buff", "料理");
         add("effect.pasterdream.dream_wish_buff", "美梦祈愿");
         add("effect.pasterdream.cecilia_blessing_buff", "塞西莉娅的加护");
+        add("effect.pasterdream.rest_buff", "休憩");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");

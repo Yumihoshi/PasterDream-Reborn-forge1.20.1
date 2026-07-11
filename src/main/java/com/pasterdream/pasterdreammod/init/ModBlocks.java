@@ -31,6 +31,7 @@ import com.pasterdream.pasterdreammod.world.block.lostswordtomb.LostSwordTombBlo
 import com.pasterdream.pasterdreammod.world.block.LifeCrystalBlock;
 import com.pasterdream.pasterdreammod.world.block.goldenfoxsculpture.GoldenFoxSculptureBlock;
 import com.pasterdream.pasterdreammod.world.block.desertherotomb.DesertHeroTombBlock;
+import com.pasterdream.pasterdreammod.world.block.foxsculpture.FoxSculptureBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -486,6 +487,7 @@ public class ModBlocks {
 
     //狐狸雕像
     public static final RegistryObject<Block> GOLDEN_FOX_SCULPTURE = BLOCKS.register("golden_fox_sculpture", GoldenFoxSculptureBlock::new);
+    public static final RegistryObject<Block> FOX_SCULPTURE = BLOCKS.register("fox_sculpture", FoxSculptureBlock::new);
     //荒漠英雄之墓
     public static final RegistryObject<Block> DESERT_HERO_TOMB = BLOCKS.register("desert_hero_tomb", DesertHeroTombBlock::new);
 

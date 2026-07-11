@@ -92,8 +92,13 @@ public class PlayerEvents {
 
     public static void onPlayerSleepInBed(PlayerSleepInBedEvent event) {
         Player player = event.getEntity();
-        if (!player.hasEffect(ModEffects.DREAM_WISH_BUFF.get())) return;
         if (player.level().isClientSide()) return;
+
+        // 躺下给予3分钟休憩效果
+        player.addEffect(new MobEffectInstance(ModEffects.REST_BUFF.get(),
+                3600, 0, false, false));
+
+        if (!player.hasEffect(ModEffects.DREAM_WISH_BUFF.get())) return;
 
         BlockPos pos = event.getPos();
         CompoundTag data = player.getPersistentData();

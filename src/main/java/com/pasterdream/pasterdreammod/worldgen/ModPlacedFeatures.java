@@ -318,14 +318,14 @@ public class ModPlacedFeatures {
         // 茎草 — WORLD_SURFACE_WG
         context.register(STEM_GRASS_PATCH, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.STEM_GRASS_PATCH),
-                List.of(CountPlacement.of(5), InSquarePlacement.spread(),
+                List.of(CountPlacement.of(15), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
                         ON_DYEDREAM_GROUND)));
 
         // 高茎草 — WORLD_SURFACE_WG
         context.register(TALL_STEM_GRASS_PATCH, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.TALL_STEM_GRASS_PATCH),
-                List.of(CountPlacement.of(3), InSquarePlacement.spread(),
+                List.of(CountPlacement.of(10), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
                         ON_DYEDREAM_GROUND)));
 

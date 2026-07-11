@@ -283,6 +283,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.RESEARCH_TABLE.get(), "Research Table");
         add(ModBlocks.LOST_SWORD_TOMB.get(), "Lost Sword Tomb");
         add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "Golden Fox Sculpture");
+        add(ModBlocks.FOX_SCULPTURE.get(), "Fox Sculpture");
         add(ModBlocks.DESERT_HERO_TOMB.get(), "Desert Hero Tomb");
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "Melt Dream Crystal Chest");
         add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get(), "Opened Melt Dream Crystal Chest");
@@ -575,10 +576,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.WORLDTREE_SEEDPOD.get(), "Worldtree Seedpod");
         add(ModItems.GARLAND.get(), "Garland");
         add(ModItems.BLESSING_OF_CECILIA.get(), "Blessing of Cecilia");
-        add("tooltip.pasterdream.blessing_of_cecilia.effect1", "§7▪ §9Grants 5s of damage immunity and Speed II");
-        add("tooltip.pasterdream.blessing_of_cecilia.effect2", "§7▪ §9Grants 10s of Resistance V, Regeneration X and Absorption V");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect0", "§7▪ §9Passive: Resistance II");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect1", "§7 Upon receiving fatal damage:");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect2", "§7▪ §9Grants 5s of damage immunity");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect3", "§7▪ §9And grants 10s of Resistance V, Regeneration X, Absorption V and Speed II");
         add("tooltip.pasterdream.blessing_of_cecilia.lore", "§7§o--I will protect you, forever and ever...");
         add(ModItems.FADED_BLESSING_OF_CECILIA.get(), "Faded Blessing of Cecilia");
+        add("tooltip.pasterdream.faded_blessing_of_cecilia.effect0", "§7▪ §9Passive: Resistance II");
         add("tooltip.pasterdream.faded_blessing_of_cecilia.hint", "§7Perhaps we should submerge it in Melt Dream Spring");
         add(ModItems.FOURLEAF_CLOVER_CURIO.get(), "Fourleaf Clover");
         add("tooltip.pasterdream.fourleaf_clover_curio.flavor", "§7§oWhich leaf represents luck?");
@@ -682,6 +686,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.cook_buff", "Cook");
         add("effect.pasterdream.dream_wish_buff", "Dream Wish");
         add("effect.pasterdream.cecilia_blessing_buff", "Blessing of Cecilia");
+        add("effect.pasterdream.rest_buff", "Rest");
         add("attribute.pasterdream.blink_cd", "Blink Cooldown");
         add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
         add("attribute.pasterdream.blink_range", "Blink Distance");

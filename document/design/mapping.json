@@ -128,7 +128,10 @@
     "the_endless_book_of_dream_seekers": "the_endless_book_of_dream_seekers",
     "lost_sword_block": "lost_sword_tomb",
     "meltdream_liquid": "melt_dream_liquid",
-    "shadow_liquid": "shadow_liquid"
+    "shadow_liquid": "shadow_liquid",
+    "life_crystal": "life_crystal",
+    "golden_fox_sculpture": "golden_fox_sculpture",
+    "desert_hero_tomb": "desert_hero_tomb"
   },
   "items": {
     "amber_candy": "amber_candy",
@@ -368,6 +371,7 @@
     "qym_head": "qym_butterfly_star_hairpin",
     "hiyori_head": "hiyori_butterfly_hairpin",
     "allkinds_ring": "allkinds_ring",
+    "cradle_in_ones_arms": "kaichu_omamori",
     "sweetdream_disc": "sweet_dream_music_disc",
     "snowfalldream_disc": "snowfall_dream_music_disc",
     "time_hourglass": "sand_of_time",
@@ -407,7 +411,9 @@
     "goldenrod_tea_buff": "goldenrod_tea_buff",
     "dyedream_perfume_buff": "dyedream_perfume_buff",
     "teleportation_buff": "待搬运",
-    "fondillusion_buff": "待搬运"
+    "fondillusion_buff": "待搬运",
+    "rest_buff": "rest_buff",
+    "rest_buff_in_dark": "rest_buff_in_dark"
   },
   "block_properties": {
     "crop_0a": {

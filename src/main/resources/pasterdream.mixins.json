@@ -6,7 +6,8 @@
   "mixins": [
     "BlockStateBaseMixin",
     "PhantomTargetMixin",
-    "GoldenrodTeaBuffMixin"
+    "GoldenrodTeaBuffMixin",
+    "CampfireBlockEntityMixin"
   ],
   "client": [
     "SituationalMusicMixin",
