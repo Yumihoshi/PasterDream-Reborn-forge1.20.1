@@ -215,6 +215,12 @@ public class FoxFireEntity extends PathfinderMob implements GeoEntity {
     }
 
     @Override
+    public AABB getBoundingBoxForCulling() {
+        double r = 6.0;
+        return this.getBoundingBox().inflate(r);
+    }
+
+    @Override
     protected void checkFallDamage(double y, boolean onGroundIn, net.minecraft.world.level.block.state.BlockState state, BlockPos pos) {
     }
 
