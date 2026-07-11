@@ -21,10 +21,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.LakeFeature;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import com.pasterdream.pasterdreammod.worldgen.feature.PinkShroomlightTreeDecorator;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -43,6 +45,10 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_TREE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_tree"));
+    // 染梦树 — 寒冷群系云杉形态变体
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_TREE_COLD_SPRUCE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_tree_cold_spruce"));
     // 粉顶菌巨树 (丛林树形态, 2×2)
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_MUSHROOM_TREE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
@@ -332,6 +338,17 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.simple(ModBlocks.DYEDREAM_LEAVES.get()),
                         new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)),
                         new TwoLayersFeatureSize(1, 0, 2))
+                        .ignoreVines()
+                        .build()));
+
+        // 染梦树 — 寒冷群系云杉形态变体 (使用染梦原木/树叶, 云杉树干+针叶塑形器)
+        context.register(DYEDREAM_TREE_COLD_SPRUCE, new ConfiguredFeature<>(Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.DYEDREAM_LOG.get()),
+                        new StraightTrunkPlacer(5, 2, 1),
+                        BlockStateProvider.simple(ModBlocks.DYEDREAM_LEAVES.get()),
+                        new SpruceFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), ConstantInt.of(2)),
+                        new TwoLayersFeatureSize(2, 0, 2))
                         .ignoreVines()
                         .build()));
 
