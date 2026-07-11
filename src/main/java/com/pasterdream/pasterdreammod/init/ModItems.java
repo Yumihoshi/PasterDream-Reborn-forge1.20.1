@@ -14,6 +14,7 @@ import com.pasterdream.pasterdreammod.world.block.LifeCrystalItem;
 import com.pasterdream.pasterdreammod.world.block.lostswordtomb.LostSwordTombItem;
 import com.pasterdream.pasterdreammod.world.block.goldenfoxsculpture.GoldenFoxSculptureItem;
 import com.pasterdream.pasterdreammod.world.block.desertherotomb.DesertHeroTombItem;
+import com.pasterdream.pasterdreammod.world.block.foxsculpture.FoxSculptureItem;
 import com.pasterdream.pasterdreammod.world.item.*;
 import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.StorageBagItem;
 import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.LargeStorageBagItem;
@@ -1070,6 +1071,7 @@ public class ModItems {
     public static final RegistryObject<Item> LIFE_CRYSTAL = ITEMS.register("life_crystal", () -> new LifeCrystalItem(ModBlocks.LIFE_CRYSTAL.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> GOLDEN_FOX_SCULPTURE = ITEMS.register("golden_fox_sculpture", () -> new GoldenFoxSculptureItem(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FOX_SCULPTURE = ITEMS.register("fox_sculpture", () -> new FoxSculptureItem(ModBlocks.FOX_SCULPTURE.get(), new Item.Properties()));
     public static final RegistryObject<Item> DESERT_HERO_TOMB = ITEMS.register("desert_hero_tomb", () -> new DesertHeroTombItem(ModBlocks.DESERT_HERO_TOMB.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> MORTAR = ITEMS.register("mortar", () -> new MortarItem(new Item.Properties()));

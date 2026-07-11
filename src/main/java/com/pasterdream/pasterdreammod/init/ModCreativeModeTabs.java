@@ -361,6 +361,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TITANIUM_BLOCK.get());
                         output.accept(ModItems.MOLTEN_GOLD_BLOCK.get());
                         output.accept(ModItems.CHARGED_AMETHYST_BLOCK.get());
+                        output.accept(ModItems.FOX_SCULPTURE.get());
                     })
                     .build());
 

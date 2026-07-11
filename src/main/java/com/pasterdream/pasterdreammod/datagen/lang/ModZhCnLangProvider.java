@@ -294,7 +294,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get(), "寻梦者的永恒书卷");
         add(ModBlocks.RESEARCH_TABLE.get(), "研究台");
         add(ModBlocks.LOST_SWORD_TOMB.get(), "失落剑冢");
-        add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "狐狸雕像");
+        add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "金狐狸雕像");
+        add(ModBlocks.FOX_SCULPTURE.get(), "狐狸雕像");
         add(ModBlocks.DESERT_HERO_TOMB.get(), "荒漠英雄之墓");
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "梦染茶花植株");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "成熟的梦染茶花植株");
