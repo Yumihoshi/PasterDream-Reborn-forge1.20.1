@@ -454,7 +454,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.6", "§7▪ §9冷却时间：2.5秒");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.7", "被动：");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.8", "§7▪ §9手持武器时获得水下呼吸效果");
-        add("tooltip.pasterdreammod.kusanagi.1", "镶嵌：§7无");
+        add("tooltip.pasterdreammod.kusanagi.1", "亡魂: §7%d/200");
         add("tooltip.pasterdreammod.kusanagi.2", "§7▪ §9攻击施加中毒效果");
         add("tooltip.pasterdreammod.kusanagi.evolve", "武器成长到了新的阶段");
         add("tooltip.pasterdreammod.murakumo_kusanagi.1", "镶嵌：§7200亡魂");

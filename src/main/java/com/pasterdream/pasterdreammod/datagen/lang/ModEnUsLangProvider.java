@@ -450,7 +450,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.6", "§7▪ §9Cooldown: 2.5s");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.7", "§7Passive:");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.8", "§7▪ §9Grants Water Breathing while held");
-        add("tooltip.pasterdreammod.kusanagi.1", "Inlaid: §7None");
+        add("tooltip.pasterdreammod.kusanagi.1", "Souls: §7%d/200");
         add("tooltip.pasterdreammod.kusanagi.2", "§7▪ §9Applies Poison on hit");
         add("tooltip.pasterdreammod.kusanagi.evolve", "The weapon has grown to a new stage");
         add("tooltip.pasterdreammod.murakumo_kusanagi.1", "Inlaid: §7200 Souls");

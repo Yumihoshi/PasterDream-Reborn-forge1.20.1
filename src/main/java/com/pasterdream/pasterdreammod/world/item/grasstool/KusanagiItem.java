@@ -29,9 +29,6 @@ public class KusanagiItem extends SwordItem {
         if (!target.level().isClientSide()) {
             target.addEffect(new MobEffectInstance(MobEffects.POISON, 60, 0));
         }
-        if (!target.isAlive()) {
-            stack.getOrCreateTag().putDouble("killed", stack.getOrCreateTag().getDouble("killed") + 1);
-        }
         return retval;
     }
 
@@ -39,9 +36,10 @@ public class KusanagiItem extends SwordItem {
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, level, entity, slot, selected);
         if (selected && stack.getOrCreateTag().getDouble("killed") >= 200) {
+            ItemStack evolved = new ItemStack(ModItems.MURAKUMO_KUSANAGI.get());
+            evolved.setTag(stack.getOrCreateTag().copy());
             stack.shrink(1);
             if (entity instanceof Player player) {
-                ItemStack evolved = new ItemStack(ModItems.MURAKUMO_KUSANAGI.get());
                 if (!player.getInventory().add(evolved)) {
                     player.drop(evolved, false);
                 }
@@ -63,7 +61,8 @@ public class KusanagiItem extends SwordItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
-        tooltip.add(Component.translatable("tooltip.pasterdreammod.kusanagi.1"));
+        int killed = (int) stack.getOrCreateTag().getDouble("killed");
+        tooltip.add(Component.translatable("tooltip.pasterdreammod.kusanagi.1", killed));
         tooltip.add(Component.translatable("tooltip.pasterdreammod.kusanagi.2"));
     }
 }
