@@ -164,7 +164,7 @@ public class TerraswordWaveEntity extends PathfinderMob {
                     new AABB(center, center).inflate(radius), e -> true)
                     .stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(center))).toList();
             for (Entity target : entities) {
-                if (!(target instanceof Player) && target != this) {
+                if (!(target instanceof Player) && target != this && !(target instanceof TerraswordWaveEntity)) {
                     float damage = (float) (2 + pasterAtk * 0.7);
                     if (target instanceof LivingEntity living) {
                         if (smite > 0 && living.getMobType() == MobType.UNDEAD) {
