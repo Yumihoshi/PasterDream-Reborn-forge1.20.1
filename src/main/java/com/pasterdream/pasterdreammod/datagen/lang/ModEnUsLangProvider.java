@@ -680,6 +680,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.cook_buff", "Cook");
         add("effect.pasterdream.dream_wish_buff", "Dream Wish");
         add("effect.pasterdream.cecilia_blessing_buff", "Blessing of Cecilia");
+        add("effect.pasterdream.rest_buff", "Rest");
         add("attribute.pasterdream.blink_cd", "Blink Cooldown");
         add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
         add("attribute.pasterdream.blink_range", "Blink Distance");

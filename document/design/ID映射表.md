@@ -421,6 +421,7 @@
 | `dyedream_perfume_buff`            | `dyedream_perfume_buff`           | 不改，效果逻辑已改 | `DyedreamPerfumeBuffEffect`，配合 `PhantomTargetMixin` |
 | `teleportation_buff`              | 待搬运                               | -                | -                           |
 | `fondillusion_buff`               | 待搬运                               | -                | -                           |
+| `rest_buff`                       | `rest_buff`                       | 不改               | `RestBuffEffect`，+0.9 理智光环 |
 
 ---
 

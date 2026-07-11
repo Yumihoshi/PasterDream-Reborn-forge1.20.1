@@ -808,6 +808,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.cook_buff", "料理");
         add("effect.pasterdream.dream_wish_buff", "美梦祈愿");
         add("effect.pasterdream.cecilia_blessing_buff", "塞西莉娅的加护");
+        add("effect.pasterdream.rest_buff", "休憩");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");
