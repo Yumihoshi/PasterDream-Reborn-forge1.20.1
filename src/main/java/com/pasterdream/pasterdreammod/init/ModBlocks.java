@@ -27,6 +27,8 @@ import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlo
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersBlock;
 import com.pasterdream.pasterdreammod.world.block.lostswordtomb.LostSwordTombBlock;
 import com.pasterdream.pasterdreammod.world.block.LifeCrystalBlock;
+import com.pasterdream.pasterdreammod.world.block.goldenfoxsculpture.GoldenFoxSculptureBlock;
+import com.pasterdream.pasterdreammod.world.block.desertherotomb.DesertHeroTombBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -476,6 +478,11 @@ public class ModBlocks {
 
     //生命水晶
     public static final RegistryObject<Block> LIFE_CRYSTAL = BLOCKS.register("life_crystal", LifeCrystalBlock::new);
+
+    //狐狸雕像
+    public static final RegistryObject<Block> GOLDEN_FOX_SCULPTURE = BLOCKS.register("golden_fox_sculpture", GoldenFoxSculptureBlock::new);
+    //荒漠英雄之墓
+    public static final RegistryObject<Block> DESERT_HERO_TOMB = BLOCKS.register("desert_hero_tomb", DesertHeroTombBlock::new);
 
     //破碎粒子提供方块
     public static final RegistryObject<Block> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0 = BLOCKS.register("model_break_particle_provider_block_0", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(0,2147483647)));

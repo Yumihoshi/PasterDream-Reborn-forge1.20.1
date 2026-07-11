@@ -9,6 +9,8 @@ import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlo
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.LifeCrystalBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersBlockEntityRenderer;
+import com.pasterdream.pasterdreammod.world.block.goldenfoxsculpture.GoldenFoxSculptureBlockEntityRenderer;
+import com.pasterdream.pasterdreammod.world.block.desertherotomb.DesertHeroTombBlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -33,5 +35,7 @@ public class ModBlockEntityRenderer
         event.registerBlockEntityRenderer(ModBlockEntities.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get(), TheEndlessBookOfDreamSeekersBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.RESEARCH_TABLE.get(), ResearchTableBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.LIFE_CRYSTAL.get(), LifeCrystalBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.GOLDEN_FOX_SCULPTURE.get(), GoldenFoxSculptureBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.DESERT_HERO_TOMB.get(), DesertHeroTombBlockEntityRenderer::new);
     }
 }

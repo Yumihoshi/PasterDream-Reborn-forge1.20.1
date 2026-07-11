@@ -14,6 +14,8 @@ import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlo
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.LifeCrystalBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.lostswordtomb.LostSwordTombBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.goldenfoxsculpture.GoldenFoxSculptureBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.desertherotomb.DesertHeroTombBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -37,6 +39,8 @@ public class ModBlockEntities
     public static final RegistryObject<BlockEntityType<ResearchTableBlockEntity>> RESEARCH_TABLE = BLOCK_ENTITIES.register("research_table", () -> BlockEntityType.Builder.of(ResearchTableBlockEntity::new, ModBlocks.RESEARCH_TABLE.get()).build(null));
     public static final RegistryObject<BlockEntityType<LostSwordTombBlockEntity>> LOST_SWORD_TOMB = BLOCK_ENTITIES.register("lost_sword_tomb", () -> BlockEntityType.Builder.of(LostSwordTombBlockEntity::new, ModBlocks.LOST_SWORD_TOMB.get()).build(null));
     public static final RegistryObject<BlockEntityType<LifeCrystalBlockEntity>> LIFE_CRYSTAL = BLOCK_ENTITIES.register("life_crystal", () -> BlockEntityType.Builder.of(LifeCrystalBlockEntity::new, ModBlocks.LIFE_CRYSTAL.get()).build(null));
+    public static final RegistryObject<BlockEntityType<GoldenFoxSculptureBlockEntity>> GOLDEN_FOX_SCULPTURE = BLOCK_ENTITIES.register("golden_fox_sculpture", () -> BlockEntityType.Builder.of(GoldenFoxSculptureBlockEntity::new, ModBlocks.GOLDEN_FOX_SCULPTURE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<DesertHeroTombBlockEntity>> DESERT_HERO_TOMB = BLOCK_ENTITIES.register("desert_hero_tomb", () -> BlockEntityType.Builder.of(DesertHeroTombBlockEntity::new, ModBlocks.DESERT_HERO_TOMB.get()).build(null));
 
     public static void register(IEventBus eventBus)
     {

@@ -147,6 +147,8 @@
 | `meltdream_liquid`                 | `melt_dream_liquid`                 | 重命名，补下划线                                      | 流体方块，合并变体，使用统一Fluid注册                                                                                          |
 | `shadow_liquid`                    | `shadow_liquid`                     | 不改                                            | 流体方块，合并变体，使用统一Fluid注册                                                                                          |
 | `life_crystal`                     | `life_crystal`                      | 不改                                            | 客制化类 `LifeCrystalBlock`，因Geckolib特殊渲染+右键吸收+2最大生命值                                                              |
+| `golden_fox_sculpture`            | `golden_fox_sculpture`              | 不改                                            | 客制化类 `GoldenFoxSculptureBlock`，因Geckolib特殊渲染+动画                                                                 |
+| `desert_hero_tomb`                | `desert_hero_tomb`                  | 不改                                            | 客制化类 `DesertHeroTombBlock`，因Geckolib特殊渲染+动画                                                                   |
 
 
 ---
