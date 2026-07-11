@@ -6,6 +6,8 @@ import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanBlockEntityRend
 import com.pasterdream.pasterdreammod.world.block.doll.qymdoll.QYMDollBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.doll.uuzdoll.UUZDollBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntityRenderer;
+import com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest.MeltDreamCrystalChestBlockEntityRenderer;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.openedmeltdreamcrystalchest.OpenedMeltDreamCrystalChestBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.LifeCrystalBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersBlockEntityRenderer;
@@ -37,5 +39,7 @@ public class ModBlockEntityRenderer
         event.registerBlockEntityRenderer(ModBlockEntities.LIFE_CRYSTAL.get(), LifeCrystalBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.GOLDEN_FOX_SCULPTURE.get(), GoldenFoxSculptureBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.DESERT_HERO_TOMB.get(), DesertHeroTombBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.MELT_DREAM_CRYSTAL_CHEST.get(), MeltDreamCrystalChestBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.OPENED_MELT_DREAM_CRYSTAL_CHEST.get(), OpenedMeltDreamCrystalChestBlockEntityRenderer::new);
     }
 }

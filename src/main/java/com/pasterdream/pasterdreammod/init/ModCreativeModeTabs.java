@@ -446,6 +446,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LIFE_CRYSTAL.get());
                         output.accept(ModItems.GOLDEN_FOX_SCULPTURE.get());
                         output.accept(ModItems.DESERT_HERO_TOMB.get());
+                        output.accept(ModItems.MELT_DREAM_CRYSTAL_CHEST.get());
+                        output.accept(ModItems.OPENED_MELT_DREAM_CRYSTAL_CHEST.get());
                     })
                     .build());
 

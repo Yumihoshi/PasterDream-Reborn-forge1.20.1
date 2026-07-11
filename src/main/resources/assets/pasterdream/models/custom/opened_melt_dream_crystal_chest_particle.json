@@ -1,0 +1,6 @@
+{
+  "parent": "pasterdream:displaysettings/opened_melt_dream_crystal_chest.item",
+  "textures": {
+    "particle": "pasterdream:block/model_break_particle_provider_block_2"
+  }
+}

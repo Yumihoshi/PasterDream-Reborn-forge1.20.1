@@ -253,9 +253,9 @@ public class DreamCauldronBlockEntity extends BlockEntity implements MenuProvide
     }
 
     @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt)
+    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet)
     {
-        CompoundTag tag = pkt.getTag();
+        CompoundTag tag = packet.getTag();
         if (tag != null)
         {
             load(tag);
