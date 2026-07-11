@@ -23,6 +23,7 @@ public class LostSwordTombItem extends BlockItem {
 
     private static final UUID ATTACK_DAMAGE_UUID = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
     private static final UUID ATTACK_SPEED_UUID = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
+    private static final UUID ATTACK_KNOCKBACK_UUID = UUID.fromString("D74C4F0D-645C-4F38-A497-9C13A33DB5CF");
 
     public LostSwordTombItem(Block block, Properties properties) {
         super(block, properties);
@@ -34,6 +35,7 @@ public class LostSwordTombItem extends BlockItem {
             Multimap<net.minecraft.world.entity.ai.attributes.Attribute, AttributeModifier> multimap = ArrayListMultimap.create();
             multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ATTACK_DAMAGE_UUID, "Weapon modifier", 9.0, AttributeModifier.Operation.ADDITION));
             multimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(ATTACK_SPEED_UUID, "Weapon modifier", -3.5, AttributeModifier.Operation.ADDITION));
+            multimap.put(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(ATTACK_KNOCKBACK_UUID, "Weapon modifier", 10.0, AttributeModifier.Operation.ADDITION));
             return multimap;
         }
         return super.getAttributeModifiers(slot, stack);
