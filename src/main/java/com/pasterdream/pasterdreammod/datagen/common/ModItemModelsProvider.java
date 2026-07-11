@@ -176,6 +176,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.DESERT_SWORD);
         handheldItem(ModItems.CHENJINGMEN_DESERT_SWORD);
         handheldItem(ModItems.BROKEN_HERO_SWORD);
+        handheldItem(ModItems.TERRA_BLADE);
         basicItem(ModItems.TITANIUM_UPGRADE.get());
         basicItem(ModItems.SCULK_UPGRADE.get());
         basicItem(ModItems.DYEDREAM_UPGRADE.get());
@@ -223,6 +224,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.ENDEYE_CHARM.get());
         basicItem(ModItems.SEA_CHARM.get());
         basicItem(ModItems.CARAPAX_CHARM.get());
+        basicItem(ModItems.TERRA_FLOATING_ISLAND.get());
         basicItem(ModItems.WORLDTREE_SEEDPOD.get());
         basicItem(ModItems.GARLAND.get());
         basicItem(ModItems.FOURLEAF_CLOVER_CURIO.get());

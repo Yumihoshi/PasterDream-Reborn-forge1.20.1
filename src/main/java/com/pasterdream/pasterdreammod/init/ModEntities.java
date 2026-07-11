@@ -1,0 +1,47 @@
+package com.pasterdream.pasterdreammod.init;
+
+import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.world.entity.TerraswordWaveEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+public class ModEntities {
+    public static final DeferredRegister<EntityType<?>> REGISTRY =
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, PasterDreamMod.MOD_ID);
+
+    public static final RegistryObject<EntityType<TerraswordWaveEntity>> TERRASWORD_WAVE = register("terrasword_wave",
+            EntityType.Builder.<TerraswordWaveEntity>of(TerraswordWaveEntity::new, MobCategory.MISC)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
+                    .setCustomClientFactory(TerraswordWaveEntity::new)
+                    .fireImmune()
+                    .sized(0.1f, 0.1f));
+
+    private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> builder) {
+        return REGISTRY.register(name, () -> builder.build(name));
+    }
+
+    public static void register(net.minecraftforge.eventbus.api.IEventBus bus) {
+        REGISTRY.register(bus);
+    }
+
+    @SubscribeEvent
+    public static void init(FMLCommonSetupEvent event) {
+        event.enqueueWork(TerraswordWaveEntity::init);
+    }
+
+    @SubscribeEvent
+    public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(TERRASWORD_WAVE.get(), TerraswordWaveEntity.createAttributes().build());
+    }
+}

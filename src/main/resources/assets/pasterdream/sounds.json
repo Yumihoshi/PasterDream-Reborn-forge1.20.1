@@ -50,5 +50,8 @@
   },
   "thermal_dagger": {
     "sounds": [{"name": "pasterdream:thermal_dagger", "stream": false}]
+  },
+  "sword_wave": {
+    "sounds": [{"name": "pasterdream:sword_wave", "stream": false}]
   }
 }

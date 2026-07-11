@@ -27,6 +27,8 @@ public class ModParticleTypes {
             PARTICLE_TYPES.register("soul_particle", () -> new SimpleParticleType(false));
     public static final RegistryObject<SimpleParticleType> CRACK_0_PARTICLE =
             PARTICLE_TYPES.register("crack_0_particle", () -> new SimpleParticleType(false));
+    public static final RegistryObject<SimpleParticleType> TERRASWORD_WAVE_PARTICLE =
+            PARTICLE_TYPES.register("terrasword_wave_particle", () -> new SimpleParticleType(false));
 
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);
