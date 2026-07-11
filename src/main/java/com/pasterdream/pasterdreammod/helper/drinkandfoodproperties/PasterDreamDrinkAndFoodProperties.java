@@ -31,6 +31,13 @@ public class PasterDreamDrinkAndFoodProperties extends Item.Properties
         return this;
     }
 
+    @Override
+    public PasterDreamDrinkAndFoodProperties craftRemainder(Item remainingItem)
+    {
+        super.craftRemainder(remainingItem);
+        return this;
+    }
+
     public PasterDreamDrinkAndFoodProperties useDuration(int ticks)
     {
         this.useDuration = ticks;

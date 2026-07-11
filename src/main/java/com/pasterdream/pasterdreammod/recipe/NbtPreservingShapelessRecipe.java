@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.recipe;
 
+import com.pasterdream.pasterdreammod.helper.ContainerBalanceHelper;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
@@ -30,6 +31,18 @@ public class NbtPreservingShapelessRecipe extends ShapelessRecipe {
             }
         }
         return result;
+    }
+
+    @Override
+    public NonNullList<ItemStack> getRemainingItems(CraftingContainer container) {
+        NonNullList<ItemStack> remaining = NonNullList.withSize(container.getContainerSize(), ItemStack.EMPTY);
+        for (int i = 0; i < remaining.size(); i++) {
+            ItemStack stack = container.getItem(i);
+            if (!stack.isEmpty()) {
+                remaining.set(i, stack.getItem().getCraftingRemainingItem(stack));
+            }
+        }
+        return ContainerBalanceHelper.balance(container, getResultItem(RegistryAccess.EMPTY), remaining, getIngredients());
     }
 
     @Override

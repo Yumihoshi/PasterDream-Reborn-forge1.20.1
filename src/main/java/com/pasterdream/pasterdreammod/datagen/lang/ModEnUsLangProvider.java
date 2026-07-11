@@ -36,6 +36,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.GLASS_JAR_OF_WIND_PLANT_EXTRACT.get(), "Glass Jar of Wind Plant Extract");
         add(ModItems.GLASS_JAR_OF_DYEDREAM_PERFUME.get(), "Glass Jar of Dyedream Perfume");
         add(ModItems.GLASS_JAR_OF_DREAM_JUICE.get(), "Glass Jar of Dream Juice");
+        add("tooltip.pasterdreammod.glass_jar_of_dream_juice", "§7§oA sweet and dreamy taste that melds you into the dream");
         add(ModItems.GLASS_JAR_OF_GOLDENROD_TEA.get(), "Glass Jar of Goldenrod Tea");
         add(ModItems.GLASS_JAR_OF_INK.get(), "Glass Jar of Ink");
         add(ModItems.FEATHER_PEN.get(), "Feather Pen");
