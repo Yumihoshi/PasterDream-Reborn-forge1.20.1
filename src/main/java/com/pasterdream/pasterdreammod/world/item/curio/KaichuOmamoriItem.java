@@ -37,7 +37,10 @@ public class KaichuOmamoriItem extends Item implements ICurioItem {
 
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
             double currentEnergy = MeltDreamEnergyHelper.getPlayerMeltDreamEnergy(serverPlayer);
-            if (currentEnergy < ENERGY_COST) return InteractionResult.FAIL;
+            if (currentEnergy < ENERGY_COST) {
+                player.displayClientMessage(Component.translatable("tooltip.pasterdream.terra_blade.no_energy"), true);
+                return InteractionResult.FAIL;
+            }
 
             MeltDreamEnergyHelper.addPlayerMeltDreamEnergyAndSync(serverPlayer, -ENERGY_COST);
             player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
