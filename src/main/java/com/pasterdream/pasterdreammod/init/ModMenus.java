@@ -15,6 +15,8 @@ import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.ShadowDeskMenu;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronMenu;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.openedmeltdreamcrystalchest.OpenedMeltDreamCrystalChestBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.openedmeltdreamcrystalchest.OpenedMeltDreamCrystalChestMenu;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableMenu;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarMenu;
@@ -91,6 +93,12 @@ public class ModMenus
 
     public static final RegistryObject<MenuType<StorageBagMenu>> STORAGE_BAG = MENUS.register("storage_bag", () -> IForgeMenuType.create(StorageBagMenu::new));
     public static final RegistryObject<MenuType<LargeStorageBagMenu>> LARGE_STORAGE_BAG = MENUS.register("large_storage_bag", () -> IForgeMenuType.create(LargeStorageBagMenu::new));
+
+    public static final RegistryObject<MenuType<OpenedMeltDreamCrystalChestMenu>> OPENED_MELT_DREAM_CRYSTAL_CHEST = MENUS.register("opened_melt_dream_crystal_chest", () -> IForgeMenuType.create((windowId, inv, data) ->
+    {
+        BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
+        return new OpenedMeltDreamCrystalChestMenu(windowId, inv, (OpenedMeltDreamCrystalChestBlockEntity) blockEntity);
+    }));
 
     public static void register(IEventBus eventBus)
     {

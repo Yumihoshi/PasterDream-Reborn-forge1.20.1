@@ -14,8 +14,8 @@ public class ShadowDeskScreen extends DeskScreen<ShadowDeskMenu>
     }
 
     @Override
-    protected void renderContainerBackground(GuiGraphics graphics, int leftPos, int topPos)
+    protected void renderContainerBackground(GuiGraphics guiGraphics, int leftPos, int topPos)
     {
-        GUIBackGroundRender.rendShadowDeskGUI(graphics, leftPos + 71, topPos);
+        GUIBackGroundRender.rendShadowDeskGUI(guiGraphics, leftPos + 71, topPos);
     }
 }

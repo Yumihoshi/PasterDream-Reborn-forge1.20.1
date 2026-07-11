@@ -14,8 +14,8 @@ public class ShadowChestScreen extends CrateScreen<ShadowChestMenu>
     }
 
     @Override
-    protected void renderContainerBackground(GuiGraphics graphics, int leftPos, int topPos)
+    protected void renderContainerBackground(GuiGraphics guiGraphics, int leftPos, int topPos)
     {
-        GUIBackGroundRender.rendShadowChestGUI(graphics, leftPos + 36, topPos + 14);
+        GUIBackGroundRender.rendShadowChestGUI(guiGraphics, leftPos + 36, topPos + 14);
     }
 }

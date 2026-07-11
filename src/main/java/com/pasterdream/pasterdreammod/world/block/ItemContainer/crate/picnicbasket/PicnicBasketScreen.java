@@ -14,8 +14,8 @@ public class PicnicBasketScreen extends CrateScreen<PicnicBasketMenu>
     }
 
     @Override
-    protected void renderContainerBackground(GuiGraphics graphics, int leftPos, int topPos)
+    protected void renderContainerBackground(GuiGraphics guiGraphics, int leftPos, int topPos)
     {
-        GUIBackGroundRender.rendPicnicBasketGUI(graphics, leftPos + 32, topPos + 12);
+        GUIBackGroundRender.rendPicnicBasketGUI(guiGraphics, leftPos + 32, topPos + 12);
     }
 }
