@@ -58,7 +58,7 @@ public class ModBiomes {
     }
 
     private static final ResourceKey<PlacedFeature> FREEZE_TOP_LAYER =
-            ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.withDefaultNamespace("freeze_top_layer"));
+            ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath("minecraft", "freeze_top_layer"));
 
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);

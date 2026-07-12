@@ -14,6 +14,6 @@ public final class DyedreamDimension {
     private DyedreamDimension() {}
 
     public static final ResourceKey<Level> DYEDREAM_WORLD = ResourceKey.create(
-            ResourceKey.createRegistryKey(ResourceLocation.withDefaultNamespace("dimension")),
+            ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath("minecraft", "dimension")),
             ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_world"));
 }
