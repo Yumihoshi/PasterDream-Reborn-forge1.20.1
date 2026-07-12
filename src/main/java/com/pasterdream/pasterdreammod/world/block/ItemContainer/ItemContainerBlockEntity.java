@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.world.block.ItemContainer;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +19,10 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 
@@ -50,6 +55,25 @@ public abstract class ItemContainerBlockEntity extends BlockEntity implements Me
     public abstract int setItemStackHandlerSize();
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(setItemStackHandlerSize());
+    private final LazyOptional<IItemHandler> itemHandlerCap = LazyOptional.of(() -> itemHandler);
+
+    @Override
+    public <T> LazyOptional<T> getCapability(Capability<T> cap, @org.jetbrains.annotations.Nullable Direction side)
+    {
+        if (cap == ForgeCapabilities.ITEM_HANDLER)
+        {
+            return itemHandlerCap.cast();
+        }
+
+        return super.getCapability(cap, side);
+    }
+
+    @Override
+    public void invalidateCaps()
+    {
+        super.invalidateCaps();
+        itemHandlerCap.invalidate();
+    }
 
     @Override
     public abstract AbstractContainerMenu createMenu(int id, Inventory inventory, Player player);
