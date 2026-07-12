@@ -99,6 +99,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.JELLYFISH_JELLO.get(), "水母果冻");
         add(ModItems.QUEER_SOUP.get(), "奇异炖菜");
         add(ModItems.LEGENDARY_DRAGON_HORN_ICE_CREAM.get(), "传说龙角冰淇淋");
+        add("item.pasterdream.legendary_dragon_horn_ice_cream.describe.0", "§9幸运值永久+10（直至死亡）");
+        add("item.pasterdream.legendary_dragon_horn_ice_cream.describe.1", "§9效果不叠加");
+        add("item.pasterdream.legendary_dragon_horn_ice_cream.client.success", "§e味道有些熟悉，好像是来自雪泪寒……等等？");
+        add("item.pasterdream.legendary_dragon_horn_ice_cream.client.fail", "§7你已经品尝过这个冰淇淋的味道了");
         add(ModItems.ELIXIR_BOTTLE.get(), "灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "融梦灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "狂暴战意灵药");
@@ -856,5 +860,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add("message.pasterdream.lost_sword_tomb.lack_strength", "你的力气不足以拔出这柄剑");
         add("tooltip.pasterdream.lost_sword_tomb", "§7既然拔不出来，那就带着石头用吧！");
+
+        // 附魔
+        add("enchantment.pasterdream.swift_strike", "疾风连击");
+        add("enchantment.pasterdream.shelter", "庇护");
     }
 }
