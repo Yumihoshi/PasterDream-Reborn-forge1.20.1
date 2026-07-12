@@ -91,7 +91,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LIGHT_ORGAN.get());
                         output.accept(ModItems.ODD_BACON_AND_EGG.get());
                         output.accept(ModItems.JUNGLE_SPORE.get());
-
+                        output.accept(ModItems.BUBBLE_TEA.get());
                     })
                     .build());
 
