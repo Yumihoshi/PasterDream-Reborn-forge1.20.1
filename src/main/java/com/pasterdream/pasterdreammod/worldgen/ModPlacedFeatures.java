@@ -250,7 +250,7 @@ public class ModPlacedFeatures {
 
         // ===== 染梦海洋 — 海带 =====
         ResourceKey<ConfiguredFeature<?, ?>> VANILLA_KELP_CF =
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.withDefaultNamespace("kelp"));
+                ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath("minecraft", "kelp"));
         context.register(DYEDREAM_KELP_PATCH, new PlacedFeature(
                 cf.getOrThrow(VANILLA_KELP_CF),
                 List.of(CountPlacement.of(8), InSquarePlacement.spread(),
@@ -259,9 +259,9 @@ public class ModPlacedFeatures {
         // ===== 染梦冻洋 — 自定义冰山 placed feature =====
         // 引用原版 configured feature，但使用更高的生成频率（原版 packed=1/16, blue=1/32 区块）
         ResourceKey<ConfiguredFeature<?, ?>> VANILLA_ICEBERG_PACKED_CF =
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.withDefaultNamespace("iceberg_packed"));
+                ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath("minecraft", "iceberg_packed"));
         ResourceKey<ConfiguredFeature<?, ?>> VANILLA_ICEBERG_BLUE_CF =
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.withDefaultNamespace("iceberg_blue"));
+                ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath("minecraft", "iceberg_blue"));
         // packed 冰山：每 8 个区块生成 1 个（原版为 1/16）
         context.register(DYEDREAM_ICEBERG_PACKED, new PlacedFeature(
                 cf.getOrThrow(VANILLA_ICEBERG_PACKED_CF),
