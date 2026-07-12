@@ -762,6 +762,9 @@ public class ModItems {
                     .food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(ModEffects.COOK_BUFF.get(), 6000, 0), 1.0f)
                             .nutrition(3).saturationMod(0.5f).alwaysEat().build())));
 
+    public static final RegistryObject<Item> BUBBLE_TEA = ITEMS.register("bubble_tea", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties()
+            .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7f).alwaysEat().build())));
+
     // ===== 露滴 =====
     public static final RegistryObject<Item> RED_DEW = ITEMS.register("red_dew",
             RedDewItem::new);

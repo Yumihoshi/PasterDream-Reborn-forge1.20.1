@@ -60,6 +60,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.GLASS_CUP_OF_HONEY_JUICE.get());
         basicItem(ModItems.GLASS_CUP_OF_UNCOOKED_DYEDREAM_FLOWER_TEA.get());
         basicItem(ModItems.GLASS_CUP_OF_WATERMELON_JUICE.get());
+        basicItem(ModItems.BUBBLE_TEA.get());
         basicItem(ModItems.FLOUR.get());
         basicItem(ModItems.DOUGH.get());
         basicItem(ModItems.RYE_SEED.get());

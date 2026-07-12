@@ -248,6 +248,7 @@
 | `meltdream_elixir_bottle`      | `elixir_bottle_of_melt_dream`               | 重命名，命名格式改为`elixir_bottle_of_xxx`                                 | 无需客制化类，直接用 `Item`                                                                                        |
 | `rage_elixir_0`                | `elixir_bottle_of_rage_elixir`              | 重命名，命名格式改为`elixir_bottle_of_xxx`，去除`_0`                          | 无需客制化类，直接用 `Item`                                                                                        |
 | `pineapple_love_sea`           | `pineapple_love_sea`                        | 不改                                                               | 无需客制化类，直接用 `Item`                                                                                        |
+| `bubble_tea`                   | `bubble_tea`                                | 不改                                                               | 无需客制化类，直接用 `Item`                                                                                        |
 | `magic_stone`                  | `magic_stone`                               | 不改，Tooltip 文字待后续实现                                               | 无需客制化类，直接用 `Item`                                                                                        |
 | `soul_dust`                    | `soul_dust`                                 | 不改                                                               | 无需客制化类，直接用 `Item`                                                                                        |
 | `soul_essence`                 | `soul_essence`                              | 不改                                                               | 无需客制化类，直接用 `Item`                                                                                        |
@@ -403,7 +404,7 @@
 | `qym_head`                     | `qym_butterfly_star_hairpin`                | 重命名，`qym_head` → `qym_butterfly_star_hairpin`                    | 客制化类 `QymButterflyStarHairpinItem`，实现 `ICurioItem`，所有生物不主动攻击（可反击），品质 MIRACLE，防火                          |
 | `hiyori_head`                  | `hiyori_butterfly_hairpin`                  | 重命名，`hiyori_head` → `hiyori_butterfly_hairpin`                   | 客制化类 `HiyoriButterflyHairpinItem`，实现 `ICurioItem`，+2 最大生命值、+15 幸运、+0.96 理智光环，品质 EPIC，禁止重复装备              |
 | `allkinds_ring`                | `allkinds_ring`                             | 不改                                                               | 客制化类 `AllkindsRingItem`，实现 `ICurioItem`，+4 生命、+2 攻击、+0.1 攻速、+0.2 触及、+0.5 方块触及、+5% 移速，品质 LEGENDARY，跳过战技属性 |
-| `cradle_in_ones_arms`          | `kaichu_omamori`                            | 重命名，`cradle_in_ones_arms` → `kaichu_omamori`                     | 客制化类 `KaichuOmamoriItem`，实现 `ICurioItem`                                                                 |
+| `cradle_in_ones_arms`          | `kaichu_omamori`                            | 重命名，`cradle_in_ones_arms` → `kaichu_omamori`                     | 客制化类 `KaichuOmamoriItem`，实现 `ICurioItem`，现在可佩戴，佩戴后启动激活专属热键，+5幸运，品质 LEGENDARY                             |
 | `sweetdream_disc`              | `sweet_dream_music_disc`                    | 重命名，修复 word glueing + `_disc` → `_music_disc`                    | 无需客制化类，直接用 `RecordItem`（旧类无有效覆写）                                                                         |
 | `snowfalldream_disc`           | `snowfall_dream_music_disc`                 | 重命名，修复 word glueing + `_disc` → `_music_disc`                    | 无需客制化类，直接用 `RecordItem`（旧类无有效覆写）                                                                         |
 | `time_hourglass`               | `sand_of_time`                              | 重命名，时之沙                                                          | 客制化类 `SandofTimeItem`,使用NBT标签控制冷却时间                                                                      |
@@ -415,22 +416,22 @@
 
 ## 状态效果映射
 
-| 旧 ID                              | 新 ID                              | 变更说明             | 备注                          |
-|-----------------------------------|-----------------------------------|------------------|-----------------------------|
-| `dyedreamup_buff`                 | `dyedream_up_buff`                | 重命名，加下划线          | 标记效果，已实现                    |
-| `dyedream_armor_buff`             | `dyedream_armor_buff`             | 不改               | `DyedreamArmorBuffEffect`   |
-| `sculk_armor_buff`                | `sculk_armor_buff`                | 不改               | `SculkArmorBuffEffect`      |
-| `dreamwish_buff`                  | `dream_wish_buff`                  | 重命名，加下划线          | `DreamWishBuffEffect`，标记效果          |
-| `expup_buff`                      | 待搬运                               | -                | -                           |
-| `cheerup_buff`                    | `cheer_up_buff`                   | 重命名，加下划线          | `CheerUpBuffEffect`，San≥90%给予      |
-| `lethargy_buff`                   | `lethargy_buff`                    | 不改                  | `LethargyBuffEffect`，San 40%~60%时给予  |
-| `trance_buff`                     | `trance_buff`                      | 不改                  | `TranceBuffEffect`，San 20%~40%时给予      |
-| `insand_buff`                     | `insand_buff`                      | 不改                  | `InsandBuffEffect`，San<20%，三级（<1%/>1%/>10%）|
-| `goldenrod_tea_buff`               | `goldenrod_tea_buff`              | 不改 | `GoldenrodTeaBuffEffect`，每 tick 移除饥饿与反胃 |
-| `dyedream_perfume_buff`            | `dyedream_perfume_buff`           | 不改，效果逻辑已改 | `DyedreamPerfumeBuffEffect`，配合 `PhantomTargetMixin` |
-| `teleportation_buff`              | 待搬运                               | -                | -                           |
-| `fondillusion_buff`               | 待搬运                               | -                | -                           |
-| `rest_buff`                       | `rest_buff`                       | 不改               | `RestBuffEffect`，+0.9 理智光环 |
+| 旧 ID                    | 新 ID                    | 变更说明      | 备注                                                  |
+|-------------------------|-------------------------|-----------|-----------------------------------------------------|
+| `dyedreamup_buff`       | `dyedream_up_buff`      | 重命名，加下划线  | 标记效果，已实现                                            |
+| `dyedream_armor_buff`   | `dyedream_armor_buff`   | 不改        | `DyedreamArmorBuffEffect`                           |
+| `sculk_armor_buff`      | `sculk_armor_buff`      | 不改        | `SculkArmorBuffEffect`                              |
+| `dreamwish_buff`        | `dream_wish_buff`       | 重命名，加下划线  | `DreamWishBuffEffect`，标记效果                          |
+| `expup_buff`            | 待搬运                     | -         | -                                                   |
+| `cheerup_buff`          | `cheer_up_buff`         | 重命名，加下划线  | `CheerUpBuffEffect`，San≥90%给予                       |
+| `lethargy_buff`         | `lethargy_buff`         | 不改        | `LethargyBuffEffect`，San 40%~60%时给予                 |
+| `trance_buff`           | `trance_buff`           | 不改        | `TranceBuffEffect`，San 20%~40%时给予                   |
+| `insand_buff`           | `insand_buff`           | 不改        | `InsandBuffEffect`，San<20%，三级（<1%/>1%/>10%）         |
+| `goldenrod_tea_buff`    | `goldenrod_tea_buff`    | 不改        | `GoldenrodTeaBuffEffect`，每 tick 移除饥饿与反胃             |
+| `dyedream_perfume_buff` | `dyedream_perfume_buff` | 不改，效果逻辑已改 | `DyedreamPerfumeBuffEffect`，配合 `PhantomTargetMixin` |
+| `teleportation_buff`    | 待搬运                     | -         | -                                                   |
+| `fondillusion_buff`     | 待搬运                     | -         | -                                                   |
+| `rest_buff`             | `rest_buff`             | 不改        | `RestBuffEffect`，+0.9 理智光环                          |
 
 ---
 
@@ -439,6 +440,16 @@
 | 旧 ID | 新 ID | 变更说明 |
 |-------|-------|---------|
 | | | |
+
+---
+
+## 附魔映射
+
+| 旧 ID                    | 新 ID           | 变更说明                   | 备注                 |
+|-------------------------|----------------|------------------------|--------------------|
+| `enchantment_atkspd`    | `swift_strike` | 重命名                    | 重做附魔，现在每级提供10%攻击速度 |
+| `enchantment_shelterer` | `shelter`      | 重命名，去除`enchantment_`前缀 | 现在每级可以正确减免2%伤害     |
+
 
 ---
 

@@ -56,5 +56,8 @@ public class AddToolTip
             tooltip.add(Component.translatable("item.pasterdream.legendary_dragon_horn_ice_cream.describe.0"));
             tooltip.add(Component.translatable("item.pasterdream.legendary_dragon_horn_ice_cream.describe.1"));
         }
+        if(stack.is(ModItems.RICE_CAKE.get())){
+            tooltip.add(Component.translatable("item.pasterdream.rice_cake.describe"));
+        }
     }
 }

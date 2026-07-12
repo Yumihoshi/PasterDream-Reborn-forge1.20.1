@@ -73,6 +73,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.CHOCOLATE_MATCHA_CAKE.get(), "Chocolate Matcha Cake");
         add(ModItems.MAGIC_STONE.get(), "Magic Stone");
         add(ModItems.RICE_CAKE.get(), "Rice Cake");
+        add("item.pasterdream.rice_cake.describe", "A lingering spirit of desert might be interested in this...");
         add(ModItems.DYEDREAM_POPSICLE.get(), "Dyedream Popsicle");
         add(ModItems.FRIED_EGG.get(), "Fried Egg");
         add(ModItems.BACON_AND_EGG.get(), "Bacon and Egg");
@@ -103,6 +104,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE.get(), "Elixir Bottle");
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "Elixir Bottle of Melt Dream");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "Elixir Bottle of Rage Elixir");
+        add(ModItems.BUBBLE_TEA.get(), "Bubble Tea");
         add(ModItems.SWEET_DREAM_MUSIC_DISC.get(), "Music Disc");
         add(ModItems.SWEET_DREAM_MUSIC_DISC.get().getDescriptionId() + ".desc", "PasterDream - Sweet Dream");
         add(ModItems.SNOWFALL_DREAM_MUSIC_DISC.get(), "Music Disc");

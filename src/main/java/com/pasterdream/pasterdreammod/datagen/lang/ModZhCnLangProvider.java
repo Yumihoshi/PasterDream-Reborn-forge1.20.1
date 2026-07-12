@@ -76,6 +76,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.CHOCOLATE_MATCHA_CAKE.get(), "巧克力抹茶蛋糕");
         add(ModItems.MAGIC_STONE.get(), "魔法石");
         add(ModItems.RICE_CAKE.get(), "年糕");
+        add("item.pasterdream.rice_cake.describe", "§7§o某个沙漠遗魂可能对这个感兴趣……");
         add(ModItems.DYEDREAM_POPSICLE.get(), "染梦冰棒");
         add(ModItems.FRIED_EGG.get(), "煎蛋");
         add(ModItems.BACON_AND_EGG.get(), "培根煎蛋");
@@ -106,6 +107,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE.get(), "灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "融梦灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "狂暴战意灵药");
+        add(ModItems.BUBBLE_TEA.get(), "珍珠奶茶");
         add(ModItems.SWEET_DREAM_MUSIC_DISC.get(), "音乐唱片");
         add(ModItems.SWEET_DREAM_MUSIC_DISC.get().getDescriptionId() + ".desc", "PasterDream - 甜蜜的梦");
         add(ModItems.SNOWFALL_DREAM_MUSIC_DISC.get(), "音乐唱片");
