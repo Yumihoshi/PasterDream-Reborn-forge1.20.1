@@ -51,9 +51,17 @@ import com.pasterdream.pasterdreammod.world.item.RootsPaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.DeepTreasureItem;
 import com.pasterdream.pasterdreammod.world.item.StarWishRodItem;
 import com.pasterdream.pasterdreammod.world.item.ThermalDaggerItem;
+import com.pasterdream.pasterdreammod.world.entity.MeltDreamCrystalEntityEntity;
 import com.pasterdream.pasterdreammod.world.item.WhiteCrystalItem;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -367,10 +375,53 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.DYEDREAM, ArmorItem.Type.BOOTS, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> MELT_DREAM_CRYSTAL_FRAGMENT = ITEMS.register("melt_dream_crystal_fragment",
-            () -> new Item(new Item.Properties().rarity(Rarity.EPIC)) {
+            () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.EPIC)) {
                 @Override
                 public boolean isFoil(@NotNull ItemStack stack) {
                     return true;
+                }
+
+                @Override
+                public @NotNull InteractionResult useOn(UseOnContext context) {
+                    Level level = context.getLevel();
+                    var player = context.getPlayer();
+                    if (player == null) return InteractionResult.PASS;
+
+                    // 仅潜行时触发
+                    if (!player.isShiftKeyDown()) return InteractionResult.PASS;
+
+                    BlockPos placePos = context.getClickedPos().above();
+                    double x = placePos.getX() + 0.5;
+                    double y = placePos.getY();
+                    double z = placePos.getZ() + 0.5;
+
+                    if (!level.getBlockState(placePos).is(Blocks.AIR)) {
+                        return InteractionResult.FAIL;
+                    }
+
+                    if (!level.isClientSide() && level instanceof ServerLevel serverLevel) {
+                        context.getItemInHand().shrink(1);
+                        var entity = new MeltDreamCrystalEntityEntity(
+                                ModEntities.MELT_DREAM_CRYSTAL_ENTITY.get(), level);
+                        entity.setPos(x, y, z);
+                        entity.setYRot(level.getRandom().nextFloat() * 360F);
+                        level.addFreshEntity(entity);
+                    }
+
+                    if (!level.isClientSide()) {
+                        level.playSound(null, context.getClickedPos(),
+                                ForgeRegistries.SOUND_EVENTS.getValue(
+                                        ResourceLocation.parse("block.amethyst_block.place")),
+                                SoundSource.NEUTRAL, 0.8f, 1.0f);
+                    } else {
+                        level.playLocalSound(context.getClickedPos().getX(),
+                                context.getClickedPos().getY(), context.getClickedPos().getZ(),
+                                ForgeRegistries.SOUND_EVENTS.getValue(
+                                        ResourceLocation.parse("block.amethyst_block.place")),
+                                SoundSource.NEUTRAL, 0.8f, 1.0f, false);
+                    }
+
+                    return InteractionResult.sidedSuccess(level.isClientSide());
                 }
             });
 

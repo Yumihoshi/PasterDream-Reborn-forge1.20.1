@@ -198,7 +198,7 @@ public class FoxFireEntity extends PathfinderMob implements GeoEntity {
             if (living instanceof Player) {
                 living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, 1, false, false, true));
             } else {
-                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 1, false, false, true));
+                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 4, false, false, true));
                 living.getPersistentData().putBoolean("pasterdream:fox_fire_vulnerable", true);
             }
         }
