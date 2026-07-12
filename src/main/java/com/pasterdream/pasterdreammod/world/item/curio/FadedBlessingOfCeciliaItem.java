@@ -1,8 +1,9 @@
-package com.pasterdream.pasterdreammod.world.item;
+package com.pasterdream.pasterdreammod.world.item.curio;
 
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModSounds;
+import com.pasterdream.pasterdreammod.world.item.ModRarities;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -34,15 +35,15 @@ public class FadedBlessingOfCeciliaItem extends Item implements ICurioItem {
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity entity = slotContext.entity();
         if (entity == null || entity.level().isClientSide()) return;
-        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2, 1, false, false));
+        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2, 0, false, false));
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        HitResult hitResult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
+        BlockHitResult hitResult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
         if (hitResult.getType() == HitResult.Type.BLOCK) {
-            var pos = ((BlockHitResult) hitResult).getBlockPos();
+            var pos = hitResult.getBlockPos();
             if (level.getBlockState(pos).is(ModBlocks.MELTDREAM_LIQUID.get())) {
                 if (!level.isClientSide()) {
                     if (!player.getAbilities().instabuild) {

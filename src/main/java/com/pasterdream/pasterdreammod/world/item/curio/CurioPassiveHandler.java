@@ -61,6 +61,14 @@ public class CurioPassiveHandler {
             return;
         }
 
+        // 塞西莉娅的加护：常驻强制20%减伤
+        if (event.getEntity() instanceof Player player
+                && CuriosApi.getCuriosInventory(player)
+                    .map(h -> h.findFirstCurio(ModItems.BLESSING_OF_CECILIA.get()).isPresent())
+                    .orElse(false)) {
+            event.setAmount(event.getAmount() * 0.8F);
+        }
+
         // 塞西莉娅的加护：拦截致命伤害
         if (!(event.getEntity() instanceof Player player)) return;
         if (player.getHealth() - event.getAmount() > 0.0F) return; // 非致命伤害
