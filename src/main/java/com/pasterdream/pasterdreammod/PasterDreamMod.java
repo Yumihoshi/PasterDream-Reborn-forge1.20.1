@@ -10,6 +10,7 @@ import com.pasterdream.pasterdreammod.init.*;
 import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
 import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
 import com.pasterdream.pasterdreammod.client.renderer.FoxFireRenderer;
+import com.pasterdream.pasterdreammod.client.renderer.MeltDreamCrystalEntityRenderer;
 import com.pasterdream.pasterdreammod.client.renderer.TerraswordWaveRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
@@ -150,6 +151,7 @@ public class PasterDreamMod
         ModBlockEntityRenderer.EntityRenderersEventRegister(event);
         event.registerEntityRenderer(ModEntities.TERRASWORD_WAVE.get(), TerraswordWaveRenderer::new);
         event.registerEntityRenderer(ModEntities.FOX_FIRE.get(), FoxFireRenderer::new);
+        event.registerEntityRenderer(ModEntities.MELT_DREAM_CRYSTAL_ENTITY.get(), MeltDreamCrystalEntityRenderer::new);
     }
 
     private void onAddReloadListeners(AddReloadListenerEvent event)

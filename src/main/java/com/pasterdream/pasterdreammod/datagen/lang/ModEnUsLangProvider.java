@@ -616,12 +616,16 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add(ModItems.KAICHU_OMAMORI.get(), "Kaichu Omamori");
         add("tooltip.pasterdream.kaichu_omamori.effect.foxfire", "§7▪ §9Generates a Foxfire field in a 12×12 area");
-        add("tooltip.pasterdream.kaichu_omamori.effect.vulnerable", "§7▪ §9Non-player creatures take 20% more damage and are slowed");
+        add("tooltip.pasterdream.kaichu_omamori.effect.vulnerable", "§7▪ §9Non-player creatures take 20% more damage and get Slowness V effect");
         add("tooltip.pasterdream.kaichu_omamori.effect.regen", "§7▪ §9Grants the player Regeneration");
         add("tooltip.pasterdream.kaichu_omamori.effect.duration", "§7▪ §9Duration: 20 seconds");
         add("tooltip.pasterdream.kaichu_omamori.effect.energy_cost", "§f▪ §4Melt Dream Energy -5");
-        add("tooltip.pasterdream.kaichu_omamori.effect.cooldown", "§7▪ §9Cooldown: 8 seconds");
+        add("tooltip.pasterdream.kaichu_omamori.effect.cooldown", "§7▪ §9Cooldown: 12 seconds");
         add("tooltip.pasterdream.kaichu_omamori.flavor", "§o§7 -- Alirea custom item");
+        add("key.pasterdream.kaichu_omamori", "Activate Kaichu Omamori");
+        add("tooltip.pasterdream.kaichu_omamori.equip", "§7When equip:");
+        add("tooltip.pasterdream.kaichu_omamori.luck", "§7▪ §9+5Luck");
+        add("tooltip.pasterdream.kaichu_omamori.hotkey", "§7▪ §9Press §e%s §9to release Foxfire field");
 
         add("tooltip.pasterdream.snow_vow_head.effect.bonus", "§7▪ §9Luck +3  Immune to burning and freezing");
         add("effect.pasterdream.snow_vow_buff", "Snow Vow");

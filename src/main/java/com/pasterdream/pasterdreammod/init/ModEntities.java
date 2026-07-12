@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.world.entity.FoxFireEntity;
+import com.pasterdream.pasterdreammod.world.entity.MeltDreamCrystalEntityEntity;
 import com.pasterdream.pasterdreammod.world.entity.TerraswordWaveEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -37,6 +38,15 @@ public class ModEntities {
                     .fireImmune()
                     .sized(1f, 1f));
 
+    public static final RegistryObject<EntityType<MeltDreamCrystalEntityEntity>> MELT_DREAM_CRYSTAL_ENTITY = register("melt_dream_crystal_entity",
+            EntityType.Builder.<MeltDreamCrystalEntityEntity>of(MeltDreamCrystalEntityEntity::new, MobCategory.CREATURE)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
+                    .setCustomClientFactory(MeltDreamCrystalEntityEntity::new)
+                    .fireImmune()
+                    .sized(0.6f, 1f));
+
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> builder) {
         return REGISTRY.register(name, () -> builder.build(name));
     }
@@ -49,11 +59,13 @@ public class ModEntities {
     public static void init(FMLCommonSetupEvent event) {
         event.enqueueWork(TerraswordWaveEntity::init);
         event.enqueueWork(FoxFireEntity::init);
+        event.enqueueWork(MeltDreamCrystalEntityEntity::init);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(TERRASWORD_WAVE.get(), TerraswordWaveEntity.createAttributes().build());
         event.put(FOX_FIRE.get(), FoxFireEntity.createAttributes().build());
+        event.put(MELT_DREAM_CRYSTAL_ENTITY.get(), MeltDreamCrystalEntityEntity.createAttributes().build());
     }
 }
