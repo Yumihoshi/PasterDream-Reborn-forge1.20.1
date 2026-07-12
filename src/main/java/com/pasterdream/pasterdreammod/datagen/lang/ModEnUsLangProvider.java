@@ -735,5 +735,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add("message.pasterdream.lost_sword_tomb.lack_strength", "Your strength is not enough to pull out this sword");
         add("tooltip.pasterdream.lost_sword_tomb", "§7If you can't pull it out, just use it with the stone!");
+
+        // Enchantments
+        add("enchantment.pasterdream.swift_strike", "Swift Strike");
+        add("enchantment.pasterdream.shelter", "Shelter");
     }
 }

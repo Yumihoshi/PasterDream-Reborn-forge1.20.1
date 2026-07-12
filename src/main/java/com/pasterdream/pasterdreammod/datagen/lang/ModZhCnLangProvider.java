@@ -860,5 +860,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add("message.pasterdream.lost_sword_tomb.lack_strength", "你的力气不足以拔出这柄剑");
         add("tooltip.pasterdream.lost_sword_tomb", "§7既然拔不出来，那就带着石头用吧！");
+
+        // 附魔
+        add("enchantment.pasterdream.swift_strike", "疾风连击");
+        add("enchantment.pasterdream.shelter", "庇护");
     }
 }

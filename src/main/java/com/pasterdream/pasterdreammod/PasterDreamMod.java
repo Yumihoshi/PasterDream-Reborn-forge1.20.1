@@ -14,6 +14,10 @@ import com.pasterdream.pasterdreammod.client.renderer.MeltDreamCrystalEntityRend
 import com.pasterdream.pasterdreammod.client.renderer.TerraswordWaveRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
@@ -21,6 +25,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ToolActions;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.ItemAttributeModifierEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import com.pasterdream.pasterdreammod.world.item.ModToolTiers;
@@ -29,6 +34,8 @@ import net.minecraft.world.item.TieredItem;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+
+import java.util.UUID;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -40,6 +47,8 @@ import software.bernie.geckolib.GeckoLib;
 public class PasterDreamMod
 {
     public static final String MOD_ID = "pasterdream";
+
+    private static final UUID SWIFT_STRIKE_ATTACK_SPEED_UUID = UUID.fromString("bdf05f70-b53d-4828-8e37-9a502bde0ec1");
 
     public PasterDreamMod(FMLJavaModLoadingContext context)
     {
@@ -63,6 +72,7 @@ public class PasterDreamMod
         ModEntities.register(modEventBus);          //注册实体
         ModLootTables.register(modEventBus);        //注册自定义战利品函数类型
         ModNetwork.register();                      //注册网络包
+        ModEnchantment.register(modEventBus);       //注册附魔
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -75,6 +85,8 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onLivingHurt);
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerTick);
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerSleepInBed);
+        MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onItemAttributeModifier);
+        MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onShelterLivingHurt);
         modEventBus.addListener(this::AddOverlays);
         modEventBus.addListener(this::AddEntityRenderersEvent);
         MinecraftForge.EVENT_BUS.addListener(this::onAddReloadListeners);
@@ -187,6 +199,48 @@ public class PasterDreamMod
         if (event.getEntity().getPersistentData().getBoolean("pasterdream:fox_fire_vulnerable")) {
             event.getEntity().getPersistentData().remove("pasterdream:fox_fire_vulnerable");
             event.setAmount(event.getAmount() * 1.2f);
+        }
+    }
+
+    // 疾风连击：根据附魔等级增加攻击速度
+    public static void onItemAttributeModifier(ItemAttributeModifierEvent event) {
+        if (event.getSlotType() != EquipmentSlot.MAINHAND) return;
+
+        var swiftStrike = ModEnchantment.SWIFT_STRIKE_ENCHANTMENT.get();
+
+        ItemStack stack = event.getItemStack();
+        int level = stack.getEnchantmentLevel(swiftStrike);
+        if (level > 0) {
+            event.addModifier(
+                    Attributes.ATTACK_SPEED,
+                    new AttributeModifier(
+                            SWIFT_STRIKE_ATTACK_SPEED_UUID,
+                            "Swift Strike attack speed bonus",
+                            level * 0.10,
+                            AttributeModifier.Operation.MULTIPLY_BASE
+                    )
+            );
+        }
+    }
+
+    // 庇护：每级-2%受到的伤害（全身护甲叠加）
+    public static void onShelterLivingHurt(LivingHurtEvent event) {
+        if (!(event.getEntity() instanceof LivingEntity)) return;
+        LivingEntity entity = event.getEntity();
+
+        var shelter = ModEnchantment.SHELTER_ENCHANTMENT.get();
+
+        int totalLevel = 0;
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
+            ItemStack armor = entity.getItemBySlot(slot);
+            if (!armor.isEmpty()) {
+                totalLevel += armor.getEnchantmentLevel(shelter);
+            }
+        }
+
+        if (totalLevel > 0) {
+            event.setAmount(event.getAmount() * (1.0f - totalLevel * 0.02f));
         }
     }
 }
