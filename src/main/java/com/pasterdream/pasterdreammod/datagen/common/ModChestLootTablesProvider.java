@@ -950,5 +950,69 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                                 UniformGenerator.between(1.0F, 2.0F))))
                         )
         );
+
+        //测试战利品列表0
+        consumer.accept(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/test_loot_table_0"), LootTable.lootTable()
+                //抽取1次，0幸运抽取，每次1个命令方块
+                .withPool(LootPool.lootPool()
+                        .setBonusRolls(ConstantValue.exactly(0F))
+                        .setRolls(ConstantValue.exactly(1F))
+                        .add(LootItem.lootTableItem(Items.COMMAND_BLOCK)
+                                .setWeight(1)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F)))))
+                //抽取1次，0幸运抽取，每次2-16个娇小琴雨梦玩偶
+                .withPool(LootPool.lootPool()
+                        .setBonusRolls(ConstantValue.exactly(0F))
+                        .setRolls(ConstantValue.exactly(1F))
+                        .add(LootItem.lootTableItem(ModItems.QYM_DOLL.get())
+                                .setWeight(1)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2F, 16F)))))
+                //抽取1次，0幸运抽取，每次2/3概率获得1个结构方块，1/3概率获得1个结构空位
+                .withPool(LootPool.lootPool()
+                        .setBonusRolls(ConstantValue.exactly(0F))
+                        .setRolls(ConstantValue.exactly(1F))
+                        .add(LootItem.lootTableItem(Items.STRUCTURE_BLOCK)
+                                .setWeight(2)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F))))
+                        .add(LootItem.lootTableItem(Items.STRUCTURE_VOID)
+                                .setWeight(1)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F)))))
+                //随机抽取2-16次，0幸运抽取，每次1个破碎粒子提供方块0
+                .withPool(LootPool.lootPool()
+                        .setBonusRolls(ConstantValue.exactly(0F))
+                        .setRolls(UniformGenerator.between(2F, 16F))
+                        .add(LootItem.lootTableItem(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get())
+                                .setWeight(1)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F)))))
+                //抽取1次，16幸运影响，每次1个破碎粒子提供方块1
+                .withPool(LootPool.lootPool()
+                        .setBonusRolls(ConstantValue.exactly(16F))
+                        .setRolls(ConstantValue.exactly(1F))
+                        .add(LootItem.lootTableItem(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get())
+                                .setWeight(1)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F)))))
+        );
+
+        //测试战利品列表1
+        consumer.accept(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/test_loot_table_1"), LootTable.lootTable()
+                //抽取1次，0幸运抽取，每次1个连锁型命令方块
+                .withPool(LootPool.lootPool()
+                        .setBonusRolls(ConstantValue.exactly(0F))
+                        .setRolls(ConstantValue.exactly(1F))
+                        .add(LootItem.lootTableItem(Items.CHAIN_COMMAND_BLOCK)
+                                .setWeight(1)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F)))))
+        );
+
+        //测试战利品列表2
+        consumer.accept(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/test_loot_table_2"), LootTable.lootTable()
+                //抽取1次，0幸运抽取，每次1个循环型命令方块
+                .withPool(LootPool.lootPool()
+                        .setBonusRolls(ConstantValue.exactly(0F))
+                        .setRolls(ConstantValue.exactly(1F))
+                        .add(LootItem.lootTableItem(Items.REPEATING_COMMAND_BLOCK)
+                                .setWeight(1)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F)))))
+        );
     }
 }
