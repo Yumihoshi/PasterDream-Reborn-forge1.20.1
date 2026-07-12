@@ -59,5 +59,13 @@
   },
   "life_crystal": {
     "sounds": [{"name": "pasterdream:life_crystal", "stream": false}]
+  },
+  "melt_dream_crystal_chest_open_rare":
+  {
+    "sounds": [{"name": "pasterdream:melt_dream_crystal_chest_open_rare", "stream": false}]
+  },
+  "melt_dream_crystal_chest_open_legend":
+  {
+    "sounds": [{"name": "pasterdream:melt_dream_crystal_chest_open_legend", "stream": false}]
   }
 }
