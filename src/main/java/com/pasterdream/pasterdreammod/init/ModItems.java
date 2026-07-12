@@ -22,7 +22,7 @@ import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.StorageBagItem;
 import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.LargeStorageBagItem;
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
 import com.pasterdream.pasterdreammod.world.item.curio.*;
-import com.pasterdream.pasterdreammod.world.item.FadedBlessingOfCeciliaItem;
+import com.pasterdream.pasterdreammod.world.item.curio.FadedBlessingOfCeciliaItem;
 import com.pasterdream.pasterdreammod.world.item.curio.KaichuOmamoriItem;
 import com.pasterdream.pasterdreammod.world.item.debugsword.DebugSwordItem;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.DreamNotesItem;
