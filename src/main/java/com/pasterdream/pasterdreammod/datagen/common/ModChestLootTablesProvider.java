@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.datagen.common;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import net.minecraft.data.loot.LootTableSubProvider;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -11,6 +12,7 @@ import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
+import net.minecraft.world.level.storage.loot.functions.SetNbtFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
@@ -990,8 +992,7 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                         .setRolls(ConstantValue.exactly(1F))
                         .add(LootItem.lootTableItem(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get())
                                 .setWeight(1)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F)))))
-        );
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F))))));
 
         //测试战利品列表1
         consumer.accept(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/test_loot_table_1"), LootTable.lootTable()
@@ -1001,8 +1002,7 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                         .setRolls(ConstantValue.exactly(1F))
                         .add(LootItem.lootTableItem(Items.CHAIN_COMMAND_BLOCK)
                                 .setWeight(1)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F)))))
-        );
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F))))));
 
         //测试战利品列表2
         consumer.accept(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/test_loot_table_2"), LootTable.lootTable()
@@ -1012,7 +1012,6 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                         .setRolls(ConstantValue.exactly(1F))
                         .add(LootItem.lootTableItem(Items.REPEATING_COMMAND_BLOCK)
                                 .setWeight(1)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F)))))
-        );
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1F))))));
     }
 }

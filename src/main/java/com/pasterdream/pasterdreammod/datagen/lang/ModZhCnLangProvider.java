@@ -410,6 +410,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.loot_table.not_set", "§7未设置");
         add("tooltip.pasterdream.loot_generator.usage.shift", "§7对容器使用Shift+右键以在容器生成战利品");
 
+        add("tooltip.pasterdream.normal_loot_table", "§3普通战利品：%s，权重：%d，幸运权重倍率：%f");
+        add("tooltip.pasterdream.rare_loot_table", "§a稀有战利品：%s，权重：%d，幸运权重倍率：%f");
+        add("tooltip.pasterdream.legend_loot_table", "§d史诗战利品：%s，权重：%d，幸运权重倍率：%f");
+        add("tooltip.pasterdream.not_have_loot_table", "§c无战利品");
+
         add("message.pasterdream.loot_generator.no_loot_table", "§c战利品生成器未设置战利品表");
         add("message.pasterdream.loot_generator.not_container", "§c目标方块不是容器");
         add("message.pasterdream.loot_generator.loot_table_not_found", "§c战利品表 %s 不存在");
