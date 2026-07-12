@@ -535,7 +535,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get());
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get());
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3.get());
-                        output.accept(TestMeltDreamCrystalChestWithNBT.buildItemStack());
+                        output.accept(TestMeltDreamCrystalChestWithNBT.testNBT());
+                        output.accept(TestMeltDreamCrystalChestWithNBT.dyedreamMeltDreamCrystalChestNBT());
+
                     }).build());
 
     // ===== 拓展 =====

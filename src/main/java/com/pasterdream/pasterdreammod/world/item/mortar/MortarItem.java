@@ -26,9 +26,9 @@ public class MortarItem extends Item
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag)
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag)
     {
-        super.appendHoverText(stack, level, tooltip, flag);
+        super.appendHoverText(itemStack, level, tooltip, flag);
         tooltip.add(Component.translatable("tooltip.pasterdream.右键打开GUI"));
     }
 

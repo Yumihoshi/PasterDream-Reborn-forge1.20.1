@@ -433,7 +433,7 @@ public class ModMeltDreamCrystalChestLootTablesProvider implements LootTableSubP
                         )
         );
         consumer.accept(
-                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "chests/melt_dream_crystal_chest_dyedream_world_legendary"),
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "chests/melt_dream_crystal_chest_dyedream_world_legend"),
                 LootTable.lootTable()
                         // ===== 染梦基础材料，固定1次抽取 =====
                         .withPool(LootPool.lootPool()
