@@ -582,13 +582,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.WORLDTREE_SEEDPOD.get(), "Worldtree Seedpod");
         add(ModItems.GARLAND.get(), "Garland");
         add(ModItems.BLESSING_OF_CECILIA.get(), "Blessing of Cecilia");
-        add("tooltip.pasterdream.blessing_of_cecilia.effect0", "§7▪ §9Passive: Resistance II");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect0", "§7▪ §9Passive: Forced 20% DMG Reduction");
         add("tooltip.pasterdream.blessing_of_cecilia.effect1", "§7 Upon receiving fatal damage:");
         add("tooltip.pasterdream.blessing_of_cecilia.effect2", "§7▪ §9Grants 5s of damage immunity");
         add("tooltip.pasterdream.blessing_of_cecilia.effect3", "§7▪ §9And grants 10s of Resistance V, Regeneration X, Absorption V and Speed II");
         add("tooltip.pasterdream.blessing_of_cecilia.lore", "§7§o--I will protect you, forever and ever...");
         add(ModItems.FADED_BLESSING_OF_CECILIA.get(), "Faded Blessing of Cecilia");
-        add("tooltip.pasterdream.faded_blessing_of_cecilia.effect0", "§7▪ §9Passive: Resistance II");
+        add("tooltip.pasterdream.faded_blessing_of_cecilia.effect0", "§7▪ §9Passive: Resistance I");
         add("tooltip.pasterdream.faded_blessing_of_cecilia.hint", "§7Perhaps we should submerge it in Melt Dream Spring");
         add(ModItems.FOURLEAF_CLOVER_CURIO.get(), "Fourleaf Clover");
         add("tooltip.pasterdream.fourleaf_clover_curio.flavor", "§7§oWhich leaf represents luck?");

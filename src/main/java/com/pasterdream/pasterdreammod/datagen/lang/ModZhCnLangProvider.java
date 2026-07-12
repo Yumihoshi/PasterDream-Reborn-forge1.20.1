@@ -699,13 +699,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.WORLDTREE_SEEDPOD.get(), "世界树种荚");
         add(ModItems.GARLAND.get(), "花环");
         add(ModItems.BLESSING_OF_CECILIA.get(), "塞西莉娅的加护");
-        add("tooltip.pasterdream.blessing_of_cecilia.effect0", "§7▪ §9常驻：抗性提升II");
+        add("tooltip.pasterdream.blessing_of_cecilia.effect0", "§7▪ §9常驻：强制20%减伤");
         add("tooltip.pasterdream.blessing_of_cecilia.effect1", "§7 受到致命伤害时：");
         add("tooltip.pasterdream.blessing_of_cecilia.effect2", "§7▪ §9获得5秒的伤害免疫");
         add("tooltip.pasterdream.blessing_of_cecilia.effect3", "§7▪ §9并在10秒内获得抗性提升V、生命恢复X、伤害吸收V与速度II");
         add("tooltip.pasterdream.blessing_of_cecilia.lore", "§7§o--我会守护你，直到永远...");
         add(ModItems.FADED_BLESSING_OF_CECILIA.get(), "失色塞西莉娅的加护");
-        add("tooltip.pasterdream.faded_blessing_of_cecilia.effect0", "§7▪ §9常驻：抗性提升II");
+        add("tooltip.pasterdream.faded_blessing_of_cecilia.effect0", "§7▪ §9常驻：抗性提升I");
         add("tooltip.pasterdream.faded_blessing_of_cecilia.hint", "§7或许我们应该亲手将它浸泡于融梦涌泉");
 
         add(ModItems.SNOW_VOW_HEAD.get(), "雪下的誓言");
