@@ -14,8 +14,8 @@ public class WindMoorCrateScreen extends CrateScreen<WindMoorCrateMenu>
     }
 
     @Override
-    protected void renderContainerBackground(GuiGraphics graphics, int leftPos, int topPos)
+    protected void renderContainerBackground(GuiGraphics guiGraphics, int leftPos, int topPos)
     {
-        GUIBackGroundRender.rendWindMoorCrateGUI(graphics, leftPos + 27, topPos);
+        GUIBackGroundRender.rendWindMoorCrateGUI(guiGraphics, leftPos + 27, topPos);
     }
 }

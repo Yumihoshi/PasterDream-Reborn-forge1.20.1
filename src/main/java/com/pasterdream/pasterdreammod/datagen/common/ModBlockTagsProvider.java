@@ -60,7 +60,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.WIND_MOOR_CRATE.get());
 
         // 可以用镐来挖掘
-
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.DYEDREAM_QUARTZ_ORE.get())
                 .add(ModBlocks.DYEDREAM_DUST_ORE.get())
@@ -94,7 +93,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.TITANIUM_BLOCK.get())
                 .add(ModBlocks.MOLTEN_GOLD_BLOCK.get())
                 .add(ModBlocks.CHARGED_AMETHYST_BLOCK.get())
-                .add(ModBlocks.SHADOW_CHEST.get());
+                .add(ModBlocks.SHADOW_CHEST.get())
+                .add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get());
 
         //整个树的结构（包含原木，木头，树叶，菌柄，菌核，菌疣）
         tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL)

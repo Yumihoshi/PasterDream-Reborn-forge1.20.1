@@ -10,6 +10,8 @@ import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.
 import com.pasterdream.pasterdreammod.world.block.doll.qymdoll.QYMDollBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.doll.uuzdoll.UUZDollBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest.MeltDreamCrystalChestBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.openedmeltdreamcrystalchest.OpenedMeltDreamCrystalChestBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.LifeCrystalBlockEntity;
@@ -42,11 +44,12 @@ public class ModBlockEntities
     public static final RegistryObject<BlockEntityType<LifeCrystalBlockEntity>> LIFE_CRYSTAL = BLOCK_ENTITIES.register("life_crystal", () -> BlockEntityType.Builder.of(LifeCrystalBlockEntity::new, ModBlocks.LIFE_CRYSTAL.get()).build(null));
     public static final RegistryObject<BlockEntityType<GoldenFoxSculptureBlockEntity>> GOLDEN_FOX_SCULPTURE = BLOCK_ENTITIES.register("golden_fox_sculpture", () -> BlockEntityType.Builder.of(GoldenFoxSculptureBlockEntity::new, ModBlocks.GOLDEN_FOX_SCULPTURE.get()).build(null));
     public static final RegistryObject<BlockEntityType<DesertHeroTombBlockEntity>> DESERT_HERO_TOMB = BLOCK_ENTITIES.register("desert_hero_tomb", () -> BlockEntityType.Builder.of(DesertHeroTombBlockEntity::new, ModBlocks.DESERT_HERO_TOMB.get()).build(null));
+    public static final RegistryObject<BlockEntityType<MeltDreamCrystalChestBlockEntity>> MELT_DREAM_CRYSTAL_CHEST = BLOCK_ENTITIES.register("melt_dream_crystal_chest", () -> BlockEntityType.Builder.of(MeltDreamCrystalChestBlockEntity::new, ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get()).build(null));
+    public static final RegistryObject<BlockEntityType<OpenedMeltDreamCrystalChestBlockEntity>> OPENED_MELT_DREAM_CRYSTAL_CHEST = BLOCK_ENTITIES.register("opened_melt_dream_crystal_chest", () -> BlockEntityType.Builder.of(OpenedMeltDreamCrystalChestBlockEntity::new, ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get()).build(null));
     public static final RegistryObject<BlockEntityType<FoxSculptureBlockEntity>> FOX_SCULPTURE = BLOCK_ENTITIES.register("fox_sculpture", () -> BlockEntityType.Builder.of(FoxSculptureBlockEntity::new, ModBlocks.FOX_SCULPTURE.get()).build(null));
 
     public static void register(IEventBus eventBus)
     {
         BLOCK_ENTITIES.register(eventBus);
     }
-
 }

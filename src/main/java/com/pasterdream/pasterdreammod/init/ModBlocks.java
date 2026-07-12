@@ -22,6 +22,8 @@ import com.pasterdream.pasterdreammod.world.block.doll.uuzdoll.UUZDollBlock;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlock;
 import com.pasterdream.pasterdreammod.world.block.fluidblock.MeltDreamLiquidBlock;
 import com.pasterdream.pasterdreammod.world.block.fluidblock.ShadowLiquidBlock;
+import com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest.MeltDreamCrystalChestBlock;
+import com.pasterdream.pasterdreammod.world.block.ItemContainer.openedmeltdreamcrystalchest.OpenedMeltDreamCrystalChestBlock;
 import com.pasterdream.pasterdreammod.world.block.portal.DyedreamCrackBlock;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableBlock;
 import com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers.TheEndlessBookOfDreamSeekersBlock;
@@ -461,9 +463,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SHADOW_LIQUID = BLOCKS.register("shadow_liquid", ShadowLiquidBlock::new);
 
     //方块实体对应方块
-    public static final RegistryObject<Block> QYM_DOLL = BLOCKS.register("qym_doll", () -> new QYMDollBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).sound(SoundType.WOOD).strength(0.1F, 2147483647F).noOcclusion()));
-    public static final RegistryObject<Block> UUZ_DOLL = BLOCKS.register("uuz_doll", () -> new UUZDollBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).sound(SoundType.WOOD).strength(0.1F, 2147483647F).noOcclusion()));
-    public static final RegistryObject<Block> DYEDREAM_CRACK = BLOCKS.register("dyedream_crack", () -> new DyedreamCrackBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(-1.0F, 3600000.0F).noOcclusion().noCollission().lightLevel(state -> 15)));
+    public static final RegistryObject<Block> QYM_DOLL = BLOCKS.register("qym_doll", () -> new QYMDollBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).sound(SoundType.WOOD).strength(0F, 2147483647F).noOcclusion()));
+    public static final RegistryObject<Block> UUZ_DOLL = BLOCKS.register("uuz_doll", () -> new UUZDollBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).sound(SoundType.WOOD).strength(0F, 2147483647F).noOcclusion()));
+    public static final RegistryObject<Block> DYEDREAM_CRACK = BLOCKS.register("dyedream_crack", () -> new DyedreamCrackBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(-1.0F, 2147483647F).noOcclusion().noCollission().lightLevel(state -> 15)));
     public static final RegistryObject<Block> CLAYPAN = BLOCKS.register("claypan", () -> new ClaypanBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(0.5F, 10.0F).requiresCorrectToolForDrops().noOcclusion()));
     public static final RegistryObject<Block> DREAM_CAULDRON = BLOCKS.register("dream_cauldron", () -> new DreamCauldronBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).sound(SoundType.CALCITE).strength(2.0F).noOcclusion()));
     public static final RegistryObject<Block> DYEDREAM_DESK = BLOCKS.register("dyedream_desk", () -> new DyedreamDeskBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(1F).requiresCorrectToolForDrops().noOcclusion()));
@@ -472,7 +474,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> SHADOW_CHEST = BLOCKS.register("shadow_chest", () -> new ShadowChestBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.DEEPSLATE_TILES).strength(1F, 0.5F).requiresCorrectToolForDrops().noOcclusion()));
     public static final RegistryObject<Block> WIND_MOOR_CRATE = BLOCKS.register("wind_moor_crate", () -> new WindMoorCrateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(1F).noOcclusion()));
     public static final RegistryObject<Block> THE_ENDLESS_BOOK_OF_DREAM_SEEKERS = BLOCKS.register("the_endless_book_of_dream_seekers", () -> new TheEndlessBookOfDreamSeekersBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(-1F, 2147483647F).noOcclusion().noCollission().lightLevel(state -> 15)));
-    public static final RegistryObject<Block> RESEARCH_TABLE = BLOCKS.register("research_table", () -> new ResearchTableBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(1f, 0.2f).noOcclusion()));
+    public static final RegistryObject<Block> RESEARCH_TABLE = BLOCKS.register("research_table", () -> new ResearchTableBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(1F, 0.2F).noOcclusion()));
+    public static final RegistryObject<Block> MELT_DREAM_CRYSTAL_CHEST = BLOCKS.register("melt_dream_crystal_chest", () -> new MeltDreamCrystalChestBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.STONE).strength(-1F, 2147483647F).noOcclusion().lightLevel(state -> 12)));
+    public static final RegistryObject<Block> OPENED_MELT_DREAM_CRYSTAL_CHEST = BLOCKS.register("opened_melt_dream_crystal_chest", () -> new OpenedMeltDreamCrystalChestBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.STONE).strength(10f).lightLevel(state -> 12).noOcclusion()));
+
 
     //失落剑冢
     public static final RegistryObject<Block> LOST_SWORD_TOMB = BLOCKS.register("lost_sword_tomb", LostSwordTombBlock::new);

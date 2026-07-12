@@ -12,7 +12,7 @@ public class GUIBackGroundRender
     public static ResourceLocation SHADOW_DESK_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/shadow_desk.png");
     public static ResourceLocation STORAGE_BAG_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/storage_bag.png");
     public static ResourceLocation BIG_STORAGE_BAG_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/big_storage_bag.png");
-    public static ResourceLocation MELT_DREAM_CHEST_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/meltdream_chest.png");
+    public static ResourceLocation MELT_DREAM_CRYSTAL_CHEST_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/melt_dream_crystal_chest.png");
     public static ResourceLocation PICNIC_BASKET_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/picnic_basket.png");
     public static ResourceLocation SHADOW_CHEST_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/shadow_chest.png");
     public static ResourceLocation WIND_MOOR_CRATE_GUI = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/windmoor_crate.png");
@@ -105,9 +105,9 @@ public class GUIBackGroundRender
         guiGraphics.blit(BIG_STORAGE_BAG_GUI, x, y, 0, 0, 128, 110, 128, 110);
     }
 
-    public static void rendMeltDreamChestGUI(GuiGraphics guiGraphics, int x, int y)
+    public static void rendMeltDreamCrystalChestGUI(GuiGraphics guiGraphics, int x, int y)
     {
-        guiGraphics.blit(MELT_DREAM_CHEST_GUI, x, y, 0, 0, 66, 66, 66, 66);
+        guiGraphics.blit(MELT_DREAM_CRYSTAL_CHEST_GUI, x, y, 0, 0, 66, 66, 66, 66);
     }
 
     public static void rendPicnicBasketGUI(GuiGraphics guiGraphics, int x, int y)

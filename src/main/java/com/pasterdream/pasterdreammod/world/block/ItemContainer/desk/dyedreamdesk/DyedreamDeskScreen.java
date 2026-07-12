@@ -14,8 +14,8 @@ public class DyedreamDeskScreen extends DeskScreen<DyedreamDeskMenu>
     }
 
     @Override
-    protected void renderContainerBackground(GuiGraphics graphics, int leftPos, int topPos)
+    protected void renderContainerBackground(GuiGraphics guiGraphics, int leftPos, int topPos)
     {
-        GUIBackGroundRender.rendDyedreamDeskGUI(graphics, leftPos + 71, topPos);
+        GUIBackGroundRender.rendDyedreamDeskGUI(guiGraphics, leftPos + 71, topPos);
     }
 }
