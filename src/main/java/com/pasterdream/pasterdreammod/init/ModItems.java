@@ -55,11 +55,14 @@ import com.pasterdream.pasterdreammod.world.entity.MeltDreamCrystalEntityEntity;
 import com.pasterdream.pasterdreammod.world.item.WhiteCrystalItem;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.server.level.ServerPlayer;
@@ -77,6 +80,9 @@ import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+import java.util.UUID;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -704,6 +710,8 @@ public class ModItems {
             });
 
 
+    private static final UUID LEGENDARY_DRAGON_HORN_ICE_CREAM_LUCK_UUID = UUID.fromString("31f3e03b-4aea-45dd-8702-49d7000e170c");
+
     public static final RegistryObject<Item> LEGENDARY_DRAGON_HORN_ICE_CREAM = ITEMS.register("legendary_dragon_horn_ice_cream",
             () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties()
                     .food(new FoodProperties.Builder().nutrition(10).saturationMod(1.2f).alwaysEat().build())
@@ -714,6 +722,25 @@ public class ModItems {
                         ItemStack containerStack = new ItemStack(Items.BOWL);
                         if (!player.getInventory().add(containerStack)) {
                             player.drop(containerStack, false);
+                        }
+                    }
+
+                    if (!level.isClientSide) {
+                        var luckAttr = player.getAttribute(Attributes.LUCK);
+                        if (luckAttr != null) {
+                            AttributeModifier existingModifier = luckAttr.getModifier(LEGENDARY_DRAGON_HORN_ICE_CREAM_LUCK_UUID);
+                            if (existingModifier == null) {
+                                luckAttr.addPermanentModifier(new AttributeModifier(LEGENDARY_DRAGON_HORN_ICE_CREAM_LUCK_UUID,
+                                        "legendary_dragon_horn_ice_cream", 10, AttributeModifier.Operation.ADDITION));
+                                if (level instanceof ServerLevel serverLevel) {
+                                    serverLevel.sendParticles(ParticleTypes.SNOWFLAKE,
+                                            player.getX(), player.getY() + 3, player.getZ(),
+                                            128, 2, 0.5, 2, 1);
+                                }
+                                player.displayClientMessage(Component.translatable("item.pasterdream.legendary_dragon_horn_ice_cream.client.success"), false);
+                            } else {
+                                player.displayClientMessage(Component.translatable("item.pasterdream.legendary_dragon_horn_ice_cream.client.fail"), false);
+                            }
                         }
                     }
                 }
