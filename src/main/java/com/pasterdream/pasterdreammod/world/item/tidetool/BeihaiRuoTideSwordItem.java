@@ -40,39 +40,32 @@ public class BeihaiRuoTideSwordItem extends SwordItem {
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        boolean retval = super.hurtEnemy(stack, target, attacker);
         if (stack.getOrCreateTag().getBoolean("skill")) {
-            Level level = target.level();
-            if (!level.isClientSide()) {
-                level.playSound(null, target.blockPosition(), ModSounds.SKILL1.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
-                level.playSound(null, target.blockPosition(), SoundEvents.BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundSource.NEUTRAL, 0.8f, 1.0f);
-            } else {
-                level.playLocalSound(target.getX(), target.getY(), target.getZ(), ModSounds.SKILL1.get(), SoundSource.NEUTRAL, 1.0f, 1.0f, false);
-                level.playLocalSound(target.getX(), target.getY(), target.getZ(), SoundEvents.BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundSource.NEUTRAL, 0.8f, 1.0f, false);
+            stack.getOrCreateTag().putBoolean("skill", false);
+            if (attacker instanceof Player player) {
+                double pasterAtk = player.getAttributeValue(Attributes.ATTACK_DAMAGE)
+                        + stack.getEnchantmentLevel(Enchantments.SHARPNESS) * 0.5;
+                float bonusDamage = target.isInWaterOrBubble()
+                        ? (float) (3 + 1.2 * pasterAtk)
+                        : (float) pasterAtk;
+                target.invulnerableTime = 0;
+                target.hurt(player.damageSources().playerAttack(player), bonusDamage);
             }
-            if (level instanceof ServerLevel serverLevel) {
+            target.level().playSound(null, target.getX(), target.getY(), target.getZ(),
+                    ModSounds.SKILL1.get(), SoundSource.NEUTRAL, 1.0f, 1.0f);
+            target.level().playSound(null, target.getX(), target.getY(), target.getZ(),
+                    SoundEvents.BUBBLE_COLUMN_UPWARDS_AMBIENT, SoundSource.NEUTRAL, 0.8f, 1.0f);
+            if (target.level() instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ParticleTypes.BUBBLE, target.getX(), target.getY(), target.getZ(), 64, 1.5, 1.8, 1.5, 0.2);
                 serverLevel.sendParticles(ParticleTypes.BUBBLE_POP, target.getX(), target.getY(), target.getZ(), 64, 1.5, 1.8, 1.5, 0.2);
             }
-            double pasterAtk = stack.getOrCreateTag().getDouble("paster_atk");
-            double skillMultiplier = stack.getOrCreateTag().getDouble("skill_multiplier");
-            float bonusDamage;
-            if (target.isInWaterOrBubble()) {
-                bonusDamage = (float) ((3 + 1.2 * pasterAtk) * skillMultiplier);
-            } else {
-                bonusDamage = (float) pasterAtk;
-            }
-            target.invulnerableTime = 0;
-            target.hurt(attacker.damageSources().mobAttack(attacker), bonusDamage);
-            stack.getOrCreateTag().putBoolean("skill", false);
         }
-        return retval;
+        return super.hurtEnemy(stack, target, attacker);
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        InteractionResultHolder<ItemStack> ar = super.use(level, player, hand);
-        ItemStack stack = ar.getObject();
+        ItemStack stack = player.getItemInHand(hand);
 
         if (player.isInWaterOrBubble()) {
             if (!level.isClientSide()) {
@@ -80,26 +73,18 @@ public class BeihaiRuoTideSwordItem extends SwordItem {
             }
             Vec3 look = player.getLookAngle();
             player.setDeltaMovement(look.x * 2, look.y * 2, look.z * 2);
-            player.swing(InteractionHand.MAIN_HAND, true);
             player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
         }
 
-        if (!stack.getOrCreateTag().getBoolean("skill")) {
+        if (!level.isClientSide && !stack.getOrCreateTag().getBoolean("skill")) {
             stack.getOrCreateTag().putBoolean("skill", true);
-            double pasterAtk = player.getAttributeValue(Attributes.ATTACK_DAMAGE) + stack.getEnchantmentLevel(Enchantments.SHARPNESS) * 0.5;
-            stack.getOrCreateTag().putDouble("paster_atk", pasterAtk);
-            stack.getOrCreateTag().putDouble("skill_multiplier", 1.0);
+            level.playSound(null, player.blockPosition(), ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
             if (level instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ModParticleTypes.BUFF_0_PARTICLE.get(), player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);
             }
-            if (!level.isClientSide()) {
-                level.playSound(null, player.blockPosition(), ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
-            } else {
-                level.playLocalSound(player.getX(), player.getY(), player.getZ(), ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f, false);
-            }
         }
 
-        return ar;
+        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
     }
 
     @Override
