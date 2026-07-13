@@ -755,5 +755,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Enchantments
         add("enchantment.pasterdream.swift_strike", "Swift Strike");
         add("enchantment.pasterdream.shelter", "Shelter");
+
+        // Counter Ring
+        add(ModItems.COUNTER_RING.get(), "Counter Ring");
+        add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9On successful dodge: gain Counterattack I (0:10)");
+        add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9Next attack: Attack +3, Skill DMG ×+50%, then buff ends");
+        add("effect.pasterdream.counter_attack_buff", "Counterattack");
     }
 }

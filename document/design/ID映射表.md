@@ -394,6 +394,7 @@
 | `bright_butterfly_curio`       | `bright_butterfly_curio`                    | 不改                                                               | 客制化类 `BrightButterflyCurioItem`，实现 `ICurioItem`，低亮度夜视 + 免疫黑暗效果                                           |
 | `white_crystal`                | `white_crystal`                             | 不改                                                               | 客制化类 `WhiteCrystalItem`，制作白厄剑的核心材料                                                                       |
 | `boboji_curio`                 | `boboji_curio`                              | 不改                                                               | 客制化类 `BobojiCurioItem`，实现 `ICurioItem`，+5%速度、+0.1瞬身术距离、-0.2冷却、-0.4消耗，禁止重复装备                              |
+| `counter_ring`                 | `counter_ring`                              | 不改                                                               | 客制化类 `CounterRingItem`，实现 `ICurioItem`，成功闪避时获得反击 buff（力量 I + 战技伤害 +50%，2s）                        |
 | `duke_coin_curio`              | `duke_coin_curio`                           | 不改                                                               | 客制化类 `DukeCoinCurioItem`，实现 `ICurioItem`，+7 幸运值、+7 瞬身术冷却，禁止重复装备                                          |
 | `qym_head`                     | `qym_butterfly_star_hairpin`                | 重命名，`qym_head` → `qym_butterfly_star_hairpin`                    | 客制化类 `QymButterflyStarHairpinItem`，实现 `ICurioItem`，所有生物不主动攻击（可反击），品质 MIRACLE，防火                          |
 | `hiyori_head`                  | `hiyori_butterfly_hairpin`                  | 重命名，`hiyori_head` → `hiyori_butterfly_hairpin`                   | 客制化类 `HiyoriButterflyHairpinItem`，实现 `ICurioItem`，+2 最大生命值、+15 幸运、+0.96 理智光环，品质 EPIC，禁止重复装备              |
@@ -428,6 +429,7 @@
 | `fondillusion_buff`     | 待搬运                     | -         | -                                                   |
 | `rest_buff`             | `rest_buff`             | 不改        | `RestBuffEffect`，+0.9 理智光环                          |
 | `dream_harp_of_wanderer_buff` | `dream_harp_of_wanderer_buff` | 不改    | `DreamharpOfWandererBuffEffect`，+4最大生命、+2.4SAN光环、+1%速度、治疗 |
+| -                          | `counter_attack_buff`   | 新增        | `CounterAttackBuffEffect`，战技伤害倍率 +50%，配合反击戒指触发          |
 
 ---
 
