@@ -882,6 +882,14 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("message.pasterdream.lost_sword_tomb.lack_strength", "你的力气不足以拔出这柄剑");
         add("tooltip.pasterdream.lost_sword_tomb", "§7既然拔不出来，那就带着石头用吧！");
 
+        // 草莓甜心
+        add(ModItems.STRAWBERRY_HEART.get(), "草莓甜心");
+        add("tooltip.pasterdream.strawberry_heart.desc1", "§7▪ §9右键演奏 §4消耗1融梦能量");
+        add("tooltip.pasterdream.strawberry_heart.desc2", "§7▪ §9为范围内玩家回复4点生命 并给予短暂生命恢复，力量和速度效果");
+        add("tooltip.pasterdream.strawberry_heart.desc3", "§7▪ §7冷却: 12秒 §7| §6范围: 8格");
+        add("tooltip.pasterdream.strawberry_heart.desc4", "§7▪ §d立即恢复2点理智，并给予8秒3.6理智光环，期间你免疫恍惚效果");
+        add("tooltip.pasterdream.strawberry_heart.no_energy", "融梦能量不足");
+
         // 附魔
         add("enchantment.pasterdream.swift_strike", "疾风连击");
         add("enchantment.pasterdream.shelter", "庇护");

@@ -62,7 +62,9 @@ public class SanAuraHandler {
             if (ratio >= 0.9) {
                 player.addEffect(new MobEffectInstance(ModEffects.CHEER_UP_BUFF.get(), 20, 0, false, false));
             } else if (ratio < 0.6 && ratio >= 0.4) {
-                player.addEffect(new MobEffectInstance(ModEffects.LETHARGY_BUFF.get(), 20, 0, false, false));
+                if (!player.getPersistentData().getBoolean("pasterdream:strawberry_san_aura")) {
+                    player.addEffect(new MobEffectInstance(ModEffects.LETHARGY_BUFF.get(), 20, 0, false, false));
+                }
             } else if (ratio < 0.4 && ratio >= 0.2) {
                 player.addEffect(new MobEffectInstance(ModEffects.TRANCE_BUFF.get(), 20, 0, false, false));
             } else if (ratio < 0.2) {

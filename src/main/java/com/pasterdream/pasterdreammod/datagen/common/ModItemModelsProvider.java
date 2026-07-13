@@ -263,6 +263,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.DREAM_HARP_OF_WANDERER);
         basicItem(ModItems.STORAGE_BAG.get());
         basicItem(ModItems.LARGE_STORAGE_BAG.get());
+        basicItem(ModItems.STRAWBERRY_HEART.get());
 
         withExistingParent(ModItems.PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/pink_mushroom"));

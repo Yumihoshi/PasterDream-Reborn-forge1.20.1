@@ -749,6 +749,14 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.terra_floating_island.desc3", "§7▪ §9Terra Sword Skill energy cost -0.2");
         add("tooltip.pasterdream.terra_floating_island.desc4", "§7▪ §9Sword wave ignores invulnerability frames");
 
+        // Strawberry Heart
+        add(ModItems.STRAWBERRY_HEART.get(), "Strawberry Heart");
+        add("tooltip.pasterdream.strawberry_heart.desc1", "§7▪ §9Right-click to perform §4Costs 1 Melt Dream Energy");
+        add("tooltip.pasterdream.strawberry_heart.desc2", "§7▪ §9Heals nearby players by 4 HP and grants brief Regen, Strength & Speed");
+        add("tooltip.pasterdream.strawberry_heart.desc3", "§7▪ §7Cooldown: 12s §7| §6Radius: 8 blocks");
+        add("tooltip.pasterdream.strawberry_heart.desc4", "§7▪ §dInstantly restores 2 SAN §dand grants 8s 3.6 SAN aura, immune to lethargy during this period");
+        add("tooltip.pasterdream.strawberry_heart.no_energy", "Not enough Melt Dream Energy");
+
         add("message.pasterdream.lost_sword_tomb.lack_strength", "Your strength is not enough to pull out this sword");
         add("tooltip.pasterdream.lost_sword_tomb", "§7If you can't pull it out, just use it with the stone!");
 
