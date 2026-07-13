@@ -844,6 +844,8 @@ public class ModItems {
             StrikeRingItem::new);
     public static final RegistryObject<Item> ALLKINDS_RING = ITEMS.register("allkinds_ring",
             AllkindsRingItem::new);
+    public static final RegistryObject<Item> COUNTER_RING = ITEMS.register("counter_ring",
+            CounterRingItem::new);
     // ===== 饰品（腰带） =====
     public static final RegistryObject<Item> EMBRYO_BELT = ITEMS.register("embryo_belt",
             EmbryoBeltItem::new);

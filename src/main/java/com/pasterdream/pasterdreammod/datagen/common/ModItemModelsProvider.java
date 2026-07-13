@@ -238,6 +238,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.EMBRYO_NECKLACE.get());
         basicItem(ModItems.EMBRYO_RING.get());
         basicItem(ModItems.ALLKINDS_RING.get());
+        basicItem(ModItems.COUNTER_RING.get());
         basicItem(ModItems.EMBRYO_BELT.get());
         basicItem(ModItems.RABBIT_FOOT_NECKLACE.get());
         basicItem(ModItems.FEATHER_NECKLACE.get());

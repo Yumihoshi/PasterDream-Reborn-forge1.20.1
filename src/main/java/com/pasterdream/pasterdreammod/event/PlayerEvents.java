@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.event;
 
 import com.pasterdream.pasterdreammod.init.ModEffects;
+import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.world.skill.EvasionEffectHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
@@ -10,12 +11,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
+import top.theillusivec4.curios.api.CuriosApi;
 
 public class PlayerEvents {
 
@@ -85,9 +89,26 @@ public class PlayerEvents {
         event.setAmount(0);
         event.setCanceled(true);
 
+        // 反击戒指：成功闪避时获得反击 buff
+        if (CuriosApi.getCuriosInventory(player)
+                .map(h -> h.findFirstCurio(ModItems.COUNTER_RING.get()).isPresent())
+                .orElse(false)) {
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0, false, false));
+            player.addEffect(new MobEffectInstance(ModEffects.COUNTER_ATTACK_BUFF.get(), 200, 0, false, false));
+        }
+
         if (player.level() instanceof ServerLevel serverLevel) {
             EvasionEffectHandler.execute(serverLevel, player);
         }
+    }
+
+    /** 反击 buff 命中后移除：只让闪避后第一次攻击吃到加成 */
+    public static void onAttackEntity(AttackEntityEvent event) {
+        Player player = event.getEntity();
+        if (player.level().isClientSide()) return;
+        if (!player.hasEffect(ModEffects.COUNTER_ATTACK_BUFF.get())) return;
+        player.removeEffect(ModEffects.COUNTER_ATTACK_BUFF.get());
+        player.removeEffect(MobEffects.DAMAGE_BOOST);
     }
 
     public static void onPlayerSleepInBed(PlayerSleepInBedEvent event) {

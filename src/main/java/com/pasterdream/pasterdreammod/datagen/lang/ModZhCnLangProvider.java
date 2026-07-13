@@ -885,5 +885,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 附魔
         add("enchantment.pasterdream.swift_strike", "疾风连击");
         add("enchantment.pasterdream.shelter", "庇护");
+
+        // 反击戒指
+        add(ModItems.COUNTER_RING.get(), "反击戒指");
+        add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9成功回避伤害时获得反击I (0:10)");
+        add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9下一次攻击：攻击力+3 战技伤害+50%，命中后效果解除");
+        add("effect.pasterdream.counter_attack_buff", "反击");
     }
 }

@@ -12,6 +12,7 @@ import com.pasterdream.pasterdreammod.world.effect.EvasionBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.GoldenrodTeaBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.SculkArmorBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.BlinkCooldownEffect;
+import com.pasterdream.pasterdreammod.world.effect.CounterAttackBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.CookBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.DreamWishBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.SnowVowBuffEffect;
@@ -64,6 +65,8 @@ public class ModEffects {
             EFFECTS.register("rest_buff", RestBuffEffect::new);
     public static final RegistryObject<MobEffect> DREAM_HARP_OF_WANDERER_BUFF =
             EFFECTS.register("dream_harp_of_wanderer_buff", DreamHarpOfWandererBuffEffect::new);
+    public static final RegistryObject<MobEffect> COUNTER_ATTACK_BUFF =
+            EFFECTS.register("counter_attack_buff", CounterAttackBuffEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);
