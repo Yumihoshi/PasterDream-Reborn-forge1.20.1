@@ -11,7 +11,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -22,9 +22,11 @@ import java.util.List;
 public class MurakumoKusanagiItem extends SwordItem {
 
     private static final int COOLDOWN_TICKS = 80;
+    private final float baseAttackDamage;
 
     public MurakumoKusanagiItem(Tier tier, int damage, float speed, Properties properties) {
         super(tier, damage, speed, properties);
+        this.baseAttackDamage = damage + tier.getAttackDamageBonus();
     }
 
     @Override
@@ -67,7 +69,8 @@ public class MurakumoKusanagiItem extends SwordItem {
 
         if (!stack.getOrCreateTag().getBoolean("skill")) {
             stack.getOrCreateTag().putBoolean("skill", true);
-            double pasterAtk = player.getAttributeValue(Attributes.ATTACK_DAMAGE) + 3.75 * stack.getEnchantmentLevel(Enchantments.SHARPNESS);
+            int sharpnessLevel = stack.getEnchantmentLevel(Enchantments.SHARPNESS);
+            double pasterAtk = 7.0 + sharpnessLevel * this.baseAttackDamage / 2.0;
             stack.getOrCreateTag().putDouble("paster_atk", pasterAtk);
             stack.getOrCreateTag().putDouble("skill_multiplier", 1.0);
             if (level instanceof ServerLevel serverLevel) {
