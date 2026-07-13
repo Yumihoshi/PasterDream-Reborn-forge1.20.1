@@ -22,6 +22,7 @@ public class TerraFloatingIslandItem extends Item implements ICurioItem {
         list.add(Component.translatable("tooltip.pasterdream.terra_floating_island.desc1"));
         list.add(Component.translatable("tooltip.pasterdream.terra_floating_island.desc2"));
         list.add(Component.translatable("tooltip.pasterdream.terra_floating_island.desc3"));
+        list.add(Component.translatable("tooltip.pasterdream.terra_floating_island.desc4"));
     }
 
     @Override
