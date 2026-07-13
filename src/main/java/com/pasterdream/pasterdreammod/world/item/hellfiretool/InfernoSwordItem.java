@@ -67,6 +67,7 @@ public class InfernoSwordItem extends SwordItem {
             // 熔岩伤害：2 + 攻击力 + 已燃烧 tick * 0.03
             float atk = (float) attacker.getAttributeValue(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE);
             float extraDamage = 2 + atk + target.getRemainingFireTicks() * 0.03f;
+            target.invulnerableTime = 0;
             target.hurt(new DamageSource(target.level().registryAccess()
                     .registryOrThrow(net.minecraft.core.registries.Registries.DAMAGE_TYPE)
                     .getHolderOrThrow(DamageTypes.LAVA)), extraDamage);

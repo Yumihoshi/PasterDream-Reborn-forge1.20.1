@@ -51,6 +51,7 @@ public class ChenjingmenDesertSwordItem extends SwordItem {
             double skillMultiplier = stack.getOrCreateTag().getDouble("skill_multiplier");
             double lostHpRatio = stack.getOrCreateTag().getDouble("lost_hp_ratio");
             float bonusDamage = (float) ((5 + (lostHpRatio * 2 + 1) * pasterAtk) * skillMultiplier);
+            target.invulnerableTime = 0;
             target.hurt(attacker.damageSources().mobAttack(attacker), bonusDamage);
             stack.getOrCreateTag().putBoolean("skill", false);
         }
