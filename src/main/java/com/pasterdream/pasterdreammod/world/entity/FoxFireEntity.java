@@ -1,8 +1,10 @@
 package com.pasterdream.pasterdreammod.world.entity;
 
+import com.pasterdream.pasterdreammod.Config;
 import com.pasterdream.pasterdreammod.init.ModEntities;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
+import com.sun.jna.platform.win32.Ddeml;
 import net.minecraft.core.BlockPos;
 
 import net.minecraft.nbt.CompoundTag;
@@ -37,13 +39,13 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
+import java.awt.*;
 import java.util.List;
 import java.util.UUID;
 
 public class FoxFireEntity extends PathfinderMob implements GeoEntity {
 
     private int lifeTicks = 0;
-    private static final int MAX_LIFE_TICKS = 20 * 20; // 20 seconds
     @Nullable
     private Player owner;
     @Nullable
@@ -203,7 +205,7 @@ public class FoxFireEntity extends PathfinderMob implements GeoEntity {
             }
         }
 
-        if (lifeTicks >= MAX_LIFE_TICKS) {
+        if (lifeTicks >= Config.FoxFireLifetimeSeconds * 20) {
             level.playSound(null, BlockPos.containing(this.getX(), this.getY(), this.getZ()),
                     SoundEvents.FIRE_EXTINGUISH, SoundSource.NEUTRAL, 0.5f, 1.0f);
             this.discard();

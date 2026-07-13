@@ -38,6 +38,15 @@ public class Config
             .comment("时之沙切换昼夜的冷却时间（秒），默认 300 秒（5 分钟）")
             .defineInRange("timeOfSandCooldownSeconds", 300, 0, Integer.MAX_VALUE);
 
+    // === 怀中御守 ===
+    private static final ForgeConfigSpec.IntValue KAICHU_OMAMORI_COOLDOWN = BUILDER
+            .comment("怀中御守冷却时间（秒），默认 24 秒")
+            .defineInRange("KaichuOmamoriCooldownSeconds", 24, 0, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.IntValue FOX_FIRE_LIFETIME = BUILDER
+            .comment("狐火立场持续时间（秒），默认 15 秒")
+            .defineInRange("FoxFireLifetimeSeconds", 15, 0, Integer.MAX_VALUE);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean logDirtBlock;
@@ -47,6 +56,10 @@ public class Config
 
     // === 时之沙 ===
     public static int timeOfSandCooldownSeconds;
+
+    // === 怀中御守 ===
+    public static int KaichuOmamoriCooldownSeconds;
+    public static int FoxFireLifetimeSeconds;
 
     // === 低 San 效果开关（可通过 /pasterdreamdebug lowsan 指令运行时切换） ===
     public static boolean lowSanOverlay = true;
@@ -65,6 +78,8 @@ public class Config
         magicNumber = MAGIC_NUMBER.get();
         magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
         timeOfSandCooldownSeconds = TIME_OF_SAND_COOLDOWN.get();
+        KaichuOmamoriCooldownSeconds = KAICHU_OMAMORI_COOLDOWN.get();
+        FoxFireLifetimeSeconds= FOX_FIRE_LIFETIME.get();
 
         items = ITEM_STRINGS.get().stream()
                 .map(itemName -> ForgeRegistries.ITEMS.getValue(ResourceLocation.parse(itemName)))
