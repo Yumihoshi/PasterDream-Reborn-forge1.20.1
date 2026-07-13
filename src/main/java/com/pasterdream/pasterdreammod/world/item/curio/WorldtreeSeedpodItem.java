@@ -23,7 +23,7 @@ public class WorldtreeSeedpodItem extends Item implements ICurioItem {
                     ResourceLocation.fromNamespaceAndPath("pasterdream", "dyedream_world"));
 
     public WorldtreeSeedpodItem() {
-        super(new Item.Properties().stacksTo(1).rarity(ModRarities.EPIC));
+        super(new Item.Properties().stacksTo(1).rarity(ModRarities.LEGENDARY));
     }
 
     @Override
@@ -52,7 +52,7 @@ public class WorldtreeSeedpodItem extends Item implements ICurioItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> list, TooltipFlag flag) {
-        list.add(ModRarities.qualityTooltip(ModRarities.EPIC));
+        list.add(ModRarities.qualityTooltip(ModRarities.LEGENDARY));
         list.add(Component.translatable("tooltip.pasterdream.worldtree_seedpod.condition"));
         list.add(Component.translatable("tooltip.pasterdream.worldtree_seedpod.hunger"));
         list.add(Component.translatable("tooltip.pasterdream.worldtree_seedpod.energy"));

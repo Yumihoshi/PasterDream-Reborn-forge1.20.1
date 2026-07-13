@@ -249,6 +249,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DESERT_SWORD.get());
                         output.accept(ModItems.CHENJINGMEN_DESERT_SWORD.get());
                         output.accept(ModItems.BROKEN_HERO_SWORD.get());
+                        // 特殊道具
+                        output.accept(ModItems.DREAM_HARP_OF_WANDERER.get());
                         // 饰品
                         output.accept(ModItems.GOLD_CHARM.get());
                         output.accept(ModItems.ENDEYE_CHARM.get());

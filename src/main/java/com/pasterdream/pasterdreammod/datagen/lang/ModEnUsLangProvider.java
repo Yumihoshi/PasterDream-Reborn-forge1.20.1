@@ -556,6 +556,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.sand_of_time.5", "§aReady to use");
         add(ModItems.STORAGE_BAG.get(), "Storage Bag");
         add(ModItems.LARGE_STORAGE_BAG.get(), "Large Storage Bag");
+        add(ModItems.DREAM_HARP_OF_WANDERER.get(), "DreamHarp of Wanderer");
+        add("message.pasterdream.dream_harp_of_wanderer.no_energy", "Not enough Melt Dream Energy");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line1", "§7Plays to provide effects to players within 10 blocks (1:00):");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line2", "§7▪ §9Max HP+4, restore 4 HP, Speed+10%");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line3", "§7▪ §9+4.8 SAN Aura, immediately restore 5 SAN");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line4", "§7▪ §9Cooldown: 30s");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line5", "§7▪ §4Melt Dream Energy Cost: 3");
         add("tooltip.pasterdream.storage_bag.tooltip", "§7A regular bag with 9 storage slots");
         add("tooltip.pasterdream.large_storage_bag.tooltip1", "§7Use Ender powers to expand the bag's storage, giving it 25 slots");
 
@@ -697,6 +704,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.dream_wish_buff", "Dream Wish");
         add("effect.pasterdream.cecilia_blessing_buff", "Blessing of Cecilia");
         add("effect.pasterdream.rest_buff", "Rest");
+        add("effect.pasterdream.dream_harp_of_wanderer_buff", "DreamHarp of Wanderer");
         add("attribute.pasterdream.blink_cd", "Blink Cooldown");
         add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
         add("attribute.pasterdream.blink_range", "Blink Distance");
