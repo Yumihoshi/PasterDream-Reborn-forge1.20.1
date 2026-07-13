@@ -47,6 +47,7 @@ public class MurakumoKusanagiItem extends SwordItem {
             if (!target.getPersistentData().getBoolean("pasterdream:murakumo_kusanagi_hit")) {
                 double pasterAtk = stack.getOrCreateTag().getDouble("paster_atk");
                 double skillMultiplier = stack.getOrCreateTag().getDouble("skill_multiplier");
+                target.invulnerableTime = 0;
                 target.hurt(attacker.damageSources().mobAttack(attacker), (float) (pasterAtk * skillMultiplier));
             }
             stack.getOrCreateTag().putBoolean("skill", false);

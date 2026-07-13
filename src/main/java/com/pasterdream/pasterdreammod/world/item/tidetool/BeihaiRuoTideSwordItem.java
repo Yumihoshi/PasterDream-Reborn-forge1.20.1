@@ -62,6 +62,7 @@ public class BeihaiRuoTideSwordItem extends SwordItem {
             } else {
                 bonusDamage = (float) pasterAtk;
             }
+            target.invulnerableTime = 0;
             target.hurt(attacker.damageSources().mobAttack(attacker), bonusDamage);
             stack.getOrCreateTag().putBoolean("skill", false);
         }
