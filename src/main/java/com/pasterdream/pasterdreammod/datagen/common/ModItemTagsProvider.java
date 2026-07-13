@@ -144,7 +144,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("forge", "pen")))
                 .add(ModItems.FEATHER_PEN.get());
 
-        // 星者祈愿钓竿标签 —— 手持此类钓竿时深海秘宝必出 super 变体
+        // 技能冷却标签，该标签下的武器共用冷却
         tag(ModItemTags.SKILL_COOLDOWN)
                 .add(ModItems.MURAKUMO_KUSANAGI.get())
                 .add(ModItems.INFERNO_SWORD.get())
@@ -153,6 +153,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.CHENJINGMEN_DESERT_SWORD.get())
                 .add(ModItems.TERRA_BLADE.get());
 
+        // 占星者的祈愿钓竿标签 —— 手持此类钓竿时深海秘宝必出 super 变体
         tag(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "star_fishing_rods")))
                 .add(ModItems.STAR_WISH_ROD.get());
