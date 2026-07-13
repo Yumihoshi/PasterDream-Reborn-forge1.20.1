@@ -62,6 +62,12 @@ public class SharpMeltDreamSwordItem extends SwordItem {
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (stack.getOrCreateTag().getBoolean(TAG_CHARGED)) {
             stack.getOrCreateTag().putBoolean(TAG_CHARGED, false);
+            if (attacker instanceof Player player) {
+                float baseAttack = 4.0f + this.getTier().getAttackDamageBonus();
+                float extraDamage = 2.0f + baseAttack * 1.5f;
+                target.invulnerableTime = 0;
+                target.hurt(player.damageSources().playerAttack(player), extraDamage);
+            }
             target.setDeltaMovement(target.getDeltaMovement().add(0, 0.8, 0));
             target.hurtMarked = true;
             target.level().playSound(null, target.getX(), target.getY(), target.getZ(),

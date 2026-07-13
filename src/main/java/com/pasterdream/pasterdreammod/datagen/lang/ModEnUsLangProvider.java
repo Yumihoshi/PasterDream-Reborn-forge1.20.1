@@ -455,7 +455,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.dyedream_armor.4", "§7▪ §9Enhances wielded Dyedream tools");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.1", "Inlaid: §dMelt Dream Crystal Fragment");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.2", "Combat Art: §bSora-giri");
-        add("tooltip.pasterdreammod.sharp_melt_dream_sword.3", "§7▪ §9Slash and launch enemies upward, deals 2+ATK*1.2 bonus damage");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.3", "§7▪ §9Slash and launch enemies upward, deals 2+ATK*1.5 bonus damage");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.4", "§7▪ §9Cooldown: 5s");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.5", "§7▪ §9Cooldown reduced to 3s while Dyedream Protection is active");
         add("tooltip.pasterdreammod.tide_sword.1", "Inlaid: §7None");
