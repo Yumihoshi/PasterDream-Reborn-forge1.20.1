@@ -126,12 +126,15 @@
     "crop_4b": "cotton_crop_age",
     "dyedream_crack": "dyedream_crack",
     "the_endless_book_of_dream_seekers": "the_endless_book_of_dream_seekers",
+    "research_table": "research_table",
     "lost_sword_block": "lost_sword_tomb",
     "meltdream_liquid": "melt_dream_liquid",
     "shadow_liquid": "shadow_liquid",
     "life_crystal": "life_crystal",
     "golden_fox_sculpture": "golden_fox_sculpture",
-    "desert_hero_tomb": "desert_hero_tomb"
+    "desert_hero_tomb": "desert_hero_tomb",
+    "meltdream_chest": "melt_dream_crystal_chest",
+    "meltdream_chest_open": "opened_melt_dream_crystal_chest"
   },
   "items": {
     "amber_candy": "amber_candy",
@@ -216,6 +219,7 @@
     "meltdream_elixir_bottle": "elixir_bottle_of_melt_dream",
     "rage_elixir_0": "elixir_bottle_of_rage_elixir",
     "pineapple_love_sea": "pineapple_love_sea",
+    "bubble_tea": "bubble_tea",
     "magic_stone": "magic_stone",
     "soul_dust": "soul_dust",
     "soul_essence": "soul_essence",
@@ -412,8 +416,11 @@
     "dyedream_perfume_buff": "dyedream_perfume_buff",
     "teleportation_buff": "待搬运",
     "fondillusion_buff": "待搬运",
-    "rest_buff": "rest_buff",
-    "rest_buff_in_dark": "rest_buff_in_dark"
+    "rest_buff": "rest_buff"
+  },
+  "enchantments": {
+    "enchantment_atkspd": "swift_strike",
+    "enchantment_shelterer": "shelter"
   },
   "block_properties": {
     "crop_0a": {
