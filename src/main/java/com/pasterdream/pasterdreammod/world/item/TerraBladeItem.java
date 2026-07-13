@@ -74,6 +74,7 @@ public class TerraBladeItem extends SwordItem {
                 tag.putInt("fire_aspect", stack.getEnchantmentLevel(Enchantments.FIRE_ASPECT));
                 tag.putInt("knockback", stack.getEnchantmentLevel(Enchantments.KNOCKBACK));
                 tag.putInt("looting", stack.getEnchantmentLevel(Enchantments.MOB_LOOTING));
+                tag.putBoolean("ignore_iframe", hasCharm);
                 SkillCooldownHelper.applySharedCooldown(player, cooldown);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(),
                         net.minecraft.sounds.SoundEvents.ENCHANTMENT_TABLE_USE,
@@ -131,6 +132,7 @@ public class TerraBladeItem extends SwordItem {
             waveData.putInt("fire_aspect", swordTag.getInt("fire_aspect"));
             waveData.putInt("knockback", swordTag.getInt("knockback"));
             waveData.putInt("looting", swordTag.getInt("looting"));
+            waveData.putBoolean("ignore_iframe", swordTag.getBoolean("ignore_iframe"));
 
             // Play sword wave sound at varying pitch per stage
             float pitch = switch (stage) {

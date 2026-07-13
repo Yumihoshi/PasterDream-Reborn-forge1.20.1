@@ -737,7 +737,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.terra_blade.skill_name", "Combat Art: §aTerra Sword Skill");
         add("tooltip.pasterdream.terra_blade.desc1", "§7▪ §9Right-click to empower your next 3 attacks as sword waves");
         add("tooltip.pasterdream.terra_blade.desc2", "§7▪ §9Unleash up to 3 sword waves in the direction you face");
-        add("tooltip.pasterdream.terra_blade.desc3", "§7▪ §9Each wave deals 2+ATK*0.7 damage");
+        add("tooltip.pasterdream.terra_blade.desc3", "§7▪ §9Each wave deals 2+ATK damage");
         add("tooltip.pasterdream.terra_blade.desc4", "§7▪ §9Third wave gets doubled attribute bonus");
         add("tooltip.pasterdream.terra_blade.desc5", "§7▪ §9Cooldown: 5s | Melt Dream Energy Cost: §c0.3");
         add("tooltip.pasterdream.terra_blade.no_energy", "Not enough Melt Dream Energy");
@@ -747,6 +747,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.terra_floating_island.desc1", "§7▪ §9Terra Sword Skill cooldown -60%");
         add("tooltip.pasterdream.terra_floating_island.desc2", "§7▪ §9Sword wave damage attribute bonus +30%");
         add("tooltip.pasterdream.terra_floating_island.desc3", "§7▪ §9Terra Sword Skill energy cost -0.2");
+        add("tooltip.pasterdream.terra_floating_island.desc4", "§7▪ §9Sword wave ignores invulnerability frames");
 
         add("message.pasterdream.lost_sword_tomb.lack_strength", "Your strength is not enough to pull out this sword");
         add("tooltip.pasterdream.lost_sword_tomb", "§7If you can't pull it out, just use it with the stone!");

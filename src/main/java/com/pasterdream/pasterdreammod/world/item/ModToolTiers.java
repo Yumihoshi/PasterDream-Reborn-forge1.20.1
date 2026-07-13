@@ -71,7 +71,7 @@ public enum ModToolTiers implements Tier {
     //         () -> Ingredient.of(ModBlocks.SHADOW_LIGHT_0.get())),  // TODO: shadow_light_0 未注册
 
     // 大地之刃
-    TERRA_SWORD(2011, 4.0F, 4.0F, 1, 2,
+    TERRA_SWORD(2011, 4.0F, 8.0F, 1, 2,
             Ingredient::of),
 
     // 冰影战锤
