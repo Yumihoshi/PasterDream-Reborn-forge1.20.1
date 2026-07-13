@@ -464,7 +464,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.dyedream_armor.4", "§7▪ §9增强手持的染梦工具");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.1", "镶嵌：§d融梦水晶碎片");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.2", "战技：§b凌空斩");
-        add("tooltip.pasterdreammod.sharp_melt_dream_sword.3", "§7▪ §9斩击并将敌人向上击飞 造成2+当前攻击力*1.2点伤害");
+        add("tooltip.pasterdreammod.sharp_melt_dream_sword.3", "§7▪ §9斩击并将敌人向上击飞 造成2+当前攻击力*1.5点伤害");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.4", "§7▪ §9冷却时间：5秒");
         add("tooltip.pasterdreammod.sharp_melt_dream_sword.5", "§7▪ §9拥有染梦守护效果时 冷却时间缩短为3秒");
         add("tooltip.pasterdreammod.tide_sword.1", "镶嵌：§7无");
