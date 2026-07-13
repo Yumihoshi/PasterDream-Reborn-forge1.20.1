@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item;
 
+import com.pasterdream.pasterdreammod.helper.cooldown.SkillCooldownHelper;
 import com.pasterdream.pasterdreammod.capability.meltdreamenergy.MeltDreamEnergyHelper;
 import com.pasterdream.pasterdreammod.init.ModEntities;
 import com.pasterdream.pasterdreammod.init.ModItems;
@@ -73,7 +74,7 @@ public class TerraBladeItem extends SwordItem {
                 tag.putInt("fire_aspect", stack.getEnchantmentLevel(Enchantments.FIRE_ASPECT));
                 tag.putInt("knockback", stack.getEnchantmentLevel(Enchantments.KNOCKBACK));
                 tag.putInt("looting", stack.getEnchantmentLevel(Enchantments.MOB_LOOTING));
-                player.getCooldowns().addCooldown(this, cooldown);
+                SkillCooldownHelper.applySharedCooldown(player, cooldown);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(),
                         net.minecraft.sounds.SoundEvents.ENCHANTMENT_TABLE_USE,
                         SoundSource.PLAYERS, 1.0F, 1.0F);
@@ -121,6 +122,7 @@ public class TerraBladeItem extends SwordItem {
             if (stage == 3) {
                 atk *= 2;
             }
+            atk *= SkillCooldownHelper.getSkillDamageMultiplier(player);
             CompoundTag waveData = wave.getPersistentData();
             waveData.putDouble("paster_atk", atk);
             waveData.putInt("sweeping_edge", swordTag.getInt("sweeping_edge"));

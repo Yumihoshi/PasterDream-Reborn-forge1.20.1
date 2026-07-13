@@ -609,6 +609,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.ALLKINDS_RING.get(), "Allkinds Ring");
         add("tooltip.pasterdream.allkinds_ring.flavor", "§7§oGather the power of all things, forge this ring");
         add("tooltip.pasterdream.allkinds_ring.lore", "§7§o-- Szuperlina Deonne");
+        add("tooltip.pasterdream.allkinds_ring.skill_cd", "§7▪ §9-5% Skill Cooldown");
+        add("tooltip.pasterdream.allkinds_ring.skill_dmg", "§7▪ §9+5% Skill Damage");
+        add("tooltip.pasterdream.allkinds_ring.blink_cd", "§7▪ §9-5% Blink Cooldown");
         add(ModItems.LIGHT_BUTTERFLY_CURIO.get(), "Light Butterfly Curio");
         add("tooltip.pasterdream.light_butterfly_curio.effect", "§7▪ §9Grants Night Vision in low light");
         add("tooltip.pasterdream.light_butterfly_curio.energy", "§7▪ §4Melt Dream Energy cost: 0.24/min");
@@ -709,6 +712,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
         add("attribute.pasterdream.blink_range", "Blink Distance");
         add("attribute.pasterdream.san_variability", "Sanity Variability");
+        add("attribute.pasterdream.skill_cooldown_rate", "Skill Cooldown Rate");
+        add("attribute.pasterdream.skill_damage_rate", "Skill Damage Rate");
         add("subtitles.pasterdream.evasion", "Evasion");
 
         // Low San effect commands

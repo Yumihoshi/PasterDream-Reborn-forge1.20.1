@@ -745,6 +745,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.ALLKINDS_RING.get(), "万象神戒");
         add("tooltip.pasterdream.allkinds_ring.flavor", "§7§o聚万象之力 铸以此戒");
         add("tooltip.pasterdream.allkinds_ring.lore", "§7§o-- 斯卓贝莉·黛欧恩");
+        add("tooltip.pasterdream.allkinds_ring.skill_cd", "§7▪ §9战技冷却时间-5%");
+        add("tooltip.pasterdream.allkinds_ring.skill_dmg", "§7▪ §9战技伤害+5%");
+        add("tooltip.pasterdream.allkinds_ring.blink_cd", "§7▪ §9瞬身术冷却时间-5%");
         add(ModItems.LIGHT_BUTTERFLY_CURIO.get(), "夜明蝶");
         add("tooltip.pasterdream.light_butterfly_curio.effect", "§7▪ §9自身处于低亮度环境下获得夜视");
         add("tooltip.pasterdream.light_butterfly_curio.energy", "§7▪ §4融梦能量消耗：0.24/min");
@@ -839,6 +842,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");
         add("attribute.pasterdream.san_variability", "理智光环");
+        add("attribute.pasterdream.skill_cooldown_rate", "战技冷却倍率");
+        add("attribute.pasterdream.skill_damage_rate", "战技伤害倍率");
         add("subtitles.pasterdream.evasion", "瞬身术: 回避");
 
         // 低San效果指令

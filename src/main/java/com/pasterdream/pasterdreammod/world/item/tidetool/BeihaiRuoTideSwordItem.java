@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.tidetool;
 
+import com.pasterdream.pasterdreammod.helper.cooldown.SkillCooldownHelper;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
@@ -48,6 +49,7 @@ public class BeihaiRuoTideSwordItem extends SwordItem {
                 float bonusDamage = target.isInWaterOrBubble()
                         ? (float) (3 + 1.2 * pasterAtk)
                         : (float) pasterAtk;
+                bonusDamage *= SkillCooldownHelper.getSkillDamageMultiplier(player);
                 target.invulnerableTime = 0;
                 target.hurt(player.damageSources().playerAttack(player), bonusDamage);
             }
@@ -74,10 +76,12 @@ public class BeihaiRuoTideSwordItem extends SwordItem {
             Vec3 look = player.getLookAngle();
             player.setDeltaMovement(look.x * 2, look.y * 2, look.z * 2);
             player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
+            SkillCooldownHelper.applySharedCooldown(player, COOLDOWN_TICKS);
         }
 
         if (!level.isClientSide && !stack.getOrCreateTag().getBoolean("skill")) {
             stack.getOrCreateTag().putBoolean("skill", true);
+            SkillCooldownHelper.applySharedCooldown(player, COOLDOWN_TICKS);
             level.playSound(null, player.blockPosition(), ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
             if (level instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(ModParticleTypes.BUFF_0_PARTICLE.get(), player.getX(), player.getY() - 0.5, player.getZ(), 20, 0.5, 1, 0.5, 1);

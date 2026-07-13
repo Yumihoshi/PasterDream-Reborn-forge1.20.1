@@ -28,6 +28,13 @@ public class ModAttributes {
             ATTRIBUTES.register("blink_range", () -> new RangedAttribute(
                     "attribute.pasterdream.blink_range", 1.0, 0.0, 10.0).setSyncable(true));
 
+    public static final RegistryObject<Attribute> SKILL_COOLDOWN_RATE =
+            ATTRIBUTES.register("skill_cooldown_rate", () -> new RangedAttribute(
+                    "attribute.pasterdream.skill_cooldown_rate", 1.0, 0.0, 10.0).setSyncable(true));
+    public static final RegistryObject<Attribute> SKILL_DAMAGE_RATE =
+            ATTRIBUTES.register("skill_damage_rate", () -> new RangedAttribute(
+                    "attribute.pasterdream.skill_damage_rate", 1.0, 0.0, 100.0).setSyncable(true));
+
     public static final RegistryObject<Attribute> SAN_VARIABILITY =
             ATTRIBUTES.register("san_variability", () -> new RangedAttribute(
                     "attribute.pasterdream.san_variability", 0.0, -120000.0, 120000.0).setSyncable(true));
@@ -41,6 +48,8 @@ public class ModAttributes {
         event.add(EntityType.PLAYER, BLINK_CD.get());
         event.add(EntityType.PLAYER, BLINK_CONSUME.get());
         event.add(EntityType.PLAYER, BLINK_RANGE.get());
+        event.add(EntityType.PLAYER, SKILL_COOLDOWN_RATE.get());
+        event.add(EntityType.PLAYER, SKILL_DAMAGE_RATE.get());
         event.add(EntityType.PLAYER, SAN_VARIABILITY.get());
     }
 }

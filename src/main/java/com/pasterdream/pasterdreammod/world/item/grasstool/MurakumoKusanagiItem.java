@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.grasstool;
 
+import com.pasterdream.pasterdreammod.helper.cooldown.SkillCooldownHelper;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.network.chat.Component;
@@ -34,7 +35,8 @@ public class MurakumoKusanagiItem extends SwordItem {
             stack.getOrCreateTag().putBoolean("skill", false);
             if (attacker instanceof Player player) {
                 int sharpnessLevel = stack.getEnchantmentLevel(Enchantments.SHARPNESS);
-                float extraDamage = 7.0f + sharpnessLevel * this.baseAttackDamage / 2.0f;
+                float extraDamage = (7.0f + sharpnessLevel * this.baseAttackDamage / 2.0f)
+                        * SkillCooldownHelper.getSkillDamageMultiplier(player);
                 target.invulnerableTime = 0;
                 target.hurt(player.damageSources().playerAttack(player), extraDamage);
             }
@@ -57,7 +59,7 @@ public class MurakumoKusanagiItem extends SwordItem {
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide && !stack.getOrCreateTag().getBoolean("skill")) {
             stack.getOrCreateTag().putBoolean("skill", true);
-            player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
+            SkillCooldownHelper.applySharedCooldown(player, COOLDOWN_TICKS);
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
                     ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
             if (level instanceof ServerLevel serverLevel) {
