@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.meltdreamtool;
 
+import com.pasterdream.pasterdreammod.helper.cooldown.SkillCooldownHelper;
 import com.pasterdream.pasterdreammod.init.ModEffects;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
@@ -44,7 +45,7 @@ public class SharpMeltDreamSwordItem extends SwordItem {
             if (now - lastUse >= cooldownTicks) {
                 stack.getOrCreateTag().putLong(TAG_COOLDOWN, now);
                 stack.getOrCreateTag().putBoolean(TAG_CHARGED, true);
-                player.getCooldowns().addCooldown(this, cooldownTicks);
+                SkillCooldownHelper.applySharedCooldown(player, cooldownTicks);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(),
                         ModSounds.SWORD1.get(), player.getSoundSource(), 1.0f, 1.0f);
                 if (level instanceof ServerLevel serverLevel) {
@@ -64,7 +65,8 @@ public class SharpMeltDreamSwordItem extends SwordItem {
             stack.getOrCreateTag().putBoolean(TAG_CHARGED, false);
             if (attacker instanceof Player player) {
                 float baseAttack = 4.0f + this.getTier().getAttackDamageBonus();
-                float extraDamage = 2.0f + baseAttack * 1.5f;
+                float extraDamage = (2.0f + baseAttack * 1.5f)
+                        * SkillCooldownHelper.getSkillDamageMultiplier(player);
                 target.invulnerableTime = 0;
                 target.hurt(player.damageSources().playerAttack(player), extraDamage);
             }

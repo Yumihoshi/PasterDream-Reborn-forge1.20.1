@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.hellfiretool;
 
+import com.pasterdream.pasterdreammod.helper.cooldown.SkillCooldownHelper;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
@@ -39,7 +40,7 @@ public class InfernoSwordItem extends SwordItem {
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide && !stack.getOrCreateTag().getBoolean(TAG_SKILL)) {
             stack.getOrCreateTag().putBoolean(TAG_SKILL, true);
-            player.getCooldowns().addCooldown(this, 200);
+            SkillCooldownHelper.applySharedCooldown(player, 200);
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
                     ModSounds.SWORD1.get(), SoundSource.PLAYERS, 0.8f, 1.0f);
             if (level instanceof ServerLevel serverLevel) {
@@ -66,7 +67,8 @@ public class InfernoSwordItem extends SwordItem {
             }
             // 熔岩伤害：2 + 攻击力 + 已燃烧 tick * 0.03
             float atk = (float) attacker.getAttributeValue(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE);
-            float extraDamage = 2 + atk + target.getRemainingFireTicks() * 0.03f;
+            float mult = attacker instanceof Player pl ? SkillCooldownHelper.getSkillDamageMultiplier(pl) : 1.0f;
+            float extraDamage = (2 + atk + target.getRemainingFireTicks() * 0.03f) * mult;
             target.invulnerableTime = 0;
             target.hurt(new DamageSource(target.level().registryAccess()
                     .registryOrThrow(net.minecraft.core.registries.Registries.DAMAGE_TYPE)

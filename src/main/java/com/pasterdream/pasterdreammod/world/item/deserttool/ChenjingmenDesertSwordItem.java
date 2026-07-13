@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.deserttool;
 
+import com.pasterdream.pasterdreammod.helper.cooldown.SkillCooldownHelper;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
@@ -44,7 +45,8 @@ public class ChenjingmenDesertSwordItem extends SwordItem {
                 double pasterAtk = player.getAttributeValue(Attributes.ATTACK_DAMAGE)
                         + stack.getEnchantmentLevel(Enchantments.SHARPNESS) * 0.5;
                 double lostHpRatio = (player.getMaxHealth() - player.getHealth()) / player.getMaxHealth();
-                float bonusDamage = (float) (5 + (lostHpRatio * 2 + 1) * pasterAtk);
+                float bonusDamage = (float) (5 + (lostHpRatio * 2 + 1) * pasterAtk)
+                        * SkillCooldownHelper.getSkillDamageMultiplier(player);
                 target.invulnerableTime = 0;
                 target.hurt(player.damageSources().playerAttack(player), bonusDamage);
             }
@@ -64,7 +66,7 @@ public class ChenjingmenDesertSwordItem extends SwordItem {
         if (!level.isClientSide && !stack.getOrCreateTag().getBoolean("skill")) {
             stack.getOrCreateTag().putBoolean("skill", true);
             player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 60, 0, false, false));
-            player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
+            SkillCooldownHelper.applySharedCooldown(player, COOLDOWN_TICKS);
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
                     ModSounds.SWORD1.get(), player.getSoundSource(), 0.8f, 1.0f);
             if (level instanceof ServerLevel serverLevel) {

@@ -145,6 +145,14 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.FEATHER_PEN.get());
 
         // 星者祈愿钓竿标签 —— 手持此类钓竿时深海秘宝必出 super 变体
+        tag(ModItemTags.SKILL_COOLDOWN)
+                .add(ModItems.MURAKUMO_KUSANAGI.get())
+                .add(ModItems.INFERNO_SWORD.get())
+                .add(ModItems.SHARP_MELT_DREAM_SWORD.get())
+                .add(ModItems.BEIHAI_RUO_TIDE_SWORD.get())
+                .add(ModItems.CHENJINGMEN_DESERT_SWORD.get())
+                .add(ModItems.TERRA_BLADE.get());
+
         tag(TagKey.create(Registries.ITEM,
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "star_fishing_rods")))
                 .add(ModItems.STAR_WISH_ROD.get());
