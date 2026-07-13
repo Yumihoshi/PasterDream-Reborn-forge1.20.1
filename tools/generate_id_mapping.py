@@ -38,6 +38,7 @@ SECTION_HEADERS = {
     "维度映射": "dimensions",
     "群系映射": "biomes",
     "状态效果映射": "effects",
+    "附魔映射": "enchantments",
 }
 
 
@@ -81,6 +82,7 @@ def main():
         "dimensions": {},
         "biomes": {},
         "effects": {},
+        "enchantments": {},
     }
 
     current_section: str | None = None
