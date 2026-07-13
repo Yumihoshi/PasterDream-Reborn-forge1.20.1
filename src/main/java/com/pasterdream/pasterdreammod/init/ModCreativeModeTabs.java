@@ -559,6 +559,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TERRA_BLADE.get());
                         output.accept(ModItems.TERRA_FLOATING_ISLAND.get());
                         output.accept(ModItems.BLESSING_OF_CECILIA.get());
+                        output.accept(ModItems.STRAWBERRY_HEART.get());
                     })
                     .build());
 

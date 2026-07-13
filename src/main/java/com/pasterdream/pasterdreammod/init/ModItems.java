@@ -1189,7 +1189,7 @@ public class ModItems {
     public static final RegistryObject<Item> SAND_OF_TIME = ITEMS.register("sand_of_time", () -> new SandofTimeItem());
     public static final RegistryObject<Item> STORAGE_BAG = ITEMS.register("storage_bag", () -> new StorageBagItem());
     public static final RegistryObject<Item> LARGE_STORAGE_BAG = ITEMS.register("large_storage_bag", () -> new LargeStorageBagItem());
-
+    public static final RegistryObject<Item> STRAWBERRY_HEART = ITEMS.register("strawberry_heart", () -> new StrawberryHeartItem());
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
