@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.curio;
 
+import com.pasterdream.pasterdreammod.Config;
 import com.pasterdream.pasterdreammod.capability.meltdreamenergy.MeltDreamEnergyHelper;
 import com.pasterdream.pasterdreammod.init.ModEntities;
 import com.pasterdream.pasterdreammod.init.ModItems;
@@ -33,7 +34,6 @@ import java.util.UUID;
 public class KaichuOmamoriItem extends Item implements ICurioItem {
 
     private static final double ENERGY_COST = 5.0;
-    private static final int COOLDOWN_TICKS = 12 * 20; // 12 seconds
     private static final UUID LUCK_UUID = UUID.fromString("a4b8c5f7-2cef-4e1e-a692-5b70c2b5881a");
 
     public KaichuOmamoriItem() {
@@ -97,7 +97,7 @@ public class KaichuOmamoriItem extends Item implements ICurioItem {
 
             // 消耗能量 + 设置冷却
             MeltDreamEnergyHelper.addPlayerMeltDreamEnergyAndSync(serverPlayer, -ENERGY_COST);
-            player.getCooldowns().addCooldown(ModItems.KAICHU_OMAMORI.get(), COOLDOWN_TICKS);
+            player.getCooldowns().addCooldown(ModItems.KAICHU_OMAMORI.get(), Config.KaichuOmamoriCooldownSeconds * 20);
 
             // 生成狐火
             FoxFireEntity foxFire = new FoxFireEntity(ModEntities.FOX_FIRE.get(), level);
@@ -135,9 +135,9 @@ public class KaichuOmamoriItem extends Item implements ICurioItem {
         list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.effect.foxfire"));
         list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.effect.vulnerable"));
         list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.effect.regen"));
-        list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.effect.duration"));
+        list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.effect.duration",Config.FoxFireLifetimeSeconds).withStyle(ChatFormatting.BLUE));
         list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.effect.energy_cost"));
-        list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.effect.cooldown"));
+        list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.effect.cooldown",Config.KaichuOmamoriCooldownSeconds).withStyle(ChatFormatting.BLUE));
         list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.equip"));
         list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.luck"));
         list.add(Component.translatable("tooltip.pasterdream.kaichu_omamori.hotkey",

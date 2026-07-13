@@ -17,6 +17,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -202,7 +203,7 @@ public class PasterDreamMod
         }
     }
 
-    // 疾风连击：根据附魔等级增加攻击速度
+    // 疾风连击：根据附魔等级增加攻击速度（剑每级+6%，斧每级+4%）
     public static void onItemAttributeModifier(ItemAttributeModifierEvent event) {
         if (event.getSlotType() != EquipmentSlot.MAINHAND) return;
 
@@ -211,12 +212,13 @@ public class PasterDreamMod
         ItemStack stack = event.getItemStack();
         int level = stack.getEnchantmentLevel(swiftStrike);
         if (level > 0) {
+            double multiplier = stack.getItem() instanceof AxeItem ? 0.04 : 0.06;
             event.addModifier(
                     Attributes.ATTACK_SPEED,
                     new AttributeModifier(
                             SWIFT_STRIKE_ATTACK_SPEED_UUID,
                             "Swift Strike attack speed bonus",
-                            level * 0.10,
+                            level * multiplier,
                             AttributeModifier.Operation.MULTIPLY_BASE
                     )
             );
