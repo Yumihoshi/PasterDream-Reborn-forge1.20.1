@@ -405,6 +405,7 @@
 | `star_wish_rod`                | `star_wish_rod`                             | 不改                                                               | 客制化类 `StarWishRodItem`，继承 FishingRodItem，Lure+5 加成、附魔能力10、抗火、出杆切换模型，通过 star_fishing_rods 物品标签激活深海秘宝额外池   |
 | `storage_bag`                  | `storage_bag`                               | 不改                                                               | 客制化类 `StorageBagItem`，储物袋之间不再能镶套                                                                         |
 | `storage_bag_0`                | `large_storage_bag`                         | 重命名                                                              | 客制化类 `LargeStorageBagItem`，储物袋之间不再能镶套（计划加入套动物功能）                                                         |
+| `dream_harp_of_wanderer`        | `dream_harp_of_wanderer`                     | 不改                                                               | 客制化类 `DreamharpOfWandererItem`，右键消耗2融梦能量演奏，为周围玩家施加增益效果                              |
 
 ---
 
@@ -426,6 +427,7 @@
 | `teleportation_buff`    | 待搬运                     | -         | -                                                   |
 | `fondillusion_buff`     | 待搬运                     | -         | -                                                   |
 | `rest_buff`             | `rest_buff`             | 不改        | `RestBuffEffect`，+0.9 理智光环                          |
+| `dream_harp_of_wanderer_buff` | `dream_harp_of_wanderer_buff` | 不改    | `DreamharpOfWandererBuffEffect`，+4最大生命、+2.4SAN光环、+1%速度、治疗 |
 
 ---
 

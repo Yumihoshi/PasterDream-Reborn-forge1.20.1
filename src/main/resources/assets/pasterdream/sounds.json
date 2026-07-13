@@ -67,5 +67,9 @@
   "melt_dream_crystal_chest_open_legend":
   {
     "sounds": [{"name": "pasterdream:melt_dream_crystal_chest_open_legend", "stream": false}]
+  },
+  "dream_harp_of_wanderer":
+  {
+    "sounds": [{"name": "pasterdream:dream_harp_of_wanderer", "stream": false}]
   }
 }

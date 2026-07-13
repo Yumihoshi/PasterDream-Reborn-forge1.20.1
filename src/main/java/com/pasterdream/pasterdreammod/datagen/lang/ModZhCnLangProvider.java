@@ -679,6 +679,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.sand_of_time.5", "§a力量已恢复，可以切换昼夜");
         add(ModItems.STORAGE_BAG.get(), "便携储物袋");
         add(ModItems.LARGE_STORAGE_BAG.get(), "大型便携储物袋");
+        add(ModItems.DREAM_HARP_OF_WANDERER.get(), "漂泊旅者的染梦竖琴");
+        add("message.pasterdream.dream_harp_of_wanderer.no_energy", "融梦能量不足");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line1", "§7演奏后为直径10格内的玩家提供效果(1:00)：");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line2", "§7▪ §9最大生命值+4 且恢复4点生命 移动速度+10%");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line3", "§7▪ §9+4.8 理智光环，并立即恢复5点精神值");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line4", "§7▪ §9冷却时间：30秒");
+        add("tooltip.pasterdream.dream_harp_of_wanderer.line5", "§7▪ §4融梦能量消耗：3");
         add("tooltip.pasterdream.storage_bag.tooltip", "§7一个普普通通的袋子，拥有9格储物栏");
         add("tooltip.pasterdream.large_storage_bag.tooltip1", "§7使用末影力量以拓展袋子的储量，拥有25格储物栏");
 
@@ -827,6 +834,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.dream_wish_buff", "美梦祈愿");
         add("effect.pasterdream.cecilia_blessing_buff", "塞西莉娅的加护");
         add("effect.pasterdream.rest_buff", "休憩");
+        add("effect.pasterdream.dream_harp_of_wanderer_buff", "漂泊旅者的染梦竖琴");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");

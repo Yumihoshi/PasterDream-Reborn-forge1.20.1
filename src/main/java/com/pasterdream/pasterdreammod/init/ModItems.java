@@ -49,6 +49,7 @@ import com.pasterdream.pasterdreammod.world.item.PaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.PliersItem;
 import com.pasterdream.pasterdreammod.world.item.RootsPaleBoneneedleItem;
 import com.pasterdream.pasterdreammod.world.item.DeepTreasureItem;
+import com.pasterdream.pasterdreammod.world.item.DreamHarpOfWandererItem;
 import com.pasterdream.pasterdreammod.world.item.StarWishRodItem;
 import com.pasterdream.pasterdreammod.world.item.ThermalDaggerItem;
 import com.pasterdream.pasterdreammod.world.entity.MeltDreamCrystalEntityEntity;
@@ -1181,6 +1182,8 @@ public class ModItems {
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3 = ITEMS.register("model_break_particle_provider_block_3", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3.get(), new Item.Properties()));
 
     //特殊道具
+    public static final RegistryObject<Item> DREAM_HARP_OF_WANDERER = ITEMS.register("dream_harp_of_wanderer",
+            DreamHarpOfWandererItem::new);
     public static final RegistryObject<Item> SAND_OF_TIME = ITEMS.register("sand_of_time", () -> new SandofTimeItem());
     public static final RegistryObject<Item> STORAGE_BAG = ITEMS.register("storage_bag", () -> new StorageBagItem());
     public static final RegistryObject<Item> LARGE_STORAGE_BAG = ITEMS.register("large_storage_bag", () -> new LargeStorageBagItem());
