@@ -46,13 +46,13 @@ public class MeltDreamCrystalChestItem extends BlockItem implements GeoItem
 
             if(normalLootTable != null)
             {
-                tooltip.add(Component.translatable("tooltip.pasterdream.normal_loot_table", normalLootTable.getString("LootTable"), normalLootTable.getInt("weight"), normalLootTable.getDouble("luck_mutiplier_increase")));
+                tooltip.add(Component.translatable("tooltip.pasterdream.normal_loot_table", normalLootTable.getString("LootTable"), normalLootTable.getInt("weight"), normalLootTable.getDouble("luck_multiplier_increase")));
                 if(rareLootTable != null)
                 {
-                    tooltip.add(Component.translatable("tooltip.pasterdream.rare_loot_table", rareLootTable.getString("LootTable"), rareLootTable.getInt("weight"), rareLootTable.getDouble("luck_mutiplier_increase")));
+                    tooltip.add(Component.translatable("tooltip.pasterdream.rare_loot_table", rareLootTable.getString("LootTable"), rareLootTable.getInt("weight"), rareLootTable.getDouble("luck_multiplier_increase")));
                     if(legendLootTable != null)
                     {
-                        tooltip.add(Component.translatable("tooltip.pasterdream.legend_loot_table", legendLootTable.getString("LootTable"), legendLootTable.getInt("weight"), legendLootTable.getDouble("luck_mutiplier_increase")));
+                        tooltip.add(Component.translatable("tooltip.pasterdream.legend_loot_table", legendLootTable.getString("LootTable"), legendLootTable.getInt("weight"), legendLootTable.getDouble("luck_multiplier_increase")));
                     }
                 }
             }

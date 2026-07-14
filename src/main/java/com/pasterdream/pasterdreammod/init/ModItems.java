@@ -31,6 +31,7 @@ import com.pasterdream.pasterdreammod.world.item.drinkandfooditem.PasterDreamFoo
 import com.pasterdream.pasterdreammod.world.item.armoritem.DyedreamArmorItem;
 import com.pasterdream.pasterdreammod.world.item.hellfiretool.*;
 import com.pasterdream.pasterdreammod.world.item.lootgenerator.LootGeneratorItem;
+import com.pasterdream.pasterdreammod.world.item.meltdreamcrystalchestresettool.MeltDreamCrystalChestResetToolItem;
 import com.pasterdream.pasterdreammod.world.item.meltdreamtool.*;
 import com.pasterdream.pasterdreammod.world.item.modelbreakparticleproviderblockitem.ModelBreakParticleProviderBlockItem;
 import com.pasterdream.pasterdreammod.world.item.moltengoldtool.*;
@@ -1178,6 +1179,7 @@ public class ModItems {
     //调试工具
     public static final RegistryObject<Item> DEBUG_SWORD = ITEMS.register("debug_sword", () -> new DebugSwordItem());
     public static final RegistryObject<Item> LOOT_GENERATOR = ITEMS.register("loot_generator", () -> new LootGeneratorItem());
+    public static final RegistryObject<Item> MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL = ITEMS.register("melt_dream_crystal_chest_reset_tool", () -> new MeltDreamCrystalChestResetToolItem(new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0 = ITEMS.register("model_break_particle_provider_block_0", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get(), new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1 = ITEMS.register("model_break_particle_provider_block_1", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get(), new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2 = ITEMS.register("model_break_particle_provider_block_2", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get(), new Item.Properties()));

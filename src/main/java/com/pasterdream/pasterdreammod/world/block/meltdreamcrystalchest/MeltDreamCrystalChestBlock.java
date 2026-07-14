@@ -98,22 +98,9 @@ public class MeltDreamCrystalChestBlock extends BaseEntityBlock
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack)
     {
-        if (itemStack.getTag() != null && itemStack.getTag().contains("LootTables", Tag.TAG_LIST))
+        if (itemStack.getTag() != null && itemStack.getTag().contains("LootTables", Tag.TAG_LIST) && level.getBlockEntity(pos) instanceof MeltDreamCrystalChestBlockEntity meltDreamCrystalChest)
         {
-            if (level.getBlockEntity(pos) instanceof MeltDreamCrystalChestBlockEntity chest)
-            {
-                ListTag list = itemStack.getTag().getList("LootTables", Tag.TAG_COMPOUND);
-                List<MeltDreamCrystalChestBlockEntity.LootTableEntry> entries = new ArrayList<>();
-                for (int i = 0; i < list.size(); i++)
-                {
-                    CompoundTag entryTag = list.getCompound(i);
-                    String lootTable = entryTag.getString("LootTable");
-                    int weight = entryTag.getInt("weight");
-                    float luckMult = entryTag.getFloat("luck_multiplier_increase");
-                    entries.add(new MeltDreamCrystalChestBlockEntity.LootTableEntry(lootTable, weight, luckMult, i + 1));
-                }
-                chest.setLootEntries(entries);
-            }
+            meltDreamCrystalChest.setLootTablesNbt(itemStack.getTag().getList("LootTables", Tag.TAG_COMPOUND));
         }
     }
 

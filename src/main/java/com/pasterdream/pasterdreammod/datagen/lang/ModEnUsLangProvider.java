@@ -342,6 +342,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add(ModItems.DEBUG_SWORD.get(), "Debug Sword");
         add(ModItems.LOOT_GENERATOR.get(), "Loot Generator");
+        add(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get(), "Melt Dream Crystal Chest Reset Tool");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get(), "Model Break Particle Provider Block 0");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get(), "Model Break Particle Provider Block 1");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get(), "Model Break Particle Provider Block 2");
@@ -417,6 +418,14 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("option.pasterdream.A: 模拟下界合金镐精准采集破坏", "A: Simulate Break With Silk Touch Netherite Pickaxe");
         add("option.pasterdream.S: 获取对应的BlockItem并掉落，并将方块设置为空气", "S: Get Corresponding BlockItem And Drop, And Set Block To Air");
         add("option.pasterdream.D: 将方块设置为空气的同时不触发方块更新", "D: Set The Block To Air Without NeighborChange");
+
+        add("tooltip.pasterdream.normal_loot_table", "§3Normal Loot Table：%s，Weight: %d，Luck Multiplier Increase: %f");
+        add("tooltip.pasterdream.rare_loot_table", "§aRare Loot Table：%s，Weight: %d，Luck Multiplier Increase: %f");
+        add("tooltip.pasterdream.legend_loot_table", "§dLegend Loot Table：%s，Weight: %d，Luck Multiplier Increase: %f");
+        add("tooltip.pasterdream.not_have_loot_table", "§cNot Have Loot Table");
+        add("tooltip.pasterdream.按住Shift+右键点击打开的融梦水晶箱可复位（写入此物品NBT中包含的战利品列表）", "§7Press Shift And Right Mouse Button Click Opened Melt Dream Crystal Chest Can Reset(Write LootTable From NBT Which In This Item)");
+
+        add("message.pasterdream.融梦水晶箱重置工具只能重置打开的融梦水晶箱", "Melt Dream Crystal Chest Reset Tool Only Can Reset Opened Melt Dream Crystal Chest");
 
         add("effect.pasterdream.sculk_armor_buff", "Sculk Echo");
         add("effect.pasterdream.dyedream_armor_buff", "Dyedream Protection");

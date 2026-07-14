@@ -4,7 +4,7 @@ import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.blueprintwithnbt.BluePrintWithNBT;
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.dreamnoteswithnbt.DreamNotesWithNBT;
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.lootgeneratorwithnbt.LootGeneratorWithNBT;
-import com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest.TestMeltDreamCrystalChestWithNBT;
+import com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest.MeltDreamCrystalChestLootTableNBT;
 import com.pasterdream.pasterdreammod.world.item.DeepTreasureItem;
 import com.pasterdream.pasterdreammod.world.item.blueprints.AddBluePrintContentListTag;
 import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
@@ -538,9 +538,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get());
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get());
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3.get());
-                        output.accept(TestMeltDreamCrystalChestWithNBT.testNBT());
-                        output.accept(TestMeltDreamCrystalChestWithNBT.dyedreamMeltDreamCrystalChestNBT());
-
+                        output.accept(MeltDreamCrystalChestLootTableNBT.meltDreamCrystalChestDyedreamWorldNBT(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()));
+                        output.accept(MeltDreamCrystalChestLootTableNBT.onlyNormal(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()));
+                        output.accept(MeltDreamCrystalChestLootTableNBT.onlyRare(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()));
+                        output.accept(MeltDreamCrystalChestLootTableNBT.onlyLegend(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()));
+                        output.accept(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get());
+                        output.accept(MeltDreamCrystalChestLootTableNBT.meltDreamCrystalChestDyedreamWorldNBT(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
+                        output.accept(MeltDreamCrystalChestLootTableNBT.onlyNormal(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
+                        output.accept(MeltDreamCrystalChestLootTableNBT.onlyRare(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
+                        output.accept(MeltDreamCrystalChestLootTableNBT.onlyLegend(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
                     }).build());
 
     // ===== 拓展 =====
