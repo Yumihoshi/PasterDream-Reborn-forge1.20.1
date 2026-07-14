@@ -326,8 +326,6 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         blockEntityTag.putInt("y", worldPosition.getY());
         blockEntityTag.putInt("z", worldPosition.getZ());
 
-        System.out.println("blockEntityTag = " + blockEntityTag);
-
         LevelChunk chunk = level.getChunkAt(worldPosition);
 
         chunk.setBlockState(worldPosition, openState, false);
@@ -373,7 +371,7 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         {
             controller.setAnimation(RawAnimation.begin().thenLoop("0"));
         }
-        else
+            else
             {
                 controller.setAnimation(RawAnimation.begin().thenPlay(String.valueOf(animationState)));
             }

@@ -10,11 +10,11 @@ public class ModDreamNotesContentRelation
         DreamNotesRegistry.register("developerNameList", 786, 1024, GUIBackGroundRender.DEVELOPER_NAME_LIST);
         DreamNotesRegistry.register("dyedreamCreak", 786, 1024, GUIBackGroundRender.DYEDREAM_CRACK);
         DreamNotesRegistry.register("dyedreamWorld", 786, 1024, GUIBackGroundRender.DYEDREAM_WORLD);
-        DreamNotesRegistry.register("pinkSlime", 786, 1024, GUIBackGroundRender.PINK_SLIME);
-        DreamNotesRegistry.register("whiteCorolla", 786, 1024, GUIBackGroundRender.WHITE_COROLLA);
-        DreamNotesRegistry.register("paleBoneNeedle", 786, 1024, GUIBackGroundRender.PALE_BONE_NEEDLE);
-        DreamNotesRegistry.register("dreamFertilizer", 786, 1024, GUIBackGroundRender.DREAM_FERTILIZER);
-        DreamNotesRegistry.register("dreamAccumulator", 786, 1024, GUIBackGroundRender.DREAM_ACCUMULATOR);
+        DreamNotesRegistry.register("pinkSlime", 768, 1024, GUIBackGroundRender.PINK_SLIME);
+        DreamNotesRegistry.register("whiteCorolla", 768, 1024, GUIBackGroundRender.WHITE_COROLLA);
+        DreamNotesRegistry.register("paleBoneNeedle", 768, 1024, GUIBackGroundRender.PALE_BONE_NEEDLE);
+        DreamNotesRegistry.register("dreamFertilizer", 768, 1024, GUIBackGroundRender.DREAM_FERTILIZER);
+        DreamNotesRegistry.register("dreamAccumulator", 768, 1024, GUIBackGroundRender.DREAM_ACCUMULATOR);
 
         DreamNotesRegistry.register("theLurkersInTheShadow", 786, 1024, GUIBackGroundRender.THE_LURKERS_IN_THE_SHADOW);
         DreamNotesRegistry.register("infestedChurch", 786, 1024, GUIBackGroundRender.INFESTED_CHURCH);
