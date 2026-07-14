@@ -778,5 +778,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9On successful dodge: gain Counterattack I (0:10)");
         add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9Next attack: Attack +3, Skill DMG ×+50%, then buff ends");
         add("effect.pasterdream.counter_attack_buff", "Counterattack");
+
+        // Advancements - Story
+        add("advancements.pasterdream.story.root.title", "PasterDream");
+        add("advancements.pasterdream.story.root.description", "Begins with a wish from the heart");
+        add("advancements.pasterdream.story.pure_and_flawless.title", "Pure and Flawless");
+        add("advancements.pasterdream.story.pure_and_flawless.description", "Obtain a Pale Snow Lotus");
+        add("advancements.pasterdream.story.use_pale_boneneedle.title", "Ouch, it's hurt!");
+        add("advancements.pasterdream.story.use_pale_boneneedle.description", "Use the Pale Boneneedle to Wake You up from the Dream");
     }
 }

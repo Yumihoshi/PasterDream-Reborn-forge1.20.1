@@ -4,6 +4,7 @@ import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -72,6 +73,14 @@ public class RootsPaleBoneneedleItem extends Item {
             player.hurt(player.level().damageSources().generic(), 1.0f);
 
             if (PaleBoneneedleItem.isDreamDimension(level) && level instanceof ServerLevel serverLevel) {
+                // 授予进度：使用苍白骨针（仅在梦维度有效）
+                if (player instanceof ServerPlayer sp) {
+                    sp.getAdvancements().award(
+                            sp.getServer().getAdvancements().getAdvancement(
+                                    ResourceLocation.fromNamespaceAndPath("pasterdream", "story/use_pale_boneneedle")),
+                            "used_boneneedle");
+                }
+
                 serverLevel.sendParticles(ModParticleTypes.DUST_0_PARTICLE.get(),
                         player.getX(), player.getY(), player.getZ(),
                         64, 0.1, 1, 0.1, 0.2);

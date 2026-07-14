@@ -15,6 +15,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -101,6 +102,13 @@ public class PaleBoneneedleItem extends Item {
         player.hurt(player.level().damageSources().generic(), 1.0f);
 
         if (isDreamDimension(level) && level instanceof ServerLevel serverLevel) {
+            // 授予进度：使用苍白骨针（仅在梦维度有效）
+            if (player instanceof ServerPlayer sp) {
+                sp.getAdvancements().award(
+                        sp.getServer().getAdvancements().getAdvancement(
+                                ResourceLocation.fromNamespaceAndPath("pasterdream", "story/use_pale_boneneedle")),
+                        "used_boneneedle");
+            }
             serverLevel.sendParticles(ModParticleTypes.DUST_0_PARTICLE.get(),
                     player.getX(), player.getY(), player.getZ(),
                     64, 0.1, 1, 0.1, 0.2);
