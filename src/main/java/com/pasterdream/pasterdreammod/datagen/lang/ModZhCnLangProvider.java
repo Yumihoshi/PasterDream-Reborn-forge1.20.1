@@ -349,6 +349,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add(ModItems.DEBUG_SWORD.get(), "调试之剑");
         add(ModItems.LOOT_GENERATOR.get(), "战利品生成器");
+        add(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get(), "融梦水晶箱重置工具");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get(), "破碎粒子提供方块0");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get(), "破碎粒子提供方块1");
         add(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get(), "破碎粒子提供方块2");
@@ -414,6 +415,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.rare_loot_table", "§a稀有战利品：%s，权重：%d，幸运权重倍率：%f");
         add("tooltip.pasterdream.legend_loot_table", "§d史诗战利品：%s，权重：%d，幸运权重倍率：%f");
         add("tooltip.pasterdream.not_have_loot_table", "§c无战利品");
+        add("tooltip.pasterdream.按住Shift+右键点击打开的融梦水晶箱可复位（写入此物品NBT中包含的战利品列表）", "§7按住Shift+右键点击打开的融梦水晶箱可复位（写入此物品NBT中包含的战利品列表）");
+
+        add("message.pasterdream.融梦水晶箱重置工具只能重置打开的融梦水晶箱", "融梦水晶箱重置工具只能重置打开的融梦水晶箱");
 
         add("message.pasterdream.loot_generator.no_loot_table", "§c战利品生成器未设置战利品表");
         add("message.pasterdream.loot_generator.not_container", "§c目标方块不是容器");
@@ -505,7 +509,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.pinkSlime", "§d粉红史莱姆");
         add("tooltip.pasterdream.whiteCorolla", "§d苍白雪莲");
         add("tooltip.pasterdream.paleBoneNeedle", "§d苍白骨针");
-        add("tooltip.pasterdream.dreamFertilizer", "§d染梦肥泥");
+        add("tooltip.pasterdream.dreamFertilizer", "§d衍梦肥泥");
         add("tooltip.pasterdream.dreamAccumulator", "§d蓄梦池");
 
         add("tooltip.pasterdream.theLurkersInTheShadow", "§8阴影中的潜藏者");

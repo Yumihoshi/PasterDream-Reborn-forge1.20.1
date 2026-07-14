@@ -1,11 +1,9 @@
 package com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest;
 
-import com.pasterdream.pasterdreammod.init.ModBlockEntities;
-import com.pasterdream.pasterdreammod.init.ModBlocks;
-import com.pasterdream.pasterdreammod.init.ModNetwork;
-import com.pasterdream.pasterdreammod.init.ModSounds;
+import com.pasterdream.pasterdreammod.init.*;
 import com.pasterdream.pasterdreammod.network.animationstatechange.AnimationStateChangePacket;
 import com.pasterdream.pasterdreammod.world.block.geckolibblock.AnimatableSync;
+import net.minecraft.commands.arguments.blocks.BlockInput;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -21,10 +19,14 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.LevelChunk;
+import net.minecraft.world.level.chunk.LevelChunkSection;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -41,14 +43,12 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NavigableMap;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements GeoBlockEntity, AnimatableSync
 {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+    private ListTag lootTablesNbt = new ListTag();
     private int animationState = 0; //0:关闭,1:普通,2:稀有,3:传奇
     private int totalTicks = -1;
     private int tickCounter = 0;
@@ -86,18 +86,8 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         animationState = tag.getInt("AnimationState");
         totalTicks = tag.getInt("TicksUntilOpen");
         lootEntries.clear();
-        if (tag.contains("LootTables", Tag.TAG_LIST))
-        {
-            ListTag list = tag.getList("LootTables", Tag.TAG_COMPOUND);
-            for (int i = 0; i < list.size(); i++)
-            {
-                CompoundTag entryTag = list.getCompound(i);
-                String lootTable = entryTag.getString("LootTable");
-                int weight = entryTag.getInt("weight");
-                float luckMult = entryTag.getFloat("luck_multiplier_increase");
-                lootEntries.add(new LootTableEntry(lootTable, weight, luckMult, i + 1));
-            }
-        }
+        lootTablesNbt = tag.getList("LootTables", Tag.TAG_COMPOUND);
+        spawnLootEntriesWithLootTablesNbt();
     }
 
     @Override
@@ -106,22 +96,25 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         super.saveAdditional(tag);
         tag.putInt("AnimationState", animationState);
         tag.putInt("TicksUntilOpen", totalTicks);
-        ListTag list = new ListTag();
-        for (LootTableEntry entry : lootEntries)
-        {
-            CompoundTag entryTag = new CompoundTag();
-            entryTag.putString("LootTable", entry.lootTable());
-            entryTag.putInt("weight", entry.weight());
-            entryTag.putFloat("luck_multiplier_increase", entry.luckMultiplier());
-            list.add(entryTag);
-        }
-        tag.put("LootTables", list);
+        tag.put("LootTables", lootTablesNbt);
     }
 
-    public void setLootEntries(List<LootTableEntry> entries)
+    public void setLootTablesNbt(ListTag list)
     {
-        this.lootEntries = entries;
+        lootTablesNbt = list.copy();
         setChangedAndSync();
+    }
+
+    public void spawnLootEntriesWithLootTablesNbt()
+    {
+        for (int i = 0; i < lootTablesNbt.size(); i++)
+        {
+            CompoundTag entryTag = lootTablesNbt.getCompound(i);
+            String lootTable = entryTag.getString("LootTable");
+            int weight = entryTag.getInt("weight");
+            float luckMult = entryTag.getFloat("luck_multiplier_increase");
+            lootEntries.add(new LootTableEntry(lootTable, weight, luckMult, i + 1));
+        }
     }
 
     public void openChest(ServerPlayer player)
@@ -138,6 +131,7 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         }
 
         //抽奖决定品质
+        spawnLootEntriesWithLootTablesNbt();
         int quality = rollQuality(player);
         if (quality != 1 && quality != 2 && quality != 3)
         {
@@ -220,7 +214,8 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         List<LootTableEntry> entries = lootEntries;
         if (entries.isEmpty())
         {
-            return 1;
+            System.err.println("entries.isEmpty() == true");
+            return 0;
         }
 
         float luck = 0f;
@@ -235,7 +230,6 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         {
             //权重 = 基础权重 * (1 + 幸运值 * 倍率)
             double effectiveWeight = entry.weight() * (1.0 + luck * entry.luckMultiplier());
-            effectiveWeight = Math.max(effectiveWeight, 1);
             total += effectiveWeight;
             weightMap.put(total, entry.quality());
         }
@@ -308,7 +302,45 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         BlockState currentState = getBlockState();
         Direction facing = currentState.getValue(MeltDreamCrystalChestBlock.FACING);
         BlockState openState = ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get().defaultBlockState().setValue(MeltDreamCrystalChestBlock.FACING, facing);
-        level.setBlock(worldPosition, openState, 3);
+
+        CompoundTag toolTag = new CompoundTag();
+        toolTag.put("LootTables", lootTablesNbt.copy());
+
+        CompoundTag blockEntityTag = new CompoundTag();
+        CompoundTag Inventory = new CompoundTag();
+
+        ListTag items = new ListTag();
+        CompoundTag slotTag = new CompoundTag();
+        slotTag.putByte("Count", (byte) 1);
+        slotTag.putInt("Slot", 4);
+        slotTag.putString("id", "pasterdream:melt_dream_crystal_chest_reset_tool");
+        slotTag.put("tag", toolTag);
+        items.add(slotTag);
+
+        Inventory.put("Items", items);
+        Inventory.putInt("Size", 9);
+
+        blockEntityTag.put("Inventory", Inventory);
+        blockEntityTag.putString("id", "pasterdream:opened_melt_dream_crystal_chest");
+        blockEntityTag.putInt("x", worldPosition.getX());
+        blockEntityTag.putInt("y", worldPosition.getY());
+        blockEntityTag.putInt("z", worldPosition.getZ());
+
+        System.out.println("blockEntityTag = " + blockEntityTag);
+
+        LevelChunk chunk = level.getChunkAt(worldPosition);
+
+        chunk.setBlockState(worldPosition, openState, false);
+        chunk.removeBlockEntity(worldPosition);
+        BlockEntity blockEntity = BlockEntity.loadStatic(worldPosition, openState, blockEntityTag);
+        if (blockEntity != null)
+        {
+            blockEntity.setLevel(level);
+            chunk.setBlockEntity(blockEntity);
+        }
+        chunk.setUnsaved(true);
+
+        level.sendBlockUpdated(worldPosition, currentState, openState, 2);
     }
 
     private void setChangedAndSync()
