@@ -903,5 +903,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9成功回避伤害时获得反击I (0:10)");
         add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9下一次攻击：攻击力+3 战技伤害+50%，命中后效果解除");
         add("effect.pasterdream.counter_attack_buff", "反击");
+
+        // 进度 - 故事
+        add("advancements.pasterdream.story.root.title", "帕斯特之梦");
+        add("advancements.pasterdream.story.root.description", "以心之祈愿为始");
+        add("advancements.pasterdream.story.pure_and_flawless.title", "纯洁无暇");
+        add("advancements.pasterdream.story.pure_and_flawless.description", "获得一朵苍白雪莲");
+        add("advancements.pasterdream.story.use_pale_boneneedle.title", "哦，痛！");
+        add("advancements.pasterdream.story.use_pale_boneneedle.description", "使用苍白骨针在梦境中醒来");
     }
 }

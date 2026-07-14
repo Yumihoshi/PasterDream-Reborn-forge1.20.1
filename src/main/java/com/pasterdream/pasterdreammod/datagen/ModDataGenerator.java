@@ -38,6 +38,8 @@ public class ModDataGenerator {
         // 服务端数据生成
         generator.addProvider(event.includeServer(),
                 new ModWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(),
+                new ModAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModRecipesProvider(packOutput));
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(ModBlockLootTablesProvider::new, LootContextParamSets.BLOCK),
