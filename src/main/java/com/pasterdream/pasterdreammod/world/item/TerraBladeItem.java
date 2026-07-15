@@ -4,8 +4,11 @@ import com.pasterdream.pasterdreammod.helper.cooldown.SkillCooldownHelper;
 import com.pasterdream.pasterdreammod.capability.meltdreamenergy.MeltDreamEnergyHelper;
 import com.pasterdream.pasterdreammod.init.ModEntities;
 import com.pasterdream.pasterdreammod.init.ModItems;
+import com.pasterdream.pasterdreammod.init.ModNetwork;
 import com.pasterdream.pasterdreammod.init.ModSounds;
+import com.pasterdream.pasterdreammod.network.skill.TerraBladeSwingPacket;
 import com.pasterdream.pasterdreammod.world.entity.TerraswordWaveEntity;
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -24,8 +27,12 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.Comparator;
@@ -86,27 +93,16 @@ public class TerraBladeItem extends SwordItem {
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }
 
-    @Override
-    public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
-        if (!entity.level().isClientSide() && entity instanceof Player player) {
-            CompoundTag tag = stack.getOrCreateTag();
-            double skill = tag.getDouble("skill");
-            long activatedTick = tag.getLong("skill_tick");
-            // Prevent the same-tick swing from right-click from releasing a wave
-            if (skill >= 1 && entity.level().getGameTime() > activatedTick) {
-                executeSkillStage(player.level(), player, stack, (int) skill);
-            }
-        }
-        return super.onEntitySwing(stack, entity);
-    }
+    public static void executeSkillWave(Level level, Player player, ItemStack stack) {
+        CompoundTag tag = stack.getOrCreateTag();
+        int stage = (int) tag.getDouble("skill");
+        if (stage < 1) return;
 
-    private void executeSkillStage(Level level, Player player, ItemStack stack, int stage) {
         Vec3 look = player.getLookAngle();
         double x = player.getX() + look.x;
         double y = player.getY() + 1.5;
         double z = player.getZ() + look.z;
 
-        // Spawn sword wave entity
         TerraswordWaveEntity wave = ModEntities.TERRASWORD_WAVE.get().spawn(
                 (net.minecraft.server.level.ServerLevel) level,
                 BlockPos.containing(x, y, z),
@@ -117,7 +113,6 @@ public class TerraBladeItem extends SwordItem {
             wave.setXRot(player.getXRot());
             wave.setDeltaMovement(look.x * 2, look.y * 2, look.z * 2);
 
-            // Set damage data
             CompoundTag swordTag = stack.getOrCreateTag();
             double atk = swordTag.getDouble("paster_atk");
             if (stage == 3) {
@@ -134,7 +129,6 @@ public class TerraBladeItem extends SwordItem {
             waveData.putInt("looting", swordTag.getInt("looting"));
             waveData.putBoolean("ignore_iframe", swordTag.getBoolean("ignore_iframe"));
 
-            // Play sword wave sound at varying pitch per stage
             float pitch = switch (stage) {
                 case 2 -> 1.2f;
                 case 3 -> 1.4f;
@@ -149,11 +143,32 @@ public class TerraBladeItem extends SwordItem {
                     ModSounds.SWORD_WAVE.get(), SoundSource.PLAYERS, volume, pitch);
         }
 
-        // Advance to next stage (1→2→3→0)
         if (stage < 3) {
-            stack.getOrCreateTag().putDouble("skill", stage + 1);
+            tag.putDouble("skill", stage + 1);
         } else {
-            stack.getOrCreateTag().putDouble("skill", 0);
+            tag.putDouble("skill", 0);
+        }
+        tag.putLong("skill_tick", level.getGameTime());
+    }
+
+    @Mod.EventBusSubscriber({Dist.CLIENT})
+    public static class ClientHandler {
+        @SubscribeEvent
+        public static void onClientTick(TickEvent.ClientTickEvent event) {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc.player == null || mc.screen != null) return;
+
+            ItemStack stack = mc.player.getMainHandItem();
+            if (stack.getItem() instanceof TerraBladeItem) {
+                if (stack.getOrCreateTag().getDouble("skill") >= 1) {
+                    if (mc.hitResult == null || mc.hitResult.getType() == HitResult.Type.MISS) {
+                        while (mc.options.keyAttack.consumeClick()) {
+                            mc.player.swing(InteractionHand.MAIN_HAND);
+                            ModNetwork.CHANNEL.sendToServer(new TerraBladeSwingPacket());
+                        }
+                    }
+                }
+            }
         }
     }
 

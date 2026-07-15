@@ -11,7 +11,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -19,8 +18,6 @@ import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -84,35 +81,7 @@ public class TerraswordWaveEntity extends PathfinderMob {
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        if (source.is(DamageTypes.IN_FIRE))
-            return false;
-        if (source.getDirectEntity() instanceof AbstractArrow)
-            return false;
-        if (source.getDirectEntity() instanceof Player)
-            return false;
-        if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
-            return false;
-        if (source.is(DamageTypes.FALL))
-            return false;
-        if (source.is(DamageTypes.CACTUS))
-            return false;
-        if (source.is(DamageTypes.DROWN))
-            return false;
-        if (source.is(DamageTypes.LIGHTNING_BOLT))
-            return false;
-        if (source.is(DamageTypes.EXPLOSION))
-            return false;
-        if (source.is(DamageTypes.TRIDENT))
-            return false;
-        if (source.is(DamageTypes.FALLING_ANVIL))
-            return false;
-        if (source.is(DamageTypes.DRAGON_BREATH))
-            return false;
-        if (source.is(DamageTypes.WITHER))
-            return false;
-        if (source.is(DamageTypes.WITHER_SKULL))
-            return false;
-        return super.hurt(source, amount);
+        return false;
     }
 
     @Override
@@ -160,33 +129,31 @@ public class TerraswordWaveEntity extends PathfinderMob {
 
             double radius = 2.5 / 2d + sweepingEdge * 0.5;
             Vec3 center = new Vec3(this.getX(), this.getY(), this.getZ());
-            List<Entity> entities = level.getEntitiesOfClass(Entity.class,
+            List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class,
                     new AABB(center, center).inflate(radius), e -> true)
                     .stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(center))).toList();
-            for (Entity target : entities) {
-                if (!(target instanceof Player) && !(target instanceof TerraswordWaveEntity)) {
+            Player owner = resolveOwner();
+            for (LivingEntity target : entities) {
+                if (target != owner && !(target instanceof TerraswordWaveEntity)) {
                     float damage = (float) (2 + pasterAtk);
-                    if (target instanceof LivingEntity living) {
-                        if (smite > 0 && living.getMobType() == MobType.UNDEAD) {
-                            damage += smite * 2.5f;
-                        }
-                        if (bane > 0 && living.getMobType() == MobType.ARTHROPOD) {
-                            damage += bane * 2.5f;
-                        }
+                    if (smite > 0 && target.getMobType() == MobType.UNDEAD) {
+                        damage += smite * 2.5f;
+                    }
+                    if (bane > 0 && target.getMobType() == MobType.ARTHROPOD) {
+                        damage += bane * 2.5f;
                     }
                     if (data.getBoolean("ignore_iframe")) {
                         target.invulnerableTime = 0;
                     }
-                    Player attacker = resolveOwner();
-                    if (attacker != null) {
-                        target.hurt(this.damageSources().playerAttack(attacker), damage);
+                    if (owner != null) {
+                        target.hurt(this.damageSources().playerAttack(owner), damage);
                     } else {
                         target.hurt(this.damageSources().magic(), damage);
                     }
                     if (fireAspect > 0) {
                         target.setSecondsOnFire(fireAspect * 4);
                     }
-                    if (knockback > 0 && target instanceof LivingEntity) {
+                    if (knockback > 0) {
                         Vec3 kb = target.position().subtract(center).normalize().scale(knockback * 0.6);
                         target.push(kb.x, 0.2, kb.z);
                     }
