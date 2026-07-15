@@ -858,6 +858,15 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.get_beihairuo_tide_sword.title", "God of Tides");
         add("advancements.pasterdream.get_beihairuo_tide_sword.description", "Get the BeiHairuo Tide Sword; it holds the power of surging waves and riptide...");
 
+
+        // Patchouli book
+        add("pasterdream.seniors_dream", "Seniors Dream");
+        add("pasterdream.seniors_dream.landing_text", "...");
+        add("pasterdream.seniors_dream.category.test", "Test");
+        add("pasterdream.seniors_dream.category.test.desc", "A test category.");
+        add("pasterdream.seniors_dream.entry.welcome", "Welcome");
+        add("pasterdream.seniors_dream.entry.welcome.page0", "If you can see this, the book works!");
+
         // Entities
         add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");
