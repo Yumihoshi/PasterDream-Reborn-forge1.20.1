@@ -815,6 +815,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Entities
         add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");
+        add(ModEntities.PINK_SLIME.get(), "Pink Slime");
+        add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "Pink Slime Spawn Egg");
 
     }
 }

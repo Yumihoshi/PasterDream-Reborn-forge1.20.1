@@ -91,8 +91,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.List;
-
 public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS =
@@ -230,7 +228,7 @@ public class ModItems {
     public static final RegistryObject<Item> ATTACK_ENHANCE_STONE = ITEMS.register("attack_enhance_stone",
             () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON)) {
                 @Override
-                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
                     super.appendHoverText(stack, level, tooltip, flag);
                     tooltip.add(Component.translatable("tooltip.pasterdream.enhance_stone.usage"));
                     tooltip.add(Component.translatable("tooltip.pasterdream.attack_enhance_stone.effect"));
@@ -239,7 +237,7 @@ public class ModItems {
     public static final RegistryObject<Item> LUCK_ENHANCE_STONE = ITEMS.register("luck_enhance_stone",
             () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON)) {
                 @Override
-                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
                     super.appendHoverText(stack, level, tooltip, flag);
                     tooltip.add(Component.translatable("tooltip.pasterdream.enhance_stone.usage"));
                     tooltip.add(Component.translatable("tooltip.pasterdream.luck_enhance_stone.effect"));
@@ -391,7 +389,7 @@ public class ModItems {
                 }
 
                 @Override
-                public @NotNull InteractionResult useOn(UseOnContext context) {
+                public @NotNull InteractionResult useOn(@NotNull UseOnContext context) {
                     Level level = context.getLevel();
                     var player = context.getPlayer();
                     if (player == null) return InteractionResult.PASS;
@@ -1178,8 +1176,8 @@ public class ModItems {
             () -> new RecordItem(0, ModSounds.SNOWFALL_DREAM_MUSIC, new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 2520));
 
     //调试工具
-    public static final RegistryObject<Item> DEBUG_SWORD = ITEMS.register("debug_sword", () -> new DebugSwordItem());
-    public static final RegistryObject<Item> LOOT_GENERATOR = ITEMS.register("loot_generator", () -> new LootGeneratorItem());
+    public static final RegistryObject<Item> DEBUG_SWORD = ITEMS.register("debug_sword", DebugSwordItem::new);
+    public static final RegistryObject<Item> LOOT_GENERATOR = ITEMS.register("loot_generator", LootGeneratorItem::new);
     public static final RegistryObject<Item> MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL = ITEMS.register("melt_dream_crystal_chest_reset_tool", () -> new MeltDreamCrystalChestResetToolItem(new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0 = ITEMS.register("model_break_particle_provider_block_0", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get(), new Item.Properties()));
     public static final RegistryObject<Item> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1 = ITEMS.register("model_break_particle_provider_block_1", () -> new ModelBreakParticleProviderBlockItem(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get(), new Item.Properties()));
@@ -1189,14 +1187,16 @@ public class ModItems {
     //特殊道具
     public static final RegistryObject<Item> DREAM_HARP_OF_WANDERER = ITEMS.register("dream_harp_of_wanderer",
             DreamHarpOfWandererItem::new);
-    public static final RegistryObject<Item> SAND_OF_TIME = ITEMS.register("sand_of_time", () -> new SandofTimeItem());
-    public static final RegistryObject<Item> STORAGE_BAG = ITEMS.register("storage_bag", () -> new StorageBagItem());
-    public static final RegistryObject<Item> LARGE_STORAGE_BAG = ITEMS.register("large_storage_bag", () -> new LargeStorageBagItem());
-    public static final RegistryObject<Item> STRAWBERRY_HEART = ITEMS.register("strawberry_heart", () -> new StrawberryHeartItem());
+    public static final RegistryObject<Item> SAND_OF_TIME = ITEMS.register("sand_of_time", SandofTimeItem::new);
+    public static final RegistryObject<Item> STORAGE_BAG = ITEMS.register("storage_bag", StorageBagItem::new);
+    public static final RegistryObject<Item> LARGE_STORAGE_BAG = ITEMS.register("large_storage_bag", LargeStorageBagItem::new);
+    public static final RegistryObject<Item> STRAWBERRY_HEART = ITEMS.register("strawberry_heart", StrawberryHeartItem::new);
 
     // 刷怪蛋
     public static final RegistryObject<Item> PINK_CHICKEN_SPAWN_EGG = ITEMS.register("pink_chicken_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.PINK_CHICKEN, 0xf3e3f2, 0xbf038f, new Item.Properties()));
+    public static final RegistryObject<Item> PINK_SLIME_SPAWN_EGG = ITEMS.register("pink_slime_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.PINK_SLIME, 0xe4a8d9, 0xd46daf, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

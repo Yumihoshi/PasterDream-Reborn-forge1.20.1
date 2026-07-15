@@ -88,6 +88,7 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onShelterLivingHurt);
         modEventBus.addListener(this::AddOverlays);
         modEventBus.addListener(this::AddEntityRenderersEvent);
+        modEventBus.addListener(this::AddRegisterLayerDefinitions);
         MinecraftForge.EVENT_BUS.addListener(this::onAddReloadListeners);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -162,6 +163,11 @@ public class PasterDreamMod
     {
         ModBlockEntityRenderer.EntityRenderersEventRegister(event);
         ModEntityRenderer.registerRenderers(event);
+    }
+
+    private void AddRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event)
+    {
+        ModEntityRenderer.registerLayerDefinitions(event);
     }
 
     private void onAddReloadListeners(AddReloadListenerEvent event)
