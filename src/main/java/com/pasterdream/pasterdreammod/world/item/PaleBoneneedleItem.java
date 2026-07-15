@@ -102,8 +102,10 @@ public class PaleBoneneedleItem extends Item {
         player.hurt(player.level().damageSources().generic(), 1.0f);
 
         if (isDreamDimension(level) && level instanceof ServerLevel serverLevel) {
-            // 授予进度：使用苍白骨针（仅在梦维度有效）
+            boolean wasFalling = player.fallDistance > 10;
+
             if (player instanceof ServerPlayer sp) {
+                // 授予进度：使用苍白骨针
                 sp.getAdvancements().award(
                         sp.getServer().getAdvancements().getAdvancement(
                                 ResourceLocation.fromNamespaceAndPath("pasterdream", "story/use_pale_boneneedle")),
@@ -117,6 +119,13 @@ public class PaleBoneneedleItem extends Item {
 
             scheduleDelayed(() -> {
                 teleportToOverworldAndSpawn(serverLevel, player);
+                // 挑战进度：回主世界后授予（梦境中跌落>10格使用骨针）
+                if (wasFalling && player instanceof ServerPlayer sp) {
+                    sp.getAdvancements().award(
+                            sp.getServer().getAdvancements().getAdvancement(
+                                    ResourceLocation.fromNamespaceAndPath("pasterdream", "story/human_falls_out_of_dream")),
+                            "fell_and_used");
+                }
                 player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 100, 0));
                 player.getCooldowns().addCooldown(this, 100);
             });

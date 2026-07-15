@@ -911,5 +911,17 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.pure_and_flawless.description", "获得一朵苍白雪莲");
         add("advancements.pasterdream.story.use_pale_boneneedle.title", "哦，痛！");
         add("advancements.pasterdream.story.use_pale_boneneedle.description", "使用苍白骨针在梦境中醒来");
+        add("advancements.pasterdream.story.human_falls_out_of_dream.title", "人类坠出梦境");
+        add("advancements.pasterdream.story.human_falls_out_of_dream.description", "你一时分不清你的痛是摔出来的还是被骨针扎出来的");
+
+        // 进度 - 原版拓展
+        add("advancements.pasterdream.adventure.forgotten_sword_tomb.title", "被遗忘的剑冢");
+        add("advancements.pasterdream.adventure.forgotten_sword_tomb.description", "发现失落剑冢，深藏于丛林深处的剑冢");
+        add("advancements.pasterdream.story.get_the_lost_sword.title", "遗忘之剑");
+        add("advancements.pasterdream.story.get_the_lost_sword.description", "获得失落之剑，它与丛林的力量似乎共鸣……");
+        add("advancements.pasterdream.story.dig_up_a_tomb.title", "邻家有女初长成，力拔三兮气盖世");
+        add("advancements.pasterdream.story.dig_up_a_tomb.description", "你……你把什么东西挖下来了？？？");
+        add("advancements.pasterdream.new_standard_sword_drawing.title", "新概念拔剑");
+        add("advancements.pasterdream.new_standard_sword_drawing.description", "因为你拔不出这把剑，气急败坏之下，索性你把你的敌人当作了开石头的工具！");
     }
 }
