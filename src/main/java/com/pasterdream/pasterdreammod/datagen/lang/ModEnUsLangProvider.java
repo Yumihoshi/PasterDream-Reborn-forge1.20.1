@@ -787,9 +787,34 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.pure_and_flawless.description", "Obtain a Pale Snow Lotus");
         add("advancements.pasterdream.story.use_pale_boneneedle.title", "Ouch, it's hurt!");
         add("advancements.pasterdream.story.use_pale_boneneedle.description", "Use the Pale Boneneedle to Wake You up from the Dream");
+        add("advancements.pasterdream.story.human_falls_out_of_dream.title", "Human Falls out of Dream");
+        add("advancements.pasterdream.story.human_falls_out_of_dream.description", "You can’t tell for a moment whether your pain comes from falling or from being pierced by a bone needle.");
+
+        // Advancements - Adventure Expansion
+        add("advancements.pasterdream.adventure.forgotten_sword_tomb.title", "The Forgotten Sword Tomb");
+        add("advancements.pasterdream.adventure.forgotten_sword_tomb.description", "Discovered the lost sword tomb, a sword tomb hidden deep in the jungle.");
+        add("advancements.pasterdream.story.get_the_lost_sword.title", "Sword of Oblivion");
+        add("advancements.pasterdream.story.get_the_lost_sword.description", "Got the Sword Embryo, it seems to resonate with the power of the jungle…");
+        add("advancements.pasterdream.story.dig_up_a_tomb.title", "The girl next door has just grown up, strong and full of extraordinary strength");
+        add("advancements.pasterdream.story.dig_up_a_tomb.description", "You... what exactly did you dig up???");
+        add("advancements.pasterdream.new_standard_sword_drawing.title", "New Standard Sword Drawing");
+        add("advancements.pasterdream.new_standard_sword_drawing.description", "Because you couldn't pull out the sword, you ended up using your enemy as a tool to break stones!");
+        add("advancements.pasterdream.craft_kusanagi.title", "Power of the Jungle");
+        add("advancements.pasterdream.craft_kusanagi.description", "Craft Kusanagi, a sword imbued with the power of the jungle. It is hungrily seeking lost souls...");
+        add("advancements.pasterdream.get_murakumo_kusanagi.title", "Lost Souls Under the Sword");
+        add("advancements.pasterdream.get_murakumo_kusanagi.description", "Let Kusanagi further evolve by killing enemies.");
+
+        // Advancements - Nether Expansion
+        add("advancements.pasterdream.get_molten_gold_ingot.title", "Real Gold Does Not Fear Fire");
+        add("advancements.pasterdream.get_molten_gold_ingot.description", "Obtain Molten Gold Ingot, smelted from a kind of hot gold ore from the Nether.");
+        add("advancements.pasterdream.craft_hellfire_sword.title", "Blazing Sword");
+        add("advancements.pasterdream.craft_hellfire_sword.description", "Craft a Hellfire Sword, it resonates with the drop of a terrifying undead creature.");
+        add("advancements.pasterdream.craft_inferno_sword.title", "Inferno Fire");
+        add("advancements.pasterdream.craft_inferno_sword.description", "Inlay a Nether Star into the Hellfire Sword to let it reach its final evolution.");
 
         // Entities
         add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");
+
     }
 }
