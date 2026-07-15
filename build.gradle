@@ -82,6 +82,9 @@ dependencies {
 
     // JEI（本地 libs）
     implementation fg.deobf("blank:jei-1.20.1-forge:15.20.0.112")
+
+    // Patchouli（本地 libs）
+    implementation fg.deobf("blank:Patchouli:1.20.1-85-FORGE")
 }
 
 tasks.named('processResources', ProcessResources).configure {
