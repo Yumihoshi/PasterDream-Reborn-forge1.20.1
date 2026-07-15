@@ -5,11 +5,11 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.network.chat.Component;
 
-public class DownArrowButton extends Button
+public class RightArrowButton extends Button
 {
-    public DownArrowButton(int x, int y, OnPress onPress)
+    public RightArrowButton(int x, int y, OnPress onPress)
     {
-        super(x, y, 15, 22, Component.empty(), onPress, DEFAULT_NARRATION);
+        super(x, y, 22, 15, Component.empty(), onPress, DEFAULT_NARRATION);
     }
 
     @Override
@@ -17,11 +17,11 @@ public class DownArrowButton extends Button
     {
         if(isHovered())
         {
-            GUIBackGroundRender.rendDownButtonHovered(guiGraphics, getX(), getY());
+            GUIBackGroundRender.rendRightButtonHovered(guiGraphics, getX(), getY());
         }
-            else
-            {
-                GUIBackGroundRender.rendDownButton(guiGraphics, getX(), getY());
-            }
+        else
+        {
+            GUIBackGroundRender.rendRightButton(guiGraphics, getX(), getY());
+        }
     }
 }

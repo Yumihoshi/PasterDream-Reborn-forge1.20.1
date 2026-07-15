@@ -104,6 +104,7 @@ public class PasterDreamMod
         FluidHandlerResolvers.FluidHandlerResolverRegister();
         ModFluidContainerRelation.registerFluidContainerRelation();
         ModDreamNotesContentRelation.registerDreamNotesContentRelation();
+        ModDreamNotesBookContentRelation.registerDreamNotesBookContentRelation();
         ModCropRelation.registerCropRelation();
     }
 

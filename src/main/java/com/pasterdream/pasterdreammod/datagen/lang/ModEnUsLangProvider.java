@@ -527,6 +527,40 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("recipe.pasterdream.copy", "Copy");
         add("recipe.pasterdream.research", "Research");
 
+        add("book.pasterdream.title.花园解密:迷梦冶梦莲", "Garden Decode: Misty Dreaming Lotus");
+        add("book.pasterdream.title.花园解密:凛冽雪绒花", "Garden Decode: Piercing Edel Weiss");
+        add("book.pasterdream.title.花园解密:九尾狐", "Garden Decode: Golden Fox");
+        add("book.pasterdream.title.染梦游记 其一", "Dyedream Travelogue 1");
+        add("book.pasterdream.title.染梦游记 其二", "Dyedream Travelogue 2");
+        add("book.pasterdream.title.染梦游记 其三", "Dyedream Travelogue 3");
+        add("book.pasterdream.title.染梦教堂 其一", "Dream Church 1");
+        add("book.pasterdream.title.染梦教堂 其二", "Dream Church 2");
+        add("book.pasterdream.title.染梦教堂 其三", "Dream Church 3");
+        add("book.pasterdream.title.染梦水晶球", "Dyedream Crystal Ball");
+        add("book.pasterdream.title.祈愿树", "Dream Wishing Tree");
+        add("book.pasterdream.title.温暖的“寒风”", "Warm Cold Wind");
+        add("book.pasterdream.title.粉顶蘑菇屋", "Pink Agalic House");
+        add("book.pasterdream.title.融梦涌泉井", "Melt Dream Liquid Well");
+        add("book.pasterdream.title.浮空岛日记", "Floating Island Diary");
+        add("book.pasterdream.title.落叶归根 裂荚归冠", "Falling Leaves Return To Their Roots, Cracked Pods Return To Their Crowns");
+        add("book.pasterdream.title.梦境漂泊", "Dream Floating");
+        add("book.pasterdream.title.气泡生态球", "Big Bubble");
+        add("book.pasterdream.title.染梦实验室", "Dream Laboratory");
+        add("book.pasterdream.title.来往于梦", "Interacting With Dream");
+        add("book.pasterdream.title.染梦世界树", "Dyedream World Tree");
+        add("book.pasterdream.title.代达罗斯之翼与浮空岛", "Wings Of 代达罗斯 And Floating Island");
+        add("book.pasterdream.title.探求秘辛", "Desert Cottage");
+        add("book.pasterdream.title.研究笔记:黑金属", "Research Notes: Black Metal");
+        add("book.pasterdream.title.灯影游记 其二", "Lamp Shadow Travelogue 2");
+        add("book.pasterdream.title.黑暗之地", "Shadow Place");
+        add("book.pasterdream.title.阴影小木屋", "Shadow Fungus House");
+        add("book.pasterdream.title.阴影地下工作室", "Shadow Underground Workroom");
+        add("book.pasterdream.title.>被阴影浸染的字迹潦草的笔记<", ">Shadow Dyed Sloppy Handwriting Notes<");
+        add("book.pasterdream.title.关于黑暗之手的随笔", "Regarding Shadow Hands Essay");
+        add("book.pasterdream.title.与黑色双手的决战和败北", "Decisive Battle With Shadow Hands And Fail");
+        add("book.pasterdream.title.破风的骑士", "Wind Break Knight");
+        add("book.pasterdream.title.清晨的新风", "Morning New Wind");
+
         // Dew Tooltip
         add("tooltip.pasterdream.drink_effect", "§7When consumed:");
         add("tooltip.pasterdream.red_dew.effect", "§7▪ §9Instant Health I");

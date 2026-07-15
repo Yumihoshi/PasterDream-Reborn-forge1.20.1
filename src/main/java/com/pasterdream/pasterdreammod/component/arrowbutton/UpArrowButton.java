@@ -17,11 +17,11 @@ public class UpArrowButton extends Button
     {
         if(isHovered())
         {
-            GUIBackGroundRender.rendPrevButtonHovered(guiGraphics, getX(), getY());
+            GUIBackGroundRender.rendUpButtonHovered(guiGraphics, getX(), getY());
         }
         else
             {
-                GUIBackGroundRender.rendPrevButton(guiGraphics, getX(), getY());
+                GUIBackGroundRender.rendUpButton(guiGraphics, getX(), getY());
             }
     }
 }
