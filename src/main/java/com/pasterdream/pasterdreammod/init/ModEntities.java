@@ -4,6 +4,7 @@ import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.world.entity.FoxFireEntity;
 import com.pasterdream.pasterdreammod.world.entity.MeltDreamCrystalEntityEntity;
 import com.pasterdream.pasterdreammod.world.entity.PinkChickenEntity;
+import com.pasterdream.pasterdreammod.world.entity.PinkSlimeEntity;
 import com.pasterdream.pasterdreammod.world.entity.TerraswordWaveEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -56,6 +57,14 @@ public class ModEntities {
                     .setCustomClientFactory(PinkChickenEntity::new)
                     .sized(0.4f, 0.7f));
 
+    public static final RegistryObject<EntityType<PinkSlimeEntity>> PINK_SLIME = register("pink_slime",
+            EntityType.Builder.<PinkSlimeEntity>of(PinkSlimeEntity::new, MobCategory.CREATURE)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
+                    .setCustomClientFactory(PinkSlimeEntity::new)
+                    .sized(0.5f, 0.5f));
+
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> builder) {
         return REGISTRY.register(name, () -> builder.build(name));
     }
@@ -70,6 +79,7 @@ public class ModEntities {
         event.enqueueWork(FoxFireEntity::init);
         event.enqueueWork(MeltDreamCrystalEntityEntity::init);
         event.enqueueWork(PinkChickenEntity::init);
+        event.enqueueWork(PinkSlimeEntity::init);
     }
 
     @SubscribeEvent
@@ -78,5 +88,6 @@ public class ModEntities {
         event.put(FOX_FIRE.get(), FoxFireEntity.createAttributes().build());
         event.put(MELT_DREAM_CRYSTAL_ENTITY.get(), MeltDreamCrystalEntityEntity.createAttributes().build());
         event.put(PINK_CHICKEN.get(), PinkChickenEntity.createAttributes().build());
+        event.put(PINK_SLIME.get(), PinkSlimeEntity.createAttributes().build());
     }
 }

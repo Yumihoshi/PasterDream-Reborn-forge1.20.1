@@ -940,6 +940,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 实体
         add(ModEntities.PINK_CHICKEN.get(), "粉红鸡");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "粉红鸡刷怪蛋");
+        add(ModEntities.PINK_SLIME.get(), "粉红史莱姆");
+        add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "粉红史莱姆刷怪蛋");
 
     }
 }

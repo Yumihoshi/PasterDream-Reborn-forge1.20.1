@@ -79,6 +79,7 @@ public class ModBiomeModifierProvider implements DataProvider
 
             // 实体生成
             addSpawns(entries, "pink_chicken_biome_modifier", ModEntities.PINK_CHICKEN, dyedreamWorldTag, 5, 4, 4);
+            addSpawns(entries, "pink_slime_biome_modifier", ModEntities.PINK_SLIME, dyedreamWorldTag, 20, 5, 6);
 
             return saveAll(cache, entries);
         });

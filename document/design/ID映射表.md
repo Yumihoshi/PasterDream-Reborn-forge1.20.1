@@ -437,7 +437,8 @@
 
 | 旧 ID | 新 ID | 变更说明 |
 |-------|-------|---------|
-| | | |
+| `pink_chicken` | `pink_chicken` | 不改 |
+| `pink_slime` | `pink_slime` | 不改 |
 
 ---
 
