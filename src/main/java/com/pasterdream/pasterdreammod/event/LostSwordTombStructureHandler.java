@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.event;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
+import com.pasterdream.pasterdreammod.init.ModCriteriaTriggers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -48,9 +49,6 @@ public class LostSwordTombStructureHandler {
         if (start == null || !start.isValid()) return;
 
         // 授予进度：被遗忘的剑冢
-        sp.getAdvancements().award(
-                sp.getServer().getAdvancements().getAdvancement(
-                        ResourceLocation.fromNamespaceAndPath("pasterdream", "adventure/forgotten_sword_tomb")),
-                "found_tomb");
+        ModCriteriaTriggers.FOUND_TOMB.trigger(sp);
     }
 }

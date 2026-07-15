@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item;
 
+import com.pasterdream.pasterdreammod.init.ModCriteriaTriggers;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.BlockPos;
@@ -15,7 +16,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -105,11 +105,8 @@ public class PaleBoneneedleItem extends Item {
             boolean wasFalling = player.fallDistance > 10;
 
             if (player instanceof ServerPlayer sp) {
-                // 授予进度：使用苍白骨针
-                sp.getAdvancements().award(
-                        sp.getServer().getAdvancements().getAdvancement(
-                                ResourceLocation.fromNamespaceAndPath("pasterdream", "story/use_pale_boneneedle")),
-                        "used_boneneedle");
+                // 授予进度：使用苍白骨针（"哦，疼！"）
+                ModCriteriaTriggers.USE_BONE_NEEDLE.trigger(sp, false);
             }
             serverLevel.sendParticles(ModParticleTypes.DUST_0_PARTICLE.get(),
                     player.getX(), player.getY(), player.getZ(),
@@ -119,12 +116,9 @@ public class PaleBoneneedleItem extends Item {
 
             scheduleDelayed(() -> {
                 teleportToOverworldAndSpawn(serverLevel, player);
-                // 挑战进度：回主世界后授予（梦境中跌落>10格使用骨针）
+                // 挑战进度：回主世界后授予（梦境中跌落>10格使用骨针 —— "人类坠出梦境"）
                 if (wasFalling && player instanceof ServerPlayer sp) {
-                    sp.getAdvancements().award(
-                            sp.getServer().getAdvancements().getAdvancement(
-                                    ResourceLocation.fromNamespaceAndPath("pasterdream", "story/human_falls_out_of_dream")),
-                            "fell_and_used");
+                    ModCriteriaTriggers.USE_BONE_NEEDLE.trigger(sp, true);
                 }
                 player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 100, 0));
                 player.getCooldowns().addCooldown(this, 100);
