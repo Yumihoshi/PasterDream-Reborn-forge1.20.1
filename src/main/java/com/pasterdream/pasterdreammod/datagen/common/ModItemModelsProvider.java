@@ -360,6 +360,9 @@ public class ModItemModelsProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("block/jungle_sporangium"));
         withExistingParent(ModItems.FOURLEAF_CLOVER.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/fourleaf_clover"));
+
+        // 刷怪蛋
+        spawnEggItem(ModItems.PINK_CHICKEN_SPAWN_EGG);
     }
 
     @Override
@@ -413,6 +416,9 @@ public class ModItemModelsProvider extends ItemModelProvider {
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "item/" + item.getId().getPath()));
     }
 
-
+    private ItemModelBuilder spawnEggItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.fromNamespaceAndPath("minecraft", "item/template_spawn_egg"));
+    }
 
 }

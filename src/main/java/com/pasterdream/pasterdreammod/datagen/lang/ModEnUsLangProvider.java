@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.datagen.lang;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.init.ModEntities;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -786,5 +787,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.pure_and_flawless.description", "Obtain a Pale Snow Lotus");
         add("advancements.pasterdream.story.use_pale_boneneedle.title", "Ouch, it's hurt!");
         add("advancements.pasterdream.story.use_pale_boneneedle.description", "Use the Pale Boneneedle to Wake You up from the Dream");
+
+        // Entities
+        add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
+        add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");
     }
 }

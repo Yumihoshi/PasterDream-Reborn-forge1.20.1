@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.init.ModEntities;
 import com.pasterdream.pasterdreammod.worldgen.ModPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -14,6 +15,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -75,6 +77,9 @@ public class ModBiomeModifierProvider implements DataProvider
             // 方解石尖锥 — 表面结构 step
             addFeature(entries, "calcite_spike", ModPlacedFeatures.CALCITE_SPIKE, featureLookup, dyedreamWorldTag, GenerationStep.Decoration.SURFACE_STRUCTURES);
 
+            // 实体生成
+            addSpawns(entries, "pink_chicken_biome_modifier", ModEntities.PINK_CHICKEN, dyedreamWorldTag, 5, 4, 4);
+
             return saveAll(cache, entries);
         });
     }
@@ -82,6 +87,20 @@ public class ModBiomeModifierProvider implements DataProvider
     private void addPatch(Map<ResourceLocation, JsonObject> map, String name, ResourceKey<PlacedFeature> featureKey, HolderLookup.RegistryLookup<PlacedFeature> featureLookup, TagKey<Biome> biomeTag)
     {
         addFeature(map, name, featureKey, featureLookup, biomeTag, GenerationStep.Decoration.VEGETAL_DECORATION);
+    }
+
+    private void addSpawns(Map<ResourceLocation, JsonObject> map, String name, net.minecraftforge.registries.RegistryObject<? extends EntityType<?>> entityType, TagKey<Biome> biomeTag, int weight, int minCount, int maxCount) {
+        ResourceLocation entityId = net.minecraftforge.registries.ForgeRegistries.ENTITY_TYPES.getKey(entityType.get());
+        JsonObject json = new JsonObject();
+        json.addProperty("type", "forge:add_spawns");
+        json.addProperty("biomes", "#" + biomeTag.location());
+        JsonObject spawners = new JsonObject();
+        spawners.addProperty("type", entityId.toString());
+        spawners.addProperty("weight", weight);
+        spawners.addProperty("minCount", minCount);
+        spawners.addProperty("maxCount", maxCount);
+        json.add("spawners", spawners);
+        map.put(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name), json);
     }
 
     private void addFeature(Map<ResourceLocation, JsonObject> map, String name, ResourceKey<PlacedFeature> featureKey, HolderLookup.RegistryLookup<PlacedFeature> featureLookup, TagKey<Biome> biomeTag, GenerationStep.Decoration step)

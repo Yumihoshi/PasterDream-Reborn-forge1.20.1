@@ -29,6 +29,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_DIRT.get())
                 .add(ModBlocks.DYEDREAM_GRASS_BLOCK.get());
 
+        tag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                .add(ModBlocks.DYEDREAM_GRASS_BLOCK.get());
+
         // 可以用铲子来挖掘
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.DYEDREAM_DIRT.get())

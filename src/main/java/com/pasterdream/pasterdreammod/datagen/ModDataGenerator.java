@@ -46,7 +46,8 @@ public class ModDataGenerator {
                 new LootTableProvider.SubProviderEntry(ModChestLootTablesProvider::new, LootContextParamSets.CHEST),
                 new LootTableProvider.SubProviderEntry(ModMeltDreamCrystalChestLootTablesProvider::new, LootContextParamSets.CHEST),
                 new LootTableProvider.SubProviderEntry(ModDeepTreasureLootTablesProvider::new, LootContextParamSets.CHEST),
-                new LootTableProvider.SubProviderEntry(ModFishingLootTablesProvider::new, LootContextParamSets.FISHING)
+                new LootTableProvider.SubProviderEntry(ModFishingLootTablesProvider::new, LootContextParamSets.FISHING),
+                new LootTableProvider.SubProviderEntry(ModEntityLootTablesProvider::new, LootContextParamSets.ENTITY)
         )));
 
         BlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(),

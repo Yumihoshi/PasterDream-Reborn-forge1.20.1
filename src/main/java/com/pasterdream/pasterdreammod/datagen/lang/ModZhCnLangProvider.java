@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.datagen.lang;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.init.ModEntities;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -911,5 +912,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.pure_and_flawless.description", "获得一朵苍白雪莲");
         add("advancements.pasterdream.story.use_pale_boneneedle.title", "哦，痛！");
         add("advancements.pasterdream.story.use_pale_boneneedle.description", "使用苍白骨针在梦境中醒来");
+
+        // 实体
+        add(ModEntities.PINK_CHICKEN.get(), "粉红鸡");
+        add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "粉红鸡刷怪蛋");
     }
 }
