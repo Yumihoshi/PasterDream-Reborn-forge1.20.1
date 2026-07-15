@@ -36,6 +36,10 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                 ResourceLocation.fromNamespaceAndPath("minecraft", "adventure/root"),
                 null, null, AdvancementRewards.EMPTY, Map.of(), new String[0][0], false);
 
+        private static final Advancement NETHER_ROOT = new Advancement(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "nether/root"),
+                null, null, AdvancementRewards.EMPTY, Map.of(), new String[0][0], false);
+
         @Override
         public void generate(HolderLookup.Provider registries,
                              Consumer<Advancement> saver,
@@ -133,6 +137,36 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "adventure/get_the_lost_sword"), existingFileHelper);
 
+            Advancement craft_kusanagi = Advancement.Builder.advancement()
+                    .parent(draw_the_sword)
+                    .display(
+                            ModItems.KUSANAGI.get(),
+                            Component.translatable("advancements.pasterdream.craft_kusanagi.title"),
+                            Component.translatable("advancements.pasterdream.craft_kusanagi.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("has_kusanagi", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.KUSANAGI.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "adventure/craft_kusanagi"), existingFileHelper);
+
+            Advancement get_murakumo_kusanagi = Advancement.Builder.advancement()
+                    .parent(craft_kusanagi)
+                    .display(
+                            ModItems.MURAKUMO_KUSANAGI.get(),
+                            Component.translatable("advancements.pasterdream.get_murakumo_kusanagi.title"),
+                            Component.translatable("advancements.pasterdream.get_murakumo_kusanagi.description"),
+                            null,
+                            FrameType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("has_murakumo_kusanagi", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.MURAKUMO_KUSANAGI.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "adventure/get_murakumo_kusanagi"), existingFileHelper);
+
             // ========== 挑战进度1：邻家有女初长成，力拔三兮气盖世 ==========
             Advancement dig_down_a_tomb= Advancement.Builder.advancement()
                     .parent(find_tomb)
@@ -163,6 +197,54 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("new_standard_sword_drawing", new ImpossibleTrigger.TriggerInstance())
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "adventure/new_standard_sword_drawing"), existingFileHelper);
+
+            // ========== 下界Tab子进度：真金不怕火炼 ==========
+            Advancement get_molten_gold_ingot = Advancement.Builder.advancement()
+                    .parent(NETHER_ROOT)
+                    .display(
+                            ModItems.MOLTEN_GOLD_INGOT.get(),
+                            Component.translatable("advancements.pasterdream.get_molten_gold_ingot.title"),
+                            Component.translatable("advancements.pasterdream.get_molten_gold_ingot.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("has_molten_gold_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.MOLTEN_GOLD_INGOT.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "nether/get_molten_gold_ingot"), existingFileHelper);
+
+            // ========== 真金不怕火炼任务线1：炙热之剑 ==========
+            Advancement craft_hellfire_sword = Advancement.Builder.advancement()
+                    .parent(get_molten_gold_ingot)
+                    .display(
+                            ModItems.HELLFIRE_SWORD.get(),
+                            Component.translatable("advancements.pasterdream.craft_hellfire_sword.title"),
+                            Component.translatable("advancements.pasterdream.craft_hellfire_sword.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("has_hellfire_sword", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.HELLFIRE_SWORD.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "nether/craft_hellfire_sword"), existingFileHelper);
+
+            // ========== 真金不怕火炼任务线2：炼狱之火 ==========
+            Advancement craft_inferno_sword = Advancement.Builder.advancement()
+                    .parent(craft_hellfire_sword)
+                    .display(
+                            ModItems.INFERNO_SWORD.get(),
+                            Component.translatable("advancements.pasterdream.craft_inferno_sword.title"),
+                            Component.translatable("advancements.pasterdream.craft_inferno_sword.description"),
+                            null,
+                            FrameType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("has_inferno_sword", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.INFERNO_SWORD.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "nether/craft_inferno_sword"), existingFileHelper);
 
         }
     }
