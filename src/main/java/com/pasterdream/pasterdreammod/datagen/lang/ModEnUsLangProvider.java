@@ -846,6 +846,18 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.craft_inferno_sword.title", "Inferno Fire");
         add("advancements.pasterdream.craft_inferno_sword.description", "Inlay a Nether Star into the Hellfire Sword to let it reach its final evolution.");
 
+        // Advancements - Husbandry Expansion
+        add("advancements.pasterdream.get_deep_sea_treasure.title", "Gift from the Sea");
+        add("advancements.pasterdream.get_deep_sea_treasure.description", "Get a treasure of the ocean, coming from the deep sea and the dyedream frozen ocean.");
+        add("advancements.pasterdream.get_super_deep_sea_treasure.title", "To wish upon a satellite...");
+        add("advancements.pasterdream.get_super_deep_sea_treasure.description", "To get higher-level marine treasures, you should find a more powerful fishing rod for it...");
+        add("advancements.pasterdream.get_blue_dew.title", "Tears of the Ocean");
+        add("advancements.pasterdream.get_blue_dew.description", "Get the blue dew, it comes from that enchanting ocean treasure glowing with magic light.");
+        add("advancements.pasterdream.get_blue_heart_of_the_sea.title", "Heart of Deep Blue");
+        add("advancements.pasterdream.get_blue_heart_of_the_sea.description", "Once you get the Blue Heart of the Sea, you'll know which weapon needs it...");
+        add("advancements.pasterdream.get_beihairuo_tide_sword.title", "God of Tides");
+        add("advancements.pasterdream.get_beihairuo_tide_sword.description", "Get the BeiHairuo Tide Sword; it holds the power of surging waves and riptide...");
+
         // Entities
         add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");
