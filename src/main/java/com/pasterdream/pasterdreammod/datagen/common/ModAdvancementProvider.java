@@ -3,6 +3,8 @@ package com.pasterdream.pasterdreammod.datagen.common;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementRewards;
+import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.ImpossibleTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -15,6 +17,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
@@ -27,6 +30,11 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
     }
 
     public static class StoryAdvancements implements AdvancementGenerator {
+
+        // 原版冒险Tab根进度，作为跨tab子进度的父节点
+        private static final Advancement ADVENTURE_ROOT = new Advancement(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "adventure/root"),
+                null, null, AdvancementRewards.EMPTY, Map.of(), new String[0][0], false);
 
         @Override
         public void generate(HolderLookup.Provider registries,
@@ -64,8 +72,8 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "story/pure_and_flawless"), existingFileHelper);
 
-            // ========== 子进度：使用苍白骨针（纯洁无暇的子进度） ==========
-            Advancement.Builder.advancement()
+            // ========== 子进度：刺痛 ==========
+            Advancement useBoneNeedle = Advancement.Builder.advancement()
                     .parent(pureAndFlawless)
                     .display(
                             ModItems.PALE_BONENEEDLE.get(),
@@ -78,6 +86,84 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("used_boneneedle", new ImpossibleTrigger.TriggerInstance())
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "story/use_pale_boneneedle"), existingFileHelper);
+
+            // ========== 挑战子进度：人类跌出梦境 ==========
+            Advancement.Builder.advancement()
+                    .parent(useBoneNeedle)
+                    .display(
+                            ModItems.PALE_BONENEEDLE.get(),
+                            Component.translatable("advancements.pasterdream.story.human_falls_out_of_dream.title"),
+                            Component.translatable("advancements.pasterdream.story.human_falls_out_of_dream.description"),
+                            null,
+                            FrameType.CHALLENGE,
+                            true, true, true
+                    )
+                    .addCriterion("fell_and_used", new ImpossibleTrigger.TriggerInstance())
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/human_falls_out_of_dream"), existingFileHelper);
+
+            // ========== 冒险Tab子进度：被遗忘的剑冢 ==========
+            Advancement find_tomb = Advancement.Builder.advancement()
+                    .parent(ADVENTURE_ROOT)
+                    .display(
+                            ModItems.SWORD_EMBRYO.get(),
+                            Component.translatable("advancements.pasterdream.adventure.forgotten_sword_tomb.title"),
+                            Component.translatable("advancements.pasterdream.adventure.forgotten_sword_tomb.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("found_tomb", new ImpossibleTrigger.TriggerInstance())
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "adventure/forgotten_sword_tomb"), existingFileHelper);
+
+            // ========== 被遗忘的剑冢子进度：被遗忘之剑 ==========
+            Advancement draw_the_sword = Advancement.Builder.advancement()
+                    .parent(find_tomb)
+                    .display(
+                            ModItems.SWORD_EMBRYO.get(),
+                            Component.translatable("advancements.pasterdream.story.get_the_lost_sword.title"),
+                            Component.translatable("advancements.pasterdream.story.get_the_lost_sword.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("has_sword_embryo", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.SWORD_EMBRYO.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "adventure/get_the_lost_sword"), existingFileHelper);
+
+            // ========== 挑战进度1：邻家有女初长成，力拔三兮气盖世 ==========
+            Advancement dig_down_a_tomb= Advancement.Builder.advancement()
+                    .parent(find_tomb)
+                    .display(
+                            ModItems.LOST_SWORD_TOMB.get(),
+                            Component.translatable("advancements.pasterdream.story.dig_up_a_tomb.title"),
+                            Component.translatable("advancements.pasterdream.story.dig_up_a_tomb.description"),
+                            null,
+                            FrameType.CHALLENGE,
+                            true, true,true
+                    )
+                    .addCriterion("has_lost_sword_tomb", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.LOST_SWORD_TOMB.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "adventure/has_lost_sword_tomb"), existingFileHelper);
+
+            // ========== 挑战进度2：新概念拔剑 ==========
+            Advancement new_standard_sword_drawing = Advancement.Builder.advancement()
+                    .parent(dig_down_a_tomb)
+                    .display(
+                            ModItems.LOST_SWORD_TOMB.get(),
+                            Component.translatable("advancements.pasterdream.new_standard_sword_drawing.title"),
+                            Component.translatable("advancements.pasterdream.new_standard_sword_drawing.description"),
+                            null,
+                            FrameType.CHALLENGE,
+                            true, true,true
+                    )
+                    .addCriterion("new_standard_sword_drawing", new ImpossibleTrigger.TriggerInstance())
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "adventure/new_standard_sword_drawing"), existingFileHelper);
+
         }
     }
 }
