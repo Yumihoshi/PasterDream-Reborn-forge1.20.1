@@ -846,6 +846,15 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.craft_inferno_sword.title", "Inferno Fire");
         add("advancements.pasterdream.craft_inferno_sword.description", "Inlay a Nether Star into the Hellfire Sword to let it reach its final evolution.");
 
+
+        // Patchouli book
+        add("pasterdream.seniors_dream", "Seniors Dream");
+        add("pasterdream.seniors_dream.landing_text", "...");
+        add("pasterdream.seniors_dream.category.test", "Test");
+        add("pasterdream.seniors_dream.category.test.desc", "A test category.");
+        add("pasterdream.seniors_dream.entry.welcome", "Welcome");
+        add("pasterdream.seniors_dream.entry.welcome.page0", "If you can see this, the book works!");
+
         // Entities
         add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");

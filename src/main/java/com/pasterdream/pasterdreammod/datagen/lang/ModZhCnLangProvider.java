@@ -1007,6 +1007,16 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.craft_inferno_sword.title", "炼狱之火");
         add("advancements.pasterdream.craft_inferno_sword.description", "为狱炎剑镶嵌一个下界之星来让它完成最终进化");
 
+
+        // 帕秋莉宝典
+        add("pasterdream.seniors_dream", "旧梦归引");
+        add("pasterdream.seniors_dream.landing_text", ">这里是开篇文字<");
+        add("pasterdream.seniors_dream.category.test", "测试");
+        add("pasterdream.seniors_dream.category.test.desc", "一个测试分类。");
+        add("pasterdream.seniors_dream.entry.welcome", "欢迎");
+        add("pasterdream.seniors_dream.entry.welcome.page0", "如果你能看到这段文字，说明宝典工作正常！");
+
+
         // 实体
         add(ModEntities.PINK_CHICKEN.get(), "粉红鸡");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "粉红鸡刷怪蛋");
