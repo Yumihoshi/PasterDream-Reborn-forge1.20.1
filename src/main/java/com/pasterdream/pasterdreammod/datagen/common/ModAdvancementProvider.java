@@ -6,7 +6,9 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.FrameType;
-import net.minecraft.advancements.critereon.ImpossibleTrigger;
+import com.pasterdream.pasterdreammod.advancement.critereon.FoundTombTrigger;
+import com.pasterdream.pasterdreammod.advancement.critereon.NewStandardSwordDrawingTrigger;
+import com.pasterdream.pasterdreammod.advancement.critereon.UseBoneNeedleTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
@@ -87,7 +89,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                             FrameType.TASK,
                             true, true, false
                     )
-                    .addCriterion("used_boneneedle", new ImpossibleTrigger.TriggerInstance())
+                    .addCriterion("used_boneneedle", UseBoneNeedleTrigger.TriggerInstance.use())
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "story/use_pale_boneneedle"), existingFileHelper);
 
@@ -102,7 +104,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                             FrameType.CHALLENGE,
                             true, true, true
                     )
-                    .addCriterion("fell_and_used", new ImpossibleTrigger.TriggerInstance())
+                    .addCriterion("fell_and_used", UseBoneNeedleTrigger.TriggerInstance.fellAndUse())
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "story/human_falls_out_of_dream"), existingFileHelper);
 
@@ -117,7 +119,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                             FrameType.TASK,
                             true, true, false
                     )
-                    .addCriterion("found_tomb", new ImpossibleTrigger.TriggerInstance())
+                    .addCriterion("found_tomb", FoundTombTrigger.TriggerInstance.found())
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "adventure/forgotten_sword_tomb"), existingFileHelper);
 
@@ -194,7 +196,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                             FrameType.CHALLENGE,
                             true, true,true
                     )
-                    .addCriterion("new_standard_sword_drawing", new ImpossibleTrigger.TriggerInstance())
+                    .addCriterion("new_standard_sword_drawing", NewStandardSwordDrawingTrigger.TriggerInstance.draw())
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "adventure/new_standard_sword_drawing"), existingFileHelper);
 

@@ -71,6 +71,7 @@ public class PasterDreamMod
         ModLootTables.register(modEventBus);        //注册自定义战利品函数类型
         ModNetwork.register();                      //注册网络包
         ModEnchantment.register(modEventBus);       //注册附魔
+        ModCriteriaTriggers.init();                 //注册自定义进度触发器
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);

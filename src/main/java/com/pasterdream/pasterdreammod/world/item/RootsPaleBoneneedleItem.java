@@ -1,10 +1,10 @@
 package com.pasterdream.pasterdreammod.world.item;
 
+import com.pasterdream.pasterdreammod.init.ModCriteriaTriggers;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -75,13 +75,15 @@ public class RootsPaleBoneneedleItem extends Item {
             if (PaleBoneneedleItem.isDreamDimension(level) && level instanceof ServerLevel serverLevel) {
                 boolean wasFalling = player.fallDistance > 10;
 
-                if (player instanceof ServerPlayer sp) {
-                    // 授予进度：使用苍白骨针
-                    sp.getAdvancements().award(
-                            sp.getServer().getAdvancements().getAdvancement(
-                                    ResourceLocation.fromNamespaceAndPath("pasterdream", "story/use_pale_boneneedle")),
-                            "used_boneneedle");
-                }
+                PaleBoneneedleItem.scheduleDelayed(() -> {
+                    PaleBoneneedleItem.teleportToOverworldAndSpawn(serverLevel, player);
+                    teleportToWaypoint(itemstack, player);
+                    // 授予进度：使用苍白骨针（"哦，疼！"）
+                    if (player instanceof ServerPlayer sp) {
+                        ModCriteriaTriggers.USE_BONE_NEEDLE.trigger(sp, false);
+                    }
+                    player.getCooldowns().addCooldown(this, 100);
+                });
 
                 serverLevel.sendParticles(ModParticleTypes.DUST_0_PARTICLE.get(),
                         player.getX(), player.getY(), player.getZ(),
@@ -92,12 +94,9 @@ public class RootsPaleBoneneedleItem extends Item {
                 PaleBoneneedleItem.scheduleDelayed(() -> {
                     PaleBoneneedleItem.teleportToOverworldAndSpawn(serverLevel, player);
                     teleportToWaypoint(itemstack, player);
-                    // 挑战进度：回主世界后授予（梦境中跌落>10格使用骨针）
+                    // 挑战进度：回主世界后授予（梦境中跌落>10格使用骨针 —— "人类坠出梦境"）
                     if (wasFalling && player instanceof ServerPlayer sp) {
-                        sp.getAdvancements().award(
-                                sp.getServer().getAdvancements().getAdvancement(
-                                        ResourceLocation.fromNamespaceAndPath("pasterdream", "story/human_falls_out_of_dream")),
-                                "fell_and_used");
+                        ModCriteriaTriggers.USE_BONE_NEEDLE.trigger(sp, true);
                     }
                     player.getCooldowns().addCooldown(this, 100);
                 });

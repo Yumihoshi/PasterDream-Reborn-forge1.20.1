@@ -1,7 +1,7 @@
 package com.pasterdream.pasterdreammod.world.block.lostswordtomb;
 
+import com.pasterdream.pasterdreammod.init.ModCriteriaTriggers;
 import com.pasterdream.pasterdreammod.init.ModItems;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -60,10 +60,7 @@ public class LostSwordTombHandler {
 
         // 授予进度：新概念拔剑
         if (player instanceof ServerPlayer sp) {
-            sp.getAdvancements().award(
-                    sp.getServer().getAdvancements().getAdvancement(
-                            ResourceLocation.fromNamespaceAndPath("pasterdream", "adventure/new_standard_sword_drawing")),
-                    "new_standard_sword_drawing");
+            ModCriteriaTriggers.NEW_STANDARD_SWORD_DRAWING.trigger(sp);
         }
     }
 }
