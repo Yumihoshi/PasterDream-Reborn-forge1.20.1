@@ -66,10 +66,14 @@ public class GUIBackGroundRender
 
     public static ResourceLocation DREAM_NOTES_TEST = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes/dream_notes_test.png");
 
-    public static ResourceLocation PREV_BUTTON = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/prev_button.png");
-    public static ResourceLocation PREV_BUTTON_HOVERED = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/prev_button_hover.png");
-    public static ResourceLocation NEXT_BUTTON = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/next_button.png");
-    public static ResourceLocation NEXT_BUTTON_HOVERED = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/next_button_hover.png");
+    public static ResourceLocation UP_BUTTON = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/up_button.png");
+    public static ResourceLocation UP_BUTTON_HOVERED = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/up_button_hover.png");
+    public static ResourceLocation DOWN_BUTTON = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/down_button.png");
+    public static ResourceLocation DOWN_BUTTON_HOVERED = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/down_button_hover.png");
+    public static ResourceLocation LEFT_BUTTON = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/left_button.png");
+    public static ResourceLocation LEFT_BUTTON_HOVERED = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/left_button_hover.png");
+    public static ResourceLocation RIGHT_BUTTON = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/right_button.png");
+    public static ResourceLocation RIGHT_BUTTON_HOVERED = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/arrow_button/right_button_hover.png");
 
     public static final ResourceLocation MINECRAFT_GUI_LEFT_TOP = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/minecraft_original_gui/left_top.png");
     public static final ResourceLocation MINECRAFT_GUI_TOP = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/minecraft_original_gui/multipart_top.png");
@@ -79,6 +83,8 @@ public class GUIBackGroundRender
     public static final ResourceLocation MINECRAFT_GUI_LEFT_BOTTOM = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/minecraft_original_gui/left_bottom.png");
     public static final ResourceLocation MINECRAFT_GUI_BOTTOM = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/minecraft_original_gui/multipart_bottom.png");
     public static final ResourceLocation MINECRAFT_GUI_RIGHT_BOTTOM = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/minecraft_original_gui/right_bottom.png");
+
+    public static ResourceLocation DREAM_NOTES_BOOK = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "textures/gui/dream_notes_book/dream_notes_book.png");
 
     public static void rendPasterDreamInventoryGUI(GuiGraphics guiGraphics, int x, int y)
     {
@@ -246,24 +252,44 @@ public class GUIBackGroundRender
         RenderSystem.disableBlend();
     }
 
-    public static void rendPrevButton(GuiGraphics guiGraphics, int x, int y)
+    public static void rendUpButton(GuiGraphics guiGraphics, int x, int y)
     {
-        guiGraphics.blit(PREV_BUTTON, x, y, 0, 0, 15, 22, 15, 22);
+        guiGraphics.blit(UP_BUTTON, x, y, 0, 0, 15, 22, 15, 22);
     }
 
-    public static void rendPrevButtonHovered(GuiGraphics guiGraphics, int x, int y)
+    public static void rendUpButtonHovered(GuiGraphics guiGraphics, int x, int y)
     {
-        guiGraphics.blit(PREV_BUTTON_HOVERED, x, y, 0, 0, 15, 22, 15, 22);
+        guiGraphics.blit(UP_BUTTON_HOVERED, x, y, 0, 0, 15, 22, 15, 22);
     }
 
-    public static void rendNextButton(GuiGraphics guiGraphics, int x, int y)
+    public static void rendDownButton(GuiGraphics guiGraphics, int x, int y)
     {
-        guiGraphics.blit(NEXT_BUTTON, x, y, 0, 0, 15, 22, 15, 22);
+        guiGraphics.blit(DOWN_BUTTON, x, y, 0, 0, 15, 22, 15, 22);
     }
 
-    public static void rendNextButtonHovered(GuiGraphics guiGraphics, int x, int y)
+    public static void rendDownButtonHovered(GuiGraphics guiGraphics, int x, int y)
     {
-        guiGraphics.blit(NEXT_BUTTON_HOVERED, x, y, 0, 0, 15, 22, 15, 22);
+        guiGraphics.blit(DOWN_BUTTON_HOVERED, x, y, 0, 0, 15, 22, 15, 22);
+    }
+
+    public static void rendLeftButton(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(LEFT_BUTTON, x, y, 0, 0, 22, 15, 22, 15);
+    }
+
+    public static void rendLeftButtonHovered(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(LEFT_BUTTON_HOVERED, x, y, 0, 0, 22, 15, 22, 15);
+    }
+
+    public static void rendRightButton(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(RIGHT_BUTTON, x, y, 0, 0, 22, 15, 22, 15);
+    }
+
+    public static void rendRightButtonHovered(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(RIGHT_BUTTON_HOVERED, x, y, 0, 0, 22, 15, 22, 15);
     }
 
     public static void rendMinecraftGUIBackground(GuiGraphics guiGraphics, int x, int y, int width, int height)
@@ -277,5 +303,10 @@ public class GUIBackGroundRender
         guiGraphics.blit(MINECRAFT_GUI_LEFT_BOTTOM, x, y + height - 4, 0, 0, 4, 4, 4, 4);
         guiGraphics.blit(MINECRAFT_GUI_BOTTOM, x + 4, y + height - 4, 0, 0, width - 8, 4, 1, 4);
         guiGraphics.blit(MINECRAFT_GUI_RIGHT_BOTTOM, x + width - 4, y + height - 4, 0, 0, 4, 4, 4, 4);
+    }
+
+    public static void rendDreamNotesBookGUI(GuiGraphics guiGraphics, int x, int y)
+    {
+        guiGraphics.blit(DREAM_NOTES_BOOK, x, y, 0, 0, 140, 180, 140, 180);
     }
 }

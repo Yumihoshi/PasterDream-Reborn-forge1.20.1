@@ -192,6 +192,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get());
         basicItem(ModItems.DREAM_NOTES_WIND_JOURNEY_WORLD.get());
         basicItem(ModItems.BLUE_PRINT.get());
+        basicItem(ModItems.DREAM_NOTES_BOOK.get());
         basicItem(ModItems.REED_ROD.get());
         basicItem(ModItems.BLUE_HEART_OF_THE_SEA.get());
         basicItem(ModItems.ELDER_GUARDIAN_SCALE.get());
