@@ -1007,6 +1007,20 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.craft_inferno_sword.title", "炼狱之火");
         add("advancements.pasterdream.craft_inferno_sword.description", "为狱炎剑镶嵌一个下界之星来让它完成最终进化");
 
+        // 进度 - 农牧业拓展
+        add("advancements.pasterdream.get_deep_sea_treasure.title", "海之馈赠");
+        add("advancements.pasterdream.get_deep_sea_treasure.description", "获得一份海洋的秘宝，它来自于深海和染梦冻洋");
+        add("advancements.pasterdream.get_super_deep_sea_treasure.title", "To wish upon a satellite...");
+        add("advancements.pasterdream.get_super_deep_sea_treasure.description", "获得更高级的海洋秘宝，你应该为此找到一个更强大的钓竿……");
+        add("advancements.pasterdream.get_blue_dew.title", "海洋之泪");
+        add("advancements.pasterdream.get_blue_dew.description", "获得湛蓝露滴，它来自那发着附魔亮光的诱人海洋秘宝");
+        add("advancements.pasterdream.get_blue_heart_of_the_sea.title", "深蓝之心");
+        add("advancements.pasterdream.get_blue_heart_of_the_sea.description", "获得蔚蓝海洋之心，你会知道什么武器需要用上它的……");
+        add("advancements.pasterdream.get_beihairuo_tide_sword.title", "潮汐之神");
+        add("advancements.pasterdream.get_beihairuo_tide_sword.description", "获得『北海若』引潮，它掌握着潮涌和激流的力量……");
+
+
+
         // 实体
         add(ModEntities.PINK_CHICKEN.get(), "粉红鸡");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "粉红鸡刷怪蛋");

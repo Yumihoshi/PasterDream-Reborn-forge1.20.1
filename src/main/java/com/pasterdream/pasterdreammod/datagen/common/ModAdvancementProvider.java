@@ -2,17 +2,16 @@ package com.pasterdream.pasterdreammod.datagen.common;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModItems;
-import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementRewards;
-import net.minecraft.advancements.Criterion;
-import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.*;
 import com.pasterdream.pasterdreammod.advancement.critereon.FoundTombTrigger;
 import com.pasterdream.pasterdreammod.advancement.critereon.NewStandardSwordDrawingTrigger;
 import com.pasterdream.pasterdreammod.advancement.critereon.UseBoneNeedleTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -40,6 +39,10 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
 
         private static final Advancement NETHER_ROOT = new Advancement(
                 ResourceLocation.fromNamespaceAndPath("minecraft", "nether/root"),
+                null, null, AdvancementRewards.EMPTY, Map.of(), new String[0][0], false);
+
+        private static final Advancement FISHING = new Advancement(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "husbandry/fishy_business"),
                 null, null, AdvancementRewards.EMPTY, Map.of(), new String[0][0], false);
 
         @Override
@@ -78,7 +81,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "story/pure_and_flawless"), existingFileHelper);
 
-            // ========== 子进度：刺痛 ==========
+            // ========== 子进度：哦，痛！ ==========
             Advancement useBoneNeedle = Advancement.Builder.advancement()
                     .parent(pureAndFlawless)
                     .display(
@@ -248,6 +251,100 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "nether/craft_inferno_sword"), existingFileHelper);
 
+            // ========== 腥味十足的交易子进度：海之馈赠 ==========
+            Advancement get_deep_sea_treasure = Advancement.Builder.advancement()
+                    .parent(FISHING)
+                    .display(
+                            ModItems.DEEP_SEA_TREASURE.get(),
+                            Component.translatable("advancements.pasterdream.get_deep_sea_treasure.title"),
+                            Component.translatable("advancements.pasterdream.get_deep_sea_treasure.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("has_deep_sea_treasure", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.DEEP_SEA_TREASURE.get()))
+                    .addCriterion("has_dyedream_deep_treasure", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.DYEDREAM_DEEP_TREASURE.get()))
+                    .requirements(RequirementsStrategy.OR)
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "husbandry/get_deep_sea_treasure"), existingFileHelper);
+
+            // ========== 海之馈赠子进度：To wish upon a satellite, satellite... ==========
+            CompoundTag superNbt = new CompoundTag();
+            superNbt.putBoolean("deep_treasure_super", true);
+
+            Advancement get_super_deep_sea_treasure = Advancement.Builder.advancement()
+                    .parent(get_deep_sea_treasure)
+                    .display(
+                            ModItems.DEEP_SEA_TREASURE.get(),
+                            Component.translatable("advancements.pasterdream.get_super_deep_sea_treasure.title"),
+                            Component.translatable("advancements.pasterdream.get_super_deep_sea_treasure.description"),
+                            null,
+                            FrameType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("has_super_deep_sea_treasure", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ItemPredicate.Builder.item()
+                                    .of(ModItems.DEEP_SEA_TREASURE.get())
+                                    .hasNbt(superNbt)
+                                    .build()))
+                    .addCriterion("has_super_dyedream_deep_treasure", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ItemPredicate.Builder.item()
+                                    .of(ModItems.DYEDREAM_DEEP_TREASURE.get())
+                                    .hasNbt(superNbt)
+                                    .build()))
+                    .requirements(RequirementsStrategy.OR)
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "husbandry/get_super_deep_sea_treasure"), existingFileHelper);
+
+            // ========== 海之馈赠子进度：海洋之泪 ==========
+            Advancement get_blue_dew = Advancement.Builder.advancement()
+                    .parent(get_deep_sea_treasure)
+                    .display(
+                            ModItems.BLUE_DEW.get(),
+                            Component.translatable("advancements.pasterdream.get_blue_dew.title"),
+                            Component.translatable("advancements.pasterdream.get_blue_dew.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("has_blue_dew", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.BLUE_DEW.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "husbandry/get_blue_dew"), existingFileHelper);
+
+            // ========== 海洋之泪子进度：深蓝之心 ==========
+            Advancement get_blue_heart_of_the_sea = Advancement.Builder.advancement()
+                    .parent(get_blue_dew)
+                    .display(
+                            ModItems.BLUE_HEART_OF_THE_SEA.get(),
+                            Component.translatable("advancements.pasterdream.get_blue_heart_of_the_sea.title"),
+                            Component.translatable("advancements.pasterdream.get_blue_heart_of_the_sea.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("has_blue_dew", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.BLUE_HEART_OF_THE_SEA.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "husbandry/get_blue_heart_of_the_sea"), existingFileHelper);
+
+            // ========== 深蓝之心子进度：潮汐之神 ==========
+            Advancement get_beihairuo_tide_sword = Advancement.Builder.advancement()
+                    .parent(get_blue_heart_of_the_sea)
+                    .display(
+                            ModItems.BEIHAI_RUO_TIDE_SWORD.get(),
+                            Component.translatable("advancements.pasterdream.get_beihairuo_tide_sword.title"),
+                            Component.translatable("advancements.pasterdream.get_beihairuo_tide_sword.description"),
+                            null,
+                            FrameType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("has_beihairuo_tide_sword", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.BEIHAI_RUO_TIDE_SWORD.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "husbandry/get_beihairuo_tide_sword"), existingFileHelper);
         }
     }
 }
