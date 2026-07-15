@@ -48,7 +48,7 @@ logoFile="logo.png"
 [[dependencies.${mod_id}]]
     modId="patchouli"
     mandatory=false
-    versionRange="[1.20.1-85,)"
+    versionRange="[1.20.1-84,)"
     ordering="AFTER"
     side="BOTH"
 

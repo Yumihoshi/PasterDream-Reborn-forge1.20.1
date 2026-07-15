@@ -254,6 +254,7 @@ public class ModBlocks {
                     .instabreak()
                     .noCollission()
                     .noOcclusion()
+                    .replaceable()
                     .sound(SoundType.GRASS)
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)
