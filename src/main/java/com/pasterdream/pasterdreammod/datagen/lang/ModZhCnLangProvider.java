@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.datagen.lang;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.init.ModEntities;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -935,5 +936,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.craft_hellfire_sword.description", "制作一把狱炎剑，它与一种极为可怕的亡灵生物掉落物有所共鸣");
         add("advancements.pasterdream.craft_inferno_sword.title", "炼狱之火");
         add("advancements.pasterdream.craft_inferno_sword.description", "为狱炎剑镶嵌一个下界之星来让它完成最终进化");
+
+        // 实体
+        add(ModEntities.PINK_CHICKEN.get(), "粉红鸡");
+        add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "粉红鸡刷怪蛋");
+
     }
 }

@@ -85,6 +85,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.UUID;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -1192,6 +1193,10 @@ public class ModItems {
     public static final RegistryObject<Item> STORAGE_BAG = ITEMS.register("storage_bag", () -> new StorageBagItem());
     public static final RegistryObject<Item> LARGE_STORAGE_BAG = ITEMS.register("large_storage_bag", () -> new LargeStorageBagItem());
     public static final RegistryObject<Item> STRAWBERRY_HEART = ITEMS.register("strawberry_heart", () -> new StrawberryHeartItem());
+
+    // 刷怪蛋
+    public static final RegistryObject<Item> PINK_CHICKEN_SPAWN_EGG = ITEMS.register("pink_chicken_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.PINK_CHICKEN, 0xf3e3f2, 0xbf038f, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

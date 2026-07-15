@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.datagen.lang;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.init.ModEntities;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -810,5 +811,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.craft_hellfire_sword.description", "Craft a Hellfire Sword, it resonates with the drop of a terrifying undead creature.");
         add("advancements.pasterdream.craft_inferno_sword.title", "Inferno Fire");
         add("advancements.pasterdream.craft_inferno_sword.description", "Inlay a Nether Star into the Hellfire Sword to let it reach its final evolution.");
+
+        // Entities
+        add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
+        add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");
+
     }
 }
