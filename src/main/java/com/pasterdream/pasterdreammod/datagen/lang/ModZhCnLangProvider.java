@@ -969,6 +969,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 追忆宝石
         add(ModItems.MEMORY_GEM.get(), "追忆宝石");
 
+        // 追忆物品
+        add(ModItems.EMPTY_VESSEL.get(), "空容器");
+        add("tooltip.pasterdream.empty_vessel.1", "§7▪ §9使用后幸运+10持续3分钟");
+        add("tooltip.pasterdream.empty_vessel.2", "§7GQ2529的专属遗物");
+        add("tooltip.pasterdream.empty_vessel.3", "§6PasterDream开发者");
+
         // 附魔
         add("enchantment.pasterdream.swift_strike", "疾风连击");
         add("enchantment.pasterdream.shelter", "庇护");
@@ -978,6 +984,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9成功回避伤害时获得反击I (0:10)");
         add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9下一次攻击：攻击力+3 战技伤害+50%，命中后效果解除");
         add("effect.pasterdream.counter_attack_buff", "反击");
+        add("effect.pasterdream.memento_buff", "寻梦者的祈愿");
 
         // 进度 - 故事
         add("advancements.pasterdream.story.root.title", "帕斯特之梦");

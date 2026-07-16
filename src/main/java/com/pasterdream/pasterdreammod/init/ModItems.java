@@ -1196,6 +1196,8 @@ public class ModItems {
     // 追忆
     public static final RegistryObject<Item> MEMORY_GEM = ITEMS.register("memory_gem",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> EMPTY_VESSEL = ITEMS.register("empty_vessel",
+            EmptyVesselItem::new);
 
     // 刷怪蛋
     public static final RegistryObject<Item> PINK_CHICKEN_SPAWN_EGG = ITEMS.register("pink_chicken_spawn_egg",

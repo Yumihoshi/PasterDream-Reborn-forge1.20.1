@@ -614,6 +614,7 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModItems.MEMORY_GEM.get()))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.MEMORY_GEM.get());
+                        output.accept(ModItems.EMPTY_VESSEL.get());
                     })
                     .build());
 

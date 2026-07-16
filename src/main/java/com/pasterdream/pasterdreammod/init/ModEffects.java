@@ -19,6 +19,7 @@ import com.pasterdream.pasterdreammod.world.effect.SnowVowBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.CeciliaBlessingBuff;
 import com.pasterdream.pasterdreammod.world.effect.DreamHarpOfWandererBuffEffect;
 import com.pasterdream.pasterdreammod.world.effect.RestBuffEffect;
+import com.pasterdream.pasterdreammod.world.effect.MementoBuffEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -67,6 +68,8 @@ public class ModEffects {
             EFFECTS.register("dream_harp_of_wanderer_buff", DreamHarpOfWandererBuffEffect::new);
     public static final RegistryObject<MobEffect> COUNTER_ATTACK_BUFF =
             EFFECTS.register("counter_attack_buff", CounterAttackBuffEffect::new);
+    public static final RegistryObject<MobEffect> MEMENTO_BUFF =
+            EFFECTS.register("memento_buff", MementoBuffEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);

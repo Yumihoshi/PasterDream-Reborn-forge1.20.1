@@ -383,9 +383,14 @@
     "star_wish_rod": "star_wish_rod",
     "storage_bag": "storage_bag",
     "storage_bag_0": "large_storage_bag",
-    "dream_harp_of_wanderer": "dream_harp_of_wanderer"
+    "dream_harp_of_wanderer": "dream_harp_of_wanderer",
+    "memory_gem_0": "memory_gem",
+    "memento_item_07": "empty_vessel"
   },
-  "entities": {},
+  "entities": {
+    "pink_chicken": "pink_chicken",
+    "pink_slime": "pink_slime"
+  },
   "dimensions": {
     "dyedream_world": "dyedream_world",
     "lamp_shadow_world": "lamp_shadow_world",
