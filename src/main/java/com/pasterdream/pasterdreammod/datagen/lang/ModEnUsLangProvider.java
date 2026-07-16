@@ -376,6 +376,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "Paster Dream | Dream Notes");
         add("itemGroup.pasterdream.pasterdream_dream_debug_tab", "Paster Dream | Debug");
         add("itemGroup.pasterdream.pasterdream_expansion_tab", "Paster Dream | Expansion");
+        add("itemGroup.pasterdream.pasterdream_memento_tab", "Paster Dream | Mementos");
 
         add("item.pasterdream.duke_coin_curio", "Duke Coin Curio");
         add("tooltip.pasterdream.duke_coin_curio.effect.luck", "§7▪ §9+7 Luck");
@@ -800,6 +801,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.strawberry_heart.desc3", "§7▪ §7Cooldown: 12s §7| §6Radius: 8 blocks");
         add("tooltip.pasterdream.strawberry_heart.desc4", "§7▪ §dInstantly restores 2 SAN §dand grants 8s 3.6 SAN aura, immune to lethargy during this period");
         add("tooltip.pasterdream.strawberry_heart.no_energy", "Not enough Melt Dream Energy");
+
+        // Memory Gem
+        add(ModItems.MEMORY_GEM.get(), "Memory Gem");
 
         add("message.pasterdream.lost_sword_tomb.lack_strength", "Your strength is not enough to pull out this sword");
         add("tooltip.pasterdream.lost_sword_tomb", "§7If you can't pull it out, just use it with the stone!");
