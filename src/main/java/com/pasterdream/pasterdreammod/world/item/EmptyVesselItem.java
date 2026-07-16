@@ -1,9 +1,12 @@
 package com.pasterdream.pasterdreammod.world.item;
 
+import com.pasterdream.pasterdreammod.capability.san.SanHelper;
 import com.pasterdream.pasterdreammod.init.ModEffects;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -28,6 +31,7 @@ public class EmptyVesselItem extends Item {
         list.add(Component.translatable("tooltip.pasterdream.empty_vessel.1"));
         list.add(Component.translatable("tooltip.pasterdream.empty_vessel.2"));
         list.add(Component.translatable("tooltip.pasterdream.empty_vessel.3"));
+        list.add(Component.translatable("tooltip.pasterdream.empty_vessel.4"));
     }
 
     @Override
@@ -36,6 +40,15 @@ public class EmptyVesselItem extends Item {
         ItemStack itemstack = ar.getObject();
 
         if (!world.isClientSide()) {
+            if (entity instanceof ServerPlayer sp) {
+                if (Mth.nextDouble(sp.getRandom(), 0, 1) <= 0.01) {
+                    SanHelper.setPlayerSanAndSync(sp, 0);
+                } else {
+                    double maxSan = SanHelper.getPlayerMaxSan(sp);
+                    SanHelper.addPlayerSanAndSync(sp, maxSan * 0.2);
+                }
+            }
+
             entity.addEffect(new MobEffectInstance(ModEffects.MEMENTO_BUFF.get(), 3600, 0));
             world.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()),
                     ModSounds.DING_0.get(), SoundSource.PLAYERS, 1, 1);

@@ -972,8 +972,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 追忆物品
         add(ModItems.EMPTY_VESSEL.get(), "空容器");
         add("tooltip.pasterdream.empty_vessel.1", "§7▪ §9使用后幸运+10持续3分钟");
-        add("tooltip.pasterdream.empty_vessel.2", "§7GQ2529的专属遗物");
-        add("tooltip.pasterdream.empty_vessel.3", "§6PasterDream开发者");
+        add("tooltip.pasterdream.empty_vessel.2", "§7▪ §999%+20%SAN §c1%-100%SAN");
+        add("tooltip.pasterdream.empty_vessel.3", "§7GQ2529的专属遗物");
+        add("tooltip.pasterdream.empty_vessel.4", "§6PasterDream开发者");
 
         // 琴雨梦装备
         add(ModItems.QYM_CAT_EARS.get(), "琴雨梦的猫耳发卡");
