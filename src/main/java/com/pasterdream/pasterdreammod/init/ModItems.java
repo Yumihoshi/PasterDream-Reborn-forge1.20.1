@@ -168,7 +168,7 @@ public class ModItems {
     public static final RegistryObject<Item> MELT_DREAM_COIN_PILE = ITEMS.register("melt_dream_coin_pile",
             () -> new MeltDreamCoinItem(new Item.Properties(), true));
 
-    public static final RegistryObject<Item> DREAM_FERTILIZER = ITEMS.register("dream_fertilizer", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DREAM_FERTILIZER = ITEMS.register("dream_fertilizer", DreamFertilizerItem::new);
 
     public static final RegistryObject<Item> DYEDREAM_COROLLA = ITEMS.register("dyedream_corolla", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WHITE_COROLLA = ITEMS.register("white_corolla", () -> new Item(new Item.Properties()));
