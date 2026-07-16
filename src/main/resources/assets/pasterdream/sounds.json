@@ -71,5 +71,8 @@
   "dream_harp_of_wanderer":
   {
     "sounds": [{"name": "pasterdream:dream_harp_of_wanderer", "stream": false}]
+  },
+  "ding_0": {
+    "sounds": [{"name": "pasterdream:ding_0", "stream": false}]
   }
 }

@@ -805,6 +805,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Memory Gem
         add(ModItems.MEMORY_GEM.get(), "Memory Gem");
 
+        // Memento Item
+        add(ModItems.EMPTY_VESSEL.get(), "Empty Vessel");
+        add("tooltip.pasterdream.empty_vessel.1", "§7▪ §9Grants Luck +10 for 3 minutes");
+        add("tooltip.pasterdream.empty_vessel.2", "§7Exclusive memento of GQ2529");
+        add("tooltip.pasterdream.empty_vessel.3", "§6PasterDream Developer");
+
         add("message.pasterdream.lost_sword_tomb.lack_strength", "Your strength is not enough to pull out this sword");
         add("tooltip.pasterdream.lost_sword_tomb", "§7If you can't pull it out, just use it with the stone!");
 
@@ -817,6 +823,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9On successful dodge: gain Counterattack I (0:10)");
         add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9Next attack: Attack +3, Skill DMG ×+50%, then buff ends");
         add("effect.pasterdream.counter_attack_buff", "Counterattack");
+        add("effect.pasterdream.memento_buff", "Dream Seeker's Prayer");
 
         // Advancements - Story
         add("advancements.pasterdream.story.root.title", "PasterDream");
