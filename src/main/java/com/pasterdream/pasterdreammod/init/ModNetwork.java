@@ -84,4 +84,9 @@ public class ModNetwork
     {
         CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), packet);
     }
+
+    public static void sendIsSanEnableSyncPacketToPlayer(IsSanEnableSyncPacket packet, ServerPlayer player)
+    {
+        CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), packet);
+    }
 }

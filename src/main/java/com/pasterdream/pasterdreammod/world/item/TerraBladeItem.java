@@ -27,7 +27,6 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
@@ -161,11 +160,9 @@ public class TerraBladeItem extends SwordItem {
             ItemStack stack = mc.player.getMainHandItem();
             if (stack.getItem() instanceof TerraBladeItem) {
                 if (stack.getOrCreateTag().getDouble("skill") >= 1) {
-                    if (mc.hitResult == null || mc.hitResult.getType() == HitResult.Type.MISS) {
-                        while (mc.options.keyAttack.consumeClick()) {
-                            mc.player.swing(InteractionHand.MAIN_HAND);
-                            ModNetwork.CHANNEL.sendToServer(new TerraBladeSwingPacket());
-                        }
+                    while (mc.options.keyAttack.consumeClick()) {
+                        mc.player.swing(InteractionHand.MAIN_HAND);
+                        ModNetwork.CHANNEL.sendToServer(new TerraBladeSwingPacket());
                     }
                 }
             }

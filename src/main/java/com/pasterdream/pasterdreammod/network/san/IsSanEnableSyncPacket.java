@@ -2,8 +2,10 @@ package com.pasterdream.pasterdreammod.network.san;
 
 import com.pasterdream.pasterdreammod.capability.ModCapabilities;
 import com.pasterdream.pasterdreammod.capability.san.ISan;
+import com.pasterdream.pasterdreammod.init.ModNetwork;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.NetworkEvent;
 
@@ -51,5 +53,13 @@ public class IsSanEnableSyncPacket
             }
         });
         context.get().setPacketHandled(true);
+    }
+
+    public static void sendToPlayer(Player player, ISan capability)
+    {
+        if (player instanceof ServerPlayer serverPlayer)
+        {
+            ModNetwork.sendIsSanEnableSyncPacketToPlayer(new IsSanEnableSyncPacket(player, capability), serverPlayer);
+        }
     }
 }

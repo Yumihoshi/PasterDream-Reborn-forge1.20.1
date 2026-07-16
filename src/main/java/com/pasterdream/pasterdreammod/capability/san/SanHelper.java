@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.capability.san;
 
 import com.pasterdream.pasterdreammod.capability.ModCapabilities;
+import com.pasterdream.pasterdreammod.network.san.IsSanEnableSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.MaxSanSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import net.minecraft.server.level.ServerPlayer;
@@ -42,6 +43,7 @@ public class SanHelper
         player.getCapability(ModCapabilities.SAN).ifPresent(capability ->
         {
             capability.setIsSanEnable(isEnabled);
+            IsSanEnableSyncPacket.sendToPlayer(player, capability);
         });
     }
 
