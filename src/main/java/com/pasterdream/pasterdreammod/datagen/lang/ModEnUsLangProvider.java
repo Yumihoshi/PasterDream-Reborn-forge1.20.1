@@ -808,8 +808,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Memento Item
         add(ModItems.EMPTY_VESSEL.get(), "Empty Vessel");
         add("tooltip.pasterdream.empty_vessel.1", "§7▪ §9Grants Luck +10 for 3 minutes");
-        add("tooltip.pasterdream.empty_vessel.2", "§7Exclusive memento of GQ2529");
-        add("tooltip.pasterdream.empty_vessel.3", "§6PasterDream Developer");
+        add("tooltip.pasterdream.empty_vessel.2", "§7▪ §999%+20%SAN §c1%-100%SAN");
+        add("tooltip.pasterdream.empty_vessel.3", "§7Exclusive memento of GQ2529");
+        add("tooltip.pasterdream.empty_vessel.4", "§6PasterDream Developer");
 
         // Qym Gear
         add(ModItems.QYM_CAT_EARS.get(), "Qym's Cat Ears");
