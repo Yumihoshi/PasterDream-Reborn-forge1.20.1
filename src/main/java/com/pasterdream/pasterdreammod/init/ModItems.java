@@ -45,6 +45,10 @@ import com.pasterdream.pasterdreammod.world.item.TerraBladeItem;
 import com.pasterdream.pasterdreammod.world.item.grasstool.KusanagiItem;
 import com.pasterdream.pasterdreammod.world.item.grasstool.MurakumoKusanagiItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.SculkArmorItem;
+import com.pasterdream.pasterdreammod.world.item.armoritem.qym.QymCatEarsItem;
+import com.pasterdream.pasterdreammod.world.item.armoritem.qym.QymWindShirtItem;
+import com.pasterdream.pasterdreammod.world.item.armoritem.qym.QymSwayingSkirtItem;
+import com.pasterdream.pasterdreammod.world.item.armoritem.qym.QymCloudBootsItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarItem;
 import com.pasterdream.pasterdreammod.world.item.MeltDreamCoinItem;
 import com.pasterdream.pasterdreammod.world.item.PaleBoneneedleItem;
@@ -1198,6 +1202,18 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> EMPTY_VESSEL = ITEMS.register("empty_vessel",
             EmptyVesselItem::new);
+    public static final RegistryObject<Item> QYM_CAT_EARS = ITEMS.register("qym_cat_ears",
+            () -> new QymCatEarsItem(ModArmorMaterials.QYM, ArmorItem.Type.HELMET,
+                    new Item.Properties().fireResistant().rarity(ModRarities.MIRACLE)));
+    public static final RegistryObject<Item> QYM_WIND_SHIRT = ITEMS.register("qym_wind_shirt",
+            () -> new QymWindShirtItem(ModArmorMaterials.QYM, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().fireResistant().rarity(ModRarities.MIRACLE)));
+    public static final RegistryObject<Item> QYM_SWAYING_SKIRT = ITEMS.register("qym_swaying_skirt",
+            () -> new QymSwayingSkirtItem(ModArmorMaterials.QYM, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties().fireResistant().rarity(ModRarities.MIRACLE)));
+    public static final RegistryObject<Item> QYM_CLOUD_BOOTS = ITEMS.register("qym_cloud_boots",
+            () -> new QymCloudBootsItem(ModArmorMaterials.QYM, ArmorItem.Type.BOOTS,
+                    new Item.Properties().fireResistant().rarity(ModRarities.MIRACLE)));
 
     // 刷怪蛋
     public static final RegistryObject<Item> PINK_CHICKEN_SPAWN_EGG = ITEMS.register("pink_chicken_spawn_egg",

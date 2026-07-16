@@ -252,6 +252,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BROKEN_HERO_SWORD.get());
                         // 特殊道具
                         output.accept(ModItems.DREAM_HARP_OF_WANDERER.get());
+                        output.accept(ModItems.QYM_CAT_EARS.get());
+                        output.accept(ModItems.QYM_WIND_SHIRT.get());
+                        output.accept(ModItems.QYM_SWAYING_SKIRT.get());
+                        output.accept(ModItems.QYM_CLOUD_BOOTS.get());
                         // 饰品
                         output.accept(ModItems.GOLD_CHARM.get());
                         output.accept(ModItems.ENDEYE_CHARM.get());
