@@ -1083,5 +1083,26 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.cecilia_blessing_buff.description", "戴着塞西莉娅受到致命伤害后获得，效果期间获得伤害免疫。");
 
 
+        // 沙漠英雄墓 - 任务对话
+        add("message.pasterdream.desert_hero_tomb.line1", "良久，竟有来者。");
+        add("message.pasterdream.desert_hero_tomb.line2", "无苦心，有孥，吾有一事相求。");
+        add("message.pasterdream.desert_hero_tomb.line3", "如卿所见，吾今也。");
+        add("message.pasterdream.desert_hero_tomb.line4", "以剑授汝，可否助我逐外寇也？");
+        add("message.pasterdream.desert_hero_tomb.line5", "为得好，子曰谢酬。");
+        add("message.pasterdream.desert_hero_tomb.line6", "汝又能终吾三请，吾以真剑付汝。");
+        add("message.pasterdream.desert_hero_tomb.line7", "其名为：§e『沉荆门』朔漠");
+        add("message.pasterdream.desert_hero_tomb.task_clear_threats", "[清除附近的掠夺者与尸壳]");
+        add("message.pasterdream.desert_hero_tomb.threats_remaining", "尚未清除附近的威胁，他不予回应");
+        add("message.pasterdream.desert_hero_tomb.quest1", "1.为我带来10块年糕");
+        add("message.pasterdream.desert_hero_tomb.quest2", "2.我想要一匹马在旁边陪着我");
+        add("message.pasterdream.desert_hero_tomb.quest3", "3.获得一个全村庄村民的英雄认可时来见我");
+        add("message.pasterdream.desert_hero_tomb.task1_complete", "任务1完成");
+        add("message.pasterdream.desert_hero_tomb.task2_complete", "任务2完成");
+        add("message.pasterdream.desert_hero_tomb.task3_complete", "任务3完成");
+        add("message.pasterdream.desert_hero_tomb.all_tasks_done", "吾心愿已成，请携朔漠大剑见我");
+        add("message.pasterdream.desert_hero_tomb.receive_sword", "请君收下吧：此名为『沉荆门』朔漠");
+        add("message.pasterdream.desert_hero_tomb.bring_sword", "吾心愿已成，请携朔漠大剑见我");
+        add("message.pasterdream.desert_hero_tomb.already_completed", "已有人完成他的全部愿望，他便不再回应");
+
     }
 }

@@ -917,5 +917,26 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.dream_harp_of_wanderer_buff.description", "Obtained after using the Dream Harp of Wanderer, the Dream Harp of Wanderer can be acquired from the Dyedream Train.");
         add("effect.pasterdream.cecilia_blessing_buff.description", "Obtained after takes a fatal hit when equips Blessing of Cecilia, making you immune to damage while the effect lasts.");
 
+        // Desert Hero Tomb - Quest Dialogue
+        add("message.pasterdream.desert_hero_tomb.line1", "At long last, a visitor has come.");
+        add("message.pasterdream.desert_hero_tomb.line2", "I have no regrets, only one final request.");
+        add("message.pasterdream.desert_hero_tomb.line3", "As you can see, this is all that remains of me.");
+        add("message.pasterdream.desert_hero_tomb.line4", "I bestow this sword upon you. Will you help me drive out the invaders?");
+        add("message.pasterdream.desert_hero_tomb.line5", "Well done, my gratitude.");
+        add("message.pasterdream.desert_hero_tomb.line6", "You have proven your worth. I shall grant you the true sword.");
+        add("message.pasterdream.desert_hero_tomb.line7", "Its name is: §e'Chenjingmen' Desert Blade");
+        add("message.pasterdream.desert_hero_tomb.task_clear_threats", "[Clear the nearby Pillagers and Husks]");
+        add("message.pasterdream.desert_hero_tomb.threats_remaining", "The threats nearby have not been cleared. He will not respond.");
+        add("message.pasterdream.desert_hero_tomb.quest1", "1. Bring me 10 Rice Cakes");
+        add("message.pasterdream.desert_hero_tomb.quest2", "2. I want a horse by my side");
+        add("message.pasterdream.desert_hero_tomb.quest3", "3. Gain the recognition of an entire village as their hero");
+        add("message.pasterdream.desert_hero_tomb.task1_complete", "Task 1 Complete");
+        add("message.pasterdream.desert_hero_tomb.task2_complete", "Task 2 Complete");
+        add("message.pasterdream.desert_hero_tomb.task3_complete", "Task 3 Complete");
+        add("message.pasterdream.desert_hero_tomb.all_tasks_done", "My wishes have been fulfilled. Bring me the Desert Sword.");
+        add("message.pasterdream.desert_hero_tomb.receive_sword", "Please accept this: its name is 'Chenjingmen' Desert Blade");
+        add("message.pasterdream.desert_hero_tomb.bring_sword", "My wishes have been fulfilled. Bring me the Desert Sword.");
+        add("message.pasterdream.desert_hero_tomb.already_completed", "Someone has already fulfilled all his wishes. He no longer responds.");
+
     }
 }
