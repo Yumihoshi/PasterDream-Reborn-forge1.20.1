@@ -262,6 +262,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.SNOWFALL_DREAM_MUSIC_DISC.get());
 
         basicItem(ModItems.SAND_OF_TIME.get());
+        basicItem(ModItems.MEMORY_GEM.get());
         handheldItem(ModItems.DREAM_HARP_OF_WANDERER);
         basicItem(ModItems.STORAGE_BAG.get());
         basicItem(ModItems.LARGE_STORAGE_BAG.get());

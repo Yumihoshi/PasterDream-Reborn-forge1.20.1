@@ -407,6 +407,7 @@
 | `storage_bag`                  | `storage_bag`                               | 不改                                                               | 客制化类 `StorageBagItem`，储物袋之间不再能镶套                                                                         |
 | `storage_bag_0`                | `large_storage_bag`                         | 重命名                                                              | 客制化类 `LargeStorageBagItem`，储物袋之间不再能镶套（计划加入套动物功能）                                                         |
 | `dream_harp_of_wanderer`        | `dream_harp_of_wanderer`                     | 不改                                                               | 客制化类 `DreamharpOfWandererItem`，右键消耗2融梦能量演奏，为周围玩家施加增益效果                              |
+| `memory_gem_0`                  | `memory_gem`                                | 重命名，去除 `_0` 后缀                                                   | 无需客制化类，直接用 `Item`                                                                                   |
 
 ---
 

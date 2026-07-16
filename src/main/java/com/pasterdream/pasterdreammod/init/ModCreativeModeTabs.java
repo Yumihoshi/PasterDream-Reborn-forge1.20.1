@@ -606,6 +606,17 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+    // ===== 追忆 =====
+    // 来源: 旧 paster_tab_7
+    public static final RegistryObject<CreativeModeTab> PASTERDREAM_MEMENTO_TAB = CREATIVE_MODE_TABS.register("pasterdream_memento_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.pasterdream.pasterdream_memento_tab"))
+                    .icon(() -> new ItemStack(ModItems.MEMORY_GEM.get()))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ModItems.MEMORY_GEM.get());
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }

@@ -1193,6 +1193,10 @@ public class ModItems {
     public static final RegistryObject<Item> LARGE_STORAGE_BAG = ITEMS.register("large_storage_bag", LargeStorageBagItem::new);
     public static final RegistryObject<Item> STRAWBERRY_HEART = ITEMS.register("strawberry_heart", StrawberryHeartItem::new);
 
+    // 追忆
+    public static final RegistryObject<Item> MEMORY_GEM = ITEMS.register("memory_gem",
+            () -> new Item(new Item.Properties()));
+
     // 刷怪蛋
     public static final RegistryObject<Item> PINK_CHICKEN_SPAWN_EGG = ITEMS.register("pink_chicken_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.PINK_CHICKEN, 0xf3e3f2, 0xbf038f, new Item.Properties()));

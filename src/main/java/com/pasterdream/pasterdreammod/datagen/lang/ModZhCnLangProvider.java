@@ -385,6 +385,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "帕斯特之梦 | 笔记");
         add("itemGroup.pasterdream.pasterdream_dream_debug_tab", "帕斯特之梦 | 调试栏");
         add("itemGroup.pasterdream.pasterdream_expansion_tab", "帕斯特之梦 | 拓展栏");
+        add("itemGroup.pasterdream.pasterdream_memento_tab", "帕斯特之梦 | 追忆");
 
 
         add("button.pasterdream.mortarbutton", "研磨");
@@ -964,6 +965,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.strawberry_heart.desc3", "§7▪ §7冷却: 12秒 §7| §6范围: 8格");
         add("tooltip.pasterdream.strawberry_heart.desc4", "§7▪ §d立即恢复2点理智，并给予8秒3.6理智光环，期间你免疫恍惚效果");
         add("tooltip.pasterdream.strawberry_heart.no_energy", "融梦能量不足");
+
+        // 追忆宝石
+        add(ModItems.MEMORY_GEM.get(), "追忆宝石");
 
         // 附魔
         add("enchantment.pasterdream.swift_strike", "疾风连击");
