@@ -479,10 +479,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.6", "§7▪ §9Cooldown: 2.5s");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.7", "§7Passive:");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.8", "§7▪ §9Grants Water Breathing while held");
-        add("tooltip.pasterdreammod.kusanagi.1", "Souls: §7%d/200");
+        add("tooltip.pasterdreammod.kusanagi.1", "Souls: §7%d/%d");
         add("tooltip.pasterdreammod.kusanagi.2", "§7▪ §9Applies Poison on hit");
         add("tooltip.pasterdreammod.kusanagi.evolve", "The weapon has grown to a new stage");
-        add("tooltip.pasterdreammod.murakumo_kusanagi.1", "Inlaid: §7200 Souls");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.1", "Inlaid: §7%d Souls");
         add("tooltip.pasterdreammod.murakumo_kusanagi.2", "Combat Art: §bExtreme Sharpness");
         add("tooltip.pasterdreammod.murakumo_kusanagi.3", "§7▪ §9Triggers on first hit against a target");
         add("tooltip.pasterdreammod.murakumo_kusanagi.4", "§7▪ §9Deals 7+Sharpness*BaseATK/2 bonus damage");
@@ -898,6 +898,21 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");
         add(ModEntities.PINK_SLIME.get(), "Pink Slime");
         add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "Pink Slime Spawn Egg");
+
+        //jeed Compatible
+        add("effect.pasterdream.rest_buff.description", "Touch the QYM doll or get it after sleeping, and you'll get a san aura while the effect lasts.");
+        add("effect.pasterdream.cook_buff.description", "Obtained after eating some kind of food, grants a san aura while the effect lasts.");
+        add("effect.pasterdream.cheer_up_buff.description", "Get it when san is above 90% to gain some positive effects.");
+        add("effect.pasterdream.lethargy_buff.description", "You gain some negative effects when san is between 40% and 60%.");
+        add("effect.pasterdream.trance_buff.description", "You gain worse negative effects when san is between 20% and 40%.");
+        add("effect.pasterdream.insand_buff.description", "When sanity falls below 20%, you get it and experience extremely severe negative effects. Your vision will be covered with special visual effects. When san is between 1% and 10%, you get Insand II, with looping sound effects and camera shakes. When sanity drops below 1%, you get Insand III, and the aforementioned negative effects are intensified. (Visual effects, shaking, and sound effects can be turned off with commands or config)");
+        add("effect.pasterdream.snow_vow_buff.description", "During the effect period, grants 3 Luck, immunity to burn and freeze effects, provided by Snow Vow Head curios within range.");
+        add("effect.pasterdream.goldenrod_tea_buff.description", "During the duration of the effect, it provides immunity to hunger and nausea.");
+        add("effect.pasterdream.sculk_armor_buff.description", "Obtained when wearing the full Sculk set, increases maximum health, grants resistance buff when in the depths and removes darkness debuff while giving speed and resistance effects when affected by darkness debuff.");
+        add("effect.pasterdream.dyedream_armor_buff.description", "Obtained when wearing the full Dyedream Alloy set, increases maximum health and grants Absorption I every 30 seconds.");
+        add("effect.pasterdream.dyedream_up_buff.description", "Obtained when wearing the full Dyedream Alloy set, deals 50% more damage when holding Dyedream (Dyedream Alloy and Melt Dream Crystal) tools.");
+        add("effect.pasterdream.dream_wish_buff.description", "Drink the dream fruit juice to get it, and having this effect lets you enter the Dyedream World when you sleep at night.");
+        add("effect.pasterdream.dyedream_perfume_buff.description", "Obtained by drinking the Dyedream Perfume, it expels the Phantom for the duration of its effect.");
 
     }
 }

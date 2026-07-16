@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.grasstool;
 
+import com.pasterdream.pasterdreammod.Config;
 import com.pasterdream.pasterdreammod.helper.cooldown.SkillCooldownHelper;
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
@@ -72,7 +73,7 @@ public class MurakumoKusanagiItem extends SwordItem {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
-        tooltip.add(Component.translatable("tooltip.pasterdreammod.murakumo_kusanagi.1"));
+        tooltip.add(Component.translatable("tooltip.pasterdreammod.murakumo_kusanagi.1", Config.TheNumberofKillEnemytoEvolve));
         tooltip.add(Component.translatable("tooltip.pasterdreammod.murakumo_kusanagi.2"));
         tooltip.add(Component.translatable("tooltip.pasterdreammod.murakumo_kusanagi.3"));
         tooltip.add(Component.translatable("tooltip.pasterdreammod.murakumo_kusanagi.4"));
