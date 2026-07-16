@@ -1048,5 +1048,14 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModEntities.PINK_SLIME.get(), "粉红史莱姆");
         add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "粉红史莱姆刷怪蛋");
 
+
+        //jeed兼容
+        add("effect.pasterdream.rest_buff.description", "触摸琴雨梦玩偶或睡觉后获得，效果持续期间获得理智光环。");
+        add("effect.pasterdream.cook_buff.description", "食用部分食物后获得，效果持续期间获得理智光环。");
+        add("effect.pasterdream.cheer_up_buff.description", "san高于90%的时候获得，获得一些正面效果。");
+        add("effect.pasterdream.lethargy_buff.description", "san在40%和60%之间的时候获得，获得一些负面效果。");
+        add("effect.pasterdream.trance_buff.description", "san在20%和40%之间的时候获得，获得更严重的负面效果。");
+        add("effect.pasterdream.insand_buff.description", "san低于20%的时候获得，获得极为严重的负面效果，视线会被特殊的视觉效果覆盖，1%~10%时会获得疯狂II，循环播放音效并视角抖动，san低于1%时获得疯狂III，前面所述负面会得到加强。（视觉效果，抖动和音效可以指令关闭）");
+
     }
 }
