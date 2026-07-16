@@ -485,10 +485,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.6", "§7▪ §9冷却时间：2.5秒");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.7", "被动：");
         add("tooltip.pasterdreammod.beihai_ruo_tide_sword.8", "§7▪ §9手持武器时获得水下呼吸效果");
-        add("tooltip.pasterdreammod.kusanagi.1", "亡魂: §7%d/200");
+        add("tooltip.pasterdreammod.kusanagi.1", "亡魂: §7%d/%d");
         add("tooltip.pasterdreammod.kusanagi.2", "§7▪ §9攻击施加中毒效果");
         add("tooltip.pasterdreammod.kusanagi.evolve", "武器成长到了新的阶段");
-        add("tooltip.pasterdreammod.murakumo_kusanagi.1", "镶嵌：§7200亡魂");
+        add("tooltip.pasterdreammod.murakumo_kusanagi.1", "镶嵌：§7%d亡魂");
         add("tooltip.pasterdreammod.murakumo_kusanagi.2", "战技：§b极致锋利");
         add("tooltip.pasterdreammod.murakumo_kusanagi.3", "§7▪ §9首次攻击目标时触发");
         add("tooltip.pasterdreammod.murakumo_kusanagi.4", "§7▪ §9攻击造成7+武器锋利等级*武器基础面板/2点伤害");
@@ -1070,7 +1070,14 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.cheer_up_buff.description", "san高于90%的时候获得，获得一些正面效果。");
         add("effect.pasterdream.lethargy_buff.description", "san在40%和60%之间的时候获得，获得一些负面效果。");
         add("effect.pasterdream.trance_buff.description", "san在20%和40%之间的时候获得，获得更严重的负面效果。");
-        add("effect.pasterdream.insand_buff.description", "san低于20%的时候获得，获得极为严重的负面效果，视线会被特殊的视觉效果覆盖，1%~10%时会获得疯狂II，循环播放音效并视角抖动，san低于1%时获得疯狂III，前面所述负面会得到加强。（视觉效果，抖动和音效可以指令关闭）");
+        add("effect.pasterdream.insand_buff.description", "san低于20%的时候获得，获得极为严重的负面效果，视线会被特殊的视觉效果覆盖，san在1%~10%时会获得疯狂II，循环播放音效并视角抖动，san低于1%时获得疯狂III，前面所述负面会得到加强。（视觉效果，抖动和音效可以指令或配置关闭）");
+        add("effect.pasterdream.snow_vow_buff.description", "效果期间+3幸运，免疫燃烧和冻结效果，由雪下的誓言饰品在范围内给予。");
+        add("effect.pasterdream.goldenrod_tea_buff.description", "效果持续期间免疫饥饿和反胃效果。");
+        add("effect.pasterdream.sculk_armor_buff.description", "穿戴全套回响套装时获得，增加最大生命值，身处深层时获得抗性提升，受到黑暗效果时移除黑暗并给予速度和抗性效果。");
+        add("effect.pasterdream.dyedream_armor_buff.description", "穿戴全套染梦合金套装时获得，增加最大生命值并每30秒获得伤害吸收I。");
+        add("effect.pasterdream.dyedream_up_buff.description", "穿戴全套染梦合金套装时获得，持有染梦(染梦合金与融梦水晶)工具时伤害+50%");
+        add("effect.pasterdream.dream_wish_buff.description", "饮用梦境果汁获得，拥有该效果在晚上睡觉以进入染梦世界。");
+        add("effect.pasterdream.dyedream_perfume_buff.description", "饮用染梦香水获得，效果持续期间驱逐幻翼。");
 
     }
 }

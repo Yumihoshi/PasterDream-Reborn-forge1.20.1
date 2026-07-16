@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.world.item.grasstool;
 
+import com.pasterdream.pasterdreammod.Config;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
@@ -35,7 +36,7 @@ public class KusanagiItem extends SwordItem {
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, level, entity, slot, selected);
-        if (selected && stack.getOrCreateTag().getDouble("killed") >= 200) {
+        if (selected && stack.getOrCreateTag().getDouble("killed") >= Config.TheNumberofKillEnemytoEvolve) {
             ItemStack evolved = new ItemStack(ModItems.MURAKUMO_KUSANAGI.get());
             evolved.setTag(stack.getOrCreateTag().copy());
             stack.shrink(1);
@@ -62,7 +63,7 @@ public class KusanagiItem extends SwordItem {
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
         int killed = (int) stack.getOrCreateTag().getDouble("killed");
-        tooltip.add(Component.translatable("tooltip.pasterdreammod.kusanagi.1", killed));
+        tooltip.add(Component.translatable("tooltip.pasterdreammod.kusanagi.1", killed,Config.TheNumberofKillEnemytoEvolve));
         tooltip.add(Component.translatable("tooltip.pasterdreammod.kusanagi.2"));
     }
 }
