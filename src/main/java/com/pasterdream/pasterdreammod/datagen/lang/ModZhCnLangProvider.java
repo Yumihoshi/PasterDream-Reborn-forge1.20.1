@@ -1077,7 +1077,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.dyedream_armor_buff.description", "穿戴全套染梦合金套装时获得，增加最大生命值并每30秒获得伤害吸收I。");
         add("effect.pasterdream.dyedream_up_buff.description", "穿戴全套染梦合金套装时获得，持有染梦(染梦合金与融梦水晶)工具时伤害+50%");
         add("effect.pasterdream.dream_wish_buff.description", "饮用梦境果汁获得，拥有该效果在晚上睡觉以进入染梦世界。");
-        add("effect.pasterdream.dyedream_perfume_buff.description", "饮用染梦香水获得，效果持续期间驱逐幻翼。");
+        add("effect.pasterdream.dyedream_perfume_buff.description", "饮用染梦香水获得，效果持续期间幻翼不会攻击你。");
+        add("effect.pasterdream.counter_attack_buff.description", "增加战技伤害，下一次攻击后消失。");
+        add("effect.pasterdream.dream_harp_of_wanderer_buff.description", "使用漂泊旅者的染梦竖琴后获得，漂泊旅者的染梦竖琴可以从染梦列车中得到。");
+        add("effect.pasterdream.cecilia_blessing_buff.description", "戴着塞西莉娅受到致命伤害后获得，效果期间获得伤害免疫。");
+
 
         // 沙漠英雄墓 - 任务对话
         add("message.pasterdream.desert_hero_tomb.line1", "良久，竟有来者。");
