@@ -811,6 +811,21 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.empty_vessel.2", "§7Exclusive memento of GQ2529");
         add("tooltip.pasterdream.empty_vessel.3", "§6PasterDream Developer");
 
+        // Qym Gear
+        add(ModItems.QYM_CAT_EARS.get(), "Qym's Cat Ears");
+        add("tooltip.pasterdream.qym_cat_ears.san", "§7▪ §9SAN always at maximum");
+        add("tooltip.pasterdream.qym_cat_ears.set_bonus", "§7Set Bonus: §dSlumbering Rainbow Maiden");
+        add("tooltip.pasterdream.qym_cat_ears.damage_reduce", "§f▪ §9Gain 80% Damage Reduction");
+        add("tooltip.pasterdream.qym_cat_ears.dream_evasion", "§f▪ §9Immune to all damage in dream dimensions");
+        add(ModItems.QYM_WIND_SHIRT.get(), "Qym's Wind Shirt");
+        add("tooltip.pasterdream.qym_wind_shirt.flight", "§7▪ §9Gain flight ability");
+        add("tooltip.pasterdream.qym_wind_shirt.fall_immune", "§7▪ §9Immune to fall damage");
+        add(ModItems.QYM_SWAYING_SKIRT.get(), "Qym's Swaying Skirt");
+        add("tooltip.pasterdream.qym_swaying_skirt.energy", "§7▪ §9Melt Dream Energy always at maximum");
+        add(ModItems.QYM_CLOUD_BOOTS.get(), "Qym's Cloud Boots");
+        add("tooltip.pasterdream.qym_cloud_boots.blink", "§7▪ §9Blink has no cooldown");
+        add("tooltip.pasterdream.qym_cloud_boots.skill_cd", "§7▪ §9Skills have no cooldown");
+
         add("message.pasterdream.lost_sword_tomb.lack_strength", "Your strength is not enough to pull out this sword");
         add("tooltip.pasterdream.lost_sword_tomb", "§7If you can't pull it out, just use it with the stone!");
 

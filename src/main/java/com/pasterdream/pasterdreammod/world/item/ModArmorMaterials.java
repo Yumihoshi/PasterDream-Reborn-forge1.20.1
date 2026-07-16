@@ -33,9 +33,10 @@ public enum ModArmorMaterials implements ArmorMaterial {
             SoundEvents.EMPTY, 3.5F, 0.15F,
             () -> Ingredient.of(ModItems.SCULK_HEART.get())),
 
-    // QYM("qym", 0, new int[]{2, 10, 10, 10}, 99,
-    //         SoundEvents.ARMOR_EQUIP_NETHERITE, 10.0F, 1.0F,
-    //         () -> Ingredient.of(ModItems.MEMORY_GEM.get())),  // TODO: memory_gem 未注册
+    // 琴雨梦
+    QYM("qym", 0, new int[]{2, 10, 10, 10}, 99,
+            SoundEvents.EMPTY, 10.0F, 1.0F,
+            () -> Ingredient.of(ModItems.MEMORY_GEM.get())),
 
     // 天使之翼
     ANGEL_WING("angel_wing", 30, new int[]{2, 6, 5, 2}, 9,

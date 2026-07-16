@@ -975,6 +975,21 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.empty_vessel.2", "§7GQ2529的专属遗物");
         add("tooltip.pasterdream.empty_vessel.3", "§6PasterDream开发者");
 
+        // 琴雨梦装备
+        add(ModItems.QYM_CAT_EARS.get(), "琴雨梦的猫耳发卡");
+        add("tooltip.pasterdream.qym_cat_ears.san", "§7▪ §9精神值始终为精神值上限");
+        add("tooltip.pasterdream.qym_cat_ears.set_bonus", "§7套装效果： §d沉眠长虹的少女");
+        add("tooltip.pasterdream.qym_cat_ears.damage_reduce", "§f▪ §9获得80%伤害减免");
+        add("tooltip.pasterdream.qym_cat_ears.dream_evasion", "§f▪ §9在梦境中时免疫一切伤害");
+        add(ModItems.QYM_WIND_SHIRT.get(), "琴雨梦的凌风衬衫");
+        add("tooltip.pasterdream.qym_wind_shirt.flight", "§7▪ §9获得飞行能力");
+        add("tooltip.pasterdream.qym_wind_shirt.fall_immune", "§7▪ §9免疫摔落伤害");
+        add(ModItems.QYM_SWAYING_SKIRT.get(), "琴雨梦的摇曳裙摆");
+        add("tooltip.pasterdream.qym_swaying_skirt.energy", "§7▪ §9融梦能量始终为融梦能量上限");
+        add(ModItems.QYM_CLOUD_BOOTS.get(), "琴雨梦的踏云之靴");
+        add("tooltip.pasterdream.qym_cloud_boots.blink", "§7▪ §9瞬身术不再有冷却时间");
+        add("tooltip.pasterdream.qym_cloud_boots.skill_cd", "§7▪ §9战技不再有冷却时间");
+
         // 附魔
         add("enchantment.pasterdream.swift_strike", "疾风连击");
         add("enchantment.pasterdream.shelter", "庇护");
