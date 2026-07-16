@@ -912,7 +912,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.dyedream_armor_buff.description", "Obtained when wearing the full Dyedream Alloy set, increases maximum health and grants Absorption I every 30 seconds.");
         add("effect.pasterdream.dyedream_up_buff.description", "Obtained when wearing the full Dyedream Alloy set, deals 50% more damage when holding Dyedream (Dyedream Alloy and Melt Dream Crystal) tools.");
         add("effect.pasterdream.dream_wish_buff.description", "Drink the dream fruit juice to get it, and having this effect lets you enter the Dyedream World when you sleep at night.");
-        add("effect.pasterdream.dyedream_perfume_buff.description", "Obtained by drinking the Dyedream Perfume, it expels the Phantom for the duration of its effect.");
+        add("effect.pasterdream.dyedream_perfume_buff.description", "Obtained by drinking the Dyedream Perfume, Phantom don't attack you for the duration of its effect.");
+        add("effect.pasterdream.counter_attack_buff.description", "Increase skill damage and disappear after the next attack.");
+        add("effect.pasterdream.dream_harp_of_wanderer_buff.description", "Obtained after using the Dream Harp of Wanderer, the Dream Harp of Wanderer can be acquired from the Dyedream Train.");
+        add("effect.pasterdream.cecilia_blessing_buff.description", "Obtained after takes a fatal hit when equips Blessing of Cecilia, making you immune to damage while the effect lasts.");
 
     }
 }
