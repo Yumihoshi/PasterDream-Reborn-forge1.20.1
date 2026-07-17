@@ -25,8 +25,10 @@ import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
 import com.pasterdream.pasterdreammod.world.item.lootgenerator.LootGeneratorItem;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarRecipe;
 import com.pasterdream.pasterdreammod.world.item.mortar.MortarScreen;
+import com.pasterdream.pasterdreammod.world.item.prophecycard.ProphecyCardItem;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.forge.ForgeTypes;
 import mezz.jei.api.ingredients.subtypes.IIngredientSubtypeInterpreter;
 import mezz.jei.api.registration.*;
@@ -118,6 +120,14 @@ public class ModJEIPlugin implements IModPlugin
                     ResourceLocation table = LootGeneratorItem.getLootTable(stack);
                     return table != null ? table.toString() : IIngredientSubtypeInterpreter.NONE;
                 });
+
+        registration.registerSubtypeInterpreter(
+                ModItems.PROPHECY_CARD.get(),
+                (stack, context) -> ProphecyCardItem.getType(stack));
+
+        registration.registerSubtypeInterpreter(
+                ModItems.EMPTY_PROPHECY_CARD.get(),
+                (stack, context) -> IIngredientSubtypeInterpreter.NONE);
     }
 
     //将流体添加至JEI物品列表
