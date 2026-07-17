@@ -160,6 +160,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLACK_METAL_INGOT.get());
                         output.accept(ModItems.BLACK_METAL_GRAIN.get());
                         output.accept(ModItems.RUST_BLACK_METAL_GRAIN.get());
+                        output.accept(ModItems.SHADOW_DUNGEON_KEY.get());
                         output.accept(ModItems.PALE_BONENEEDLE.get());
                         output.accept(ModItems.ROOTS_PALE_BONENEEDLE.get());
                         output.accept(ModItems.SAND_OF_TIME.get());
@@ -442,6 +443,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RUST_BLACK_METAL_BLOCK.get());
                         output.accept(ModItems.RUST_BLACK_METAL_WALL.get());
                         output.accept(ModItems.RUST_BLACK_METAL_BARS.get());
+                        output.accept(ModItems.SHADOW_BOOKSHELF.get());
+                        output.accept(ModItems.WORN_SHADOW_BOOKSHELF.get());
+                        output.accept(ModItems.COBWEB_SHADOW_BOOKSHELF.get());
+                        output.accept(ModItems.KEY_SHADOW_BOOKSHELF.get());
                     })
                     .build());
 

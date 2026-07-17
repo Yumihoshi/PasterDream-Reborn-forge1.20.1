@@ -313,6 +313,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_TRAPDOOR.get(), "Shadow Trapdoor");
         add(ModBlocks.SHADOW_PRESSURE_PLATE.get(), "Shadow Pressure Plate");
         add(ModBlocks.SHADOW_BUTTON.get(), "Shadow Button");
+        add(ModBlocks.SHADOW_BOOKSHELF.get(), "Shadow Bookshelf");
+        add(ModBlocks.WORN_SHADOW_BOOKSHELF.get(), "Worn Shadow Bookshelf");
+        add(ModBlocks.COBWEB_SHADOW_BOOKSHELF.get(), "Cobweb Shadow Bookshelf");
+        add(ModBlocks.KEY_SHADOW_BOOKSHELF.get(), "Key Shadow Bookshelf");
+        add(ModItems.SHADOW_DUNGEON_KEY.get(), "Shadow Dungeon Key");
+        add("tooltip.pasterdream.shadow_dungeon_key", "§7Used to open the door to the lower level of the Shadow Dungeon");
         add(ModBlocks.BIG_BUBBLE.get(), "Big Bubble");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "Dyedream Crystal Lantern");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "Dye Dream Lantern");

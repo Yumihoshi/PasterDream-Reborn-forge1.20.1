@@ -284,7 +284,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SHADOW_DOOR.get())
                 .add(ModBlocks.SHADOW_TRAPDOOR.get())
                 .add(ModBlocks.SHADOW_PRESSURE_PLATE.get())
-                .add(ModBlocks.SHADOW_BUTTON.get());
+                .add(ModBlocks.SHADOW_BUTTON.get())
+                .add(ModBlocks.SHADOW_BOOKSHELF.get())
+                .add(ModBlocks.WORN_SHADOW_BOOKSHELF.get())
+                .add(ModBlocks.COBWEB_SHADOW_BOOKSHELF.get())
+                .add(ModBlocks.KEY_SHADOW_BOOKSHELF.get());
 
         tag(BlockTags.PLANKS)
                 .add(ModBlocks.DYEDREAM_PLANKS.get())

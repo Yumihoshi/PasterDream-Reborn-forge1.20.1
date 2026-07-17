@@ -171,7 +171,11 @@
     "rust_black_metal_block": "rust_black_metal_block",
     "rust_black_metal_block_wall": "rust_black_metal_wall",
     "rust_black_metal_block_bars": "rust_black_metal_bars",
-    "blackmetal_block": "black_metal_block"
+    "blackmetal_block": "black_metal_block",
+    "shadowshelf_0": "shadow_bookshelf",
+    "shadowshelf_1": "worn_shadow_bookshelf",
+    "shadowshelf_2": "cobweb_shadow_bookshelf",
+    "shadowshelf_3": "key_shadow_bookshelf"
   },
   "items": {
     "amber_candy": "amber_candy",
@@ -429,7 +433,8 @@
     "memento_item_07": "empty_vessel",
     "rust_black_metal_grain": "rust_black_metal_grain",
     "blackmetal_ingot": "black_metal_ingot",
-    "blackmetal_grain": "black_metal_grain"
+    "blackmetal_grain": "black_metal_grain",
+    "shadow_dungeon_key": "shadow_dungeon_key"
   },
   "entities": {
     "pink_chicken": "pink_chicken",

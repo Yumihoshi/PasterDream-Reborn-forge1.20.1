@@ -290,6 +290,34 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.STRIPPED_SHADOW_STEM.get());
         dropSelf(ModBlocks.STRIPPED_SHADOW_HYPHAE.get());
 
+        // ===== 阴影书架系列 =====
+        add(ModBlocks.SHADOW_BOOKSHELF.get(), block -> LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModBlocks.SHADOW_BOOKSHELF.get()).when(HAS_SILK_TOUCH)))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.BOOK).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+                        .add(LootItem.lootTableItem(Items.PAPER).setWeight(8).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+                        .add(LootItem.lootTableItem(ModItems.BROKEN_NOTE.get()).setWeight(1))
+                        .when(HAS_SILK_TOUCH.invert())));
+        add(ModBlocks.WORN_SHADOW_BOOKSHELF.get(), block -> LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModBlocks.WORN_SHADOW_BOOKSHELF.get()).when(HAS_SILK_TOUCH)))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.BOOK).setWeight(10))
+                        .add(LootItem.lootTableItem(Items.PAPER).setWeight(20))
+                        .add(LootItem.lootTableItem(ModItems.BROKEN_NOTE.get()).setWeight(1))
+                        .when(HAS_SILK_TOUCH.invert())));
+        add(ModBlocks.COBWEB_SHADOW_BOOKSHELF.get(), block -> LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModBlocks.COBWEB_SHADOW_BOOKSHELF.get()).when(HAS_SILK_TOUCH)))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.BOOK).setWeight(5))
+                        .add(LootItem.lootTableItem(Items.PAPER).setWeight(10))
+                        .add(LootItem.lootTableItem(Items.STRING).setWeight(10))
+                        .add(LootItem.lootTableItem(ModItems.BROKEN_NOTE.get()).setWeight(2))
+                        .when(HAS_SILK_TOUCH.invert())));
+        add(ModBlocks.KEY_SHADOW_BOOKSHELF.get(), block -> LootTable.lootTable());
+
         generateCropLoot(ModBlocks.DYEDREAM_COROLLA_CROP.get(), ModItems.DYEDREAM_COROLLA.get(), 1, ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get());
         generateCropLoot(ModBlocks.WHITE_COROLLA_CROP.get(), ModItems.WHITE_COROLLA.get(), 1, ModItems.WHITE_COROLLA_CROP_AGE_1.get());
         generateCropLoot(ModBlocks.LIGHT_BALL_CROP.get(), ModItems.LIGHT_BALL.get(), 1, ModItems.LIGHT_BALL_CROP_AGE_1.get());
