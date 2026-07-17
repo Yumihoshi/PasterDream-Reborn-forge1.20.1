@@ -774,7 +774,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> PINEAPPLE_LOVE_SEA = ITEMS.register("pineapple_love_sea",
             () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().sanAdd(15).rarity(Rarity.UNCOMMON)
-                    .food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(ModEffects.COOK_BUFF.get(), 6000, 0), 1.0f)
+                    .food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(ModEffects.COOK_BUFF.get(), 6000, 1), 1.0f)
                             .nutrition(3).saturationMod(0.5f).alwaysEat().build())));
 
     public static final RegistryObject<Item> BUBBLE_TEA = ITEMS.register("bubble_tea", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties()
