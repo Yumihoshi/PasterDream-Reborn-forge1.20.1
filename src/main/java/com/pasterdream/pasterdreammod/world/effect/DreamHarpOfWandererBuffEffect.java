@@ -16,14 +16,35 @@ public class DreamHarpOfWandererBuffEffect extends MobEffect {
 
     public DreamHarpOfWandererBuffEffect() {
         super(MobEffectCategory.BENEFICIAL, -1934926);
-        this.addAttributeModifier(ModAttributes.SAN_VARIABILITY.get(), UUID_STRING, 4.8, AttributeModifier.Operation.ADDITION);
-        this.addAttributeModifier(Attributes.MAX_HEALTH, UUID_STRING, 4, AttributeModifier.Operation.ADDITION);
-        this.addAttributeModifier(Attributes.MOVEMENT_SPEED, UUID_STRING, 0.01, AttributeModifier.Operation.MULTIPLY_BASE);
     }
 
     @Override
     public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-        super.addAttributeModifiers(entity, attributeMap, amplifier);
-        entity.heal(Math.max(4 << (amplifier + 1), 0));
+        var sanAttr = entity.getAttribute(ModAttributes.SAN_VARIABILITY.get());
+        if (sanAttr != null && sanAttr.getModifier(UUID.fromString(UUID_STRING)) == null) {
+            sanAttr.addTransientModifier(new AttributeModifier(UUID.fromString(UUID_STRING),
+                    "Dream harp SAN var", 4.8, AttributeModifier.Operation.ADDITION));
+        }
+        var hpAttr = entity.getAttribute(Attributes.MAX_HEALTH);
+        if (hpAttr != null && hpAttr.getModifier(UUID.fromString(UUID_STRING)) == null) {
+            hpAttr.addTransientModifier(new AttributeModifier(UUID.fromString(UUID_STRING),
+                    "Dream harp health", 4.0, AttributeModifier.Operation.ADDITION));
+        }
+        var speedAttr = entity.getAttribute(Attributes.MOVEMENT_SPEED);
+        if (speedAttr != null && speedAttr.getModifier(UUID.fromString(UUID_STRING)) == null) {
+            speedAttr.addTransientModifier(new AttributeModifier(UUID.fromString(UUID_STRING),
+                    "Dream harp speed", 0.01, AttributeModifier.Operation.MULTIPLY_BASE));
+        }
+        entity.heal(8.0f);
+    }
+
+    @Override
+    public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
+        var sanAttr = entity.getAttribute(ModAttributes.SAN_VARIABILITY.get());
+        if (sanAttr != null) sanAttr.removeModifier(UUID.fromString(UUID_STRING));
+        var hpAttr = entity.getAttribute(Attributes.MAX_HEALTH);
+        if (hpAttr != null) hpAttr.removeModifier(UUID.fromString(UUID_STRING));
+        var speedAttr = entity.getAttribute(Attributes.MOVEMENT_SPEED);
+        if (speedAttr != null) speedAttr.removeModifier(UUID.fromString(UUID_STRING));
     }
 }
