@@ -642,6 +642,31 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('c', ModItems.FABRIC.get())
                 .unlockedBy(getHasName(ModItems.FABRIC.get()), has(ModItems.FABRIC.get()))
                 .save(pWriter);
+
+        // 锈蚀金属块
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.RUST_BLACK_METAL_BLOCK.get(), 4)
+                .pattern(" a ")
+                .pattern("aba")
+                .pattern(" a ")
+                .define('a', ModItems.RUST_BLACK_METAL_GRAIN.get())
+                .define('b', Items.IRON_INGOT)
+                .unlockedBy(getHasName(ModItems.RUST_BLACK_METAL_GRAIN.get()), has(ModItems.RUST_BLACK_METAL_GRAIN.get()))
+                .save(pWriter);
+
+        // 锈蚀金属墙
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.RUST_BLACK_METAL_WALL.get(), 2)
+                .pattern("aba")
+                .define('a', ModItems.RUST_BLACK_METAL_GRAIN.get())
+                .define('b', Items.IRON_INGOT)
+                .unlockedBy(getHasName(ModItems.RUST_BLACK_METAL_GRAIN.get()), has(ModItems.RUST_BLACK_METAL_GRAIN.get()))
+                .save(pWriter);
+
+        // 锈蚀金属栏杆
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.RUST_BLACK_METAL_BARS.get(), 1)
+                .requires(Items.IRON_BARS)
+                .requires(ModItems.RUST_BLACK_METAL_GRAIN.get())
+                .unlockedBy(getHasName(ModItems.RUST_BLACK_METAL_GRAIN.get()), has(ModItems.RUST_BLACK_METAL_GRAIN.get()))
+                .save(pWriter);
     }
 
     // ===== 染梦合金工具配方 =====

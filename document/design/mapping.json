@@ -159,7 +159,10 @@
     "shadow_stem": "shadow_stem",
     "shadow_hyphae": "shadow_hyphae",
     "stripped_shadow_stem": "stripped_shadow_stem",
-    "stripped_shadow_hyphae": "stripped_shadow_hyphae"
+    "stripped_shadow_hyphae": "stripped_shadow_hyphae",
+    "rust_black_metal_block": "rust_black_metal_block",
+    "rust_black_metal_block_wall": "rust_black_metal_wall",
+    "rust_black_metal_block_bars": "rust_black_metal_bars"
   },
   "items": {
     "amber_candy": "amber_candy",
@@ -414,7 +417,8 @@
     "storage_bag_0": "large_storage_bag",
     "dream_harp_of_wanderer": "dream_harp_of_wanderer",
     "memory_gem_0": "memory_gem",
-    "memento_item_07": "empty_vessel"
+    "memento_item_07": "empty_vessel",
+    "rust_black_metal_grain": "rust_black_metal_grain"
   },
   "entities": {
     "pink_chicken": "pink_chicken",
