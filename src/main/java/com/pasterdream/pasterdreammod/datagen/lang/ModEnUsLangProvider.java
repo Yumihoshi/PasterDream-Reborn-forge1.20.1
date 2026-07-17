@@ -400,6 +400,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.JUNGLE_SPORANGIUM.get(), "Jungle Sporangium");
         add(ModBlocks.FOURLEAF_CLOVER.get(),"fourleaf clover");
 
+        add(ModBlocks.SHADOW_SHORT_ROOTS.get(), "Shadow Short Roots");
+        add(ModBlocks.SHADOW_ROOTS.get(), "Shadow Roots");
+        add(ModBlocks.SHADOW_STEM_FERN.get(), "Shadow Stem Fern");
+        add(ModBlocks.SHADOW_SPROUTS.get(), "Shadow Sprouts");
+        add(ModBlocks.SHADOW_FERN.get(), "Shadow Fern");
+
         add(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(), "Melt Dream Crystal Fragment");
         add(ModItems.MELT_DREAM_AURORIAN_STEEL.get(), "Melt Dream Aurorian Steel");
         add("tooltip.pasterdreammod.melt_dream_aurorian_steel", "§7§oKids, did you ask?");

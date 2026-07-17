@@ -214,6 +214,15 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         dropOther(ModBlocks.FOURLEAF_CLOVER.get(), ModItems.FOURLEAF_CLOVER_CURIO.get());
 
+        // ===== 阴影植物系列 =====
+        dropSelf(ModBlocks.SHADOW_SHORT_ROOTS.get());
+        dropSelf(ModBlocks.SHADOW_ROOTS.get());
+        add(ModBlocks.SHADOW_STEM_FERN.get(),
+                block -> LootHelpers.createhighflowerDrops(ModBlocks.SHADOW_STEM_FERN.get()));
+        add(ModBlocks.SHADOW_SPROUTS.get(),
+                block -> LootHelpers.creategrassesDrops(ModBlocks.SHADOW_SPROUTS.get()));
+        dropSelf(ModBlocks.SHADOW_FERN.get());
+
         dropSelf(ModBlocks.LIGHT_BALL.get());
 
         dropSelf(ModBlocks.DYEDREAM_SAND.get());
