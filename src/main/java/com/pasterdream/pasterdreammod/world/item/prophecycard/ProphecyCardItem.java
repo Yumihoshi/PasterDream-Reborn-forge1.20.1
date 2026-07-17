@@ -1,11 +1,14 @@
 package com.pasterdream.pasterdreammod.world.item.prophecycard;
 
+import com.pasterdream.pasterdreammod.Config;
+import com.pasterdream.pasterdreammod.init.ModSounds;
 import com.pasterdream.pasterdreammod.world.item.ModRarities;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -20,6 +23,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
@@ -302,10 +306,58 @@ public class ProphecyCardItem extends Item {
         }
     }
 
+    @OnlyIn(Dist.CLIENT)
+    private static void showTotemEffect(ItemStack stack) {
+        Minecraft.getInstance().gameRenderer.displayItemActivation(stack);
+    }
+
+    // 允许生效的buff（可在配置文件修改）
+    private static boolean isEffectAllowed(MobEffectInstance effect) {
+        var list = Config.balanceAllowedEffects;
+        // 空列表 = 允许全部
+        if (list.isEmpty()) return true;
+
+        ResourceLocation id = ForgeRegistries.MOB_EFFECTS.getKey(effect.getEffect());
+        return id != null && list.contains(id.toString());
+    }
+
     private static ProphecyCardEffect balanceEffect() {
         return (level, player, hand, stack) -> {
-            // TODO: 均衡卡效果
-            return InteractionResultHolder.success(stack);
+            if (!level.isClientSide()) {
+                for (MobEffectInstance effect : player.getActiveEffects()) {
+                    int duration = effect.getDuration();
+
+                    // 跳过永久/超长效果
+                    if (duration > Config.maxtakeeffectduration * 20) continue;
+
+                    // 过滤：仅允许配置列表中的药水效果
+                    if (!isEffectAllowed(effect)) continue;
+
+                    // 等级翻倍 + 时间减半
+                    int newAmplifier = effect.getAmplifier() * 2 + 1;
+                    int newDuration = duration / 2;
+                    if (newDuration < Config.mintakeeffectduration * 20) continue;
+                    if (effect.getAmplifier() <= Config.maxlevel) {
+                        player.removeEffect(effect.getEffect());
+                        player.addEffect(new MobEffectInstance(
+                                effect.getEffect(), newDuration, newAmplifier,
+                                effect.isAmbient(), effect.isVisible(), effect.showIcon()
+                        ));
+                    }
+                }
+
+                // 音效
+                level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                        ModSounds.EVASION.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                // 消耗
+                if (!player.getAbilities().instabuild) {
+                    stack.shrink(1);
+                }
+            } else {
+                // 客户端：图腾贴图爆出特效
+                showTotemEffect(stack);
+            }
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
         };
     }
 
@@ -331,7 +383,7 @@ public class ProphecyCardItem extends Item {
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 120 * 20, 0));
                 // 音效
                 level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                        SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 1.0F, 1.0F);
+                        ModSounds.EVASION.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
                 // 消耗
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
@@ -343,12 +395,6 @@ public class ProphecyCardItem extends Item {
             return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
         };
     }
-
-    @OnlyIn(Dist.CLIENT)
-    private static void showTotemEffect(ItemStack stack) {
-        Minecraft.getInstance().gameRenderer.displayItemActivation(stack);
-    }
-
     private static ProphecyCardEffect sprintEffect() {
         return (level, player, hand, stack) -> {
             // TODO: 疾行卡效果

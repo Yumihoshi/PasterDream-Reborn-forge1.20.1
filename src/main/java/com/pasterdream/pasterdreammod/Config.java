@@ -52,6 +52,45 @@ public class Config
             .comment("『天丛云』草薙升级需要的亡魂数量，默认200")
             .defineInRange("the_number_of_kill_enemy_to_evolve", 200, 1, Integer.MAX_VALUE);
 
+    // === 预言卡配置 ===
+
+    //平衡
+    private static final ForgeConfigSpec.IntValue MIN_TAKE_EFFECT_DURATION = BUILDER
+            .comment("""
+                    平衡预言卡：药水等级翻倍/时间减半时，\
+                    
+                    低于此时长的效果不会被处理，\
+                    
+                    用于跳过模组饰品提供的永久药水效果。\
+                    
+                    默认：30秒""")
+            .defineInRange("min_take_effect_duration", 30, 1, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.IntValue MAX_TAKE_EFFECT_DURATION = BUILDER
+            .comment("""
+                    平衡预言卡：药水等级翻倍/时间减半时，\
+                    
+                    高于此时长的效果不会被处理，\
+                    
+                    用于跳过模组饰品提供的永久药水效果。\
+                    
+                    默认：1小时（3600秒）""")
+            .defineInRange("max_take_effect_duration", 3600, 1, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.IntValue MAX_LEVEL = BUILDER
+            .comment("高于该等级的药水效果平衡预言卡不会生效，默认255级（不限制）")
+            .defineInRange("max_level", 255, 1, Integer.MAX_VALUE);
+
+    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> BALANCE_ALLOWED_EFFECTS = BUILDER
+            .comment("平衡预言卡允许翻倍的药水效果 ID 列表（格式：modid:effect_id），"
+                    + "\n例：minecraft:regeneration 为生命恢复，minecraft:speed 为速度"
+                    + "\n支持模组药水，留空则允许所有")
+            .defineListAllowEmpty("balance_allowed_effects",
+                    List.of("minecraft:regeneration","minecraft:speed","minecraft:strength","minecraft:luck",
+                            "minecraft:jump_boost","minecraft:absorption","minecraft:health_boost"),
+                    obj -> obj instanceof String);
+
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean logDirtBlock;
@@ -74,6 +113,14 @@ public class Config
     public static boolean lowSanJitter = true;
     public static boolean lowSanSound = true;
 
+    // === 预言卡配置 ===
+
+    //平衡
+    public static int mintakeeffectduration;
+    public static int maxtakeeffectduration;
+    public static int maxlevel;
+    public static List<? extends String> balanceAllowedEffects;
+
     private static boolean validateItemName(final Object obj)
     {
         return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(ResourceLocation.tryParse(itemName));
@@ -89,6 +136,10 @@ public class Config
         KaichuOmamoriCooldownSeconds = KAICHU_OMAMORI_COOLDOWN.get();
         FoxFireLifetimeSeconds= FOX_FIRE_LIFETIME.get();
         TheNumberofKillEnemytoEvolve= NEED_KILL_ENEMY.get();
+        mintakeeffectduration= MIN_TAKE_EFFECT_DURATION.get();
+        maxtakeeffectduration= MAX_TAKE_EFFECT_DURATION.get();
+        maxlevel= MAX_LEVEL.get();
+        balanceAllowedEffects = BALANCE_ALLOWED_EFFECTS.get();
 
         items = ITEM_STRINGS.get().stream()
                 .map(itemName -> ForgeRegistries.ITEMS.getValue(ResourceLocation.parse(itemName)))
