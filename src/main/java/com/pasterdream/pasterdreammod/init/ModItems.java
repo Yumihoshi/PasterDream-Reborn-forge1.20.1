@@ -62,6 +62,7 @@ import com.pasterdream.pasterdreammod.world.item.DreamHarpOfWandererItem;
 import com.pasterdream.pasterdreammod.world.item.StarWishRodItem;
 import com.pasterdream.pasterdreammod.world.item.ThermalDaggerItem;
 import com.pasterdream.pasterdreammod.world.entity.MeltDreamCrystalEntityEntity;
+import com.pasterdream.pasterdreammod.world.entity.ThrownPinkEgg;
 import com.pasterdream.pasterdreammod.world.item.WhiteCrystalItem;
 
 import net.minecraft.core.BlockPos;
@@ -69,8 +70,11 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.context.UseOnContext;
@@ -534,7 +538,24 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> PINK_EGG = ITEMS.register("pink_egg",
-            () -> new Item(new Item.Properties().stacksTo(16)));
+            () -> new Item(new Item.Properties().stacksTo(16)) {
+                @Override
+                public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+                    ItemStack itemstack = player.getItemInHand(hand);
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                            SoundEvents.EGG_THROW, SoundSource.PLAYERS, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
+                    if (!level.isClientSide) {
+                        ThrownPinkEgg thrownEgg = new ThrownPinkEgg(level, player);
+                        thrownEgg.setItem(itemstack);
+                        thrownEgg.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+                        level.addFreshEntity(thrownEgg);
+                    }
+                    if (!player.getAbilities().instabuild) {
+                        itemstack.shrink(1);
+                    }
+                    return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
+                }
+            });
 
     public static final RegistryObject<Item> CHOCOLATE = ITEMS.register("chocolate",
             () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties()
