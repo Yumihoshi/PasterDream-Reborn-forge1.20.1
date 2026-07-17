@@ -1,0 +1,358 @@
+package com.pasterdream.pasterdreammod.world.item.prophecycard;
+
+import com.pasterdream.pasterdreammod.world.item.ModRarities;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ProphecyCardItem extends Item {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProphecyCardItem.class);
+
+    // ===== NBT Key =====
+    public static final String TAG_TYPE = "Type";
+
+    // ===== 内置预言卡种类常量 =====
+    public static final String TYPE_BALANCE = "balance";
+    public static final String TYPE_CHAOS = "chaos";
+    public static final String TYPE_CONFLICT = "conflict";
+    public static final String TYPE_GRAVEYARD = "graveyard";
+    public static final String TYPE_GUARD = "guard";
+    public static final String TYPE_HOLY_GRAIL = "holy_grail";
+    public static final String TYPE_SIN = "sin";
+    public static final String TYPE_SPRINT = "sprint";
+    public static final String TYPE_WIELDING_SWORD = "wielding_sword";
+
+    /**
+     * 已注册的种类 → predicate 浮点值（开放给外部模组/魔改注册新种类）。
+     * 内置种类: 0.100 ~ 0.900（9 个，间隔 0.1）
+     * 外部注册: 0.901 ~ 0.999（每 0.001 一步，约 99 个槽位）
+     * 哈希兜底: 0.001 ~ 0.099（未注册字符串自动 fallback）
+     */
+    public static final Map<String, Float> TYPE_PREDICATES = new LinkedHashMap<>();
+    private static float nextPredicate = 0.901f;
+
+    static {
+        TYPE_PREDICATES.put(TYPE_BALANCE, 0.1f);
+        TYPE_PREDICATES.put(TYPE_CHAOS, 0.2f);
+        TYPE_PREDICATES.put(TYPE_CONFLICT, 0.3f);
+        TYPE_PREDICATES.put(TYPE_GRAVEYARD, 0.4f);
+        TYPE_PREDICATES.put(TYPE_GUARD, 0.5f);
+        TYPE_PREDICATES.put(TYPE_HOLY_GRAIL, 0.6f);
+        TYPE_PREDICATES.put(TYPE_SIN, 0.7f);
+        TYPE_PREDICATES.put(TYPE_SPRINT, 0.8f);
+        TYPE_PREDICATES.put(TYPE_WIELDING_SWORD, 0.9f);
+    }
+
+    /**
+     * 卡片类型 → 右键效果（开放给外部模组注册自定义效果）
+     */
+    private static final Map<String, ProphecyCardEffect> CARD_EFFECTS = new LinkedHashMap<>();
+
+    public ProphecyCardItem() {
+        super(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+    }
+
+    // ===== 效果注册 API =====
+
+    /**
+     * 为指定种类注册右键效果。同一类型只能注册一个效果（后注册覆盖先注册）。
+     * 外部模组在注册种类后调用即可。
+     *
+     * @param type   种类名（需先通过 registerCardType 注册）
+     * @param effect 右键效果，传 null 可清除
+     */
+    public static void registerCardEffect(String type, @Nullable ProphecyCardEffect effect) {
+        if (effect == null) {
+            CARD_EFFECTS.remove(type);
+        } else {
+            CARD_EFFECTS.put(type, effect);
+            LOGGER.info("Registered effect for ProphecyCard type '{}'", type);
+        }
+    }
+
+    /**
+     * 获取指定类型已注册的效果，未注册返回 null
+     */
+    @Nullable
+    public static ProphecyCardEffect getCardEffect(String type) {
+        return CARD_EFFECTS.get(type);
+    }
+
+    // ===== 开放式 API：供外部模组/魔改注册新种类 =====
+
+    /**
+     * 注册一个新的预言卡种类，自动分配 predicate 值。
+     * 其他模组在 FMLCommonSetupEvent 或 mod 构造器中调用即可。
+     *
+     * @param typeName 种类名称（建议全小写+下划线，如 "my_card_type"）
+     * @return 分配的 predicate 浮点值，用于编写模型 JSON 的 overrides
+     * @throws IllegalStateException 如果 predicate 槽位已满（超过 0.99）
+     */
+    public static float registerCardType(String typeName) {
+        if (TYPE_PREDICATES.containsKey(typeName)) {
+            LOGGER.debug("ProphecyCard type '{}' already registered, skipping.", typeName);
+            return TYPE_PREDICATES.get(typeName);
+        }
+        if (nextPredicate > 0.999f) {
+            throw new IllegalStateException(
+                "ProphecyCard predicate slots exhausted (>999)! Cannot register type '" + typeName + "'");
+        }
+        float value = nextPredicate;
+        TYPE_PREDICATES.put(typeName, value);
+        nextPredicate += 0.001f;
+        LOGGER.info("Registered ProphecyCard type '{}' with predicate value {}", typeName, value);
+        return value;
+    }
+
+    /**
+     * 根据种类名获取 predicate 值（含 fallback 哈希兜底）。
+     * 内置种类返回固定值，外部注册种类返回分配的 slot 值，
+     * 未注册的字符串通过 hashCode 计算确定性 fallback 值（供纯资源包添加纹理）。
+     */
+    public static float getPredicateForType(String typeName) {
+        if (typeName.isEmpty()) return 0.0f;
+        Float registered = TYPE_PREDICATES.get(typeName);
+        if (registered != null) return registered;
+        // 哈希兜底：任何未注册字符串映射到 0.001~0.099（避开内置和 API 注册区）
+        // 资源包作者可计算此值来编写模型 JSON overrides
+        return 0.001f + Math.abs(typeName.hashCode() % 99) / 1000.0f;
+    }
+
+    // ===== NBT 读写 =====
+
+    /**
+     * 设置预言卡种类
+     */
+    public static void setType(ItemStack stack, String type) {
+        stack.getOrCreateTag().putString(TAG_TYPE, type);
+    }
+
+    /**
+     * 获取预言卡种类，未设置时返回空字符串
+     */
+    @NotNull
+    public static String getType(ItemStack stack) {
+        CompoundTag tag = stack.getTag();
+        if (tag != null && tag.contains(TAG_TYPE, Tag.TAG_STRING)) {
+            return tag.getString(TAG_TYPE);
+        }
+        return "";
+    }
+
+    /**
+     * 该 ItemStack 是否有种类
+     */
+    public static boolean hasCardType(ItemStack stack) {
+        return !getType(stack).isEmpty();
+    }
+
+    /**
+     * 获取用于 ItemProperties / 模型 predicate 的浮点值
+     */
+    public static float getPredicateValue(ItemStack stack) {
+        return getPredicateForType(getType(stack));
+    }
+
+    /**
+     * 创建一个指定种类的预言卡 ItemStack
+     */
+    public static ItemStack createCard(Item item, String type) {
+        ItemStack stack = new ItemStack(item);
+        setType(stack, type);
+        return stack;
+    }
+
+    // ===== 根据 NBT 显示不同名字 =====
+
+    /**
+     * 判断类型字符串是否为已识别的有效类型（内置或 API 注册）
+     */
+    public static boolean isKnownType(String type) {
+        return !type.isEmpty() && TYPE_PREDICATES.containsKey(type);
+    }
+
+    @Override
+    public @NotNull Component getName(@NotNull ItemStack stack) {
+        String type = getType(stack);
+        if (!type.isEmpty()) {
+            if (isKnownType(type)) {
+                // 有效类型：正常翻译
+                return Component.translatable("item.pasterdream.prophecy_card." + type);
+            }
+            // NBT 存在但类型未知 → 显示原始类型名 + 红色标记
+            return Component.translatable("item.pasterdream.prophecy_card.unknown", type)
+                    .withStyle(ChatFormatting.RED);
+        }
+        // 无 NBT：空白卡
+        return Component.translatable("item.pasterdream.prophecy_card");
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level,
+                                @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+        String type = getType(stack);
+        if (type.isEmpty()) {
+            // 空白卡提示
+            tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.empty")
+                    .withStyle(ChatFormatting.GRAY));
+        } else if (isKnownType(type)) {
+            // 有效类型
+            tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.type." + type)
+                    .withStyle(ChatFormatting.AQUA));
+        } else {
+            // 未知类型：警告
+            tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.unknown", type)
+                    .withStyle(ChatFormatting.RED));
+        }
+        switch (type) {
+            case TYPE_BALANCE-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.balance.description"));
+            case TYPE_CHAOS-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.chaos.description"));
+            case TYPE_CONFLICT-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.conflict.description"));
+            case TYPE_GRAVEYARD-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.graveyard.description"));
+            case TYPE_GUARD-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.guard.description"));
+            default->{
+                tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.unknown.description.1"));
+                tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.unknown.description.2"));
+            }
+        }
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
+        String type = getType(stack);
+
+        // 1. 优先分发到已注册的效果
+        ProphecyCardEffect effect = CARD_EFFECTS.get(type);
+        if (effect != null) {
+            return effect.use(world, player, hand, stack);
+        }
+
+        // 2. 未注册效果（含已知类型 + 空卡）：空挥，仅返回成功
+        if (type.isEmpty() || isKnownType(type)) {
+            return InteractionResultHolder.success(stack);
+        }
+
+        // 3. 异常 NBT：发送错误提示
+        if (!world.isClientSide()) {
+            player.displayClientMessage(
+                Component.translatable("message.pasterdream.prophecy_card.invalid", type)
+                    .withStyle(ChatFormatting.RED), false);
+        }
+        return InteractionResultHolder.fail(stack);
+    }
+
+    // ===== 工具方法：帮助资源包作者计算哈希 predicate 值 =====
+
+    /**
+     * [开发用] 在日志中打印所有已注册种类的 predicate 值
+     */
+    public static void logRegisteredTypes() {
+        LOGGER.info("=== Registered ProphecyCard Types ===");
+        for (var entry : TYPE_PREDICATES.entrySet()) {
+            LOGGER.info("  {} -> predicate={}", entry.getKey(), entry.getValue());
+        }
+        LOGGER.info("Next available slot: {}", nextPredicate);
+    }
+
+    // ===== 内置卡牌效果注册 =====
+
+    /**
+     * 注册所有内置卡牌的右键效果。
+     * 在 {@code FMLCommonSetupEvent} 中调用。
+     */
+    public static void registerAllCardEffects() {
+        for (var entry : TYPE_PREDICATES.entrySet()) {
+            String type = entry.getKey();
+            ProphecyCardItem.registerCardEffect(type, switch (type) {
+                case TYPE_BALANCE  -> balanceEffect();
+                case TYPE_CHAOS    -> chaosEffect();
+                case TYPE_CONFLICT -> conflictEffect();
+                case TYPE_GUARD    -> guardEffect();
+                case TYPE_SPRINT   -> sprintEffect();
+                // 未匹配的不注册效果（右键空挥）
+                default -> null;
+            });
+        }
+    }
+
+    private static ProphecyCardEffect balanceEffect() {
+        return (level, player, hand, stack) -> {
+            // TODO: 均衡卡效果
+            return InteractionResultHolder.success(stack);
+        };
+    }
+
+    private static ProphecyCardEffect chaosEffect() {
+        return (level, player, hand, stack) -> {
+            // TODO: 混沌卡效果
+            return InteractionResultHolder.success(stack);
+        };
+    }
+
+    private static ProphecyCardEffect conflictEffect() {
+        return (level, player, hand, stack) -> {
+            // TODO: 纷争卡效果
+            return InteractionResultHolder.success(stack);
+        };
+    }
+
+    private static ProphecyCardEffect guardEffect() {
+        return (level, player, hand, stack) -> {
+            if (!level.isClientSide()) {
+                // 服务端：给予 120 秒伤害吸收 V + 抗性提升 I
+                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 120 * 20, 4));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 120 * 20, 0));
+                // 音效
+                level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                        SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 1.0F, 1.0F);
+                // 消耗
+                if (!player.getAbilities().instabuild) {
+                    stack.shrink(1);
+                }
+            } else {
+                // 客户端：贴图爆出特效（不死图腾同款）
+                showTotemEffect(stack);
+            }
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+        };
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    private static void showTotemEffect(ItemStack stack) {
+        Minecraft.getInstance().gameRenderer.displayItemActivation(stack);
+    }
+
+    private static ProphecyCardEffect sprintEffect() {
+        return (level, player, hand, stack) -> {
+            // TODO: 疾行卡效果
+            return InteractionResultHolder.success(stack);
+        };
+    }
+}
