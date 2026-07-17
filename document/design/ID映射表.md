@@ -152,6 +152,9 @@
 | `desert_hero_tomb`                  | `desert_hero_tomb`                  | 不改                                            | 客制化类 `DesertHeroTombBlock`，因Geckolib特殊渲染+动画                                                                      |
 | `meltdream_chest`                   | `melt_dream_crystal_chest`          | 重命名                                           | 客制化类 `MeltDreamCrystalChestBlock`，因Geckolib特殊渲染+动画                                                               |
 | `meltdream_chest_open`              | `opened_melt_dream_crystal_chest`   | 重命名                                           | 客制化类 `OpenedMeltDreamCrystalChestBlock`，因Geckolib特殊渲染+动画                                                         |
+| `shadow_block`                     | `shadow`                            | 重命名，去 `_block` 后缀                            | 客制化类 `ShadowBlock extends FallingBlock`，连接纹理裁剪、空视觉形状、半透明遮光                              |
+| `thick_shadow_block`               | `thick_shadow`                      | 重命名，去 `_block` 后缀                            | 客制化类 `ThickShadowBlock extends Block`，连接纹理裁剪、空视觉形状、半透明遮光                              |
+| `shadow_stone`                     | `shadow_stone`                      | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
 
 
 ---
