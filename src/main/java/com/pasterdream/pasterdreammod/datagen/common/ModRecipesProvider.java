@@ -9,6 +9,7 @@ import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -1498,6 +1499,52 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         SingleItemRecipeBuilder.stonecutting(shadowStoneIngredient, RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_STONE_BRICK.get())
                 .unlockedBy(getHasName(ModItems.SHADOW_STONE.get()), has(ModItems.SHADOW_STONE.get()))
                 .save(pWriter, PasterDreamMod.MOD_ID + ":shadow_stone_brick_from_stonecutting");
+
+        // 阴影石建材 → 阴影石 (切石机，使用 forge:shadow_stones 标签)
+        var shadowStonesTag = Ingredient.of(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "shadow_stones")));
+        SingleItemRecipeBuilder.stonecutting(shadowStonesTag, RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_STONE.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STONE.get()), has(ModItems.SHADOW_STONE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":shadow_stone_from_stonecutting");
+
+        // ===== 细阴影石砖系列配方 =====
+        // 2×2 阴影石砖 → 4× 细阴影石砖
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.NARROW_SHADOW_STONE_BRICK.get(), 4)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', ModItems.SHADOW_STONE_BRICK.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STONE_BRICK.get()), has(ModItems.SHADOW_STONE_BRICK.get()))
+                .save(pWriter);
+
+        // 细阴影石砖 → 楼梯/台阶/墙 + 切石机
+        RecipeHelpers.buildingBlockFamilyRecipes(pWriter,
+                ModItems.NARROW_SHADOW_STONE_BRICK.get(), ModItems.NARROW_SHADOW_STONE_BRICK_STAIRS.get(),
+                ModItems.NARROW_SHADOW_STONE_BRICK_SLAB.get(), ModItems.NARROW_SHADOW_STONE_BRICK_WALL.get(),
+                PasterDreamMod.MOD_ID);
+
+        // 阴影石建材 → 细阴影石砖 (切石机，使用 forge:shadow_stones 标签)
+        SingleItemRecipeBuilder.stonecutting(shadowStonesTag, RecipeCategory.BUILDING_BLOCKS, ModItems.NARROW_SHADOW_STONE_BRICK.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STONE.get()), has(ModItems.SHADOW_STONE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":narrow_shadow_stone_brick_from_stonecutting");
+
+        // ===== 阴影石瓦系列配方 =====
+        // 2×2 细阴影石砖 → 4× 阴影石瓦
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_STONE_TILES.get(), 4)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', ModItems.NARROW_SHADOW_STONE_BRICK.get())
+                .unlockedBy(getHasName(ModItems.NARROW_SHADOW_STONE_BRICK.get()), has(ModItems.NARROW_SHADOW_STONE_BRICK.get()))
+                .save(pWriter);
+
+        // 阴影石瓦 → 楼梯/台阶/墙 + 切石机
+        RecipeHelpers.buildingBlockFamilyRecipes(pWriter,
+                ModItems.SHADOW_STONE_TILES.get(), ModItems.SHADOW_STONE_TILES_STAIRS.get(),
+                ModItems.SHADOW_STONE_TILES_SLAB.get(), ModItems.SHADOW_STONE_TILES_WALL.get(),
+                PasterDreamMod.MOD_ID);
+
+        // 阴影石建材 → 阴影石瓦 (切石机，使用 forge:shadow_stones 标签)
+        SingleItemRecipeBuilder.stonecutting(shadowStonesTag, RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_STONE_TILES.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STONE.get()), has(ModItems.SHADOW_STONE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":shadow_stone_tiles_from_stonecutting");
     }
 
     // ===== 食物相关合成配方 =====

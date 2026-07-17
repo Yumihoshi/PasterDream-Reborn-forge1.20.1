@@ -980,6 +980,22 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.SHADOW_STONE_BRICK_SLAB.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_STONE_BRICK_WALL = ITEMS.register("shadow_stone_brick_wall",
             () -> new BlockItem(ModBlocks.SHADOW_STONE_BRICK_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> NARROW_SHADOW_STONE_BRICK = ITEMS.register("narrow_shadow_stone_brick",
+            () -> new BlockItem(ModBlocks.NARROW_SHADOW_STONE_BRICK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> NARROW_SHADOW_STONE_BRICK_STAIRS = ITEMS.register("narrow_shadow_stone_brick_stairs",
+            () -> new BlockItem(ModBlocks.NARROW_SHADOW_STONE_BRICK_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> NARROW_SHADOW_STONE_BRICK_SLAB = ITEMS.register("narrow_shadow_stone_brick_slab",
+            () -> new BlockItem(ModBlocks.NARROW_SHADOW_STONE_BRICK_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> NARROW_SHADOW_STONE_BRICK_WALL = ITEMS.register("narrow_shadow_stone_brick_wall",
+            () -> new BlockItem(ModBlocks.NARROW_SHADOW_STONE_BRICK_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_STONE_TILES = ITEMS.register("shadow_stone_tiles",
+            () -> new BlockItem(ModBlocks.SHADOW_STONE_TILES.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_STONE_TILES_STAIRS = ITEMS.register("shadow_stone_tiles_stairs",
+            () -> new BlockItem(ModBlocks.SHADOW_STONE_TILES_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_STONE_TILES_SLAB = ITEMS.register("shadow_stone_tiles_slab",
+            () -> new BlockItem(ModBlocks.SHADOW_STONE_TILES_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_STONE_TILES_WALL = ITEMS.register("shadow_stone_tiles_wall",
+            () -> new BlockItem(ModBlocks.SHADOW_STONE_TILES_WALL.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_CRYSTAL_LANTERN = ITEMS.register("dyedream_crystal_lantern",
             () -> new BlockItem(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_LANTERN = ITEMS.register("dyedream_lantern",

@@ -387,6 +387,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHADOW_STONE_BRICK_STAIRS.get());
                         output.accept(ModItems.SHADOW_STONE_BRICK_SLAB.get());
                         output.accept(ModItems.SHADOW_STONE_BRICK_WALL.get());
+                        output.accept(ModItems.NARROW_SHADOW_STONE_BRICK.get());
+                        output.accept(ModItems.NARROW_SHADOW_STONE_BRICK_STAIRS.get());
+                        output.accept(ModItems.NARROW_SHADOW_STONE_BRICK_SLAB.get());
+                        output.accept(ModItems.NARROW_SHADOW_STONE_BRICK_WALL.get());
+                        output.accept(ModItems.SHADOW_STONE_TILES.get());
+                        output.accept(ModItems.SHADOW_STONE_TILES_STAIRS.get());
+                        output.accept(ModItems.SHADOW_STONE_TILES_SLAB.get());
+                        output.accept(ModItems.SHADOW_STONE_TILES_WALL.get());
                     })
                     .build());
 
