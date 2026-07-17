@@ -159,6 +159,14 @@
 | `shadow_stone_brick_stairs`        | `shadow_stone_brick_stairs`         | 不改                                            | 无需客制化类，直接用 `StairBlock`                                                                                         |
 | `shadow_stone_brick_slab`          | `shadow_stone_brick_slab`           | 不改                                            | 无需客制化类，直接用 `SlabBlock`                                                                                          |
 | `shadow_stone_brick_wall`          | `shadow_stone_brick_wall`           | 不改                                            | 无需客制化类，直接用 `WallBlock`                                                                                          |
+| `shadow_stone_bricks`              | `narrow_shadow_stone_brick`         | 重命名，加 `narrow_` 前缀，`bricks` → `brick`   | 无需客制化类，直接用 `Block`                                                                                              |
+| `shadow_stone_bricks_stairs`       | `narrow_shadow_stone_brick_stairs`  | 重命名，加 `narrow_` 前缀，`bricks` → `brick`   | 无需客制化类，直接用 `StairBlock`                                                                                         |
+| `shadow_stone_bricks_slab`         | `narrow_shadow_stone_brick_slab`    | 重命名，加 `narrow_` 前缀，`bricks` → `brick`   | 无需客制化类，直接用 `SlabBlock`                                                                                          |
+| `shadow_stone_bricks_wall`         | `narrow_shadow_stone_brick_wall`    | 重命名，加 `narrow_` 前缀，`bricks` → `brick`   | 无需客制化类，直接用 `WallBlock`                                                                                          |
+| `shadow_stone_tiles`               | `shadow_stone_tiles`                | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
+| `shadow_stone_tiles_stairs`        | `shadow_stone_tiles_stairs`         | 不改                                            | 无需客制化类，直接用 `StairBlock`                                                                                         |
+| `shadow_stone_tiles_slab`          | `shadow_stone_tiles_slab`           | 不改                                            | 无需客制化类，直接用 `SlabBlock`                                                                                          |
+| `shadow_stone_tiles_wall`          | `shadow_stone_tiles_wall`           | 不改                                            | 无需客制化类，直接用 `WallBlock`                                                                                          |
 
 
 ---

@@ -60,6 +60,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModBlocks.PINK_MUSHROOM.get().asItem())
                 .add(ModBlocks.TALL_PINK_MUSHROOM.get().asItem());
 
+        tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "shadow_stones")))
+                .add(ModItems.SHADOW_STONE.get())
+                .add(ModItems.SHADOW_STONE_BRICK.get())
+                .add(ModItems.NARROW_SHADOW_STONE_BRICK.get())
+                .add(ModItems.SHADOW_STONE_TILES.get());
+
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "flour")))
                 .add(ModItems.FLOUR.get().asItem());
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "flour/wheat")))

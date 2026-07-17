@@ -293,6 +293,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         wallItem(ModBlocks.POLISHED_CALCITE_WALL, ModBlocks.POLISHED_CALCITE);
         wallItem(ModBlocks.CALCITE_TILES_WALL, ModBlocks.CALCITE_TILES);
         wallItem(ModBlocks.SHADOW_STONE_BRICK_WALL, ModBlocks.SHADOW_STONE_BRICK);
+        wallItem(ModBlocks.NARROW_SHADOW_STONE_BRICK_WALL, ModBlocks.NARROW_SHADOW_STONE_BRICK);
+        wallItem(ModBlocks.SHADOW_STONE_TILES_WALL, ModBlocks.SHADOW_STONE_TILES);
 
         withExistingParent(ModItems.DYEDREAM_GLASS_PANE.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/dyedream_glass"));
