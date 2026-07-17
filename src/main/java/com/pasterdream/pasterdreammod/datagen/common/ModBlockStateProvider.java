@@ -436,6 +436,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         var singularity_fern = models().cross(ModBlocks.SINGULARITY_FERN.getId().getPath(), blockTexture(ModBlocks.SINGULARITY_FERN.get())).renderType("cutout");
         simpleBlock(ModBlocks.SINGULARITY_FERN.get(), singularity_fern);
 
+        // 阴影植物系列
+        var shadowShortRoots = models().cross(ModBlocks.SHADOW_SHORT_ROOTS.getId().getPath(), blockTexture(ModBlocks.SHADOW_SHORT_ROOTS.get())).renderType("cutout");
+        simpleBlock(ModBlocks.SHADOW_SHORT_ROOTS.get(), shadowShortRoots);
+
+        var shadowRoots = models().cross(ModBlocks.SHADOW_ROOTS.getId().getPath(), blockTexture(ModBlocks.SHADOW_ROOTS.get())).renderType("cutout");
+        simpleBlock(ModBlocks.SHADOW_ROOTS.get(), shadowRoots);
+
+        var shadowStemFernUpper = models().cross(ModBlocks.SHADOW_STEM_FERN.getId().getPath() + "_top", modLoc("block/shadow_stem_fern_top")).renderType("cutout");
+        var shadowStemFernLower = models().cross(ModBlocks.SHADOW_STEM_FERN.getId().getPath() + "_bottom", modLoc("block/shadow_stem_fern")).renderType("cutout");
+        getVariantBuilder(ModBlocks.SHADOW_STEM_FERN.get())
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).addModels(new ConfiguredModel(shadowStemFernLower))
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).addModels(new ConfiguredModel(shadowStemFernUpper));
+
+        var shadowSprouts = models().cross(ModBlocks.SHADOW_SPROUTS.getId().getPath(), blockTexture(ModBlocks.SHADOW_SPROUTS.get())).renderType("cutout");
+        simpleBlock(ModBlocks.SHADOW_SPROUTS.get(), shadowSprouts);
+
+        var shadowFern = models().cross(ModBlocks.SHADOW_FERN.getId().getPath(), blockTexture(ModBlocks.SHADOW_FERN.get())).renderType("cutout");
+        simpleBlock(ModBlocks.SHADOW_FERN.get(), shadowFern);
+
         // 染梦海草
         var dyedreamSeagrass = models().cross(ModBlocks.DYEDREAM_SEAGRASS.getId().getPath(), blockTexture(ModBlocks.DYEDREAM_SEAGRASS.get())).renderType("cutout");
         simpleBlock(ModBlocks.DYEDREAM_SEAGRASS.get(), dyedreamSeagrass);

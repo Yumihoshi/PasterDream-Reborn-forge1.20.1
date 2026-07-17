@@ -504,6 +504,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FOURLEAF_CLOVER.get());
                         output.accept(ModItems.BLAZE_FLOWER.get());
                         output.accept(ModItems.CRIMSON_THORNS.get());
+                        output.accept(ModItems.SHADOW_SHORT_ROOTS.get());
+                        output.accept(ModItems.SHADOW_ROOTS.get());
+                        output.accept(ModItems.SHADOW_STEM_FERN.get());
+                        output.accept(ModItems.SHADOW_SPROUTS.get());
+                        output.accept(ModItems.SHADOW_FERN.get());
 
 
 

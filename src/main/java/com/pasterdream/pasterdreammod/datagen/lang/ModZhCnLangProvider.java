@@ -414,6 +414,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.JUNGLE_SPORANGIUM.get(), "丛林孢子囊");
         add(ModBlocks.FOURLEAF_CLOVER.get(),"四叶草");
 
+        add(ModBlocks.SHADOW_SHORT_ROOTS.get(), "阴影矮菌索");
+        add(ModBlocks.SHADOW_ROOTS.get(), "阴影菌索");
+        add(ModBlocks.SHADOW_STEM_FERN.get(), "影茎蕨");
+        add(ModBlocks.SHADOW_SPROUTS.get(), "影苗");
+        add(ModBlocks.SHADOW_FERN.get(), "影蕨");
+
         add(ModItems.DEBUG_SWORD.get(), "调试之剑");
         add(ModItems.LOOT_GENERATOR.get(), "战利品生成器");
         add(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get(), "融梦水晶箱重置工具");

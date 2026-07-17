@@ -386,6 +386,18 @@ public class ModItemModelsProvider extends ItemModelProvider {
         withExistingParent(ModItems.FOURLEAF_CLOVER.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/fourleaf_clover"));
 
+        // 阴影植物系列
+        withExistingParent(ModItems.SHADOW_SHORT_ROOTS.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/shadow_short_roots"));
+        withExistingParent(ModItems.SHADOW_ROOTS.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/shadow_roots"));
+        withExistingParent(ModItems.SHADOW_STEM_FERN.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/shadow_stem_fern_top"));
+        withExistingParent(ModItems.SHADOW_SPROUTS.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/shadow_sprouts"));
+        withExistingParent(ModItems.SHADOW_FERN.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/shadow_fern"));
+
         withExistingParent(ModItems.RUST_BLACK_METAL_BARS.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/rust_black_metal_bars"));
 

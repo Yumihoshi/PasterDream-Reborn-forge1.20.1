@@ -205,6 +205,43 @@ public class ModBlocks {
     public static final RegistryObject<Block> SHADOW_NYLIUM = BLOCKS.register("shadow_nylium", () -> new ShadowNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.NYLIUM).strength(0.4f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SHADOW_LIGHT = BLOCKS.register("shadow_light", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.HAT).sound(SoundType.GLASS).strength(1f, 0.5f).lightLevel(s -> 15).requiresCorrectToolForDrops().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)));
     public static final RegistryObject<Block> SHADOW_SHROOMLIGHT = BLOCKS.register("shadow_shroomlight", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).ignitedByLava().sound(SoundType.SHROOMLIGHT).strength(1f).lightLevel(s -> 12)));
+    // ===== 阴影植物系列 =====
+    public static final RegistryObject<Block> SHADOW_SHORT_ROOTS = BLOCKS.register("shadow_short_roots",
+            () -> new ShadowPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GRAY).sound(SoundType.ROOTS)
+                    .instabreak().noCollission().noOcclusion()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> SHADOW_ROOTS = BLOCKS.register("shadow_roots",
+            () -> new ShadowPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GRAY).sound(SoundType.ROOTS)
+                    .instabreak().noCollission().noOcclusion()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> SHADOW_STEM_FERN = BLOCKS.register("shadow_stem_fern",
+            () -> new ShadowStemFernBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GRAY).sound(SoundType.ROOTS)
+                    .instabreak().noCollission().noOcclusion()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
+                    .pushReaction(PushReaction.DESTROY)
+                    .replaceable()));
+
+    public static final RegistryObject<Block> SHADOW_SPROUTS = BLOCKS.register("shadow_sprouts",
+            () -> new ShadowPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GRAY).sound(SoundType.ROOTS)
+                    .instabreak().noCollission().noOcclusion()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> SHADOW_FERN = BLOCKS.register("shadow_fern",
+            () -> new ShadowPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GRAY).sound(SoundType.ROOTS)
+                    .instabreak().noCollission().noOcclusion()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
+                    .pushReaction(PushReaction.DESTROY)));
+
     // ===== 阴影巨型菌系列 =====
     public static final RegistryObject<Block> SHADOW_WART_BLOCK = BLOCKS.register("shadow_wart_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.WART_BLOCK).strength(1.0f)));
     public static final RegistryObject<Block> STRIPPED_SHADOW_STEM = BLOCKS.register("stripped_shadow_stem", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.STEM).strength(2.0f)));
@@ -285,7 +322,22 @@ public class ModBlocks {
             });
     public static final RegistryObject<Block> WHITE_ORCHID_FLOWER = BLOCKS.register("white_orchid_flower",
             () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 0, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY)
-                    .instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).lightLevel(s->7)));
+                    .instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).lightLevel(s->7)) {
+                @Override
+                public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
+                    return super.mayPlaceOn(groundState, worldIn, pos)
+                            || groundState.is(Blocks.CRIMSON_NYLIUM)
+                            || groundState.is(Blocks.WARPED_NYLIUM)
+                            || groundState.is(ModBlocks.SHADOW_NYLIUM.get());
+                }
+
+                @Override
+                public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+                    BlockPos blockpos = pos.below();
+                    BlockState groundState = worldIn.getBlockState(blockpos);
+                    return this.mayPlaceOn(groundState, worldIn, blockpos);
+                }
+            });
 
     public static final RegistryObject<Block> EDELWEISS = BLOCKS.register("edelweiss",
             () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 0, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY)

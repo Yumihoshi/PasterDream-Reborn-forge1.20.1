@@ -418,7 +418,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SMALL_POLISHED_CALCITE_STALICRIPE.get())
                 .add(ModBlocks.JUNGLE_SPORANGIUM.get())
                 .add(ModBlocks.PINK_MUSHROOM.get())
-                .add(ModBlocks.TALL_PINK_MUSHROOM.get());
+                .add(ModBlocks.TALL_PINK_MUSHROOM.get())
+                .add(ModBlocks.SHADOW_SHORT_ROOTS.get())
+                .add(ModBlocks.SHADOW_ROOTS.get())
+                .add(ModBlocks.SHADOW_STEM_FERN.get())
+                .add(ModBlocks.SHADOW_SPROUTS.get())
+                .add(ModBlocks.SHADOW_FERN.get());
 
 
 
