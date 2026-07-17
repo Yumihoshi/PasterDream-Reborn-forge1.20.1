@@ -262,6 +262,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_PACKED_ICE.get(), "Dye Dream Packed Ice");
         add(ModBlocks.CLOUD.get(), "Cloud");
         add(ModBlocks.DARK_CLOUD.get(), "Dark Cloud");
+        add(ModBlocks.SHADOW.get(), "Shadow");
+        add(ModBlocks.THICK_SHADOW.get(), "Thick Shadow");
+        add(ModBlocks.SHADOW_STONE.get(), "Shadow Stone");
         add(ModBlocks.BIG_BUBBLE.get(), "Big Bubble");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "Dyedream Crystal Lantern");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "Dye Dream Lantern");
@@ -370,7 +373,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_food_tab", "Paster Dream | Food & Drinks");
         add("itemGroup.pasterdream.pasterdream_items_tab", "Paster Dream | Items");
         add("itemGroup.pasterdream.pasterdream_gear_tab", "Paster Dream | Gear");
-        add("itemGroup.pasterdream.pasterdream_blocks_tab", "Paster Dream | Blocks");
+        add("itemGroup.pasterdream.pasterdream_blocks_tab", "Dye Dream World");
+        add("itemGroup.pasterdream.pasterdream_shadow_tab", "Lamp Shadow World");
         add("itemGroup.pasterdream.pasterdream_plants_tab", "Paster Dream | Plants");
         add("itemGroup.pasterdream.pasterdream_equipment_tab", "Paster Dream | Equipment");
         add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "Paster Dream | Dream Notes");

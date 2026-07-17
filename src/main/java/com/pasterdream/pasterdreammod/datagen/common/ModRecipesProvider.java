@@ -1832,6 +1832,14 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     // ===== 其他杂项类合成配方 =====
     private void othersRecipes(Consumer<FinishedRecipe> pWriter) {
 
+        // 厚重阴影 (4 shadow → 1 thick_shadow)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.THICK_SHADOW.get(), 1)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', ModItems.SHADOW.get())
+                .unlockedBy(getHasName(ModItems.SHADOW.get()), has(ModItems.SHADOW.get()))
+                .save(pWriter);
+
         //三种染料合成配方
         RecipeHelpers.dye(pWriter,ModItems.FERRARIA_CRISPA.get(), Items.BLACK_DYE);
         RecipeHelpers.dye(pWriter,ModItems.EUSTOMA.get(), Items.GREEN_DYE);
