@@ -119,6 +119,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SHADOW_DUNGEON_BRICK_STAIRS.get())
                 .add(ModBlocks.SHADOW_DUNGEON_BRICK_SLAB.get())
                 .add(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get())
+                .add(ModBlocks.SHADOW_ARENA_BLOCK.get())
+                .add(ModBlocks.SHADOW_FISSURE_0.get())
+                .add(ModBlocks.SHADOW_FISSURE_1.get())
+                .add(ModBlocks.SHADOW_FISSURE_2.get())
+                .add(ModBlocks.SHADOW_FISSURE_3.get())
+                .add(ModBlocks.SHADOW_FISSURE_4.get())
+                .add(ModBlocks.SHADOW_FISSURE_5.get())
                 .add(ModBlocks.SHADOW_NYLIUM.get())
                 .add(ModBlocks.SHADOW_LIGHT.get())
                 .add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get());

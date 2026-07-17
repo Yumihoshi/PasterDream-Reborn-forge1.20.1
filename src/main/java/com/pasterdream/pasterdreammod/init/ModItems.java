@@ -1034,6 +1034,21 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.SHADOW_DUNGEON_BRICK_SLAB.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHATTERED_SHADOW_DUNGEON_BRICKS = ITEMS.register("shattered_shadow_dungeon_bricks",
             () -> new BlockItem(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get(), new Item.Properties()));
+    // ===== 灯影竞技场 / 裂隙方块 =====
+    public static final RegistryObject<Item> SHADOW_ARENA_BLOCK = ITEMS.register("shadow_arena_block",
+            () -> new BlockItem(ModBlocks.SHADOW_ARENA_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_FISSURE_0 = ITEMS.register("shadow_fissure_0",
+            () -> new BlockItem(ModBlocks.SHADOW_FISSURE_0.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_FISSURE_1 = ITEMS.register("shadow_fissure_1",
+            () -> new BlockItem(ModBlocks.SHADOW_FISSURE_1.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_FISSURE_2 = ITEMS.register("shadow_fissure_2",
+            () -> new BlockItem(ModBlocks.SHADOW_FISSURE_2.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_FISSURE_3 = ITEMS.register("shadow_fissure_3",
+            () -> new BlockItem(ModBlocks.SHADOW_FISSURE_3.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_FISSURE_4 = ITEMS.register("shadow_fissure_4",
+            () -> new BlockItem(ModBlocks.SHADOW_FISSURE_4.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_FISSURE_5 = ITEMS.register("shadow_fissure_5",
+            () -> new BlockItem(ModBlocks.SHADOW_FISSURE_5.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_NYLIUM = ITEMS.register("shadow_nylium",
             () -> new BlockItem(ModBlocks.SHADOW_NYLIUM.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_LIGHT = ITEMS.register("shadow_light",

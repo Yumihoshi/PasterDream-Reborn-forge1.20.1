@@ -30,6 +30,9 @@ public class ClientSetRenderLayer
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DARK_CLOUD.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHADOW.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.THICK_SHADOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHADOW_FISSURE_1.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHADOW_FISSURE_3.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHADOW_FISSURE_5.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DYEDREAM_BUD_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DYEDREAM_BUD_STAIRS.get(), RenderType.translucent());

@@ -295,6 +295,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_DUNGEON_BRICK_STAIRS.get(), "Shadow Dungeon Brick Stairs");
         add(ModBlocks.SHADOW_DUNGEON_BRICK_SLAB.get(), "Shadow Dungeon Brick Slab");
         add(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get(), "Shattered Shadow Dungeon Bricks");
+        add(ModBlocks.SHADOW_ARENA_BLOCK.get(), "Shadow Arena Block");
+        add(ModBlocks.SHADOW_FISSURE_0.get(), "Shadow Fissure");
+        add(ModBlocks.SHADOW_FISSURE_1.get(), "Shadow Fissure");
+        add(ModBlocks.SHADOW_FISSURE_2.get(), "Shadow Fissure");
+        add(ModBlocks.SHADOW_FISSURE_3.get(), "Shadow Fissure");
+        add(ModBlocks.SHADOW_FISSURE_4.get(), "Shadow Fissure");
+        add(ModBlocks.SHADOW_FISSURE_5.get(), "Shadow Fissure");
         add(ModBlocks.SHADOW_NYLIUM.get(), "Shadow Nylium");
         add(ModBlocks.SHADOW_LIGHT.get(), "Shadow Light");
         add(ModBlocks.SHADOW_SHROOMLIGHT.get(), "Shadow Shroomlight");

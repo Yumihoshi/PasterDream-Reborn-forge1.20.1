@@ -269,6 +269,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock((SlabBlock) ModBlocks.SHADOW_DUNGEON_BRICK_SLAB.get(), dungeonBrickTex, dungeonBrickTex);
         blockItem(ModBlocks.SHADOW_DUNGEON_BRICK_SLAB);
         simpleBlockWithItem(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get(), cubeAll(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get()));
+        // ===== 灯影竞技场 / 裂隙方块 =====
+        simpleBlockWithItem(ModBlocks.SHADOW_ARENA_BLOCK.get(), cubeAll(ModBlocks.SHADOW_ARENA_BLOCK.get()));
+        simpleBlockWithItem(ModBlocks.SHADOW_FISSURE_0.get(), cubeAll(ModBlocks.SHADOW_FISSURE_0.get()));
+        simpleBlockWithItem(ModBlocks.SHADOW_FISSURE_1.get(), cubeAll(ModBlocks.SHADOW_FISSURE_1.get()));
+        simpleBlockWithItem(ModBlocks.SHADOW_FISSURE_2.get(), cubeAll(ModBlocks.SHADOW_FISSURE_2.get()));
+        simpleBlockWithItem(ModBlocks.SHADOW_FISSURE_3.get(), cubeAll(ModBlocks.SHADOW_FISSURE_3.get()));
+        simpleBlockWithItem(ModBlocks.SHADOW_FISSURE_4.get(), cubeAll(ModBlocks.SHADOW_FISSURE_4.get()));
+        simpleBlockWithItem(ModBlocks.SHADOW_FISSURE_5.get(), cubeAll(ModBlocks.SHADOW_FISSURE_5.get()));
         // ===== 阴影菌岩 / 影灯 / 阴影菌光体 =====
         var shadowNyliumModel = models().cubeBottomTop(
                 ModBlocks.SHADOW_NYLIUM.getId().getPath(),
