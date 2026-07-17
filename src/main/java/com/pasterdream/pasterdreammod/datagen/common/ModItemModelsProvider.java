@@ -273,6 +273,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.LARGE_STORAGE_BAG.get());
         basicItem(ModItems.STRAWBERRY_HEART.get());
 
+        basicItem(ModItems.EMPTY_PROPHECY_CARD.get());
+
         withExistingParent(ModItems.PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/pink_mushroom"));
         withExistingParent(ModItems.TALL_PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))

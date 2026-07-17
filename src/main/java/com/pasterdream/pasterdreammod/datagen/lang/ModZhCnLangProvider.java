@@ -1141,5 +1141,45 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("message.pasterdream.desert_hero_tomb.bring_sword", "吾心愿已成，请携朔漠大剑见我");
         add("message.pasterdream.desert_hero_tomb.already_completed", "已有人完成他的全部愿望，他便不再回应");
 
+        // 预言卡
+        add(ModItems.EMPTY_PROPHECY_CARD.get(), "空白预言卡");
+        add("item.pasterdream.prophecy_card", "预言卡");
+        add("item.pasterdream.prophecy_card.balance", "预言卡-平衡");
+        add("item.pasterdream.prophecy_card.chaos", "预言卡-混乱");
+        add("item.pasterdream.prophecy_card.conflict", "预言卡-对立");
+        add("item.pasterdream.prophecy_card.graveyard", "预言卡-墓地");
+        add("item.pasterdream.prophecy_card.guard", "预言卡-守护");
+        add("item.pasterdream.prophecy_card.holy_grail", "预言卡-圣杯");
+        add("item.pasterdream.prophecy_card.sin", "预言卡-罪恶");
+        add("item.pasterdream.prophecy_card.sprint", "预言卡-疾行");
+        add("item.pasterdream.prophecy_card.wielding_sword", "预言卡-持剑");
+        add("item.pasterdream.prophecy_card.unknown", "错误的预言卡（%s）");
+        add("tooltip.pasterdream.prophecy_card.empty", "§7一张空白的预言卡，似乎还未被赋予种类");
+        add("tooltip.pasterdream.prophecy_card.type.balance", "§b种类：平衡");
+        add("tooltip.pasterdream.prophecy_card.type.chaos", "§b种类：混乱");
+        add("tooltip.pasterdream.prophecy_card.type.conflict", "§b种类：对立");
+        add("tooltip.pasterdream.prophecy_card.type.graveyard", "§b种类：墓地");
+        add("tooltip.pasterdream.prophecy_card.type.guard", "§b种类：守护");
+        add("tooltip.pasterdream.prophecy_card.type.holy_grail", "§b种类：圣杯");
+        add("tooltip.pasterdream.prophecy_card.type.sin", "§b种类：罪恶");
+        add("tooltip.pasterdream.prophecy_card.type.sprint", "§b种类：疾行");
+        add("tooltip.pasterdream.prophecy_card.type.wielding_sword", "§b种类：持剑");
+        add("tooltip.pasterdream.prophecy_card.unknown", "§c种类：错误！（%s）");
+
+
+
+
+
+
+        add("tooltip.pasterdream.prophecy_card.balance.description", "§9使用卡牌时，当前自身拥有的部分药水效果的等级翻倍，但持续时间缩短至一半。（仅对部分有等级加成的效果生效）");
+        add("tooltip.pasterdream.prophecy_card.chaos.description", "§9使用卡牌时，对以自身为中心，7*7范围内的所有敌人陷入混乱并失去行动能力，持续10秒。（此效果不对玩家生效）");
+        add("tooltip.pasterdream.prophecy_card.conflict.description", "§9使用卡牌时，当前生命值与已损失生命值互换。§c执意在满血使用后果自负！");
+        add("tooltip.pasterdream.prophecy_card.graveyard.description", "§9使用卡牌时，对以自身为中心，5*5范围内的所有敌人造成100点魔法伤害。（此效果不对玩家生效）");
+        add("tooltip.pasterdream.prophecy_card.guard.description", "§9使用卡牌时，获得伤害吸收V和抗性提升I效果，持续120秒。");
+        add("tooltip.pasterdream.prophecy_card.unknown.description.1", "§9你是怎么获得这张卡的？");
+        add("tooltip.pasterdream.prophecy_card.unknown.description.2", "§9请把你做了什么发送到github或者mcmod方便我们定位问题，而不是只发送这张错误的截图");
+
+
+        add("message.pasterdream.prophecy_card.invalid", "§c预言卡数据异常（%s），右键无效！");
     }
 }

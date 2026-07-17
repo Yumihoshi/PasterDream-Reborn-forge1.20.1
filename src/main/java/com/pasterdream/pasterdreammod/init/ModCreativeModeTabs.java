@@ -11,6 +11,7 @@ import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
 import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
 import com.pasterdream.pasterdreammod.world.item.dreamnotes.NBTBookRegisterToCreativeModTab;
 import com.pasterdream.pasterdreammod.world.item.dreamnotesbook.DreamNotesBookWithNBTToCreativeModeTab;
+import com.pasterdream.pasterdreammod.world.item.prophecycard.ProphecyCardItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -168,6 +169,17 @@ public class ModCreativeModeTabs {
                         // 音乐唱片
                         output.accept(ModItems.SWEET_DREAM_MUSIC_DISC.get());
                         output.accept(ModItems.SNOWFALL_DREAM_MUSIC_DISC.get());
+                        // 预言卡
+                        output.accept(ModItems.EMPTY_PROPHECY_CARD.get());
+                        output.accept(ProphecyCardItem.createCard(ModItems.PROPHECY_CARD.get(), ProphecyCardItem.TYPE_BALANCE));
+                        output.accept(ProphecyCardItem.createCard(ModItems.PROPHECY_CARD.get(), ProphecyCardItem.TYPE_CHAOS));
+                        output.accept(ProphecyCardItem.createCard(ModItems.PROPHECY_CARD.get(), ProphecyCardItem.TYPE_CONFLICT));
+                        output.accept(ProphecyCardItem.createCard(ModItems.PROPHECY_CARD.get(), ProphecyCardItem.TYPE_GRAVEYARD));
+                        output.accept(ProphecyCardItem.createCard(ModItems.PROPHECY_CARD.get(), ProphecyCardItem.TYPE_GUARD));
+                        output.accept(ProphecyCardItem.createCard(ModItems.PROPHECY_CARD.get(), ProphecyCardItem.TYPE_HOLY_GRAIL));
+                        output.accept(ProphecyCardItem.createCard(ModItems.PROPHECY_CARD.get(), ProphecyCardItem.TYPE_SIN));
+                        output.accept(ProphecyCardItem.createCard(ModItems.PROPHECY_CARD.get(), ProphecyCardItem.TYPE_SPRINT));
+                        output.accept(ProphecyCardItem.createCard(ModItems.PROPHECY_CARD.get(), ProphecyCardItem.TYPE_WIELDING_SWORD));
                     })
                     .build());
 

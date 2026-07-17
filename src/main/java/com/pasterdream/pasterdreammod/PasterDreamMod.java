@@ -9,6 +9,7 @@ import com.pasterdream.pasterdreammod.event.PlayerEvents;
 import com.pasterdream.pasterdreammod.init.*;
 import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
 import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
+import com.pasterdream.pasterdreammod.world.item.prophecycard.ProphecyCardItem;
 import com.pasterdream.pasterdreammod.world.item.armoritem.qym.QymArmorEvents;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
@@ -107,6 +108,7 @@ public class PasterDreamMod
         ModDreamNotesContentRelation.registerDreamNotesContentRelation();
         ModDreamNotesBookContentRelation.registerDreamNotesBookContentRelation();
         ModCropRelation.registerCropRelation();
+        ProphecyCardItem.registerAllCardEffects();
     }
 
     //在这里输入客户端注册内容
@@ -139,10 +141,18 @@ public class PasterDreamMod
                 ResourceLocation.fromNamespaceAndPath(MOD_ID, "lv"),
                 (stack, level, entity, seed) -> RedDewRingItem.getPredicateValue(RedDewRingItem.getLv(stack))
         );
+
         ItemProperties.register(
                 ModItems.STRIKE_RING.get(),
                 ResourceLocation.fromNamespaceAndPath(MOD_ID, "lv"),
                 (stack, level, entity, seed) -> StrikeRingItem.getPredicateValue(StrikeRingItem.getLv(stack))
+        );
+
+        // 预言卡：按 NBT Type 切换纹理
+        ItemProperties.register(
+                ModItems.PROPHECY_CARD.get(),
+                ResourceLocation.fromNamespaceAndPath(MOD_ID, "type"),
+                (stack, level, entity, seed) -> ProphecyCardItem.getPredicateValue(stack)
         );
     }
 

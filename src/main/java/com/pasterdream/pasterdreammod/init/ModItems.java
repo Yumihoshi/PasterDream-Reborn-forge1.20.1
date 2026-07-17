@@ -38,6 +38,8 @@ import com.pasterdream.pasterdreammod.world.item.meltdreamtool.*;
 import com.pasterdream.pasterdreammod.world.item.modelbreakparticleproviderblockitem.ModelBreakParticleProviderBlockItem;
 import com.pasterdream.pasterdreammod.world.item.moltengoldtool.*;
 import com.pasterdream.pasterdreammod.world.item.meltdreamtool.SharpMeltDreamSwordItem;
+import com.pasterdream.pasterdreammod.world.item.prophecycard.EmptyProphecyCardItem;
+import com.pasterdream.pasterdreammod.world.item.prophecycard.ProphecyCardItem;
 import com.pasterdream.pasterdreammod.world.item.tidetool.BeihaiRuoTideSwordItem;
 import com.pasterdream.pasterdreammod.world.item.tidetool.TideSwordItem;
 import com.pasterdream.pasterdreammod.world.item.deserttool.DesertSwordItem;
@@ -1268,6 +1270,12 @@ public class ModItems {
     public static final RegistryObject<Item> STORAGE_BAG = ITEMS.register("storage_bag", StorageBagItem::new);
     public static final RegistryObject<Item> LARGE_STORAGE_BAG = ITEMS.register("large_storage_bag", LargeStorageBagItem::new);
     public static final RegistryObject<Item> STRAWBERRY_HEART = ITEMS.register("strawberry_heart", StrawberryHeartItem::new);
+
+    //预言卡
+    public static final RegistryObject<Item> EMPTY_PROPHECY_CARD = ITEMS.register("empty_prophecy_card",
+            EmptyProphecyCardItem::new);
+    public static final RegistryObject<Item> PROPHECY_CARD = ITEMS.register("prophecy_card",
+            ProphecyCardItem::new);
 
     // 追忆
     public static final RegistryObject<Item> MEMORY_GEM = ITEMS.register("memory_gem",

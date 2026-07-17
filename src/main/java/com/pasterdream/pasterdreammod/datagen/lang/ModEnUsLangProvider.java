@@ -975,5 +975,33 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("message.pasterdream.desert_hero_tomb.bring_sword", "My wishes have been fulfilled. Bring me the Desert Sword.");
         add("message.pasterdream.desert_hero_tomb.already_completed", "Someone has already fulfilled all his wishes. He no longer responds.");
 
+        // Prophecy Cards
+        add(ModItems.EMPTY_PROPHECY_CARD.get(), "Empty Prophecy Card");
+        add("item.pasterdream.prophecy_card", "Prophecy Card");
+        add("item.pasterdream.prophecy_card.balance", "Prophecy Card of Balance");
+        add("item.pasterdream.prophecy_card.chaos", "Prophecy Card of Chaos");
+        add("item.pasterdream.prophecy_card.conflict", "Prophecy Card of Conflict");
+        add("item.pasterdream.prophecy_card.graveyard", "Prophecy Card of Graveyard");
+        add("item.pasterdream.prophecy_card.guard", "Prophecy Card of Guard");
+        add("item.pasterdream.prophecy_card.holy_grail", "Prophecy Card of Holy Grail");
+        add("item.pasterdream.prophecy_card.sin", "Prophecy Card of Sin");
+        add("item.pasterdream.prophecy_card.sprint", "Prophecy Card of Sprint");
+        add("item.pasterdream.prophecy_card.wielding_sword", "Prophecy Card of Wielding Sword");
+        add("item.pasterdream.prophecy_card.unknown", "Error Prophecy Card (%s)");
+        add("tooltip.pasterdream.prophecy_card.empty", "§7An empty prophecy card, yet to be assigned a type");
+        add("tooltip.pasterdream.prophecy_card.type.balance", "§bType: Balance");
+        add("tooltip.pasterdream.prophecy_card.type.chaos", "§bType: Chaos");
+        add("tooltip.pasterdream.prophecy_card.type.conflict", "§bType: Conflict");
+        add("tooltip.pasterdream.prophecy_card.type.graveyard", "§bType: Graveyard");
+        add("tooltip.pasterdream.prophecy_card.type.guard", "§bType: Guard");
+        add("tooltip.pasterdream.prophecy_card.type.holy_grail", "§bType: Holy Grail");
+        add("tooltip.pasterdream.prophecy_card.type.sin", "§bType: Sin");
+        add("tooltip.pasterdream.prophecy_card.type.sprint", "§bType: Sprint");
+        add("tooltip.pasterdream.prophecy_card.type.wielding_sword", "§bType: Wielding Sword");
+        add("tooltip.pasterdream.prophecy_card.unknown", "§cType: Error! (%s)");
+
+        add("tooltip.pasterdream.prophecy_card.unknown.description.1", "§9How did you get this card? ");
+        add("tooltip.pasterdream.prophecy_card.unknown.description.2", "§9Please send what you did during game to GitHub or mcmod so we can pinpoint the issue, instead of just sending this error screenshot.");
+        add("message.pasterdream.prophecy_card.invalid", "§cProphecy Card data corrupted (%s), right-click disabled!");
     }
 }
