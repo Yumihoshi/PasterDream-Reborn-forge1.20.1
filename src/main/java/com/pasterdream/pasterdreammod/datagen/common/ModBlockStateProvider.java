@@ -204,6 +204,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // ===== 裂阴影石砖 / 錾制阴影石砖 =====
         simpleBlockWithItem(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get(), cubeAll(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get()));
         simpleBlockWithItem(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get(), cubeAll(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get()));
+        // ===== 阴影菌岩 / 影灯 / 阴影菌光体 =====
+        var shadowNyliumModel = models().cubeBottomTop(
+                ModBlocks.SHADOW_NYLIUM.getId().getPath(),
+                modLoc("block/shadow_nylium_side"),
+                modLoc("block/shadow_stone"),
+                modLoc("block/shadow_nylium_top"));
+        simpleBlockWithItem(ModBlocks.SHADOW_NYLIUM.get(), shadowNyliumModel);
+        var shadowLightModel = models().cubeBottomTop(
+                ModBlocks.SHADOW_LIGHT.getId().getPath(),
+                modLoc("block/shadow_light_side"),
+                modLoc("block/shadow_light_top"),
+                modLoc("block/shadow_light_top"));
+        simpleBlockWithItem(ModBlocks.SHADOW_LIGHT.get(), shadowLightModel);
+        simpleBlockWithItem(ModBlocks.SHADOW_SHROOMLIGHT.get(), cubeAll(ModBlocks.SHADOW_SHROOMLIGHT.get()));
 
         // ===== 巨型泡泡 =====
         var bubbleModel = models().cubeAll(ModBlocks.BIG_BUBBLE.getId().getPath(), modLoc("block/big_bubble")).renderType("translucent");

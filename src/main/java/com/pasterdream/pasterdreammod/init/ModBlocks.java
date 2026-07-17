@@ -177,6 +177,10 @@ public class ModBlocks {
     // ===== 裂阴影石砖 / 錾制阴影石砖 =====
     public static final RegistryObject<Block> CRACKED_SHADOW_STONE_BRICK = BLOCKS.register("cracked_shadow_stone_brick", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE_TILES).strength(1.5f, 1f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CHISELED_SHADOW_STONE_BRICK = BLOCKS.register("chiseled_shadow_stone_brick", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE_TILES).strength(1.5f, 1f).requiresCorrectToolForDrops()));
+    // ===== 阴影菌岩 / 影灯 / 阴影菌光体 =====
+    public static final RegistryObject<Block> SHADOW_NYLIUM = BLOCKS.register("shadow_nylium", () -> new ShadowNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.NYLIUM).strength(0.4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SHADOW_LIGHT = BLOCKS.register("shadow_light", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.HAT).sound(SoundType.GLASS).strength(1f, 0.5f).lightLevel(s -> 15).requiresCorrectToolForDrops().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)));
+    public static final RegistryObject<Block> SHADOW_SHROOMLIGHT = BLOCKS.register("shadow_shroomlight", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).ignitedByLava().sound(SoundType.SHROOMLIGHT).strength(1f).lightLevel(s -> 12)));
 
     // ===== 冰晶岩与冰凌晶芽 =====
     public static final RegistryObject<Block> ICE_STONE = BLOCKS.register("ice_stone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.ICE).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CALCITE).strength(0.8f, 0.2f).requiresCorrectToolForDrops()));
