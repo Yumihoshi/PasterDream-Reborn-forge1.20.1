@@ -6,6 +6,7 @@ import com.pasterdream.pasterdreammod.tag.ModBlockTags;
 import com.pasterdream.pasterdreammod.util.BuildingBlockFamily;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -126,7 +127,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.LOGS)
                 .add(ModBlocks.DYEDREAM_LOG.get())
-                .add(ModBlocks.DYEDREAM_WOOD.get());
+                .add(ModBlocks.DYEDREAM_WOOD.get())
+                .add(ModBlocks.SHADOW_STEM.get())
+                .add(ModBlocks.SHADOW_HYPHAE.get())
+                .add(ModBlocks.STRIPPED_SHADOW_STEM.get())
+                .add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get());
 
         tag(ModBlockTags.STRIPPED_LOGS)
                 .add(ModBlocks.DYEDREAM_LOG.get());
@@ -239,7 +244,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         addBuildingFamilyToTags(narrowShadowStoneBrickFamily);
         addBuildingFamilyToTags(shadowStoneTilesFamily);
 
-        // ===== 染梦木板建材系列 =====
+        // ===== 木板建材系列 =====
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.DYEDREAM_PLANKS.get())
@@ -251,34 +256,53 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_DOOR.get())
                 .add(ModBlocks.DYEDREAM_TRAPDOOR.get())
                 .add(ModBlocks.DYEDREAM_PRESSURE_PLATE.get())
-                .add(ModBlocks.DYEDREAM_BUTTON.get());
+                .add(ModBlocks.DYEDREAM_BUTTON.get())
+                .add(ModBlocks.SHADOW_PLANKS.get())
+                .add(ModBlocks.SHADOW_STAIRS.get())
+                .add(ModBlocks.SHADOW_SLAB.get())
+                .add(ModBlocks.SHADOW_FENCE.get())
+                .add(ModBlocks.SHADOW_FENCE_GATE.get())
+                .add(ModBlocks.SHADOW_PANE.get())
+                .add(ModBlocks.SHADOW_DOOR.get())
+                .add(ModBlocks.SHADOW_TRAPDOOR.get())
+                .add(ModBlocks.SHADOW_PRESSURE_PLATE.get())
+                .add(ModBlocks.SHADOW_BUTTON.get());
 
         tag(BlockTags.PLANKS)
-                .add(ModBlocks.DYEDREAM_PLANKS.get());
+                .add(ModBlocks.DYEDREAM_PLANKS.get())
+                .add(ModBlocks.SHADOW_PLANKS.get());
 
         tag(BlockTags.WOODEN_STAIRS)
-                .add(ModBlocks.DYEDREAM_STAIRS.get());
+                .add(ModBlocks.DYEDREAM_STAIRS.get())
+                .add(ModBlocks.SHADOW_STAIRS.get());
 
         tag(BlockTags.WOODEN_SLABS)
-                .add(ModBlocks.DYEDREAM_SLAB.get());
+                .add(ModBlocks.DYEDREAM_SLAB.get())
+                .add(ModBlocks.SHADOW_SLAB.get());
 
         tag(BlockTags.WOODEN_FENCES)
-                .add(ModBlocks.DYEDREAM_FENCE.get());
+                .add(ModBlocks.DYEDREAM_FENCE.get())
+                .add(ModBlocks.SHADOW_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
-                .add(ModBlocks.DYEDREAM_FENCE_GATE.get());
+                .add(ModBlocks.DYEDREAM_FENCE_GATE.get())
+                .add(ModBlocks.SHADOW_FENCE_GATE.get());
 
         tag(BlockTags.WOODEN_DOORS)
-                .add(ModBlocks.DYEDREAM_DOOR.get());
+                .add(ModBlocks.DYEDREAM_DOOR.get())
+                .add(ModBlocks.SHADOW_DOOR.get());
 
         tag(BlockTags.WOODEN_TRAPDOORS)
-                .add(ModBlocks.DYEDREAM_TRAPDOOR.get());
+                .add(ModBlocks.DYEDREAM_TRAPDOOR.get())
+                .add(ModBlocks.SHADOW_TRAPDOOR.get());
 
         tag(BlockTags.WOODEN_PRESSURE_PLATES)
-                .add(ModBlocks.DYEDREAM_PRESSURE_PLATE.get());
+                .add(ModBlocks.DYEDREAM_PRESSURE_PLATE.get())
+                .add(ModBlocks.SHADOW_PRESSURE_PLATE.get());
 
         tag(BlockTags.WOODEN_BUTTONS)
-                .add(ModBlocks.DYEDREAM_BUTTON.get());
+                .add(ModBlocks.DYEDREAM_BUTTON.get())
+                .add(ModBlocks.SHADOW_BUTTON.get());
 
         // ===== 模组玻璃板 =====
 

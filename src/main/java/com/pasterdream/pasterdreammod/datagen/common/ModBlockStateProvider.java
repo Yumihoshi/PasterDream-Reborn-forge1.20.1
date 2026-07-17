@@ -123,6 +123,39 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         buttonBlock((ButtonBlock) ModBlocks.DYEDREAM_BUTTON.get(), blockTexture(ModBlocks.DYEDREAM_PLANKS.get()));
 
+        // ===== 阴影木板建材系列 =====
+
+        simpleBlockWithItem(ModBlocks.SHADOW_PLANKS.get(), cubeAll(ModBlocks.SHADOW_PLANKS.get()));
+
+        stairsBlock((StairBlock) ModBlocks.SHADOW_STAIRS.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+        blockItem(ModBlocks.SHADOW_STAIRS);
+
+        slabBlock((SlabBlock) ModBlocks.SHADOW_SLAB.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+        blockItem(ModBlocks.SHADOW_SLAB);
+
+        fenceBlock((FenceBlock) ModBlocks.SHADOW_FENCE.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+
+        fenceGateBlock((FenceGateBlock) ModBlocks.SHADOW_FENCE_GATE.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+        blockItem(ModBlocks.SHADOW_FENCE_GATE);
+
+        paneBlock((IronBarsBlock) ModBlocks.SHADOW_PANE.get(), modLoc("block/shadow_trapdoor"), modLoc("block/shadow_trapdoor"));
+
+        doorBlockWithRenderType((DoorBlock) ModBlocks.SHADOW_DOOR.get(),
+                modLoc("block/shadow_door_bottom"),
+                modLoc("block/shadow_door_top"),
+                "cutout");
+
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.SHADOW_TRAPDOOR.get(),
+                modLoc("block/shadow_trapdoor"),
+                true,
+                "cutout");
+        blockItem(ModBlocks.SHADOW_TRAPDOOR, "_bottom");
+
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.SHADOW_PRESSURE_PLATE.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+        blockItem(ModBlocks.SHADOW_PRESSURE_PLATE);
+
+        buttonBlock((ButtonBlock) ModBlocks.SHADOW_BUTTON.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+
         simpleBlockWithItem(ModBlocks.PINK_SLIME_BLOCK.get(), cubeAll(ModBlocks.PINK_SLIME_BLOCK.get()));
 
         // ===== 粉顶菌菇系列 =====

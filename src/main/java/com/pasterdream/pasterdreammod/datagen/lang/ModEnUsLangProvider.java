@@ -287,6 +287,16 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_HYPHAE.get(), "Shadow Hyphae");
         add(ModBlocks.STRIPPED_SHADOW_STEM.get(), "Stripped Shadow Stem");
         add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), "Stripped Shadow Hyphae");
+        add(ModBlocks.SHADOW_PLANKS.get(), "Shadow Planks");
+        add(ModBlocks.SHADOW_STAIRS.get(), "Shadow Stairs");
+        add(ModBlocks.SHADOW_SLAB.get(), "Shadow Slab");
+        add(ModBlocks.SHADOW_FENCE.get(), "Shadow Fence");
+        add(ModBlocks.SHADOW_FENCE_GATE.get(), "Shadow Fence Gate");
+        add(ModBlocks.SHADOW_PANE.get(), "Shadow Pane");
+        add(ModBlocks.SHADOW_DOOR.get(), "Shadow Door");
+        add(ModBlocks.SHADOW_TRAPDOOR.get(), "Shadow Trapdoor");
+        add(ModBlocks.SHADOW_PRESSURE_PLATE.get(), "Shadow Pressure Plate");
+        add(ModBlocks.SHADOW_BUTTON.get(), "Shadow Button");
         add(ModBlocks.BIG_BUBBLE.get(), "Big Bubble");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "Dyedream Crystal Lantern");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "Dye Dream Lantern");

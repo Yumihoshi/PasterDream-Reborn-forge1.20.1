@@ -301,6 +301,16 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_HYPHAE.get(), "阴影菌核");
         add(ModBlocks.STRIPPED_SHADOW_STEM.get(), "去皮阴影菌柄");
         add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), "去皮阴影菌核");
+        add(ModBlocks.SHADOW_PLANKS.get(), "阴影木板");
+        add(ModBlocks.SHADOW_STAIRS.get(), "阴影木楼梯");
+        add(ModBlocks.SHADOW_SLAB.get(), "阴影木台阶");
+        add(ModBlocks.SHADOW_FENCE.get(), "阴影木栅栏");
+        add(ModBlocks.SHADOW_FENCE_GATE.get(), "阴影木栅栏门");
+        add(ModBlocks.SHADOW_PANE.get(), "阴影木窗格");
+        add(ModBlocks.SHADOW_DOOR.get(), "阴影木门");
+        add(ModBlocks.SHADOW_TRAPDOOR.get(), "阴影木活板门");
+        add(ModBlocks.SHADOW_PRESSURE_PLATE.get(), "阴影木压力板");
+        add(ModBlocks.SHADOW_BUTTON.get(), "阴影木按钮");
         add(ModBlocks.BIG_BUBBLE.get(), "巨型泡泡");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "染梦水晶灯");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "染梦灯笼");
