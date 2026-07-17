@@ -279,6 +279,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW.get(), "阴影");
         add(ModBlocks.THICK_SHADOW.get(), "厚重阴影");
         add(ModBlocks.SHADOW_STONE.get(), "阴影石");
+        add(ModBlocks.SHADOW_STONE_BRICK.get(), "阴影石砖");
+        add(ModBlocks.SHADOW_STONE_BRICK_STAIRS.get(), "阴影石砖楼梯");
+        add(ModBlocks.SHADOW_STONE_BRICK_SLAB.get(), "阴影石砖台阶");
+        add(ModBlocks.SHADOW_STONE_BRICK_WALL.get(), "阴影石砖墙");
         add(ModBlocks.BIG_BUBBLE.get(), "巨型泡泡");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "染梦水晶灯");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "染梦灯笼");

@@ -159,6 +159,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> SHADOW = BLOCKS.register("shadow", ShadowBlock::new);
     public static final RegistryObject<Block> THICK_SHADOW = BLOCKS.register("thick_shadow", ThickShadowBlock::new);
     public static final RegistryObject<Block> SHADOW_STONE = BLOCKS.register("shadow_stone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE).strength(1.5f, 1f).requiresCorrectToolForDrops()));
+    // ===== 阴影石砖建材系列 =====
+    public static final RegistryObject<Block> SHADOW_STONE_BRICK = BLOCKS.register("shadow_stone_brick", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE_TILES).strength(1.5f, 1f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SHADOW_STONE_BRICK_STAIRS = BLOCKS.register("shadow_stone_brick_stairs", () -> new StairBlock(SHADOW_STONE_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE_TILES).strength(1.5f, 1f).requiresCorrectToolForDrops().dynamicShape()));
+    public static final RegistryObject<Block> SHADOW_STONE_BRICK_SLAB = BLOCKS.register("shadow_stone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE_TILES).strength(1.5f, 1f).requiresCorrectToolForDrops().dynamicShape()));
+    public static final RegistryObject<Block> SHADOW_STONE_BRICK_WALL = BLOCKS.register("shadow_stone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE_TILES).strength(1.5f, 1f).requiresCorrectToolForDrops().dynamicShape().forceSolidOn()));
 
     // ===== 冰晶岩与冰凌晶芽 =====
     public static final RegistryObject<Block> ICE_STONE = BLOCKS.register("ice_stone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.ICE).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CALCITE).strength(0.8f, 0.2f).requiresCorrectToolForDrops()));

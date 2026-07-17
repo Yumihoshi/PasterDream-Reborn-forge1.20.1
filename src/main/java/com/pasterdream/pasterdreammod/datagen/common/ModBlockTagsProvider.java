@@ -170,7 +170,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.MEDIUM_DYEDREAM_BUD.get())
                 .add(ModBlocks.LARGE_DYEDREAM_BUD.get())
                 .add(ModBlocks.MOLTEN_GOLD_ORE.get())
-                .add(ModBlocks.MOLTEN_GOLD_BLOCK.get());
+                .add(ModBlocks.MOLTEN_GOLD_BLOCK.get())
+                .add(ModBlocks.DYEDREAM_BUD_BLOCK.get())
+                .add(ModBlocks.DYEDREAM_BUD_STAIRS.get())
+                .add(ModBlocks.DYEDREAM_BUD_SLAB.get())
+                .add(ModBlocks.DYEDREAM_BUD_WALL.get());
         // 需要钻石工具挖掘
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.DYEDREAM_ALLOY_BLOCK.get())
@@ -208,20 +212,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         var budFamily = new BuildingBlockFamily(ModBlocks.DYEDREAM_BUD_BLOCK, ModBlocks.DYEDREAM_BUD_STAIRS, ModBlocks.DYEDREAM_BUD_SLAB, ModBlocks.DYEDREAM_BUD_WALL);
         var polishedCalciteFamily = new BuildingBlockFamily(ModBlocks.POLISHED_CALCITE, ModBlocks.POLISHED_CALCITE_STAIRS, ModBlocks.POLISHED_CALCITE_SLAB, ModBlocks.POLISHED_CALCITE_WALL);
         var calciteTilesFamily = new BuildingBlockFamily(ModBlocks.CALCITE_TILES, ModBlocks.CALCITE_TILES_STAIRS, ModBlocks.CALCITE_TILES_SLAB, ModBlocks.CALCITE_TILES_WALL);
+        var shadowStoneBrickFamily = new BuildingBlockFamily(ModBlocks.SHADOW_STONE_BRICK, ModBlocks.SHADOW_STONE_BRICK_STAIRS, ModBlocks.SHADOW_STONE_BRICK_SLAB, ModBlocks.SHADOW_STONE_BRICK_WALL);
 
         addBuildingFamilyToTags(budFamily);
         addBuildingFamilyToTags(polishedCalciteFamily);
         addBuildingFamilyToTags(calciteTilesFamily);
-
-        // 染梦晶芽建材需要铁镐
-        this.tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.DYEDREAM_BUD_BLOCK.get())
-                .add(ModBlocks.DYEDREAM_BUD_STAIRS.get())
-                .add(ModBlocks.DYEDREAM_BUD_SLAB.get())
-                .add(ModBlocks.DYEDREAM_BUD_WALL.get());
-
-
-
+        addBuildingFamilyToTags(shadowStoneBrickFamily);
 
         // ===== 染梦木板建材系列 =====
 

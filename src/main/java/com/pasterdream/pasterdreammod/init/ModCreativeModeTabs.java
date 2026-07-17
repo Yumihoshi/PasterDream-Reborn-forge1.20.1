@@ -383,6 +383,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHADOW.get());
                         output.accept(ModItems.THICK_SHADOW.get());
                         output.accept(ModItems.SHADOW_STONE.get());
+                        output.accept(ModItems.SHADOW_STONE_BRICK.get());
+                        output.accept(ModItems.SHADOW_STONE_BRICK_STAIRS.get());
+                        output.accept(ModItems.SHADOW_STONE_BRICK_SLAB.get());
+                        output.accept(ModItems.SHADOW_STONE_BRICK_WALL.get());
                     })
                     .build());
 
