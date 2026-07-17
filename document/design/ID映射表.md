@@ -167,6 +167,8 @@
 | `shadow_stone_tiles_stairs`        | `shadow_stone_tiles_stairs`         | 不改                                            | 无需客制化类，直接用 `StairBlock`                                                                                         |
 | `shadow_stone_tiles_slab`          | `shadow_stone_tiles_slab`           | 不改                                            | 无需客制化类，直接用 `SlabBlock`                                                                                          |
 | `shadow_stone_tiles_wall`          | `shadow_stone_tiles_wall`           | 不改                                            | 无需客制化类，直接用 `WallBlock`                                                                                          |
+| `cracked_shadow_stone_brick`       | `cracked_shadow_stone_brick`        | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
+| `chiseled_shadow_stone_brick`      | `chiseled_shadow_stone_brick`       | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
 
 
 ---

@@ -996,6 +996,10 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.SHADOW_STONE_TILES_SLAB.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_STONE_TILES_WALL = ITEMS.register("shadow_stone_tiles_wall",
             () -> new BlockItem(ModBlocks.SHADOW_STONE_TILES_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CRACKED_SHADOW_STONE_BRICK = ITEMS.register("cracked_shadow_stone_brick",
+            () -> new BlockItem(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CHISELED_SHADOW_STONE_BRICK = ITEMS.register("chiseled_shadow_stone_brick",
+            () -> new BlockItem(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_CRYSTAL_LANTERN = ITEMS.register("dyedream_crystal_lantern",
             () -> new BlockItem(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_LANTERN = ITEMS.register("dyedream_lantern",
