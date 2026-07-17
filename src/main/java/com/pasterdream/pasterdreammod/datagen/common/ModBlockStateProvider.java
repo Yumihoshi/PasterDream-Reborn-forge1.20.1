@@ -195,6 +195,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         var thickShadowModel = models().cubeAll(ModBlocks.THICK_SHADOW.getId().getPath(), blockTexture(ModBlocks.THICK_SHADOW.get())).renderType("translucent");
         simpleBlockWithItem(ModBlocks.THICK_SHADOW.get(), thickShadowModel);
         simpleBlockWithItem(ModBlocks.SHADOW_STONE.get(), models().cubeAll(ModBlocks.SHADOW_STONE.getId().getPath(), blockTexture(ModBlocks.SHADOW_STONE.get())));
+        // ===== 阴影石砖建材系列 =====
+        simpleBuildingFamily(new BuildingBlockFamily(ModBlocks.SHADOW_STONE_BRICK, ModBlocks.SHADOW_STONE_BRICK_STAIRS, ModBlocks.SHADOW_STONE_BRICK_SLAB, ModBlocks.SHADOW_STONE_BRICK_WALL));
 
         // ===== 巨型泡泡 =====
         var bubbleModel = models().cubeAll(ModBlocks.BIG_BUBBLE.getId().getPath(), modLoc("block/big_bubble")).renderType("translucent");

@@ -236,6 +236,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         alloyRecipes(pWriter);
         miscOreRecipes(pWriter);
         calciteRecipes(pWriter);
+        shadowStoneRecipes(pWriter);
         foodRecipes(pWriter);
         othersRecipes(pWriter);
         curioRecipes(pWriter);
@@ -1473,6 +1474,30 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         SingleItemRecipeBuilder.stonecutting(polishedCalciteIngredient, RecipeCategory.BUILDING_BLOCKS, ModItems.CALCITE_TILES.get())
                 .unlockedBy(getHasName(ModItems.POLISHED_CALCITE.get()), has(ModItems.POLISHED_CALCITE.get()))
                 .save(pWriter, PasterDreamMod.MOD_ID + ":calcite_tiles_from_stonecutting");
+    }
+
+    // ===== 阴影石砖系列配方 =====
+
+    private void shadowStoneRecipes(Consumer<FinishedRecipe> pWriter) {
+        // 2×2 阴影石 → 4× 阴影石砖
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_STONE_BRICK.get(), 4)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', ModItems.SHADOW_STONE.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STONE.get()), has(ModItems.SHADOW_STONE.get()))
+                .save(pWriter);
+
+        // 阴影石砖 → 楼梯/台阶/墙 + 切石机
+        RecipeHelpers.buildingBlockFamilyRecipes(pWriter,
+                ModItems.SHADOW_STONE_BRICK.get(), ModItems.SHADOW_STONE_BRICK_STAIRS.get(),
+                ModItems.SHADOW_STONE_BRICK_SLAB.get(), ModItems.SHADOW_STONE_BRICK_WALL.get(),
+                PasterDreamMod.MOD_ID);
+
+        // 阴影石 → 阴影石砖 (切石机)
+        var shadowStoneIngredient = Ingredient.of(ModItems.SHADOW_STONE.get());
+        SingleItemRecipeBuilder.stonecutting(shadowStoneIngredient, RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_STONE_BRICK.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STONE.get()), has(ModItems.SHADOW_STONE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":shadow_stone_brick_from_stonecutting");
     }
 
     // ===== 食物相关合成配方 =====

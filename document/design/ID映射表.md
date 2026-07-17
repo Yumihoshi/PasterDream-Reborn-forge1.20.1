@@ -155,6 +155,10 @@
 | `shadow_block`                     | `shadow`                            | 重命名，去 `_block` 后缀                            | 客制化类 `ShadowBlock extends FallingBlock`，连接纹理裁剪、空视觉形状、半透明遮光                              |
 | `thick_shadow_block`               | `thick_shadow`                      | 重命名，去 `_block` 后缀                            | 客制化类 `ThickShadowBlock extends Block`，连接纹理裁剪、空视觉形状、半透明遮光                              |
 | `shadow_stone`                     | `shadow_stone`                      | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
+| `shadow_stone_brick`               | `shadow_stone_brick`                | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
+| `shadow_stone_brick_stairs`        | `shadow_stone_brick_stairs`         | 不改                                            | 无需客制化类，直接用 `StairBlock`                                                                                         |
+| `shadow_stone_brick_slab`          | `shadow_stone_brick_slab`           | 不改                                            | 无需客制化类，直接用 `SlabBlock`                                                                                          |
+| `shadow_stone_brick_wall`          | `shadow_stone_brick_wall`           | 不改                                            | 无需客制化类，直接用 `WallBlock`                                                                                          |
 
 
 ---
