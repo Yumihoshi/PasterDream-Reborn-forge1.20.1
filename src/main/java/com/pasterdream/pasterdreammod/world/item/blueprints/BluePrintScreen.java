@@ -40,8 +40,8 @@ public class BluePrintScreen extends Screen
     {
         super.init();
 
-        upArrowButton = new UpArrowButton(width / 2 + 60, height / 2 - 46, button -> prevPage());
-        downArrowButton = new DownArrowButton(width / 2 + 60, height / 2 + 26, button -> nextPage());
+        upArrowButton = new UpArrowButton(width / 2 + 60, height / 2 - 46, button -> nextPage());
+        downArrowButton = new DownArrowButton(width / 2 + 60, height / 2 + 26, button -> prevPage());
         addRenderableWidget(upArrowButton);
         addRenderableWidget(downArrowButton);
 

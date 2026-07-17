@@ -486,6 +486,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.按住Shift+右键点击打开的融梦水晶箱可复位（写入此物品NBT中包含的战利品列表）", "§7Press Shift And Right Mouse Button Click Opened Melt Dream Crystal Chest Can Reset(Write LootTable From NBT Which In This Item)");
 
         add("message.pasterdream.融梦水晶箱重置工具只能重置打开的融梦水晶箱", "Melt Dream Crystal Chest Reset Tool Only Can Reset Opened Melt Dream Crystal Chest");
+        add("message.pasterdream.融梦水晶箱战利品品质应为1，2或3，但是此时为", "Melt Dream Crystal Chest Loot Table Level Should Be 1 or 2 or 3, But Now Is%d");
 
         add("effect.pasterdream.sculk_armor_buff", "Sculk Echo");
         add("effect.pasterdream.dyedream_armor_buff", "Dyedream Protection");

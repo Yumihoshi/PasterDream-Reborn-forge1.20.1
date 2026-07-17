@@ -480,6 +480,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.按住Shift+右键点击打开的融梦水晶箱可复位（写入此物品NBT中包含的战利品列表）", "§7按住Shift+右键点击打开的融梦水晶箱可复位（写入此物品NBT中包含的战利品列表）");
 
         add("message.pasterdream.融梦水晶箱重置工具只能重置打开的融梦水晶箱", "融梦水晶箱重置工具只能重置打开的融梦水晶箱");
+        add("message.pasterdream.融梦水晶箱战利品品质应为1，2或3，但是此时为", "融梦水晶箱战利品品质应为1，2或3，但是此时为%d");
 
         add("message.pasterdream.loot_generator.no_loot_table", "§c战利品生成器未设置战利品表");
         add("message.pasterdream.loot_generator.not_container", "§c目标方块不是容器");
