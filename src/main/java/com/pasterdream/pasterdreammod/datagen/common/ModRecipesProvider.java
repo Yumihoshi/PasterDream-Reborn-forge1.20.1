@@ -284,6 +284,45 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(ModItems.DYEDREAM_PLANKS.get())
                 .unlockedBy(getHasName(ModItems.DYEDREAM_PLANKS.get()), has(ModItems.DYEDREAM_PLANKS.get()))
                 .save(pWriter);
+
+        // 阴影菌柄 → 阴影木板 + 全套建材配方
+        RecipeHelpers.plankFamilyRecipes(pWriter,
+                ModItems.SHADOW_STEM.get(),
+                ModItems.SHADOW_PLANKS.get(),
+                ModItems.SHADOW_STAIRS.get(),
+                ModItems.SHADOW_SLAB.get(),
+                ModItems.SHADOW_FENCE.get(),
+                ModItems.SHADOW_FENCE_GATE.get(),
+                ModItems.SHADOW_DOOR.get(),
+                ModItems.SHADOW_TRAPDOOR.get(),
+                ModItems.SHADOW_PRESSURE_PLATE.get(),
+                ModItems.SHADOW_BUTTON.get(),
+                PasterDreamMod.MOD_ID);
+
+        // 阴影菌核 → 阴影木板
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_PLANKS.get(), 4)
+                .requires(ModItems.SHADOW_HYPHAE.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_HYPHAE.get()), has(ModItems.SHADOW_HYPHAE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":shadow_planks_from_hyphae");
+
+        // 去皮阴影菌柄 → 阴影木板
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_PLANKS.get(), 4)
+                .requires(ModItems.STRIPPED_SHADOW_STEM.get())
+                .unlockedBy(getHasName(ModItems.STRIPPED_SHADOW_STEM.get()), has(ModItems.STRIPPED_SHADOW_STEM.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":shadow_planks_from_stripped_stem");
+
+        // 去皮阴影菌核 → 阴影木板
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_PLANKS.get(), 4)
+                .requires(ModItems.STRIPPED_SHADOW_HYPHAE.get())
+                .unlockedBy(getHasName(ModItems.STRIPPED_SHADOW_HYPHAE.get()), has(ModItems.STRIPPED_SHADOW_HYPHAE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":shadow_planks_from_stripped_hyphae");
+
+        // 阴影木窗格 - 玻璃板 + 阴影木板
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_PANE.get(), 1)
+                .requires(Items.GLASS_PANE)
+                .requires(ModItems.SHADOW_PLANKS.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_PLANKS.get()), has(ModItems.SHADOW_PLANKS.get()))
+                .save(pWriter);
     }
 
     // ===== 黑石棍配方 =====

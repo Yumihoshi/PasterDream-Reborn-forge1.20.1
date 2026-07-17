@@ -113,6 +113,17 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.DYEDREAM_PRESSURE_PLATE.get());
         dropSelf(ModBlocks.DYEDREAM_BUTTON.get());
 
+        dropSelf(ModBlocks.SHADOW_PLANKS.get());
+        dropSelf(ModBlocks.SHADOW_STAIRS.get());
+        add(ModBlocks.SHADOW_SLAB.get(), block -> createSlabItemTable(ModBlocks.SHADOW_SLAB.get()));
+        dropSelf(ModBlocks.SHADOW_FENCE.get());
+        dropSelf(ModBlocks.SHADOW_FENCE_GATE.get());
+        dropSelf(ModBlocks.SHADOW_PANE.get());
+        add(ModBlocks.SHADOW_DOOR.get(), createDoorTable(ModBlocks.SHADOW_DOOR.get()));
+        dropSelf(ModBlocks.SHADOW_TRAPDOOR.get());
+        dropSelf(ModBlocks.SHADOW_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.SHADOW_BUTTON.get());
+
         dropSelf(ModBlocks.PINK_SLIME_BLOCK.get());
 
         add(ModBlocks.PINK_MUSHROOM_BLOCK.get(),

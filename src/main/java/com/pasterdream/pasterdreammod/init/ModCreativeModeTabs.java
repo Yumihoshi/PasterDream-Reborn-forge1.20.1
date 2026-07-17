@@ -405,6 +405,16 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHADOW_HYPHAE.get());
                         output.accept(ModItems.STRIPPED_SHADOW_STEM.get());
                         output.accept(ModItems.STRIPPED_SHADOW_HYPHAE.get());
+                        output.accept(ModItems.SHADOW_PLANKS.get());
+                        output.accept(ModItems.SHADOW_STAIRS.get());
+                        output.accept(ModItems.SHADOW_SLAB.get());
+                        output.accept(ModItems.SHADOW_FENCE.get());
+                        output.accept(ModItems.SHADOW_FENCE_GATE.get());
+                        output.accept(ModItems.SHADOW_PANE.get());
+                        output.accept(ModItems.SHADOW_DOOR.get());
+                        output.accept(ModItems.SHADOW_TRAPDOOR.get());
+                        output.accept(ModItems.SHADOW_PRESSURE_PLATE.get());
+                        output.accept(ModItems.SHADOW_BUTTON.get());
                     })
                     .build());
 

@@ -18,6 +18,7 @@ import com.pasterdream.pasterdreammod.world.block.goldenfoxsculpture.GoldenFoxSc
 import com.pasterdream.pasterdreammod.world.block.desertherotomb.DesertHeroTombItem;
 import com.pasterdream.pasterdreammod.world.block.foxsculpture.FoxSculptureItem;
 import com.pasterdream.pasterdreammod.world.item.*;
+import com.pasterdream.pasterdreammod.world.item.FireproofBlockItem;
 import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.StorageBagItem;
 import com.pasterdream.pasterdreammod.world.item.StorgeBagItem.LargeStorageBagItem;
 import com.pasterdream.pasterdreammod.world.item.blueprints.BluePrintItem;
@@ -1010,13 +1011,33 @@ public class ModItems {
     public static final RegistryObject<Item> SHADOW_WART_BLOCK = ITEMS.register("shadow_wart_block",
             () -> new BlockItem(ModBlocks.SHADOW_WART_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_STEM = ITEMS.register("shadow_stem",
-            () -> new BlockItem(ModBlocks.SHADOW_STEM.get(), new Item.Properties()));
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_STEM.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_HYPHAE = ITEMS.register("shadow_hyphae",
-            () -> new BlockItem(ModBlocks.SHADOW_HYPHAE.get(), new Item.Properties()));
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_HYPHAE.get(), new Item.Properties()));
     public static final RegistryObject<Item> STRIPPED_SHADOW_STEM = ITEMS.register("stripped_shadow_stem",
-            () -> new BlockItem(ModBlocks.STRIPPED_SHADOW_STEM.get(), new Item.Properties()));
+            () -> new FireproofBlockItem(ModBlocks.STRIPPED_SHADOW_STEM.get(), new Item.Properties()));
     public static final RegistryObject<Item> STRIPPED_SHADOW_HYPHAE = ITEMS.register("stripped_shadow_hyphae",
-            () -> new BlockItem(ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), new Item.Properties()));
+            () -> new FireproofBlockItem(ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_PLANKS = ITEMS.register("shadow_planks",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_PLANKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_STAIRS = ITEMS.register("shadow_stairs",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_SLAB = ITEMS.register("shadow_slab",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_FENCE = ITEMS.register("shadow_fence",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_FENCE_GATE = ITEMS.register("shadow_fence_gate",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_PANE = ITEMS.register("shadow_pane",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_PANE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_DOOR = ITEMS.register("shadow_door",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_TRAPDOOR = ITEMS.register("shadow_trapdoor",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_TRAPDOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_PRESSURE_PLATE = ITEMS.register("shadow_pressure_plate",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_PRESSURE_PLATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_BUTTON = ITEMS.register("shadow_button",
+            () -> new FireproofBlockItem(ModBlocks.SHADOW_BUTTON.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_CRYSTAL_LANTERN = ITEMS.register("dyedream_crystal_lantern",
             () -> new BlockItem(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_LANTERN = ITEMS.register("dyedream_lantern",

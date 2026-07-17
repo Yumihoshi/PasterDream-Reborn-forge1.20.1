@@ -94,6 +94,21 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "cooked_eggs")))
                 .add(ModItems.FRIED_EGG.get().asItem());
 
+        tag(ItemTags.NON_FLAMMABLE_WOOD)
+                .add(ModBlocks.SHADOW_STEM.get().asItem())
+                .add(ModBlocks.SHADOW_HYPHAE.get().asItem())
+                .add(ModBlocks.STRIPPED_SHADOW_STEM.get().asItem())
+                .add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get().asItem())
+                .add(ModBlocks.SHADOW_PLANKS.get().asItem())
+                .add(ModBlocks.SHADOW_STAIRS.get().asItem())
+                .add(ModBlocks.SHADOW_SLAB.get().asItem())
+                .add(ModBlocks.SHADOW_FENCE.get().asItem())
+                .add(ModBlocks.SHADOW_FENCE_GATE.get().asItem())
+                .add(ModBlocks.SHADOW_PANE.get().asItem())
+                .add(ModBlocks.SHADOW_DOOR.get().asItem())
+                .add(ModBlocks.SHADOW_TRAPDOOR.get().asItem())
+                .add(ModBlocks.SHADOW_PRESSURE_PLATE.get().asItem())
+                .add(ModBlocks.SHADOW_BUTTON.get().asItem());
 
         // 工具标签
         tag(ItemTags.SWORDS)
