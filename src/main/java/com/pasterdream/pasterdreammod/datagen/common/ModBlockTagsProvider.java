@@ -100,6 +100,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SHADOW_STONE.get())
                 .add(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get())
                 .add(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get())
+                .add(ModBlocks.SHADOW_NYLIUM.get())
+                .add(ModBlocks.SHADOW_LIGHT.get())
                 .add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get());
 
         //整个树的结构（包含原木，木头，树叶，菌柄，菌核，菌疣）
@@ -161,7 +163,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         // 需要石头工具挖掘
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.ICE_BUD.get())
-                .add(ModBlocks.CHARGED_AMETHYST_BLOCK.get());
+                .add(ModBlocks.CHARGED_AMETHYST_BLOCK.get())
+                .add(ModBlocks.SHADOW_NYLIUM.get())
+                .add(ModBlocks.SHADOW_LIGHT.get());
 
 
         // 需要铁工具挖掘
@@ -352,6 +356,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.JUNGLE_SPORANGIUM.get())
                 .add(ModBlocks.PINK_MUSHROOM.get())
                 .add(ModBlocks.TALL_PINK_MUSHROOM.get());
+
+        // 阴影菌光体：用锄头挖掘
+        tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(ModBlocks.SHADOW_SHROOMLIGHT.get());
 
 
     }

@@ -169,6 +169,9 @@
 | `shadow_stone_tiles_wall`          | `shadow_stone_tiles_wall`           | 不改                                            | 无需客制化类，直接用 `WallBlock`                                                                                          |
 | `cracked_shadow_stone_brick`       | `cracked_shadow_stone_brick`        | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
 | `chiseled_shadow_stone_brick`      | `chiseled_shadow_stone_brick`       | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
+| `shadow_light_0`                   | `shadow_light`                      | 重命名，删除 `_0` 后缀                                | 无需客制化类，直接用 `Block`                                                                                              |
+| `shadow_shroomlight`               | `shadow_shroomlight`                | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
+| `shadow_nylium`                    | `shadow_nylium`                     | 不改                                            | 客制化类 `ShadowNyliumBlock`，蔓延/退化 + 精准采集掉落自身否则掉落阴影石                                                     |
 
 
 ---

@@ -68,7 +68,7 @@ public enum ModToolTiers implements Tier {
 
     // 白厄
     // WHITE_SWORD(1771, 0.0F, 5.0F, 1, 10,
-    //         () -> Ingredient.of(ModBlocks.SHADOW_LIGHT_0.get())),  // TODO: shadow_light_0 未注册
+    //         () -> Ingredient.of(ModBlocks.SHADOW_LIGHT.get())),  // TODO: shadow_light
 
     // 大地之刃
     TERRA_SWORD(2011, 4.0F, 8.0F, 1, 2,

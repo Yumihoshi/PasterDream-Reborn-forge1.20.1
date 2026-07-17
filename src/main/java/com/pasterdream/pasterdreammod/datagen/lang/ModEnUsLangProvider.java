@@ -279,6 +279,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_STONE_TILES_WALL.get(), "Shadow Stone Tiles Wall");
         add(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get(), "Cracked Shadow Stone Brick");
         add(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get(), "Chiseled Shadow Stone Brick");
+        add(ModBlocks.SHADOW_NYLIUM.get(), "Shadow Nylium");
+        add(ModBlocks.SHADOW_LIGHT.get(), "Shadow Light");
+        add(ModBlocks.SHADOW_SHROOMLIGHT.get(), "Shadow Shroomlight");
         add(ModBlocks.BIG_BUBBLE.get(), "Big Bubble");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "Dyedream Crystal Lantern");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "Dye Dream Lantern");

@@ -141,7 +141,20 @@
     "shadow_stone_brick": "shadow_stone_brick",
     "shadow_stone_brick_stairs": "shadow_stone_brick_stairs",
     "shadow_stone_brick_slab": "shadow_stone_brick_slab",
-    "shadow_stone_brick_wall": "shadow_stone_brick_wall"
+    "shadow_stone_brick_wall": "shadow_stone_brick_wall",
+    "shadow_stone_bricks": "narrow_shadow_stone_brick",
+    "shadow_stone_bricks_stairs": "narrow_shadow_stone_brick_stairs",
+    "shadow_stone_bricks_slab": "narrow_shadow_stone_brick_slab",
+    "shadow_stone_bricks_wall": "narrow_shadow_stone_brick_wall",
+    "shadow_stone_tiles": "shadow_stone_tiles",
+    "shadow_stone_tiles_stairs": "shadow_stone_tiles_stairs",
+    "shadow_stone_tiles_slab": "shadow_stone_tiles_slab",
+    "shadow_stone_tiles_wall": "shadow_stone_tiles_wall",
+    "cracked_shadow_stone_brick": "cracked_shadow_stone_brick",
+    "chiseled_shadow_stone_brick": "chiseled_shadow_stone_brick",
+    "shadow_light_0": "shadow_light",
+    "shadow_shroomlight": "shadow_shroomlight",
+    "shadow_nylium": "shadow_nylium"
   },
   "items": {
     "amber_candy": "amber_candy",
