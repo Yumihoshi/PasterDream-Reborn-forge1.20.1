@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.datagen.common;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.util.BuildingBlockFamily;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -165,6 +166,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.SHADOW_PRESSURE_PLATE);
 
         buttonBlock((ButtonBlock) ModBlocks.SHADOW_BUTTON.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+
+        // ===== 阴影书架系列 =====
+        horizontalBookshelf(ModBlocks.SHADOW_BOOKSHELF.get());
+        horizontalBookshelf(ModBlocks.WORN_SHADOW_BOOKSHELF.get());
+        horizontalBookshelf(ModBlocks.COBWEB_SHADOW_BOOKSHELF.get());
+        horizontalBookshelfKey(ModBlocks.KEY_SHADOW_BOOKSHELF.get());
 
         simpleBlockWithItem(ModBlocks.PINK_SLIME_BLOCK.get(), cubeAll(ModBlocks.PINK_SLIME_BLOCK.get()));
 
@@ -481,5 +488,33 @@ public class ModBlockStateProvider extends BlockStateProvider {
             return ConfiguredModel.builder().modelFile(moisture == 7 ? moist : dry).build();
         });
         simpleBlockItem(block, dry);
+    }
+
+    private void horizontalBookshelf(Block block) {
+        String name = ForgeRegistries.BLOCKS.getKey(block).getPath();
+        ModelFile model = models().cube(name,
+                modLoc("block/shadow_bookshelf_top"),
+                modLoc("block/shadow_bookshelf_top"),
+                modLoc("block/" + name),
+                modLoc("block/" + name),
+                modLoc("block/" + name),
+                modLoc("block/" + name))
+                .texture("particle", modLoc("block/shadow_bookshelf_top"));
+        horizontalBlock(block, model);
+        simpleBlockItem(block, model);
+    }
+
+    private void horizontalBookshelfKey(Block block) {
+        String name = ForgeRegistries.BLOCKS.getKey(block).getPath();
+        ModelFile model = models().cube(name,
+                modLoc("block/shadow_bookshelf_top"),
+                modLoc("block/shadow_bookshelf_top"),
+                modLoc("block/key_shadow_bookshelf_front"),
+                modLoc("block/worn_shadow_bookshelf"),
+                modLoc("block/worn_shadow_bookshelf"),
+                modLoc("block/worn_shadow_bookshelf"))
+                .texture("particle", modLoc("block/shadow_bookshelf_top"));
+        horizontalBlock(block, model);
+        simpleBlockItem(block, model);
     }
 }

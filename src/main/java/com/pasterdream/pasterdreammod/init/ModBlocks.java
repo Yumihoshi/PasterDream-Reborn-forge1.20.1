@@ -215,6 +215,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> SHADOW_PRESSURE_PLATE = BLOCKS.register("shadow_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 3f).noCollission().dynamicShape().forceSolidOn(), BlockSetType.OAK));
     public static final RegistryObject<Block> SHADOW_BUTTON = BLOCKS.register("shadow_button", () -> new ButtonBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 3f).noCollission().dynamicShape(), BlockSetType.OAK, 30, true));
 
+    // ===== 阴影书架系列 =====
+    public static final RegistryObject<Block> SHADOW_BOOKSHELF = BLOCKS.register("shadow_bookshelf", () -> new ShadowBookshelfBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 3f)));
+    public static final RegistryObject<Block> WORN_SHADOW_BOOKSHELF = BLOCKS.register("worn_shadow_bookshelf", () -> new ShadowBookshelfBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 3f)));
+    public static final RegistryObject<Block> COBWEB_SHADOW_BOOKSHELF = BLOCKS.register("cobweb_shadow_bookshelf", () -> new ShadowBookshelfBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 3f)));
+    public static final RegistryObject<Block> KEY_SHADOW_BOOKSHELF = BLOCKS.register("key_shadow_bookshelf", () -> new KeyShadowBookshelfBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 3f)));
+
     // ===== 冰晶岩与冰凌晶芽 =====
     public static final RegistryObject<Block> ICE_STONE = BLOCKS.register("ice_stone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.ICE).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CALCITE).strength(0.8f, 0.2f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> ICE_BUD = BLOCKS.register("ice_bud", () -> new AmethystClusterBlock(9, 4, BlockBehaviour.Properties.of().mapColor(MapColor.ICE).sound(SoundType.AMETHYST_CLUSTER).strength(1f, 0f).lightLevel(s -> 9).requiresCorrectToolForDrops().noOcclusion()));

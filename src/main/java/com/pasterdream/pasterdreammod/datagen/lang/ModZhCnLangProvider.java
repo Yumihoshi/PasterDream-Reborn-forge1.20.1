@@ -327,6 +327,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_TRAPDOOR.get(), "阴影木活板门");
         add(ModBlocks.SHADOW_PRESSURE_PLATE.get(), "阴影木压力板");
         add(ModBlocks.SHADOW_BUTTON.get(), "阴影木按钮");
+        add(ModBlocks.SHADOW_BOOKSHELF.get(), "阴影书架");
+        add(ModBlocks.WORN_SHADOW_BOOKSHELF.get(), "破旧阴影书架");
+        add(ModBlocks.COBWEB_SHADOW_BOOKSHELF.get(), "蛛网阴影书架");
+        add(ModBlocks.KEY_SHADOW_BOOKSHELF.get(), "钥匙阴影书架");
+        add(ModItems.SHADOW_DUNGEON_KEY.get(), "暗影地牢钥匙");
+        add("tooltip.pasterdream.shadow_dungeon_key", "§7用于打开暗影地牢下层的大门");
         add(ModBlocks.BIG_BUBBLE.get(), "巨型泡泡");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "染梦水晶灯");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "染梦灯笼");

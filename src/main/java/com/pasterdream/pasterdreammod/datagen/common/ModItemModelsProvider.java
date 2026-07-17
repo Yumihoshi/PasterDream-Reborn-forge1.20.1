@@ -120,6 +120,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.SCULK_HEART.get());
         basicItem(ModItems.BLACK_STICK.get());
         basicItem(ModItems.SPOOL.get());
+        basicItem(ModItems.SHADOW_DUNGEON_KEY.get());
         basicItem(ModItems.FABRIC.get());
         basicItem(ModItems.PROTECT_DECK.get());
         handheldItem(ModItems.COPPER_SWORD);

@@ -1071,6 +1071,17 @@ public class ModItems {
             () -> new FireproofBlockItem(ModBlocks.SHADOW_PRESSURE_PLATE.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_BUTTON = ITEMS.register("shadow_button",
             () -> new FireproofBlockItem(ModBlocks.SHADOW_BUTTON.get(), new Item.Properties()));
+    // ===== 阴影书架系列 =====
+    public static final RegistryObject<Item> SHADOW_BOOKSHELF = ITEMS.register("shadow_bookshelf",
+            () -> new BlockItem(ModBlocks.SHADOW_BOOKSHELF.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WORN_SHADOW_BOOKSHELF = ITEMS.register("worn_shadow_bookshelf",
+            () -> new BlockItem(ModBlocks.WORN_SHADOW_BOOKSHELF.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COBWEB_SHADOW_BOOKSHELF = ITEMS.register("cobweb_shadow_bookshelf",
+            () -> new BlockItem(ModBlocks.COBWEB_SHADOW_BOOKSHELF.get(), new Item.Properties()));
+    public static final RegistryObject<Item> KEY_SHADOW_BOOKSHELF = ITEMS.register("key_shadow_bookshelf",
+            () -> new BlockItem(ModBlocks.KEY_SHADOW_BOOKSHELF.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_DUNGEON_KEY = ITEMS.register("shadow_dungeon_key",
+            () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.COMMON)));
     public static final RegistryObject<Item> DYEDREAM_CRYSTAL_LANTERN = ITEMS.register("dyedream_crystal_lantern",
             () -> new BlockItem(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_LANTERN = ITEMS.register("dyedream_lantern",
