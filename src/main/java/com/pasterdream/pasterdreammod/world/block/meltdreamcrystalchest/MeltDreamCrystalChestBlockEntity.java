@@ -10,6 +10,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -135,7 +136,8 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         int quality = rollQuality(player);
         if (quality != 1 && quality != 2 && quality != 3)
         {
-            throw new RuntimeException("quality应为1，2或3，但是此时quality为" + quality);
+            player.displayClientMessage(Component.translatable("message.pasterdream.融梦水晶箱战利品品质应为1，2或3，但是此时为", quality), true);
+            return;
         }
 
         //设置动画状态，同步到客户端
@@ -214,7 +216,6 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         List<LootTableEntry> entries = lootEntries;
         if (entries.isEmpty())
         {
-            System.err.println("entries.isEmpty() == true");
             return 0;
         }
 
@@ -277,7 +278,7 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
         {
             case 1 -> 0.375;
             case 2 -> 0.5;
-            case 3 -> 1;
+            case 3 -> 0.75;
             default-> 2147483647;
         };
 
