@@ -272,6 +272,15 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         buildingFamily(new BuildingBlockFamily(ModBlocks.SHADOW_STONE_TILES, ModBlocks.SHADOW_STONE_TILES_STAIRS, ModBlocks.SHADOW_STONE_TILES_SLAB, ModBlocks.SHADOW_STONE_TILES_WALL));
         dropSelf(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get());
         dropSelf(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get());
+        // ===== 暗影地牢方块系列 =====
+        dropSelf(ModBlocks.SHADOW_DUNGEON_STONE.get());
+        dropSelf(ModBlocks.CHISELED_SHADOW_DUNGEON_BRICKS.get());
+        dropSelf(ModBlocks.SHADOW_DUNGEON_BRICKS.get());
+        dropSelf(ModBlocks.CRACKED_SHADOW_DUNGEON_BRICKS.get());
+        dropSelf(ModBlocks.FRACTURED_SHADOW_DUNGEON_BRICKS.get());
+        dropSelf(ModBlocks.SHADOW_DUNGEON_BRICK_STAIRS.get());
+        add(ModBlocks.SHADOW_DUNGEON_BRICK_SLAB.get(), block -> createSlabItemTable(ModBlocks.SHADOW_DUNGEON_BRICK_SLAB.get()));
+        add(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(net.minecraft.world.item.Items.AIR)));
         add(ModBlocks.SHADOW_NYLIUM.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(ModBlocks.SHADOW_STONE.get())));
         dropSelf(ModBlocks.SHADOW_LIGHT.get());
         dropSelf(ModBlocks.SHADOW_SHROOMLIGHT.get());

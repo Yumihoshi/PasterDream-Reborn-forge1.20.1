@@ -300,6 +300,15 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_STONE_TILES_WALL.get(), "阴影石瓦墙");
         add(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get(), "裂阴影石砖");
         add(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get(), "錾制阴影石砖");
+        // ===== 暗影地牢方块系列 =====
+        add(ModBlocks.SHADOW_DUNGEON_STONE.get(), "暗影地牢石");
+        add(ModBlocks.CHISELED_SHADOW_DUNGEON_BRICKS.get(), "雕纹暗影地牢石砖");
+        add(ModBlocks.SHADOW_DUNGEON_BRICKS.get(), "暗影地牢石砖");
+        add(ModBlocks.CRACKED_SHADOW_DUNGEON_BRICKS.get(), "裂纹暗影地牢石砖");
+        add(ModBlocks.FRACTURED_SHADOW_DUNGEON_BRICKS.get(), "开裂暗影地牢石砖");
+        add(ModBlocks.SHADOW_DUNGEON_BRICK_STAIRS.get(), "暗影地牢石砖楼梯");
+        add(ModBlocks.SHADOW_DUNGEON_BRICK_SLAB.get(), "暗影地牢石砖台阶");
+        add(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get(), "碎裂暗影地牢石砖");
         add(ModBlocks.SHADOW_NYLIUM.get(), "阴影菌岩");
         add(ModBlocks.SHADOW_LIGHT.get(), "影灯");
         add(ModBlocks.SHADOW_SHROOMLIGHT.get(), "阴影菌光体");

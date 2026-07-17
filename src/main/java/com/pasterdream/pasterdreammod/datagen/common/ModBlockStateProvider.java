@@ -247,6 +247,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // ===== 裂阴影石砖 / 錾制阴影石砖 =====
         simpleBlockWithItem(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get(), cubeAll(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get()));
         simpleBlockWithItem(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get(), cubeAll(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get()));
+        // ===== 暗影地牢方块系列 =====
+        simpleBlockWithItem(ModBlocks.SHADOW_DUNGEON_STONE.get(), cubeAll(ModBlocks.SHADOW_DUNGEON_STONE.get()));
+        var chiseledDungeonSide = modLoc("block/chiseled_shadow_dungeon_bricks_side");
+        var chiseledDungeonTop = modLoc("block/chiseled_shadow_dungeon_bricks_top");
+        axisBlock((RotatedPillarBlock) ModBlocks.CHISELED_SHADOW_DUNGEON_BRICKS.get(), chiseledDungeonSide, chiseledDungeonTop);
+        blockItem(ModBlocks.CHISELED_SHADOW_DUNGEON_BRICKS);
+        simpleBlockWithItem(ModBlocks.SHADOW_DUNGEON_BRICKS.get(), cubeAll(ModBlocks.SHADOW_DUNGEON_BRICKS.get()));
+        simpleBlockWithItem(ModBlocks.CRACKED_SHADOW_DUNGEON_BRICKS.get(), cubeAll(ModBlocks.CRACKED_SHADOW_DUNGEON_BRICKS.get()));
+        simpleBlockWithItem(ModBlocks.FRACTURED_SHADOW_DUNGEON_BRICKS.get(), cubeAll(ModBlocks.FRACTURED_SHADOW_DUNGEON_BRICKS.get()));
+        var dungeonBrickTex = blockTexture(ModBlocks.SHADOW_DUNGEON_BRICKS.get());
+        stairsBlock((StairBlock) ModBlocks.SHADOW_DUNGEON_BRICK_STAIRS.get(), dungeonBrickTex);
+        blockItem(ModBlocks.SHADOW_DUNGEON_BRICK_STAIRS);
+        slabBlock((SlabBlock) ModBlocks.SHADOW_DUNGEON_BRICK_SLAB.get(), dungeonBrickTex, dungeonBrickTex);
+        blockItem(ModBlocks.SHADOW_DUNGEON_BRICK_SLAB);
+        simpleBlockWithItem(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get(), cubeAll(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get()));
         // ===== 阴影菌岩 / 影灯 / 阴影菌光体 =====
         var shadowNyliumModel = models().cubeBottomTop(
                 ModBlocks.SHADOW_NYLIUM.getId().getPath(),
