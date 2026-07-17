@@ -6,6 +6,7 @@ import com.pasterdream.pasterdreammod.world.entity.MeltDreamCrystalEntityEntity;
 import com.pasterdream.pasterdreammod.world.entity.PinkChickenEntity;
 import com.pasterdream.pasterdreammod.world.entity.PinkSlimeEntity;
 import com.pasterdream.pasterdreammod.world.entity.TerraswordWaveEntity;
+import com.pasterdream.pasterdreammod.world.entity.ThrownPinkEgg;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -64,6 +65,14 @@ public class ModEntities {
                     .setUpdateInterval(3)
                     .setCustomClientFactory(PinkSlimeEntity::new)
                     .sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<ThrownPinkEgg>> THROWN_PINK_EGG = register("thrown_pink_egg",
+            EntityType.Builder.<ThrownPinkEgg>of(ThrownPinkEgg::new, MobCategory.MISC)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
+                    .setCustomClientFactory(ThrownPinkEgg::new)
+                    .sized(0.25f, 0.25f));
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> builder) {
         return REGISTRY.register(name, () -> builder.build(name));

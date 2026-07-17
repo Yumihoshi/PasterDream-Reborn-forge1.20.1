@@ -5,6 +5,7 @@ import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.util.BuildingBlockFamily;
 import com.pasterdream.pasterdreammod.world.block.cropblock.PasterDreamCropBlock;
+import com.pasterdream.pasterdreammod.world.conditions.RealPlayerEmptyHandCondition;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
@@ -389,11 +390,25 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
     private void generateCropLoot(Block cropBlock, Item productItem, int productCount, Item matureItem)
     {
-        LootTable.Builder builder = LootTable.lootTable();
-        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 1)))
-                .add(LootItem.lootTableItem(productItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(productCount)))));
-        builder.withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 0))).add(LootItem.lootTableItem(cropBlock)));
-        this.add(cropBlock, builder);
+        var matureCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock)
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 1));
+        var emptyHandCondition = RealPlayerEmptyHandCondition.builder();
+        var immatureCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(cropBlock)
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PasterDreamCropBlock.AGE, 0));
+
+        this.add(cropBlock, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .when(matureCondition)
+                        .when(emptyHandCondition)
+                        .add(LootItem.lootTableItem(matureItem)))
+                .withPool(LootPool.lootPool()
+                        .when(matureCondition)
+                        .when(emptyHandCondition.invert())
+                        .add(LootItem.lootTableItem(productItem)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(productCount)))))
+                .withPool(LootPool.lootPool()
+                        .when(immatureCondition)
+                        .add(LootItem.lootTableItem(cropBlock))));
     }
 
     protected void dropNone(Block block)
