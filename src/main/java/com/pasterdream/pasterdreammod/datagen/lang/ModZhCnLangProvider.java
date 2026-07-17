@@ -276,6 +276,41 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_PACKED_ICE.get(), "染梦浮冰");
         add(ModBlocks.CLOUD.get(), "云朵");
         add(ModBlocks.DARK_CLOUD.get(), "乌云");
+        add(ModBlocks.SHADOW.get(), "阴影");
+        add(ModBlocks.THICK_SHADOW.get(), "厚重阴影");
+        add(ModBlocks.SHADOW_STONE.get(), "阴影石");
+        add(ModBlocks.SHADOW_STONE_BRICK.get(), "阴影石砖");
+        add(ModBlocks.SHADOW_STONE_BRICK_STAIRS.get(), "阴影石砖楼梯");
+        add(ModBlocks.SHADOW_STONE_BRICK_SLAB.get(), "阴影石砖台阶");
+        add(ModBlocks.SHADOW_STONE_BRICK_WALL.get(), "阴影石砖墙");
+        add(ModBlocks.NARROW_SHADOW_STONE_BRICK.get(), "细阴影石砖");
+        add(ModBlocks.NARROW_SHADOW_STONE_BRICK_STAIRS.get(), "细阴影石砖楼梯");
+        add(ModBlocks.NARROW_SHADOW_STONE_BRICK_SLAB.get(), "细阴影石砖台阶");
+        add(ModBlocks.NARROW_SHADOW_STONE_BRICK_WALL.get(), "细阴影石砖墙");
+        add(ModBlocks.SHADOW_STONE_TILES.get(), "阴影石瓦");
+        add(ModBlocks.SHADOW_STONE_TILES_STAIRS.get(), "阴影石瓦楼梯");
+        add(ModBlocks.SHADOW_STONE_TILES_SLAB.get(), "阴影石瓦台阶");
+        add(ModBlocks.SHADOW_STONE_TILES_WALL.get(), "阴影石瓦墙");
+        add(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get(), "裂阴影石砖");
+        add(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get(), "錾制阴影石砖");
+        add(ModBlocks.SHADOW_NYLIUM.get(), "阴影菌岩");
+        add(ModBlocks.SHADOW_LIGHT.get(), "影灯");
+        add(ModBlocks.SHADOW_SHROOMLIGHT.get(), "阴影菌光体");
+        add(ModBlocks.SHADOW_WART_BLOCK.get(), "阴影疣块");
+        add(ModBlocks.SHADOW_STEM.get(), "阴影菌柄");
+        add(ModBlocks.SHADOW_HYPHAE.get(), "阴影菌核");
+        add(ModBlocks.STRIPPED_SHADOW_STEM.get(), "去皮阴影菌柄");
+        add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), "去皮阴影菌核");
+        add(ModBlocks.SHADOW_PLANKS.get(), "阴影木板");
+        add(ModBlocks.SHADOW_STAIRS.get(), "阴影木楼梯");
+        add(ModBlocks.SHADOW_SLAB.get(), "阴影木台阶");
+        add(ModBlocks.SHADOW_FENCE.get(), "阴影木栅栏");
+        add(ModBlocks.SHADOW_FENCE_GATE.get(), "阴影木栅栏门");
+        add(ModBlocks.SHADOW_PANE.get(), "阴影木窗格");
+        add(ModBlocks.SHADOW_DOOR.get(), "阴影木门");
+        add(ModBlocks.SHADOW_TRAPDOOR.get(), "阴影木活板门");
+        add(ModBlocks.SHADOW_PRESSURE_PLATE.get(), "阴影木压力板");
+        add(ModBlocks.SHADOW_BUTTON.get(), "阴影木按钮");
         add(ModBlocks.BIG_BUBBLE.get(), "巨型泡泡");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "染梦水晶灯");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "染梦灯笼");
@@ -380,7 +415,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_items_tab", "帕斯特之梦 | 物品");
         add("itemGroup.pasterdream.pasterdream_gear_tab", "帕斯特之梦 | 装备");
         add("itemGroup.pasterdream.pasterdream_equipment_tab", "帕斯特之梦 | 设备");
-        add("itemGroup.pasterdream.pasterdream_blocks_tab", "帕斯特之梦 | 方块");
+        add("itemGroup.pasterdream.pasterdream_blocks_tab", "染梦世界");
+        add("itemGroup.pasterdream.pasterdream_shadow_tab", "灯影之下");
         add("itemGroup.pasterdream.pasterdream_plants_tab", "帕斯特之梦 | 植物");
         add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "帕斯特之梦 | 笔记");
         add("itemGroup.pasterdream.pasterdream_dream_debug_tab", "帕斯特之梦 | 调试栏");
@@ -972,8 +1008,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 追忆物品
         add(ModItems.EMPTY_VESSEL.get(), "空容器");
         add("tooltip.pasterdream.empty_vessel.1", "§7▪ §9使用后幸运+10持续3分钟");
-        add("tooltip.pasterdream.empty_vessel.2", "§7GQ2529的专属遗物");
-        add("tooltip.pasterdream.empty_vessel.3", "§6PasterDream开发者");
+        add("tooltip.pasterdream.empty_vessel.2", "§7▪ §999%+20%SAN §c1%-100%SAN");
+        add("tooltip.pasterdream.empty_vessel.3", "§7GQ2529的专属遗物");
+        add("tooltip.pasterdream.empty_vessel.4", "§6PasterDream开发者");
 
         // 琴雨梦装备
         add(ModItems.QYM_CAT_EARS.get(), "琴雨梦的猫耳发卡");

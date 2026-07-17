@@ -113,6 +113,17 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.DYEDREAM_PRESSURE_PLATE.get());
         dropSelf(ModBlocks.DYEDREAM_BUTTON.get());
 
+        dropSelf(ModBlocks.SHADOW_PLANKS.get());
+        dropSelf(ModBlocks.SHADOW_STAIRS.get());
+        add(ModBlocks.SHADOW_SLAB.get(), block -> createSlabItemTable(ModBlocks.SHADOW_SLAB.get()));
+        dropSelf(ModBlocks.SHADOW_FENCE.get());
+        dropSelf(ModBlocks.SHADOW_FENCE_GATE.get());
+        dropSelf(ModBlocks.SHADOW_PANE.get());
+        add(ModBlocks.SHADOW_DOOR.get(), createDoorTable(ModBlocks.SHADOW_DOOR.get()));
+        dropSelf(ModBlocks.SHADOW_TRAPDOOR.get());
+        dropSelf(ModBlocks.SHADOW_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.SHADOW_BUTTON.get());
+
         dropSelf(ModBlocks.PINK_SLIME_BLOCK.get());
 
         add(ModBlocks.PINK_MUSHROOM_BLOCK.get(),
@@ -235,6 +246,9 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.CLOUD.get());
         dropSelf(ModBlocks.DARK_CLOUD.get());
+        dropSelf(ModBlocks.SHADOW.get());
+        dropSelf(ModBlocks.THICK_SHADOW.get());
+        dropSelf(ModBlocks.SHADOW_STONE.get());
         dropSelf(ModBlocks.BIG_BUBBLE.get());
         dropSelf(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get());
         dropSelf(ModBlocks.DYEDREAM_LANTERN.get());
@@ -248,6 +262,19 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         buildingFamily(new BuildingBlockFamily(ModBlocks.POLISHED_CALCITE, ModBlocks.POLISHED_CALCITE_STAIRS, ModBlocks.POLISHED_CALCITE_SLAB, ModBlocks.POLISHED_CALCITE_WALL));
         buildingFamily(new BuildingBlockFamily(ModBlocks.CALCITE_TILES, ModBlocks.CALCITE_TILES_STAIRS, ModBlocks.CALCITE_TILES_SLAB, ModBlocks.CALCITE_TILES_WALL));
         buildingFamily(new BuildingBlockFamily(ModBlocks.DYEDREAM_BUD_BLOCK, ModBlocks.DYEDREAM_BUD_STAIRS, ModBlocks.DYEDREAM_BUD_SLAB, ModBlocks.DYEDREAM_BUD_WALL));
+        buildingFamily(new BuildingBlockFamily(ModBlocks.SHADOW_STONE_BRICK, ModBlocks.SHADOW_STONE_BRICK_STAIRS, ModBlocks.SHADOW_STONE_BRICK_SLAB, ModBlocks.SHADOW_STONE_BRICK_WALL));
+        buildingFamily(new BuildingBlockFamily(ModBlocks.NARROW_SHADOW_STONE_BRICK, ModBlocks.NARROW_SHADOW_STONE_BRICK_STAIRS, ModBlocks.NARROW_SHADOW_STONE_BRICK_SLAB, ModBlocks.NARROW_SHADOW_STONE_BRICK_WALL));
+        buildingFamily(new BuildingBlockFamily(ModBlocks.SHADOW_STONE_TILES, ModBlocks.SHADOW_STONE_TILES_STAIRS, ModBlocks.SHADOW_STONE_TILES_SLAB, ModBlocks.SHADOW_STONE_TILES_WALL));
+        dropSelf(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get());
+        dropSelf(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get());
+        add(ModBlocks.SHADOW_NYLIUM.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(ModBlocks.SHADOW_STONE.get())));
+        dropSelf(ModBlocks.SHADOW_LIGHT.get());
+        dropSelf(ModBlocks.SHADOW_SHROOMLIGHT.get());
+        dropSelf(ModBlocks.SHADOW_WART_BLOCK.get());
+        dropSelf(ModBlocks.SHADOW_STEM.get());
+        dropSelf(ModBlocks.SHADOW_HYPHAE.get());
+        dropSelf(ModBlocks.STRIPPED_SHADOW_STEM.get());
+        dropSelf(ModBlocks.STRIPPED_SHADOW_HYPHAE.get());
 
         generateCropLoot(ModBlocks.DYEDREAM_COROLLA_CROP.get(), ModItems.DYEDREAM_COROLLA.get(), 1, ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get());
         generateCropLoot(ModBlocks.WHITE_COROLLA_CROP.get(), ModItems.WHITE_COROLLA.get(), 1, ModItems.WHITE_COROLLA_CROP_AGE_1.get());

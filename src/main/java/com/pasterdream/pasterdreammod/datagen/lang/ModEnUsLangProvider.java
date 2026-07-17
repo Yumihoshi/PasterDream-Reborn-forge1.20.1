@@ -262,6 +262,41 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_PACKED_ICE.get(), "Dye Dream Packed Ice");
         add(ModBlocks.CLOUD.get(), "Cloud");
         add(ModBlocks.DARK_CLOUD.get(), "Dark Cloud");
+        add(ModBlocks.SHADOW.get(), "Shadow");
+        add(ModBlocks.THICK_SHADOW.get(), "Thick Shadow");
+        add(ModBlocks.SHADOW_STONE.get(), "Shadow Stone");
+        add(ModBlocks.SHADOW_STONE_BRICK.get(), "Shadow Stone Brick");
+        add(ModBlocks.SHADOW_STONE_BRICK_STAIRS.get(), "Shadow Stone Brick Stairs");
+        add(ModBlocks.SHADOW_STONE_BRICK_SLAB.get(), "Shadow Stone Brick Slab");
+        add(ModBlocks.SHADOW_STONE_BRICK_WALL.get(), "Shadow Stone Brick Wall");
+        add(ModBlocks.NARROW_SHADOW_STONE_BRICK.get(), "Narrow Shadow Stone Brick");
+        add(ModBlocks.NARROW_SHADOW_STONE_BRICK_STAIRS.get(), "Narrow Shadow Stone Brick Stairs");
+        add(ModBlocks.NARROW_SHADOW_STONE_BRICK_SLAB.get(), "Narrow Shadow Stone Brick Slab");
+        add(ModBlocks.NARROW_SHADOW_STONE_BRICK_WALL.get(), "Narrow Shadow Stone Brick Wall");
+        add(ModBlocks.SHADOW_STONE_TILES.get(), "Shadow Stone Tiles");
+        add(ModBlocks.SHADOW_STONE_TILES_STAIRS.get(), "Shadow Stone Tiles Stairs");
+        add(ModBlocks.SHADOW_STONE_TILES_SLAB.get(), "Shadow Stone Tiles Slab");
+        add(ModBlocks.SHADOW_STONE_TILES_WALL.get(), "Shadow Stone Tiles Wall");
+        add(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get(), "Cracked Shadow Stone Brick");
+        add(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get(), "Chiseled Shadow Stone Brick");
+        add(ModBlocks.SHADOW_NYLIUM.get(), "Shadow Nylium");
+        add(ModBlocks.SHADOW_LIGHT.get(), "Shadow Light");
+        add(ModBlocks.SHADOW_SHROOMLIGHT.get(), "Shadow Shroomlight");
+        add(ModBlocks.SHADOW_WART_BLOCK.get(), "Shadow Wart Block");
+        add(ModBlocks.SHADOW_STEM.get(), "Shadow Stem");
+        add(ModBlocks.SHADOW_HYPHAE.get(), "Shadow Hyphae");
+        add(ModBlocks.STRIPPED_SHADOW_STEM.get(), "Stripped Shadow Stem");
+        add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), "Stripped Shadow Hyphae");
+        add(ModBlocks.SHADOW_PLANKS.get(), "Shadow Planks");
+        add(ModBlocks.SHADOW_STAIRS.get(), "Shadow Stairs");
+        add(ModBlocks.SHADOW_SLAB.get(), "Shadow Slab");
+        add(ModBlocks.SHADOW_FENCE.get(), "Shadow Fence");
+        add(ModBlocks.SHADOW_FENCE_GATE.get(), "Shadow Fence Gate");
+        add(ModBlocks.SHADOW_PANE.get(), "Shadow Pane");
+        add(ModBlocks.SHADOW_DOOR.get(), "Shadow Door");
+        add(ModBlocks.SHADOW_TRAPDOOR.get(), "Shadow Trapdoor");
+        add(ModBlocks.SHADOW_PRESSURE_PLATE.get(), "Shadow Pressure Plate");
+        add(ModBlocks.SHADOW_BUTTON.get(), "Shadow Button");
         add(ModBlocks.BIG_BUBBLE.get(), "Big Bubble");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "Dyedream Crystal Lantern");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "Dye Dream Lantern");
@@ -370,7 +405,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_food_tab", "Paster Dream | Food & Drinks");
         add("itemGroup.pasterdream.pasterdream_items_tab", "Paster Dream | Items");
         add("itemGroup.pasterdream.pasterdream_gear_tab", "Paster Dream | Gear");
-        add("itemGroup.pasterdream.pasterdream_blocks_tab", "Paster Dream | Blocks");
+        add("itemGroup.pasterdream.pasterdream_blocks_tab", "Dye Dream World");
+        add("itemGroup.pasterdream.pasterdream_shadow_tab", "Lamp Shadow World");
         add("itemGroup.pasterdream.pasterdream_plants_tab", "Paster Dream | Plants");
         add("itemGroup.pasterdream.pasterdream_equipment_tab", "Paster Dream | Equipment");
         add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "Paster Dream | Dream Notes");
@@ -808,8 +844,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Memento Item
         add(ModItems.EMPTY_VESSEL.get(), "Empty Vessel");
         add("tooltip.pasterdream.empty_vessel.1", "§7▪ §9Grants Luck +10 for 3 minutes");
-        add("tooltip.pasterdream.empty_vessel.2", "§7Exclusive memento of GQ2529");
-        add("tooltip.pasterdream.empty_vessel.3", "§6PasterDream Developer");
+        add("tooltip.pasterdream.empty_vessel.2", "§7▪ §999%+20%SAN §c1%-100%SAN");
+        add("tooltip.pasterdream.empty_vessel.3", "§7Exclusive memento of GQ2529");
+        add("tooltip.pasterdream.empty_vessel.4", "§6PasterDream Developer");
 
         // Qym Gear
         add(ModItems.QYM_CAT_EARS.get(), "Qym's Cat Ears");

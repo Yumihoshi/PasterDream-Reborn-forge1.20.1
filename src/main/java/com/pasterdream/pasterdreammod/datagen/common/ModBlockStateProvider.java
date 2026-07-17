@@ -123,6 +123,39 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         buttonBlock((ButtonBlock) ModBlocks.DYEDREAM_BUTTON.get(), blockTexture(ModBlocks.DYEDREAM_PLANKS.get()));
 
+        // ===== 阴影木板建材系列 =====
+
+        simpleBlockWithItem(ModBlocks.SHADOW_PLANKS.get(), cubeAll(ModBlocks.SHADOW_PLANKS.get()));
+
+        stairsBlock((StairBlock) ModBlocks.SHADOW_STAIRS.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+        blockItem(ModBlocks.SHADOW_STAIRS);
+
+        slabBlock((SlabBlock) ModBlocks.SHADOW_SLAB.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+        blockItem(ModBlocks.SHADOW_SLAB);
+
+        fenceBlock((FenceBlock) ModBlocks.SHADOW_FENCE.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+
+        fenceGateBlock((FenceGateBlock) ModBlocks.SHADOW_FENCE_GATE.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+        blockItem(ModBlocks.SHADOW_FENCE_GATE);
+
+        paneBlock((IronBarsBlock) ModBlocks.SHADOW_PANE.get(), modLoc("block/shadow_trapdoor"), modLoc("block/shadow_trapdoor"));
+
+        doorBlockWithRenderType((DoorBlock) ModBlocks.SHADOW_DOOR.get(),
+                modLoc("block/shadow_door_bottom"),
+                modLoc("block/shadow_door_top"),
+                "cutout");
+
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.SHADOW_TRAPDOOR.get(),
+                modLoc("block/shadow_trapdoor"),
+                true,
+                "cutout");
+        blockItem(ModBlocks.SHADOW_TRAPDOOR, "_bottom");
+
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.SHADOW_PRESSURE_PLATE.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+        blockItem(ModBlocks.SHADOW_PRESSURE_PLATE);
+
+        buttonBlock((ButtonBlock) ModBlocks.SHADOW_BUTTON.get(), blockTexture(ModBlocks.SHADOW_PLANKS.get()));
+
         simpleBlockWithItem(ModBlocks.PINK_SLIME_BLOCK.get(), cubeAll(ModBlocks.PINK_SLIME_BLOCK.get()));
 
         // ===== 粉顶菌菇系列 =====
@@ -190,6 +223,47 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.CLOUD.get(), cloudModel);
         var darkCloudModel = models().cubeAll(ModBlocks.DARK_CLOUD.getId().getPath(), blockTexture(ModBlocks.DARK_CLOUD.get())).renderType("translucent");
         simpleBlockWithItem(ModBlocks.DARK_CLOUD.get(), darkCloudModel);
+        var shadowModel = models().cubeAll(ModBlocks.SHADOW.getId().getPath(), blockTexture(ModBlocks.SHADOW.get())).renderType("translucent");
+        simpleBlockWithItem(ModBlocks.SHADOW.get(), shadowModel);
+        var thickShadowModel = models().cubeAll(ModBlocks.THICK_SHADOW.getId().getPath(), blockTexture(ModBlocks.THICK_SHADOW.get())).renderType("translucent");
+        simpleBlockWithItem(ModBlocks.THICK_SHADOW.get(), thickShadowModel);
+        simpleBlockWithItem(ModBlocks.SHADOW_STONE.get(), models().cubeAll(ModBlocks.SHADOW_STONE.getId().getPath(), blockTexture(ModBlocks.SHADOW_STONE.get())));
+        // ===== 阴影石砖建材系列 =====
+        simpleBuildingFamily(new BuildingBlockFamily(ModBlocks.SHADOW_STONE_BRICK, ModBlocks.SHADOW_STONE_BRICK_STAIRS, ModBlocks.SHADOW_STONE_BRICK_SLAB, ModBlocks.SHADOW_STONE_BRICK_WALL));
+        // ===== 细阴影石砖建材系列 =====
+        simpleBuildingFamily(new BuildingBlockFamily(ModBlocks.NARROW_SHADOW_STONE_BRICK, ModBlocks.NARROW_SHADOW_STONE_BRICK_STAIRS, ModBlocks.NARROW_SHADOW_STONE_BRICK_SLAB, ModBlocks.NARROW_SHADOW_STONE_BRICK_WALL));
+        // ===== 阴影石瓦建材系列 =====
+        simpleBuildingFamily(new BuildingBlockFamily(ModBlocks.SHADOW_STONE_TILES, ModBlocks.SHADOW_STONE_TILES_STAIRS, ModBlocks.SHADOW_STONE_TILES_SLAB, ModBlocks.SHADOW_STONE_TILES_WALL));
+        // ===== 裂阴影石砖 / 錾制阴影石砖 =====
+        simpleBlockWithItem(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get(), cubeAll(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get()));
+        simpleBlockWithItem(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get(), cubeAll(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get()));
+        // ===== 阴影菌岩 / 影灯 / 阴影菌光体 =====
+        var shadowNyliumModel = models().cubeBottomTop(
+                ModBlocks.SHADOW_NYLIUM.getId().getPath(),
+                modLoc("block/shadow_nylium_side"),
+                modLoc("block/shadow_stone"),
+                modLoc("block/shadow_nylium_top"));
+        simpleBlockWithItem(ModBlocks.SHADOW_NYLIUM.get(), shadowNyliumModel);
+        var shadowLightModel = models().cubeBottomTop(
+                ModBlocks.SHADOW_LIGHT.getId().getPath(),
+                modLoc("block/shadow_light_side"),
+                modLoc("block/shadow_light_top"),
+                modLoc("block/shadow_light_top"));
+        simpleBlockWithItem(ModBlocks.SHADOW_LIGHT.get(), shadowLightModel);
+        simpleBlockWithItem(ModBlocks.SHADOW_SHROOMLIGHT.get(), cubeAll(ModBlocks.SHADOW_SHROOMLIGHT.get()));
+
+        // ===== 阴影巨型菌系列 =====
+        simpleBlockWithItem(ModBlocks.SHADOW_WART_BLOCK.get(), cubeAll(ModBlocks.SHADOW_WART_BLOCK.get()));
+        logBlock((RotatedPillarBlock) ModBlocks.SHADOW_STEM.get());
+        blockItem(ModBlocks.SHADOW_STEM);
+        var shadowStemTex = blockTexture(ModBlocks.SHADOW_STEM.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.SHADOW_HYPHAE.get(), shadowStemTex, shadowStemTex);
+        blockItem(ModBlocks.SHADOW_HYPHAE);
+        logBlock((RotatedPillarBlock) ModBlocks.STRIPPED_SHADOW_STEM.get());
+        blockItem(ModBlocks.STRIPPED_SHADOW_STEM);
+        var strippedShadowStemTex = blockTexture(ModBlocks.STRIPPED_SHADOW_STEM.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), strippedShadowStemTex, strippedShadowStemTex);
+        blockItem(ModBlocks.STRIPPED_SHADOW_HYPHAE);
 
         // ===== 巨型泡泡 =====
         var bubbleModel = models().cubeAll(ModBlocks.BIG_BUBBLE.getId().getPath(), modLoc("block/big_bubble")).renderType("translucent");

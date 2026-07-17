@@ -289,11 +289,20 @@ public class ModItemModelsProvider extends ItemModelProvider {
         withExistingParent(ModItems.DYEDREAM_PANE.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/dyedream_trapdoor"));
 
+        fenceItem(ModBlocks.SHADOW_FENCE, ModBlocks.SHADOW_PLANKS);
+        buttonItem(ModBlocks.SHADOW_BUTTON, ModBlocks.SHADOW_PLANKS);
+        basicItem(ModItems.SHADOW_DOOR.get());
+        withExistingParent(ModItems.SHADOW_PANE.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/shadow_trapdoor"));
+
         wallItem(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL, ModBlocks.DYEDREAM_QUARTZ_BLOCK);
 
         wallItem(ModBlocks.DYEDREAM_BUD_WALL, ModBlocks.DYEDREAM_BUD_BLOCK);
         wallItem(ModBlocks.POLISHED_CALCITE_WALL, ModBlocks.POLISHED_CALCITE);
         wallItem(ModBlocks.CALCITE_TILES_WALL, ModBlocks.CALCITE_TILES);
+        wallItem(ModBlocks.SHADOW_STONE_BRICK_WALL, ModBlocks.SHADOW_STONE_BRICK);
+        wallItem(ModBlocks.NARROW_SHADOW_STONE_BRICK_WALL, ModBlocks.NARROW_SHADOW_STONE_BRICK);
+        wallItem(ModBlocks.SHADOW_STONE_TILES_WALL, ModBlocks.SHADOW_STONE_TILES);
 
         withExistingParent(ModItems.DYEDREAM_GLASS_PANE.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/dyedream_glass"));
