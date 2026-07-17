@@ -47,7 +47,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.PINK_MUSHROOM_BLOCK.get())
                 .add(ModBlocks.PINK_MUSHROOM_STEM.get())
                 .add(ModBlocks.PINK_MUSHROOM_PORES.get())
-                .add(ModBlocks.PINK_SHROOMLIGHT.get());
+                .add(ModBlocks.PINK_SHROOMLIGHT.get())
+                .add(ModBlocks.SHADOW_SHROOMLIGHT.get())
+                .add(ModBlocks.SHADOW_WART_BLOCK.get());
 
         // 可以用斧子来挖掘
         tag(BlockTags.MINEABLE_WITH_AXE)
@@ -60,7 +62,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_DESK.get())
                 .add(ModBlocks.SHADOW_DESK.get())
                 .add(ModBlocks.PICNIC_BASKET.get())
-                .add(ModBlocks.WIND_MOOR_CRATE.get());
+                .add(ModBlocks.WIND_MOOR_CRATE.get())
+                .add(ModBlocks.SHADOW_STEM.get())
+                .add(ModBlocks.SHADOW_HYPHAE.get())
+                .add(ModBlocks.STRIPPED_SHADOW_STEM.get())
+                .add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get());
 
         // 可以用镐来挖掘
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -107,7 +113,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         //整个树的结构（包含原木，木头，树叶，菌柄，菌核，菌疣）
         tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL)
                 .add(ModBlocks.DYEDREAM_LOG.get())
-                .add(ModBlocks.DYEDREAM_WOOD.get());
+                .add(ModBlocks.DYEDREAM_WOOD.get())
+                .add(ModBlocks.SHADOW_STEM.get())
+                .add(ModBlocks.SHADOW_HYPHAE.get())
+                .add(ModBlocks.STRIPPED_SHADOW_STEM.get())
+                .add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get());
 
         //可以燃烧的木头（可制成木炭，可作为燃料）
         tag(BlockTags.LOGS_THAT_BURN)
@@ -357,9 +367,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.PINK_MUSHROOM.get())
                 .add(ModBlocks.TALL_PINK_MUSHROOM.get());
 
-        // 阴影菌光体：用锄头挖掘
-        tag(BlockTags.MINEABLE_WITH_HOE)
-                .add(ModBlocks.SHADOW_SHROOMLIGHT.get());
 
 
     }

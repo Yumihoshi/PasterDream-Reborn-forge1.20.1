@@ -172,6 +172,11 @@
 | `shadow_light_0`                   | `shadow_light`                      | 重命名，删除 `_0` 后缀                                | 无需客制化类，直接用 `Block`                                                                                              |
 | `shadow_shroomlight`               | `shadow_shroomlight`                | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
 | `shadow_nylium`                    | `shadow_nylium`                     | 不改                                            | 客制化类 `ShadowNyliumBlock`，蔓延/退化 + 精准采集掉落自身否则掉落阴影石                                                     |
+| `shadow_wart_block`                | `shadow_wart_block`                 | 不改                                            | 无需客制化类，直接用 `Block`                                                                                              |
+| `shadow_stem`                      | `shadow_stem`                       | 不改                                            | 无需客制化类，直接用 `RotatedPillarBlock`                                                                                 |
+| `shadow_hyphae`                    | `shadow_hyphae`                     | 不改                                            | 无需客制化类，直接用 `RotatedPillarBlock`                                                                                 |
+| `stripped_shadow_stem`             | `stripped_shadow_stem`              | 不改                                            | 无需客制化类，直接用 `RotatedPillarBlock`                                                                                 |
+| `stripped_shadow_hyphae`           | `stripped_shadow_hyphae`            | 不改                                            | 无需客制化类，直接用 `RotatedPillarBlock`                                                                                 |
 
 
 ---

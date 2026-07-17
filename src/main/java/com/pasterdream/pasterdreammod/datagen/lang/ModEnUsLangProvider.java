@@ -282,6 +282,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_NYLIUM.get(), "Shadow Nylium");
         add(ModBlocks.SHADOW_LIGHT.get(), "Shadow Light");
         add(ModBlocks.SHADOW_SHROOMLIGHT.get(), "Shadow Shroomlight");
+        add(ModBlocks.SHADOW_WART_BLOCK.get(), "Shadow Wart Block");
+        add(ModBlocks.SHADOW_STEM.get(), "Shadow Stem");
+        add(ModBlocks.SHADOW_HYPHAE.get(), "Shadow Hyphae");
+        add(ModBlocks.STRIPPED_SHADOW_STEM.get(), "Stripped Shadow Stem");
+        add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), "Stripped Shadow Hyphae");
         add(ModBlocks.BIG_BUBBLE.get(), "Big Bubble");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "Dyedream Crystal Lantern");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "Dye Dream Lantern");

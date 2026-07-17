@@ -154,7 +154,12 @@
     "chiseled_shadow_stone_brick": "chiseled_shadow_stone_brick",
     "shadow_light_0": "shadow_light",
     "shadow_shroomlight": "shadow_shroomlight",
-    "shadow_nylium": "shadow_nylium"
+    "shadow_nylium": "shadow_nylium",
+    "shadow_wart_block": "shadow_wart_block",
+    "shadow_stem": "shadow_stem",
+    "shadow_hyphae": "shadow_hyphae",
+    "stripped_shadow_stem": "stripped_shadow_stem",
+    "stripped_shadow_hyphae": "stripped_shadow_hyphae"
   },
   "items": {
     "amber_candy": "amber_candy",

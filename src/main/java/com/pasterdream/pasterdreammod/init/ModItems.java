@@ -1006,6 +1006,17 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.SHADOW_LIGHT.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_SHROOMLIGHT = ITEMS.register("shadow_shroomlight",
             () -> new BlockItem(ModBlocks.SHADOW_SHROOMLIGHT.get(), new Item.Properties()));
+    // ===== 阴影巨型菌系列 =====
+    public static final RegistryObject<Item> SHADOW_WART_BLOCK = ITEMS.register("shadow_wart_block",
+            () -> new BlockItem(ModBlocks.SHADOW_WART_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_STEM = ITEMS.register("shadow_stem",
+            () -> new BlockItem(ModBlocks.SHADOW_STEM.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_HYPHAE = ITEMS.register("shadow_hyphae",
+            () -> new BlockItem(ModBlocks.SHADOW_HYPHAE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_SHADOW_STEM = ITEMS.register("stripped_shadow_stem",
+            () -> new BlockItem(ModBlocks.STRIPPED_SHADOW_STEM.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_SHADOW_HYPHAE = ITEMS.register("stripped_shadow_hyphae",
+            () -> new BlockItem(ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_CRYSTAL_LANTERN = ITEMS.register("dyedream_crystal_lantern",
             () -> new BlockItem(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), new Item.Properties()));
     public static final RegistryObject<Item> DYEDREAM_LANTERN = ITEMS.register("dyedream_lantern",

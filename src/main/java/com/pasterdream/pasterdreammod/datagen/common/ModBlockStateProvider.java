@@ -219,6 +219,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.SHADOW_LIGHT.get(), shadowLightModel);
         simpleBlockWithItem(ModBlocks.SHADOW_SHROOMLIGHT.get(), cubeAll(ModBlocks.SHADOW_SHROOMLIGHT.get()));
 
+        // ===== 阴影巨型菌系列 =====
+        simpleBlockWithItem(ModBlocks.SHADOW_WART_BLOCK.get(), cubeAll(ModBlocks.SHADOW_WART_BLOCK.get()));
+        logBlock((RotatedPillarBlock) ModBlocks.SHADOW_STEM.get());
+        blockItem(ModBlocks.SHADOW_STEM);
+        var shadowStemTex = blockTexture(ModBlocks.SHADOW_STEM.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.SHADOW_HYPHAE.get(), shadowStemTex, shadowStemTex);
+        blockItem(ModBlocks.SHADOW_HYPHAE);
+        logBlock((RotatedPillarBlock) ModBlocks.STRIPPED_SHADOW_STEM.get());
+        blockItem(ModBlocks.STRIPPED_SHADOW_STEM);
+        var strippedShadowStemTex = blockTexture(ModBlocks.STRIPPED_SHADOW_STEM.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), strippedShadowStemTex, strippedShadowStemTex);
+        blockItem(ModBlocks.STRIPPED_SHADOW_HYPHAE);
+
         // ===== 巨型泡泡 =====
         var bubbleModel = models().cubeAll(ModBlocks.BIG_BUBBLE.getId().getPath(), modLoc("block/big_bubble")).renderType("translucent");
         simpleBlockWithItem(ModBlocks.BIG_BUBBLE.get(), bubbleModel);
