@@ -1017,6 +1017,23 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get(), new Item.Properties()));
     public static final RegistryObject<Item> CHISELED_SHADOW_STONE_BRICK = ITEMS.register("chiseled_shadow_stone_brick",
             () -> new BlockItem(ModBlocks.CHISELED_SHADOW_STONE_BRICK.get(), new Item.Properties()));
+    // ===== 暗影地牢方块系列 =====
+    public static final RegistryObject<Item> SHADOW_DUNGEON_STONE = ITEMS.register("shadow_dungeon_stone",
+            () -> new BlockItem(ModBlocks.SHADOW_DUNGEON_STONE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CHISELED_SHADOW_DUNGEON_BRICKS = ITEMS.register("chiseled_shadow_dungeon_bricks",
+            () -> new BlockItem(ModBlocks.CHISELED_SHADOW_DUNGEON_BRICKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_DUNGEON_BRICKS = ITEMS.register("shadow_dungeon_bricks",
+            () -> new BlockItem(ModBlocks.SHADOW_DUNGEON_BRICKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CRACKED_SHADOW_DUNGEON_BRICKS = ITEMS.register("cracked_shadow_dungeon_bricks",
+            () -> new BlockItem(ModBlocks.CRACKED_SHADOW_DUNGEON_BRICKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FRACTURED_SHADOW_DUNGEON_BRICKS = ITEMS.register("fractured_shadow_dungeon_bricks",
+            () -> new BlockItem(ModBlocks.FRACTURED_SHADOW_DUNGEON_BRICKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_DUNGEON_BRICK_STAIRS = ITEMS.register("shadow_dungeon_brick_stairs",
+            () -> new BlockItem(ModBlocks.SHADOW_DUNGEON_BRICK_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_DUNGEON_BRICK_SLAB = ITEMS.register("shadow_dungeon_brick_slab",
+            () -> new BlockItem(ModBlocks.SHADOW_DUNGEON_BRICK_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHATTERED_SHADOW_DUNGEON_BRICKS = ITEMS.register("shattered_shadow_dungeon_bricks",
+            () -> new BlockItem(ModBlocks.SHATTERED_SHADOW_DUNGEON_BRICKS.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_NYLIUM = ITEMS.register("shadow_nylium",
             () -> new BlockItem(ModBlocks.SHADOW_NYLIUM.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_LIGHT = ITEMS.register("shadow_light",

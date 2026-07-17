@@ -412,6 +412,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHADOW_STONE_TILES_WALL.get());
                         output.accept(ModItems.CRACKED_SHADOW_STONE_BRICK.get());
                         output.accept(ModItems.CHISELED_SHADOW_STONE_BRICK.get());
+                        output.accept(ModItems.SHADOW_DUNGEON_STONE.get());
+                        output.accept(ModItems.CHISELED_SHADOW_DUNGEON_BRICKS.get());
+                        output.accept(ModItems.SHADOW_DUNGEON_BRICKS.get());
+                        output.accept(ModItems.CRACKED_SHADOW_DUNGEON_BRICKS.get());
+                        output.accept(ModItems.FRACTURED_SHADOW_DUNGEON_BRICKS.get());
+                        output.accept(ModItems.SHADOW_DUNGEON_BRICK_STAIRS.get());
+                        output.accept(ModItems.SHADOW_DUNGEON_BRICK_SLAB.get());
+                        output.accept(ModItems.SHATTERED_SHADOW_DUNGEON_BRICKS.get());
                         output.accept(ModItems.SHADOW_NYLIUM.get());
                         output.accept(ModItems.SHADOW_LIGHT.get());
                         output.accept(ModItems.SHADOW_SHROOMLIGHT.get());
