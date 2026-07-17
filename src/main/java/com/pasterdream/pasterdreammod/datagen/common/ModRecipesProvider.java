@@ -1545,6 +1545,25 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         SingleItemRecipeBuilder.stonecutting(shadowStonesTag, RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_STONE_TILES.get())
                 .unlockedBy(getHasName(ModItems.SHADOW_STONE.get()), has(ModItems.SHADOW_STONE.get()))
                 .save(pWriter, PasterDreamMod.MOD_ID + ":shadow_stone_tiles_from_stonecutting");
+
+        // ===== 裂阴影石砖 / 錾制阴影石砖配方 =====
+        // 2× 阴影石砖台阶 → 1× 錾制阴影石砖 (工作台)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_SHADOW_STONE_BRICK.get(), 1)
+                .pattern("a")
+                .pattern("a")
+                .define('a', ModItems.SHADOW_STONE_BRICK_SLAB.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STONE_BRICK.get()), has(ModItems.SHADOW_STONE_BRICK.get()))
+                .save(pWriter);
+
+        // 阴影石建材 → 裂阴影石砖 (切石机)
+        SingleItemRecipeBuilder.stonecutting(shadowStonesTag, RecipeCategory.BUILDING_BLOCKS, ModItems.CRACKED_SHADOW_STONE_BRICK.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STONE.get()), has(ModItems.SHADOW_STONE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":cracked_shadow_stone_brick_from_stonecutting");
+
+        // 阴影石建材 → 錾制阴影石砖 (切石机)
+        SingleItemRecipeBuilder.stonecutting(shadowStonesTag, RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_SHADOW_STONE_BRICK.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STONE.get()), has(ModItems.SHADOW_STONE.get()))
+                .save(pWriter, PasterDreamMod.MOD_ID + ":chiseled_shadow_stone_brick_from_stonecutting");
     }
 
     // ===== 食物相关合成配方 =====

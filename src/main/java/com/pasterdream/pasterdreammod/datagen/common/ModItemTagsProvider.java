@@ -64,7 +64,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.SHADOW_STONE.get())
                 .add(ModItems.SHADOW_STONE_BRICK.get())
                 .add(ModItems.NARROW_SHADOW_STONE_BRICK.get())
-                .add(ModItems.SHADOW_STONE_TILES.get());
+                .add(ModItems.SHADOW_STONE_TILES.get())
+                .add(ModItems.CRACKED_SHADOW_STONE_BRICK.get())
+                .add(ModItems.CHISELED_SHADOW_STONE_BRICK.get());
 
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "flour")))
                 .add(ModItems.FLOUR.get().asItem());
