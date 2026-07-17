@@ -447,6 +447,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WORN_SHADOW_BOOKSHELF.get());
                         output.accept(ModItems.COBWEB_SHADOW_BOOKSHELF.get());
                         output.accept(ModItems.KEY_SHADOW_BOOKSHELF.get());
+                        output.accept(ModItems.SHADOW_ARENA_BLOCK.get());
+                        output.accept(ModItems.SHADOW_FISSURE_0.get());
+                        output.accept(ModItems.SHADOW_FISSURE_1.get());
+                        output.accept(ModItems.SHADOW_FISSURE_2.get());
+                        output.accept(ModItems.SHADOW_FISSURE_3.get());
+                        output.accept(ModItems.SHADOW_FISSURE_4.get());
+                        output.accept(ModItems.SHADOW_FISSURE_5.get());
                     })
                     .build());
 
