@@ -275,6 +275,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
 
         basicItem(ModItems.EMPTY_PROPHECY_CARD.get());
 
+        basicItem(ModItems.BLACK_METAL_INGOT.get());
+        basicItem(ModItems.BLACK_METAL_GRAIN.get());
         basicItem(ModItems.RUST_BLACK_METAL_GRAIN.get());
 
         withExistingParent(ModItems.PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))

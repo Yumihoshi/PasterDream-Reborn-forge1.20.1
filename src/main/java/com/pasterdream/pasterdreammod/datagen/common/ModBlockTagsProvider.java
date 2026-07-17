@@ -106,6 +106,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.RUST_BLACK_METAL_BLOCK.get())
                 .add(ModBlocks.RUST_BLACK_METAL_WALL.get())
                 .add(ModBlocks.RUST_BLACK_METAL_BARS.get())
+                .add(ModBlocks.BLACK_METAL_BLOCK.get())
                 .add(ModBlocks.SHADOW_CHEST.get())
                 .add(ModBlocks.SHADOW_STONE.get())
                 .add(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get())
@@ -208,14 +209,16 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.TITANIUM_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get())
                 .add(ModBlocks.RAW_TITANIUM_BLOCK.get())
-                .add(ModBlocks.TITANIUM_BLOCK.get());
+                .add(ModBlocks.TITANIUM_BLOCK.get())
+                .add(ModBlocks.BLACK_METAL_BLOCK.get());
 
 
         // 可作为信标基座
         tag(BlockTags.BEACON_BASE_BLOCKS)
                 .add(ModBlocks.DYEDREAM_ALLOY_BLOCK.get())
                 .add(ModBlocks.TITANIUM_BLOCK.get())
-                .add(ModBlocks.MOLTEN_GOLD_BLOCK.get());
+                .add(ModBlocks.MOLTEN_GOLD_BLOCK.get())
+                .add(ModBlocks.BLACK_METAL_BLOCK.get());
 
         tag(Tags.Blocks.ORES)
                 .add(ModBlocks.DYEDREAM_QUARTZ_ORE.get())

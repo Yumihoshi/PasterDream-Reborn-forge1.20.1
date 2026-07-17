@@ -643,6 +643,35 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.FABRIC.get()), has(ModItems.FABRIC.get()))
                 .save(pWriter);
 
+        // ===== 黑金属配方 =====
+        // 黑金属粒 → 黑金属锭
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BLACK_METAL_INGOT.get(), 1)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', ModItems.BLACK_METAL_GRAIN.get())
+                .unlockedBy(getHasName(ModItems.BLACK_METAL_GRAIN.get()), has(ModItems.BLACK_METAL_GRAIN.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "black_metal_ingot_from_grain"));
+
+        // 黑金属锭 → 黑金属块
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_METAL_BLOCK.get(), 1)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', ModItems.BLACK_METAL_INGOT.get())
+                .unlockedBy(getHasName(ModItems.BLACK_METAL_INGOT.get()), has(ModItems.BLACK_METAL_INGOT.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "black_metal_block_from_ingot"));
+
+        // 黑金属锭 → 黑金属粒（分解）
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BLACK_METAL_GRAIN.get(), 4)
+                .requires(ModItems.BLACK_METAL_INGOT.get())
+                .unlockedBy(getHasName(ModItems.BLACK_METAL_INGOT.get()), has(ModItems.BLACK_METAL_INGOT.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "black_metal_grain_from_ingot"));
+
+        // 黑金属块 → 黑金属锭（分解）
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BLACK_METAL_INGOT.get(), 4)
+                .requires(ModItems.BLACK_METAL_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.BLACK_METAL_BLOCK.get()), has(ModItems.BLACK_METAL_BLOCK.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "black_metal_ingot_from_block"));
+
         // 锈蚀金属块
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.RUST_BLACK_METAL_BLOCK.get(), 4)
                 .pattern(" a ")
