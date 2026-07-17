@@ -165,6 +165,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CHARGED_AMETHYST = ITEMS.register("charged_amethyst",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLACK_METAL_INGOT = ITEMS.register("black_metal_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLACK_METAL_GRAIN = ITEMS.register("black_metal_grain",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUST_BLACK_METAL_GRAIN = ITEMS.register("rust_black_metal_grain",
             () -> new Item(new Item.Properties()));
 
@@ -911,6 +915,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.MOLTEN_GOLD_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> CHARGED_AMETHYST_BLOCK = ITEMS.register("charged_amethyst_block",
             () -> new BlockItem(ModBlocks.CHARGED_AMETHYST_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BLACK_METAL_BLOCK = ITEMS.register("black_metal_block",
+            () -> new BlockItem(ModBlocks.BLACK_METAL_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> RUST_BLACK_METAL_BLOCK = ITEMS.register("rust_black_metal_block",
             () -> new BlockItem(ModBlocks.RUST_BLACK_METAL_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> RUST_BLACK_METAL_WALL = ITEMS.register("rust_black_metal_wall",

@@ -22,7 +22,7 @@ public enum ModToolTiers implements Tier {
             () -> Ingredient.of(ModItems.TITANIUM_INGOT.get())),
 
     // SHADOW_EROSION(1725, 13.0F, 4.0F, 4, 16,
-    //         () -> Ingredient.of(ModItems.BLACKMETAL_INGOT.get())),  // TODO: blackmetal_ingot 未注册
+    //         () -> Ingredient.of(ModItems.BLACK_METAL_INGOT.get())),
 
     // 染梦合金
     DYEDREAM(1314, 11.0F, 4.0F, 4, 22,

@@ -60,6 +60,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         var chargedAmethystModel = models().cubeAll(ModBlocks.CHARGED_AMETHYST_BLOCK.getId().getPath(), blockTexture(ModBlocks.CHARGED_AMETHYST_BLOCK.get())).renderType("translucent");
         simpleBlockWithItem(ModBlocks.CHARGED_AMETHYST_BLOCK.get(), chargedAmethystModel);
 
+        // ===== 黑金属系列 =====
+        simpleBlockWithItem(ModBlocks.BLACK_METAL_BLOCK.get(), cubeAll(ModBlocks.BLACK_METAL_BLOCK.get()));
+
         // ===== 锈蚀金属系列 =====
         simpleBlockWithItem(ModBlocks.RUST_BLACK_METAL_BLOCK.get(), cubeAll(ModBlocks.RUST_BLACK_METAL_BLOCK.get()));
         var rustMetalTex = blockTexture(ModBlocks.RUST_BLACK_METAL_BLOCK.get());
