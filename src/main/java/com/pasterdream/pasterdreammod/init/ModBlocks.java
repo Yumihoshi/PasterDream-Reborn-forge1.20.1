@@ -4,6 +4,7 @@ import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.tag.ModBlockTags;
 import com.pasterdream.pasterdreammod.world.behavior.ModTreeGrowers;
 import com.pasterdream.pasterdreammod.world.block.*;
+import com.pasterdream.pasterdreammod.world.block.shadow.*;
 import com.pasterdream.pasterdreammod.world.block.DyedreamFarmlandBlock;
 import com.pasterdream.pasterdreammod.world.block.DyedreamGrassBlock;
 import com.pasterdream.pasterdreammod.world.block.PinkMushroom;
@@ -153,6 +154,11 @@ public class ModBlocks {
             SoundEvents.BUBBLE_COLUMN_BUBBLE_POP,
             SoundEvents.BUBBLE_COLUMN_BUBBLE_POP)).strength(0.1f).noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false)));
 
+
+    // ===== 阴影方块 =====
+    public static final RegistryObject<Block> SHADOW = BLOCKS.register("shadow", ShadowBlock::new);
+    public static final RegistryObject<Block> THICK_SHADOW = BLOCKS.register("thick_shadow", ThickShadowBlock::new);
+    public static final RegistryObject<Block> SHADOW_STONE = BLOCKS.register("shadow_stone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE).strength(1.5f, 1f).requiresCorrectToolForDrops()));
 
     // ===== 冰晶岩与冰凌晶芽 =====
     public static final RegistryObject<Block> ICE_STONE = BLOCKS.register("ice_stone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.ICE).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.CALCITE).strength(0.8f, 0.2f).requiresCorrectToolForDrops()));

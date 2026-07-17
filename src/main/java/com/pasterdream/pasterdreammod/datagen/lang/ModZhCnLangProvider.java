@@ -276,6 +276,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DYEDREAM_PACKED_ICE.get(), "染梦浮冰");
         add(ModBlocks.CLOUD.get(), "云朵");
         add(ModBlocks.DARK_CLOUD.get(), "乌云");
+        add(ModBlocks.SHADOW.get(), "阴影");
+        add(ModBlocks.THICK_SHADOW.get(), "厚重阴影");
+        add(ModBlocks.SHADOW_STONE.get(), "阴影石");
         add(ModBlocks.BIG_BUBBLE.get(), "巨型泡泡");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "染梦水晶灯");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "染梦灯笼");
@@ -380,7 +383,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("itemGroup.pasterdream.pasterdream_items_tab", "帕斯特之梦 | 物品");
         add("itemGroup.pasterdream.pasterdream_gear_tab", "帕斯特之梦 | 装备");
         add("itemGroup.pasterdream.pasterdream_equipment_tab", "帕斯特之梦 | 设备");
-        add("itemGroup.pasterdream.pasterdream_blocks_tab", "帕斯特之梦 | 方块");
+        add("itemGroup.pasterdream.pasterdream_blocks_tab", "染梦世界");
+        add("itemGroup.pasterdream.pasterdream_shadow_tab", "灯影之下");
         add("itemGroup.pasterdream.pasterdream_plants_tab", "帕斯特之梦 | 植物");
         add("itemGroup.pasterdream.pasterdream_dream_notes_tab", "帕斯特之梦 | 笔记");
         add("itemGroup.pasterdream.pasterdream_dream_debug_tab", "帕斯特之梦 | 调试栏");

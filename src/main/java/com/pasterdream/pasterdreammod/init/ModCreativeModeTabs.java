@@ -374,6 +374,18 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+    // ===== 灯影之下 =====
+    public static final RegistryObject<CreativeModeTab> PASTERDREAM_SHADOW_TAB = CREATIVE_MODE_TABS.register("pasterdream_shadow_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.pasterdream.pasterdream_shadow_tab"))
+                    .icon(() -> new ItemStack(ModBlocks.SHADOW.get()))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ModItems.SHADOW.get());
+                        output.accept(ModItems.THICK_SHADOW.get());
+                        output.accept(ModItems.SHADOW_STONE.get());
+                    })
+                    .build());
+
     // ===== 植物 =====
     // 来源: 旧 paster_tab_2, 按原顺序
     public static final RegistryObject<CreativeModeTab> PASTERDREAM_PLANTS_TAB = CREATIVE_MODE_TABS.register("pasterdream_plants_tab",
