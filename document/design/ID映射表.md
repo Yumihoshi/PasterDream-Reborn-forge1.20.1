@@ -177,6 +177,9 @@
 | `shadow_hyphae`                    | `shadow_hyphae`                     | 不改                                            | 无需客制化类，直接用 `RotatedPillarBlock`                                                                                 |
 | `stripped_shadow_stem`             | `stripped_shadow_stem`              | 不改                                            | 无需客制化类，直接用 `RotatedPillarBlock`                                                                                 |
 | `stripped_shadow_hyphae`           | `stripped_shadow_hyphae`            | 不改                                            | 无需客制化类，直接用 `RotatedPillarBlock`                                                                                 |
+| `rust_black_metal_block`           | `rust_black_metal_block`            | 不改                                            | 无需客制化类，直接用 `Block`                                                                                               |
+| `rust_black_metal_block_wall`      | `rust_black_metal_wall`             | 重命名，删除 `_block` 字段                          | 无需客制化类，直接用 `WallBlock`                                                                                           |
+| `rust_black_metal_block_bars`      | `rust_black_metal_bars`             | 重命名，删除 `_block` 字段                          | 无需客制化类，直接用 `IronBarsBlock`                                                                                      |
 
 
 ---
@@ -438,6 +441,7 @@
 | `dream_harp_of_wanderer`        | `dream_harp_of_wanderer`                     | 不改                                                               | 客制化类 `DreamharpOfWandererItem`，右键消耗2融梦能量演奏，为周围玩家施加增益效果                              |
 | `memory_gem_0`                  | `memory_gem`                                | 重命名，去除 `_0` 后缀                                                   | 无需客制化类，直接用 `Item`                                                                                   |
 | `memento_item_07`              | `empty_vessel`                              | 重命名，语义化英文                                                       | 客制化类 `EmptyVesselItem`，使用后获得幸运+10效果3分钟，99%+20%SAN / 1%-100%SAN（百分比）            |
+| `rust_black_metal_grain`      | `rust_black_metal_grain`                   | 不改                                                               | 无需客制化类，直接用 `Item`                                                                                        |
 
 ---
 

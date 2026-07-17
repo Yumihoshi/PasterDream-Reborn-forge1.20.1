@@ -275,6 +275,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
 
         basicItem(ModItems.EMPTY_PROPHECY_CARD.get());
 
+        basicItem(ModItems.RUST_BLACK_METAL_GRAIN.get());
+
         withExistingParent(ModItems.PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/pink_mushroom"));
         withExistingParent(ModItems.TALL_PINK_MUSHROOM.getId().getPath(), mcLoc("item/generated"))
@@ -303,6 +305,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         wallItem(ModBlocks.SHADOW_STONE_BRICK_WALL, ModBlocks.SHADOW_STONE_BRICK);
         wallItem(ModBlocks.NARROW_SHADOW_STONE_BRICK_WALL, ModBlocks.NARROW_SHADOW_STONE_BRICK);
         wallItem(ModBlocks.SHADOW_STONE_TILES_WALL, ModBlocks.SHADOW_STONE_TILES);
+
+        wallItem(ModBlocks.RUST_BLACK_METAL_WALL, ModBlocks.RUST_BLACK_METAL_BLOCK);
 
         withExistingParent(ModItems.DYEDREAM_GLASS_PANE.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/dyedream_glass"));
@@ -378,6 +382,9 @@ public class ModItemModelsProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("block/jungle_sporangium"));
         withExistingParent(ModItems.FOURLEAF_CLOVER.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/fourleaf_clover"));
+
+        withExistingParent(ModItems.RUST_BLACK_METAL_BARS.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/rust_black_metal_bars"));
 
         // 刷怪蛋
         spawnEggItem(ModItems.PINK_CHICKEN_SPAWN_EGG);

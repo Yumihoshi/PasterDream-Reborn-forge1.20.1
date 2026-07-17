@@ -123,6 +123,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.SOUL_DUST.get(), "灵魂粉尘");
         add(ModItems.SOUL_ESSENCE.get(), "灵魂精华");
         add(ModItems.CHARGED_AMETHYST.get(), "盈能紫水晶");
+        add(ModItems.RUST_BLACK_METAL_GRAIN.get(), "锈蚀金属碎屑");
         add(ModItems.DYEDREAM_COROLLA.get(), "梦染花冠");
         add(ModItems.WHITE_COROLLA.get(), "苍白花冠");
         add(ModItems.WHITE_CRYSTAL.get(), "白厄水晶");
@@ -232,6 +233,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.TITANIUM_BLOCK.get(), "钛金块");
         add(ModBlocks.MOLTEN_GOLD_BLOCK.get(), "炙焰金块");
         add(ModBlocks.CHARGED_AMETHYST_BLOCK.get(), "盈能紫水晶块");
+        add(ModBlocks.RUST_BLACK_METAL_BLOCK.get(), "锈蚀金属块");
+        add(ModBlocks.RUST_BLACK_METAL_WALL.get(), "锈蚀金属墙");
+        add(ModBlocks.RUST_BLACK_METAL_BARS.get(), "锈蚀金属栏杆");
         add(ModBlocks.DYEDREAM_QUARTZ_BLOCK.get(), "染梦石英块");
         add(ModBlocks.SMOOTH_DYEDREAM_QUARTZ_BLOCK.get(), "平滑染梦石英块");
         add(ModBlocks.BRICKS_DYEDREAM_QUARTZ_BLOCK.get(), "染梦石英砖");

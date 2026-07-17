@@ -93,6 +93,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.MOLTEN_GOLD_BLOCK.get());
         dropSelf(ModBlocks.CHARGED_AMETHYST_BLOCK.get());
 
+        add(ModBlocks.RUST_BLACK_METAL_BLOCK.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(ModItems.RUST_BLACK_METAL_GRAIN.get())));
+        add(ModBlocks.RUST_BLACK_METAL_WALL.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(ModItems.RUST_BLACK_METAL_GRAIN.get())));
+        add(ModBlocks.RUST_BLACK_METAL_BARS.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(ModItems.RUST_BLACK_METAL_GRAIN.get())));
+
         dropSelf(ModBlocks.DYEDREAM_QUARTZ_BLOCK.get());
         dropSelf(ModBlocks.SMOOTH_DYEDREAM_QUARTZ_BLOCK.get());
         dropSelf(ModBlocks.BRICKS_DYEDREAM_QUARTZ_BLOCK.get());

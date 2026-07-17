@@ -123,6 +123,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.COTTON.get(), "Cotton");
         add(ModItems.SCULK_HEART.get(), "Sculk Heart");
         add(ModItems.BLACK_STICK.get(), "Black Stick");
+        add(ModItems.RUST_BLACK_METAL_GRAIN.get(), "Rust Black Metal Grain");
         add(ModItems.SPOOL.get(), "Spool");
         add(ModItems.FABRIC.get(), "Fabric");
         add(ModItems.PROTECT_DECK.get(), "Protect Deck");
@@ -218,6 +219,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.TITANIUM_BLOCK.get(), "Titanium Block");
         add(ModBlocks.MOLTEN_GOLD_BLOCK.get(), "Molten Gold Block");
         add(ModBlocks.CHARGED_AMETHYST_BLOCK.get(), "Charged Amethyst Block");
+        add(ModBlocks.RUST_BLACK_METAL_BLOCK.get(), "Rust Black Metal Block");
+        add(ModBlocks.RUST_BLACK_METAL_WALL.get(), "Rust Black Metal Wall");
+        add(ModBlocks.RUST_BLACK_METAL_BARS.get(), "Rust Black Metal Bars");
         add(ModBlocks.DYEDREAM_QUARTZ_BLOCK.get(), "Dye Dream Quartz Block");
         add(ModBlocks.SMOOTH_DYEDREAM_QUARTZ_BLOCK.get(), "Smooth Dye Dream Quartz Block");
         add(ModBlocks.BRICKS_DYEDREAM_QUARTZ_BLOCK.get(), "Dye Dream Quartz Bricks");

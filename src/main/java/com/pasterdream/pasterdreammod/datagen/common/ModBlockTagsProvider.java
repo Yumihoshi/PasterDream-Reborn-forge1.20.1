@@ -103,6 +103,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.TITANIUM_BLOCK.get())
                 .add(ModBlocks.MOLTEN_GOLD_BLOCK.get())
                 .add(ModBlocks.CHARGED_AMETHYST_BLOCK.get())
+                .add(ModBlocks.RUST_BLACK_METAL_BLOCK.get())
+                .add(ModBlocks.RUST_BLACK_METAL_WALL.get())
+                .add(ModBlocks.RUST_BLACK_METAL_BARS.get())
                 .add(ModBlocks.SHADOW_CHEST.get())
                 .add(ModBlocks.SHADOW_STONE.get())
                 .add(ModBlocks.CRACKED_SHADOW_STONE_BRICK.get())
@@ -195,7 +198,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_BUD_BLOCK.get())
                 .add(ModBlocks.DYEDREAM_BUD_STAIRS.get())
                 .add(ModBlocks.DYEDREAM_BUD_SLAB.get())
-                .add(ModBlocks.DYEDREAM_BUD_WALL.get());
+                .add(ModBlocks.DYEDREAM_BUD_WALL.get())
+                .add(ModBlocks.RUST_BLACK_METAL_BLOCK.get())
+                .add(ModBlocks.RUST_BLACK_METAL_WALL.get())
+                .add(ModBlocks.RUST_BLACK_METAL_BARS.get());
         // 需要钻石工具挖掘
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.DYEDREAM_ALLOY_BLOCK.get())
@@ -227,7 +233,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_SLAB.get());
 
         tag(BlockTags.WALLS)
-                .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL.get());
+                .add(ModBlocks.DYEDREAM_QUARTZ_BLOCK_WALL.get())
+                .add(ModBlocks.RUST_BLACK_METAL_WALL.get());
 
         // 建材系列批量添加
         var budFamily = new BuildingBlockFamily(ModBlocks.DYEDREAM_BUD_BLOCK, ModBlocks.DYEDREAM_BUD_STAIRS, ModBlocks.DYEDREAM_BUD_SLAB, ModBlocks.DYEDREAM_BUD_WALL);
