@@ -259,6 +259,11 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         add(ModBlocks.SHADOW_NYLIUM.get(), block -> createSilkTouchDispatchTable(block, LootItem.lootTableItem(ModBlocks.SHADOW_STONE.get())));
         dropSelf(ModBlocks.SHADOW_LIGHT.get());
         dropSelf(ModBlocks.SHADOW_SHROOMLIGHT.get());
+        dropSelf(ModBlocks.SHADOW_WART_BLOCK.get());
+        dropSelf(ModBlocks.SHADOW_STEM.get());
+        dropSelf(ModBlocks.SHADOW_HYPHAE.get());
+        dropSelf(ModBlocks.STRIPPED_SHADOW_STEM.get());
+        dropSelf(ModBlocks.STRIPPED_SHADOW_HYPHAE.get());
 
         generateCropLoot(ModBlocks.DYEDREAM_COROLLA_CROP.get(), ModItems.DYEDREAM_COROLLA.get(), 1, ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get());
         generateCropLoot(ModBlocks.WHITE_COROLLA_CROP.get(), ModItems.WHITE_COROLLA.get(), 1, ModItems.WHITE_COROLLA_CROP_AGE_1.get());

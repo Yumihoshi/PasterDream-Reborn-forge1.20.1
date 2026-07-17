@@ -68,6 +68,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.CRACKED_SHADOW_STONE_BRICK.get())
                 .add(ModItems.CHISELED_SHADOW_STONE_BRICK.get());
 
+        tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "shadow_stems")))
+                .add(ModItems.SHADOW_STEM.get())
+                .add(ModItems.SHADOW_HYPHAE.get())
+                .add(ModItems.STRIPPED_SHADOW_STEM.get())
+                .add(ModItems.STRIPPED_SHADOW_HYPHAE.get());
+
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "flour")))
                 .add(ModItems.FLOUR.get().asItem());
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "flour/wheat")))

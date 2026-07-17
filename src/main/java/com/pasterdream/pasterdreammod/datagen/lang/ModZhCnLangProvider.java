@@ -296,6 +296,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_NYLIUM.get(), "阴影菌岩");
         add(ModBlocks.SHADOW_LIGHT.get(), "影灯");
         add(ModBlocks.SHADOW_SHROOMLIGHT.get(), "阴影菌光体");
+        add(ModBlocks.SHADOW_WART_BLOCK.get(), "阴影疣块");
+        add(ModBlocks.SHADOW_STEM.get(), "阴影菌柄");
+        add(ModBlocks.SHADOW_HYPHAE.get(), "阴影菌核");
+        add(ModBlocks.STRIPPED_SHADOW_STEM.get(), "去皮阴影菌柄");
+        add(ModBlocks.STRIPPED_SHADOW_HYPHAE.get(), "去皮阴影菌核");
         add(ModBlocks.BIG_BUBBLE.get(), "巨型泡泡");
         add(ModBlocks.DYEDREAM_CRYSTAL_LANTERN.get(), "染梦水晶灯");
         add(ModBlocks.DYEDREAM_LANTERN.get(), "染梦灯笼");

@@ -1931,6 +1931,22 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.SHADOW.get()), has(ModItems.SHADOW.get()))
                 .save(pWriter);
 
+        // 阴影菌核 (2×2 shadow_stem → 3 shadow_hyphae)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.SHADOW_HYPHAE.get(), 3)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', ModItems.SHADOW_STEM.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_STEM.get()), has(ModItems.SHADOW_STEM.get()))
+                .save(pWriter);
+
+        // 去皮阴影菌核 (2×2 stripped_shadow_stem → 3 stripped_shadow_hyphae)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.STRIPPED_SHADOW_HYPHAE.get(), 3)
+                .pattern("aa")
+                .pattern("aa")
+                .define('a', ModItems.STRIPPED_SHADOW_STEM.get())
+                .unlockedBy(getHasName(ModItems.STRIPPED_SHADOW_STEM.get()), has(ModItems.STRIPPED_SHADOW_STEM.get()))
+                .save(pWriter);
+
         //三种染料合成配方
         RecipeHelpers.dye(pWriter,ModItems.FERRARIA_CRISPA.get(), Items.BLACK_DYE);
         RecipeHelpers.dye(pWriter,ModItems.EUSTOMA.get(), Items.GREEN_DYE);

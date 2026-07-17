@@ -400,6 +400,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHADOW_NYLIUM.get());
                         output.accept(ModItems.SHADOW_LIGHT.get());
                         output.accept(ModItems.SHADOW_SHROOMLIGHT.get());
+                        output.accept(ModItems.SHADOW_WART_BLOCK.get());
+                        output.accept(ModItems.SHADOW_STEM.get());
+                        output.accept(ModItems.SHADOW_HYPHAE.get());
+                        output.accept(ModItems.STRIPPED_SHADOW_STEM.get());
+                        output.accept(ModItems.STRIPPED_SHADOW_HYPHAE.get());
                     })
                     .build());
 
