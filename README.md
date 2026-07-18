@@ -1,4 +1,4 @@
-# 帕斯特之梦: 重生 / PasterDream: Reborn
+# 帕斯特之梦: 重生
 
 ![访问次数](https://starry-trace-sky-moe-counter.vercel.app/get/@PasterDream-Reborn?theme=rule34)
 
@@ -7,20 +7,21 @@
 ![MC版本](https://img.shields.io/badge/MC版本-1.20.1-yellow.svg?style=for-the-badge)
 ![Mod加载器](https://img.shields.io/badge/Mod加载器-Forge_47.4.10-orange.svg?style=for-the-badge)
 
+<p align="center">
+  <a href="README_EN.md">English</a> |
+  <span>简体中文</span>
+</p>
+
 重写原版帕斯特之梦模组，基于 Minecraft Forge 1.20.1，从空 MDK 从零搭建。
 
-A community rewrite of the original PasterDream mod, rebuilt from scratch on Minecraft Forge 1.20.1.
-
-## 授权 / Authorization
+## 授权
 
 本项目已获得原作者"异星之尘"的授权发布，沿用原模组 ID `pasterdream`。美术资源（纹理、模型、音效等）大部分来自原模组，采用 ARR 协议，版权归原作者及原模组美术贡献者所有；部分贴图已由重写团队重新绘制或全新创作，版权归重写团队所有。详见 [ASSETS_MANIFEST.md](src/main/resources/ASSETS_MANIFEST.md)。
 
-This project is released with permission from the original author "Aerolite_Dust." The mod ID `pasterdream` is retained. Most art assets (textures, models, sounds, etc.) are from the original mod, licensed under All Rights Reserved, copyright by the original author and contributors. Some textures have been redrawn or newly created by the rewrite team, copyright by the rewrite team. See [ASSETS_MANIFEST.md](src/main/resources/ASSETS_MANIFEST.md).
+## 协议
 
-## 协议 / License
-
-- **代码 / Code**: [MIT](LICENSE.md) — 可自由使用、修改、分发
-- **美术资源 / Art Assets**: [ARR](src/main/resources/LICENSE_ASSETS.md) — 保留所有权利。原模组资产版权归原作者，重写团队资产版权归重写团队。详见 [资产清单](src/main/resources/ASSETS_MANIFEST.md)
+- **代码**: [MIT](LICENSE.md) — 可自由使用、修改、分发
+- **美术资源**: [ARR](src/main/resources/LICENSE_ASSETS.md) — 保留所有权利。原模组资产版权归原作者，重写团队资产版权归重写团队。详见 [资产清单](src/main/resources/ASSETS_MANIFEST.md)
 
 ## 安装信息
 
@@ -43,7 +44,7 @@ This project is released with permission from the original author "Aerolite_Dust
 ./gradlew runData     # 生成数据文件
 ```
 
-## 依赖 / Dependencies
+## 依赖
 
 | 前置 | 版本要求 |
 |------|----------|
@@ -53,7 +54,7 @@ This project is released with permission from the original author "Aerolite_Dust
 | JEI (可选) | 15.20.0.112+ |
 | Patchouli (可选) | 1.20.1-85+ |
 
-## 文档 / Documentation
+## 文档
 
 项目文档见 [`document/`](document/) 目录：
 
@@ -61,17 +62,17 @@ This project is released with permission from the original author "Aerolite_Dust
 - [`document/rule/`](document/rule/) — 代码架构规范
 - [`document/reference/`](document/reference/) — 源模组参考文件
 
-## 致谢 / Credits
+## 致谢
 
-- **原作 / Original**: 异星之尘 (Aerolite_Dust) — 感谢授权和支持 / Thanks for authorization and support
-- **策划 / Design**: 拭柳喑雨 (ShiLiuYinYu)
-- **程序 / Programming**: 2884omgpy, ShiLiuYinYu, Garam
-- **美术 / Art**: 煮饭婆 (GQ2529), Garam
-- **文案 / Writing**: 绘星tsuki(Yumihoshi)
-- **特别感谢 / Special Thanks**: -北旭-, 福米花_flow
+- **原作**: 异星之尘 (Aerolite_Dust) — 感谢授权和支持
+- **策划**: 拭柳喑雨 (ShiLiuYinYu)
+- **程序**: 2884omgpy, ShiLiuYinYu, Garam
+- **美术**: 煮饭婆 (GQ2529), Garam
+- **文案**: 绘星tsuki(Yumihoshi)
+- **特别感谢**: -北旭-, 福米花_flow
 
-<a href="https://github.com//PasterDreamReborn-Organization//PasterDream-Reborn-forge1.20.1//graphs/contributors">
-  <img src="https://contrib.rocks//image?repo=PasterDreamReborn-Organization//PasterDream-Reborn-forge1.20.1" />
+<a href="https://github.com/PasterDreamReborn-Organization/PasterDream-Reborn-forge1.20.1/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=PasterDreamReborn-Organization/PasterDream-Reborn-forge1.20.1" />
 </a>
 
 ## 其他资源
