@@ -196,6 +196,11 @@ public class ModPlacedFeatures {
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_orchid_flower_patch"));
 
+    // 阴影锁链柱 — 交替朝向镂空矩形单元堆叠
+    public static final ResourceKey<PlacedFeature> SHADOW_CHAIN_PILLAR =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_chain_pillar"));
+
     // ===== 染梦冻洋 — 自定义冰山 placed feature（比原版更高频率） =====
     public static final ResourceKey<PlacedFeature> DYEDREAM_ICEBERG_PACKED =
             ResourceKey.create(Registries.PLACED_FEATURE,
@@ -393,6 +398,14 @@ public class ModPlacedFeatures {
         context.register(SHADOW_FUNGUS_TREE, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.SHADOW_FUNGUS_TREE),
                 List.of(CountPlacement.of(12), InSquarePlacement.spread(),
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
+                        onHeightmap(Heightmap.Types.MOTION_BLOCKING),
+                        ON_SHADOW_GROUND)));
+
+        // 阴影锁链柱 — 地表结构，平均每 3 区块 1 个，仅灯影地表
+        context.register(SHADOW_CHAIN_PILLAR, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SHADOW_CHAIN_PILLAR),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
                         SurfaceWaterDepthFilter.forMaxDepth(0),
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING),
                         ON_SHADOW_GROUND)));
