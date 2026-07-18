@@ -87,7 +87,7 @@ public class Config
                     + "\n支持模组药水，留空则允许所有")
             .defineListAllowEmpty("balance_allowed_effects",
                     List.of("minecraft:regeneration","minecraft:speed","minecraft:strength","minecraft:luck",
-                            "minecraft:jump_boost","minecraft:absorption","minecraft:health_boost"),
+                            "minecraft:jump_boost","minecraft:health_boost","pasterdream:cook_buff"),
                     obj -> obj instanceof String);
 
     //守护

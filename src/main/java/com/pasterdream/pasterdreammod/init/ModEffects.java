@@ -1,26 +1,7 @@
 package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
-import com.pasterdream.pasterdreammod.world.effect.CheerUpBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.InsandBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.LethargyBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.TranceBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.DyedreamArmorBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.DyedreamPerfumeBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.DyedreamUpBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.EvasionBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.GoldenrodTeaBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.SculkArmorBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.BlinkCooldownEffect;
-import com.pasterdream.pasterdreammod.world.effect.CounterAttackBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.CookBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.DreamWishBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.SnowVowBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.CeciliaBlessingBuff;
-import com.pasterdream.pasterdreammod.world.effect.DreamHarpOfWandererBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.RestBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.MementoBuffEffect;
-import com.pasterdream.pasterdreammod.world.effect.GuardBuffEffect;
+import com.pasterdream.pasterdreammod.world.effect.*;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -73,6 +54,8 @@ public class ModEffects {
             EFFECTS.register("memento_buff", MementoBuffEffect::new);
     public static final RegistryObject<MobEffect> GUARD_BUFF =
             EFFECTS.register("guard_buff", GuardBuffEffect::new);
+    public static final RegistryObject<MobEffect> RAPID_REACTION_BUFF =
+            EFFECTS.register("rapid_reaction_buff", RapidReactionEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);

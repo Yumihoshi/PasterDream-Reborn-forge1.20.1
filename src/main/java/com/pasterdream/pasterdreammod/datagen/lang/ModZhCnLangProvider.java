@@ -992,6 +992,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.rest_buff", "休憩");
         add("effect.pasterdream.dream_harp_of_wanderer_buff", "漂泊旅者的染梦竖琴");
         add("effect.pasterdream.guard_buff", "守护");
+        add("effect.pasterdream.rapid_reaction_buff", "高速反射");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");
@@ -1161,7 +1162,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.dream_harp_of_wanderer_buff.description", "使用漂泊旅者的染梦竖琴后获得，漂泊旅者的染梦竖琴可以从染梦列车中得到。");
         add("effect.pasterdream.cecilia_blessing_buff.description", "戴着塞西莉娅受到致命伤害后获得，效果期间获得伤害免疫。");
         add("effect.pasterdream.guard_buff.description", "使用守护预言卡获得，拥有该buff时，超过一定生命百分比的部分伤害将会受到减伤（可在配置里修改）");
-
+        add("effect.pasterdream.rapid_reaction_buff.description", "使用疾行预言卡获得，拥有该buff时，增加上坡高度，降低瞬身术冷却并免疫摔落伤害。");
 
         // 沙漠英雄墓 - 任务对话
         add("message.pasterdream.desert_hero_tomb.line1", "良久，竟有来者。");
@@ -1218,8 +1219,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.prophecy_card.chaos.description", "§9使用卡牌时，对以自身为中心，7*7范围内的所有敌人陷入混乱并失去行动能力，持续10秒。（此效果不对玩家生效）");
         add("tooltip.pasterdream.prophecy_card.conflict.description", "§9使用卡牌时，当前生命值与已损失生命值互换。§c执意在满血使用后果自负！");
         add("tooltip.pasterdream.prophecy_card.graveyard.description", "§9使用卡牌时，对以自身为中心，5*5范围内的所有敌人造成100点魔法伤害。（此效果不对玩家生效）");
+        add("tooltip.pasterdream.prophecy_card.sprint.description", "§9使用卡牌时，获得速度III、跳跃提升II、高速反射效果，持续120秒。效果持续期间增加上坡高度，-30%瞬身术冷却并免疫摔落伤害。");
         add("tooltip.pasterdream.prophecy_card.guard.description.1", "§9使用卡牌时，获得120秒伤害吸收III和60秒守护效果。");
-        add("tooltip.pasterdream.prophecy_card.guard.description.2", "§9玩家若受到的任何超过其最大生命值%.1f%的伤害，超出的部分都会减少%.1f%。这种减伤是在护甲的减伤作用之前应用的。");
+        add("tooltip.pasterdream.prophecy_card.guard.description.2", "§9玩家若受到的任何超过其最大生命值%.1f%%的伤害，超出的部分都会减少%.1f%%。这种减伤是在护甲的减伤作用之前应用的。");
         add("tooltip.pasterdream.prophecy_card.unknown.description.1", "§9你是怎么获得这张卡的？");
         add("tooltip.pasterdream.prophecy_card.unknown.description.2", "§9请把你做了什么发送到github或者mcmod方便我们定位问题，而不是只发送这张错误的截图");
 

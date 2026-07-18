@@ -397,7 +397,6 @@ public class ProphecyCardItem extends Item {
                     stack.shrink(1);
                 }
             } else {
-                // 客户端：贴图爆出特效（不死图腾同款）
                 showTotemEffect(stack);
             }
             return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
@@ -406,14 +405,28 @@ public class ProphecyCardItem extends Item {
 
     private static ProphecyCardEffect sprintEffect() {
         return (level, player, hand, stack) -> {
-            // TODO: 疾行卡效果
+            if (!level.isClientSide()) {
+                // 服务端：给予 120 秒速度 III + 跳跃提升 II + 高速反射
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 120 * 20, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 120 * 20, 1));
+                player.addEffect(new MobEffectInstance(ModEffects.RAPID_REACTION_BUFF.get(), 120 * 20, 0));
+                // 音效
+                level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                        ModSounds.EVASION.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                // 消耗
+                if (!player.getAbilities().instabuild) {
+                    stack.shrink(1);
+                }
+            } else {
+                showTotemEffect(stack);
+            }
             return InteractionResultHolder.success(stack);
         };
     }
 
     private static ProphecyCardEffect holygrailEffect() {
         return (level, player, hand, stack) -> {
-            // TODO: 疾行卡效果
+            // TODO: 圣杯卡效果
             return InteractionResultHolder.success(stack);
         };
     }

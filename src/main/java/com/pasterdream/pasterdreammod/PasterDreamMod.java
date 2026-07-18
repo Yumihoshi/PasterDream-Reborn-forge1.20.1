@@ -32,6 +32,7 @@ import com.pasterdream.pasterdreammod.world.item.ModToolTiers;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.damagesource.CombatRules;
 import net.minecraft.world.item.TieredItem;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -92,6 +93,7 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onItemAttributeModifier);
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onShelterLivingHurt);
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onGuardLivingHurt);
+        MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onRapidReactionFall);
         modEventBus.addListener(this::AddOverlays);
         modEventBus.addListener(this::AddEntityRenderersEvent);
         modEventBus.addListener(this::AddRegisterLayerDefinitions);
@@ -297,6 +299,14 @@ public class PasterDreamMod
             // 重新应用其他减伤
             float newDamage = newAfterArmor * otherFactor;
             event.setAmount(Math.max(0.0f, newDamage));
+        }
+    }
+
+    // 高速反射：免疫摔落伤害
+    public static void onRapidReactionFall(LivingFallEvent event) {
+        if (event.getEntity().hasEffect(ModEffects.RAPID_REACTION_BUFF.get())) {
+            event.setDistance(0);
+            event.setDamageMultiplier(0);
         }
     }
 }
