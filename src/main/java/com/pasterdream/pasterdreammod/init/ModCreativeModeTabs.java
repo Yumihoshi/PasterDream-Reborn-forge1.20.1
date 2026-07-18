@@ -509,7 +509,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHADOW_STEM_FERN.get());
                         output.accept(ModItems.SHADOW_SPROUTS.get());
                         output.accept(ModItems.SHADOW_FERN.get());
-
+                        output.accept(ModItems.SHADOW_FUNGUS.get());
 
 
                         output.accept(ModItems.WHITE_ORCHID_FLOWER.get());

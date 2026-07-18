@@ -455,6 +455,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         var shadowFern = models().cross(ModBlocks.SHADOW_FERN.getId().getPath(), blockTexture(ModBlocks.SHADOW_FERN.get())).renderType("cutout");
         simpleBlock(ModBlocks.SHADOW_FERN.get(), shadowFern);
 
+        var shadowFungus = models().cross(ModBlocks.SHADOW_FUNGUS.getId().getPath(), blockTexture(ModBlocks.SHADOW_FUNGUS.get())).renderType("cutout");
+        simpleBlock(ModBlocks.SHADOW_FUNGUS.get(), shadowFungus);
+
         // 染梦海草
         var dyedreamSeagrass = models().cross(ModBlocks.DYEDREAM_SEAGRASS.getId().getPath(), blockTexture(ModBlocks.DYEDREAM_SEAGRASS.get())).renderType("cutout");
         simpleBlock(ModBlocks.DYEDREAM_SEAGRASS.get(), dyedreamSeagrass);

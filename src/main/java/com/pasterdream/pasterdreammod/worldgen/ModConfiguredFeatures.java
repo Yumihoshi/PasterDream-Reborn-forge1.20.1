@@ -18,6 +18,7 @@ import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
+import net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
@@ -39,6 +40,12 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import java.util.List;
 
 public class ModConfiguredFeatures {
+
+    // ===== 阴影维度植物 =====
+    // 阴影真菌树 (骨粉催熟，诡异菌形态)
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_FUNGUS_TREE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fungus_tree"));
 
     // ===== 染梦平原 =====
     // 染梦树
@@ -371,6 +378,16 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.simple(ModBlocks.PINK_MUSHROOM_BLOCK.get()),
                         BlockStateProvider.simple(ModBlocks.PINK_MUSHROOM_STEM.get()),
                         3)));
+
+        // 阴影真菌树 — 骨粉催熟，诡异菌形态
+        context.register(SHADOW_FUNGUS_TREE, new ConfiguredFeature<>(Feature.HUGE_FUNGUS,
+                new HugeFungusConfiguration(
+                        ModBlocks.SHADOW_NYLIUM.get().defaultBlockState(),
+                        ModBlocks.SHADOW_STEM.get().defaultBlockState(),
+                        ModBlocks.SHADOW_WART_BLOCK.get().defaultBlockState(),
+                        ModBlocks.SHADOW_SHROOMLIGHT.get().defaultBlockState(),
+                        BlockPredicate.matchesBlocks(ModBlocks.SHADOW_NYLIUM.get()),
+                        true)));
 
         context.register(DYEDREAM_ICE_PILLAR, new ConfiguredFeature<>(Feature.BLOCK_COLUMN,
                 new BlockColumnConfiguration(

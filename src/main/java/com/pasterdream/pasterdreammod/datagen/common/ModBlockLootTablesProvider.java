@@ -223,6 +223,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         add(ModBlocks.SHADOW_SPROUTS.get(),
                 block -> LootHelpers.creategrassesDrops(ModBlocks.SHADOW_SPROUTS.get()));
         dropSelf(ModBlocks.SHADOW_FERN.get());
+        dropSelf(ModBlocks.SHADOW_FUNGUS.get());
 
         dropSelf(ModBlocks.LIGHT_BALL.get());
 

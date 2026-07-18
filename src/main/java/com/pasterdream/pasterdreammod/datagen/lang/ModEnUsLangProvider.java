@@ -405,6 +405,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_STEM_FERN.get(), "Shadow Stem Fern");
         add(ModBlocks.SHADOW_SPROUTS.get(), "Shadow Sprouts");
         add(ModBlocks.SHADOW_FERN.get(), "Shadow Fern");
+        add(ModBlocks.SHADOW_FUNGUS.get(), "Shadow Fungus");
 
         add(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(), "Melt Dream Crystal Fragment");
         add(ModItems.MELT_DREAM_AURORIAN_STEEL.get(), "Melt Dream Aurorian Steel");
