@@ -402,7 +402,7 @@ public class ModPlacedFeatures {
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING),
                         ON_SHADOW_GROUND)));
 
-        // 阴影锁链柱 — 地表结构，平均每 3 区块 1 个，仅灯影地表
+        // 阴影锁链柱 — 地表结构，平均每 16 区块 1 个，仅灯影地表
         context.register(SHADOW_CHAIN_PILLAR, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.SHADOW_CHAIN_PILLAR),
                 List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
