@@ -51,6 +51,7 @@ This project is released with permission from the original author "Aerolite_Dust
 | Curios | 5.14.1+ |
 | GeckoLib | 4.8.3+ |
 | JEI (可选) | 15.20.0.112+ |
+| Patchouli (可选) | 1.20.1-85+ |
 
 ## 文档 / Documentation
 
@@ -66,6 +67,12 @@ This project is released with permission from the original author "Aerolite_Dust
 - **策划 / Design**: 拭柳喑雨 (ShiLiuYinYu)
 - **程序 / Programming**: 2884omgpy, ShiLiuYinYu, Garam
 - **美术 / Art**: 煮饭婆 (GQ2529), Garam
+- **文案 / Writing**: 绘星tsuki(Yumihoshi)
+- **特别感谢 / Special Thanks**: -北旭-, 福米花_flow
+
+<a href="https://github.com//PasterDreamReborn-Organization//PasterDream-Reborn-forge1.20.1//graphs/contributors">
+  <img src="https://contrib.rocks//image?repo=PasterDreamReborn-Organization//PasterDream-Reborn-forge1.20.1" />
+</a>
 
 ## 其他资源
 
