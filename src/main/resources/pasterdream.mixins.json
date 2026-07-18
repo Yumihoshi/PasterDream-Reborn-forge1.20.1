@@ -11,7 +11,9 @@
   ],
   "client": [
     "SituationalMusicMixin",
-    "MusicManagerMixin"
+    "MusicManagerMixin",
+    "FogRendererMixin",
+    "LevelRendererMixin"
   ],
   "server": [],
   "minVersion": "0.8"
