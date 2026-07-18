@@ -21,6 +21,23 @@ textures/item/chenjingmen_desert_sword.png
 textures/item/desert_sword.png
 textures/item/luck_enhance_stone.png
 textures/item/attack_enhance_stone.png
+textures/item/glass_cup.png
+textures/item/glass_cup_of_apple_juice.png
+textures/item/glass_cup_of_cooked_dyedream_flower_tea.png
+textures/item/glass_cup_of_dyedream_juice.png
+textures/item/glass_cup_of_honey_juice.png
+textures/item/glass_cup_of_uncooked_dyedream_flower_tea.png
+textures/item/glass_cup_of_watermelon_juice.png
+textures/item/popping_candy.png
+textures/item/prophecy_card_balance.png
+textures/item/prophecy_card_chaos.png
+textures/item/prophecy_card_conflict.png
+textures/item/prophecy_card_graveyard.png
+textures/item/prophecy_card_guard.png
+textures/item/prophecy_card_holy_grail.png
+textures/item/prophecy_card_sin.png
+textures/item/prophecy_card_sprint.png
+textures/item/prophecy_card_wielding_sword.png
 ```
 
 ## 新增 / New
@@ -30,5 +47,5 @@ textures/item/attack_enhance_stone.png
 (Entirely new resources not in the original mod)
 
 ```
-
+textures/item/seniors_dream_book.png
 ```
