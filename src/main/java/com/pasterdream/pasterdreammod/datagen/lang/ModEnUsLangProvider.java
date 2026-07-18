@@ -598,6 +598,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("biome.pasterdream.dyedream_mushroom_mountains","Dyedream Mushroom Mountains");
         add("biome.pasterdream.dyedream_snowy_plains","Dyedream Snowy Plains");
         add("biome.pasterdream.dyedream_frozen_ocean","Dyedream Frozen Ocean");
+        add("biome.pasterdream.dyedream_ocean","Dyedream Ocean");
+        add("biome.pasterdream.shadow_nylium_wastes","Shadow Nylium Wastes");
+        add("biome.pasterdream.shadow_forest","Shadow Forest");
+        add("biome.pasterdream.shadow_ruins","Shadow Ruins");
 
         add("recipe.pasterdream.copy", "Copy");
         add("recipe.pasterdream.research", "Research");

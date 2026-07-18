@@ -60,9 +60,12 @@ public class ModNoiseSettings {
                 overworld.useLegacyRandomSource()
         ));
 
-        // 灯影之下维度噪声设置（基于主世界噪声，禁用含水层/熔岩湖/矿脉）
+        // 灯影之下维度噪声设置（基于主世界噪声，禁用含水层/熔岩湖/矿脉/洞穴噪声）
         NoiseGeneratorSettings lampShadowOverworld = NoiseGeneratorSettings.overworld(context, false, false);
         NoiseRouter lampShadowOriginalRouter = lampShadowOverworld.noiseRouter();
+
+        DensityFunction lampShadowBaseTerrain = lampShadowOriginalRouter.initialDensityWithoutJaggedness();
+        DensityFunction lampShadowSmoothTerrain = DensityFunctions.interpolated(lampShadowBaseTerrain);
 
         NoiseRouter lampShadowRouter = new NoiseRouter(
                 lampShadowOriginalRouter.barrierNoise(),
@@ -75,8 +78,8 @@ public class ModNoiseSettings {
                 lampShadowOriginalRouter.erosion(),
                 lampShadowOriginalRouter.depth(),
                 lampShadowOriginalRouter.ridges(),
-                lampShadowOriginalRouter.initialDensityWithoutJaggedness(),
-                lampShadowOriginalRouter.finalDensity(),
+                lampShadowBaseTerrain,                     //初始密度（无锯齿，与染梦一致）
+                lampShadowSmoothTerrain,                   //最终密度（插值平滑，无洞穴噪声）
                 DensityFunctions.constant(1.0D),           //矿脉开关→1（禁用）
                 DensityFunctions.constant(1.0D),           //矿脉脊状→1（禁用）
                 DensityFunctions.constant(1.0D)            //矿脉间隙→1（禁用）
@@ -172,9 +175,9 @@ public class ModNoiseSettings {
                                 VerticalAnchor.aboveBottom(5)),
                         SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())
                 ),
-                // shadow_nylium_wastes（菌索荒原）：地表 shadow_nylium / 水下 shadow_stone，下层 shadow_stone
+                // 全部灯影群系：地表统一 shadow_nylium / 水下 shadow_stone，下层 shadow_stone（群系通过地物区分）
                 SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(ModBiomes.SHADOW_NYLIUM_WASTES),
+                        SurfaceRules.isBiome(ModBiomes.SHADOW_NYLIUM_WASTES, ModBiomes.SHADOW_FOREST, ModBiomes.SHADOW_RUINS),
                         SurfaceRules.ifTrue(
                                 SurfaceRules.abovePreliminarySurface(),
                                 SurfaceRules.sequence(
@@ -184,52 +187,6 @@ public class ModNoiseSettings {
                                                         SurfaceRules.ifTrue(
                                                                 SurfaceRules.waterBlockCheck(-1, 0),
                                                                 SurfaceRules.state(ModBlocks.SHADOW_NYLIUM.get().defaultBlockState())
-                                                        ),
-                                                        SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
-                                                )
-                                        ),
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.UNDER_FLOOR,
-                                                SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
-                                        )
-                                )
-                        )
-                ),
-                // shadow_forest（阴影森林）：地表 shadow_nylium / 水下 shadow_stone，下层 shadow_stone
-                SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(ModBiomes.SHADOW_FOREST),
-                        SurfaceRules.ifTrue(
-                                SurfaceRules.abovePreliminarySurface(),
-                                SurfaceRules.sequence(
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.ON_FLOOR,
-                                                SurfaceRules.sequence(
-                                                        SurfaceRules.ifTrue(
-                                                                SurfaceRules.waterBlockCheck(-1, 0),
-                                                                SurfaceRules.state(ModBlocks.SHADOW_NYLIUM.get().defaultBlockState())
-                                                        ),
-                                                        SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
-                                                )
-                                        ),
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.UNDER_FLOOR,
-                                                SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
-                                        )
-                                )
-                        )
-                ),
-                // shadow_ruins（阴影古迹）：地表 shadow_stone_tiles / 水下 shadow_stone，下层 shadow_stone
-                SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(ModBiomes.SHADOW_RUINS),
-                        SurfaceRules.ifTrue(
-                                SurfaceRules.abovePreliminarySurface(),
-                                SurfaceRules.sequence(
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.ON_FLOOR,
-                                                SurfaceRules.sequence(
-                                                        SurfaceRules.ifTrue(
-                                                                SurfaceRules.waterBlockCheck(-1, 0),
-                                                                SurfaceRules.state(ModBlocks.SHADOW_STONE_TILES.get().defaultBlockState())
                                                         ),
                                                         SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
                                                 )

@@ -604,6 +604,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("biome.pasterdream.dyedream_mushroom_mountains","粉顶菇山地");
         add("biome.pasterdream.dyedream_snowy_plains","染梦雪原");
         add("biome.pasterdream.dyedream_frozen_ocean","染梦冻洋");
+        add("biome.pasterdream.dyedream_ocean","染梦海洋");
+        add("biome.pasterdream.shadow_nylium_wastes","菌索荒原");
+        add("biome.pasterdream.shadow_forest","阴影森林");
+        add("biome.pasterdream.shadow_ruins","阴影古迹");
 
         add("recipe.pasterdream.copy", "复制");
         add("recipe.pasterdream.research", "研究");

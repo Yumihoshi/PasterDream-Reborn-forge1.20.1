@@ -38,7 +38,7 @@ public class ModDimensionTypes {
                 ResourceLocation.parse("overworld"), // 天空/雾/云效果同主世界
                 0f,                       // 环境光照
                 new DimensionType.MonsterSettings(
-                        false,              // 猪灵不会僵尸化
+                        false,              // 猪灵会僵尸化
                         false,              // 禁止袭击
                         UniformInt.of(0, 0), // 怪物生成光照判定（仅天光0，配合群系空怪物列表禁止生成）
                         0                   // 怪物生成方块光照上限
@@ -59,7 +59,7 @@ public class ModDimensionTypes {
                 384,                        // 逻辑高度
                 BlockTags.INFINIBURN_OVERWORLD,
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "lamp_shadow_world"),
-                0.125f,                     // 环境光照
+                0.25f,                      // 环境光照
                 new DimensionType.MonsterSettings(
                         true,               // 猪灵安全
                         false,              // 禁止袭击

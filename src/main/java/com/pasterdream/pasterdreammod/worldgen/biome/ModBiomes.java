@@ -339,7 +339,7 @@ public class ModBiomes {
                 .build();
     }
 
-    // ==================== 灯影之下占位群系（待后续细化） ====================
+    // ==================== 灯影之下 ====================
 
     private static BiomeSpecialEffects.Builder shadowEffects() {
         return new BiomeSpecialEffects.Builder()
@@ -349,9 +349,47 @@ public class ModBiomes {
                 .waterFogColor(0x202020);
     }
 
+    /** 灯影群系共享：洞穴 + 峡谷 */
+    private static void addShadowLandFeatures(BiomeGenerationSettings.Builder builder) {
+        builder.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE)
+                .addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
+    }
+
+    /** 全部灯影群系共享的地表植被（影芽、影蕨） */
+    private static void addShadowVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_SPROUTS_PATCH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_FERN_PATCH);
+    }
+
+    /** 菌索荒原特有植被（影短根、影根须、影菌） */
+    private static void addShadowNyliumWastesVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_SHORT_ROOTS_PATCH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_ROOTS_PATCH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_FUNGUS_PATCH);
+    }
+
+    /** 阴影森林特有植被（全部五种 + 巨型蘑菇树） */
+    private static void addShadowForestVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_SHORT_ROOTS_PATCH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_ROOTS_PATCH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_STEM_FERN_PATCH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_FUNGUS_PATCH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.WHITE_ORCHID_FLOWER_PATCH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_FUNGUS_TREE);
+    }
+
+    /** 阴影古迹特有植被（影茎蕨、白厄花） */
+    private static void addShadowRuinsVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_STEM_FERN_PATCH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.WHITE_ORCHID_FLOWER_PATCH);
+    }
+
     private static Biome shadowNyliumWastes(HolderGetter<PlacedFeature> placedFeatures,
                                        HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        addShadowLandFeatures(gen);
+        addShadowVegetation(gen);
+        addShadowNyliumWastesVegetation(gen);
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .temperature(0.5f)
@@ -366,6 +404,9 @@ public class ModBiomes {
     private static Biome shadowForest(HolderGetter<PlacedFeature> placedFeatures,
                                        HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        addShadowLandFeatures(gen);
+        addShadowVegetation(gen);
+        addShadowForestVegetation(gen);
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .temperature(0.2f)
@@ -380,6 +421,9 @@ public class ModBiomes {
     private static Biome shadowRuins(HolderGetter<PlacedFeature> placedFeatures,
                                        HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        addShadowLandFeatures(gen);
+        addShadowVegetation(gen);
+        addShadowRuinsVegetation(gen);
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .temperature(0.5f)
