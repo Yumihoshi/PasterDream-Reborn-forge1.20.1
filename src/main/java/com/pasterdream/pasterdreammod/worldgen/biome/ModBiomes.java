@@ -361,11 +361,12 @@ public class ModBiomes {
                 .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_FERN_PATCH);
     }
 
-    /** 菌索荒原特有植被（影短根、影根须、影菌） */
+    /** 菌索荒原特有（植被 + 锁链柱） */
     private static void addShadowNyliumWastesVegetation(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_SHORT_ROOTS_PATCH)
                 .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_ROOTS_PATCH)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_FUNGUS_PATCH);
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.SHADOW_FUNGUS_PATCH)
+                .addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, ModPlacedFeatures.SHADOW_CHAIN_PILLAR);
     }
 
     /** 阴影森林特有植被（全部五种 + 巨型蘑菇树） */

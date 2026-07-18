@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.init;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.worldgen.feature.CalciteSpikeFeature;
 import com.pasterdream.pasterdreammod.worldgen.feature.PinkHugeMushroomFeature;
+import com.pasterdream.pasterdreammod.worldgen.feature.ShadowChainPillarFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -23,6 +24,10 @@ public class ModFeatures {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> CALCITE_SPIKE =
             FEATURES.register("calcite_spike",
                     () -> new CalciteSpikeFeature(NoneFeatureConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> SHADOW_CHAIN_PILLAR =
+            FEATURES.register("shadow_chain_pillar",
+                    () -> new ShadowChainPillarFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
