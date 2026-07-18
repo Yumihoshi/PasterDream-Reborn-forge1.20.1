@@ -21,8 +21,8 @@ import java.util.List;
 
 public class StarWishRodItem extends FishingRodItem {
 
-    /** Lure 加成：竿自带 +5 lure speed，约等于原版 Lure V 的等鱼速度 */
-    private static final int LURE_SPEED_BONUS = 5;
+    /** Lure 加成：竿自带 +2 lure speed，搭配原版 Lure III 可达 Lure V 上限 */
+    private static final int LURE_SPEED_BONUS = 2;
 
     public StarWishRodItem() {
         super(new Properties().durability(1024).fireResistant().rarity(Rarity.UNCOMMON));

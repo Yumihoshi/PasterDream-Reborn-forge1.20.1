@@ -242,6 +242,13 @@ public class ModBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final RegistryObject<Block> SHADOW_FUNGUS = BLOCKS.register("shadow_fungus",
+            () -> new ShadowFungusBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GRAY).sound(SoundType.FUNGUS)
+                    .instabreak().noCollission().noOcclusion()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
+                    .pushReaction(PushReaction.DESTROY)));
+
     // ===== 阴影巨型菌系列 =====
     public static final RegistryObject<Block> SHADOW_WART_BLOCK = BLOCKS.register("shadow_wart_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.WART_BLOCK).strength(1.0f)));
     public static final RegistryObject<Block> STRIPPED_SHADOW_STEM = BLOCKS.register("stripped_shadow_stem", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.STEM).strength(2.0f)));

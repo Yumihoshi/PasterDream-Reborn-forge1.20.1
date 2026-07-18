@@ -162,6 +162,11 @@ public class ModPlacedFeatures {
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "small_calcite_stalicripe"));
 
+    // ===== 阴影维度植物 =====
+    public static final ResourceKey<PlacedFeature> SHADOW_FUNGUS_TREE =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fungus_tree"));
+
     // ===== 染梦冻洋 — 自定义冰山 placed feature（比原版更高频率） =====
     public static final ResourceKey<PlacedFeature> DYEDREAM_ICEBERG_PACKED =
             ResourceKey.create(Registries.PLACED_FEATURE,
@@ -347,6 +352,11 @@ public class ModPlacedFeatures {
                         SurfaceWaterDepthFilter.forMaxDepth(0),
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING),
                         ON_DYEDREAM_GROUND)));
+
+        // 阴影真菌树 — 仅通过骨粉触发生长，此处仅注册落空放置
+        context.register(SHADOW_FUNGUS_TREE, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SHADOW_FUNGUS_TREE),
+                List.of()));
 
         // 粉顶菌 (小型地表) — WORLD_SURFACE_WG
         context.register(PINK_MUSHROOM_PATCH, new PlacedFeature(

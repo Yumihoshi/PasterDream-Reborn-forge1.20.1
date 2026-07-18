@@ -398,6 +398,9 @@ public class ModItemModelsProvider extends ItemModelProvider {
         withExistingParent(ModItems.SHADOW_FERN.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/shadow_fern"));
 
+        withExistingParent(ModItems.SHADOW_FUNGUS.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/shadow_fungus"));
+
         withExistingParent(ModItems.RUST_BLACK_METAL_BARS.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/rust_black_metal_bars"));
 

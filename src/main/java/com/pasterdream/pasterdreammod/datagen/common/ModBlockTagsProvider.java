@@ -366,6 +366,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.NETHERRACK)
                 .add(Blocks.MAGMA_BLOCK);
 
+        tag(ModBlockTags.SHADOW_PLANTS_CAN_PLACE_ON)
+                .add(ModBlocks.SHADOW_NYLIUM.get())
+                .add(Blocks.CRIMSON_NYLIUM)
+                .add(Blocks.WARPED_NYLIUM);
+
         // 暂时无法自动填充到
         tag(ModBlockTags.DYEDREAM_BUD_CAN_SPAWN_ON)
                 .add(ModBlocks.DYEDREAM_DIRT.get())
@@ -423,7 +428,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SHADOW_ROOTS.get())
                 .add(ModBlocks.SHADOW_STEM_FERN.get())
                 .add(ModBlocks.SHADOW_SPROUTS.get())
-                .add(ModBlocks.SHADOW_FERN.get());
+                .add(ModBlocks.SHADOW_FERN.get())
+                .add(ModBlocks.SHADOW_FUNGUS.get());
 
 
 

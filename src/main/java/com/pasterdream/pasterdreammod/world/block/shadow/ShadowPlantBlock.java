@@ -1,10 +1,9 @@
 package com.pasterdream.pasterdreammod.world.block.shadow;
 
-import com.pasterdream.pasterdreammod.init.ModBlocks;
+import com.pasterdream.pasterdreammod.tag.ModBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -24,9 +23,7 @@ public class ShadowPlantBlock extends BushBlock {
 
     @Override
     public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
-        return groundState.is(ModBlocks.SHADOW_NYLIUM.get())
-                || groundState.is(Blocks.CRIMSON_NYLIUM)
-                || groundState.is(Blocks.WARPED_NYLIUM);
+        return groundState.is(ModBlockTags.SHADOW_PLANTS_CAN_PLACE_ON);
     }
 
     @Override

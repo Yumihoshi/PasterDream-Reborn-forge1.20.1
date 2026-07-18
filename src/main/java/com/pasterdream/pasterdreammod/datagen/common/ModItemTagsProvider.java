@@ -150,10 +150,54 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.DYEDREAM_HOE.get());
 
         tag(ModItemTags.COMPOSTABLE)
+                // 蘑菇建材
                 .add(ModBlocks.PINK_MUSHROOM_BLOCK.get().asItem())
                 .add(ModBlocks.PINK_MUSHROOM_STEM.get().asItem())
                 .add(ModBlocks.PINK_SHROOMLIGHT.get().asItem())
-                .add(ModBlocks.PINK_MUSHROOM_PORES.get().asItem());
+                .add(ModBlocks.PINK_MUSHROOM_PORES.get().asItem())
+                .add(ModItems.SHADOW_WART_BLOCK.get())
+                .add(ModItems.SHADOW_SHROOMLIGHT.get())
+                // 植物栏 —— 花
+                .add(ModItems.GOLDENROD.get())
+                .add(ModItems.FERRARIA_CRISPA.get())
+                .add(ModItems.EUSTOMA.get())
+                .add(ModItems.MALVA_SINENSIS_CAVAN.get())
+                .add(ModItems.LINHT_FLOWER.get())
+                .add(ModItems.DYEDREAM_LILY_OF_THE_VALLEY.get())
+                .add(ModItems.WHITE_ORCHID_FLOWER.get())
+                .add(ModItems.EDELWEISS.get())
+                .add(ModItems.NIPPY_EDELWEISS.get())
+                .add(ModItems.BLAZE_FLOWER.get())
+                .add(ModItems.FOURLEAF_CLOVER.get())
+                // 植物栏 —— 大型花
+                .add(ModItems.DREAMING_LOTUS.get())
+                .add(ModItems.MISTY_DREAMING_LOTUS.get())
+                .add(ModItems.DYEDREAM_LOTUS.get())
+                // 植物栏 —— 草/蕨/藤/苔/芦苇
+                .add(ModItems.STEM_GRASS.get())
+                .add(ModItems.TALL_STEM_GRASS.get())
+                .add(ModItems.DYEDREAM_MOSS.get())
+                .add(ModItems.SINGULARITY_FERN.get())
+                .add(ModItems.DYEDREAM_VINE.get())
+                .add(ModItems.DYEDREAM_SEAGRASS.get())
+                .add(ModItems.REED.get())
+                .add(ModItems.RYE.get())
+                .add(ModItems.OATS.get())
+                .add(ModItems.JUNGLE_SPORANGIUM.get())
+                .add(ModItems.CRIMSON_THORNS.get())
+                // 植物栏 —— 菌类
+                .add(ModItems.PINK_MUSHROOM.get())
+                .add(ModItems.TALL_PINK_MUSHROOM.get())
+                // 植物栏 —— 树苗/睡莲
+                .add(ModItems.DYEDREAM_SAPLING.get())
+                .add(ModItems.DYEDREAM_LILY_PAD.get())
+                // 植物栏 —— 阴影植物
+                .add(ModItems.SHADOW_SHORT_ROOTS.get())
+                .add(ModItems.SHADOW_ROOTS.get())
+                .add(ModItems.SHADOW_STEM_FERN.get())
+                .add(ModItems.SHADOW_SPROUTS.get())
+                .add(ModItems.SHADOW_FERN.get())
+                .add(ModItems.SHADOW_FUNGUS.get());
 
         //植株底下的方块
         tag(TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("pasterdream", "dyedream_dirt")))
