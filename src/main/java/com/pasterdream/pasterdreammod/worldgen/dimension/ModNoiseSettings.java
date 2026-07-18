@@ -16,6 +16,10 @@ public class ModNoiseSettings {
             ResourceKey.create(Registries.NOISE_SETTINGS,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_world"));
 
+    public static final ResourceKey<NoiseGeneratorSettings> LAMP_SHADOW_WORLD =
+            ResourceKey.create(Registries.NOISE_SETTINGS,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "lamp_shadow_world"));
+
     public static void bootstrap(BootstapContext<NoiseGeneratorSettings> context) {
         // 复用主世界的完整噪声路由器（洞穴、含水层、矿脉、地形起伏等）
         NoiseGeneratorSettings overworld = NoiseGeneratorSettings.overworld(context, false, false);
@@ -47,7 +51,7 @@ public class ModNoiseSettings {
                 Blocks.CALCITE.defaultBlockState(),             //默认方块：方解石
                 overworld.defaultFluid(),                       //默认流体：水
                 modifiedRouter,                                 //使用修改后的噪声路由器
-                makeSurfaceRules(),                             //染梦平原地表规则
+                makeDyedeamSurfaceRules(),                             //染梦平原地表规则
                 overworld.spawnTarget(),                        //无特殊生成目标
                 overworld.seaLevel(),                           //海平面 63
                 overworld.disableMobGeneration(),
@@ -56,9 +60,45 @@ public class ModNoiseSettings {
                 overworld.useLegacyRandomSource()
         ));
 
+        // 灯影之下维度噪声设置（基于主世界噪声，禁用含水层/熔岩湖/矿脉）
+        NoiseGeneratorSettings lampShadowOverworld = NoiseGeneratorSettings.overworld(context, false, false);
+        NoiseRouter lampShadowOriginalRouter = lampShadowOverworld.noiseRouter();
+
+        NoiseRouter lampShadowRouter = new NoiseRouter(
+                lampShadowOriginalRouter.barrierNoise(),
+                DensityFunctions.constant(-1.0D),          //含水层水量（禁用）
+                DensityFunctions.constant(0.0D),           //含水层扩散（禁用）
+                DensityFunctions.constant(0.0D),           //熔岩湖（禁用）
+                lampShadowOriginalRouter.temperature(),
+                lampShadowOriginalRouter.vegetation(),
+                lampShadowOriginalRouter.continents(),
+                lampShadowOriginalRouter.erosion(),
+                lampShadowOriginalRouter.depth(),
+                lampShadowOriginalRouter.ridges(),
+                lampShadowOriginalRouter.initialDensityWithoutJaggedness(),
+                lampShadowOriginalRouter.finalDensity(),
+                DensityFunctions.constant(1.0D),           //矿脉开关→1（禁用）
+                DensityFunctions.constant(1.0D),           //矿脉脊状→1（禁用）
+                DensityFunctions.constant(1.0D)            //矿脉间隙→1（禁用）
+        );
+
+        context.register(LAMP_SHADOW_WORLD, new NoiseGeneratorSettings(
+                lampShadowOverworld.noiseSettings(),
+                ModBlocks.SHADOW_STONE.get().defaultBlockState(),  // 默认方块：影之石
+                lampShadowOverworld.defaultFluid(),                   // 默认流体：水
+                lampShadowRouter,                                   // 修改后的噪声路由
+                makeLampShadowSurfaceRules(),                       // 灯影之下地表规则
+                lampShadowOverworld.spawnTarget(),
+                lampShadowOverworld.seaLevel(),                     // 海平面 63
+                false,                                              // 启用怪物生成
+                false,                                              // 禁用含水层
+                false,                                              // 禁用矿脉
+                lampShadowOverworld.useLegacyRandomSource()
+        ));
+
     }
 
-    private static SurfaceRules.RuleSource makeSurfaceRules() {
+    private static SurfaceRules.RuleSource makeDyedeamSurfaceRules() {
         return SurfaceRules.sequence(
                 // 基岩底层：y=-64 ~ y=-59
                 SurfaceRules.ifTrue(
@@ -116,6 +156,87 @@ public class ModNoiseSettings {
                                         SurfaceRules.ifTrue(
                                                 SurfaceRules.UNDER_FLOOR,
                                                 SurfaceRules.state(Blocks.PACKED_ICE.defaultBlockState())
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static SurfaceRules.RuleSource makeLampShadowSurfaceRules() {
+        return SurfaceRules.sequence(
+                // 基岩底层：y=-64 ~ y=-59
+                SurfaceRules.ifTrue(
+                        SurfaceRules.verticalGradient("minecraft:bedrock_floor",
+                                VerticalAnchor.aboveBottom(0),
+                                VerticalAnchor.aboveBottom(5)),
+                        SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())
+                ),
+                // shadow_nylium_wastes（菌索荒原）：地表 shadow_nylium / 水下 shadow_stone，下层 shadow_stone
+                SurfaceRules.ifTrue(
+                        SurfaceRules.isBiome(ModBiomes.SHADOW_NYLIUM_WASTES),
+                        SurfaceRules.ifTrue(
+                                SurfaceRules.abovePreliminarySurface(),
+                                SurfaceRules.sequence(
+                                        SurfaceRules.ifTrue(
+                                                SurfaceRules.ON_FLOOR,
+                                                SurfaceRules.sequence(
+                                                        SurfaceRules.ifTrue(
+                                                                SurfaceRules.waterBlockCheck(-1, 0),
+                                                                SurfaceRules.state(ModBlocks.SHADOW_NYLIUM.get().defaultBlockState())
+                                                        ),
+                                                        SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
+                                                )
+                                        ),
+                                        SurfaceRules.ifTrue(
+                                                SurfaceRules.UNDER_FLOOR,
+                                                SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
+                                        )
+                                )
+                        )
+                ),
+                // shadow_forest（阴影森林）：地表 shadow_nylium / 水下 shadow_stone，下层 shadow_stone
+                SurfaceRules.ifTrue(
+                        SurfaceRules.isBiome(ModBiomes.SHADOW_FOREST),
+                        SurfaceRules.ifTrue(
+                                SurfaceRules.abovePreliminarySurface(),
+                                SurfaceRules.sequence(
+                                        SurfaceRules.ifTrue(
+                                                SurfaceRules.ON_FLOOR,
+                                                SurfaceRules.sequence(
+                                                        SurfaceRules.ifTrue(
+                                                                SurfaceRules.waterBlockCheck(-1, 0),
+                                                                SurfaceRules.state(ModBlocks.SHADOW_NYLIUM.get().defaultBlockState())
+                                                        ),
+                                                        SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
+                                                )
+                                        ),
+                                        SurfaceRules.ifTrue(
+                                                SurfaceRules.UNDER_FLOOR,
+                                                SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
+                                        )
+                                )
+                        )
+                ),
+                // shadow_ruins（阴影古迹）：地表 shadow_stone_tiles / 水下 shadow_stone，下层 shadow_stone
+                SurfaceRules.ifTrue(
+                        SurfaceRules.isBiome(ModBiomes.SHADOW_RUINS),
+                        SurfaceRules.ifTrue(
+                                SurfaceRules.abovePreliminarySurface(),
+                                SurfaceRules.sequence(
+                                        SurfaceRules.ifTrue(
+                                                SurfaceRules.ON_FLOOR,
+                                                SurfaceRules.sequence(
+                                                        SurfaceRules.ifTrue(
+                                                                SurfaceRules.waterBlockCheck(-1, 0),
+                                                                SurfaceRules.state(ModBlocks.SHADOW_STONE_TILES.get().defaultBlockState())
+                                                        ),
+                                                        SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
+                                                )
+                                        ),
+                                        SurfaceRules.ifTrue(
+                                                SurfaceRules.UNDER_FLOOR,
+                                                SurfaceRules.state(ModBlocks.SHADOW_STONE.get().defaultBlockState())
                                         )
                                 )
                         )

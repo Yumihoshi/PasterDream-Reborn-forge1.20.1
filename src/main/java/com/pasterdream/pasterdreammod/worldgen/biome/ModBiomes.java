@@ -38,6 +38,17 @@ public class ModBiomes {
             ResourceKey.create(Registries.BIOME,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_ocean"));
 
+    // ===== 灯影之下维度群系 =====
+    public static final ResourceKey<Biome> SHADOW_NYLIUM_WASTES =
+            ResourceKey.create(Registries.BIOME,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_nylium_wastes"));
+    public static final ResourceKey<Biome> SHADOW_FOREST =
+            ResourceKey.create(Registries.BIOME,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_forest"));
+    public static final ResourceKey<Biome> SHADOW_RUINS =
+            ResourceKey.create(Registries.BIOME,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_ruins"));
+
     private static final ResourceKey<SoundEvent> SWEET_DREAM_MUSIC_KEY =
             ResourceKey.create(Registries.SOUND_EVENT,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "sweet_dream_music"));
@@ -69,6 +80,11 @@ public class ModBiomes {
         context.register(DYEDREAM_SNOWY_PLAINS, dyedreamSnowyPlains(placedFeatures, carvers));
         context.register(DYEDREAM_FROZEN_OCEAN, dyedreamFrozenOcean(placedFeatures, carvers));
         context.register(DYEDREAM_OCEAN, dyedreamOcean(placedFeatures, carvers));
+
+        // 灯影之下占位群系（待后续细化）
+        context.register(SHADOW_NYLIUM_WASTES, shadowNyliumWastes(placedFeatures, carvers));
+        context.register(SHADOW_FOREST, shadowForest(placedFeatures, carvers));
+        context.register(SHADOW_RUINS, shadowRuins(placedFeatures, carvers));
     }
 
     // ==================== 共享辅助方法 ====================
@@ -319,6 +335,58 @@ public class ModBiomes {
                         .addSpawn(MobCategory.WATER_CREATURE,
                                 new MobSpawnSettings.SpawnerData(EntityType.DOLPHIN, 15, 1, 3))
                         .build())
+                .generationSettings(gen.build())
+                .build();
+    }
+
+    // ==================== 灯影之下占位群系（待后续细化） ====================
+
+    private static BiomeSpecialEffects.Builder shadowEffects() {
+        return new BiomeSpecialEffects.Builder()
+                .skyColor(0x1A1A2E)
+                .fogColor(0x1A1A2E)
+                .waterColor(0x404040)
+                .waterFogColor(0x202020);
+    }
+
+    private static Biome shadowNyliumWastes(HolderGetter<PlacedFeature> placedFeatures,
+                                       HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(0.5f)
+                .downfall(0.5f)
+                .temperatureAdjustment(Biome.TemperatureModifier.NONE)
+                .specialEffects(shadowEffects().build())
+                .mobSpawnSettings(MobSpawnSettings.EMPTY)
+                .generationSettings(gen.build())
+                .build();
+    }
+
+    private static Biome shadowForest(HolderGetter<PlacedFeature> placedFeatures,
+                                       HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(0.2f)
+                .downfall(0.3f)
+                .temperatureAdjustment(Biome.TemperatureModifier.NONE)
+                .specialEffects(shadowEffects().build())
+                .mobSpawnSettings(MobSpawnSettings.EMPTY)
+                .generationSettings(gen.build())
+                .build();
+    }
+
+    private static Biome shadowRuins(HolderGetter<PlacedFeature> placedFeatures,
+                                       HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(0.5f)
+                .downfall(0.4f)
+                .temperatureAdjustment(Biome.TemperatureModifier.NONE)
+                .specialEffects(shadowEffects().build())
+                .mobSpawnSettings(MobSpawnSettings.EMPTY)
                 .generationSettings(gen.build())
                 .build();
     }

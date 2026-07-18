@@ -29,6 +29,10 @@ public class ModLevelStems {
             ResourceKey.create(Registries.LEVEL_STEM,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_world"));
 
+    public static final ResourceKey<LevelStem> LAMP_SHADOW_WORLD =
+            ResourceKey.create(Registries.LEVEL_STEM,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "lamp_shadow_world"));
+
     @SuppressWarnings("unchecked")
     private static MultiNoiseBiomeSource createMultiNoiseSource(
             Climate.ParameterList<Holder<Biome>> params) {
@@ -137,5 +141,58 @@ public class ModLevelStems {
         ChunkGenerator chunkGenerator = new NoiseBasedChunkGenerator(biomeSource, dimNoise);
 
         context.register(DYEDREAM_WORLD, new LevelStem(dimType, chunkGenerator));
+
+        // ===== 灯影之下维度 =====
+        Holder<Biome> shadowNyliumWastes = biomes.getOrThrow(ModBiomes.SHADOW_NYLIUM_WASTES);
+        Holder<Biome> shadowForest = biomes.getOrThrow(ModBiomes.SHADOW_FOREST);
+        Holder<Biome> shadowRuins = biomes.getOrThrow(ModBiomes.SHADOW_RUINS);
+        Holder<DimensionType> lampShadowDimType = dimensionTypes.getOrThrow(ModDimensionTypes.LAMP_SHADOW_WORLD);
+        Holder<NoiseGeneratorSettings> lampShadowNoise = noiseSettings.getOrThrow(ModNoiseSettings.LAMP_SHADOW_WORLD);
+
+        Climate.ParameterList<Holder<Biome>> lampShadowBiomeParams = new Climate.ParameterList<>(List.<Pair<Climate.ParameterPoint, Holder<Biome>>>of(
+                // shadow_nylium_wastes（菌索荒原）：海洋区域 C[-1, 0.2]
+                Pair.of(
+                        new Climate.ParameterPoint(
+                                Climate.Parameter.span(0F, 1F),
+                                Climate.Parameter.span(0F, 1F),
+                                Climate.Parameter.span(-1F, 0.2F),
+                                Climate.Parameter.span(-1F, 0F),
+                                Climate.Parameter.span(-1F, 0F),
+                                Climate.Parameter.point(0F),
+                                0L
+                        ),
+                        shadowNyliumWastes
+                ),
+                // shadow_forest（阴影森林）：寒冷陆地 T[-1, 0.1] H[-1, -0.3] C[0.35, 1]
+                Pair.of(
+                        new Climate.ParameterPoint(
+                                Climate.Parameter.span(-1F, 0.1F),
+                                Climate.Parameter.span(-1F, -0.3F),
+                                Climate.Parameter.span(0.35F, 1F),
+                                Climate.Parameter.span(0.25F, 1F),
+                                Climate.Parameter.span(0.25F, 1F),
+                                Climate.Parameter.point(0F),
+                                0L
+                        ),
+                        shadowForest
+                ),
+                // shadow_ruins（阴影古迹）：过渡区域 C[0.1, 0.35]
+                Pair.of(
+                        new Climate.ParameterPoint(
+                                Climate.Parameter.span(0F, 0.1F),
+                                Climate.Parameter.span(-0.3F, 0.1F),
+                                Climate.Parameter.span(0.1F, 0.35F),
+                                Climate.Parameter.span(-0.1F, 0.3F),
+                                Climate.Parameter.span(-0.1F, 0.3F),
+                                Climate.Parameter.point(0F),
+                                0L
+                        ),
+                        shadowRuins
+                )
+        ));
+        MultiNoiseBiomeSource lampShadowBiomeSource = createMultiNoiseSource(lampShadowBiomeParams);
+        ChunkGenerator lampShadowChunkGenerator = new NoiseBasedChunkGenerator(lampShadowBiomeSource, lampShadowNoise);
+
+        context.register(LAMP_SHADOW_WORLD, new LevelStem(lampShadowDimType, lampShadowChunkGenerator));
     }
 }

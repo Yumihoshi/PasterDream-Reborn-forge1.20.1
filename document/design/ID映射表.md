@@ -528,9 +528,9 @@
 | `biome_dyedream_1`             | `dyedream_mushroom_mountains`  | 重命名，已实现            | 粉顶菇山地，`ModBiomes` 中完成 datagen       |
 | `biome_dyedream_2`             | `dyedream_snowy_plains`        | 重命名，已实现            | 染梦雪原，`ModBiomes` 中完成 datagen        |
 | `biome_dyedream_3`             | `dyedream_frozen_ocean`        | 重命名，已实现            | 染梦冻洋，`ModBiomes` 中完成 datagen        |
-| `biome_shadow_0`               | 待搬运                           | -                  | 阴影之地                             |
-| `biome_shadow_1`               | 待搬运                           | -                  | 阴影森林                             |
-| `biome_shadow_2`               | 待搬运                           | -                  | 阴影古迹                             |
+| `biome_shadow_0`               | `shadow_nylium_wastes`          | 重命名              | 菌索荒原                             |
+| `biome_shadow_1`               | `shadow_forest`                 | 重命名              | 阴影森林                             |
+| `biome_shadow_2`               | `shadow_ruins`                  | 重命名              | 阴影古迹                             |
 | `wind_journey_biome_0`         | 待搬运                           | -                  | 风泊群岛                             |
 | `wind_journey_biome_1`         | 待搬运                           | -                  | 迷梦云层                             |
 | `aaroncos_arena_biome`         | 待搬运                           | -                  | 亚伦柯斯竞技场                          |
