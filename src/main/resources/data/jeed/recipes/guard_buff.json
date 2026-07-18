@@ -1,0 +1,10 @@
+{
+  "type": "jeed:effect_provider",
+  "effect": "pasterdream:guard_buff",
+  "providers": [
+    {
+      "item": "pasterdream:prophecy_card",
+      "nbt": "{type:\"guard\"}"
+    }
+  ]
+}

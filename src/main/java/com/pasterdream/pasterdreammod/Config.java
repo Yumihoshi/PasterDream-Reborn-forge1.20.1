@@ -90,6 +90,15 @@ public class Config
                             "minecraft:jump_boost","minecraft:absorption","minecraft:health_boost"),
                     obj -> obj instanceof String);
 
+    //守护
+    private static final ForgeConfigSpec.DoubleValue HEALTH_PERCENT = BUILDER
+            .comment("守护效果触发时，需要伤害为最大生命值的占比，默认0.3（30%）")
+            .defineInRange("health_percent_guard_need", 0.3, 0.0,1.0);
+
+    private static final ForgeConfigSpec.DoubleValue RESIST_DAMAGE = BUILDER
+            .comment("守护效果触发时超过最大生命值部分减伤比例，默认0.6（60%）")
+            .defineInRange("resist_damage", 0.6, 0.0,1.0);
+
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
@@ -121,6 +130,10 @@ public class Config
     public static int maxlevel;
     public static List<? extends String> balanceAllowedEffects;
 
+    //守护
+    public static Double healthpercentguardneed;
+    public static Double resistdamage;
+
     private static boolean validateItemName(final Object obj)
     {
         return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(ResourceLocation.tryParse(itemName));
@@ -140,6 +153,8 @@ public class Config
         maxtakeeffectduration= MAX_TAKE_EFFECT_DURATION.get();
         maxlevel= MAX_LEVEL.get();
         balanceAllowedEffects = BALANCE_ALLOWED_EFFECTS.get();
+        healthpercentguardneed= HEALTH_PERCENT.get();
+        resistdamage= RESIST_DAMAGE.get();
 
         items = ITEM_STRINGS.get().stream()
                 .map(itemName -> ForgeRegistries.ITEMS.getValue(ResourceLocation.parse(itemName)))

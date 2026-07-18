@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.world.item.prophecycard;
 
 import com.pasterdream.pasterdreammod.Config;
+import com.pasterdream.pasterdreammod.init.ModEffects;
 import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -238,7 +239,10 @@ public class ProphecyCardItem extends Item {
             case TYPE_CHAOS-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.chaos.description"));
             case TYPE_CONFLICT-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.conflict.description"));
             case TYPE_GRAVEYARD-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.graveyard.description"));
-            case TYPE_GUARD-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.guard.description"));
+            case TYPE_GUARD-> {
+                tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.guard.description.1"));
+                tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.guard.description.2",(Config.healthpercentguardneed*100),(Config.resistdamage*100)).withStyle(ChatFormatting.BLUE));
+            }
             case TYPE_HOLY_GRAIL-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.holy_grail.description"));
             case TYPE_SIN-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.sin.description"));
             case TYPE_SPRINT-> tooltip.add(Component.translatable("tooltip.pasterdream.prophecy_card.sprint.description"));
@@ -381,9 +385,9 @@ public class ProphecyCardItem extends Item {
     private static ProphecyCardEffect guardEffect() {
         return (level, player, hand, stack) -> {
             if (!level.isClientSide()) {
-                // 服务端：给予 120 秒伤害吸收 V + 抗性提升 I
-                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 120 * 20, 4));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 120 * 20, 0));
+                // 服务端：给予 120 秒伤害吸收 III + 60秒守护
+                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 120 * 20, 2));
+                player.addEffect(new MobEffectInstance(ModEffects.GUARD_BUFF.get(), 60 * 20, 0));
                 // 音效
                 level.playSound(null, player.getX(), player.getY(), player.getZ(),
                         ModSounds.EVASION.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
