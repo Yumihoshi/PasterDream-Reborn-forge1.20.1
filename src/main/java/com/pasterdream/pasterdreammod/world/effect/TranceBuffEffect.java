@@ -5,50 +5,23 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
 public class TranceBuffEffect extends MobEffect {
-
+    private static final String UUID = "d9839357-ed78-40fc-8c2f-5e877116d9f9";
     public TranceBuffEffect() {
         super(MobEffectCategory.HARMFUL, -4427155);
+        this.addAttributeModifier(ModAttributes.BLINK_CD.get(), UUID, 1, AttributeModifier.Operation.MULTIPLY_TOTAL);
+        this.addAttributeModifier(Attributes.MOVEMENT_SPEED, UUID, -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
+        this.addAttributeModifier(Attributes.ATTACK_SPEED, UUID, -0.2, AttributeModifier.Operation.ADDITION);
+        this.addAttributeModifier(Attributes.ATTACK_DAMAGE, UUID, -1, AttributeModifier.Operation.ADDITION);
+        this.addAttributeModifier(ModAttributes.SKILL_COOLDOWN_RATE.get(), UUID, 0.5, AttributeModifier.Operation.MULTIPLY_TOTAL);
     }
-
     @Override
     public String getDescriptionId() {
         return "effect.pasterdream.trance_buff";
     }
-
-    @Override
-    public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-        modifyBase(entity, true);
-    }
-
-    @Override
-    public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-        super.removeAttributeModifiers(entity, attributeMap, amplifier);
-        modifyBase(entity, false);
-    }
-
-    private void modifyBase(LivingEntity entity, boolean apply) {
-        double sign = apply ? 1 : -1;
-        if (entity.getAttribute(ModAttributes.BLINK_CD.get()) != null) {
-            entity.getAttribute(ModAttributes.BLINK_CD.get())
-                    .setBaseValue(entity.getAttribute(ModAttributes.BLINK_CD.get()).getBaseValue() + sign * 1.0);
-        }
-        if (entity.getAttribute(Attributes.MOVEMENT_SPEED) != null) {
-            entity.getAttribute(Attributes.MOVEMENT_SPEED)
-                    .setBaseValue(entity.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue() + sign * -0.02);
-        }
-        if (entity.getAttribute(Attributes.ATTACK_SPEED) != null) {
-            entity.getAttribute(Attributes.ATTACK_SPEED)
-                    .setBaseValue(entity.getAttribute(Attributes.ATTACK_SPEED).getBaseValue() + sign * -0.2);
-        }
-        if (entity.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
-            entity.getAttribute(Attributes.ATTACK_DAMAGE)
-                    .setBaseValue(entity.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() + sign * -1.0);
-        }
-    }
-
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
         return true;
