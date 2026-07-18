@@ -5,45 +5,23 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
 public class LethargyBuffEffect extends MobEffect {
-
+    private static final String UUID = "c4cde0ad-53a3-46cc-bf26-eec88418a387";
     public LethargyBuffEffect() {
         super(MobEffectCategory.HARMFUL, -2907486);
+        this.addAttributeModifier(ModAttributes.BLINK_CD.get(), UUID, 0.5, AttributeModifier.Operation.MULTIPLY_TOTAL);
+        this.addAttributeModifier(Attributes.MOVEMENT_SPEED, UUID, -0.1, AttributeModifier.Operation.MULTIPLY_TOTAL);
+        this.addAttributeModifier(Attributes.ATTACK_SPEED, UUID, -0.1, AttributeModifier.Operation.ADDITION);
+        this.addAttributeModifier(ModAttributes.SKILL_COOLDOWN_RATE.get(), UUID, 0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
     }
-
     @Override
     public String getDescriptionId() {
         return "effect.pasterdream.lethargy_buff";
     }
 
-    @Override
-    public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-        modifyBase(entity, true);
-    }
-
-    @Override
-    public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-        super.removeAttributeModifiers(entity, attributeMap, amplifier);
-        modifyBase(entity, false);
-    }
-
-    private void modifyBase(LivingEntity entity, boolean apply) {
-        double sign = apply ? 1 : -1;
-        if (entity.getAttribute(ModAttributes.BLINK_CD.get()) != null) {
-            entity.getAttribute(ModAttributes.BLINK_CD.get())
-                    .setBaseValue(entity.getAttribute(ModAttributes.BLINK_CD.get()).getBaseValue() + sign * 0.5);
-        }
-        if (entity.getAttribute(Attributes.MOVEMENT_SPEED) != null) {
-            entity.getAttribute(Attributes.MOVEMENT_SPEED)
-                    .setBaseValue(entity.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue() + sign * -0.01);
-        }
-        if (entity.getAttribute(Attributes.ATTACK_SPEED) != null) {
-            entity.getAttribute(Attributes.ATTACK_SPEED)
-                    .setBaseValue(entity.getAttribute(Attributes.ATTACK_SPEED).getBaseValue() + sign * -0.1);
-        }
-    }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {

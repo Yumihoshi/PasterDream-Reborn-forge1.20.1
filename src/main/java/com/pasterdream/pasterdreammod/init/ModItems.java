@@ -718,7 +718,7 @@ public class ModItems {
                     .food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(MobEffects.GLOWING, 100, 0), 1.0f)
                             .nutrition(1).build())));
 
-    //防风buff施工中
+    //TODO:防风buff施工中
     public static final RegistryObject<Item> JELLYFISH_MUD = ITEMS.register("jellyfish_mud",
             () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(-3)
                     .food(new FoodProperties.Builder().nutrition(1).build())));

@@ -307,6 +307,7 @@ public class ProphecyCardItem extends Item {
                 case TYPE_CONFLICT -> conflictEffect();
                 case TYPE_GUARD    -> guardEffect();
                 case TYPE_SPRINT   -> sprintEffect();
+                case TYPE_HOLY_GRAIL   -> holygrailEffect();
                 // 未匹配的不注册效果（右键空挥）
                 default -> null;
             });
@@ -402,7 +403,15 @@ public class ProphecyCardItem extends Item {
             return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
         };
     }
+
     private static ProphecyCardEffect sprintEffect() {
+        return (level, player, hand, stack) -> {
+            // TODO: 疾行卡效果
+            return InteractionResultHolder.success(stack);
+        };
+    }
+
+    private static ProphecyCardEffect holygrailEffect() {
         return (level, player, hand, stack) -> {
             // TODO: 疾行卡效果
             return InteractionResultHolder.success(stack);
