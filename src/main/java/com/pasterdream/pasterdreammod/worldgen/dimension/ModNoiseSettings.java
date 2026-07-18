@@ -30,7 +30,7 @@ public class ModNoiseSettings {
 
         NoiseRouter modifiedRouter = new NoiseRouter(
                 originalRouter.barrierNoise(),
-                DensityFunctions.constant(-1.0D),          //含水层水量（禁用）
+                DensityFunctions.constant(-1.0D),         //含水层水量（禁用）
                 DensityFunctions.constant(0.0D),          //含水层扩散（禁用）
                 DensityFunctions.constant(0.0D),          //熔岩湖（禁用）
                 originalRouter.temperature(),                       //温度
@@ -78,8 +78,8 @@ public class ModNoiseSettings {
                 lampShadowOriginalRouter.erosion(),
                 lampShadowOriginalRouter.depth(),
                 lampShadowOriginalRouter.ridges(),
-                lampShadowBaseTerrain,                     //初始密度（无锯齿，与染梦一致）
-                lampShadowSmoothTerrain,                   //最终密度（插值平滑，无洞穴噪声）
+                lampShadowBaseTerrain,                              //初始密度（无锯齿，与染梦一致）
+                lampShadowSmoothTerrain,                            //最终密度（插值平滑，无洞穴噪声）
                 DensityFunctions.constant(1.0D),           //矿脉开关→1（禁用）
                 DensityFunctions.constant(1.0D),           //矿脉脊状→1（禁用）
                 DensityFunctions.constant(1.0D)            //矿脉间隙→1（禁用）
@@ -87,16 +87,16 @@ public class ModNoiseSettings {
 
         context.register(LAMP_SHADOW_WORLD, new NoiseGeneratorSettings(
                 lampShadowOverworld.noiseSettings(),
-                ModBlocks.SHADOW_STONE.get().defaultBlockState(),  // 默认方块：影之石
-                lampShadowOverworld.defaultFluid(),                   // 默认流体：水
-                lampShadowRouter,                                   // 修改后的噪声路由
-                makeLampShadowSurfaceRules(),                       // 灯影之下地表规则
+                ModBlocks.SHADOW_STONE.get().defaultBlockState(),   //默认方块：阴影石
+                lampShadowOverworld.defaultFluid(),                 //默认流体：水
+                lampShadowRouter,                                   //修改后的噪声路由
+                makeLampShadowSurfaceRules(),                       //灯影之下地表规则
                 lampShadowOverworld.spawnTarget(),
-                lampShadowOverworld.seaLevel(),                     // 海平面 63
-                false,                                              // 启用怪物生成
-                false,                                              // 禁用含水层
-                false,                                              // 禁用矿脉
-                lampShadowOverworld.useLegacyRandomSource()
+                -64,//lampShadowOverworld.seaLevel(),       //海平面 63
+                false,                                              //启用怪物生成
+                false,                                              //禁用含水层
+                false,                                              //禁用矿脉
+                false
         ));
 
     }

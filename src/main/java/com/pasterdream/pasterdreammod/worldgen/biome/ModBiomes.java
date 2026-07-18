@@ -343,10 +343,10 @@ public class ModBiomes {
 
     private static BiomeSpecialEffects.Builder shadowEffects() {
         return new BiomeSpecialEffects.Builder()
-                .skyColor(0x1A1A2E)
-                .fogColor(0x1A1A2E)
-                .waterColor(0x404040)
-                .waterFogColor(0x202020);
+                .skyColor(0x000000)
+                .fogColor(0x000000)
+                .waterColor(0x000000)
+                .waterFogColor(0x000000);
     }
 
     /** 灯影群系共享：洞穴 + 峡谷 */
