@@ -339,7 +339,7 @@ public class ModBiomes {
                 .build();
     }
 
-    // ==================== 灯影之下占位群系（待后续细化） ====================
+    // ==================== 灯影之下 ====================
 
     private static BiomeSpecialEffects.Builder shadowEffects() {
         return new BiomeSpecialEffects.Builder()

@@ -38,7 +38,7 @@ public class ModDimensionTypes {
                 ResourceLocation.parse("overworld"), // 天空/雾/云效果同主世界
                 0f,                       // 环境光照
                 new DimensionType.MonsterSettings(
-                        false,              // 猪灵不会僵尸化
+                        false,              // 猪灵会僵尸化
                         false,              // 禁止袭击
                         UniformInt.of(0, 0), // 怪物生成光照判定（仅天光0，配合群系空怪物列表禁止生成）
                         0                   // 怪物生成方块光照上限

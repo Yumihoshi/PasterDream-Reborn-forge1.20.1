@@ -60,9 +60,17 @@ public class ModNoiseSettings {
                 overworld.useLegacyRandomSource()
         ));
 
-        // 灯影之下维度噪声设置（基于主世界噪声，禁用含水层/熔岩湖/矿脉）
+        // 灯影之下维度噪声设置（禁用含水层/熔岩湖/矿脉，消除海洋盆地）
         NoiseGeneratorSettings lampShadowOverworld = NoiseGeneratorSettings.overworld(context, false, false);
         NoiseRouter lampShadowOriginalRouter = lampShadowOverworld.noiseRouter();
+        // 用地形密度下限截断海洋盆地：原版密度在海洋区为负值（低于海平面），
+        // max(x, 0.0) 将负值抬升至地表，保留陆地原有形态和洞穴系统。
+        DensityFunction noOceanBase = DensityFunctions.max(
+                lampShadowOriginalRouter.initialDensityWithoutJaggedness(),
+                DensityFunctions.constant(0.0D));
+        DensityFunction noOceanFinal = DensityFunctions.max(
+                lampShadowOriginalRouter.finalDensity(),
+                DensityFunctions.constant(0.0D));
 
         NoiseRouter lampShadowRouter = new NoiseRouter(
                 lampShadowOriginalRouter.barrierNoise(),
@@ -75,8 +83,8 @@ public class ModNoiseSettings {
                 lampShadowOriginalRouter.erosion(),
                 lampShadowOriginalRouter.depth(),
                 lampShadowOriginalRouter.ridges(),
-                lampShadowOriginalRouter.initialDensityWithoutJaggedness(),
-                lampShadowOriginalRouter.finalDensity(),
+                noOceanBase,                                //截断海洋后的初始密度
+                noOceanFinal,                               //截断海洋后的最终密度（保留洞穴）
                 DensityFunctions.constant(1.0D),           //矿脉开关→1（禁用）
                 DensityFunctions.constant(1.0D),           //矿脉脊状→1（禁用）
                 DensityFunctions.constant(1.0D)            //矿脉间隙→1（禁用）
