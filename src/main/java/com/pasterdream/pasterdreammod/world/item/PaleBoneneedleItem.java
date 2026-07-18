@@ -35,9 +35,8 @@ public class PaleBoneneedleItem extends Item {
 
     private static final ResourceKey<Level> DYEDREAM_WORLD =
             ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath("pasterdream", "dyedream_world"));
-    // TODO: 待灯影维度实装后取消注释
-    // private static final ResourceKey<Level> LAMP_SHADOW_WORLD =
-    //         ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath("pasterdream", "lamp_shadow_world"));
+    private static final ResourceKey<Level> LAMP_SHADOW_WORLD =
+            ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath("pasterdream", "lamp_shadow_world"));
     // TODO: 待风旅维度实装后取消注释
     // private static final ResourceKey<Level> WIND_JOURNEY_WORLD =
     //         ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath("pasterdream", "wind_journey_world"));
@@ -132,8 +131,8 @@ public class PaleBoneneedleItem extends Item {
     static boolean isDreamDimension(Level level) {
         ResourceKey<Level> dim = level.dimension();
         // TODO: 待其余梦维度实装后取消注释对应判断
-        return dim == DYEDREAM_WORLD;
-        // || dim == LAMP_SHADOW_WORLD
+        return dim == DYEDREAM_WORLD
+                || dim == LAMP_SHADOW_WORLD;
         // || dim == WIND_JOURNEY_WORLD
         // || dim == AARONCOS_ARENA_WORLD;
     }
