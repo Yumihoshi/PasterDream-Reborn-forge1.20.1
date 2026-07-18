@@ -163,9 +163,38 @@ public class ModPlacedFeatures {
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "small_calcite_stalicripe"));
 
     // ===== 阴影维度植物 =====
+    // 阴影真菌树 — 自然生成 + 骨粉催熟
     public static final ResourceKey<PlacedFeature> SHADOW_FUNGUS_TREE =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fungus_tree"));
+    // 影芽 — 分散地表植被
+    public static final ResourceKey<PlacedFeature> SHADOW_SPROUTS_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_sprouts_patch"));
+    // 影蕨 — 分散地表植被
+    public static final ResourceKey<PlacedFeature> SHADOW_FERN_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fern_patch"));
+    // 影短根 — 分散地表植被
+    public static final ResourceKey<PlacedFeature> SHADOW_SHORT_ROOTS_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_short_roots_patch"));
+    // 影根须 — 分散地表植被
+    public static final ResourceKey<PlacedFeature> SHADOW_ROOTS_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_roots_patch"));
+    // 影茎蕨 — 分散地表植被
+    public static final ResourceKey<PlacedFeature> SHADOW_STEM_FERN_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_stem_fern_patch"));
+    // 影菌 — 分散地表植被
+    public static final ResourceKey<PlacedFeature> SHADOW_FUNGUS_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fungus_patch"));
+    // 白厄花 — 分散地表植被
+    public static final ResourceKey<PlacedFeature> WHITE_ORCHID_FLOWER_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_orchid_flower_patch"));
 
     // ===== 染梦冻洋 — 自定义冰山 placed feature（比原版更高频率） =====
     public static final ResourceKey<PlacedFeature> DYEDREAM_ICEBERG_PACKED =
@@ -219,6 +248,13 @@ public class ModPlacedFeatures {
                     Direction.DOWN.getNormal(),
                     ModBlocks.DYEDREAM_GRASS_BLOCK.get(),
                     ModBlocks.DYEDREAM_DIRT.get()));
+
+    /** 限制植物只能生成在灯影地表方块（阴影菌岩/影之石）上 */
+    private static final PlacementModifier ON_SHADOW_GROUND = BlockPredicateFilter.forPredicate(
+            BlockPredicate.matchesBlocks(
+                    Direction.DOWN.getNormal(),
+                    ModBlocks.SHADOW_NYLIUM.get(),
+                    ModBlocks.SHADOW_STONE.get()));
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> cf = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -353,10 +389,56 @@ public class ModPlacedFeatures {
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING),
                         ON_DYEDREAM_GROUND)));
 
-        // 阴影真菌树 — 仅通过骨粉触发生长，此处仅注册落空放置
+        // 阴影真菌树
         context.register(SHADOW_FUNGUS_TREE, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.SHADOW_FUNGUS_TREE),
-                List.of()));
+                List.of(CountPlacement.of(12), InSquarePlacement.spread(),
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
+                        onHeightmap(Heightmap.Types.MOTION_BLOCKING),
+                        ON_SHADOW_GROUND)));
+
+        // 影芽 — WORLD_SURFACE_WG，比染梦茎草更稀疏
+        context.register(SHADOW_SPROUTS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SHADOW_SPROUTS_PATCH),
+                List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_SHADOW_GROUND)));
+        // 影蕨 — WORLD_SURFACE_WG，比染梦茎草更稀疏
+        context.register(SHADOW_FERN_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SHADOW_FERN_PATCH),
+                List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_SHADOW_GROUND)));
+        // 影短根 — WORLD_SURFACE_WG
+        context.register(SHADOW_SHORT_ROOTS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SHADOW_SHORT_ROOTS_PATCH),
+                List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_SHADOW_GROUND)));
+        // 影根须 — WORLD_SURFACE_WG
+        context.register(SHADOW_ROOTS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SHADOW_ROOTS_PATCH),
+                List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_SHADOW_GROUND)));
+        // 影茎蕨 — WORLD_SURFACE_WG
+        context.register(SHADOW_STEM_FERN_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SHADOW_STEM_FERN_PATCH),
+                List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_SHADOW_GROUND)));
+        // 影菌 — WORLD_SURFACE_WG
+        context.register(SHADOW_FUNGUS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SHADOW_FUNGUS_PATCH),
+                List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_SHADOW_GROUND)));
+        // 白厄花 — WORLD_SURFACE_WG
+        context.register(WHITE_ORCHID_FLOWER_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.WHITE_ORCHID_FLOWER_PATCH),
+                List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_SHADOW_GROUND)));
 
         // 粉顶菌 (小型地表) — WORLD_SURFACE_WG
         context.register(PINK_MUSHROOM_PATCH, new PlacedFeature(

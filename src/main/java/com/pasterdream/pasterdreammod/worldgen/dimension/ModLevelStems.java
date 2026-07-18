@@ -25,6 +25,8 @@ import java.util.List;
 
 public class ModLevelStems {
 
+    //六维参数区间要求每一个群系的参数区间不能是其他群系参数区间的子集，不然这个群系将永远无法出现
+
     public static final ResourceKey<LevelStem> DYEDREAM_WORLD =
             ResourceKey.create(Registries.LEVEL_STEM,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_world"));
@@ -150,44 +152,44 @@ public class ModLevelStems {
         Holder<NoiseGeneratorSettings> lampShadowNoise = noiseSettings.getOrThrow(ModNoiseSettings.LAMP_SHADOW_WORLD);
 
         Climate.ParameterList<Holder<Biome>> lampShadowBiomeParams = new Climate.ParameterList<>(List.<Pair<Climate.ParameterPoint, Holder<Biome>>>of(
-                // shadow_nylium_wastes（菌索荒原）：海洋区域 C[-1, 0.2]
+                // shadow_ruins（阴影古迹）：寒冷干燥 T[-2, 0] H[-2, 0]，约25%
                 Pair.of(
                         new Climate.ParameterPoint(
-                                Climate.Parameter.span(0F, 1F),
-                                Climate.Parameter.span(0F, 1F),
-                                Climate.Parameter.span(-1F, 0.2F),
-                                Climate.Parameter.span(-1F, 0F),
-                                Climate.Parameter.span(-1F, 0F),
-                                Climate.Parameter.point(0F),
+                                Climate.Parameter.span(-2F, 0F),
+                                Climate.Parameter.span(-2F, 0F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
                                 0L
                         ),
-                        shadowNyliumWastes
+                        shadowRuins
                 ),
-                // shadow_forest（阴影森林）：寒冷陆地 T[-1, 0.1] H[-1, -0.3] C[0.35, 1]
+                // shadow_forest（阴影森林）：寒冷潮湿 T[-2, 0] H[0, 2]，约25%
                 Pair.of(
                         new Climate.ParameterPoint(
-                                Climate.Parameter.span(-1F, 0.1F),
-                                Climate.Parameter.span(-1F, -0.3F),
-                                Climate.Parameter.span(0.35F, 1F),
-                                Climate.Parameter.span(0.25F, 1F),
-                                Climate.Parameter.span(0.25F, 1F),
-                                Climate.Parameter.point(0F),
+                                Climate.Parameter.span(-2F, 0F),
+                                Climate.Parameter.span(0F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
                                 0L
                         ),
                         shadowForest
                 ),
-                // shadow_ruins（阴影古迹）：过渡区域 C[0.1, 0.35]
+                // shadow_nylium_wastes（菌索荒原）：温暖 T[0, 2]，约50%
                 Pair.of(
                         new Climate.ParameterPoint(
-                                Climate.Parameter.span(0F, 0.1F),
-                                Climate.Parameter.span(-0.3F, 0.1F),
-                                Climate.Parameter.span(0.1F, 0.35F),
-                                Climate.Parameter.span(-0.1F, 0.3F),
-                                Climate.Parameter.span(-0.1F, 0.3F),
-                                Climate.Parameter.point(0F),
+                                Climate.Parameter.span(0F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
                                 0L
                         ),
-                        shadowRuins
+                        shadowNyliumWastes
                 )
         ));
         MultiNoiseBiomeSource lampShadowBiomeSource = createMultiNoiseSource(lampShadowBiomeParams);
