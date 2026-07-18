@@ -30,6 +30,7 @@ import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import com.pasterdream.pasterdreammod.world.item.ModToolTiers;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.damagesource.CombatRules;
 import net.minecraft.world.item.TieredItem;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.level.BlockEvent;
@@ -90,6 +91,7 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(QymArmorEvents::onEquipChange);
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onItemAttributeModifier);
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onShelterLivingHurt);
+        MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onGuardLivingHurt);
         modEventBus.addListener(this::AddOverlays);
         modEventBus.addListener(this::AddEntityRenderersEvent);
         modEventBus.addListener(this::AddRegisterLayerDefinitions);
@@ -259,6 +261,42 @@ public class PasterDreamMod
 
         if (totalLevel > 0) {
             event.setAmount(event.getAmount() * (1.0f - totalLevel * 0.02f));
+        }
+    }
+
+    // 守护：若受到超过最大生命值30%的伤害，超出部分减少60%（在护甲减伤之前应用）
+    public static void onGuardLivingHurt(LivingHurtEvent event) {
+        if (!(event.getEntity() instanceof Player player)) return;
+        if (!player.hasEffect(ModEffects.GUARD_BUFF.get())) return;
+
+        float maxHealth = player.getMaxHealth();
+        float threshold = (float) (maxHealth * Config.healthpercentguardneed);
+        float postDamage = event.getAmount();
+        float armor = (float) player.getArmorValue();
+        float toughness = (float) player.getAttributeValue(Attributes.ARMOR_TOUGHNESS);
+
+        // 迭代反推护甲减伤前的原始伤害
+        float rawDamage = postDamage;
+        for (int i = 0; i < 3; i++) {
+            float afterArmor = CombatRules.getDamageAfterAbsorb(rawDamage, armor, toughness);
+            float armorRatio = rawDamage > 0.001f ? afterArmor / rawDamage : 1.0f;
+            if (armorRatio < 0.01f) armorRatio = 0.01f;
+            rawDamage = postDamage / armorRatio;
+        }
+
+        // 计算护甲之后的其他减伤系数（附魔保护、抗性提升等）
+        float postArmorOfRaw = CombatRules.getDamageAfterAbsorb(rawDamage, armor, toughness);
+        float otherFactor = postArmorOfRaw > 0.001f ? postDamage / postArmorOfRaw : 1.0f;
+
+        // 对原始伤害应用守护减伤
+        if (rawDamage > threshold) {
+            float excess = rawDamage - threshold;
+            float guardedRaw = (float) (threshold + excess * (1.0-Config.resistdamage));
+            // 重新应用护甲减伤
+            float newAfterArmor = CombatRules.getDamageAfterAbsorb(guardedRaw, armor, toughness);
+            // 重新应用其他减伤
+            float newDamage = newAfterArmor * otherFactor;
+            event.setAmount(Math.max(0.0f, newDamage));
         }
     }
 }

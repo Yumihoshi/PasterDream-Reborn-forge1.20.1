@@ -826,6 +826,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.cecilia_blessing_buff", "Blessing of Cecilia");
         add("effect.pasterdream.rest_buff", "Rest");
         add("effect.pasterdream.dream_harp_of_wanderer_buff", "DreamHarp of Wanderer");
+        add("effect.pasterdream.guard_buff", "Guard");
         add("attribute.pasterdream.blink_cd", "Blink Cooldown");
         add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
         add("attribute.pasterdream.blink_range", "Blink Distance");
@@ -990,6 +991,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.counter_attack_buff.description", "Increase skill damage and disappear after the next attack.");
         add("effect.pasterdream.dream_harp_of_wanderer_buff.description", "Obtained after using the Dream Harp of Wanderer, the Dream Harp of Wanderer can be acquired from the Dyedream Train.");
         add("effect.pasterdream.cecilia_blessing_buff.description", "Obtained after takes a fatal hit when equips Blessing of Cecilia, making you immune to damage while the effect lasts.");
+        add("effect.pasterdream.guard_buff.description", "Obtained by using the Guardian Prophecy Card, while you have this buff, damage above a certain percentage of your health will be reduced (can be changed in the Config).");
 
         // Desert Hero Tomb - Quest Dialogue
         add("message.pasterdream.desert_hero_tomb.line1", "At long last, a visitor has come.");
