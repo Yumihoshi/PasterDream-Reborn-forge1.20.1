@@ -832,6 +832,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.rest_buff", "Rest");
         add("effect.pasterdream.dream_harp_of_wanderer_buff", "DreamHarp of Wanderer");
         add("effect.pasterdream.guard_buff", "Guard");
+        add("effect.pasterdream.holy_grail_buff", "Holy Grail");
         add("attribute.pasterdream.blink_cd", "Blink Cooldown");
         add("attribute.pasterdream.blink_consume", "Blink Hunger Cost");
         add("attribute.pasterdream.blink_range", "Blink Distance");
@@ -1061,5 +1062,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("structure.pasterdream.dyedream_crystal_ball", "Dyedream Crystal Ball");
         add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "Garden Decryption: Misty Dreaming Lotus");
         add("structure.pasterdream.garden_decryption_nippy_edelweiss", "Garden Decryption: Nippy Edelweiss");
+        add("structure.pasterdream.garden_decryption_nine_tailed_fox", "Garden Decryption: Nine-Tailed Fox");
     }
 }

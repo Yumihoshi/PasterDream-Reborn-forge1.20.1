@@ -994,6 +994,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.dream_harp_of_wanderer_buff", "漂泊旅者的染梦竖琴");
         add("effect.pasterdream.guard_buff", "守护");
         add("effect.pasterdream.rapid_reaction_buff", "高速反射");
+        add("effect.pasterdream.holy_grail_buff", "圣杯");
         add("attribute.pasterdream.blink_cd", "瞬身术冷却");
         add("attribute.pasterdream.blink_consume", "瞬身术消耗");
         add("attribute.pasterdream.blink_range", "瞬身术距离");
@@ -1163,6 +1164,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.dream_harp_of_wanderer_buff.description", "使用漂泊旅者的染梦竖琴后获得，漂泊旅者的染梦竖琴可以从染梦列车中得到。");
         add("effect.pasterdream.cecilia_blessing_buff.description", "戴着塞西莉娅受到致命伤害后获得，效果期间获得伤害免疫。");
         add("effect.pasterdream.guard_buff.description", "使用守护预言卡获得，拥有该buff时，超过一定生命百分比的部分伤害将会受到减伤（可在配置里修改）");
+        add("effect.pasterdream.holy_grail_buff.description", "使用圣杯预言卡获得，拥有该buff时，效果持续期间+15最大生命值，并免疫一部分负面状态，获得自然生命恢复且血量越低，回血速度越快。");
         add("effect.pasterdream.rapid_reaction_buff.description", "使用疾行预言卡获得，拥有该buff时，增加上坡高度，降低瞬身术冷却并免疫摔落伤害。");
 
         // 沙漠英雄墓 - 任务对话
@@ -1203,7 +1205,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.prophecy_card.type.balance", "§b种类：平衡");
         add("tooltip.pasterdream.prophecy_card.type.chaos", "§b种类：混乱");
         add("tooltip.pasterdream.prophecy_card.type.conflict", "§b种类：对立");
-        add("tooltip.pasterdream.prophecy_card.type.graveyard", "§b种类：墓地");
+        add("tooltip.pasterdream.prophecy_card.type.graveyard", "§b种类：墓园");
         add("tooltip.pasterdream.prophecy_card.type.guard", "§b种类：守护");
         add("tooltip.pasterdream.prophecy_card.type.holy_grail", "§b种类：圣杯");
         add("tooltip.pasterdream.prophecy_card.type.sin", "§b种类：罪恶");
@@ -1223,6 +1225,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.prophecy_card.sprint.description", "§9使用卡牌时，获得速度III、跳跃提升II、高速反射效果，持续120秒。效果持续期间增加上坡高度，-30%瞬身术冷却并免疫摔落伤害。");
         add("tooltip.pasterdream.prophecy_card.guard.description.1", "§9使用卡牌时，获得120秒伤害吸收III和60秒守护效果。");
         add("tooltip.pasterdream.prophecy_card.guard.description.2", "§9玩家若受到的任何超过其最大生命值%.1f%%的伤害，超出的部分都会减少%.1f%%。这种减伤是在护甲的减伤作用之前应用的。");
+        add("tooltip.pasterdream.prophecy_card.holy_grail.description", "§9使用卡牌时，获得圣杯效果，持续120秒。效果持续期间+15最大生命值，并免疫一部分负面状态，获得自然生命恢复且血量越低，回血速度越快，低于33%的时候达到最快。");
         add("tooltip.pasterdream.prophecy_card.unknown.description.1", "§9你是怎么获得这张卡的？");
         add("tooltip.pasterdream.prophecy_card.unknown.description.2", "§9请把你做了什么发送到github或者mcmod方便我们定位问题，而不是只发送这张错误的截图");
 
@@ -1242,5 +1245,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("structure.pasterdream.dyedream_crystal_ball", "染梦水晶球");
         add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "花园解密·迷梦冶梦莲");
         add("structure.pasterdream.garden_decryption_nippy_edelweiss", "花园解密·凌冽雪绒花");
+        add("structure.pasterdream.garden_decryption_nine_tailed_fox", "花园解密·九尾狐");
     }
 }
