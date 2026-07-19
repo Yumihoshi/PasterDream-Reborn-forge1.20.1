@@ -6,6 +6,7 @@ import com.pasterdream.pasterdreammod.helper.itemwithnbt.dreamnoteswithnbt.Dream
 import com.pasterdream.pasterdreammod.helper.itemwithnbt.lootgeneratorwithnbt.LootGeneratorWithNBT;
 import com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest.MeltDreamCrystalChestLootTableNBT;
 import com.pasterdream.pasterdreammod.world.item.DeepTreasureItem;
+import com.pasterdream.pasterdreammod.world.item.SandofTimeItem;
 import com.pasterdream.pasterdreammod.world.item.blueprints.AddBluePrintContentListTag;
 import com.pasterdream.pasterdreammod.world.item.curio.RedDewRingItem;
 import com.pasterdream.pasterdreammod.world.item.curio.StrikeRingItem;
@@ -163,7 +164,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHADOW_DUNGEON_KEY.get());
                         output.accept(ModItems.PALE_BONENEEDLE.get());
                         output.accept(ModItems.ROOTS_PALE_BONENEEDLE.get());
-                        output.accept(ModItems.SAND_OF_TIME.get());
+                        output.accept(SandofTimeItem.createReady(ModItems.SAND_OF_TIME.get()));
                         // 饰品
                         output.accept(ModItems.EMBRYO_CHARM.get());
                         output.accept(ModItems.EMBRYO_NECKLACE.get());
@@ -540,7 +541,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FEATHER_PEN.get());
                         output.accept(ModBlocks.RESEARCH_TABLE.get());
                         output.accept(ModBlocks.LOST_SWORD_TOMB.get());
-                        output.accept(ModItems.SAND_OF_TIME.get());
+                        output.accept(SandofTimeItem.createReady(ModItems.SAND_OF_TIME.get()));
                         output.accept(ModItems.LIFE_CRYSTAL.get());
                         output.accept(ModItems.GOLDEN_FOX_SCULPTURE.get());
                         output.accept(ModItems.DESERT_HERO_TOMB.get());

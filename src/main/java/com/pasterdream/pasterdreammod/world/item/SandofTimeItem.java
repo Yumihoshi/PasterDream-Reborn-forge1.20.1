@@ -29,6 +29,15 @@ public class SandofTimeItem extends Item {
         super(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
+    /**
+     * 创建一个带有 TAG_READY=true 的时之沙 ItemStack，用于创造模式物品栏展示
+     */
+    public static ItemStack createReady(Item item) {
+        ItemStack stack = new ItemStack(item);
+        stack.getOrCreateTag().putBoolean(TAG_READY, true);
+        return stack;
+    }
+
     @Override
     public boolean isFoil(ItemStack stack) {
         return stack.getOrCreateTag().getBoolean(TAG_READY);

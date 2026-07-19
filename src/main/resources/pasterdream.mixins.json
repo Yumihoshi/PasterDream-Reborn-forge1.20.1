@@ -5,15 +5,16 @@
   "refmap": "pasterdream.refmap.json",
   "mixins": [
     "BlockStateBaseMixin",
-    "PhantomTargetMixin",
+    "CampfireBlockEntityMixin",
     "GoldenrodTeaBuffMixin",
-    "CampfireBlockEntityMixin"
+    "HolyGrailBuffMixin",
+    "PhantomTargetMixin"
   ],
   "client": [
-    "SituationalMusicMixin",
-    "MusicManagerMixin",
     "FogRendererMixin",
-    "LevelRendererMixin"
+    "LevelRendererMixin",
+    "MusicManagerMixin",
+    "SituationalMusicMixin"
   ],
   "server": [],
   "minVersion": "0.8"

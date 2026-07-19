@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.world.effect.*;
+import net.minecraft.client.renderer.entity.layers.HorseArmorLayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -56,6 +57,8 @@ public class ModEffects {
             EFFECTS.register("guard_buff", GuardBuffEffect::new);
     public static final RegistryObject<MobEffect> RAPID_REACTION_BUFF =
             EFFECTS.register("rapid_reaction_buff", RapidReactionEffect::new);
+    public static final RegistryObject<MobEffect> HOLY_GRAIL_BUFF =
+            EFFECTS.register("holy_grail_buff", HolyGrailEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);
