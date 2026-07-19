@@ -2151,6 +2151,25 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.SOUL_ESSENCE.get()), has(ModItems.SOUL_ESSENCE.get()))
                 .save(pWriter);
 
+        // 染梦书桌
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DYEDREAM_DESK.get(), 1)
+                .pattern(" a ")
+                .pattern("bbb")
+                .pattern(" c ")
+                .define('a', Items.BOOK)
+                .define('b', ModItems.DYEDREAM_SLAB.get())
+                .define('c', Items.CALCITE)
+                .unlockedBy(getHasName(ModItems.DYEDREAM_PLANKS.get()), has(ModItems.DYEDREAM_PLANKS.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DYEDREAM_DESK.get(), 1)
+                .pattern("aaa")
+                .pattern("aba")
+                .pattern("aaa")
+                .define('a', ModItems.DYEDREAM_DYE.get())
+                .define('b', Items.LECTERN)
+                .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
+                .save(pWriter, "dyedream_desk_from_lectern");
+
     }
 
     // ===== 饰品配方 =====
