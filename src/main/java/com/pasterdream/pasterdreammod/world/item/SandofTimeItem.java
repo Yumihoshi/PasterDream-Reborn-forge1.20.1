@@ -68,7 +68,10 @@ public class SandofTimeItem extends Item {
             stack.getOrCreateTag().putLong(TAG_COOLDOWN, now);
             boolean isDay = level.isDay();
             long newTime = isDay ? 18000 : 1000;
-            serverLevel.setDayTime(newTime);
+            // DerivedLevelData.setDayTime() 是空方法，必须遍历所有维度（同 /time set 行为）
+            for (ServerLevel sl : serverLevel.getServer().getAllLevels()) {
+                sl.setDayTime(newTime);
+            }
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
                     ModSounds.EVASION.get(), SoundSource.PLAYERS, 1.0f, 1.5f);
         }

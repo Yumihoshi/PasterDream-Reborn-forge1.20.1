@@ -1047,5 +1047,18 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.prophecy_card.unknown.description.1", "§9How did you get this card? ");
         add("tooltip.pasterdream.prophecy_card.unknown.description.2", "§9Please send what you did during game to GitHub or mcmod so we can pinpoint the issue, instead of just sending this error screenshot.");
         add("message.pasterdream.prophecy_card.invalid", "§cProphecy Card data corrupted (%s), right-click disabled!");
+
+        // Structure translations
+        add("structure.pasterdream.oak_fisherman_hut", "Oak Fisherman Hut");
+        add("structure.pasterdream.spruce_fisherman_hut", "Spruce Fisherman Hut");
+        add("structure.pasterdream.dyedream_crack", "Dyedream Crack");
+        add("structure.pasterdream.campsite_overworld", "Campsite");
+        add("structure.pasterdream.the_lost_sword_tomb", "The Lost Sword Tomb");
+        add("structure.pasterdream.dream_church_0", "Dream Church");
+        add("structure.pasterdream.dream_church_2", "Dream Church");
+        add("structure.pasterdream.dream_church_4", "Dream Church");
+        add("structure.pasterdream.dream_church_6", "Dream Church");
+        add("structure.pasterdream.crystal_ball", "Crystal Ball");
+        add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "Garden Decryption: Misty Dreaming Lotus");
     }
 }
