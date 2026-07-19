@@ -1235,10 +1235,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("structure.pasterdream.dyedream_crack", "染梦裂隙");
         add("structure.pasterdream.campsite_overworld", "主世界营地");
         add("structure.pasterdream.the_lost_sword_tomb", "失落剑冢");
-        add("structure.pasterdream.dream_church_0", "梦境教堂");
-        add("structure.pasterdream.dream_church_2", "梦境教堂");
-        add("structure.pasterdream.dream_church_4", "梦境教堂");
-        add("structure.pasterdream.dream_church_6", "梦境教堂");
+        add("structure.pasterdream.dyedream_church_0", "染梦教堂");
+        add("structure.pasterdream.dyedream_church_2", "染梦教堂");
+        add("structure.pasterdream.dyedream_church_4", "染梦教堂");
+        add("structure.pasterdream.dyedream_church_6", "染梦教堂");
         add("structure.pasterdream.crystal_ball", "水晶球");
         add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "花园解密·迷梦冶梦莲");
     }

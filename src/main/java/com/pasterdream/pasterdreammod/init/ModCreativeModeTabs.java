@@ -582,9 +582,9 @@ public class ModCreativeModeTabs {
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_travelogue_1"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_travelogue_2"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_travelogue_3"));
-                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dream_church_1"));
-                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dream_church_2"));
-                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dream_church_3"));
+                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_church_1"));
+                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_church_2"));
+                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_church_3"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_crystal_ball"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dream_wishing_tree"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("warm_cold_wind"));

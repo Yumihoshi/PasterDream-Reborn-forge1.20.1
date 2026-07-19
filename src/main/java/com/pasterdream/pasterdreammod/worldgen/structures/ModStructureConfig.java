@@ -18,10 +18,10 @@ public class ModStructureConfig
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:the_lost_sword_tomb", "minecraft:is_jungle", "surface_structures", "beard_thin", 0, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 41827365, 1));
         //STRUCTURES.add(new StructureGenerationConfig("pasterdream:desert_fortress", "pasterdream:can_desert_fortress_spawn_biome", "surface_structures", "beard_thin", -31, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 83920174, 1));
 
-        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dream_church_0", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 35795416, 1));
-        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dream_church_2", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 64595175, 1));
-        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dream_church_4", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 13271459, 1));
-        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dream_church_6", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 34549862, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_church_0", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 35795416, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_church_2", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 64595175, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_church_4", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 13271459, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_church_6", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 34549862, 1));
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:crystal_ball", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 62594864, 1));
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:garden_decryption_misty_dreaming_lotus", "pasterdream:dyedream_world_biome", "surface_structures", "beard_thin", -4, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 26, 13, 93746251, 1));
 
