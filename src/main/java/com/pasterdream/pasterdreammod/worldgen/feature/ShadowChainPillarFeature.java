@@ -1,8 +1,10 @@
 package com.pasterdream.pasterdreammod.worldgen.feature;
 
 import com.mojang.serialization.Codec;
+import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
@@ -12,6 +14,7 @@ import net.minecraft.world.level.block.state.properties.WallSide;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -80,6 +83,18 @@ public class ShadowChainPillarFeature extends Feature<NoneFeatureConfiguration> 
             if (corrected != current) {
                 level.setBlock(p, corrected, Block.UPDATE_CLIENTS);
             }
+        }
+
+        // 20% 概率在顶端生成灯笼结构
+        if (random.nextFloat() < 0.2f) {
+            int topY = cy + units * 3;
+            ResourceLocation lanternId = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_light_lantern");
+            level.getLevel().getStructureManager().get(lanternId).ifPresent(template -> {
+                BlockPos lanternPos = new BlockPos(cx - 2, topY + 1, cz - 2);
+                template.placeInWorld(level, lanternPos, lanternPos,
+                        new StructurePlaceSettings().setRandom(random),
+                        random, Block.UPDATE_ALL);
+            });
         }
 
         return true;
