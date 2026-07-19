@@ -397,7 +397,7 @@ public class ModPlacedFeatures {
         // 阴影真菌树
         context.register(SHADOW_FUNGUS_TREE, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.SHADOW_FUNGUS_TREE),
-                List.of(CountPlacement.of(12), InSquarePlacement.spread(),
+                List.of(CountPlacement.of(8), InSquarePlacement.spread(),
                         SurfaceWaterDepthFilter.forMaxDepth(0),
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING),
                         ON_SHADOW_GROUND)));
