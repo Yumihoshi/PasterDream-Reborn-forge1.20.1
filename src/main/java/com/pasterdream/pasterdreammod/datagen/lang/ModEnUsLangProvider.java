@@ -1058,7 +1058,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("structure.pasterdream.dyedream_church_2", "Dream Church");
         add("structure.pasterdream.dyedream_church_4", "Dream Church");
         add("structure.pasterdream.dyedream_church_6", "Dream Church");
-        add("structure.pasterdream.crystal_ball", "Crystal Ball");
+        add("structure.pasterdream.dyedream_crystal_ball", "Dyedream Crystal Ball");
         add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "Garden Decryption: Misty Dreaming Lotus");
         add("structure.pasterdream.garden_decryption_nippy_edelweiss", "Garden Decryption: Nippy Edelweiss");
     }

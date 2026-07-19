@@ -1239,7 +1239,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("structure.pasterdream.dyedream_church_2", "染梦教堂");
         add("structure.pasterdream.dyedream_church_4", "染梦教堂");
         add("structure.pasterdream.dyedream_church_6", "染梦教堂");
-        add("structure.pasterdream.crystal_ball", "水晶球");
+        add("structure.pasterdream.dyedream_crystal_ball", "染梦水晶球");
         add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "花园解密·迷梦冶梦莲");
         add("structure.pasterdream.garden_decryption_nippy_edelweiss", "花园解密·凌冽雪绒花");
     }
