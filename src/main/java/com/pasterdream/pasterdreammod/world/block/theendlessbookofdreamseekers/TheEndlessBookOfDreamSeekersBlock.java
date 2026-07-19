@@ -1,9 +1,8 @@
 package com.pasterdream.pasterdreammod.world.block.theendlessbookofdreamseekers;
 
+import com.pasterdream.pasterdreammod.init.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -85,10 +84,8 @@ public class TheEndlessBookOfDreamSeekersBlock extends BaseEntityBlock
                     ItemStack stackInSlot = handler.getStackInSlot(0);
                     if (!stackInSlot.isEmpty())
                     {
-                        ItemStack copy = stackInSlot.copy();
-                        Block.popResource(level, blockPosition, copy);
                         theEndlessBookOfDreamSeekersBlockEntity.setAnimationState(1);
-                        level.playSound(null, blockPosition, SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1.0f, 1.0f);
+                        theEndlessBookOfDreamSeekersBlockEntity.triggerUseParticles(stackInSlot.copy());
                     }
                 });
             }
@@ -100,6 +97,8 @@ public class TheEndlessBookOfDreamSeekersBlock extends BaseEntityBlock
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> type)
     {
-        return null;
+        return type == ModBlockEntities.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get()
+            ? (level.isClientSide ? null : (lvl, pos, state, be) -> ((TheEndlessBookOfDreamSeekersBlockEntity) be).serverTick(lvl, pos))
+            : null;
     }
 }
