@@ -52,6 +52,11 @@ public class Config
             .comment("冶梦莲转化为迷梦冶梦莲时是否摧毁染梦书桌，默认 true")
             .define("destroyDeskOnDreamingLotusConversion", true);
 
+    // === 雪绒花转化 ===
+    private static final ForgeConfigSpec.BooleanValue DESTROY_DESK_ON_EDELWEISS_CONVERSION = BUILDER
+            .comment("雪绒花转化为凌冽雪绒花时是否摧毁染梦书桌，默认 true")
+            .define("destroyDeskOnEdelweissConversion", true);
+
     // ===『天丛云』草薙 ===
     private static final ForgeConfigSpec.IntValue NEED_KILL_ENEMY = BUILDER
             .comment("『天丛云』草薙升级需要的亡魂数量，默认200")
@@ -125,6 +130,9 @@ public class Config
     // === 冶梦莲转化 ===
     public static boolean destroyDeskOnDreamingLotusConversion;
 
+    // === 雪绒花转化 ===
+    public static boolean destroyDeskOnEdelweissConversion;
+
     // === 低 San 效果开关（可通过 /pasterdreamdebug lowsan 指令运行时切换） ===
     public static boolean lowSanOverlay = true;
     public static boolean lowSanJitter = true;
@@ -158,6 +166,7 @@ public class Config
         FoxFireLifetimeSeconds= FOX_FIRE_LIFETIME.get();
         TheNumberofKillEnemytoEvolve= NEED_KILL_ENEMY.get();
         destroyDeskOnDreamingLotusConversion = DESTROY_DESK_ON_DREAMING_LOTUS_CONVERSION.get();
+        destroyDeskOnEdelweissConversion = DESTROY_DESK_ON_EDELWEISS_CONVERSION.get();
         mintakeeffectduration= MIN_TAKE_EFFECT_DURATION.get();
         maxtakeeffectduration= MAX_TAKE_EFFECT_DURATION.get();
         maxlevel= MAX_LEVEL.get();

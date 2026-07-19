@@ -89,5 +89,8 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider
 
         tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "can_desert_fortress_spawn_biome")))
                 .addOptional(ResourceLocation.fromNamespaceAndPath("minecraft", "desert"));
+
+        tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "can_garden_decryption_nippy_edelweiss_spawn_biome")))
+                .addOptional(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_snowy_plains"));
     }
 }
