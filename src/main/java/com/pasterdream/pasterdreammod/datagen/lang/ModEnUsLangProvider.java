@@ -602,6 +602,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("biome.pasterdream.shadow_nylium_wastes","Shadow Nylium Wastes");
         add("biome.pasterdream.shadow_forest","Shadow Forest");
         add("biome.pasterdream.shadow_ruins","Shadow Ruins");
+        add("biome.pasterdream.shadow_ocean","Shadow Ocean");
 
         add("recipe.pasterdream.copy", "Copy");
         add("recipe.pasterdream.research", "Research");

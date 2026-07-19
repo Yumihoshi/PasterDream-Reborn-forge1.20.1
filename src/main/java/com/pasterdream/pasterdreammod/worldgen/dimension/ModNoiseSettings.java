@@ -88,11 +88,11 @@ public class ModNoiseSettings {
         context.register(LAMP_SHADOW_WORLD, new NoiseGeneratorSettings(
                 lampShadowOverworld.noiseSettings(),
                 ModBlocks.SHADOW_STONE.get().defaultBlockState(),   //默认方块：阴影石
-                lampShadowOverworld.defaultFluid(),                 //默认流体：水
+                ModBlocks.SHADOW_LIQUID.get().defaultBlockState(),   //默认流体：影液
                 lampShadowRouter,                                   //修改后的噪声路由
                 makeLampShadowSurfaceRules(),                       //灯影之下地表规则
                 lampShadowOverworld.spawnTarget(),
-                -64,//lampShadowOverworld.seaLevel(),       //海平面 63
+                63,//lampShadowOverworld.seaLevel(),       //海平面
                 false,                                              //启用怪物生成
                 false,                                              //禁用含水层
                 false,                                              //禁用矿脉
@@ -177,7 +177,7 @@ public class ModNoiseSettings {
                 ),
                 // 全部灯影群系：地表统一 shadow_nylium / 水下 shadow_stone，下层 shadow_stone（群系通过地物区分）
                 SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(ModBiomes.SHADOW_NYLIUM_WASTES, ModBiomes.SHADOW_FOREST, ModBiomes.SHADOW_RUINS),
+                        SurfaceRules.isBiome(ModBiomes.SHADOW_NYLIUM_WASTES, ModBiomes.SHADOW_FOREST, ModBiomes.SHADOW_RUINS, ModBiomes.SHADOW_OCEAN),
                         SurfaceRules.ifTrue(
                                 SurfaceRules.abovePreliminarySurface(),
                                 SurfaceRules.sequence(

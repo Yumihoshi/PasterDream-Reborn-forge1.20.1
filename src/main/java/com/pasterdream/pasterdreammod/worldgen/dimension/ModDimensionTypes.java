@@ -59,7 +59,7 @@ public class ModDimensionTypes {
                 384,                        // 逻辑高度
                 BlockTags.INFINIBURN_OVERWORLD,
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "lamp_shadow_world"),
-                0f,                      // 环境光照
+                0.15f,                      // 环境光照
                 new DimensionType.MonsterSettings(
                         true,               // 猪灵安全
                         false,              // 禁止袭击

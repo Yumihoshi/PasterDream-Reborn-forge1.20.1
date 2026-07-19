@@ -148,16 +148,30 @@ public class ModLevelStems {
         Holder<Biome> shadowNyliumWastes = biomes.getOrThrow(ModBiomes.SHADOW_NYLIUM_WASTES);
         Holder<Biome> shadowForest = biomes.getOrThrow(ModBiomes.SHADOW_FOREST);
         Holder<Biome> shadowRuins = biomes.getOrThrow(ModBiomes.SHADOW_RUINS);
+        Holder<Biome> shadowOcean = biomes.getOrThrow(ModBiomes.SHADOW_OCEAN);
         Holder<DimensionType> lampShadowDimType = dimensionTypes.getOrThrow(ModDimensionTypes.LAMP_SHADOW_WORLD);
         Holder<NoiseGeneratorSettings> lampShadowNoise = noiseSettings.getOrThrow(ModNoiseSettings.LAMP_SHADOW_WORLD);
 
         Climate.ParameterList<Holder<Biome>> lampShadowBiomeParams = new Climate.ParameterList<>(List.<Pair<Climate.ParameterPoint, Holder<Biome>>>of(
-                // shadow_ruins（阴影古迹）：寒冷干燥 T[-2, 0] H[-2, 0]，约25%
+                // shadow_ocean（阴影之海）：全温度/湿度，C[-2, -0.19]海洋大陆性，约占25%
+                Pair.of(
+                        new Climate.ParameterPoint(
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, -0.19F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-2F, 2F),
+                                0L
+                        ),
+                        shadowOcean
+                ),
+                // shadow_ruins（阴影古迹）：寒冷干燥 T[-2, 0] H[-2, 0] C[-0.19, 2]，约占18.75%
                 Pair.of(
                         new Climate.ParameterPoint(
                                 Climate.Parameter.span(-2F, 0F),
                                 Climate.Parameter.span(-2F, 0F),
-                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-0.19F, 2F),
                                 Climate.Parameter.span(-2F, 2F),
                                 Climate.Parameter.span(-2F, 2F),
                                 Climate.Parameter.span(-2F, 2F),
@@ -165,12 +179,12 @@ public class ModLevelStems {
                         ),
                         shadowRuins
                 ),
-                // shadow_forest（阴影森林）：寒冷潮湿 T[-2, 0] H[0, 2]，约25%
+                // shadow_forest（阴影森林）：寒冷潮湿 T[-2, 0] H[0, 2] C[-0.19, 2]，约占18.75%
                 Pair.of(
                         new Climate.ParameterPoint(
                                 Climate.Parameter.span(-2F, 0F),
                                 Climate.Parameter.span(0F, 2F),
-                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-0.19F, 2F),
                                 Climate.Parameter.span(-2F, 2F),
                                 Climate.Parameter.span(-2F, 2F),
                                 Climate.Parameter.span(-2F, 2F),
@@ -178,12 +192,12 @@ public class ModLevelStems {
                         ),
                         shadowForest
                 ),
-                // shadow_nylium_wastes（菌索荒原）：温暖 T[0, 2]，约50%
+                // shadow_nylium_wastes（菌索荒原）：温暖 T[0, 2] H[-2, 2] C[-0.19, 2]，约占37.5%
                 Pair.of(
                         new Climate.ParameterPoint(
                                 Climate.Parameter.span(0F, 2F),
                                 Climate.Parameter.span(-2F, 2F),
-                                Climate.Parameter.span(-2F, 2F),
+                                Climate.Parameter.span(-0.19F, 2F),
                                 Climate.Parameter.span(-2F, 2F),
                                 Climate.Parameter.span(-2F, 2F),
                                 Climate.Parameter.span(-2F, 2F),

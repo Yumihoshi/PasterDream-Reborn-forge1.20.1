@@ -48,6 +48,9 @@ public class ModBiomes {
     public static final ResourceKey<Biome> SHADOW_RUINS =
             ResourceKey.create(Registries.BIOME,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_ruins"));
+    public static final ResourceKey<Biome> SHADOW_OCEAN =
+            ResourceKey.create(Registries.BIOME,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_ocean"));
 
     private static final ResourceKey<SoundEvent> SWEET_DREAM_MUSIC_KEY =
             ResourceKey.create(Registries.SOUND_EVENT,
@@ -85,6 +88,7 @@ public class ModBiomes {
         context.register(SHADOW_NYLIUM_WASTES, shadowNyliumWastes(placedFeatures, carvers));
         context.register(SHADOW_FOREST, shadowForest(placedFeatures, carvers));
         context.register(SHADOW_RUINS, shadowRuins(placedFeatures, carvers));
+        context.register(SHADOW_OCEAN, shadowOcean(placedFeatures, carvers));
     }
 
     // ==================== 共享辅助方法 ====================
@@ -345,8 +349,8 @@ public class ModBiomes {
         return new BiomeSpecialEffects.Builder()
                 .skyColor(0x000000)
                 .fogColor(0x000000)
-                .waterColor(0x000000)
-                .waterFogColor(0x000000);
+                .waterColor(0x404040)
+                .waterFogColor(0x202020);
     }
 
     /** 灯影群系共享：洞穴 + 峡谷 */
@@ -429,6 +433,21 @@ public class ModBiomes {
                 .hasPrecipitation(true)
                 .temperature(0.5f)
                 .downfall(0.4f)
+                .temperatureAdjustment(Biome.TemperatureModifier.NONE)
+                .specialEffects(shadowEffects().build())
+                .mobSpawnSettings(MobSpawnSettings.EMPTY)
+                .generationSettings(gen.build())
+                .build();
+    }
+
+    private static Biome shadowOcean(HolderGetter<PlacedFeature> placedFeatures,
+                                      HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        addShadowLandFeatures(gen);
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(0.5f)
+                .downfall(0.5f)
                 .temperatureAdjustment(Biome.TemperatureModifier.NONE)
                 .specialEffects(shadowEffects().build())
                 .mobSpawnSettings(MobSpawnSettings.EMPTY)

@@ -7,6 +7,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -23,6 +24,10 @@ public class ModFluidTagsProvider extends FluidTagsProvider
     @Override
     protected void addTags(HolderLookup.Provider provider)
     {
+        tag(FluidTags.WATER)
+                .add(ModFluids.SHADOW_LIQUID.get())
+                .add(ModFluids.FLOWING_SHADOW_LIQUID.get());
+
         tag(TagKey.create(BuiltInRegistries.FLUID.key(), ResourceLocation.fromNamespaceAndPath("forge", "tea")))
                 .add(ModFluids.DYEDREAM_FLOWER_TEA.get())
                 .add(ModFluids.GOLDENROD_TEA.get())
