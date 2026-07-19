@@ -428,7 +428,7 @@ public class ProphecyCardItem extends Item {
         return (level, player, hand, stack) -> {
             if (!level.isClientSide()) {
                 // 服务端：给予 120 秒圣杯
-                player.addEffect(new MobEffectInstance(ModEffects.HOLY_GRAIL_BUFF.get(), 120 * 20, 2));
+                player.addEffect(new MobEffectInstance(ModEffects.HOLY_GRAIL_BUFF.get(), 120 * 20, 0));
                 // 音效
                 level.playSound(null, player.getX(), player.getY(), player.getZ(),
                         ModSounds.EVASION.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
