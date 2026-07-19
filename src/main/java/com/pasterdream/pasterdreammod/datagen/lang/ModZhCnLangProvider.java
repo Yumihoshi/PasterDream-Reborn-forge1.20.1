@@ -1228,5 +1228,18 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
 
         add("message.pasterdream.prophecy_card.invalid", "§c预言卡数据异常（%s），右键无效！");
+
+        // 结构翻译键
+        add("structure.pasterdream.oak_fisherman_hut", "橡木渔夫小屋");
+        add("structure.pasterdream.spruce_fisherman_hut", "云杉渔夫小屋");
+        add("structure.pasterdream.dyedream_crack", "染梦裂隙");
+        add("structure.pasterdream.campsite_overworld", "主世界营地");
+        add("structure.pasterdream.the_lost_sword_tomb", "失落剑冢");
+        add("structure.pasterdream.dream_church_0", "梦境教堂");
+        add("structure.pasterdream.dream_church_2", "梦境教堂");
+        add("structure.pasterdream.dream_church_4", "梦境教堂");
+        add("structure.pasterdream.dream_church_6", "梦境教堂");
+        add("structure.pasterdream.crystal_ball", "水晶球");
+        add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "花园解密·迷梦冶梦莲");
     }
 }
