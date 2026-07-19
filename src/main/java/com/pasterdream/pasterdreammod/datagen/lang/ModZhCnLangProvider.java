@@ -608,6 +608,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("biome.pasterdream.shadow_nylium_wastes","菌索荒原");
         add("biome.pasterdream.shadow_forest","阴影森林");
         add("biome.pasterdream.shadow_ruins","阴影古迹");
+        add("biome.pasterdream.shadow_ocean","阴影之海");
 
         add("recipe.pasterdream.copy", "复制");
         add("recipe.pasterdream.research", "研究");
