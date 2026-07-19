@@ -20,11 +20,12 @@ public class ShadowNyliumBlock extends Block {
             level.setBlockAndUpdate(pos, ModBlocks.SHADOW_STONE.get().defaultBlockState());
             return;
         }
+        RandomSource localRandom = RandomSource.create();
         for (int i = 0; i < 4; i++) {
             BlockPos targetPos = pos.offset(
-                    random.nextInt(3) - 1,
-                    random.nextInt(5) - 3,
-                    random.nextInt(3) - 1);
+                    localRandom.nextInt(3) - 1,
+                    localRandom.nextInt(5) - 3,
+                    localRandom.nextInt(3) - 1);
             BlockState targetState = level.getBlockState(targetPos);
             if (targetState.is(ModBlocks.SHADOW_STONE.get()) && canSpreadTo(level, targetPos)) {
                 level.setBlockAndUpdate(targetPos, this.defaultBlockState());
