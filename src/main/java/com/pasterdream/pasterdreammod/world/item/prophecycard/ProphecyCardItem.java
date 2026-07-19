@@ -426,7 +426,19 @@ public class ProphecyCardItem extends Item {
 
     private static ProphecyCardEffect holygrailEffect() {
         return (level, player, hand, stack) -> {
-            // TODO: 圣杯卡效果
+            if (!level.isClientSide()) {
+                // 服务端：给予 120 秒圣杯
+                player.addEffect(new MobEffectInstance(ModEffects.HOLY_GRAIL_BUFF.get(), 120 * 20, 2));
+                // 音效
+                level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                        ModSounds.EVASION.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                // 消耗
+                if (!player.getAbilities().instabuild) {
+                    stack.shrink(1);
+                }
+            } else {
+                showTotemEffect(stack);
+            }
             return InteractionResultHolder.success(stack);
         };
     }
