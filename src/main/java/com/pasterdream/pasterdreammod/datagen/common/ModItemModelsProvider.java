@@ -405,6 +405,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
         withExistingParent(ModItems.RUST_BLACK_METAL_BARS.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/rust_black_metal_bars"));
 
+        basicItem(ModItems.NIGHTMARE_FUEL.get());
+
+        withExistingParent(ModItems.SHADOW_CANDLE.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("item/shadow_candle"));
+
         // 刷怪蛋
         spawnEggItem(ModItems.PINK_CHICKEN_SPAWN_EGG);
         spawnEggItem(ModItems.PINK_SLIME_SPAWN_EGG);

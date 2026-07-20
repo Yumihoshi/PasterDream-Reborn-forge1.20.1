@@ -205,6 +205,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SHADOW_NYLIUM = BLOCKS.register("shadow_nylium", () -> new ShadowNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.NYLIUM).strength(0.4f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SHADOW_LIGHT = BLOCKS.register("shadow_light", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.HAT).sound(SoundType.GLASS).strength(1f, 0.5f).lightLevel(s -> 15).requiresCorrectToolForDrops().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)));
     public static final RegistryObject<Block> SHADOW_SHROOMLIGHT = BLOCKS.register("shadow_shroomlight", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).ignitedByLava().sound(SoundType.SHROOMLIGHT).strength(1f).lightLevel(s -> 12)));
+    public static final RegistryObject<Block> SHADOW_CANDLE = BLOCKS.register("shadow_candle", ShadowCandleBlock::new);
     // ===== 阴影植物系列 =====
     public static final RegistryObject<Block> SHADOW_SHORT_ROOTS = BLOCKS.register("shadow_short_roots",
             () -> new ShadowPlantBlock(BlockBehaviour.Properties.of()

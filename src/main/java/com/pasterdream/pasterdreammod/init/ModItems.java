@@ -196,6 +196,9 @@ public class ModItems {
     public static final RegistryObject<Item> BLACK_STICK = ITEMS.register("black_stick",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> NIGHTMARE_FUEL = ITEMS.register("nightmare_fuel",
+            NightmareFuelItem::new);
+
     public static final RegistryObject<Item> PALE_BONENEEDLE = ITEMS.register("pale_boneneedle",
             PaleBoneneedleItem::new);
     public static final RegistryObject<Item> ROOTS_PALE_BONENEEDLE = ITEMS.register("roots_pale_boneneedle",
@@ -1081,6 +1084,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.SHADOW_LIGHT.get(), new Item.Properties()));
     public static final RegistryObject<Item> SHADOW_SHROOMLIGHT = ITEMS.register("shadow_shroomlight",
             () -> new BlockItem(ModBlocks.SHADOW_SHROOMLIGHT.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SHADOW_CANDLE = ITEMS.register("shadow_candle",
+            () -> new BlockItem(ModBlocks.SHADOW_CANDLE.get(), new Item.Properties()));
     // ===== 阴影巨型菌系列 =====
     public static final RegistryObject<Item> SHADOW_WART_BLOCK = ITEMS.register("shadow_wart_block",
             () -> new BlockItem(ModBlocks.SHADOW_WART_BLOCK.get(), new Item.Properties()));

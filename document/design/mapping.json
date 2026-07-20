@@ -191,7 +191,8 @@
     "shadowshelf_0": "shadow_bookshelf",
     "shadowshelf_1": "worn_shadow_bookshelf",
     "shadowshelf_2": "cobweb_shadow_bookshelf",
-    "shadowshelf_3": "key_shadow_bookshelf"
+    "shadowshelf_3": "key_shadow_bookshelf",
+    "shadowcandle": "shadow_candle"
   },
   "items": {
     "amber_candy": "amber_candy",
@@ -314,7 +315,7 @@
     "enhance_stone_1": "luck_enhance_stone",
     "thermal_dagger": "thermal_dagger",
     "deep_treasure_0": "deep_sea_treasure",
-    "deep_treasure_1": "dyedream_deep_treasure",
+    "deep_treasure_1": "dyedream_deep_sea_treasure",
     "copper_sword": "copper_sword",
     "copper_pickaxe": "copper_pickaxe",
     "copper_axe": "copper_axe",
@@ -450,6 +451,7 @@
     "rust_black_metal_grain": "rust_black_metal_grain",
     "blackmetal_ingot": "black_metal_ingot",
     "blackmetal_grain": "black_metal_grain",
+    "nightmare_fuel": "nightmare_fuel",
     "shadow_dungeon_key": "shadow_dungeon_key"
   },
   "entities": {

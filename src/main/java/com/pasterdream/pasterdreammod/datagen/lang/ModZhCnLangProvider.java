@@ -134,6 +134,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.COTTON.get(), "棉花");
         add(ModItems.SCULK_HEART.get(), "回响之心");
         add(ModItems.BLACK_STICK.get(), "黑石棍");
+        add(ModItems.NIGHTMARE_FUEL.get(), "噩梦燃料");
+        add("tooltip.pasterdreammod.nightmare_fuel", "§7傻子和疯子使用的邪恶残渣");
         add(ModItems.SPOOL.get(), "线轴");
         add(ModItems.FABRIC.get(), "纺织布料");
         add(ModItems.PROTECT_DECK.get(), "护甲板");
@@ -320,6 +322,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_NYLIUM.get(), "阴影菌岩");
         add(ModBlocks.SHADOW_LIGHT.get(), "影灯");
         add(ModBlocks.SHADOW_SHROOMLIGHT.get(), "阴影菌光体");
+        add(ModBlocks.SHADOW_CANDLE.get(), "阴影蜡烛");
         add(ModBlocks.SHADOW_WART_BLOCK.get(), "阴影疣块");
         add(ModBlocks.SHADOW_STEM.get(), "阴影菌柄");
         add(ModBlocks.SHADOW_HYPHAE.get(), "阴影菌核");

@@ -96,7 +96,7 @@ public class ModNoiseSettings {
                 false,                                              //启用怪物生成
                 false,                                              //禁用含水层
                 false,                                              //禁用矿脉
-                false
+                lampShadowOverworld.useLegacyRandomSource()
         ));
 
     }

@@ -163,6 +163,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BLACK_METAL_INGOT.get());
                         output.accept(ModItems.BLACK_METAL_GRAIN.get());
                         output.accept(ModItems.RUST_BLACK_METAL_GRAIN.get());
+                        output.accept(ModItems.NIGHTMARE_FUEL.get());
                         output.accept(ModItems.SHADOW_DUNGEON_KEY.get());
                         output.accept(ModItems.PALE_BONENEEDLE.get());
                         output.accept(ModItems.ROOTS_PALE_BONENEEDLE.get());
@@ -427,6 +428,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHADOW_NYLIUM.get());
                         output.accept(ModItems.SHADOW_LIGHT.get());
                         output.accept(ModItems.SHADOW_SHROOMLIGHT.get());
+                        output.accept(ModItems.SHADOW_CANDLE.get());
                         output.accept(ModItems.SHADOW_WART_BLOCK.get());
                         output.accept(ModItems.SHADOW_STEM.get());
                         output.accept(ModItems.SHADOW_HYPHAE.get());
