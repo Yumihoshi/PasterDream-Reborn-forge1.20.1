@@ -26,6 +26,7 @@ public class ModStructureConfig
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:garden_decryption_misty_dreaming_lotus", "pasterdream:dyedream_world_biome", "surface_structures", "beard_thin", -4, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 26, 13, 93746251, 1));
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:garden_decryption_nine_tailed_fox", "pasterdream:dyedream_world_biome", "surface_structures", "beard_thin", 40, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 26, 13, 28461573, 1));
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:garden_decryption_nippy_edelweiss", "pasterdream:can_garden_decryption_nippy_edelweiss_spawn_biome", "surface_structures", "beard_thin", -4, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 18, 7, 1889395022, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:traveler_house", "pasterdream:dyedream_world_biome", "surface_structures", "none", 0, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 84729165, 1));
 
         return STRUCTURES;
     }
