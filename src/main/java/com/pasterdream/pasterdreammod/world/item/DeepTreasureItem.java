@@ -23,11 +23,17 @@ import java.util.List;
 public class DeepTreasureItem extends Item {
     private final String normalLootTable;
     private final String superLootTable;
+    private final String tooltipKey;
 
     public DeepTreasureItem(Properties properties, String normalLootTable, String superLootTable) {
+        this(properties, normalLootTable, superLootTable, "tooltip.pasterdream.deep_treasure");
+    }
+
+    public DeepTreasureItem(Properties properties, String normalLootTable, String superLootTable, String tooltipKey) {
         super(properties);
         this.normalLootTable = normalLootTable;
         this.superLootTable = superLootTable;
+        this.tooltipKey = tooltipKey;
     }
 
     public static ItemStack createSuper(Item item) {
@@ -44,7 +50,7 @@ public class DeepTreasureItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
-        tooltip.add(Component.translatable("tooltip.pasterdream.deep_treasure"));
+        tooltip.add(Component.translatable(tooltipKey));
     }
 
     @Override

@@ -232,7 +232,8 @@ public class ModItems {
     public static final RegistryObject<Item> SHADOW_DEEP_SEA_TREASURE = ITEMS.register("shadow_deep_sea_treasure",
             () -> new DeepTreasureItem(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON),
                     "pasterdream:chests/shadow_deep_sea_treasure",
-                    "pasterdream:chests/shadow_deep_sea_treasure_super"));
+                    "pasterdream:chests/shadow_deep_sea_treasure_super",
+                    "tooltip.pasterdream.shadow_deep_treasure"));
 
     // ===== 星者祈愿钓竿 =====
     public static final RegistryObject<Item> STAR_WISH_ROD = ITEMS.register("star_wish_rod",

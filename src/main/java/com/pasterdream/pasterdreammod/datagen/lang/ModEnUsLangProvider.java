@@ -470,6 +470,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.thermal_dagger.swim", "§7▪ §9+0.5 Swim Speed when in main hand");
         add("tooltip.pasterdream.thermal_dagger", "§7§o-- Subnautica");
         add("tooltip.pasterdream.deep_treasure", "§7Splashing waves push us into the distance");
+        add("tooltip.pasterdream.shadow_deep_treasure", "§7Shadows still seem to flow across its surface");
         add("tooltip.pasterdream.attack_enhance_stone.effect", "§7▪ §9Attack Damage +0.1~+0.5");
         add("tooltip.pasterdream.luck_enhance_stone.effect", "§7▪ §9Luck +1~+2");
         add("tooltip.pasterdream.右键打开GUI", "§7Press right mouse button to open GUI");
