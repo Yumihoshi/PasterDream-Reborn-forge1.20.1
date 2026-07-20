@@ -266,6 +266,8 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                             ModItems.DEEP_SEA_TREASURE.get()))
                     .addCriterion("has_dyedream_deep_sea_treasure", InventoryChangeTrigger.TriggerInstance.hasItems(
                             ModItems.DYEDREAM_DEEP_SEA_TREASURE.get()))
+                    .addCriterion("has_shadow_deep_sea_treasure", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.SHADOW_DEEP_SEA_TREASURE.get()))
                     .requirements(RequirementsStrategy.OR)
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "husbandry/get_deep_sea_treasure"), existingFileHelper);
@@ -292,6 +294,11 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("has_super_dyedream_deep_sea_treasure", InventoryChangeTrigger.TriggerInstance.hasItems(
                             ItemPredicate.Builder.item()
                                     .of(ModItems.DYEDREAM_DEEP_SEA_TREASURE.get())
+                                    .hasNbt(superNbt)
+                                    .build()))
+                    .addCriterion("has_super_shadow_deep_sea_treasure", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ItemPredicate.Builder.item()
+                                    .of(ModItems.SHADOW_DEEP_SEA_TREASURE.get())
                                     .hasNbt(superNbt)
                                     .build()))
                     .requirements(RequirementsStrategy.OR)

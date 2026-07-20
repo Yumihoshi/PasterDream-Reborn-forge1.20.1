@@ -142,6 +142,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.DYEDREAM_UPGRADE.get(), "染梦升级套件");
         add(ModItems.DEEP_SEA_TREASURE.get(), "深海秘宝");
         add(ModItems.DYEDREAM_DEEP_SEA_TREASURE.get(), "染梦深海秘宝");
+        add(ModItems.SHADOW_DEEP_SEA_TREASURE.get(), "浸影深海秘宝");
         add(ModItems.ATTACK_ENHANCE_STONE.get(), "攻击强化石");
         add(ModItems.LUCK_ENHANCE_STONE.get(), "幸运强化石");
         add(ModItems.COPPER_SWORD.get(), "铜剑");

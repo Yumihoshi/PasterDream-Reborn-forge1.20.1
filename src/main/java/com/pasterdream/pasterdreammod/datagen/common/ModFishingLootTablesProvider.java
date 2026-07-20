@@ -72,6 +72,20 @@ public class ModFishingLootTablesProvider implements LootTableSubProvider {
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/dyedream_deep_sea_treasure"),
                 dyedreamDeepSea
         );
+
+        // 浸影深海秘宝 —— 浸影维度 1 个海洋群系
+        ResourceKey<Level> SHADOW_WORLD =
+                ResourceKey.create(Registries.DIMENSION,
+                        ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "lamp_shadow_world"));
+        LootTable.Builder shadowDeepSea = LootTable.lootTable();
+        ResourceKey<Biome> shadowOceanKey = ResourceKey.create(Registries.BIOME,
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_ocean"));
+        shadowDeepSea.withPool(basePool(ModItems.SHADOW_DEEP_SEA_TREASURE.get(), SHADOW_WORLD, shadowOceanKey));
+        shadowDeepSea.withPool(starRodPool(ModItems.SHADOW_DEEP_SEA_TREASURE.get(), SHADOW_WORLD, shadowOceanKey));
+        consumer.accept(
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/shadow_deep_sea_treasure"),
+                shadowDeepSea
+        );
     }
 
     /** 基础池：normal(30,0) + super(1,1)，super 比例随 luck 增长 */

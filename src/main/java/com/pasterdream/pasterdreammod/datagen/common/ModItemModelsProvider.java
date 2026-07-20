@@ -190,6 +190,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.LUCK_ENHANCE_STONE.get());
         basicItem(ModItems.DEEP_SEA_TREASURE.get());
         basicItem(ModItems.DYEDREAM_DEEP_SEA_TREASURE.get());
+        basicItem(ModItems.SHADOW_DEEP_SEA_TREASURE.get());
         basicItem(ModItems.DREAM_FERTILIZER.get());
         basicItem(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get());
         basicItem(ModItems.MELT_DREAM_AURORIAN_STEEL.get());
