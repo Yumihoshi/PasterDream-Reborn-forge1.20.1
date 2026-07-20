@@ -362,6 +362,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.UUZ_DOLL.get(), "娇小幼幼紫玩偶");
         add(ModBlocks.DYEDREAM_CRACK.get(), "染梦裂隙");
         add(ModBlocks.CLAYPAN.get(), "陶盆");
+        add(ModBlocks.CLAY_POT.get(), "陶罐");
         add(ModBlocks.DREAM_CAULDRON.get(), "法术工厂");
         add(ModBlocks.DYEDREAM_DESK.get(), "染梦书桌");
         add(ModBlocks.SHADOW_DESK.get(), "阴影书桌");

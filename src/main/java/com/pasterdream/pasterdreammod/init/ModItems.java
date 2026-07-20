@@ -902,6 +902,10 @@ public class ModItems {
     // ===== 饰品（胸饰） =====
     public static final RegistryObject<Item> KAICHU_OMAMORI = ITEMS.register("kaichu_omamori",
             KaichuOmamoriItem::new);
+    // ===== 陶罐 =====
+    public static final RegistryObject<Item> CLAY_POT = ITEMS.register("clay_pot",
+            () -> new BlockItem(ModBlocks.CLAY_POT.get(), new Item.Properties()));
+
     // ===== 方块物品 =====
 
     public static final RegistryObject<Item> DYEDREAM_DIRT = ITEMS.register("dyedream_dirt",
