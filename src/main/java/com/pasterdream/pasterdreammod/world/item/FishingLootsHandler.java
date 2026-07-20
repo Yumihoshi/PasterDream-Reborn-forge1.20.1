@@ -11,6 +11,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -29,6 +30,8 @@ public class FishingLootsHandler {
             ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/dyedream_deep_sea_treasure");
     public static final ResourceLocation SHADOW_DEEP_SEA_TREASURE =
             ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/shadow_deep_sea_treasure");
+    public static final ResourceLocation SHADOW_JUNK =
+            ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/shadow_junk");
 
     private static final ResourceKey<Level> DYEDREAM_WORLD =
             ResourceKey.create(Registries.DIMENSION,
@@ -77,17 +80,19 @@ public class FishingLootsHandler {
                         .setRolls(ConstantValue.exactly(1.0F))
                         .when(LocationCheck.checkLocation(
                                 LocationPredicate.Builder.location().setDimension(LAMP_SHADOW_WORLD)))
-                        .add(LootTableReference.lootTableReference(BuiltInLootTables.FISHING_JUNK)
+                        .add(LootTableReference.lootTableReference(SHADOW_JUNK)
                                 .setWeight(1)))
-                // 浸影维度·秘宝池 — 仅在阴影之海触发
+                // 浸影维度·秘宝池 — 仅在阴影之海触发，~10% 概率出秘宝
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .when(LocationCheck.checkLocation(
                                 LocationPredicate.Builder.location()
                                         .setDimension(LAMP_SHADOW_WORLD)
                                         .setBiome(SHADOW_OCEAN)))
+                        .add(EmptyLootItem.emptyItem()
+                                .setWeight(90))
                         .add(LootTableReference.lootTableReference(SHADOW_DEEP_SEA_TREASURE)
-                                .setWeight(1)))
+                                .setWeight(10).setQuality(2)))
                 .build());
         LOGGER.info("[FishingLoots] Replaced fishing loot table with dimension-aware pools");
     }

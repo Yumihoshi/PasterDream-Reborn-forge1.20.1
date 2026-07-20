@@ -23,6 +23,8 @@ public class StarWishRodItem extends FishingRodItem {
 
     /** Lure 加成：竿自带 +2 lure speed，搭配原版 Lure III 可达 Lure V 上限 */
     private static final int LURE_SPEED_BONUS = 2;
+    /** Luck 加成：竿自带海之眷顾 II，搭配原版 Luck III 可达 Luck V */
+    private static final int LUCK_BONUS = 2;
 
     public StarWishRodItem() {
         super(new Properties().durability(1024).fireResistant().rarity(Rarity.UNCOMMON));
@@ -55,8 +57,8 @@ public class StarWishRodItem extends FishingRodItem {
                     SoundEvents.FISHING_BOBBER_THROW, SoundSource.NEUTRAL, 0.5F,
                     0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
             if (!level.isClientSide) {
-                int lureSpeed = EnchantmentHelper.getFishingSpeedBonus(itemstack) + LURE_SPEED_BONUS;
-                int luck = EnchantmentHelper.getFishingLuckBonus(itemstack);
+                int lureSpeed = Math.min(5, EnchantmentHelper.getFishingSpeedBonus(itemstack) + LURE_SPEED_BONUS);
+                int luck = EnchantmentHelper.getFishingLuckBonus(itemstack) + LUCK_BONUS;
                 level.addFreshEntity(new FishingHook(player, level, luck, lureSpeed));
             }
             player.awardStat(Stats.ITEM_USED.get(this));
