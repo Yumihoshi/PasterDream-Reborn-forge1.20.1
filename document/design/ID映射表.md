@@ -209,6 +209,7 @@
 | `shadowshelf_1`                    | `worn_shadow_bookshelf`             | 重命名，语义化 ID                                    | 无需客制化类，直接用 `HorizontalDirectionalBlock`                                                                      |
 | `shadowshelf_2`                    | `cobweb_shadow_bookshelf`           | 重命名，语义化 ID                                    | 无需客制化类，直接用 `HorizontalDirectionalBlock`                                                                      |
 | `shadowshelf_3`                    | `key_shadow_bookshelf`              | 重命名，语义化 ID                                    | 客制化类 `KeyShadowBookshelfBlock`，覆写 `getDrops` 掉落 `shadow_dungeon_key`                                        |
+| `shadowcandle`                     | `shadow_candle`                     | 重命名，加下划线                                      | 客制化类 `ShadowCandleBlock`，蜡烛形状 + 发光13 + 每tick生成灵魂粒子                                                   |
 
 
 ---
@@ -337,7 +338,7 @@
 | `enhance_stone_1`              | `luck_enhance_stone`                        | 重命名，`enhance_stone_1` → `luck_enhance_stone`（幸运强化石）              | 无需客制化类，直接用 `Item`，tooltip 说明幸运加成                                                                         |
 | `thermal_dagger`               | `thermal_dagger`                            | 不改                                                               | 客制化类 `ThermalDaggerItem`，攻击时播放音效并生成气泡粒子，tooltip "深海迷航"                                                   |
 | `deep_treasure_0`              | `deep_sea_treasure`                         | 重命名，`deep_treasure_0` → `deep_sea_treasure`（深海秘宝）                | 客制化类 `DeepTreasureItem`，右键开启战利品表，NBT `deep_treasure_super` 区分超级变体                                        |
-| `deep_treasure_1`              | `dyedream_deep_treasure`                    | 重命名，`deep_treasure_1` → `dyedream_deep_treasure`（染梦深海秘宝）         | 客制化类 `DeepTreasureItem`，同上                                                                               |
+| `deep_treasure_1`              | `dyedream_deep_sea_treasure`                | 重命名，`deep_treasure_1` → `dyedream_deep_sea_treasure`（染梦深海秘宝）     | 客制化类 `DeepTreasureItem`，同上                                                                               |
 | `copper_sword`                 | `copper_sword`                              | 不改                                                               | 无需客制化类，直接用 `SwordItem`                                                                                   |
 | `copper_pickaxe`               | `copper_pickaxe`                            | 不改                                                               | 无需客制化类，直接用 `PickaxeItem`                                                                                 |
 | `copper_axe`                   | `copper_axe`                                | 不改                                                               | 无需客制化类，直接用 `AxeItem`                                                                                     |
@@ -473,6 +474,7 @@
 | `rust_black_metal_grain`      | `rust_black_metal_grain`                   | 不改                                                               | 无需客制化类，直接用 `Item`                                                                                        |
 | `blackmetal_ingot`            | `black_metal_ingot`                        | 重命名，`blackmetal` → `black_metal`                                | 无需客制化类，直接用 `Item`                                                                                        |
 | `blackmetal_grain`            | `black_metal_grain`                        | 重命名，`blackmetal` → `black_metal`                                | 无需客制化类，直接用 `Item`                                                                                        |
+| `nightmare_fuel`              | `nightmare_fuel`                            | 不改                                                               | 客制化类 `NightmareFuelItem`，tooltip "傻子和疯子使用的邪恶残渣"                                                        |
 | `shadow_dungeon_key`          | `shadow_dungeon_key`                       | 不改                                                               | 客制化类 `ShadowDungeonKeyItem`，stacksTo(1)，tooltip "用于打开暗影地牢下层的大门"                                   |
 
 ---

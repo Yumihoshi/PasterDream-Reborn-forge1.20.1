@@ -44,6 +44,7 @@ public class ClientSetRenderLayer
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DYEDREAM_LOTUS.get(), RenderType.cutout());
 
         // ===== 阴影植物系列 =====
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHADOW_CANDLE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHADOW_SHORT_ROOTS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHADOW_ROOTS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHADOW_STEM_FERN.get(), RenderType.cutout());

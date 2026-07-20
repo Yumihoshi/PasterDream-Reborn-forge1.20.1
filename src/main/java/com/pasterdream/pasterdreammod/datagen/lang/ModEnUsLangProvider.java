@@ -123,6 +123,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.COTTON.get(), "Cotton");
         add(ModItems.SCULK_HEART.get(), "Sculk Heart");
         add(ModItems.BLACK_STICK.get(), "Black Stick");
+        add(ModItems.NIGHTMARE_FUEL.get(), "Nightmare Fuel");
+        add("tooltip.pasterdreammod.nightmare_fuel", "§7This is the stuff of nightmares!");
         add(ModItems.RUST_BLACK_METAL_GRAIN.get(), "Rust Black Metal Grain");
         add(ModItems.BLACK_METAL_INGOT.get(), "Black Metal Ingot");
         add(ModItems.BLACK_METAL_GRAIN.get(), "Black Metal Grain");
@@ -306,6 +308,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_NYLIUM.get(), "Shadow Nylium");
         add(ModBlocks.SHADOW_LIGHT.get(), "Shadow Light");
         add(ModBlocks.SHADOW_SHROOMLIGHT.get(), "Shadow Shroomlight");
+        add(ModBlocks.SHADOW_CANDLE.get(), "Shadow Candle");
         add(ModBlocks.SHADOW_WART_BLOCK.get(), "Shadow Wart Block");
         add(ModBlocks.SHADOW_STEM.get(), "Shadow Stem");
         add(ModBlocks.SHADOW_HYPHAE.get(), "Shadow Hyphae");
@@ -470,6 +473,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.thermal_dagger.swim", "§7▪ §9+0.5 Swim Speed when in main hand");
         add("tooltip.pasterdream.thermal_dagger", "§7§o-- Subnautica");
         add("tooltip.pasterdream.deep_treasure", "§7Splashing waves push us into the distance");
+        add("tooltip.pasterdream.shadow_deep_treasure", "§7Shadows still seem to flow across its surface");
         add("tooltip.pasterdream.attack_enhance_stone.effect", "§7▪ §9Attack Damage +0.1~+0.5");
         add("tooltip.pasterdream.luck_enhance_stone.effect", "§7▪ §9Luck +1~+2");
         add("tooltip.pasterdream.右键打开GUI", "§7Press right mouse button to open GUI");

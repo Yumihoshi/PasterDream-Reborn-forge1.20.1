@@ -128,6 +128,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SHADOW_FISSURE_5.get())
                 .add(ModBlocks.SHADOW_NYLIUM.get())
                 .add(ModBlocks.SHADOW_LIGHT.get())
+                .add(ModBlocks.SHADOW_CANDLE.get())
                 .add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get());
 
         //整个树的结构（包含原木，木头，树叶，菌柄，菌核，菌疣）
