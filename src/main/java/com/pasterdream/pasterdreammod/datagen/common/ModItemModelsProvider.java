@@ -410,6 +410,9 @@ public class ModItemModelsProvider extends ItemModelProvider {
         withExistingParent(ModItems.SHADOW_CANDLE.getId().getPath(), mcLoc("item/generated"))
                 .texture("layer0", modLoc("item/shadow_candle"));
 
+        // 陶罐
+        withExistingParent(ModItems.CLAY_POT.getId().getPath(), modLoc("block/clay_pot"));
+
         // 刷怪蛋
         spawnEggItem(ModItems.PINK_CHICKEN_SPAWN_EGG);
         spawnEggItem(ModItems.PINK_SLIME_SPAWN_EGG);

@@ -56,5 +56,8 @@ public class ClientSetRenderLayer
 
         // ===== 失落剑冢 =====
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.LOST_SWORD_TOMB.get(), RenderType.cutout());
+
+        // ===== 陶罐 =====
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CLAY_POT.get(), RenderType.cutout());
     }
 }

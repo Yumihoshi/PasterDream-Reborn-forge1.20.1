@@ -348,6 +348,28 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.UUZ_DOLL.get());
         dropSelf(ModBlocks.DYEDREAM_CRACK.get());
         dropSelf(ModBlocks.CLAYPAN.get());
+        // 陶罐：精准采集掉落自身，否则从战利品池随机抽取
+        add(ModBlocks.CLAY_POT.get(), block -> LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModBlocks.CLAY_POT.get()).when(HAS_SILK_TOUCH)))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(ModItems.SOUL_DUST.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.TITANIUM_NUGGET.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.QUARTZ).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.SHADOW_CANDLE.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.INK_SAC).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.COBWEB).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.DIAMOND).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.EMERALD).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.SHADOW_FUNGUS.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.CHAIN).setWeight(1))
+                        .add(LootItem.lootTableItem(Items.COAL).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.MELT_DREAM_COIN.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.RUST_BLACK_METAL_GRAIN.get()).setWeight(1))
+                        .add(LootItem.lootTableItem(ModItems.BROKEN_NOTE.get()).setWeight(2))
+                        .when(HAS_SILK_TOUCH.invert())));
         dropSelf(ModBlocks.DREAM_CAULDRON.get());
         dropSelf(ModBlocks.DYEDREAM_DESK.get());
         dropSelf(ModBlocks.SHADOW_DESK.get());
