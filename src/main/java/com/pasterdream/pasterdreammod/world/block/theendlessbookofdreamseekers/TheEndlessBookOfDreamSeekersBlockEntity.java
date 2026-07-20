@@ -126,6 +126,12 @@ public class TheEndlessBookOfDreamSeekersBlockEntity extends BlockEntity impleme
         {
             return true;
         }
+
+        @Override
+        public ItemStack extractItem(int slot, int amount, boolean simulate)
+        {
+            return ItemStack.EMPTY;
+        }
     };
 
     private final LazyOptional<IItemHandler> itemHandlerCap = LazyOptional.of(() -> itemHandler);
