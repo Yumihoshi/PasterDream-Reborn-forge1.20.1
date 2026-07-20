@@ -14,12 +14,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetNbtFunction;
 import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.function.BiConsumer;
 
@@ -86,6 +89,36 @@ public class ModFishingLootTablesProvider implements LootTableSubProvider {
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/shadow_deep_sea_treasure"),
                 shadowDeepSea
         );
+
+        // 灯影之下·钓鱼垃圾池
+        consumer.accept(
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/shadow_junk"),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .add(LootItem.lootTableItem(Items.ROTTEN_FLESH).setWeight(10)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(Items.BONE).setWeight(10)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.STRING).setWeight(5)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.LEATHER).setWeight(10)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.STICK).setWeight(5)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.BOWL).setWeight(10)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(ModItems.SHADOW_ROOTS.get()).setWeight(5)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(ModItems.SHADOW_SPROUTS.get()).setWeight(5)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(ModItems.SHADOW_FERN.get()).setWeight(5)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(ModItems.SHADOW_NYLIUM.get()).setWeight(3)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.TRIPWIRE_HOOK).setWeight(10)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                        )
+        );
     }
 
     /** 基础池：normal(30,0) + super(1,1)，super 比例随 luck 增长 */
@@ -102,7 +135,7 @@ public class ModFishingLootTablesProvider implements LootTableSubProvider {
                         .apply(SetNbtFunction.setTag(superTag())));
     }
 
-    /** 星者祈愿池：仅手持 tag 内钓竿时生效，必出 super 变体 */
+    /** 占星者祈愿池：仅手持 tag 内钓竿时生效，必出 super 变体 */
     private static LootPool.Builder starRodPool(net.minecraft.world.item.Item item, ResourceKey<Level> dimension, ResourceKey<Biome> biome) {
         return LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(1.0F))
