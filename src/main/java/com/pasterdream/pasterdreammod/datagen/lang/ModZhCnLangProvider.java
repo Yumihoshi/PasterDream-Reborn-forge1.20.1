@@ -1252,5 +1252,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "花园解密·迷梦冶梦莲");
         add("structure.pasterdream.garden_decryption_nippy_edelweiss", "花园解密·凌冽雪绒花");
         add("structure.pasterdream.traveler_house", "旅者小屋");
+        add("structure.pasterdream.dyedream_pavilion_plain", "染梦凉亭");
+        add("structure.pasterdream.dyedream_pavilion_snowy_plain", "雪原染梦凉亭");
     }
 }
