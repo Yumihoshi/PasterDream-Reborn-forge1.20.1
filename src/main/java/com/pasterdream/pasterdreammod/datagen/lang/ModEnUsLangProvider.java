@@ -133,7 +133,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.SCULK_UPGRADE.get(), "Sculk Upgrade");
         add(ModItems.DYEDREAM_UPGRADE.get(), "Dyedream Upgrade");
         add(ModItems.DEEP_SEA_TREASURE.get(), "Deep Sea Treasure");
-        add(ModItems.DYEDREAM_DEEP_TREASURE.get(), "Dyedream Deep Treasure");
+        add(ModItems.DYEDREAM_DEEP_SEA_TREASURE.get(), "Dyedream Deep Treasure");
         add(ModItems.ATTACK_ENHANCE_STONE.get(), "Attack Enhance Stone");
         add(ModItems.LUCK_ENHANCE_STONE.get(), "Luck Enhance Stone");
         add(ModItems.COPPER_SWORD.get(), "Copper Sword");

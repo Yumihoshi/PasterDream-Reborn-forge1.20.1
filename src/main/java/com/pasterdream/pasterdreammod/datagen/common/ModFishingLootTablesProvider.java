@@ -65,11 +65,11 @@ public class ModFishingLootTablesProvider implements LootTableSubProvider {
         for (String biome : new String[]{"dyedream_frozen_ocean", "dyedream_ocean"}) {
             ResourceKey<Biome> biomeKey = ResourceKey.create(Registries.BIOME,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, biome));
-            dyedreamDeepSea.withPool(basePool(ModItems.DYEDREAM_DEEP_TREASURE.get(), DYEDREAM_WORLD, biomeKey));
-            dyedreamDeepSea.withPool(starRodPool(ModItems.DYEDREAM_DEEP_TREASURE.get(), DYEDREAM_WORLD, biomeKey));
+            dyedreamDeepSea.withPool(basePool(ModItems.DYEDREAM_DEEP_SEA_TREASURE.get(), DYEDREAM_WORLD, biomeKey));
+            dyedreamDeepSea.withPool(starRodPool(ModItems.DYEDREAM_DEEP_SEA_TREASURE.get(), DYEDREAM_WORLD, biomeKey));
         }
         consumer.accept(
-                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/dyedream_deep_treasure"),
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/dyedream_deep_sea_treasure"),
                 dyedreamDeepSea
         );
     }

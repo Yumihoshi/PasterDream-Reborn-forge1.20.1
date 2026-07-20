@@ -126,8 +126,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SOUL_DUST.get());
                         output.accept(ModItems.DEEP_SEA_TREASURE.get());
                         output.accept(DeepTreasureItem.createSuper(ModItems.DEEP_SEA_TREASURE.get()));
-                        output.accept(ModItems.DYEDREAM_DEEP_TREASURE.get());
-                        output.accept(DeepTreasureItem.createSuper(ModItems.DYEDREAM_DEEP_TREASURE.get()));
+                        output.accept(ModItems.DYEDREAM_DEEP_SEA_TREASURE.get());
+                        output.accept(DeepTreasureItem.createSuper(ModItems.DYEDREAM_DEEP_SEA_TREASURE.get()));
                         output.accept(ModItems.SOUL_ESSENCE.get());
                         output.accept(ModItems.MAGIC_STONE.get());
                         output.accept(ModItems.PINK_SLIMEBALL.get());

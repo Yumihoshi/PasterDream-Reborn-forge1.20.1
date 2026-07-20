@@ -158,9 +158,9 @@ public class ModDeepTreasureLootTablesProvider implements LootTableSubProvider {
                         )
         );
 
-        // ===== 染梦深海秘宝 (dyedream_deep_treasure) =====
+        // ===== 染梦深海秘宝 (dyedream_deep_sea_treasure) =====
         consumer.accept(
-                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "chests/dyedream_deep_treasure"),
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "chests/dyedream_deep_sea_treasure"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setBonusRolls(ConstantValue.exactly(0.1F))
@@ -225,9 +225,9 @@ public class ModDeepTreasureLootTablesProvider implements LootTableSubProvider {
                         )
         );
 
-        // ===== 染梦深海秘宝·超级 (dyedream_deep_treasure_super) =====
+        // ===== 染梦深海秘宝·超级 (dyedream_deep_sea_treasure_super) =====
         consumer.accept(
-                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "chests/dyedream_deep_treasure_super"),
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "chests/dyedream_deep_sea_treasure_super"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setBonusRolls(ConstantValue.exactly(0.1F))

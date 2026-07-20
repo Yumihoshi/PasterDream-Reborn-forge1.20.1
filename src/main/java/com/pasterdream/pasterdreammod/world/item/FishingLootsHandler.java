@@ -23,8 +23,8 @@ public class FishingLootsHandler {
 
     public static final ResourceLocation DEEP_SEA_TREASURE =
             ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/deep_sea_treasure");
-    public static final ResourceLocation DYEDREAM_DEEP_TREASURE =
-            ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/dyedream_deep_treasure");
+    public static final ResourceLocation DYEDREAM_DEEP_SEA_TREASURE =
+            ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "gameplay/fishing/dyedream_deep_sea_treasure");
 
     @SubscribeEvent
     public static void onLootTableLoad(LootTableLoadEvent event) {
@@ -34,7 +34,7 @@ public class FishingLootsHandler {
         if (pool == null) return;
 
         addEntry(pool, LootTableReference.lootTableReference(DEEP_SEA_TREASURE).setWeight(10).setQuality(2).build());
-        addEntry(pool, LootTableReference.lootTableReference(DYEDREAM_DEEP_TREASURE).setWeight(10).setQuality(2).build());
+        addEntry(pool, LootTableReference.lootTableReference(DYEDREAM_DEEP_SEA_TREASURE).setWeight(10).setQuality(2).build());
     }
 
     @SuppressWarnings("unchecked")
