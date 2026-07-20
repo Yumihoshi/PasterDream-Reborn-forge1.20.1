@@ -38,6 +38,8 @@ textures/item/prophecy_card_holy_grail.png
 textures/item/prophecy_card_sin.png
 textures/item/prophecy_card_sprint.png
 textures/item/prophecy_card_wielding_sword.png
+textures/item/deep_sea_treasure.png
+textures/item/dyedream_deep_sea_treasure.png
 ```
 
 ## 新增 / New
@@ -48,4 +50,5 @@ textures/item/prophecy_card_wielding_sword.png
 
 ```
 textures/item/seniors_dream_book.png
+textures/item/shadow_deep_sea_treasure.png
 ```

@@ -225,10 +225,14 @@ public class ModItems {
             () -> new DeepTreasureItem(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON),
                     "pasterdream:chests/deep_sea_treasure",
                     "pasterdream:chests/deep_sea_treasure_super"));
-    public static final RegistryObject<Item> DYEDREAM_DEEP_TREASURE = ITEMS.register("dyedream_deep_treasure",
+    public static final RegistryObject<Item> DYEDREAM_DEEP_SEA_TREASURE = ITEMS.register("dyedream_deep_sea_treasure",
             () -> new DeepTreasureItem(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON),
-                    "pasterdream:chests/dyedream_deep_treasure",
-                    "pasterdream:chests/dyedream_deep_treasure_super"));
+                    "pasterdream:chests/dyedream_deep_sea_treasure",
+                    "pasterdream:chests/dyedream_deep_sea_treasure_super"));
+    public static final RegistryObject<Item> SHADOW_DEEP_SEA_TREASURE = ITEMS.register("shadow_deep_sea_treasure",
+            () -> new DeepTreasureItem(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON),
+                    "pasterdream:chests/shadow_deep_sea_treasure",
+                    "pasterdream:chests/shadow_deep_sea_treasure_super"));
 
     // ===== 星者祈愿钓竿 =====
     public static final RegistryObject<Item> STAR_WISH_ROD = ITEMS.register("star_wish_rod",
