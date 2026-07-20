@@ -1070,5 +1070,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("structure.pasterdream.garden_decryption_nippy_edelweiss", "Garden Decryption: Nippy Edelweiss");
         add("structure.pasterdream.garden_decryption_nine_tailed_fox", "Garden Decryption: Nine-Tailed Fox");
         add("structure.pasterdream.traveler_house", "Traveler House");
+        add("structure.pasterdream.dyedream_pavilion_plain", "Dyedream Pavilion");
+        add("structure.pasterdream.dyedream_pavilion_snowy_plain", "Snowy Plain Dyedream Pavilion");
     }
 }
