@@ -473,6 +473,36 @@ public class ModBlockStateProvider extends BlockStateProvider {
         //流体方块
         simpleBlock(ModBlocks.MELTDREAM_LIQUID.get(), models().cubeAll(ModBlocks.MELTDREAM_LIQUID.getId().getPath(), modLoc("block/melt_dream_liquid_flowing")));
         simpleBlock(ModBlocks.SHADOW_LIQUID.get(), models().cubeAll(ModBlocks.SHADOW_LIQUID.getId().getPath(), modLoc("block/shadow_liquid_flowing")));
+
+        // ===== 盆栽植物 =====
+        for (var entry : ModBlocks.POTTED_PLANTS.entrySet()) {
+            var plant = entry.getKey();
+            var potted = entry.getValue();
+            boolean isCrop = ModBlocks.POTTED_CROPS.contains(potted);
+
+            if (isCrop) {
+                // 两阶段生长：age=0 (幼苗) 和 age=1 (成熟)
+                var plantName = plant.getId().getPath();
+                var seedlingTex = modLoc("block/" + plantName + "_age_0");
+                var matureTex = modLoc("block/" + plantName);
+
+                var seedlingModel = models().withExistingParent(potted.getId().getPath() + "_age_0", mcLoc("block/flower_pot_cross"))
+                        .texture("plant", seedlingTex).renderType("cutout");
+                var matureModel = models().withExistingParent(potted.getId().getPath(), mcLoc("block/flower_pot_cross"))
+                        .texture("plant", matureTex).renderType("cutout");
+
+                getVariantBuilder(potted.get())
+                        .partialState().with(net.minecraft.world.level.block.state.properties.BlockStateProperties.AGE_1, 0)
+                        .addModels(new ConfiguredModel(seedlingModel))
+                        .partialState().with(net.minecraft.world.level.block.state.properties.BlockStateProperties.AGE_1, 1)
+                        .addModels(new ConfiguredModel(matureModel));
+            } else {
+                var plantTex = modLoc("block/" + plant.getId().getPath());
+                var pottedModel = models().withExistingParent(potted.getId().getPath(), mcLoc("block/flower_pot_cross"))
+                        .texture("plant", plantTex).renderType("cutout");
+                simpleBlock(potted.get(), pottedModel);
+            }
+        }
     }
 
     private void simpleBuildingFamily(BuildingBlockFamily family) {

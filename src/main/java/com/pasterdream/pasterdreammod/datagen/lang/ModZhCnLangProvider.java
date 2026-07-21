@@ -426,6 +426,37 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_FERN.get(), "影蕨");
         add(ModBlocks.SHADOW_FUNGUS.get(), "阴影蘑菇");
 
+        add(ModBlocks.POTTED_STEM_GRASS.get(), "盆栽茎草");
+        add(ModBlocks.POTTED_PINK_MUSHROOM.get(), "盆栽粉顶菇");
+        add(ModBlocks.POTTED_DYEDREAM_MOSS.get(), "盆栽染梦苔藓");
+        add(ModBlocks.POTTED_LINHT_FLOWER.get(), "盆栽苓灯花");
+        add(ModBlocks.POTTED_DYEDREAM_LILY_OF_THE_VALLEY.get(), "盆栽染梦铃兰");
+        add(ModBlocks.POTTED_SINGULARITY_FERN.get(), "盆栽奇异蕨");
+        add(ModBlocks.POTTED_FERRARIA_CRISPA.get(), "盆栽魔星兰");
+        add(ModBlocks.POTTED_EUSTOMA.get(), "盆栽洋桔梗");
+        add(ModBlocks.POTTED_JUNGLE_SPORANGIUM.get(), "盆栽丛林孢子囊");
+        add(ModBlocks.POTTED_MALVA_SINENSIS_CAVAN.get(), "盆栽锦葵");
+        add(ModBlocks.POTTED_GOLDENROD.get(), "盆栽秋麒麟");
+        add(ModBlocks.POTTED_FOURLEAF_CLOVER.get(), "盆栽四叶草");
+        add(ModBlocks.POTTED_BLAZE_FLOWER.get(), "盆栽烈焰花");
+        add(ModBlocks.POTTED_WHITE_ORCHID_FLOWER.get(), "盆栽白厄花");
+        add(ModBlocks.POTTED_SHADOW_SHORT_ROOTS.get(), "盆栽阴影矮菌索");
+        add(ModBlocks.POTTED_SHADOW_ROOTS.get(), "盆栽阴影菌索");
+        add(ModBlocks.POTTED_SHADOW_SPROUTS.get(), "盆栽影苗");
+        add(ModBlocks.POTTED_SHADOW_FERN.get(), "盆栽影蕨");
+        add(ModBlocks.POTTED_SHADOW_FUNGUS.get(), "盆栽阴影蘑菇");
+        add(ModBlocks.POTTED_EDELWEISS.get(), "盆栽雪绒花");
+        add(ModBlocks.POTTED_NIPPY_EDELWEISS.get(), "盆栽凛冽雪绒花");
+        add(ModBlocks.POTTED_DYEDREAM_SAPLING.get(), "盆栽染梦树苗");
+        add(ModBlocks.POTTED_REED.get(), "盆栽芦苇");
+        add(ModBlocks.POTTED_RYE.get(), "盆栽兰麦");
+        add(ModBlocks.POTTED_OATS.get(), "盆栽洋麦");
+        add(ModBlocks.POTTED_DYEDREAM_COROLLA_CROP.get(), "盆栽梦染茶花");
+        add(ModBlocks.POTTED_WHITE_COROLLA_CROP.get(), "盆栽苍白雪莲");
+        add(ModBlocks.POTTED_LIGHT_BALL_CROP.get(), "盆栽流明堇");
+        add(ModBlocks.POTTED_CLOUD_CROP.get(), "盆栽玲云花");
+        add(ModBlocks.POTTED_COTTON_CROP.get(), "盆栽棉花");
+
         add(ModItems.DEBUG_SWORD.get(), "调试之剑");
         add(ModItems.LOOT_GENERATOR.get(), "战利品生成器");
         add(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get(), "融梦水晶箱重置工具");

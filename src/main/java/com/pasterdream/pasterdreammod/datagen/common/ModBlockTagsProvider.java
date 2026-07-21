@@ -396,6 +396,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.GOLDEN_FOX_SCULPTURE.get())
                 .add(ModBlocks.FOX_SCULPTURE.get());
 
+        // ===== 盆栽植物 =====
+        var flowerPots = tag(BlockTags.FLOWER_POTS);
+        for (var potted : ModBlocks.POTTED_PLANTS.values()) {
+            flowerPots.add(potted.get());
+        }
+
         tag(ModBlockTags.PLIER_PLANTS)
                 .add(ModBlocks.STEM_GRASS.get())
                 .add(ModBlocks.TALL_STEM_GRASS.get())
