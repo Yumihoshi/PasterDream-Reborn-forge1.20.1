@@ -668,7 +668,7 @@ public class ModItems {
                     .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.375f).build())));
 
     public static final RegistryObject<Item> PINK_HEART_CHOCOLATE = ITEMS.register("pink_heart_chocolate",
-            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(1.5).meltDreamEnergyAdd(0.2)
+            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(1.5).meltDreamEnergyAdd(0.9)
                     .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.375f).build())));
 
     public static final RegistryObject<Item> BREAD_SLICE = ITEMS.register("bread_slice",
@@ -889,6 +889,8 @@ public class ModItems {
             AllkindsRingItem::new);
     public static final RegistryObject<Item> COUNTER_RING = ITEMS.register("counter_ring",
             CounterRingItem::new);
+    public static final RegistryObject<Item> MELT_DREAM_ENERGY_RING = ITEMS.register("melt_dream_energy_ring",
+            MeltDreamEnergyRingItem::new);
     // ===== 饰品（腰带） =====
     public static final RegistryObject<Item> EMBRYO_BELT = ITEMS.register("embryo_belt",
             EmbryoBeltItem::new);
