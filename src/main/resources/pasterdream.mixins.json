@@ -10,7 +10,8 @@
     "GoldenrodTeaBuffMixin",
     "HolyGrailBuffMixin",
     "NaturalSpawnerMixin",
-    "PhantomTargetMixin"
+    "PhantomTargetMixin",
+    "WorldGenRegionMixin"
   ],
   "client": [
     "FogRendererMixin",
