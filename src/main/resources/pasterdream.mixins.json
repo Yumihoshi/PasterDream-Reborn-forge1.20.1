@@ -9,6 +9,7 @@
     "FlowerPotBlockMixin",
     "GoldenrodTeaBuffMixin",
     "HolyGrailBuffMixin",
+    "NaturalSpawnerMixin",
     "PhantomTargetMixin"
   ],
   "client": [
