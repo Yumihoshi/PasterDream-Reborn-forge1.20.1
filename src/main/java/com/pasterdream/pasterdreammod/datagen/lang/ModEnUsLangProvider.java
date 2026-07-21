@@ -976,12 +976,35 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
 
         // Patchouli book
+        add(ModItems.SENIORS_DREAM_BOOK.get(), "Seniors Dream");
         add("pasterdream.seniors_dream", "Seniors Dream");
-        add("pasterdream.seniors_dream.landing_text", "...");
-        add("pasterdream.seniors_dream.category.test", "Test");
-        add("pasterdream.seniors_dream.category.test.desc", "A test category.");
-        add("pasterdream.seniors_dream.entry.welcome", "Welcome");
-        add("pasterdream.seniors_dream.entry.welcome.page0", "If you can see this, the book works!");
+        add("pasterdream.seniors_dream.landing_text", "Welcome to PasterDream: Reborn, a remake of PasterDream. While preserving the original content, the gameplay and progression have been optimized. This book provides the guidance and item information that you may be missing. Now, Dreamseeker — may the stars lead you into dreams, and the wind rest by your side.");
+
+        // Categories
+        add("pasterdream.seniors_dream.category.rules", "Mechanics");
+        add("pasterdream.seniors_dream.category.rules.desc", "This chapter introduces the core mechanics of the mod.");
+
+        // Meltdream Energy
+        add("pasterdream.seniors_dream.entry.meltdream", "Meltdream Energy");
+        add("pasterdream.seniors_dream.entry.meltdream.page0", "In the bottom-left corner of your screen, there is an energy bar icon — this is your Meltdream Energy. For weapons with combat skills, right-clicking consumes Meltdream Energy to activate the corresponding skill.");
+        add("pasterdream.seniors_dream.entry.meltdream.page1", "The Meltdream Energy bar interface.");
+        add("pasterdream.seniors_dream.entry.meltdream.page2", "Ways to obtain Meltdream Energy:$(br)Each Meltdream Crystal Chest opened grants 2 Meltdream Energy;$(br)Eating certain foods grants some Meltdream Energy;$(br)Equipping certain curios also restores Meltdream Energy, primarily the Meltdream Aura Ring and World Tree Seed Pod.");
+        add("pasterdream.seniors_dream.entry.meltdream.page3", "A showcase of items related to Meltdream Energy.");
+
+        // Sanity
+        add("pasterdream.seniors_dream.entry.san", "Sanity");
+        add("pasterdream.seniors_dream.entry.san.page0", "You may have noticed a brain-like icon in the bottom-right corner of your screen — this is your Sanity (SAN) value.");
+        add("pasterdream.seniors_dream.entry.san.page1", "The Sanity bar interface.");
+        add("pasterdream.seniors_dream.entry.san.page2", "Sanity level effects:$(br)SAN>=90%: Vigor$(br)SAN<=60%: Lethargy$(br)SAN<=40%: Trance$(br)SAN<=20%: Madness I$(br)SAN<=10%: Madness II$(br)SAN<=1%:  Madness III");
+        add("pasterdream.seniors_dream.entry.san.page3", "Environmental Sanity changes:$(br)Sanity is affected by biome type and light level. Formula:$(br)Total Change Rate = (Sanity Aura / 1200) + Biome Effect + (Light Level - 7) * 0.0001");
+        add("pasterdream.seniors_dream.entry.san.page4", "Biome effects:$(br)Deep Dark and Lamp Shadow biomes decrease Sanity;$(br)Dyedream biomes increase Sanity;$(br)Other biomes have no strong interference.$(br2)Sanity Aura value of n means that, excluding other factors (biome and light level), the player gains n Sanity points per minute.");
+        add("pasterdream.seniors_dream.entry.san.page5", "Other ways to lose Sanity:$(br)Being within a Shadow creature's Madness Aura;$(br)Holding items with Madness Aura;$(br)Certain item skills also consume Sanity.$(br2)Ways to restore Sanity:$(br)Using specific items or foods;$(br)Equipping curios with Sanity Aura;$(br)Having the Cuisine or Rest buff;$(br)Staying in a brightly-lit environment.");
+        add("pasterdream.seniors_dream.entry.san.page6", "A showcase of items related to Sanity.");
+
+        // Evasion (Blink)
+        add("pasterdream.seniors_dream.entry.evasion", "Evasion (Blink)");
+        add("pasterdream.seniors_dream.entry.evasion.page0", "Default key: C. Using Evasion consumes 2 hunger points, performs a quick dash, and resets fall distance. It grants brief invincibility frames. Default cooldown: 1 second (no cooldown in Creative mode).");
+        add("pasterdream.seniors_dream.entry.evasion.page1", "On land: dashes toward where your crosshair points.$(br)On land while sneaking: dashes in the opposite direction of your crosshair.$(br)In water: vertical crosshair offset has no effect.");
 
         // Entities
         add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
