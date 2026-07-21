@@ -1,48 +1,43 @@
 package com.pasterdream.pasterdreammod.world.block.cropblock;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class MatureCropItem extends Item
-{
+public class MatureCropItem extends BlockItem {
     private final Block cropBlock;
 
-    public MatureCropItem(Properties properties, Block cropBlock)
-    {
-        super(properties);
+    public MatureCropItem(Properties properties, Block cropBlock) {
+        super(cropBlock, properties);
         this.cropBlock = cropBlock;
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext context)
-    {
+    public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
-        BlockPos pos = context.getClickedPos().relative(context.getClickedFace());
-        ItemStack stack = context.getItemInHand();
-
-        if (level.getBlockState(pos).canBeReplaced() && cropBlock.defaultBlockState().canSurvive(level, pos))
-        {
-            if (!level.isClientSide)
-            {
-                BlockState matureState = cropBlock.defaultBlockState().setValue(PasterDreamCropBlock.AGE, 1);
-                level.setBlock(pos, matureState, 3);
-                SoundType soundType = SoundType.GRASS;
-                level.playSound(null, pos, soundType.getPlaceSound(), SoundSource.BLOCKS, (soundType.getVolume() + 1.0F) / 2.0F, soundType.getPitch() * 0.8F);
-                if (!context.getPlayer().isCreative())
-                {
-                    stack.shrink(1);
-                }
-            }
-            return InteractionResult.sidedSuccess(level.isClientSide);
+        BlockState clickedState = level.getBlockState(context.getClickedPos());
+        if (clickedState.getBlock() instanceof FlowerPotBlock) {
+            return InteractionResult.PASS;
         }
-        return InteractionResult.PASS;
+        return super.useOn(context);
+    }
+
+    @Override
+    protected BlockState getPlacementState(BlockPlaceContext context) {
+        BlockState state = this.cropBlock.getStateForPlacement(context);
+        if (state != null) return state.setValue(PasterDreamCropBlock.AGE, 1);
+        return this.cropBlock.defaultBlockState().setValue(PasterDreamCropBlock.AGE, 1);
+    }
+
+    @Override
+    public String getDescriptionId() {
+        return BuiltInRegistries.ITEM.getKey(this).toLanguageKey("item");
     }
 }

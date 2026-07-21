@@ -412,6 +412,37 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_FERN.get(), "Shadow Fern");
         add(ModBlocks.SHADOW_FUNGUS.get(), "Shadow Fungus");
 
+        add(ModBlocks.POTTED_STEM_GRASS.get(), "Potted Stem Grass");
+        add(ModBlocks.POTTED_PINK_MUSHROOM.get(), "Potted Pink Mushroom");
+        add(ModBlocks.POTTED_DYEDREAM_MOSS.get(), "Potted Dyedream Moss");
+        add(ModBlocks.POTTED_LINHT_FLOWER.get(), "Potted Linht Flower");
+        add(ModBlocks.POTTED_DYEDREAM_LILY_OF_THE_VALLEY.get(), "Potted Dyedream Lily of the Valley");
+        add(ModBlocks.POTTED_SINGULARITY_FERN.get(), "Potted Singularity Fern");
+        add(ModBlocks.POTTED_FERRARIA_CRISPA.get(), "Potted Ferraria Crispa");
+        add(ModBlocks.POTTED_EUSTOMA.get(), "Potted Eustoma");
+        add(ModBlocks.POTTED_JUNGLE_SPORANGIUM.get(), "Potted Jungle Sporangium");
+        add(ModBlocks.POTTED_MALVA_SINENSIS_CAVAN.get(), "Potted Malva Sinensis Cavan");
+        add(ModBlocks.POTTED_GOLDENROD.get(), "Potted Goldenrod");
+        add(ModBlocks.POTTED_FOURLEAF_CLOVER.get(), "Potted Fourleaf Clover");
+        add(ModBlocks.POTTED_BLAZE_FLOWER.get(), "Potted Blaze Flower");
+        add(ModBlocks.POTTED_WHITE_ORCHID_FLOWER.get(), "Potted White Orchid Flower");
+        add(ModBlocks.POTTED_SHADOW_SHORT_ROOTS.get(), "Potted Shadow Short Roots");
+        add(ModBlocks.POTTED_SHADOW_ROOTS.get(), "Potted Shadow Roots");
+        add(ModBlocks.POTTED_SHADOW_SPROUTS.get(), "Potted Shadow Sprouts");
+        add(ModBlocks.POTTED_SHADOW_FERN.get(), "Potted Shadow Fern");
+        add(ModBlocks.POTTED_SHADOW_FUNGUS.get(), "Potted Shadow Fungus");
+        add(ModBlocks.POTTED_EDELWEISS.get(), "Potted Edelweiss");
+        add(ModBlocks.POTTED_NIPPY_EDELWEISS.get(), "Potted Nippy Edelweiss");
+        add(ModBlocks.POTTED_DYEDREAM_SAPLING.get(), "Potted Dyedream Sapling");
+        add(ModBlocks.POTTED_REED.get(), "Potted Reed");
+        add(ModBlocks.POTTED_RYE.get(), "Potted Rye");
+        add(ModBlocks.POTTED_OATS.get(), "Potted Oats");
+        add(ModBlocks.POTTED_DYEDREAM_COROLLA_CROP.get(), "Potted Dyedream Corolla");
+        add(ModBlocks.POTTED_WHITE_COROLLA_CROP.get(), "Potted White Corolla");
+        add(ModBlocks.POTTED_LIGHT_BALL_CROP.get(), "Potted Light Ball");
+        add(ModBlocks.POTTED_CLOUD_CROP.get(), "Potted Cloud");
+        add(ModBlocks.POTTED_COTTON_CROP.get(), "Potted Cotton");
+
         add(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(), "Melt Dream Crystal Fragment");
         add(ModItems.MELT_DREAM_AURORIAN_STEEL.get(), "Melt Dream Aurorian Steel");
         add("tooltip.pasterdreammod.melt_dream_aurorian_steel", "§7§oKids, did you ask?");

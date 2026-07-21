@@ -62,6 +62,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
@@ -354,7 +357,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> NIPPY_EDELWEISS = BLOCKS.register("nippy_edelweiss",
             () -> new NippyEdelweissBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).randomTicks()
-                    .instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+                    .instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).lightLevel(s -> 5).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> DREAMING_LOTUS = BLOCKS.register("dreaming_lotus", () -> new DreamingLotusBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()));
 
@@ -629,6 +632,97 @@ public class ModBlocks {
     public static final RegistryObject<Block> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1 = BLOCKS.register("model_break_particle_provider_block_1", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(0,2147483647)));
     public static final RegistryObject<Block> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2 = BLOCKS.register("model_break_particle_provider_block_2", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(0,2147483647).noOcclusion()));
     public static final RegistryObject<Block> MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3 = BLOCKS.register("model_break_particle_provider_block_3", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0,2147483647)));
+
+    // ===== 盆栽植物 =====
+    // plant → potted mapping, populated by registerPottedPlant()
+    public static final Map<RegistryObject<Block>, RegistryObject<Block>> POTTED_PLANTS = new LinkedHashMap<>();
+    public static final java.util.Set<RegistryObject<Block>> POTTED_CROPS = new java.util.HashSet<>();
+    /** potted crop → (seedlingItem, matureItem) for age-conditional loot tables */
+    public static final Map<RegistryObject<Block>, CropPottedItems> POTTED_CROP_ITEMS = new LinkedHashMap<>();
+
+    public record CropPottedItems(RegistryObject<net.minecraft.world.item.Item> seedling,
+                                   RegistryObject<net.minecraft.world.item.Item> mature) {}
+
+    private static final BlockBehaviour.Properties POT_PROPERTIES = BlockBehaviour.Properties.of()
+            .instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+
+    public static final RegistryObject<Block> POTTED_STEM_GRASS = registerPotted(STEM_GRASS, "potted_stem_grass");
+    public static final RegistryObject<Block> POTTED_PINK_MUSHROOM = registerPotted(PINK_MUSHROOM, "potted_pink_mushroom");
+    public static final RegistryObject<Block> POTTED_DYEDREAM_MOSS = registerPotted(DYEDREAM_MOSS, "potted_dyedream_moss", 7);
+    public static final RegistryObject<Block> POTTED_LINHT_FLOWER = registerPotted(LINHT_FLOWER, "potted_linht_flower", 12);
+    public static final RegistryObject<Block> POTTED_DYEDREAM_LILY_OF_THE_VALLEY = registerPotted(DYEDREAM_LILY_OF_THE_VALLEY, "potted_dyedream_lily_of_the_valley");
+    public static final RegistryObject<Block> POTTED_SINGULARITY_FERN = registerPotted(SINGULARITY_FERN, "potted_singularity_fern");
+    public static final RegistryObject<Block> POTTED_FERRARIA_CRISPA = registerPotted(FERRARIA_CRISPA, "potted_ferraria_crispa");
+    public static final RegistryObject<Block> POTTED_EUSTOMA = registerPotted(EUSTOMA, "potted_eustoma");
+    public static final RegistryObject<Block> POTTED_JUNGLE_SPORANGIUM = registerPotted(JUNGLE_SPORANGIUM, "potted_jungle_sporangium", 6);
+    public static final RegistryObject<Block> POTTED_MALVA_SINENSIS_CAVAN = registerPotted(MALVA_SINENSIS_CAVAN, "potted_malva_sinensis_cavan");
+    public static final RegistryObject<Block> POTTED_GOLDENROD = registerPotted(GOLDENROD, "potted_goldenrod");
+    public static final RegistryObject<Block> POTTED_FOURLEAF_CLOVER = registerPotted(FOURLEAF_CLOVER, "potted_fourleaf_clover");
+    public static final RegistryObject<Block> POTTED_BLAZE_FLOWER = registerPotted(BLAZE_FLOWER, "potted_blaze_flower");
+    public static final RegistryObject<Block> POTTED_WHITE_ORCHID_FLOWER = registerPotted(WHITE_ORCHID_FLOWER, "potted_white_orchid_flower", 7);
+    public static final RegistryObject<Block> POTTED_SHADOW_SHORT_ROOTS = registerPotted(SHADOW_SHORT_ROOTS, "potted_shadow_short_roots");
+    public static final RegistryObject<Block> POTTED_SHADOW_ROOTS = registerPotted(SHADOW_ROOTS, "potted_shadow_roots");
+    public static final RegistryObject<Block> POTTED_SHADOW_SPROUTS = registerPotted(SHADOW_SPROUTS, "potted_shadow_sprouts");
+    public static final RegistryObject<Block> POTTED_SHADOW_FERN = registerPotted(SHADOW_FERN, "potted_shadow_fern");
+    public static final RegistryObject<Block> POTTED_SHADOW_FUNGUS = registerPotted(SHADOW_FUNGUS, "potted_shadow_fungus");
+    public static final RegistryObject<Block> POTTED_EDELWEISS = registerPotted(EDELWEISS, "potted_edelweiss");
+    public static final RegistryObject<Block> POTTED_NIPPY_EDELWEISS = registerPotted(NIPPY_EDELWEISS, "potted_nippy_edelweiss", 5);
+    public static final RegistryObject<Block> POTTED_DYEDREAM_SAPLING = registerPotted(DYEDREAM_SAPLING, "potted_dyedream_sapling");
+    public static final RegistryObject<Block> POTTED_REED = registerPotted(REED, "potted_reed");
+    public static final RegistryObject<Block> POTTED_RYE = registerPotted(RYE, "potted_rye");
+    public static final RegistryObject<Block> POTTED_OATS = registerPotted(OATS, "potted_oats");
+    public static final RegistryObject<Block> POTTED_DYEDREAM_COROLLA_CROP = registerPottedCrop(DYEDREAM_COROLLA_CROP, "potted_dyedream_corolla_crop", ModItems.DYEDREAM_COROLLA, 1, ModItems.DYEDREAM_COROLLA_CROP_AGE_0, ModItems.DYEDREAM_COROLLA_CROP_AGE_1);
+    public static final RegistryObject<Block> POTTED_WHITE_COROLLA_CROP = registerPottedCrop(WHITE_COROLLA_CROP, "potted_white_corolla_crop", ModItems.WHITE_COROLLA, 1, ModItems.WHITE_COROLLA_CROP_AGE_0, ModItems.WHITE_COROLLA_CROP_AGE_1);
+    public static final RegistryObject<Block> POTTED_LIGHT_BALL_CROP = registerPottedCrop(LIGHT_BALL_CROP, "potted_light_ball_crop", ModItems.LIGHT_BALL, 1, ModItems.LIGHT_BALL_CROP_AGE_0, ModItems.LIGHT_BALL_CROP_AGE_1, 12);
+    public static final RegistryObject<Block> POTTED_CLOUD_CROP = registerPottedCrop(CLOUD_CROP, "potted_cloud_crop", ModItems.CLOUD, 5, ModItems.CLOUD_CROP_AGE_0, ModItems.CLOUD_CROP_AGE_1);
+    public static final RegistryObject<Block> POTTED_COTTON_CROP = registerPottedCrop(COTTON_CROP, "potted_cotton_crop", ModItems.COTTON, 1, ModItems.COTTON_CROP_AGE_0, ModItems.COTTON_CROP_AGE_1);
+
+    private static BlockBehaviour.Properties potLight(int light) {
+        return BlockBehaviour.Properties.of()
+                .instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)
+                .lightLevel(s -> light);
+    }
+
+    private static RegistryObject<Block> registerPotted(RegistryObject<Block> plant, String name) {
+        return registerPotted(plant, name, 0);
+    }
+
+    private static RegistryObject<Block> registerPotted(RegistryObject<Block> plant, String name, int light) {
+        BlockBehaviour.Properties props = light > 0 ? potLight(light) : POT_PROPERTIES;
+        RegistryObject<Block> potted = BLOCKS.register(name,
+                () -> new FlowerPotBlock(plant.get(), props));
+        POTTED_PLANTS.put(plant, potted);
+        return potted;
+    }
+
+    private static RegistryObject<Block> registerPottedCrop(RegistryObject<Block> plant, String name,
+                                                              RegistryObject<net.minecraft.world.item.Item> harvestItem, int harvestCount,
+                                                              RegistryObject<net.minecraft.world.item.Item> seedlingItem,
+                                                              RegistryObject<net.minecraft.world.item.Item> matureItem) {
+        return registerPottedCrop(plant, name, harvestItem, harvestCount, seedlingItem, matureItem, 0);
+    }
+
+    private static RegistryObject<Block> registerPottedCrop(RegistryObject<Block> plant, String name,
+                                                              RegistryObject<net.minecraft.world.item.Item> harvestItem, int harvestCount,
+                                                              RegistryObject<net.minecraft.world.item.Item> seedlingItem,
+                                                              RegistryObject<net.minecraft.world.item.Item> matureItem,
+                                                              int light) {
+        BlockBehaviour.Properties props = light > 0 ? potLight(light) : POT_PROPERTIES;
+        RegistryObject<Block> potted = BLOCKS.register(name,
+                () -> {
+                    PottedCropBlock block = new PottedCropBlock(plant.get(), harvestItem, harvestCount,
+                            seedlingItem, matureItem, props);
+                    CROP_TO_POTTED.put(plant.get(), block);
+                    return block;
+                });
+        POTTED_PLANTS.put(plant, potted);
+        POTTED_CROPS.add(potted);
+        POTTED_CROP_ITEMS.put(potted, new CropPottedItems(seedlingItem, matureItem));
+        return potted;
+    }
+
+    /** Maps crop Block → its PottedCropBlock. Used by FlowerPotBlockMixin. */
+    public static final Map<Block, PottedCropBlock> CROP_TO_POTTED = new java.util.HashMap<>();
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
