@@ -2397,6 +2397,19 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         .unlockedBy(getHasName(ModItems.STRIKE_RING.get()), has(ModItems.STRIKE_RING.get())),
                 pWriter, "strike_ring_lv2", lv2Nbt, Map.of('a', lv1Nbt));
 
+        // 融梦光环戒指 = 融梦水晶碎片 + 染梦合金粒 + 戒指原胚
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MELT_DREAM_ENERGY_RING.get(), 1)
+                .pattern(" a ")
+                .pattern("bcb")
+                .pattern(" b ")
+                .define('a', ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get())
+                .define('b', ModItems.DYEDREAM_ALLOY_NUGGET.get())
+                .define('c', ModItems.EMBRYO_RING.get())
+                .unlockedBy(getHasName(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()),
+                        has(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                        "melt_dream_energy_ring_from_embryo"));
+
     }
 
     // ===== 容器配平校验 =====

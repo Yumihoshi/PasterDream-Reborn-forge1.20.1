@@ -922,8 +922,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         // Counter Ring
         add(ModItems.COUNTER_RING.get(), "Counter Ring");
+        add(ModItems.MELT_DREAM_ENERGY_RING.get(), "Melt Dream Energy Ring");
         add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9On successful dodge: gain Counterattack I (0:10)");
         add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9Next attack: Attack +3, Skill DMG ×+50%, then buff ends");
+        add("tooltip.pasterdream.melt_dream_energy_ring.effect1", "§7▪ §9Melt Dream Energy +0.3/min inside dream");
+        add("tooltip.pasterdream.melt_dream_energy_ring.effect2", "§7▪ §9Melt Dream Energy +0.15/min outside dream");
         add("effect.pasterdream.counter_attack_buff", "Counterattack");
         add("effect.pasterdream.memento_buff", "Dream Seeker's Prayer");
 

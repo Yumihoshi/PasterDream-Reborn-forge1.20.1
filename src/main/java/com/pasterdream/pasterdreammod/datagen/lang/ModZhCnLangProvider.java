@@ -1084,8 +1084,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         // 反击戒指
         add(ModItems.COUNTER_RING.get(), "反击戒指");
+        add(ModItems.MELT_DREAM_ENERGY_RING.get(), "融梦光环戒指");
         add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9成功回避伤害时获得反击I (0:10)");
         add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9下一次攻击：攻击力+3 战技伤害+50%，命中后效果解除");
+        add("tooltip.pasterdream.melt_dream_energy_ring.effect1", "§7▪ §9梦境内融梦能量+0.3/min");
+        add("tooltip.pasterdream.melt_dream_energy_ring.effect2", "§7▪ §9梦境外融梦能量+0.15/min");
         add("effect.pasterdream.counter_attack_buff", "反击");
         add("effect.pasterdream.memento_buff", "寻梦者的祈愿");
 
