@@ -2170,7 +2170,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
                 .save(pWriter, "dyedream_desk_from_lectern");
 
-        // 旧梦归引宝典 = 书 + 染梦果
+        // 旧梦归引宝典 = 书 + 染梦果（合成后由 PlayerEvent.ItemCraftedEvent 替换为帕秋莉版）
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SENIORS_DREAM_BOOK.get(), 1)
                 .requires(Items.BOOK)
                 .requires(ModItems.DYEDREAM_FRUIT.get())
