@@ -1311,5 +1311,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("structure.pasterdream.traveler_house", "旅者小屋");
         add("structure.pasterdream.dyedream_pavilion_plain", "染梦凉亭");
         add("structure.pasterdream.dyedream_pavilion_snowy_plain", "雪原染梦凉亭");
+        add("structure.pasterdream.dyedream_worldtree", "染梦世界树");
     }
 }

@@ -1129,5 +1129,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("structure.pasterdream.traveler_house", "Traveler House");
         add("structure.pasterdream.dyedream_pavilion_plain", "Dyedream Pavilion");
         add("structure.pasterdream.dyedream_pavilion_snowy_plain", "Snowy Plain Dyedream Pavilion");
+        add("structure.pasterdream.dyedream_worldtree", "Dyedream World Tree");
     }
 }

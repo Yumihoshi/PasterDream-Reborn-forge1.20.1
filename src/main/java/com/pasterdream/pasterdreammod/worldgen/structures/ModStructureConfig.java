@@ -30,6 +30,7 @@ public class ModStructureConfig
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_pavilion_plain", "pasterdream:dyedream_world_biome", "surface_structures", "none", -2, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 26381947, 1));
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_pavilion_snowy_plain", "pasterdream:can_dyedream_pavilion_snowy_spawn_biome", "surface_structures", "none", -2, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 53901862, 1));
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:dream_wishingtree", "pasterdream:dyedream_world_biome", "surface_structures", "beard_thin", 64, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 15873492, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_worldtree", "pasterdream:dyedream_world_biome", "surface_structures", "none", -25, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 156, 87, 1208134265, 1));
 
         return STRUCTURES;
     }
