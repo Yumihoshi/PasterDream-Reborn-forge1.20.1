@@ -59,5 +59,9 @@ public class ClientSetRenderLayer
 
         // ===== 陶罐 =====
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CLAY_POT.get(), RenderType.cutout());
+
+        // ===== 植物系列（花） =====
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.EDELWEISS.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.NIPPY_EDELWEISS.get(), RenderType.cutout());
     }
 }

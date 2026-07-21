@@ -354,7 +354,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> NIPPY_EDELWEISS = BLOCKS.register("nippy_edelweiss",
             () -> new NippyEdelweissBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).randomTicks()
-                    .instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+                    .instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).lightLevel(s -> 5).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> DREAMING_LOTUS = BLOCKS.register("dreaming_lotus", () -> new DreamingLotusBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).instabreak().noCollission().noOcclusion().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).replaceable()));
 
