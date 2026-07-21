@@ -196,6 +196,11 @@ public class ModPlacedFeatures {
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_orchid_flower_patch"));
 
+    // 阴影残垣断壁 — 散落的破败墙体
+    public static final ResourceKey<PlacedFeature> SHADOW_RUIN_WALL =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_ruin_wall"));
+
     // 阴影锁链柱 — 交替朝向镂空矩形单元堆叠
     public static final ResourceKey<PlacedFeature> SHADOW_CHAIN_PILLAR =
             ResourceKey.create(Registries.PLACED_FEATURE,
@@ -398,6 +403,14 @@ public class ModPlacedFeatures {
         context.register(SHADOW_FUNGUS_TREE, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.SHADOW_FUNGUS_TREE),
                 List.of(CountPlacement.of(8), InSquarePlacement.spread(),
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
+                        onHeightmap(Heightmap.Types.MOTION_BLOCKING),
+                        ON_SHADOW_GROUND)));
+
+        // 阴影残垣断壁 — 每 3 区块 1 个，仅灯影地表
+        context.register(SHADOW_RUIN_WALL, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SHADOW_RUIN_WALL),
+                List.of(RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(),
                         SurfaceWaterDepthFilter.forMaxDepth(0),
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING),
                         ON_SHADOW_GROUND)));

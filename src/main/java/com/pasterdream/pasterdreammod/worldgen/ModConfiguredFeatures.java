@@ -75,6 +75,11 @@ public class ModConfiguredFeatures {
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_orchid_flower_patch"));
 
+    // 阴影残垣断壁 — 散落的破败墙体
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_RUIN_WALL =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_ruin_wall"));
+
     // 阴影锁链柱 — 交替朝向的镂空矩形单元堆叠
     public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_CHAIN_PILLAR =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
@@ -474,6 +479,10 @@ public class ModConfiguredFeatures {
 
         // 方解石尖锥 — 原作 stone_pillar_0 / stone_pillar_1 结构, 使用自定义 CalciteSpikeFeature
         context.register(CALCITE_SPIKE, new ConfiguredFeature<>(ModFeatures.CALCITE_SPIKE.get(),
+                NoneFeatureConfiguration.INSTANCE));
+
+        // 阴影残垣断壁 — 散落的破败墙体
+        context.register(SHADOW_RUIN_WALL, new ConfiguredFeature<>(ModFeatures.SHADOW_RUIN_WALL.get(),
                 NoneFeatureConfiguration.INSTANCE));
 
         // 阴影锁链柱 — 交替朝向镂空矩形单元堆叠，3-8 单元随机高度
