@@ -109,6 +109,11 @@ public class Config
             .comment("守护效果触发时超过最大生命值部分减伤比例，默认0.6（60%）")
             .defineInRange("resist_damage", 0.6, 0.0,1.0);
 
+    // === 帕秋莉宝典 ===
+    private static final ForgeConfigSpec.BooleanValue GIVE_PATCHOULI_BOOK_ON_FIRST_JOIN = BUILDER
+            .comment("玩家首次加入世界时是否发放帕秋莉宝典（需要安装帕秋莉模组才生效），默认 true")
+            .define("givePatchouliBookOnFirstJoin", true);
+
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
@@ -150,6 +155,9 @@ public class Config
     public static Double healthpercentguardneed;
     public static Double resistdamage;
 
+    // === 帕秋莉宝典 ===
+    public static boolean givePatchouliBookOnFirstJoin;
+
     private static boolean validateItemName(final Object obj)
     {
         return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(ResourceLocation.tryParse(itemName));
@@ -173,6 +181,7 @@ public class Config
         balanceAllowedEffects = BALANCE_ALLOWED_EFFECTS.get();
         healthpercentguardneed= HEALTH_PERCENT.get();
         resistdamage= RESIST_DAMAGE.get();
+        givePatchouliBookOnFirstJoin = GIVE_PATCHOULI_BOOK_ON_FIRST_JOIN.get();
 
         items = ITEM_STRINGS.get().stream()
                 .map(itemName -> ForgeRegistries.ITEMS.getValue(ResourceLocation.parse(itemName)))
