@@ -1140,12 +1140,35 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
 
         // 帕秋莉宝典
+        add(ModItems.SENIORS_DREAM_BOOK.get(), "旧梦归引");
         add("pasterdream.seniors_dream", "旧梦归引");
-        add("pasterdream.seniors_dream.landing_text", ">这里是开篇文字<");
-        add("pasterdream.seniors_dream.category.test", "测试");
-        add("pasterdream.seniors_dream.category.test.desc", "一个测试分类。");
-        add("pasterdream.seniors_dream.entry.welcome", "欢迎");
-        add("pasterdream.seniors_dream.entry.welcome.page0", "如果你能看到这段文字，说明宝典工作正常！");
+        add("pasterdream.seniors_dream.landing_text", "欢迎来到《帕斯特之梦：重生》，此模组是《帕斯特之梦》的重制版。在保证原有内容的前提下，对游戏内容和流程进行一定优化，通过此书可以了解到缺失的引导和物品信息。那么寻梦者，愿星河入梦，枕畔有风。");
+
+        // 分类
+        add("pasterdream.seniors_dream.category.rules", "机制介绍");
+        add("pasterdream.seniors_dream.category.rules.desc", "本篇介绍模组中的核心机制。");
+
+        // 融梦能量
+        add("pasterdream.seniors_dream.entry.meltdream", "融梦能量");
+        add("pasterdream.seniors_dream.entry.meltdream.page0", "在屏幕的左下角，有一个能量条一般的图标，即为融梦能量。对于拥有战技的武器，右键可以消耗融梦能量来触发相应战技。");
+        add("pasterdream.seniors_dream.entry.meltdream.page1", "融梦能量条界面展示。");
+        add("pasterdream.seniors_dream.entry.meltdream.page2", "融梦能量的获取途径：$(br)每开启一个融梦水晶箱可以获得2点融梦能量；$(br)食用部分食物可以获得一定融梦能量；$(br)佩戴部分饰品也可以恢复融梦能量，主要为融梦光环戒指和世界树种荚。");
+        add("pasterdream.seniors_dream.entry.meltdream.page3", "与融梦能量相关的部分物品展示。");
+
+        // san值
+        add("pasterdream.seniors_dream.entry.san", "san值");
+        add("pasterdream.seniors_dream.entry.san.page0", "或许你也已经注意到了，在你屏幕的右下角有一个大脑一样的图标，即为san值。");
+        add("pasterdream.seniors_dream.entry.san.page1", "san值界面展示。");
+        add("pasterdream.seniors_dream.entry.san.page2", "san值效果影响：$(br)san>=90% 获得振奋$(br)san<=60% 获得不振$(br)san<=40% 获得恍惚$(br)san<=20% 获得疯狂I$(br)san<=10% 获得疯狂II$(br)san<=1%  获得疯狂III");
+        add("pasterdream.seniors_dream.entry.san.page3", "环境带来的san值变化：$(br)san的变化受到群系类型和光照强度的影响，计算公式为：$(br)总变化率 = (理智光环 / 1200) + 群系影响 + (光照等级 - 7) * 0.0001");
+        add("pasterdream.seniors_dream.entry.san.page4", "群系的影响主要表现为：$(br)在深暗之域和灯影之下的群系会降低玩家san值；$(br)在染梦世界的群系会提升玩家的san值；$(br)在其他群系不会产生强干扰。$(br2)理智光环为n则代表玩家在除开其它影响（群系影响和光照等级）的条件下一分钟内会增加n点理智。");
+        add("pasterdream.seniors_dream.entry.san.page5", "其他掉san的情况：$(br)处于阴影生物的疯狂光环下；$(br)手持带有疯狂光环的物品；$(br)某些物品的技能也会消耗san值。$(br2)主动恢复san值的方法：$(br)使用特定物品或食物；$(br)装备带有理智光环的饰品；$(br)拥有料理和休憩buff；$(br)让自己处于亮度较高的环境。");
+        add("pasterdream.seniors_dream.entry.san.page6", "与san值相关的部分物品展示。");
+
+        // 瞬身术
+        add("pasterdream.seniors_dream.entry.evasion", "瞬身术");
+        add("pasterdream.seniors_dream.entry.evasion.page0", "默认按C键释放。使用瞬身术将会消耗2点饱食度，进行一段快速移动，且重置摔落高度。使用瞬身术会有短暂的无敌帧。默认冷却时间1秒，创造模式没有冷却时间。");
+        add("pasterdream.seniors_dream.entry.evasion.page1", "在陆地上使用，会向准星所指向位置进行一段瞬时移动；$(br)在陆地潜行状态下使用，会向准星指向相反的位置进行一段瞬时移动；$(br)在水中使用，则准星在竖直方向的偏移不会有影响。");
 
 
         // 实体

@@ -1,0 +1,38 @@
+{
+  "sortnum": 1,
+  "name": "pasterdream.seniors_dream.entry.san",
+  "icon": "pasterdream:garland",
+  "category": "pasterdream:rules",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.san.page0"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["pasterdream:textures/patchouli_books/seniors_dream/en_us/entries/rules/san_amount_bar.png"],
+      "text": "pasterdream.seniors_dream.entry.san.page1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.san.page2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.san.page3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.san.page4"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.san.page5"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:garland",
+      "text": "pasterdream.seniors_dream.entry.san.page6"
+    }
+  ]
+}

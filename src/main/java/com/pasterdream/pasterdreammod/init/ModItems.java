@@ -1361,6 +1361,10 @@ public class ModItems {
     public static final RegistryObject<Item> BLUE_PRINT = ITEMS.register("blue_print", () -> new BluePrintItem(new Item.Properties()));
     public static final RegistryObject<Item> DREAM_NOTES_BOOK = ITEMS.register("dream_notes_book", () -> new DreamNotesBookItem(new Item.Properties()));
 
+    // 帕秋莉宝典
+    public static final RegistryObject<Item> SENIORS_DREAM_BOOK = ITEMS.register("seniors_dream_book",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
     // ===== 音乐唱片 =====
     public static final RegistryObject<Item> SWEET_DREAM_MUSIC_DISC = ITEMS.register("sweet_dream_music_disc",
             () -> new RecordItem(0, ModSounds.SWEET_DREAM_MUSIC, new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 2220));

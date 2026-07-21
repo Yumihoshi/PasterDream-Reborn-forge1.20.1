@@ -1,0 +1,16 @@
+{
+  "sortnum": 2,
+  "name": "pasterdream.seniors_dream.entry.evasion",
+  "icon": "pasterdream:cross_necklace",
+  "category": "pasterdream:rules",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.evasion.page0"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.evasion.page1"
+    }
+  ]
+}
