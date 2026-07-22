@@ -7,7 +7,9 @@ public record StructureGenerationConfig(
         String biomeTag,            //允许生成的群系标签，例如"pasterdream:can_fisherman_hut_spawn_biome"
         String step,                //生成阶段，如 "surface_structures"
         String terrainAdaptation,   //地形适应，"none"：直接硬摆放，"beard_thin"：将结构最下层方块向下延伸，"beard_box"：形成地基，"bury"：埋入地下
-        int startHeight,            //起始绝对高度
+        String heightType,          //高度类型，"absolute"：固定高度，其他如 "very_biased_to_bottom"：范围高度
+        int minHeight,              //最小高度（范围高度时使用）
+        int maxHeight,              //最大高度（范围高度时使用）
         String heightmap,           //高度图类型，如 "WORLD_SURFACE_WG"
         int maxDistanceFromCenter,  //最大中心距离（结构拼图最大距离）
         int size,                   //jigsaw大小（结构拼图数量）
@@ -21,6 +23,20 @@ public record StructureGenerationConfig(
         int structureSetWeight      //结构集内该结构的权重
 )
 {
+    /** 兼容旧构造函数：固定绝对高度 */
+    public StructureGenerationConfig(
+            String name, String biomeTag, String step, String terrainAdaptation,
+            int startHeight, String heightmap, int maxDistanceFromCenter, int size,
+            boolean useExpansionHack, String projection, String processors,
+            int poolElementWeight, int spacing, int separation, int salt, int structureSetWeight)
+    {
+        this(name, biomeTag, step, terrainAdaptation,
+                "absolute", startHeight, startHeight,
+                heightmap, maxDistanceFromCenter, size,
+                useExpansionHack, projection, processors,
+                poolElementWeight, spacing, separation, salt, structureSetWeight);
+    }
+
     public String modId()
     {
         return ResourceLocation.parse(name).getNamespace();
