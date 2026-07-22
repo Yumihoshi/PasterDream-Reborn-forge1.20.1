@@ -373,6 +373,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.RESEARCH_TABLE.get(), "研究台");
         add(ModBlocks.LOST_SWORD_TOMB.get(), "失落剑冢");
         add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "金狐狸雕像");
+        add("block.pasterdream.golden_fox_sculpture.no_reaction", "雕像没有反应...");
+        add("block.pasterdream.golden_fox_sculpture.cooldown", "雕像还在沉睡... 还需等待 %s 秒");
         add(ModBlocks.FOX_SCULPTURE.get(), "狐狸雕像");
         add(ModBlocks.DESERT_HERO_TOMB.get(), "荒漠英雄之墓");
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "融梦水晶箱");
@@ -1207,7 +1209,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "粉红鸡刷怪蛋");
         add(ModEntities.PINK_SLIME.get(), "粉红史莱姆");
         add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "粉红史莱姆刷怪蛋");
-
+        add(ModEntities.GOLDEN_FOX.get(), "金狐狸");
+        add(ModItems.GOLDEN_FOX_SPAWN_EGG.get(), "金狐狸刷怪蛋");
+        add("entity.pasterdream.golden_fox.vanish", "金色狐狸在完成了你许下的愿望之后消失了...");
 
         //jeed兼容
         add("effect.pasterdream.rest_buff.description", "触摸琴雨梦玩偶或睡觉后获得，效果持续期间获得理智光环。");

@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.datagen.util.RecipeHelpers;
 import com.pasterdream.pasterdreammod.helper.ContainerBalanceHelper;
+import com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest.MeltDreamCrystalChestLootTableNBT;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
@@ -2417,6 +2418,17 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                         "melt_dream_energy_ring_from_embryo"));
 
+        // ===== 金狐狸交易配方 =====
+        saveGoldenFoxTrade(pWriter, Ingredient.of(Items.GOLDEN_APPLE), new ItemStack(Items.ENCHANTED_GOLDEN_APPLE),
+                "golden_fox_trade_golden_apple");
+        saveGoldenFoxTrade(pWriter, Ingredient.of(Items.BUCKET),
+                new ItemStack(ModItems.MELT_DREAM_LIQUID_BUCKET.get()), "golden_fox_trade_bucket");
+        saveGoldenFoxTrade(pWriter, Ingredient.of(ModItems.MELT_DREAM_COIN_PILE.get()),
+                MeltDreamCrystalChestLootTableNBT.meltDreamCrystalChestDyedreamWorldNBT(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()),
+                "golden_fox_trade_coin_pile");
+        saveGoldenFoxTrade(pWriter, Ingredient.of(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()),
+                new ItemStack(ModItems.KAICHU_OMAMORI.get()), "golden_fox_trade_crystal_fragment");
+
     }
 
     // ===== 容器配平校验 =====
@@ -2453,5 +2465,40 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('d', ModItems.DYEDREAM_DYE.get())
                 .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
                 .save(writer, PasterDreamMod.MOD_ID + ":" + getItemName(result) + "_from_dye");
+    }
+
+    private void saveGoldenFoxTrade(Consumer<FinishedRecipe> writer, Ingredient ingredient, ItemStack result, String name) {
+        writer.accept(new FinishedRecipe() {
+            @Override
+            public void serializeRecipeData(JsonObject json) {
+                json.add("ingredient", ingredient.toJson());
+                JsonObject resultObj = new JsonObject();
+                resultObj.addProperty("item", result.getItem().builtInRegistryHolder().key().location().toString());
+                resultObj.addProperty("count", result.getCount());
+                if (result.hasTag())
+                    resultObj.addProperty("nbt", result.getTag().toString());
+                json.add("result", resultObj);
+            }
+
+            @Override
+            public ResourceLocation getId() {
+                return ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name);
+            }
+
+            @Override
+            public RecipeSerializer<?> getType() {
+                return ModRecipes.GOLDEN_FOX_TRADE_SERIALIZER.get();
+            }
+
+            @Override
+            public JsonObject serializeAdvancement() {
+                return null;
+            }
+
+            @Override
+            public ResourceLocation getAdvancementId() {
+                return null;
+            }
+        });
     }
 }

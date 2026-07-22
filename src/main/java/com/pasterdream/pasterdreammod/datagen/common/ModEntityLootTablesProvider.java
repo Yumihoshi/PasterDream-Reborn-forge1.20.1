@@ -45,5 +45,10 @@ public class ModEntityLootTablesProvider implements LootTableSubProvider {
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                                 .add(EmptyLootItem.emptyItem().setWeight(2)))
         );
+
+        consumer.accept(
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "entities/golden_fox"),
+                LootTable.lootTable()
+        );
     }
 }

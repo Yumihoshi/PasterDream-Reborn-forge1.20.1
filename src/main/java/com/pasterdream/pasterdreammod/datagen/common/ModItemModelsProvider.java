@@ -417,6 +417,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         // 刷怪蛋
         spawnEggItem(ModItems.PINK_CHICKEN_SPAWN_EGG);
         spawnEggItem(ModItems.PINK_SLIME_SPAWN_EGG);
+        spawnEggItem(ModItems.GOLDEN_FOX_SPAWN_EGG);
     }
 
     @Override
