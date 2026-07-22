@@ -222,7 +222,16 @@ public class ModDeepTreasureLootTablesProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(ModItems.BLUE_DEW.get())
                                         .setWeight(5)
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+
                         )
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.1F))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.GALAXY_JELLY.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+                                .add(EmptyLootItem.emptyItem()
+                                        .setWeight(3)))
         );
 
         // ===== 染梦深海秘宝·超级 (dyedream_deep_sea_treasure_super) =====
@@ -275,6 +284,9 @@ public class ModDeepTreasureLootTablesProvider implements LootTableSubProvider {
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_ALLOY_INGOT.get())
                                         .setWeight(3)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(ModItems.GALAXY_JELLY.get())
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
                         )
                         .withPool(LootPool.lootPool()
                                 .setBonusRolls(ConstantValue.exactly(0.1F))
@@ -283,6 +295,14 @@ public class ModDeepTreasureLootTablesProvider implements LootTableSubProvider {
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F))))
                         )
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.1F))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.GALAXY_JELLY.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+                                .add(EmptyLootItem.emptyItem()
+                                        .setWeight(1)))
         );
 
         // ===== 浸影深海秘宝 (shadow_deep_sea_treasure) =====

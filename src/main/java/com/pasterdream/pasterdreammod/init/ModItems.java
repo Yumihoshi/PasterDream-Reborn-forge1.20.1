@@ -733,12 +733,18 @@ public class ModItems {
                     player.setDeltaMovement(player.getDeltaMovement().x, 3, player.getDeltaMovement().z);
                     player.hurtMarked = true;
 
-                    player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 120, 0));
+                    player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 140, 0));
                     // 2秒冷却 (40 ticks)
                     player.getCooldowns().addCooldown(this, 40);
 
                     level.playSound(null, player.getX(), player.getY(), player.getZ(),
                             SoundEvents.FIREWORK_ROCKET_LAUNCH, SoundSource.PLAYERS, 1.0F, 1.0F);
+                }
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                    super.appendHoverText(stack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.pasterdreammod.galaxy_jelly"));
+                    tooltip.add(Component.translatable("tooltip.pasterdreammod.galaxy_jelly.flavor"));
                 }
             });
 

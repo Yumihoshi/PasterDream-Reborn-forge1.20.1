@@ -97,6 +97,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.MELT_DREAM_COTTON_CANDY.get(), "融梦棉花糖");
         add(ModItems.BUBBLE_GUM.get(), "泡泡糖");
         add(ModItems.GALAXY_JELLY.get(), "星河果冻");
+        add("tooltip.pasterdreammod.galaxy_jelly", "§9食用后，将玩家抛到空中并获得7秒缓降");
+        add("tooltip.pasterdreammod.galaxy_jelly.flavor", "§7§O --将星河捧入手中");
         add(ModItems.LIGHT_ORGAN.get(), "发光器官");
         add(ModItems.JELLYFISH_MUD.get(), "水母泥");
         add(ModItems.JELLYFISH_JELLO.get(), "水母果冻");
