@@ -69,6 +69,37 @@ public class MeltDreamCrystalChestLootTableNBT
         return itemStack;
     }
 
+    public static ItemStack meltDreamCrystalChestWorldTreeNBT(ItemLike itemLike)
+    {
+        ItemStack itemStack = new ItemStack(itemLike);
+
+        CompoundTag compoundTag = new CompoundTag();
+        ListTag listTag = new ListTag();
+
+        CompoundTag normalLootTable = new CompoundTag();
+        normalLootTable.putString("LootTable", "pasterdream:chests/melt_dream_crystal_chest_dyedream_world_normal");
+        normalLootTable.putInt("weight", 1);
+        normalLootTable.putFloat("luck_multiplier_increase", 1F);
+        listTag.add(normalLootTable);
+
+        CompoundTag rareLootTable = new CompoundTag();
+        rareLootTable.putString("LootTable", "pasterdream:chests/melt_dream_crystal_chest_dyedream_world_rare");
+        rareLootTable.putInt("weight", 2);
+        rareLootTable.putFloat("luck_multiplier_increase", 2F);
+        listTag.add(rareLootTable);
+
+        CompoundTag epicLootTable = new CompoundTag();
+        epicLootTable.putString("LootTable", "pasterdream:chests/melt_dream_crystal_chest_dyedream_world_legend");
+        epicLootTable.putInt("weight", 4);
+        epicLootTable.putFloat("luck_multiplier_increase", 4F);
+        listTag.add(epicLootTable);
+
+        compoundTag.put("LootTables", listTag);
+        itemStack.setTag(compoundTag);
+
+        return itemStack;
+    }
+
     public static ItemStack onlyNormal(ItemLike itemLike)
     {
         ItemStack itemStack = new ItemStack(itemLike);
