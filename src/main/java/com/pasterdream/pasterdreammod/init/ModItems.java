@@ -721,6 +721,26 @@ public class ModItems {
             () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(3)
                     .food(new FoodProperties.Builder().nutrition(1).alwaysEat().build()).useDuration(64)));
 
+
+    public static final RegistryObject<Item> GALAXY_JELLY = ITEMS.register("galaxy_jelly",
+            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties()
+                    .food(new FoodProperties.Builder().nutrition(6).alwaysEat().saturationMod(0.415f).build()).useDuration(25)
+            ){
+                @Override
+                protected void onFoodSpecial(Player player, Level level) {
+                    // 垂直方向将玩家送上天空
+                    player.setDeltaMovement(player.getDeltaMovement().x, 3, player.getDeltaMovement().z);
+                    player.hurtMarked = true;
+
+                    player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 120, 0));
+                    // 2秒冷却 (40 ticks)
+                    player.getCooldowns().addCooldown(this, 40);
+
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                            SoundEvents.FIREWORK_ROCKET_LAUNCH, SoundSource.PLAYERS, 1.0F, 1.0F);
+                }
+            });
+
     public static final RegistryObject<Item> LIGHT_ORGAN = ITEMS.register("light_organ",
             () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(-1)
                     .food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(MobEffects.GLOWING, 100, 0), 1.0f)
@@ -808,6 +828,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> BUBBLE_TEA = ITEMS.register("bubble_tea", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties()
             .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7f).alwaysEat().build())));
+
 
     // ===== 露滴 =====
     public static final RegistryObject<Item> RED_DEW = ITEMS.register("red_dew",

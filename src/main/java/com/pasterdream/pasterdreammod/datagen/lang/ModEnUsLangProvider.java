@@ -93,6 +93,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.YINHUL_COTTON_CANDY.get(), "Yinhul Cotton Candy");
         add(ModItems.MELT_DREAM_COTTON_CANDY.get(), "Melt Dream Cotton Candy");
         add(ModItems.BUBBLE_GUM.get(), "Bubble Gum");
+        add(ModItems.GALAXY_JELLY.get(), "Galaxy Jelly");
         add(ModItems.LIGHT_ORGAN.get(), "Light Organ");
         add(ModItems.JELLYFISH_MUD.get(), "Jellyfish Mud");
         add(ModItems.JELLYFISH_JELLO.get(), "Jellfish Jello");
@@ -1046,6 +1047,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "Pink Slime Spawn Egg");
         add(ModEntities.GOLDEN_FOX.get(), "Golden Fox");
         add(ModItems.GOLDEN_FOX_SPAWN_EGG.get(), "Golden Fox Spawn Egg");
+        add(ModEntities.MELT_DREAM_CRYSTAL_ENTITY.get(), "Melt Dream Crystal Entity");
+        add(ModEntities.FOX_FIRE.get(), "Fox Fire");
         add("entity.pasterdream.golden_fox.vanish", "The golden fox vanished after fulfilling your wish...");
 
         //jeed Compatible
