@@ -686,6 +686,7 @@ public class ModCreativeModeTabs {
                         output.accept(MeltDreamCrystalChestLootTableNBT.onlyLegend(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
                         output.accept(ModItems.PINK_CHICKEN_SPAWN_EGG.get());
                         output.accept(ModItems.PINK_SLIME_SPAWN_EGG.get());
+                        output.accept(ModItems.GOLDEN_FOX_SPAWN_EGG.get());
                     }).build());
 
     // ===== 拓展 =====

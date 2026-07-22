@@ -359,6 +359,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.RESEARCH_TABLE.get(), "Research Table");
         add(ModBlocks.LOST_SWORD_TOMB.get(), "Lost Sword Tomb");
         add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "Golden Fox Sculpture");
+        add("block.pasterdream.golden_fox_sculpture.no_reaction", "The sculpture does not respond...");
+        add("block.pasterdream.golden_fox_sculpture.cooldown", "The sculpture is still slumbering... %s seconds remaining");
         add(ModBlocks.FOX_SCULPTURE.get(), "Fox Sculpture");
         add(ModBlocks.DESERT_HERO_TOMB.get(), "Desert Hero Tomb");
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "Melt Dream Crystal Chest");
@@ -1042,6 +1044,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");
         add(ModEntities.PINK_SLIME.get(), "Pink Slime");
         add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "Pink Slime Spawn Egg");
+        add(ModEntities.GOLDEN_FOX.get(), "Golden Fox");
+        add(ModItems.GOLDEN_FOX_SPAWN_EGG.get(), "Golden Fox Spawn Egg");
+        add("entity.pasterdream.golden_fox.vanish", "The golden fox vanished after fulfilling your wish...");
 
         //jeed Compatible
         add("effect.pasterdream.rest_buff.description", "Touch the QYM doll or get it after sleeping, and you'll get a san aura while the effect lasts.");

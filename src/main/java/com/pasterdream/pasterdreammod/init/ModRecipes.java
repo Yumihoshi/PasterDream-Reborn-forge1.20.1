@@ -5,6 +5,8 @@ import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipe;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipeSerializer;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipe;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipeSerializer;
+import com.pasterdream.pasterdreammod.recipe.GoldenFoxTradeRecipe;
+import com.pasterdream.pasterdreammod.recipe.GoldenFoxTradeRecipeSerializer;
 import com.pasterdream.pasterdreammod.recipe.NbtPreservingShapedRecipe;
 import com.pasterdream.pasterdreammod.recipe.NbtPreservingShapelessRecipe;
 import com.pasterdream.pasterdreammod.world.block.researchtable.ResearchTableCopyRecipe;
@@ -32,6 +34,7 @@ public class ModRecipes
     public static final RegistryObject<RecipeType<MortarRecipe>> MORTAR = RECIPE_TYPES.register("mortar", () -> new RecipeType<>() {});
     public static final RegistryObject<RecipeType<ResearchTableCopyRecipe>> RESEARCH_TABLE_COPY = RECIPE_TYPES.register("research_table_copy", () -> new RecipeType<>() {});
     public static final RegistryObject<RecipeType<ResearchTableResearchRecipe>> RESEARCH_TABLE_RESEARCH = RECIPE_TYPES.register("research_table_research", () -> new RecipeType<>() {});
+    public static final RegistryObject<RecipeType<GoldenFoxTradeRecipe>> GOLDEN_FOX_TRADE = RECIPE_TYPES.register("golden_fox_trade", () -> new RecipeType<>() {});
 
     public static final RegistryObject<RecipeSerializer<ClaypanRecipe>> CLAYPAN_SERIALIZER = RECIPE_SERIALIZERS.register("claypan", ClaypanRecipeSerializer::new);
     public static final RegistryObject<DreamCauldronRecipeSerializer> DREAM_CAULDRON_SERIALIZER = RECIPE_SERIALIZERS.register("dream_cauldron", DreamCauldronRecipeSerializer::new);
@@ -42,6 +45,7 @@ public class ModRecipes
     public static final RegistryObject<MortarCraftingRecipe.Serializer> MORTAR_CRAFTING_SERIALIZER = RECIPE_SERIALIZERS.register("mortar_crafting", MortarCraftingRecipe.Serializer::new);
     public static final RegistryObject<NbtPreservingShapelessRecipe.Serializer> NBT_PRESERVING_SHAPELESS_SERIALIZER = RECIPE_SERIALIZERS.register("nbt_preserving_shapeless", NbtPreservingShapelessRecipe.Serializer::new);
     public static final RegistryObject<NbtPreservingShapedRecipe.Serializer> NBT_PRESERVING_SHAPED_SERIALIZER = RECIPE_SERIALIZERS.register("nbt_preserving_shaped", NbtPreservingShapedRecipe.Serializer::new);
+    public static final RegistryObject<GoldenFoxTradeRecipeSerializer> GOLDEN_FOX_TRADE_SERIALIZER = RECIPE_SERIALIZERS.register("golden_fox_trade", GoldenFoxTradeRecipeSerializer::new);
 
     public static void register(IEventBus eventBus)
     {
