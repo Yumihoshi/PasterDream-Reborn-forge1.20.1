@@ -1,0 +1,17 @@
+{
+  "sortnum": 0,
+  "name": "pasterdream.seniors_dream.entry.titanium",
+  "icon": "pasterdream:titanium_ingot",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:deepslate_titanium_ore",
+      "text": "pasterdream.seniors_dream.entry.titanium.page0"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.titanium.page1"
+    }
+  ]
+}

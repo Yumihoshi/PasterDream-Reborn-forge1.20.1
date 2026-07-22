@@ -1,0 +1,7 @@
+{
+  "sortnum": 1,
+  "name": "pasterdream.seniors_dream.category.foretold_dream_structures",
+  "description": "pasterdream.seniors_dream.category.foretold_dream_structures.desc",
+  "icon": "pasterdream:dyedream_lantern",
+  "parent": "pasterdream:foretold_dream"
+}

@@ -1,0 +1,17 @@
+{
+  "sortnum": 1,
+  "name": "pasterdream.seniors_dream.entry.molten_gold",
+  "icon": "pasterdream:molten_gold_ingot",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:molten_gold_ore",
+      "text": "pasterdream.seniors_dream.entry.molten_gold.page0"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.molten_gold.page1"
+    }
+  ]
+}

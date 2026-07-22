@@ -1,0 +1,17 @@
+{
+  "sortnum": 3,
+  "name": "pasterdream.seniors_dream.entry.sculk_upgrade",
+  "icon": "pasterdream:sculk_upgrade",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:sculk_upgrade",
+      "text": "pasterdream.seniors_dream.entry.sculk_upgrade.page0"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.sculk_upgrade.page1"
+    }
+  ]
+}

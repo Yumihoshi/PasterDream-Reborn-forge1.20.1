@@ -1,0 +1,17 @@
+{
+  "sortnum": 0,
+  "name": "pasterdream.seniors_dream.entry.dyedream_sky_island",
+  "icon": "pasterdream:cloud",
+  "category": "pasterdream:foretold_dream/structures",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.dyedream_sky_island.page0"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["pasterdream:textures/patchouli_books/seniors_dream/en_us/entries/foretold_dream/structures/dyedream_sky_island.png"],
+      "text": "pasterdream.seniors_dream.entry.dyedream_sky_island.page1"
+    }
+  ]
+}
