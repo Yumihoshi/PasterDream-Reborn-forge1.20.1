@@ -1177,7 +1177,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 帕秋莉宝典
         add(ModItems.SENIORS_DREAM_BOOK.get(), "旧梦归引");
         add("pasterdream.seniors_dream", "旧梦归引");
-        add("pasterdream.seniors_dream.landing_text", ">这里是开篇文字<");
         add("pasterdream.seniors_dream.catalyst.test", "测试");
         add("pasterdream.seniors_dream.catalyst.test.desc", "一个测试分类。");
         add("pasterdream.seniors_dream.entry.welcome", "欢迎");
