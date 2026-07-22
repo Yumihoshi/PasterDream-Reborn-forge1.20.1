@@ -1013,7 +1013,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Patchouli book
         add(ModItems.SENIORS_DREAM_BOOK.get(), "Seniors Dream");
         add("pasterdream.seniors_dream", "Seniors Dream");
-        add("pasterdream.seniors_dream.landing_text", "...");
         add("pasterdream.seniors_dream.catalyst.test", "Test");
         add("pasterdream.seniors_dream.catalyst.test.desc", "A test catalyst.");
         add("pasterdream.seniors_dream.entry.welcome", "Welcome");
