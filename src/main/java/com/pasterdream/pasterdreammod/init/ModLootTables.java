@@ -22,7 +22,10 @@ public class ModLootTables {
             ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/dyedream_relic_chest_loot_rare");
     public static final ResourceLocation FISHERMAN_HUT_CHEST_LOOT =
             ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/fisherman_hut_chest");
-
+    public static final ResourceLocation ECOSYSTEM_BUBBLE_CHEST_LOOT =
+            ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/ecosystem_bubble_chest");
+    public static final ResourceLocation DESERT_FORTRESS_CHEST_LOOT =
+            ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/desert_fortress_chest");
 
     public static final DeferredRegister<LootItemFunctionType> LOOT_FUNCTION_TYPES =
             DeferredRegister.create(Registries.LOOT_FUNCTION_TYPE, PasterDreamMod.MOD_ID);

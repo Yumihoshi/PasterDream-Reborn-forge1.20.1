@@ -25,8 +25,8 @@ import java.util.List;
 
 public class ModLevelStems {
 
-    //六维参数区间要求每一个群系的参数区间不能是其他群系参数区间的子集，不然这个群系将永远无法出现
-
+    //六维参数区间必须满足：每个群系的参数区间不能都是其他群系参数区间的子集，否则该群系永远无法出现。
+    //满足上述条件的情况下如果某群系仍然不生成，则需进一步满足：六个参数区间中至少有一个与其他所有群系的对应区间交集为空。
     public static final ResourceKey<LevelStem> DYEDREAM_WORLD =
             ResourceKey.create(Registries.LEVEL_STEM,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_world"));
@@ -68,10 +68,10 @@ public class ModLevelStems {
         //  群系     温度          湿度          大陆性         侵蚀          怪异度
         //  冻洋  T[-2.0,2.0]  H[-2.0,2.0]  C[-2.0,-0.19]  E[-2.0,2.0]  W[-2.0,-0.5]
         //  暖洋  T[-2.0,2.0]  H[-2.0,2.0]  C[-2.0,-0.19]  E[-2.0,2.0]  W[-0.5, 2.0]
-        //  雪原  T[-2.0,-0.5] H[-2.0,0.5]  C[-0.19,2.0]  E[-0.5,2.0]  W[-2.0,2.0]
-        //  平原  T[-0.7,0.7]  H[-2.0,2.0]  C[-0.19,2.0]  E[-2.0,2.0]  W[-2.0,2.0]
-        //  菇山  T[ 0.5,2.0]  H[-0.5,2.0]  C[-0.19,2.0]  E[-0.5,2.0]  W[-2.0,2.0]
-        //  估算占比: 冻洋~17% 暖洋~28% 雪原~13% 平原~30% 菇山~13%
+        //  雪原  T[-2.0,-1.0]  H[-2.0,2.0] C[-0.19,2.0]  E[-2.0,2.0]  W[-2.0,2.0]
+        //  平原  T[-0.9, 0.9]  H[-2.0,2.0] C[-0.19,2.0]  E[-2.0,2.0]  W[-2.0,2.0]
+        //  菇山  T[ 1.0,2.0]  H[-0.5,2.0] C[-0.19,2.0]  E[-0.5,2.0]  W[-2.0,2.0]
+        //  估算占比: 冻洋~19% 暖洋~32% 雪原~15% 平原~28% 菇山~6%
         Climate.ParameterList<Holder<Biome>> biomeParams = new Climate.ParameterList<>(List.<Pair<Climate.ParameterPoint, Holder<Biome>>>of(
                 // 染梦冻洋 — 暖/寒海域由怪异度[-2.0,-0.5]定义
                 Pair.of(
@@ -99,23 +99,23 @@ public class ModLevelStems {
                         ),
                         dyedreamOcean
                 ),
-                // 染梦雪原 — 寒冷陆地 T[-2.0,-0.5] H[-2.0,0.5] E[-0.5,2.0]
+                // 染梦雪原 — 寒冷陆地 T[-2.0,-1.0] H[-2.0,2.0] E[-2.0,2.0]
                 Pair.of(
                         new Climate.ParameterPoint(
-                                Climate.Parameter.span(-2.0F, -0.5F),
-                                Climate.Parameter.span(-2.0F, 0.5F),
+                                Climate.Parameter.span(-2.0F, -1.0F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
                                 Climate.Parameter.span(-0.19F, 2.0F),
-                                Climate.Parameter.span(-0.5F, 2.0F),
+                                Climate.Parameter.span(-2.0F, 2.0F),
                                 Climate.Parameter.point(0.0F),
                                 Climate.Parameter.span(-2.0F, 2.0F),
                                 0L
                         ),
                         dyedreamSnowyPlains
                 ),
-                // 染梦平原 — 陆地主体 T[-0.7,0.7] H[-2.0,2.0] E[-2.0,2.0]
+                // 染梦平原 — 陆地主体 T[-0.9,0.9] H[-2.0,2.0] E[-2.0,2.0]
                 Pair.of(
                         new Climate.ParameterPoint(
-                                Climate.Parameter.span(-0.7F, 0.7F),
+                                Climate.Parameter.span(-0.9F, 0.9F),
                                 Climate.Parameter.span(-2.0F, 2.0F),
                                 Climate.Parameter.span(-0.19F, 2.0F),
                                 Climate.Parameter.span(-2.0F, 2.0F),
@@ -125,10 +125,10 @@ public class ModLevelStems {
                         ),
                         dyedreamPlains
                 ),
-                // 粉顶菇山地 — 温暖高地 T[0.5,2.0] H[-0.5,2.0] E[-0.5,2.0]
+                // 粉顶菇山地 — 温暖高地 T[1.0,2.0] H[-0.5,2.0] E[-0.5,2.0]
                 Pair.of(
                         new Climate.ParameterPoint(
-                                Climate.Parameter.span(0.5F, 2.0F),
+                                Climate.Parameter.span(1.0F, 2.0F),
                                 Climate.Parameter.span(-0.5F, 2.0F),
                                 Climate.Parameter.span(-0.19F, 2.0F),
                                 Climate.Parameter.span(-0.5F, 2.0F),

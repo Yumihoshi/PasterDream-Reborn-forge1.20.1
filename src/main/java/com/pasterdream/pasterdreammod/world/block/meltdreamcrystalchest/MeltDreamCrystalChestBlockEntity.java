@@ -3,9 +3,10 @@ package com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest;
 import com.pasterdream.pasterdreammod.init.*;
 import com.pasterdream.pasterdreammod.network.animationstatechange.AnimationStateChangePacket;
 import com.pasterdream.pasterdreammod.world.block.geckolibblock.AnimatableSync;
-import net.minecraft.commands.arguments.blocks.BlockInput;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -27,7 +28,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
-import net.minecraft.world.level.chunk.LevelChunkSection;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -174,10 +174,22 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
                 {
                     switch (blockEntity.tickCounter)
                     {
-                        case 0  -> serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 2F, 1F);
-                        case 15 -> serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.CHEST_OPEN, SoundSource.BLOCKS, 1.5F, 1F);
-                        case 25 -> blockEntity.spawnLoot(blockEntity.openingPlayer, blockEntity.animationState);
-                        case 39 -> blockEntity.replaceWithOpenChest();
+                        case 0  -> {
+                            serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 2F, 1F);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 20, 0.2, 0.2, 0.2, 0.1);
+                        }
+                        case 15 -> {
+                            serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.CHEST_OPEN, SoundSource.BLOCKS, 1.5F, 1F);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 12, 0.15, 0.15, 0.15, 0.05);
+                        }
+                        case 25 -> {
+                            blockEntity.spawnLoot(blockEntity.openingPlayer, blockEntity.animationState);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 16, 0.25, 0.15, 0.25, 0.15);
+                        }
+                        case 39 -> {
+                            spawnBigCrystalParticles(serverLevel, blockEntity.worldPosition, 32, 0.5, 0.3, 0.5, 0.2);
+                            blockEntity.replaceWithOpenChest();
+                        }
                     }
                 }
 
@@ -185,11 +197,27 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
                 {
                     switch (blockEntity.tickCounter)
                     {
-                        case 0  -> serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 2F, 1F);
-                        case 19 -> serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 3F, 1.2F);
-                        case 32 -> serverLevel.playSound(null, blockEntity.worldPosition, ModSounds.MELT_DREAM_CRYSTAL_CHEST_OPEN_RARE.get(), SoundSource.BLOCKS, 1.5F, 1F);
-                        case 45 -> blockEntity.spawnLoot(blockEntity.openingPlayer, blockEntity.animationState);
-                        case 61 -> blockEntity.replaceWithOpenChest();
+                        case 0  -> {
+                            serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 2F, 1F);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 24, 0.2, 0.2, 0.2, 0.1);
+                        }
+                        case 19 -> {
+                            serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 3F, 1.2F);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 32, 0.25, 0.2, 0.25, 0.15);
+                            serverLevel.sendParticles(ParticleTypes.END_ROD, blockEntity.worldPosition.getX() + 0.5, blockEntity.worldPosition.getY() + 0.5, blockEntity.worldPosition.getZ() + 0.5, 8, 0.1, 0.1, 0.1, 0.1);
+                        }
+                        case 32 -> {
+                            serverLevel.playSound(null, blockEntity.worldPosition, ModSounds.MELT_DREAM_CRYSTAL_CHEST_OPEN_RARE.get(), SoundSource.BLOCKS, 1.5F, 1F);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 16, 0.2, 0.15, 0.2, 0.1);
+                        }
+                        case 45 -> {
+                            blockEntity.spawnLoot(blockEntity.openingPlayer, blockEntity.animationState);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 20, 0.3, 0.2, 0.3, 0.2);
+                        }
+                        case 61 -> {
+                            spawnBigCrystalParticles(serverLevel, blockEntity.worldPosition, 48, 0.6, 0.4, 0.6, 0.3);
+                            blockEntity.replaceWithOpenChest();
+                        }
                     }
                 }
 
@@ -197,18 +225,51 @@ public class MeltDreamCrystalChestBlockEntity extends BlockEntity implements Geo
                 {
                     switch (blockEntity.tickCounter)
                     {
-                        case 0  -> serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 2F, 1F);
-                        case 19 -> serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 3F, 1.2F);
-                        case 40 -> serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 6F, 1.6F);
-                        case 57 -> serverLevel.playSound(null, blockEntity.worldPosition, ModSounds.MELT_DREAM_CRYSTAL_CHEST_OPEN_LEGEND.get(), SoundSource.BLOCKS, 1.5F, 1F);
-                        case 65 -> blockEntity.spawnLoot(blockEntity.openingPlayer, blockEntity.animationState);
-                        case 81 -> blockEntity.replaceWithOpenChest();
+                        case 0  -> {
+                            serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 2F, 1F);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 32, 0.2, 0.2, 0.2, 0.1);
+                        }
+                        case 19 -> {
+                            serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 3F, 1.2F);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 36, 0.25, 0.2, 0.25, 0.15);
+                            serverLevel.sendParticles(ParticleTypes.END_ROD, blockEntity.worldPosition.getX() + 0.5, blockEntity.worldPosition.getY() + 0.5, blockEntity.worldPosition.getZ() + 0.5, 12, 0.1, 0.1, 0.1, 0.1);
+                        }
+                        case 40 -> {
+                            serverLevel.playSound(null, blockEntity.worldPosition, SoundEvents.AMETHYST_CLUSTER_PLACE, SoundSource.BLOCKS, 6F, 1.6F);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 40, 0.3, 0.25, 0.3, 0.2);
+                            serverLevel.sendParticles(ParticleTypes.END_ROD, blockEntity.worldPosition.getX() + 0.5, blockEntity.worldPosition.getY() + 0.5, blockEntity.worldPosition.getZ() + 0.5, 16, 0.15, 0.15, 0.15, 0.15);
+                        }
+                        case 57 -> {
+                            serverLevel.playSound(null, blockEntity.worldPosition, ModSounds.MELT_DREAM_CRYSTAL_CHEST_OPEN_LEGEND.get(), SoundSource.BLOCKS, 1.5F, 1F);
+                            spawnBigCrystalParticles(serverLevel, blockEntity.worldPosition, 24, 0.4, 0.3, 0.4, 0.25);
+                        }
+                        case 65 -> {
+                            blockEntity.spawnLoot(blockEntity.openingPlayer, blockEntity.animationState);
+                            spawnBigCrystalParticles(serverLevel, blockEntity.worldPosition, 64, 0.8, 0.5, 0.8, 0.5);
+                            spawnCrystalParticles(serverLevel, blockEntity.worldPosition, 36, 0.5, 0.3, 0.5, 0.3);
+                        }
+                        case 81 -> {
+                            spawnBigCrystalParticles(serverLevel, blockEntity.worldPosition, 32, 0.5, 0.4, 0.5, 0.3);
+                            blockEntity.replaceWithOpenChest();
+                        }
                     }
                 }
             }
 
             blockEntity.tickCounter++;
         }
+    }
+
+    private static void spawnCrystalParticles(ServerLevel level, BlockPos pos, int count, double dx, double dy, double dz, double speed) {
+        level.sendParticles((SimpleParticleType) ModParticleTypes.MELTDREAM_CRYSTAL_PARTICLE.get(),
+                pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                count, dx, dy, dz, speed);
+    }
+
+    private static void spawnBigCrystalParticles(ServerLevel level, BlockPos pos, int count, double dx, double dy, double dz, double speed) {
+        level.sendParticles((SimpleParticleType) ModParticleTypes.MELTDREAM_CRYSTAL_BIG_PARTICLE.get(),
+                pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                count, dx, dy, dz, speed);
     }
 
     private int rollQuality(Player player)

@@ -669,7 +669,7 @@ public class ModItems {
                     .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.375f).build())));
 
     public static final RegistryObject<Item> PINK_HEART_CHOCOLATE = ITEMS.register("pink_heart_chocolate",
-            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(1.5).meltDreamEnergyAdd(0.2)
+            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(1.5).meltDreamEnergyAdd(0.9)
                     .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.375f).build())));
 
     public static final RegistryObject<Item> BREAD_SLICE = ITEMS.register("bread_slice",
@@ -721,6 +721,26 @@ public class ModItems {
     public static final RegistryObject<Item> BUBBLE_GUM = ITEMS.register("bubble_gum",
             () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(3)
                     .food(new FoodProperties.Builder().nutrition(1).alwaysEat().build()).useDuration(64)));
+
+
+    public static final RegistryObject<Item> GALAXY_JELLY = ITEMS.register("galaxy_jelly",
+            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties()
+                    .food(new FoodProperties.Builder().nutrition(6).alwaysEat().saturationMod(0.415f).build()).useDuration(25)
+            ){
+                @Override
+                protected void onFoodSpecial(Player player, Level level) {
+                    // 垂直方向将玩家送上天空
+                    player.setDeltaMovement(player.getDeltaMovement().x, 3, player.getDeltaMovement().z);
+                    player.hurtMarked = true;
+
+                    player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 120, 0));
+                    // 2秒冷却 (40 ticks)
+                    player.getCooldowns().addCooldown(this, 40);
+
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                            SoundEvents.FIREWORK_ROCKET_LAUNCH, SoundSource.PLAYERS, 1.0F, 1.0F);
+                }
+            });
 
     public static final RegistryObject<Item> LIGHT_ORGAN = ITEMS.register("light_organ",
             () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(-1)
@@ -810,6 +830,7 @@ public class ModItems {
     public static final RegistryObject<Item> BUBBLE_TEA = ITEMS.register("bubble_tea", () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties()
             .food(new FoodProperties.Builder().nutrition(5).saturationMod(0.7f).alwaysEat().build())));
 
+
     // ===== 露滴 =====
     public static final RegistryObject<Item> RED_DEW = ITEMS.register("red_dew",
             RedDewItem::new);
@@ -890,6 +911,8 @@ public class ModItems {
             AllkindsRingItem::new);
     public static final RegistryObject<Item> COUNTER_RING = ITEMS.register("counter_ring",
             CounterRingItem::new);
+    public static final RegistryObject<Item> MELT_DREAM_ENERGY_RING = ITEMS.register("melt_dream_energy_ring",
+            MeltDreamEnergyRingItem::new);
     // ===== 饰品（腰带） =====
     public static final RegistryObject<Item> EMBRYO_BELT = ITEMS.register("embryo_belt",
             EmbryoBeltItem::new);
@@ -1361,6 +1384,10 @@ public class ModItems {
     public static final RegistryObject<Item> BLUE_PRINT = ITEMS.register("blue_print", () -> new BluePrintItem(new Item.Properties()));
     public static final RegistryObject<Item> DREAM_NOTES_BOOK = ITEMS.register("dream_notes_book", () -> new DreamNotesBookItem(new Item.Properties()));
 
+    // 帕秋莉宝典
+    public static final RegistryObject<Item> SENIORS_DREAM_BOOK = ITEMS.register("seniors_dream_book",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
     // ===== 音乐唱片 =====
     public static final RegistryObject<Item> SWEET_DREAM_MUSIC_DISC = ITEMS.register("sweet_dream_music_disc",
             () -> new RecordItem(0, ModSounds.SWEET_DREAM_MUSIC, new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 2220));
@@ -1413,6 +1440,8 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.PINK_CHICKEN, 0xf3e3f2, 0xbf038f, new Item.Properties()));
     public static final RegistryObject<Item> PINK_SLIME_SPAWN_EGG = ITEMS.register("pink_slime_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.PINK_SLIME, 0xe4a8d9, 0xd46daf, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_FOX_SPAWN_EGG = ITEMS.register("golden_fox_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.GOLDEN_FOX, 0xe8c13a, 0x8b6914, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

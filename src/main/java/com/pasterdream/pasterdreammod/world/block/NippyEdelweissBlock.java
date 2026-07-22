@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.world.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -31,6 +32,23 @@ public class NippyEdelweissBlock extends FlowerBlock implements EntityBlock {
     }
 
     @Override
+    public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+        return 100;
+    }
+
+    @Override
+    public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+        return 60;
+    }
+
+    @Override
+    public boolean triggerEvent(BlockState state, Level world, BlockPos pos, int eventID, int eventParam) {
+        super.triggerEvent(state, world, pos, eventID, eventParam);
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        return blockEntity != null && blockEntity.triggerEvent(eventID, eventParam);
+    }
+
+    @Override
     public void appendHoverText(ItemStack itemstack, BlockGetter world, List<Component> list, TooltipFlag flag) {
         super.appendHoverText(itemstack, world, list, flag);
         list.add(Component.literal("§f▪ §9冰冻周围的水源 并在地面凝结成雪"));
@@ -51,16 +69,9 @@ public class NippyEdelweissBlock extends FlowerBlock implements EntityBlock {
     private static void freezeNearby(Level world, BlockPos pos) {
         if (world.isClientSide()) return;
 
-        BlockEntity be = world.getBlockEntity(pos);
-        if (be == null) return;
-
         int rx = Mth.nextInt(world.getRandom(), -3, 3);
         int ry = Mth.nextInt(world.getRandom(), -1, 0);
         int rz = Mth.nextInt(world.getRandom(), -3, 3);
-
-        be.getPersistentData().putDouble("random_x", rx);
-        be.getPersistentData().putDouble("random_y", ry);
-        be.getPersistentData().putDouble("random_z", rz);
 
         BlockPos target = pos.offset(rx, ry, rz);
         BlockState targetState = world.getBlockState(target);

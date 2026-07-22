@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.datagen.util.RecipeHelpers;
 import com.pasterdream.pasterdreammod.helper.ContainerBalanceHelper;
+import com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest.MeltDreamCrystalChestLootTableNBT;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
@@ -2170,6 +2171,13 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
                 .save(pWriter, "dyedream_desk_from_lectern");
 
+        // 旧梦归引宝典 = 书 + 染梦果（合成后由 PlayerEvent.ItemCraftedEvent 替换为帕秋莉版）
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SENIORS_DREAM_BOOK.get(), 1)
+                .requires(Items.BOOK)
+                .requires(ModItems.DYEDREAM_FRUIT.get())
+                .unlockedBy(getHasName(ModItems.DYEDREAM_FRUIT.get()), has(ModItems.DYEDREAM_FRUIT.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, getItemName(ModItems.SENIORS_DREAM_BOOK.get())));
+
     }
 
     // ===== 饰品配方 =====
@@ -2374,7 +2382,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         .requires(ModItems.RED_DEW.get())
                         .requires(ModItems.LIFE_CRYSTAL.get())
                         .unlockedBy(getHasName(ModItems.RED_DEW_RING.get()), has(ModItems.RED_DEW_RING.get())),
-                pWriter, "red_dew_ring_lv4", lv3Nbt, Map.of(0, lv3Nbt));
+                pWriter, "red_dew_ring_lv4", lv4Nbt, Map.of(0, lv3Nbt));
 
         //2个强击戒指配方
         saveShapedWithNbt(ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STRIKE_RING.get(), 1)
@@ -2396,6 +2404,30 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         .define('c', Items.BLAZE_ROD)
                         .unlockedBy(getHasName(ModItems.STRIKE_RING.get()), has(ModItems.STRIKE_RING.get())),
                 pWriter, "strike_ring_lv2", lv2Nbt, Map.of('a', lv1Nbt));
+
+        // 融梦光环戒指 = 融梦水晶碎片 + 染梦合金粒 + 戒指原胚
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MELT_DREAM_ENERGY_RING.get(), 1)
+                .pattern(" a ")
+                .pattern("bcb")
+                .pattern(" b ")
+                .define('a', ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get())
+                .define('b', ModItems.DYEDREAM_ALLOY_NUGGET.get())
+                .define('c', ModItems.EMBRYO_RING.get())
+                .unlockedBy(getHasName(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()),
+                        has(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()))
+                .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                        "melt_dream_energy_ring_from_embryo"));
+
+        // ===== 金狐狸交易配方 =====
+        saveGoldenFoxTrade(pWriter, Ingredient.of(Items.GOLDEN_APPLE), new ItemStack(Items.ENCHANTED_GOLDEN_APPLE),
+                "golden_fox_trade_golden_apple");
+        saveGoldenFoxTrade(pWriter, Ingredient.of(Items.BUCKET),
+                new ItemStack(ModItems.MELT_DREAM_LIQUID_BUCKET.get()), "golden_fox_trade_bucket");
+        saveGoldenFoxTrade(pWriter, Ingredient.of(ModItems.MELT_DREAM_COIN_PILE.get()),
+                MeltDreamCrystalChestLootTableNBT.meltDreamCrystalChestDyedreamWorldNBT(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()),
+                "golden_fox_trade_coin_pile");
+        saveGoldenFoxTrade(pWriter, Ingredient.of(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()),
+                new ItemStack(ModItems.KAICHU_OMAMORI.get()), "golden_fox_trade_crystal_fragment");
 
     }
 
@@ -2433,5 +2465,40 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('d', ModItems.DYEDREAM_DYE.get())
                 .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
                 .save(writer, PasterDreamMod.MOD_ID + ":" + getItemName(result) + "_from_dye");
+    }
+
+    private void saveGoldenFoxTrade(Consumer<FinishedRecipe> writer, Ingredient ingredient, ItemStack result, String name) {
+        writer.accept(new FinishedRecipe() {
+            @Override
+            public void serializeRecipeData(JsonObject json) {
+                json.add("ingredient", ingredient.toJson());
+                JsonObject resultObj = new JsonObject();
+                resultObj.addProperty("item", result.getItem().builtInRegistryHolder().key().location().toString());
+                resultObj.addProperty("count", result.getCount());
+                if (result.hasTag())
+                    resultObj.addProperty("nbt", result.getTag().toString());
+                json.add("result", resultObj);
+            }
+
+            @Override
+            public ResourceLocation getId() {
+                return ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, name);
+            }
+
+            @Override
+            public RecipeSerializer<?> getType() {
+                return ModRecipes.GOLDEN_FOX_TRADE_SERIALIZER.get();
+            }
+
+            @Override
+            public JsonObject serializeAdvancement() {
+                return null;
+            }
+
+            @Override
+            public ResourceLocation getAdvancementId() {
+                return null;
+            }
+        });
     }
 }

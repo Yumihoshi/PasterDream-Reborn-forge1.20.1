@@ -96,6 +96,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.YINHUL_COTTON_CANDY.get(), "银狐棉花糖");
         add(ModItems.MELT_DREAM_COTTON_CANDY.get(), "融梦棉花糖");
         add(ModItems.BUBBLE_GUM.get(), "泡泡糖");
+        add(ModItems.GALAXY_JELLY.get(), "星河果冻");
         add(ModItems.LIGHT_ORGAN.get(), "发光器官");
         add(ModItems.JELLYFISH_MUD.get(), "水母泥");
         add(ModItems.JELLYFISH_JELLO.get(), "水母果冻");
@@ -373,6 +374,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.RESEARCH_TABLE.get(), "研究台");
         add(ModBlocks.LOST_SWORD_TOMB.get(), "失落剑冢");
         add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "金狐狸雕像");
+        add("block.pasterdream.golden_fox_sculpture.no_reaction", "雕像没有反应...");
+        add("block.pasterdream.golden_fox_sculpture.cooldown", "雕像还在沉睡... 还需等待 %s 秒");
         add(ModBlocks.FOX_SCULPTURE.get(), "狐狸雕像");
         add(ModBlocks.DESERT_HERO_TOMB.get(), "荒漠英雄之墓");
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "融梦水晶箱");
@@ -426,6 +429,37 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_SPROUTS.get(), "影苗");
         add(ModBlocks.SHADOW_FERN.get(), "影蕨");
         add(ModBlocks.SHADOW_FUNGUS.get(), "阴影蘑菇");
+
+        add(ModBlocks.POTTED_STEM_GRASS.get(), "盆栽茎草");
+        add(ModBlocks.POTTED_PINK_MUSHROOM.get(), "盆栽粉顶菇");
+        add(ModBlocks.POTTED_DYEDREAM_MOSS.get(), "盆栽染梦苔藓");
+        add(ModBlocks.POTTED_LINHT_FLOWER.get(), "盆栽苓灯花");
+        add(ModBlocks.POTTED_DYEDREAM_LILY_OF_THE_VALLEY.get(), "盆栽染梦铃兰");
+        add(ModBlocks.POTTED_SINGULARITY_FERN.get(), "盆栽奇异蕨");
+        add(ModBlocks.POTTED_FERRARIA_CRISPA.get(), "盆栽魔星兰");
+        add(ModBlocks.POTTED_EUSTOMA.get(), "盆栽洋桔梗");
+        add(ModBlocks.POTTED_JUNGLE_SPORANGIUM.get(), "盆栽丛林孢子囊");
+        add(ModBlocks.POTTED_MALVA_SINENSIS_CAVAN.get(), "盆栽锦葵");
+        add(ModBlocks.POTTED_GOLDENROD.get(), "盆栽秋麒麟");
+        add(ModBlocks.POTTED_FOURLEAF_CLOVER.get(), "盆栽四叶草");
+        add(ModBlocks.POTTED_BLAZE_FLOWER.get(), "盆栽烈焰花");
+        add(ModBlocks.POTTED_WHITE_ORCHID_FLOWER.get(), "盆栽白厄花");
+        add(ModBlocks.POTTED_SHADOW_SHORT_ROOTS.get(), "盆栽阴影矮菌索");
+        add(ModBlocks.POTTED_SHADOW_ROOTS.get(), "盆栽阴影菌索");
+        add(ModBlocks.POTTED_SHADOW_SPROUTS.get(), "盆栽影苗");
+        add(ModBlocks.POTTED_SHADOW_FERN.get(), "盆栽影蕨");
+        add(ModBlocks.POTTED_SHADOW_FUNGUS.get(), "盆栽阴影蘑菇");
+        add(ModBlocks.POTTED_EDELWEISS.get(), "盆栽雪绒花");
+        add(ModBlocks.POTTED_NIPPY_EDELWEISS.get(), "盆栽凛冽雪绒花");
+        add(ModBlocks.POTTED_DYEDREAM_SAPLING.get(), "盆栽染梦树苗");
+        add(ModBlocks.POTTED_REED.get(), "盆栽芦苇");
+        add(ModBlocks.POTTED_RYE.get(), "盆栽兰麦");
+        add(ModBlocks.POTTED_OATS.get(), "盆栽洋麦");
+        add(ModBlocks.POTTED_DYEDREAM_COROLLA_CROP.get(), "盆栽梦染茶花");
+        add(ModBlocks.POTTED_WHITE_COROLLA_CROP.get(), "盆栽苍白雪莲");
+        add(ModBlocks.POTTED_LIGHT_BALL_CROP.get(), "盆栽流明堇");
+        add(ModBlocks.POTTED_CLOUD_CROP.get(), "盆栽玲云花");
+        add(ModBlocks.POTTED_COTTON_CROP.get(), "盆栽棉花");
 
         add(ModItems.DEBUG_SWORD.get(), "调试之剑");
         add(ModItems.LOOT_GENERATOR.get(), "战利品生成器");
@@ -1085,8 +1119,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         // 反击戒指
         add(ModItems.COUNTER_RING.get(), "反击戒指");
+        add(ModItems.MELT_DREAM_ENERGY_RING.get(), "融梦光环戒指");
         add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9成功回避伤害时获得反击I (0:10)");
         add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9下一次攻击：攻击力+3 战技伤害+50%，命中后效果解除");
+        add("tooltip.pasterdream.melt_dream_energy_ring.effect1", "§7▪ §9梦境内融梦能量+0.3/min");
+        add("tooltip.pasterdream.melt_dream_energy_ring.effect2", "§7▪ §9梦境外融梦能量+0.15/min");
         add("effect.pasterdream.counter_attack_buff", "反击");
         add("effect.pasterdream.memento_buff", "寻梦者的祈愿");
 
@@ -1138,12 +1175,40 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
 
         // 帕秋莉宝典
+        add(ModItems.SENIORS_DREAM_BOOK.get(), "旧梦归引");
         add("pasterdream.seniors_dream", "旧梦归引");
         add("pasterdream.seniors_dream.landing_text", ">这里是开篇文字<");
         add("pasterdream.seniors_dream.catalyst.test", "测试");
         add("pasterdream.seniors_dream.catalyst.test.desc", "一个测试分类。");
         add("pasterdream.seniors_dream.entry.welcome", "欢迎");
         add("pasterdream.seniors_dream.entry.welcome.page0", "如果你能看到这段文字，说明宝典工作正常！");
+        add("pasterdream.seniors_dream.landing_text", "欢迎来到《帕斯特之梦：重生》，此模组是《帕斯特之梦》的重制版。在保证原有内容的前提下，对游戏内容和流程进行一定优化，通过此书可以了解到缺失的引导和物品信息。那么寻梦者，愿星河入梦，枕畔有风。");
+
+        // 分类
+        add("pasterdream.seniors_dream.category.rules", "机制介绍");
+        add("pasterdream.seniors_dream.category.rules.desc", "本篇介绍模组中的核心机制。");
+
+        // 融梦能量
+        add("pasterdream.seniors_dream.entry.meltdream", "融梦能量");
+        add("pasterdream.seniors_dream.entry.meltdream.page0", "在屏幕的左下角，有一个能量条一般的图标，即为融梦能量。对于拥有战技的武器，右键可以消耗融梦能量来触发相应战技。");
+        add("pasterdream.seniors_dream.entry.meltdream.page1", "融梦能量条界面展示。");
+        add("pasterdream.seniors_dream.entry.meltdream.page2", "融梦能量的获取途径：$(br)每开启一个融梦水晶箱可以获得2点融梦能量；$(br)食用部分食物可以获得一定融梦能量；$(br)佩戴部分饰品也可以恢复融梦能量，主要为融梦光环戒指和世界树种荚。");
+        add("pasterdream.seniors_dream.entry.meltdream.page3", "与融梦能量相关的部分物品展示。");
+
+        // san值
+        add("pasterdream.seniors_dream.entry.san", "san值");
+        add("pasterdream.seniors_dream.entry.san.page0", "或许你也已经注意到了，在你屏幕的右下角有一个大脑一样的图标，即为san值。");
+        add("pasterdream.seniors_dream.entry.san.page1", "san值界面展示。");
+        add("pasterdream.seniors_dream.entry.san.page2", "san值效果影响：$(br)san>=90% 获得振奋$(br)san<=60% 获得不振$(br)san<=40% 获得恍惚$(br)san<=20% 获得疯狂I$(br)san<=10% 获得疯狂II$(br)san<=1%  获得疯狂III");
+        add("pasterdream.seniors_dream.entry.san.page3", "环境带来的san值变化：$(br)san的变化受到群系类型和光照强度的影响，计算公式为：$(br)总变化率 = (理智光环 / 1200) + 群系影响 + (光照等级 - 7) * 0.0001");
+        add("pasterdream.seniors_dream.entry.san.page4", "群系的影响主要表现为：$(br)在深暗之域和灯影之下的群系会降低玩家san值；$(br)在染梦世界的群系会提升玩家的san值；$(br)在其他群系不会产生强干扰。$(br2)理智光环为n则代表玩家在除开其它影响（群系影响和光照等级）的条件下一分钟内会增加n点理智。");
+        add("pasterdream.seniors_dream.entry.san.page5", "其他掉san的情况：$(br)处于阴影生物的疯狂光环下；$(br)手持带有疯狂光环的物品；$(br)某些物品的技能也会消耗san值。$(br2)主动恢复san值的方法：$(br)使用特定物品或食物；$(br)装备带有理智光环的饰品；$(br)拥有料理和休憩buff；$(br)让自己处于亮度较高的环境。");
+        add("pasterdream.seniors_dream.entry.san.page6", "与san值相关的部分物品展示。");
+
+        // 瞬身术
+        add("pasterdream.seniors_dream.entry.evasion", "瞬身术");
+        add("pasterdream.seniors_dream.entry.evasion.page0", "默认按C键释放。使用瞬身术将会消耗2点饱食度，进行一段快速移动，且重置摔落高度。使用瞬身术会有短暂的无敌帧。默认冷却时间1秒，创造模式没有冷却时间。");
+        add("pasterdream.seniors_dream.entry.evasion.page1", "在陆地上使用，会向准星所指向位置进行一段瞬时移动；$(br)在陆地潜行状态下使用，会向准星指向相反的位置进行一段瞬时移动；$(br)在水中使用，则准星在竖直方向的偏移不会有影响。");
 
 
         // 实体
@@ -1151,7 +1216,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "粉红鸡刷怪蛋");
         add(ModEntities.PINK_SLIME.get(), "粉红史莱姆");
         add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "粉红史莱姆刷怪蛋");
-
+        add(ModEntities.GOLDEN_FOX.get(), "金狐狸");
+        add(ModItems.GOLDEN_FOX_SPAWN_EGG.get(), "金狐狸刷怪蛋");
+        add(ModEntities.MELT_DREAM_CRYSTAL_ENTITY.get(), "融梦水晶");
+        add(ModEntities.FOX_FIRE.get(), "狐火");
+        add("entity.pasterdream.golden_fox.vanish", "金色狐狸在完成了你许下的愿望之后消失了...");
 
         //jeed兼容
         add("effect.pasterdream.rest_buff.description", "触摸琴雨梦玩偶或睡觉后获得，效果持续期间获得理智光环。");
@@ -1227,7 +1296,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add("tooltip.pasterdream.prophecy_card.balance.description", "§9使用卡牌时，当前自身拥有的部分药水效果的等级翻倍，但持续时间缩短至一半。（仅对部分有等级加成的效果生效）");
         add("tooltip.pasterdream.prophecy_card.chaos.description", "§9使用卡牌时，对以自身为中心，7*7范围内的所有敌人陷入混乱并失去行动能力，持续10秒。（此效果不对玩家生效）");
-        add("tooltip.pasterdream.prophecy_card.conflict.description", "§9使用卡牌时，当前生命值与已损失生命值互换。§c执意在满血使用后果自负！");
+        add("tooltip.pasterdream.prophecy_card.conflict.description", "§9重做中……");
         add("tooltip.pasterdream.prophecy_card.graveyard.description", "§9使用卡牌时，对以自身为中心，5*5范围内的所有敌人造成100点魔法伤害。（此效果不对玩家生效）");
         add("tooltip.pasterdream.prophecy_card.sprint.description", "§9使用卡牌时，获得速度III、跳跃提升II、高速反射效果，持续120秒。效果持续期间增加上坡高度，-30%瞬身术冷却并免疫摔落伤害。");
         add("tooltip.pasterdream.prophecy_card.guard.description.1", "§9使用卡牌时，获得120秒伤害吸收III和60秒守护效果。");
@@ -1252,6 +1321,15 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("structure.pasterdream.dyedream_crystal_ball", "染梦水晶球");
         add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "花园解密·迷梦冶梦莲");
         add("structure.pasterdream.garden_decryption_nippy_edelweiss", "花园解密·凌冽雪绒花");
-        add("structure.pasterdream.garden_decryption_nine_tailed_fox", "花园解密·九尾狐");
+        add("structure.pasterdream.traveler_house", "旅者小屋");
+        add("structure.pasterdream.dyedream_pavilion_plain", "染梦凉亭");
+        add("structure.pasterdream.dyedream_pavilion_snowy_plain", "雪原染梦凉亭");
+        add("structure.pasterdream.dyedream_worldtree", "染梦世界树");
+        add("structure.pasterdream.dyedream_wishing_tree", "染梦祈愿树");
+        add("structure.pasterdream.dyedream_floating_temple", "浮空神庙");
+        add("structure.pasterdream.dyedream_tavern", "染梦客栈");
+        add("structure.pasterdream.dyedream_campsite", "染梦营地");
+        add("structure.pasterdream.dyedream_ecosystem_bubble", "染梦气泡生态球");
+        add("structure.pasterdream.ecosystem_bubble", "气泡生态球");
     }
 }

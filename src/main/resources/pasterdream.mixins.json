@@ -6,9 +6,12 @@
   "mixins": [
     "BlockStateBaseMixin",
     "CampfireBlockEntityMixin",
+    "FlowerPotBlockMixin",
     "GoldenrodTeaBuffMixin",
     "HolyGrailBuffMixin",
-    "PhantomTargetMixin"
+    "NaturalSpawnerMixin",
+    "PhantomTargetMixin",
+    "WorldGenRegionMixin"
   ],
   "client": [
     "FogRendererMixin",

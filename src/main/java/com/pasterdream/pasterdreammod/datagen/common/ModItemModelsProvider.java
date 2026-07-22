@@ -100,6 +100,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.YINHUL_COTTON_CANDY.get());
         basicItem(ModItems.MELT_DREAM_COTTON_CANDY.get());
         basicItem(ModItems.BUBBLE_GUM.get());
+        basicItem(ModItems.GALAXY_JELLY.get());
         basicItem(ModItems.LIGHT_ORGAN.get());
         basicItem(ModItems.JELLYFISH_MUD.get());
         basicItem(ModItems.JELLYFISH_JELLO.get());
@@ -246,6 +247,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.EMBRYO_RING.get());
         basicItem(ModItems.ALLKINDS_RING.get());
         basicItem(ModItems.COUNTER_RING.get());
+        basicItem(ModItems.MELT_DREAM_ENERGY_RING.get());
         basicItem(ModItems.EMBRYO_BELT.get());
         basicItem(ModItems.RABBIT_FOOT_NECKLACE.get());
         basicItem(ModItems.FEATHER_NECKLACE.get());
@@ -416,6 +418,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         // 刷怪蛋
         spawnEggItem(ModItems.PINK_CHICKEN_SPAWN_EGG);
         spawnEggItem(ModItems.PINK_SLIME_SPAWN_EGG);
+        spawnEggItem(ModItems.GOLDEN_FOX_SPAWN_EGG);
     }
 
     @Override

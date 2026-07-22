@@ -389,12 +389,19 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         //不可被流体破坏的无碰撞箱方块
         tag(TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "fluid_can_not_brush_nocollission_block")))
                 .add(ModBlocks.DYEDREAM_CRACK.get())
-                .add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get());
+                .add(ModBlocks.THE_ENDLESS_BOOK_OF_DREAM_SEEKERS.get())
+                .add(ModBlocks.BIG_BUBBLE.get());
       
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.LIFE_CRYSTAL.get())
                 .add(ModBlocks.GOLDEN_FOX_SCULPTURE.get())
                 .add(ModBlocks.FOX_SCULPTURE.get());
+
+        // ===== 盆栽植物 =====
+        var flowerPots = tag(BlockTags.FLOWER_POTS);
+        for (var potted : ModBlocks.POTTED_PLANTS.values()) {
+            flowerPots.add(potted.get());
+        }
 
         tag(ModBlockTags.PLIER_PLANTS)
                 .add(ModBlocks.STEM_GRASS.get())

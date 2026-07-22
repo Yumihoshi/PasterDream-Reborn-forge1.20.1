@@ -93,6 +93,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.YINHUL_COTTON_CANDY.get(), "Yinhul Cotton Candy");
         add(ModItems.MELT_DREAM_COTTON_CANDY.get(), "Melt Dream Cotton Candy");
         add(ModItems.BUBBLE_GUM.get(), "Bubble Gum");
+        add(ModItems.GALAXY_JELLY.get(), "Galaxy Jelly");
         add(ModItems.LIGHT_ORGAN.get(), "Light Organ");
         add(ModItems.JELLYFISH_MUD.get(), "Jellyfish Mud");
         add(ModItems.JELLYFISH_JELLO.get(), "Jellfish Jello");
@@ -359,6 +360,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.RESEARCH_TABLE.get(), "Research Table");
         add(ModBlocks.LOST_SWORD_TOMB.get(), "Lost Sword Tomb");
         add(ModBlocks.GOLDEN_FOX_SCULPTURE.get(), "Golden Fox Sculpture");
+        add("block.pasterdream.golden_fox_sculpture.no_reaction", "The sculpture does not respond...");
+        add("block.pasterdream.golden_fox_sculpture.cooldown", "The sculpture is still slumbering... %s seconds remaining");
         add(ModBlocks.FOX_SCULPTURE.get(), "Fox Sculpture");
         add(ModBlocks.DESERT_HERO_TOMB.get(), "Desert Hero Tomb");
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "Melt Dream Crystal Chest");
@@ -412,6 +415,37 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.SHADOW_SPROUTS.get(), "Shadow Sprouts");
         add(ModBlocks.SHADOW_FERN.get(), "Shadow Fern");
         add(ModBlocks.SHADOW_FUNGUS.get(), "Shadow Fungus");
+
+        add(ModBlocks.POTTED_STEM_GRASS.get(), "Potted Stem Grass");
+        add(ModBlocks.POTTED_PINK_MUSHROOM.get(), "Potted Pink Mushroom");
+        add(ModBlocks.POTTED_DYEDREAM_MOSS.get(), "Potted Dyedream Moss");
+        add(ModBlocks.POTTED_LINHT_FLOWER.get(), "Potted Linht Flower");
+        add(ModBlocks.POTTED_DYEDREAM_LILY_OF_THE_VALLEY.get(), "Potted Dyedream Lily of the Valley");
+        add(ModBlocks.POTTED_SINGULARITY_FERN.get(), "Potted Singularity Fern");
+        add(ModBlocks.POTTED_FERRARIA_CRISPA.get(), "Potted Ferraria Crispa");
+        add(ModBlocks.POTTED_EUSTOMA.get(), "Potted Eustoma");
+        add(ModBlocks.POTTED_JUNGLE_SPORANGIUM.get(), "Potted Jungle Sporangium");
+        add(ModBlocks.POTTED_MALVA_SINENSIS_CAVAN.get(), "Potted Malva Sinensis Cavan");
+        add(ModBlocks.POTTED_GOLDENROD.get(), "Potted Goldenrod");
+        add(ModBlocks.POTTED_FOURLEAF_CLOVER.get(), "Potted Fourleaf Clover");
+        add(ModBlocks.POTTED_BLAZE_FLOWER.get(), "Potted Blaze Flower");
+        add(ModBlocks.POTTED_WHITE_ORCHID_FLOWER.get(), "Potted White Orchid Flower");
+        add(ModBlocks.POTTED_SHADOW_SHORT_ROOTS.get(), "Potted Shadow Short Roots");
+        add(ModBlocks.POTTED_SHADOW_ROOTS.get(), "Potted Shadow Roots");
+        add(ModBlocks.POTTED_SHADOW_SPROUTS.get(), "Potted Shadow Sprouts");
+        add(ModBlocks.POTTED_SHADOW_FERN.get(), "Potted Shadow Fern");
+        add(ModBlocks.POTTED_SHADOW_FUNGUS.get(), "Potted Shadow Fungus");
+        add(ModBlocks.POTTED_EDELWEISS.get(), "Potted Edelweiss");
+        add(ModBlocks.POTTED_NIPPY_EDELWEISS.get(), "Potted Nippy Edelweiss");
+        add(ModBlocks.POTTED_DYEDREAM_SAPLING.get(), "Potted Dyedream Sapling");
+        add(ModBlocks.POTTED_REED.get(), "Potted Reed");
+        add(ModBlocks.POTTED_RYE.get(), "Potted Rye");
+        add(ModBlocks.POTTED_OATS.get(), "Potted Oats");
+        add(ModBlocks.POTTED_DYEDREAM_COROLLA_CROP.get(), "Potted Dyedream Corolla");
+        add(ModBlocks.POTTED_WHITE_COROLLA_CROP.get(), "Potted White Corolla");
+        add(ModBlocks.POTTED_LIGHT_BALL_CROP.get(), "Potted Light Ball");
+        add(ModBlocks.POTTED_CLOUD_CROP.get(), "Potted Cloud");
+        add(ModBlocks.POTTED_COTTON_CROP.get(), "Potted Cotton");
 
         add(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(), "Melt Dream Crystal Fragment");
         add(ModItems.MELT_DREAM_AURORIAN_STEEL.get(), "Melt Dream Aurorian Steel");
@@ -923,8 +957,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         // Counter Ring
         add(ModItems.COUNTER_RING.get(), "Counter Ring");
+        add(ModItems.MELT_DREAM_ENERGY_RING.get(), "Melt Dream Energy Ring");
         add("tooltip.pasterdream.counter_ring.effect1", "§7▪ §9On successful dodge: gain Counterattack I (0:10)");
         add("tooltip.pasterdream.counter_ring.effect2", "§7▪ §9Next attack: Attack +3, Skill DMG ×+50%, then buff ends");
+        add("tooltip.pasterdream.melt_dream_energy_ring.effect1", "§7▪ §9Melt Dream Energy +0.3/min inside dream");
+        add("tooltip.pasterdream.melt_dream_energy_ring.effect2", "§7▪ §9Melt Dream Energy +0.15/min outside dream");
         add("effect.pasterdream.counter_attack_buff", "Counterattack");
         add("effect.pasterdream.memento_buff", "Dream Seeker's Prayer");
 
@@ -974,18 +1011,51 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
 
         // Patchouli book
+        add(ModItems.SENIORS_DREAM_BOOK.get(), "Seniors Dream");
         add("pasterdream.seniors_dream", "Seniors Dream");
         add("pasterdream.seniors_dream.landing_text", "...");
         add("pasterdream.seniors_dream.catalyst.test", "Test");
         add("pasterdream.seniors_dream.catalyst.test.desc", "A test catalyst.");
         add("pasterdream.seniors_dream.entry.welcome", "Welcome");
         add("pasterdream.seniors_dream.entry.welcome.page0", "If you can see this, the book works!");
+        add("pasterdream.seniors_dream.landing_text", "Welcome to PasterDream: Reborn, a remake of PasterDream. While preserving the original content, the gameplay and progression have been optimized. This book provides the guidance and item information that you may be missing. Now, Dreamseeker — may the stars lead you into dreams, and the wind rest by your side.");
+
+        // Categories
+        add("pasterdream.seniors_dream.category.rules", "Mechanics");
+        add("pasterdream.seniors_dream.category.rules.desc", "This chapter introduces the core mechanics of the mod.");
+
+        // Meltdream Energy
+        add("pasterdream.seniors_dream.entry.meltdream", "Meltdream Energy");
+        add("pasterdream.seniors_dream.entry.meltdream.page0", "In the bottom-left corner of your screen, there is an energy bar icon — this is your Meltdream Energy. For weapons with combat skills, right-clicking consumes Meltdream Energy to activate the corresponding skill.");
+        add("pasterdream.seniors_dream.entry.meltdream.page1", "The Meltdream Energy bar interface.");
+        add("pasterdream.seniors_dream.entry.meltdream.page2", "Ways to obtain Meltdream Energy:$(br)Each Meltdream Crystal Chest opened grants 2 Meltdream Energy;$(br)Eating certain foods grants some Meltdream Energy;$(br)Equipping certain curios also restores Meltdream Energy, primarily the Meltdream Aura Ring and World Tree Seed Pod.");
+        add("pasterdream.seniors_dream.entry.meltdream.page3", "A showcase of items related to Meltdream Energy.");
+
+        // Sanity
+        add("pasterdream.seniors_dream.entry.san", "Sanity");
+        add("pasterdream.seniors_dream.entry.san.page0", "You may have noticed a brain-like icon in the bottom-right corner of your screen — this is your Sanity (SAN) value.");
+        add("pasterdream.seniors_dream.entry.san.page1", "The Sanity bar interface.");
+        add("pasterdream.seniors_dream.entry.san.page2", "Sanity level effects:$(br)SAN>=90%: Vigor$(br)SAN<=60%: Lethargy$(br)SAN<=40%: Trance$(br)SAN<=20%: Madness I$(br)SAN<=10%: Madness II$(br)SAN<=1%:  Madness III");
+        add("pasterdream.seniors_dream.entry.san.page3", "Environmental Sanity changes:$(br)Sanity is affected by biome type and light level. Formula:$(br)Total Change Rate = (Sanity Aura / 1200) + Biome Effect + (Light Level - 7) * 0.0001");
+        add("pasterdream.seniors_dream.entry.san.page4", "Biome effects:$(br)Deep Dark and Lamp Shadow biomes decrease Sanity;$(br)Dyedream biomes increase Sanity;$(br)Other biomes have no strong interference.$(br2)Sanity Aura value of n means that, excluding other factors (biome and light level), the player gains n Sanity points per minute.");
+        add("pasterdream.seniors_dream.entry.san.page5", "Other ways to lose Sanity:$(br)Being within a Shadow creature's Madness Aura;$(br)Holding items with Madness Aura;$(br)Certain item skills also consume Sanity.$(br2)Ways to restore Sanity:$(br)Using specific items or foods;$(br)Equipping curios with Sanity Aura;$(br)Having the Cuisine or Rest buff;$(br)Staying in a brightly-lit environment.");
+        add("pasterdream.seniors_dream.entry.san.page6", "A showcase of items related to Sanity.");
+
+        // Evasion (Blink)
+        add("pasterdream.seniors_dream.entry.evasion", "Evasion (Blink)");
+        add("pasterdream.seniors_dream.entry.evasion.page0", "Default key: C. Using Evasion consumes 2 hunger points, performs a quick dash, and resets fall distance. It grants brief invincibility frames. Default cooldown: 1 second (no cooldown in Creative mode).");
+        add("pasterdream.seniors_dream.entry.evasion.page1", "On land: dashes toward where your crosshair points.$(br)On land while sneaking: dashes in the opposite direction of your crosshair.$(br)In water: vertical crosshair offset has no effect.");
 
         // Entities
         add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");
         add(ModEntities.PINK_SLIME.get(), "Pink Slime");
         add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "Pink Slime Spawn Egg");
+        add(ModEntities.GOLDEN_FOX.get(), "Golden Fox");
+        add(ModItems.GOLDEN_FOX_SPAWN_EGG.get(), "Golden Fox Spawn Egg");
+        add(ModEntities.MELT_DREAM_CRYSTAL_ENTITY.get(), "Melt Dream Crystal Entity");
+        add(ModEntities.FOX_FIRE.get(), "Fox Fire");
+        add("entity.pasterdream.golden_fox.vanish", "The golden fox vanished after fulfilling your wish...");
 
         //jeed Compatible
         add("effect.pasterdream.rest_buff.description", "Touch the QYM doll or get it after sleeping, and you'll get a san aura while the effect lasts.");
@@ -1070,5 +1140,15 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("structure.pasterdream.garden_decryption_misty_dreaming_lotus", "Garden Decryption: Misty Dreaming Lotus");
         add("structure.pasterdream.garden_decryption_nippy_edelweiss", "Garden Decryption: Nippy Edelweiss");
         add("structure.pasterdream.garden_decryption_nine_tailed_fox", "Garden Decryption: Nine-Tailed Fox");
+        add("structure.pasterdream.traveler_house", "Traveler House");
+        add("structure.pasterdream.dyedream_pavilion_plain", "Dyedream Pavilion");
+        add("structure.pasterdream.dyedream_pavilion_snowy_plain", "Snowy Plain Dyedream Pavilion");
+        add("structure.pasterdream.dyedream_worldtree", "Dyedream World Tree");
+        add("structure.pasterdream.dyedream_wishing_tree", "Dyedream Wishing Tree");
+        add("structure.pasterdream.dyedream_floating_temple", "Floating Temple");
+        add("structure.pasterdream.dyedream_tavern", "Dyedream Tavern");
+        add("structure.pasterdream.dyedream_campsite", "Dyedream Campsite");
+        add("structure.pasterdream.dyedream_ecosystem_bubble", "Dyedream Ecosystem Bubble");
+        add("structure.pasterdream.ecosystem_bubble", "Ecosystem Bubble");
     }
 }

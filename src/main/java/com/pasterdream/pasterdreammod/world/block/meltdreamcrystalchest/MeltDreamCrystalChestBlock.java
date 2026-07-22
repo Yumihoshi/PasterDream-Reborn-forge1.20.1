@@ -1,12 +1,13 @@
 package com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest;
 
 import com.pasterdream.pasterdreammod.init.ModBlockEntities;
+import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -27,9 +28,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MeltDreamCrystalChestBlock extends BaseEntityBlock
 {
@@ -82,6 +80,22 @@ public class MeltDreamCrystalChestBlock extends BaseEntityBlock
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context)
     {
         return box(0, 0, 0, 16, 15, 16);
+    }
+
+    @Override
+    public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
+        if (world.getBlockEntity(pos) instanceof MeltDreamCrystalChestBlockEntity chest && chest.getAnimationState() != 0) {
+            return;
+        }
+        for (int l = 0; l < 2; ++l) {
+            double x0 = pos.getX() + 0.35 + random.nextDouble() * 0.3;
+            double y0 = pos.getY() + 0.25 + random.nextDouble() * 0.25;
+            double z0 = pos.getZ() + 0.35 + random.nextDouble() * 0.3;
+            double dx = (random.nextFloat() - 0.5) * 0.3;
+            double dy = random.nextFloat() * 0.3;
+            double dz = (random.nextFloat() - 0.5) * 0.3;
+            world.addParticle((SimpleParticleType) ModParticleTypes.MELTDREAM_CRYSTAL_PARTICLE.get(), x0, y0, z0, dx, dy, dz);
+        }
     }
 
     @Override

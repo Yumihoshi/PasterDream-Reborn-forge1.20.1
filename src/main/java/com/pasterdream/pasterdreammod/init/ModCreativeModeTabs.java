@@ -79,6 +79,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GINGERBREAD_MAN.get());
                         output.accept(ModItems.CANDY_CANE.get());
                         output.accept(ModItems.BUBBLE_GUM.get());
+                        output.accept(ModItems.GALAXY_JELLY.get());
                         output.accept(ModItems.MELT_DREAM_COTTON_CANDY.get());
                         output.accept(ModItems.YINHUL_COTTON_CANDY.get());
                         output.accept(ModItems.JELLYFISH_MUD.get());
@@ -304,6 +305,7 @@ public class ModCreativeModeTabs {
                         output.accept(StrikeRingItem.createWithLv(ModItems.STRIKE_RING.get(), 1));
                         output.accept(StrikeRingItem.createWithLv(ModItems.STRIKE_RING.get(), 2));
                         output.accept(ModItems.COUNTER_RING.get());
+                        output.accept(ModItems.MELT_DREAM_ENERGY_RING.get());
                         output.accept(ModItems.STORAGE_BAG.get());
                         output.accept(ModItems.LARGE_STORAGE_BAG.get());
                     })
@@ -589,9 +591,9 @@ public class ModCreativeModeTabs {
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_travelogue_1"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_travelogue_2"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_travelogue_3"));
-                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_church_1"));
-                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_church_2"));
-                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_church_3"));
+                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dream_church_1"));
+                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dream_church_2"));
+                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dream_church_3"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dyedream_crystal_ball"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("dream_wishing_tree"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("warm_cold_wind"));
@@ -665,24 +667,28 @@ public class ModCreativeModeTabs {
                         output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/dyedream_relic_chest_loot_common"));
                         output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/dyedream_relic_chest_loot_rare"));
                         output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/fisherman_hut_chest"));
+                        output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/ecosystem_bubble_chest"));
                         output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/melt_dream_crystal_chest_dyedream_world_normal"));
                         output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/melt_dream_crystal_chest_dyedream_world_rare"));
-                        output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/melt_dream_crystal_chest_dyedream_world_legendary"));
+                        output.accept(LootGeneratorWithNBT.create(ModItems.LOOT_GENERATOR.get(), "pasterdream:chests/melt_dream_crystal_chest_dyedream_world_legend"));
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_0.get());
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get());
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get());
                         output.accept(ModItems.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3.get());
                         output.accept(MeltDreamCrystalChestLootTableNBT.meltDreamCrystalChestDyedreamWorldNBT(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()));
+                        output.accept(MeltDreamCrystalChestLootTableNBT.meltDreamCrystalChestWorldTreeNBT(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()));
                         output.accept(MeltDreamCrystalChestLootTableNBT.onlyNormal(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()));
                         output.accept(MeltDreamCrystalChestLootTableNBT.onlyRare(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()));
                         output.accept(MeltDreamCrystalChestLootTableNBT.onlyLegend(ModItems.MELT_DREAM_CRYSTAL_CHEST.get()));
                         output.accept(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get());
                         output.accept(MeltDreamCrystalChestLootTableNBT.meltDreamCrystalChestDyedreamWorldNBT(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
+                        output.accept(MeltDreamCrystalChestLootTableNBT.meltDreamCrystalChestWorldTreeNBT(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
                         output.accept(MeltDreamCrystalChestLootTableNBT.onlyNormal(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
                         output.accept(MeltDreamCrystalChestLootTableNBT.onlyRare(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
                         output.accept(MeltDreamCrystalChestLootTableNBT.onlyLegend(ModItems.MELT_DREAM_CRYSTAL_CHEST_RESET_TOOL.get()));
                         output.accept(ModItems.PINK_CHICKEN_SPAWN_EGG.get());
                         output.accept(ModItems.PINK_SLIME_SPAWN_EGG.get());
+                        output.accept(ModItems.GOLDEN_FOX_SPAWN_EGG.get());
                     }).build());
 
     // ===== 拓展 =====

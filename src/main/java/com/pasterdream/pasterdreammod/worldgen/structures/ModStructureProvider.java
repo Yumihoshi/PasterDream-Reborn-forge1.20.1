@@ -35,7 +35,23 @@ public class ModStructureProvider implements DataProvider
             structure.addProperty("size", config.size());
 
             JsonObject startHeight = new JsonObject();
-            startHeight.addProperty("absolute", config.startHeight());
+            //生成高度为两个值之间时情况
+            if ("absolute".equals(config.heightType()))
+            {
+                startHeight.addProperty("absolute", config.minHeight());
+            }
+            else
+            {
+                startHeight.addProperty("type", config.heightType());
+
+                JsonObject minInclusive = new JsonObject();
+                minInclusive.addProperty("absolute", config.minHeight());
+                startHeight.add("min_inclusive", minInclusive);
+
+                JsonObject maxInclusive = new JsonObject();
+                maxInclusive.addProperty("absolute", config.maxHeight());
+                startHeight.add("max_inclusive", maxInclusive);
+            }
             structure.add("start_height", startHeight);
 
             structure.addProperty("project_start_to_heightmap", config.heightmap());

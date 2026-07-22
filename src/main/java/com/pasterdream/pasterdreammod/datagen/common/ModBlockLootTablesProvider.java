@@ -391,6 +391,33 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_1.get());
         dropSelf(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_2.get());
         dropSelf(ModBlocks.MODEL_BREAK_PARTICLE_PROVIDER_BLOCK_3.get());
+
+        // ===== 盆栽植物 =====
+        for (var entry : ModBlocks.POTTED_PLANTS.entrySet()) {
+            var plant = entry.getKey();
+            var potted = entry.getValue();
+
+            if (ModBlocks.POTTED_CROPS.contains(potted)) {
+                // 作物盆栽：age=0 掉落幼苗，age=1 掉落成熟植株
+                var items = ModBlocks.POTTED_CROP_ITEMS.get(potted);
+                var matureCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(potted.get())
+                        .setProperties(StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(com.pasterdream.pasterdreammod.world.block.PottedCropBlock.AGE, 1));
+                add(potted.get(), LootTable.lootTable()
+                        .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.FLOWER_POT)))
+                        .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(items.seedling().get()).when(matureCondition.invert())))
+                        .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(items.mature().get()).when(matureCondition))));
+            } else {
+                add(potted.get(), block -> LootTable.lootTable()
+                        .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.FLOWER_POT)))
+                        .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(plant.get()))));
+            }
+        }
     }
 
     private void buildingFamily(BuildingBlockFamily family) {

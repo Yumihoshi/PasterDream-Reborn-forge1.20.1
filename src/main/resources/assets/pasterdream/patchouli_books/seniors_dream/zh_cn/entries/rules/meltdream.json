@@ -1,0 +1,26 @@
+{
+  "sortnum": 0,
+  "name": "pasterdream.seniors_dream.entry.meltdream",
+  "icon": "pasterdream:dyedream_dust",
+  "category": "pasterdream:rules",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.meltdream.page0"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["pasterdream:textures/patchouli_books/seniors_dream/en_us/entries/rules/meltdream_energy_bar.png"],
+      "text": "pasterdream.seniors_dream.entry.meltdream.page1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.meltdream.page2"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:dyedream_dust",
+      "text": "pasterdream.seniors_dream.entry.meltdream.page3"
+    }
+  ]
+}

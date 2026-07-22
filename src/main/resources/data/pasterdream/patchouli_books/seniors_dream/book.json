@@ -6,5 +6,6 @@
   "use_resource_pack": true,
   "creative_tab": "pasterdream:pasterdream_dream_notes_tab",
   "book_texture": "patchouli:textures/gui/book_purple.png",
-  "model": "pasterdream:seniors_dream_book"
+  "model": "pasterdream:seniors_dream_book",
+  "custom_book_item": "pasterdream:seniors_dream_book"
 }
