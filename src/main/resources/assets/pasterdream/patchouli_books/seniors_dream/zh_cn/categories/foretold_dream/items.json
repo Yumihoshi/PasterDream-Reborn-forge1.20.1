@@ -1,0 +1,7 @@
+{
+  "sortnum": 0,
+  "name": "pasterdream.seniors_dream.category.foretold_dream_items",
+  "description": "pasterdream.seniors_dream.category.foretold_dream_items.desc",
+  "icon": "pasterdream:fourleaf_clover_curio",
+  "parent": "pasterdream:foretold_dream"
+}

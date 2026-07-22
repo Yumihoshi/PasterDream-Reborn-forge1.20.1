@@ -1045,6 +1045,44 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("pasterdream.seniors_dream.entry.evasion.page0", "Default key: C. Using Evasion consumes 2 hunger points, performs a quick dash, and resets fall distance. It grants brief invincibility frames. Default cooldown: 1 second (no cooldown in Creative mode).");
         add("pasterdream.seniors_dream.entry.evasion.page1", "On land: dashes toward where your crosshair points.$(br)On land while sneaking: dashes in the opposite direction of your crosshair.$(br)In water: vertical crosshair offset has no effect.");
 
+        // Fishing
+        add("pasterdream.seniors_dream.entry.fishing", "Fishing");
+        add("pasterdream.seniors_dream.entry.fishing.page0", "In your spare time, you might sit by the water with a fishing rod, receiving the ocean's bounty. Now, fishing near the ocean may yield treasures from the deep — Deep Sea Treasures. Even in the vast dream oceans, you can cast your line and obtain treasures. The higher your Luck, the more likely you are to obtain Deep Sea Treasures. Sometimes, you may even obtain treasures shimmering with a peculiar glow...");
+        add("pasterdream.seniors_dream.entry.fishing.page1", "Even in the vast dream oceans, you can cast your line for treasures. The higher your Luck, the more likely you are to obtain a Deep Sea Treasure with a peculiar shimmering glow.");
+
+        // Foretold Dream
+        add("pasterdream.seniors_dream.category.foretold_dream", "The Dream Foretold");
+        add("pasterdream.seniors_dream.category.foretold_dream.desc", "New mechanics and knowledge added to vanilla dimensions.");
+        add("pasterdream.seniors_dream.category.foretold_dream_items", "New Items");
+        add("pasterdream.seniors_dream.category.foretold_dream_items.desc", "New items added to vanilla dimensions.");
+        add("pasterdream.seniors_dream.category.foretold_dream_structures", "New Structures");
+        add("pasterdream.seniors_dream.category.foretold_dream_structures.desc", "New structures added to vanilla dimensions.");
+
+        // Titanium
+        add("pasterdream.seniors_dream.entry.titanium", "Titanium");
+        add("pasterdream.seniors_dream.entry.titanium.page0", "Deep underground in the Overworld, you may occasionally discover a new ore called Titanium. It requires a pickaxe made of material stronger and harder than iron to mine. Like most ores, when your pickaxe bears the magical power of Fortune, you can obtain more raw ore. Tools made from Titanium are slightly more effective than those crafted from diamond. Perhaps you could infuse Titanium products with the dream power from the Dyedream...");
+        add("pasterdream.seniors_dream.entry.titanium.page1", "-- Titanium, with its extreme corrosion resistance, still gleams after enduring years of weathering — just like that unawakened dream, still moving when revisited after a long parting.");
+
+        // Molten Gold
+        add("pasterdream.seniors_dream.entry.molten_gold", "Molten Gold");
+        add("pasterdream.seniors_dream.entry.molten_gold.page0", "When exploring deep in the Nether, you may find a peculiar new ore resembling gold that shines with a strange glow. This unusual ore can be mined with just an iron pickaxe, and naturally, with Fortune enchantment you can obtain more ore. When using tools forged from Molten Gold, you can actively harness the strange energy within (default: right-click) to move faster, at the cost of hunger — you may need an extra meal afterwards. The swords and pickaxes forged from it seem to have even greater upgrades...");
+        add("pasterdream.seniors_dream.entry.molten_gold.page1", "-- A metal forged amidst raging flames and scorching heat. If one truly wishes to obtain its power, one may need the resolve to plunge into the sea of fire.");
+
+        // Soul Dust
+        add("pasterdream.seniors_dream.entry.soul_dust", "Soul Dust");
+        add("pasterdream.seniors_dream.entry.soul_dust.page0", "In the Soul Sand Valley of the Nether, you may sometimes find strange soul soil mixed with white substances — this is called Soul Ore. Mining it yields Soul Dust. These ore soils can be mined by hand, but using tools is not only faster — with Fortune enchantment you can obtain even more Soul Dust. Soul Dust can be used to craft Soul Essence, which in turn can be used to make Necklace Blanks, Ring Blanks, and Belt Blanks, which can then be crafted into various curios.");
+        add("pasterdream.seniors_dream.entry.soul_dust.page1", "-- May the restless spirits of the Nether find release, and may the Dreamseeker give the departed the peace of the living.");
+
+        // Sculk Upgrade
+        add("pasterdream.seniors_dream.entry.sculk_upgrade", "Sculk Upgrade Kit");
+        add("pasterdream.seniors_dream.entry.sculk_upgrade.page0", "A fallen dynasty can never see the light of day again, but its stored power flows endlessly. Now that you have defeated the strongest guardian here, try infusing it into Netherite armor and let this forbidden power from the ancient civilization serve you. The upgraded Echo Set is not only more durable, but also grants you the protection of Echoes, freeing you from the intimidation of Sculk. Even when facing deeper darkness, the power of Echoes will grant you a sliver of courage.");
+        add("pasterdream.seniors_dream.entry.sculk_upgrade.page1", "-- When wearing the Echo Set, what you feel is not just power, but also a deeper and more ancient darkness and fear coiling around your ears, impossible to shake off. Like a nightmare, it beckons you to embrace it...");
+
+        // Dyedream Sky Island
+        add("pasterdream.seniors_dream.entry.dyedream_sky_island", "Dyedream Sky Island");
+        add("pasterdream.seniors_dream.entry.dyedream_sky_island.page0", "As a novice Dreamseeker, you may discover these pink floating islands in the Overworld — these are the result of the Dyedream's encroachment upon the Overworld, called Dyedream Sky Islands. You need to ascend the island and touch the Dyedream Rift upon it. Perhaps nothing will happen the first time. When you return to your shelter and drift into slumber, upon waking again, you will receive a Dreamseeker's Notes. After reading the notes, return to the sky island and investigate the Dyedream Rift once more, and then...");
+        add("pasterdream.seniors_dream.entry.dyedream_sky_island.page1", "A view of the Dyedream Sky Island.");
+
         // Entities
         add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");
         add(ModItems.PINK_CHICKEN_SPAWN_EGG.get(), "Pink Chicken Spawn Egg");

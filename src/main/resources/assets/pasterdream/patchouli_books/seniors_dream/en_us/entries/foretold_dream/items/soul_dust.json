@@ -1,0 +1,17 @@
+{
+  "sortnum": 2,
+  "name": "pasterdream.seniors_dream.entry.soul_dust",
+  "icon": "pasterdream:soul_dust",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:soul_ore",
+      "text": "pasterdream.seniors_dream.entry.soul_dust.page0"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.soul_dust.page1"
+    }
+  ]
+}

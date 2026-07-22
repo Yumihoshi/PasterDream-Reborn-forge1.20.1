@@ -402,8 +402,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.DYEDREAM_VINE.get(), Dyedream_vine);
         var Jungle_sporangium = models().cross(ModBlocks.JUNGLE_SPORANGIUM.getId().getPath(), blockTexture(ModBlocks.JUNGLE_SPORANGIUM.get())).renderType("cutout");
         simpleBlock(ModBlocks.JUNGLE_SPORANGIUM.get(),Jungle_sporangium);
-        var Fourleaf_clover = models().cross(ModBlocks.FOURLEAF_CLOVER.getId().getPath(), blockTexture(ModBlocks.FOURLEAF_CLOVER.get())).renderType("cutout");
-        simpleBlock(ModBlocks.FOURLEAF_CLOVER.get(),Fourleaf_clover);
+        // fourleaf_clover uses manual custom model
+        simpleBlock(ModBlocks.FOURLEAF_CLOVER.get(), models().getExistingFile(modLoc("block/fourleaf_clover")));
         var light_ball = models().cross(ModBlocks.LIGHT_BALL.getId().getPath(), blockTexture(ModBlocks.LIGHT_BALL.get())).renderType("cutout");
         simpleBlock(ModBlocks.LIGHT_BALL.get(),light_ball);
 

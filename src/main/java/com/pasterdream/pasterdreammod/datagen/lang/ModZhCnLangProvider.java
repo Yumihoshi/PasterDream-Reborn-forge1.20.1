@@ -1211,6 +1211,44 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("pasterdream.seniors_dream.entry.evasion.page0", "默认按C键释放。使用瞬身术将会消耗2点饱食度，进行一段快速移动，且重置摔落高度。使用瞬身术会有短暂的无敌帧。默认冷却时间1秒，创造模式没有冷却时间。");
         add("pasterdream.seniors_dream.entry.evasion.page1", "在陆地上使用，会向准星所指向位置进行一段瞬时移动；$(br)在陆地潜行状态下使用，会向准星指向相反的位置进行一段瞬时移动；$(br)在水中使用，则准星在竖直方向的偏移不会有影响。");
 
+        // 钓鱼
+        add("pasterdream.seniors_dream.entry.fishing", "钓鱼");
+        add("pasterdream.seniors_dream.entry.fishing.page0", "在闲暇时光，我们也许会坐在水边，拿着钓竿，接受海洋的恩赐。现在在海洋附近钓鱼有可能钓出来自海洋深处的宝藏——深海秘宝，哪怕在梦境的辽阔海洋中，你也能甩出浮标，获得宝藏。你的幸运值越高，就越有可能获得深海秘宝，有的时候，你可能会获得闪耀着奇特光芒的深海秘宝……");
+        add("pasterdream.seniors_dream.entry.fishing.page1", "哪怕在梦境的辽阔海洋中，你也能甩出浮标获得宝藏，你的幸运值越高，就越有可能获得闪耀着奇特光芒的深海秘宝。");
+
+        // 此梦先觉
+        add("pasterdream.seniors_dream.category.foretold_dream", "此梦先觉");
+        add("pasterdream.seniors_dream.category.foretold_dream.desc", "原版维度中的新增机制与知识。");
+        add("pasterdream.seniors_dream.category.foretold_dream_items", "新增物品");
+        add("pasterdream.seniors_dream.category.foretold_dream_items.desc", "原版维度中新增的物品。");
+        add("pasterdream.seniors_dream.category.foretold_dream_structures", "新增结构");
+        add("pasterdream.seniors_dream.category.foretold_dream_structures.desc", "原版维度中的新增结构。");
+
+        // 钛金
+        add("pasterdream.seniors_dream.entry.titanium", "钛金");
+        add("pasterdream.seniors_dream.entry.titanium.page0", "在主世界的深层地下，有时会发现一种名为钛金的新矿石，需要比铁更强大更坚硬的材料制作成的镐来采集。和大部分矿石一样，当你的镐拥有时运的魔法力量时，你可以获得更多粗矿。使用钛金制成的工具会比钻石制作而来的工具稍稍趁手一点，或许，你可以在钛金制品中引入来自染梦的梦境力量……");
+        add("pasterdream.seniors_dream.entry.titanium.page1", "——拥有极强耐腐蚀性的钛金，即使久经风霜仍熠熠生辉；就像那段未醒的梦，时隔许久再次回味也宛如昨日。");
+
+        // 炙焰金
+        add("pasterdream.seniors_dream.entry.molten_gold", "炙焰金");
+        add("pasterdream.seniors_dream.entry.molten_gold.page0", "当你在下界的深层探索时，可以发现一种闪耀着奇特光芒的类似黄金的新矿石。这种奇特的矿石只需要铁镐就能挖掘，当你的矿镐有时运的力量时，你可以挖到更多矿石。当你拿着炙焰金制作成的工具时，你可以主动使用工具内的奇特能量（默认为右键使用）来让你行动更快速，代价是你需要消耗你的饱食度，在之后可能需要加餐，制成的剑和镐好像也有更强的升级……");
+        add("pasterdream.seniors_dream.entry.molten_gold.page1", "——在烈火与热浪中锻成的一种金属，如果真的想要获取它的力量，或许需要身赴火海的决心。");
+
+        // 灵魂粉尘
+        add("pasterdream.seniors_dream.entry.soul_dust", "灵魂粉尘");
+        add("pasterdream.seniors_dream.entry.soul_dust.page0", "下界的灵魂沙峡谷有时会出现夹杂着一些白色物质的奇怪的灵魂土，它们被称作灵魂矿土，把它们挖掉会获得灵魂粉尘。这些矿土可以空手挖掘，不过，用工具挖掘不仅更快，而且使用有时运附魔的工具还能获得更多灵魂粉尘。灵魂粉尘可以用来合成灵魂精华，而灵魂精华可以用来制作项链原胚、戒指原胚和腰带原胚，进而加工成各种饰品。");
+        add("pasterdream.seniors_dream.entry.soul_dust.page1", "——愿在下界永无安宁的亡魂得到解脱，愿行于梦中的寻梦者给予逝者以生者的宁静。");
+
+        // 回响升级套件
+        add("pasterdream.seniors_dream.entry.sculk_upgrade", "回响升级套件");
+        add("pasterdream.seniors_dream.entry.sculk_upgrade.page0", "覆灭的王朝无法重见天日，寄存的力量却源源不绝。现在，你已经击溃了这里最强的守卫，试着将它注入进下界合金防具之中，让这来自远古文明的禁忌力量为你所用吧。升级后的回响套装不仅更加坚实，还会给予你来自回响的庇护，让你不再受到幽匿的恐吓，哪怕面对更加深邃的黑暗，回响的力量也会给予你一点勇气。");
+        add("pasterdream.seniors_dream.entry.sculk_upgrade.page1", "——穿上回响套装的时候，感受到的不只是力量，还有一股更为深邃更为古老的黑暗与恐惧缠绕在我的耳边，挥之不去，它就像噩梦一般，在呼唤我去拥抱它……");
+
+        // 染梦空岛
+        add("pasterdream.seniors_dream.entry.dyedream_sky_island", "染梦空岛");
+        add("pasterdream.seniors_dream.entry.dyedream_sky_island.page0", "作为新手寻梦者，也许你会在主世界发现这种粉红色的空岛，这是梦境对主世界的侵染产生的空岛，名为染梦空岛。你需要登上这座岛，并且触碰岛上的染梦裂隙。或许第一次不会有什么反应，当你回到藏身处进入梦乡，再度醒来时，你会得到一份寻梦者笔记，当你看完这份笔记后，回到空岛重新调查染梦裂隙，就会……");
+        add("pasterdream.seniors_dream.entry.dyedream_sky_island.page1", "染梦空岛景观展示。");
+
 
         // 实体
         add(ModEntities.PINK_CHICKEN.get(), "粉红鸡");

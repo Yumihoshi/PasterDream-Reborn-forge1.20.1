@@ -1,0 +1,17 @@
+{
+  "sortnum": 3,
+  "name": "pasterdream.seniors_dream.entry.fishing",
+  "icon": "pasterdream:star_wish_rod",
+  "category": "pasterdream:rules",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:deep_sea_treasure",
+      "text": "pasterdream.seniors_dream.entry.fishing.page0"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.fishing.page1"
+    }
+  ]
+}
