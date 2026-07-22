@@ -236,7 +236,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.TERRA_FLOATING_ISLAND.get());
         basicItem(ModItems.WORLDTREE_SEEDPOD.get());
         basicItem(ModItems.GARLAND.get());
-        basicItem(ModItems.FOURLEAF_CLOVER_CURIO.get());
+        withExistingParent(ModItems.FOURLEAF_CLOVER_CURIO.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/fourleaf_clover"));
         basicItem(ModItems.SNOW_VOW_HEAD.get());
         basicItem(ModItems.QYM_BUTTERFLY_STAR_HAIRPIN.get());
         basicItem(ModItems.HIYORI_BUTTERFLY_HAIRPIN.get());

@@ -1,0 +1,9 @@
+{
+  "parent": "pasterdream:custom/fourleaf_clover_plant",
+  "textures": {
+    "all": "pasterdream:block/fourleaf_clover",
+    "particle": "pasterdream:block/fourleaf_clover",
+    "0": "pasterdream:block/fourleaf_clover"
+  },
+  "render_type": "cutout"
+}
