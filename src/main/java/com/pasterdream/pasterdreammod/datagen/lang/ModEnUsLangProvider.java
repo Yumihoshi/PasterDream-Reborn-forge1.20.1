@@ -1134,5 +1134,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("structure.pasterdream.dyedream_floating_temple", "Floating Temple");
         add("structure.pasterdream.dyedream_tavern", "Dyedream Tavern");
         add("structure.pasterdream.dyedream_campsite", "Dyedream Campsite");
+        add("structure.pasterdream.dyedream_ecosystem_bubble", "Dyedream Ecosystem Bubble");
+        add("structure.pasterdream.ecosystem_bubble", "Ecosystem Bubble");
     }
 }

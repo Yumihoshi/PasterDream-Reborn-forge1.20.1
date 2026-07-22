@@ -31,9 +31,11 @@ public class ModStructureConfig
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_pavilion_snowy_plain", "pasterdream:can_dyedream_pavilion_snowy_spawn_biome", "surface_structures", "none", -2, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 53901862, 1));
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_wishing_tree", "pasterdream:dyedream_world_biome", "surface_structures", "beard_thin", 64, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 15873492, 1));
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_floating_temple", "pasterdream:dyedream_world_biome", "surface_structures", "none", 64, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 48, 16, 47912638, 1));
-        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_tavern", "pasterdream:dyedream_world_biome", "surface_structures", "beard_thin", -4, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 60483715, 1));
-        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_campsite", "pasterdream:dyedream_world_biome", "surface_structures", "beard_thin", -4, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 28, 7, 92741583, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_tavern", "pasterdream:can_dyedream_plains_spawn_biome", "surface_structures", "beard_thin", -4, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 32, 8, 60483715, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_campsite", "pasterdream:can_dyedream_plains_spawn_biome", "surface_structures", "beard_thin", -4, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 28, 7, 92741583, 1));
         STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_worldtree", "pasterdream:dyedream_world_biome", "surface_structures", "none", -25, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 156, 87, 1208134265, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:dyedream_ecosystem_bubble", "pasterdream:can_ecosystem_bubble_spawn_biome", "surface_structures", "none", "very_biased_to_bottom", 19, 25, "WORLD_SURFACE_WG", 1, 1, false, "rigid", "minecraft:empty", 1, 24, 6, 38472910, 1));
+        STRUCTURES.add(new StructureGenerationConfig("pasterdream:ecosystem_bubble", "pasterdream:can_ecosystem_bubble_spawn_biome", "surface_structures", "none", "very_biased_to_bottom", 19, 25, "WORLD_SURFACE_WG", 64, 1, false, "rigid", "minecraft:empty", 1, 24, 6, 75018364, 1));
 
         return STRUCTURES;
     }
