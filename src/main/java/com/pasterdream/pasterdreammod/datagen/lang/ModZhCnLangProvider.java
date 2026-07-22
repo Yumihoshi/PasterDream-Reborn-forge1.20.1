@@ -96,6 +96,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.YINHUL_COTTON_CANDY.get(), "银狐棉花糖");
         add(ModItems.MELT_DREAM_COTTON_CANDY.get(), "融梦棉花糖");
         add(ModItems.BUBBLE_GUM.get(), "泡泡糖");
+        add(ModItems.GALAXY_JELLY.get(), "星河果冻");
         add(ModItems.LIGHT_ORGAN.get(), "发光器官");
         add(ModItems.JELLYFISH_MUD.get(), "水母泥");
         add(ModItems.JELLYFISH_JELLO.get(), "水母果冻");
@@ -1211,6 +1212,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.PINK_SLIME_SPAWN_EGG.get(), "粉红史莱姆刷怪蛋");
         add(ModEntities.GOLDEN_FOX.get(), "金狐狸");
         add(ModItems.GOLDEN_FOX_SPAWN_EGG.get(), "金狐狸刷怪蛋");
+        add(ModEntities.MELT_DREAM_CRYSTAL_ENTITY.get(), "融梦水晶");
+        add(ModEntities.FOX_FIRE.get(), "狐火");
         add("entity.pasterdream.golden_fox.vanish", "金色狐狸在完成了你许下的愿望之后消失了...");
 
         //jeed兼容
