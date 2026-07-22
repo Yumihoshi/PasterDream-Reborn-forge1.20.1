@@ -74,5 +74,9 @@
   },
   "ding_0": {
     "sounds": [{"name": "pasterdream:ding_0", "stream": false}]
+  },
+  "dream_accumulator":
+  {
+    "sounds": [{"name": "pasterdream:dream_accumulator", "stream": false}]
   }
 }

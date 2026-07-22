@@ -95,7 +95,7 @@ public class ResearchTableMenu extends AbstractContainerMenuWithFluidSlot
         //移出到背包
         if (index >= 1 && index <= 6)
         {
-            if (!this.moveItemStackTo(stack, 7, 43, true))
+            if (!this.moveItemStackTo(stack, 7, 43, false))
             {
                 return ItemStack.EMPTY;
             }

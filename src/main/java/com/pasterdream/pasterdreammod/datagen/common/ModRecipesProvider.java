@@ -2382,7 +2382,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                         .requires(ModItems.RED_DEW.get())
                         .requires(ModItems.LIFE_CRYSTAL.get())
                         .unlockedBy(getHasName(ModItems.RED_DEW_RING.get()), has(ModItems.RED_DEW_RING.get())),
-                pWriter, "red_dew_ring_lv4", lv3Nbt, Map.of(0, lv3Nbt));
+                pWriter, "red_dew_ring_lv4", lv4Nbt, Map.of(0, lv3Nbt));
 
         //2个强击戒指配方
         saveShapedWithNbt(ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STRIKE_RING.get(), 1)

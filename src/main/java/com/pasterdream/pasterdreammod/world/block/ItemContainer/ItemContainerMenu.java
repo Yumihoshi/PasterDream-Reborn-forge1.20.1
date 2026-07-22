@@ -64,7 +64,7 @@ public abstract class ItemContainerMenu<T extends ItemContainerBlockEntity> exte
 
         if (index >= 0 && index < containerSlotCount)
         {
-            if (!this.moveItemStackTo(stack, containerSlotCount, containerSlotCount + 36, true))
+            if (!this.moveItemStackTo(stack, containerSlotCount, containerSlotCount + 36, false))
             {
                 return ItemStack.EMPTY;
             }

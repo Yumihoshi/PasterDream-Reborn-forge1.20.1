@@ -51,6 +51,7 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> MELT_DREAM_CRYSTAL_CHEST_OPEN_LEGEND = SOUNDS.register("melt_dream_crystal_chest_open_legend", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "melt_dream_crystal_chest_open_legend")));
     public static final RegistryObject<SoundEvent> DREAM_HARP_OF_WANDERER = SOUNDS.register("dream_harp_of_wanderer", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dream_harp_of_wanderer")));
     public static final RegistryObject<SoundEvent> DING_0 = SOUNDS.register("ding_0", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "ding_0")));
+    public static final RegistryObject<SoundEvent> DREAM_ACCUMULATOR = SOUNDS.register("dream_accumulator", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dream_accumulator")));
 
     public static void register(IEventBus eventBus) {
         SOUNDS.register(eventBus);
