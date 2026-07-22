@@ -1287,7 +1287,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add("tooltip.pasterdream.prophecy_card.balance.description", "§9使用卡牌时，当前自身拥有的部分药水效果的等级翻倍，但持续时间缩短至一半。（仅对部分有等级加成的效果生效）");
         add("tooltip.pasterdream.prophecy_card.chaos.description", "§9使用卡牌时，对以自身为中心，7*7范围内的所有敌人陷入混乱并失去行动能力，持续10秒。（此效果不对玩家生效）");
-        add("tooltip.pasterdream.prophecy_card.conflict.description", "§9使用卡牌时，当前生命值与已损失生命值互换。§c执意在满血使用后果自负！");
+        add("tooltip.pasterdream.prophecy_card.conflict.description", "§9重做中……");
         add("tooltip.pasterdream.prophecy_card.graveyard.description", "§9使用卡牌时，对以自身为中心，5*5范围内的所有敌人造成100点魔法伤害。（此效果不对玩家生效）");
         add("tooltip.pasterdream.prophecy_card.sprint.description", "§9使用卡牌时，获得速度III、跳跃提升II、高速反射效果，持续120秒。效果持续期间增加上坡高度，-30%瞬身术冷却并免疫摔落伤害。");
         add("tooltip.pasterdream.prophecy_card.guard.description.1", "§9使用卡牌时，获得120秒伤害吸收III和60秒守护效果。");
@@ -1320,5 +1320,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("structure.pasterdream.dyedream_floating_temple", "浮空神庙");
         add("structure.pasterdream.dyedream_tavern", "染梦客栈");
         add("structure.pasterdream.dyedream_campsite", "染梦营地");
+        add("structure.pasterdream.dyedream_ecosystem_bubble", "染梦气泡生态球");
+        add("structure.pasterdream.ecosystem_bubble", "气泡生态球");
     }
 }
