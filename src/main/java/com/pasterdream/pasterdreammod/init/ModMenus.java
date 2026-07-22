@@ -13,6 +13,8 @@ import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.dyedreamdes
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.dyedreamdesk.DyedreamDeskMenu;
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.ShadowDeskBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.desk.shadowdesk.ShadowDeskMenu;
+import com.pasterdream.pasterdreammod.world.block.dreamaccumulator.DreamAccumulatorBlockEntity;
+import com.pasterdream.pasterdreammod.world.block.dreamaccumulator.DreamAccumulatorMenu;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntity;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronMenu;
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.openedmeltdreamcrystalchest.OpenedMeltDreamCrystalChestBlockEntity;
@@ -98,6 +100,12 @@ public class ModMenus
     {
         BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
         return new OpenedMeltDreamCrystalChestMenu(windowId, inv, (OpenedMeltDreamCrystalChestBlockEntity) blockEntity);
+    }));
+
+    public static final RegistryObject<MenuType<DreamAccumulatorMenu>> DREAM_ACCUMULATOR = MENUS.register("dream_accumulator", () -> IForgeMenuType.create((windowId, inv, data) ->
+    {
+        BlockEntity blockEntity = inv.player.level().getBlockEntity(data.readBlockPos());
+        return new DreamAccumulatorMenu(windowId, inv, (DreamAccumulatorBlockEntity) blockEntity);
     }));
 
     public static void register(IEventBus eventBus)

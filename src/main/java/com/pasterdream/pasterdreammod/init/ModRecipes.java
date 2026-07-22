@@ -3,6 +3,8 @@ package com.pasterdream.pasterdreammod.init;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipe;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipeSerializer;
+import com.pasterdream.pasterdreammod.world.block.dreamaccumulator.DreamAccumulatorRecipe;
+import com.pasterdream.pasterdreammod.world.block.dreamaccumulator.DreamAccumulatorRecipeSerializer;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipe;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronRecipeSerializer;
 import com.pasterdream.pasterdreammod.recipe.GoldenFoxTradeRecipe;
@@ -34,6 +36,7 @@ public class ModRecipes
     public static final RegistryObject<RecipeType<MortarRecipe>> MORTAR = RECIPE_TYPES.register("mortar", () -> new RecipeType<>() {});
     public static final RegistryObject<RecipeType<ResearchTableCopyRecipe>> RESEARCH_TABLE_COPY = RECIPE_TYPES.register("research_table_copy", () -> new RecipeType<>() {});
     public static final RegistryObject<RecipeType<ResearchTableResearchRecipe>> RESEARCH_TABLE_RESEARCH = RECIPE_TYPES.register("research_table_research", () -> new RecipeType<>() {});
+    public static final RegistryObject<RecipeType<DreamAccumulatorRecipe>> DREAM_ACCUMULATOR = RECIPE_TYPES.register("dream_accumulator", () -> new RecipeType<>() {});
     public static final RegistryObject<RecipeType<GoldenFoxTradeRecipe>> GOLDEN_FOX_TRADE = RECIPE_TYPES.register("golden_fox_trade", () -> new RecipeType<>() {});
 
     public static final RegistryObject<RecipeSerializer<ClaypanRecipe>> CLAYPAN_SERIALIZER = RECIPE_SERIALIZERS.register("claypan", ClaypanRecipeSerializer::new);
@@ -41,6 +44,7 @@ public class ModRecipes
     public static final RegistryObject<MortarRecipeSerializer> MORTAR_SERIALIZER = RECIPE_SERIALIZERS.register("mortar", MortarRecipeSerializer::new);
     public static final RegistryObject<ResearchTableCopyRecipeSerializer> RESEARCH_TABLE_COPY_SERIALIZER = RECIPE_SERIALIZERS.register("research_table_copy", ResearchTableCopyRecipeSerializer::new);
     public static final RegistryObject<ResearchTableResearchRecipeSerializer> RESEARCH_TABLE_RESEARCH_SERIALIZER = RECIPE_SERIALIZERS.register("research_table_research", ResearchTableResearchRecipeSerializer::new);
+    public static final RegistryObject<DreamAccumulatorRecipeSerializer> DREAM_ACCUMULATOR_SERIALIZER = RECIPE_SERIALIZERS.register("dream_accumulator", DreamAccumulatorRecipeSerializer::new);
 
     public static final RegistryObject<MortarCraftingRecipe.Serializer> MORTAR_CRAFTING_SERIALIZER = RECIPE_SERIALIZERS.register("mortar_crafting", MortarCraftingRecipe.Serializer::new);
     public static final RegistryObject<NbtPreservingShapelessRecipe.Serializer> NBT_PRESERVING_SHAPELESS_SERIALIZER = RECIPE_SERIALIZERS.register("nbt_preserving_shapeless", NbtPreservingShapelessRecipe.Serializer::new);

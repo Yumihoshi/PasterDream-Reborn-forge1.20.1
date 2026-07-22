@@ -1,0 +1,6 @@
+{
+  "parent": "pasterdream:displaysettings/dream_accumulator.item",
+  "textures": {
+    "particle": "pasterdream:block/model_break_particle_provider_block_0"
+  }
+}

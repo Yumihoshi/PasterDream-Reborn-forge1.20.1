@@ -380,6 +380,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DESERT_HERO_TOMB.get(), "荒漠英雄之墓");
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "融梦水晶箱");
         add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get(), "打开的融梦水晶箱");
+        add(ModBlocks.DREAM_ACCUMULATOR.get(), "蓄梦池");
 
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "梦染茶花植株");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "成熟的梦染茶花植株");
@@ -1176,6 +1177,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 帕秋莉宝典
         add(ModItems.SENIORS_DREAM_BOOK.get(), "旧梦归引");
         add("pasterdream.seniors_dream", "旧梦归引");
+        add("pasterdream.seniors_dream.landing_text", ">这里是开篇文字<");
+        add("pasterdream.seniors_dream.catalyst.test", "测试");
+        add("pasterdream.seniors_dream.catalyst.test.desc", "一个测试分类。");
+        add("pasterdream.seniors_dream.entry.welcome", "欢迎");
+        add("pasterdream.seniors_dream.entry.welcome.page0", "如果你能看到这段文字，说明宝典工作正常！");
         add("pasterdream.seniors_dream.landing_text", "欢迎来到《帕斯特之梦：重生》，此模组是《帕斯特之梦》的重制版。在保证原有内容的前提下，对游戏内容和流程进行一定优化，通过此书可以了解到缺失的引导和物品信息。那么寻梦者，愿星河入梦，枕畔有风。");
 
         // 分类

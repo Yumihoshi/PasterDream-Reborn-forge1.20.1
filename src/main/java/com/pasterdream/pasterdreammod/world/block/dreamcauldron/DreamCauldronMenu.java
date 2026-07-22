@@ -89,7 +89,7 @@ public class DreamCauldronMenu extends AbstractContainerMenuWithFluidSlot
         //移出到背包
         if (index >= 2 && index <= 5)
         {
-            if (!this.moveItemStackTo(stack, 6, 42, true))
+            if (!this.moveItemStackTo(stack, 6, 42, false))
             {
                 return ItemStack.EMPTY;
             }

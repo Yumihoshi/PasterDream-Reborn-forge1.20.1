@@ -53,7 +53,7 @@ public class ClaypanMenu extends AbstractContainerMenuWithFluidSlot
             addSlot(new Slot(inventory, i + 9, 5 + (i % 9) * 18, 42 + (i / 9) * 18));
         }
 
-        addDataSlots(data);
+        //addDataSlots(data);
         reBuildLastFluids();
     }
 
