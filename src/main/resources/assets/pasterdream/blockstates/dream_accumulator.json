@@ -1,0 +1,9 @@
+{
+  "variants":
+  {
+    "":
+    {
+      "model": "pasterdream:custom/dream_accumulator_particle"
+    }
+  }
+}

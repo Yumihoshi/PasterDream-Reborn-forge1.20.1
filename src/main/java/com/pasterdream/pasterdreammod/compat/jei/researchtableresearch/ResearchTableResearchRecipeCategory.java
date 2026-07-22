@@ -89,7 +89,9 @@ public class ResearchTableResearchRecipeCategory implements IRecipeCategory<Rese
             {
                 for (Item item : tag)
                 {
-                    penSlot.addItemStack(new ItemStack(item, penItemIngredient.getCount(), penItemIngredient.getNbt()));
+                    ItemStack pen = new ItemStack(item, penItemIngredient.getCount());
+                    pen.setTag(penItemIngredient.getNbt());
+                    penSlot.addItemStack(pen);
                 }
             }
         }

@@ -377,6 +377,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.DESERT_HERO_TOMB.get(), "荒漠英雄之墓");
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "融梦水晶箱");
         add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get(), "打开的融梦水晶箱");
+        add(ModBlocks.DREAM_ACCUMULATOR.get(), "蓄梦池");
 
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "梦染茶花植株");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "成熟的梦染茶花植株");
@@ -1139,8 +1140,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 帕秋莉宝典
         add("pasterdream.seniors_dream", "旧梦归引");
         add("pasterdream.seniors_dream.landing_text", ">这里是开篇文字<");
-        add("pasterdream.seniors_dream.category.test", "测试");
-        add("pasterdream.seniors_dream.category.test.desc", "一个测试分类。");
+        add("pasterdream.seniors_dream.catalyst.test", "测试");
+        add("pasterdream.seniors_dream.catalyst.test.desc", "一个测试分类。");
         add("pasterdream.seniors_dream.entry.welcome", "欢迎");
         add("pasterdream.seniors_dream.entry.welcome.page0", "如果你能看到这段文字，说明宝典工作正常！");
 

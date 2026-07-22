@@ -5,6 +5,7 @@ import com.pasterdream.pasterdreammod.world.block.ItemContainer.crate.shadowches
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.doll.qymdoll.QYMDollBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.doll.uuzdoll.UUZDollBlockEntityRenderer;
+import com.pasterdream.pasterdreammod.world.block.dreamaccumulator.DreamAccumulatorBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.dreamcauldron.DreamCauldronBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.meltdreamcrystalchest.MeltDreamCrystalChestBlockEntityRenderer;
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.openedmeltdreamcrystalchest.OpenedMeltDreamCrystalChestBlockEntityRenderer;
@@ -43,5 +44,6 @@ public class ModBlockEntityRenderer
         event.registerBlockEntityRenderer(ModBlockEntities.MELT_DREAM_CRYSTAL_CHEST.get(), MeltDreamCrystalChestBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.OPENED_MELT_DREAM_CRYSTAL_CHEST.get(), OpenedMeltDreamCrystalChestBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.FOX_SCULPTURE.get(), FoxSculptureBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.DREAM_ACCUMULATOR.get(), DreamAccumulatorBlockEntityRenderer::new);
     }
 }

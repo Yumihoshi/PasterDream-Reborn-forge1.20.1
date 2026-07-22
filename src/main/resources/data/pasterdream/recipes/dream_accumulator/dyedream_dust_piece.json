@@ -1,0 +1,17 @@
+{
+  "type": "pasterdream:dream_accumulator",
+  "biomeTags":
+  [
+    "pasterdream:dyedream_world_biome"
+  ],
+  "time": 1200,
+  "catalyst":
+  {
+    "item": "pasterdream:sorbent"
+  },
+  "catalystMultiplier": 10.0,
+  "output":
+  {
+    "item": "pasterdream:dyedream_dust_piece"
+  }
+}

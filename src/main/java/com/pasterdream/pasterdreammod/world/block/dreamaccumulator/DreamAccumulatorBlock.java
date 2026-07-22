@@ -1,24 +1,22 @@
-package com.pasterdream.pasterdreammod.world.block.dreamcauldron;
+package com.pasterdream.pasterdreammod.world.block.dreamaccumulator;
 
+import com.pasterdream.pasterdreammod.init.ModBlockEntities;
+import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -27,21 +25,18 @@ import org.jetbrains.annotations.Nullable;
 
 import static net.minecraft.world.Containers.dropItemStack;
 
-public class DreamCauldronBlock extends BaseEntityBlock
+public class DreamAccumulatorBlock extends BaseEntityBlock
 {
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-
-    public DreamCauldronBlock(Properties properties)
+    public DreamAccumulatorBlock(Properties properties)
     {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPosition, BlockState blockState)
     {
-        return new DreamCauldronBlockEntity(blockPosition, blockState);
+        return new DreamAccumulatorBlockEntity(blockPosition, blockState);
     }
 
     @Override
@@ -51,41 +46,9 @@ public class DreamCauldronBlock extends BaseEntityBlock
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
-    {
-        builder.add(FACING);
-    }
-
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context)
-    {
-        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
-    }
-
-    @Override
-    public BlockState rotate(BlockState state, Rotation rotation)
-    {
-        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
-    }
-
-    @Override
-    public BlockState mirror(BlockState state, Mirror mirror)
-    {
-        return state.rotate(mirror.getRotation(state.getValue(FACING)));
-    }
-
-    @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context)
     {
-        Direction facing = state.getValue(FACING);
-        if(facing == Direction.NORTH || facing == Direction.SOUTH)
-        {
-            return box(-7, 0, -5, 23, 14, 21);
-        }
-            else
-            {
-                return box(-5, 0, -7, 21, 14, 23);
-            }
+        return box(0, 0, 0, 16, 4, 16);
     }
 
     @Override
@@ -94,10 +57,10 @@ public class DreamCauldronBlock extends BaseEntityBlock
         if (!level.isClientSide)
         {
             BlockEntity blockEntity = level.getBlockEntity(blockPosition);
-            if (blockEntity instanceof DreamCauldronBlockEntity dreamCauldron)
+            if (blockEntity instanceof DreamAccumulatorBlockEntity dreamAccumulator)
             {
-                NetworkHooks.openScreen((ServerPlayer) player, dreamCauldron, buf -> buf.writeBlockPos(blockPosition));
-                level.playSound(null, blockPosition, SoundEvents.BREWING_STAND_BREW, SoundSource.BLOCKS, 1.0f, 1.0f);
+                NetworkHooks.openScreen((ServerPlayer) player, dreamAccumulator, buf -> buf.writeBlockPos(blockPosition));
+                level.playSound(null, blockPosition, ModSounds.DREAM_ACCUMULATOR.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
             }
         }
         return InteractionResult.SUCCESS;
@@ -107,7 +70,7 @@ public class DreamCauldronBlock extends BaseEntityBlock
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> type)
     {
-        return null;
+        return createTickerHelper(type, ModBlockEntities.DREAM_ACCUMULATOR.get(), (lvl, blockPosition, state, blockEntity) -> blockEntity.tick());
     }
 
     @Override
@@ -116,11 +79,11 @@ public class DreamCauldronBlock extends BaseEntityBlock
         if (!state.is(newState.getBlock()))
         {
             BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof DreamCauldronBlockEntity dreamCauldron)
+            if (blockEntity instanceof DreamAccumulatorBlockEntity dreamAccumulator)
             {
-                for(int i = 0; i < 4; i++)
+                for(int i = 0; i < 2; i++)
                 {
-                    dropItemStack(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, dreamCauldron.getItemHandler().getStackInSlot(i));
+                    dropItemStack(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, dreamAccumulator.getItemHandler().getStackInSlot(i));
                 }
 
                 level.updateNeighbourForOutputSignal(pos, this);
@@ -128,4 +91,7 @@ public class DreamCauldronBlock extends BaseEntityBlock
             super.onRemove(state, level, pos, newState, movedByPiston);
         }
     }
+
+
+
 }

@@ -363,6 +363,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.DESERT_HERO_TOMB.get(), "Desert Hero Tomb");
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "Melt Dream Crystal Chest");
         add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get(), "Opened Melt Dream Crystal Chest");
+        add(ModBlocks.DREAM_ACCUMULATOR.get(), "Dream Accumulator");
 
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "Dyedream Corolla");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "Mature Dyedream Corolla");
@@ -975,8 +976,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Patchouli book
         add("pasterdream.seniors_dream", "Seniors Dream");
         add("pasterdream.seniors_dream.landing_text", "...");
-        add("pasterdream.seniors_dream.category.test", "Test");
-        add("pasterdream.seniors_dream.category.test.desc", "A test category.");
+        add("pasterdream.seniors_dream.catalyst.test", "Test");
+        add("pasterdream.seniors_dream.catalyst.test.desc", "A test catalyst.");
         add("pasterdream.seniors_dream.entry.welcome", "Welcome");
         add("pasterdream.seniors_dream.entry.welcome.page0", "If you can see this, the book works!");
 

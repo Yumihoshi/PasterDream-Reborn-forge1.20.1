@@ -552,6 +552,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DESERT_HERO_TOMB.get());
                         output.accept(ModItems.MELT_DREAM_CRYSTAL_CHEST.get());
                         output.accept(ModItems.OPENED_MELT_DREAM_CRYSTAL_CHEST.get());
+                        output.accept(ModItems.DREAM_ACCUMULATOR.get());
                     })
                     .build());
 
