@@ -10,7 +10,7 @@ import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyn
 import com.pasterdream.pasterdreammod.network.san.MaxSanSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import com.pasterdream.pasterdreammod.Config;
-import com.pasterdream.pasterdreammod.init.ModItems;
+
 import com.pasterdream.pasterdreammod.tag.ModItemTags;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -23,7 +23,7 @@ import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TagsUpdatedEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
+
 import net.minecraftforge.fml.common.Mod;
 
 public class EventRegister
@@ -88,7 +88,6 @@ public class EventRegister
         private static void givePatchouliBookOnFirstJoin(PlayerEvent.PlayerLoggedInEvent event)
         {
             if (!Config.givePatchouliBookOnFirstJoin) return;
-            if (!ModList.get().isLoaded("patchouli")) return;
 
             Player player = event.getEntity();
             if (player.level().isClientSide) return;
@@ -125,47 +124,4 @@ public class EventRegister
         }
     }
 
-    /** 合成旧梦归引时替换为帕秋莉版（带 patchouli:book NBT） */
-    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
-    public static class CraftingHandler {
-        @SubscribeEvent
-        public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
-            Entity entity = event.getEntity();
-            if (!(entity instanceof Player)) return;
-            Player p = (Player) entity;
-            if (p.level().isClientSide) return;
-            if (!event.getCrafting().is(ModItems.SENIORS_DREAM_BOOK.get())) return;
-            if (!ModList.get().isLoaded("patchouli")) return;
-
-            int count = event.getCrafting().getCount();
-            p.getServer().execute(() -> replaceCraftedBook(p, count));
-        }
-
-        private static void replaceCraftedBook(Player p, int count) {
-            // 先查光标（普通点击），再查背包（Shift 点击）
-            int removed = removeFromStack(p.containerMenu.getCarried());
-            if (removed == 0) {
-                for (int i = 0; i < p.getInventory().items.size(); i++) {
-                    removed = removeFromStack(p.getInventory().items.get(i));
-                    if (removed > 0) break;
-                }
-            }
-
-            ItemStack book = vazkii.patchouli.api.PatchouliAPI.get().getBookStack(
-                    ResourceLocation.fromNamespaceAndPath("pasterdream", "seniors_dream"));
-            book.setCount(count);
-            if (!p.getInventory().add(book)) {
-                p.drop(book, false);
-            }
-        }
-
-        private static int removeFromStack(ItemStack stack) {
-            if (stack.is(ModItems.SENIORS_DREAM_BOOK.get())) {
-                int c = stack.getCount();
-                stack.shrink(c);
-                return c;
-            }
-            return 0;
-        }
-    }
 }

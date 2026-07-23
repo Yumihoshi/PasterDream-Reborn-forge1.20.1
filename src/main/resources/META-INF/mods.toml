@@ -50,16 +50,17 @@ logoFile="logo.png"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
+modId="patchouli"
+mandatory=true
+versionRange="[1.20.1-84,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
     modId="jei"
     mandatory=false
     versionRange="[15.20.0.112,)"
     ordering="AFTER"
     side="CLIENT"
 
-[[dependencies.${mod_id}]]
-    modId="patchouli"
-    mandatory=false
-    versionRange="[1.20.1-84,)"
-    ordering="AFTER"
-    side="BOTH"
 
