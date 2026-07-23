@@ -551,6 +551,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.sculk_armor.3", "§7▪ §9Enhanced when below Y=0");
         add("tooltip.pasterdreammod.sculk_armor.4", "§7▪ §9Immune to Sculk's Darkness");
         add("tooltip.pasterdreammod.sculk_armor.5", "§7▪ §9Gain Speed and Resistance when hit by Darkness");
+        add("tooltip.pasterdreammod.sculk_armor.6", "§7▪ §9Immunity to Blindness");
+        add("tooltip.pasterdreammod.sculk_armor.7", "§7▪ §9Wardens will not attack you");
         add("tooltip.pasterdreammod.dyedream_hammer", "§7▪ §9Area Mining 3×3×3");
         add("tooltip.pasterdreammod.molten_gold_sword.1", "Inlaid: §7None");
         add("tooltip.pasterdreammod.molten_gold_sword.2", "§7▪ §9Sets target on fire for 3 seconds");

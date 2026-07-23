@@ -11,6 +11,8 @@
     "HolyGrailBuffMixin",
     "NaturalSpawnerMixin",
     "PhantomTargetMixin",
+    "SculkArmorWardenImmunityMixin",
+    "WardenTargetMixin",
     "WorldGenRegionMixin"
   ],
   "client": [

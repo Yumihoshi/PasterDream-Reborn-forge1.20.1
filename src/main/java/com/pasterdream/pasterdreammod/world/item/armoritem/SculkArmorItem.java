@@ -3,6 +3,7 @@ package com.pasterdream.pasterdreammod.world.item.armoritem;
 import com.pasterdream.pasterdreammod.init.ModEffects;
 import com.pasterdream.pasterdreammod.world.item.ModArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -24,6 +25,7 @@ public class SculkArmorItem extends ArmorItem {
                 && entity instanceof Player player && hasFullSet(player)) {
             player.addEffect(new MobEffectInstance(ModEffects.SCULK_ARMOR_BUFF.get(), 25, 0,
                     true, false, true));
+            player.removeEffect(MobEffects.BLINDNESS);
         }
     }
 

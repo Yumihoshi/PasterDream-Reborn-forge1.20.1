@@ -31,6 +31,8 @@ public class AddToolTip
             tooltip.add(Component.translatable("tooltip.pasterdreammod.sculk_armor.3"));
             tooltip.add(Component.translatable("tooltip.pasterdreammod.sculk_armor.4"));
             tooltip.add(Component.translatable("tooltip.pasterdreammod.sculk_armor.5"));
+            tooltip.add(Component.translatable("tooltip.pasterdreammod.sculk_armor.6"));
+            tooltip.add(Component.translatable("tooltip.pasterdreammod.sculk_armor.7"));
         }
         if(stack.is(ModItems.DYEDREAM_HELMET.get()) || stack.is(ModItems.DYEDREAM_CHESTPLATE.get())
                 || stack.is(ModItems.DYEDREAM_LEGGINGS.get()) || stack.is(ModItems.DYEDREAM_BOOTS.get())){
