@@ -83,6 +83,8 @@ public class EventRegister
             sync(event.getEntity());
         }
 
+        private static final String PATCHOULI_BOOK_TAG = "pasterdream_received_book";
+
         private static void givePatchouliBookOnFirstJoin(PlayerEvent.PlayerLoggedInEvent event)
         {
             if (!Config.givePatchouliBookOnFirstJoin) return;
@@ -90,7 +92,7 @@ public class EventRegister
 
             Player player = event.getEntity();
             if (player.level().isClientSide) return;
-            if (player.getPersistentData().getBoolean("pasterdream:received_patchouli_book")) return;
+            if (player.getTags().contains(PATCHOULI_BOOK_TAG)) return;
 
             ItemStack book = vazkii.patchouli.api.PatchouliAPI.get().getBookStack(
                     ResourceLocation.fromNamespaceAndPath("pasterdream", "seniors_dream"));
@@ -98,7 +100,7 @@ public class EventRegister
                 player.drop(book, false);
             }
 
-            player.getPersistentData().putBoolean("pasterdream:received_patchouli_book", true);
+            player.addTag(PATCHOULI_BOOK_TAG);
         }
 
         private static void sync(Player player)
