@@ -1,13 +1,10 @@
 package com.pasterdream.pasterdreammod.datagen.common;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.advancement.critereon.*;
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import net.minecraft.advancements.*;
-import com.pasterdream.pasterdreammod.advancement.critereon.FoundTombTrigger;
-import com.pasterdream.pasterdreammod.advancement.critereon.NewStandardSwordDrawingTrigger;
-import com.pasterdream.pasterdreammod.advancement.critereon.ReadDreamNoteTrigger;
-import com.pasterdream.pasterdreammod.advancement.critereon.UseBoneNeedleTrigger;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -241,6 +238,50 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("new_standard_sword_drawing", NewStandardSwordDrawingTrigger.TriggerInstance.draw())
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "adventure/new_standard_sword_drawing"), existingFileHelper);
+
+            Advancement find_desert_fortress = Advancement.Builder.advancement()
+                    .parent(ADVENTURE_ROOT)
+                    .display(
+                            ModItems.DESERT_HERO_TOMB.get(),
+                            Component.translatable("advancements.pasterdream.adventure.find_desert_fortress.title"),
+                            Component.translatable("advancements.pasterdream.adventure.find_desert_fortress.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("find_desert_fortress", FoundDesertFortressTrigger.TriggerInstance.found())
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "adventure/desert_fortress"), existingFileHelper);
+
+            Advancement get_desert_sword = Advancement.Builder.advancement()
+                    .parent(find_desert_fortress)
+                    .display(
+                            ModItems.DESERT_SWORD.get(),
+                            Component.translatable("advancements.pasterdream.adventure.get_desert_sword.title"),
+                            Component.translatable("advancements.pasterdream.adventure.get_desert_sword.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("get_desert_sword", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.DESERT_SWORD.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "adventure/get_desert_sword"), existingFileHelper);
+
+            Advancement get_chenjingmen_desert_sword = Advancement.Builder.advancement()
+                    .parent(get_desert_sword)
+                    .display(
+                            ModItems.CHENJINGMEN_DESERT_SWORD.get(),
+                            Component.translatable("advancements.pasterdream.adventure.get_chenjingmen_desert_sword.title"),
+                            Component.translatable("advancements.pasterdream.adventure.get_chenjingmen_desert_sword.description"),
+                            null,
+                            FrameType.CHALLENGE,
+                            true, true, false
+                    )
+                    .addCriterion("get_chenjingmen_desert_sword", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.CHENJINGMEN_DESERT_SWORD.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "adventure/get_chenjingmen_desert_sword"), existingFileHelper);
 
             // ========== 下界Tab子进度：真金不怕火炼 ==========
             Advancement get_molten_gold_ingot = Advancement.Builder.advancement()

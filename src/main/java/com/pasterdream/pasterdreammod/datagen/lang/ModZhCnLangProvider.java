@@ -1168,6 +1168,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.get_murakumo_kusanagi.title", "刀下亡魂");
         add("advancements.pasterdream.get_murakumo_kusanagi.description", "通过杀戮，让草雍得到进一步进化");
 
+        add("advancements.pasterdream.adventure.find_desert_fortress.title", "沙漠英灵");
+        add("advancements.pasterdream.adventure.find_desert_fortress.description", "发现沙漠遗迹，里面住着一个还没完成遗愿的英灵，或许你应当考虑先杀死附近的敌人……");
+        add("advancements.pasterdream.adventure.get_desert_sword.title", "英灵之剑");
+        add("advancements.pasterdream.adventure.get_desert_sword.description", "从英灵的手中得到朔漠大剑，完成他的遗愿让这把武器得以进化");
+        add("advancements.pasterdream.adventure.get_chenjingmen_desert_sword.title", "遗志已成");
+        add("advancements.pasterdream.adventure.get_chenjingmen_desert_sword.description", "完成英灵的遗愿让朔漠大剑得以进化为『沉荆门』朔漠，看来那位曾经的英雄最终得以安息了……");
+
         // 进度 - 下界拓展
         add("advancements.pasterdream.get_molten_gold_ingot.title", "真金不怕火炼");
         add("advancements.pasterdream.get_molten_gold_ingot.description", "获得炙焰金锭，熔炼自下界的一种烫手的金矿石");
@@ -1182,7 +1189,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.get_super_deep_sea_treasure.title", "To wish upon a satellite...");
         add("advancements.pasterdream.get_super_deep_sea_treasure.description", "获得更高级的海洋秘宝，你应该为此找到一个更强大的钓竿……");
         add("advancements.pasterdream.get_blue_dew.title", "海洋之泪");
-        add("advancements.pasterdream.get_blue_dew.description", "获得湛蓝露滴，它来自那发着附魔亮光的诱人海洋秘宝");
+        add("advancements.pasterdream.get_blue_dew.description", "获得湛蓝露滴，它来自于深海的海洋秘宝");
         add("advancements.pasterdream.get_blue_heart_of_the_sea.title", "深蓝之心");
         add("advancements.pasterdream.get_blue_heart_of_the_sea.description", "获得蔚蓝海洋之心，你会知道什么武器需要用上它的……");
         add("advancements.pasterdream.get_beihairuo_tide_sword.title", "潮汐之神");

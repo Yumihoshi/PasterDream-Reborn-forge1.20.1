@@ -738,7 +738,7 @@ public class ModItems {
                     player.getCooldowns().addCooldown(this, 40);
 
                     level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                            SoundEvents.FIREWORK_ROCKET_LAUNCH, SoundSource.PLAYERS, 1.0F, 1.0F);
+                            SoundEvents.FIREWORK_ROCKET_LAUNCH, SoundSource.PLAYERS, 3.0F, 1.0F);
                 }
                 @Override
                 public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
