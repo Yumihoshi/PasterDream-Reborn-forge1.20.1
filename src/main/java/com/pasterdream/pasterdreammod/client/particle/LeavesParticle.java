@@ -18,7 +18,7 @@ public class LeavesParticle extends TextureSheetParticle {
         this.quadSize *= 0.9f;
         this.lifetime = Math.max(1, 240 + (this.random.nextInt(60) - 30));
         this.gravity = 0.02f;
-        this.hasPhysics = true;
+        this.hasPhysics = false;
         this.xd = xSpeed * 0;
         this.yd = ySpeed * 0;
         this.zd = zSpeed * 0;
