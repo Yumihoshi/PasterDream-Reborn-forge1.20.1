@@ -13,6 +13,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Map;
@@ -43,9 +44,9 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                 null, null, AdvancementRewards.EMPTY, Map.of(), new String[0][0], false);
 
         @Override
-        public void generate(HolderLookup.Provider registries,
-                             Consumer<Advancement> saver,
-                             ExistingFileHelper existingFileHelper) {
+        public void generate(HolderLookup.@NotNull Provider registries,
+                             @NotNull Consumer<Advancement> saver,
+                             @NotNull ExistingFileHelper existingFileHelper) {
 
             // ========== 根进度：帕斯特之梦 ==========
             Advancement root = Advancement.Builder.advancement()
@@ -85,7 +86,39 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "story/dyedream_crack"), existingFileHelper);
 
-            // ========== 子进度：染梦世界 ==========
+            // ========== 染梦裂隙子进度：太陽とレインボ一 ==========
+            Advancement createpliers = Advancement.Builder.advancement()
+                    .parent(dyedreamCrackAdv)
+                    .display(
+                            ModItems.PLIERS.get(),
+                            Component.translatable("advancements.pasterdream.story.create_pliers.title"),
+                            Component.translatable("advancements.pasterdream.story.create_pliers.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("create_pliers", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.PLIERS.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/create_pliers"), existingFileHelper);
+
+            // ========== 染梦裂隙子进度：下午茶时光 ==========
+            Advancement createresearchtable = Advancement.Builder.advancement()
+                    .parent(dyedreamCrackAdv)
+                    .display(
+                            ModItems.RESEARCH_TABLE.get(),
+                            Component.translatable("advancements.pasterdream.story.create_research_table.title"),
+                            Component.translatable("advancements.pasterdream.story.create_research_table.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("create_research_table", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.RESEARCH_TABLE.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/create_research_table"), existingFileHelper);
+
+            // ========== 染梦裂隙子进度：染梦世界 ==========
             Advancement.Builder.advancement()
                     .parent(dyedreamCrackAdv)
                     .display(
@@ -352,7 +385,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "husbandry/get_deep_sea_treasure"), existingFileHelper);
 
-            // ========== 海之馈赠子进度：To wish upon a satellite, satellite... ==========
+            // ========== 海之馈赠子进度：To wish upon a satellite... ==========
             CompoundTag superNbt = new CompoundTag();
             superNbt.putBoolean("deep_treasure_super", true);
 

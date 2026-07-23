@@ -1153,6 +1153,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.dyedream_crack.description", "在下一次的梦中醒来，裂隙会与你的梦境共鸣。");
         add("advancements.pasterdream.story.dyedream_world.title", "哥德堡安眠曲");
         add("advancements.pasterdream.story.dyedream_world.description", "访问染梦之境");
+        add("advancements.pasterdream.story.create_pliers.title", "太陽とレインボ一");
+        add("advancements.pasterdream.story.create_pliers.description", "制作一把园艺钳");
+        add("advancements.pasterdream.story.create_research_table.title", "下午茶时光");
+        add("advancements.pasterdream.story.create_research_table.description", "制作研究台以开展研究");
 
         // 进度 - 冒险拓展
         add("advancements.pasterdream.adventure.forgotten_sword_tomb.title", "被遗忘的剑冢");

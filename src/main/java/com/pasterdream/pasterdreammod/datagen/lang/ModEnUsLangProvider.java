@@ -991,6 +991,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.dyedream_crack.description", "Wake up in the next dream, the crack will resonate with your dream.");
         add("advancements.pasterdream.story.dyedream_world.title", "Gothenburg Lullaby");
         add("advancements.pasterdream.story.dyedream_world.description", "Visit the Dyedream World");
+        add("advancements.pasterdream.story.create_pliers.title", "太陽とレインボ一");
+        add("advancements.pasterdream.story.create_pliers.description", "Make a pair of pliers");
+        add("advancements.pasterdream.story.create_research_table.title", "Afternoon Tea Time");
+        add("advancements.pasterdream.story.create_research_table.description", "Craft a research table to carry out research.");
 
         // Advancements - Adventure Expansion
         add("advancements.pasterdream.adventure.forgotten_sword_tomb.title", "The Forgotten Sword Tomb");
