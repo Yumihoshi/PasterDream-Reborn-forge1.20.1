@@ -40,6 +40,11 @@ textures/item/prophecy_card_sprint.png
 textures/item/prophecy_card_wielding_sword.png
 textures/item/deep_sea_treasure.png
 textures/item/dyedream_deep_sea_treasure.png
+textures/item/bread_slice.png
+textures/item/sandwich.png
+textures/item/candy_cane.png
+textures/item/rust_black_metal_grain.png
+textures/item/black_metal_ingot.png
 ```
 
 ## 新增 / New
@@ -51,4 +56,5 @@ textures/item/dyedream_deep_sea_treasure.png
 ```
 textures/item/seniors_dream_book.png
 textures/item/shadow_deep_sea_treasure.png
+textures/item/galaxy_jelly.png
 ```
