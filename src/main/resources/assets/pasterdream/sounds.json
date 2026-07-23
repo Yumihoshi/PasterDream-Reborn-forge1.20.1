@@ -78,5 +78,9 @@
   "dream_accumulator":
   {
     "sounds": [{"name": "pasterdream:dream_accumulator", "stream": false}]
+  },
+  "zipper":
+  {
+    "sounds": [{"name": "pasterdream:zipper", "stream": false}]
   }
 }

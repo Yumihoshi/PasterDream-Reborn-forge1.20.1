@@ -1,10 +1,12 @@
 package com.pasterdream.pasterdreammod.world.item.StorgeBagItem;
 
+import com.pasterdream.pasterdreammod.init.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
@@ -67,6 +69,7 @@ public class StorageBagItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
         if (entity instanceof ServerPlayer serverPlayer) {
             ItemStack stack = entity.getItemInHand(hand);
+            world.playSound(null, entity.blockPosition(), ModSounds.ZIPPER.get(), SoundSource.NEUTRAL, 0.2f, 1f);
             NetworkHooks.openScreen(serverPlayer,
                     new SimpleMenuProvider(
                             (id, inv, player) -> new StorageBagMenu(id, inv, stack, hand),

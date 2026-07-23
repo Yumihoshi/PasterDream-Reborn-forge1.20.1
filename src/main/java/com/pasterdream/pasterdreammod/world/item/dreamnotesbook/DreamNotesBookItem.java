@@ -3,6 +3,8 @@ package com.pasterdream.pasterdreammod.world.item.dreamnotesbook;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -34,6 +36,10 @@ public class DreamNotesBookItem extends Item
             CompoundTag compoundTag = itemStack.getTag();
             DreamNotesBookInfo dreamNotesBookInfo = (compoundTag != null && compoundTag.contains("content")) ? DreamNotesBookRegistry.getInfo(compoundTag.getString("content")) : null;
             Minecraft.getInstance().setScreen(new DreamNotesBookScreen(dreamNotesBookInfo));
+        }
+        else
+        {
+            level.playSound(null, player.blockPosition(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 1.0f, 1.0f);
         }
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide);
     }

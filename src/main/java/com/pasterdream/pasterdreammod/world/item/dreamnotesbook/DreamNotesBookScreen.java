@@ -3,10 +3,12 @@ package com.pasterdream.pasterdreammod.world.item.dreamnotesbook;
 import com.pasterdream.pasterdreammod.component.arrowbutton.LeftArrowButton;
 import com.pasterdream.pasterdreammod.component.arrowbutton.RightArrowButton;
 import com.pasterdream.pasterdreammod.helper.renderhelper.GUIBackGroundRender;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -159,6 +161,7 @@ public class DreamNotesBookScreen extends Screen
         if(currentPage < totalPage - 1)
         {
             currentPage++;
+            playPageTurnSound();
         }
     }
 
@@ -167,6 +170,15 @@ public class DreamNotesBookScreen extends Screen
         if(currentPage > 0)
         {
             currentPage--;
+            playPageTurnSound();
+        }
+    }
+
+    private void playPageTurnSound()
+    {
+        if (Minecraft.getInstance().player != null)
+        {
+            Minecraft.getInstance().player.playSound(SoundEvents.BOOK_PAGE_TURN, 1.0f, 1.0f);
         }
     }
 
