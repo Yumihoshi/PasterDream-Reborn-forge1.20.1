@@ -94,6 +94,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.MELT_DREAM_COTTON_CANDY.get(), "Melt Dream Cotton Candy");
         add(ModItems.BUBBLE_GUM.get(), "Bubble Gum");
         add(ModItems.GALAXY_JELLY.get(), "Galaxy Jelly");
+        add("tooltip.pasterdreammod.galaxy_jelly", "§9After consumption, throw the player into the air and gains a 7-second slow falling.");
+        add("tooltip.pasterdreammod.galaxy_jelly.flavor", "§7§O --Holding the galaxy in my hands.");
+        add(ModItems.FORTUNE_JELLY.get(), "Fortune Jelly");
+        add("tooltip.pasterdreammod.fortune_jelly", "§9After eating, gain Luck I (1:00)");
+        add("item.minecraft.potion.effect.luck", "Potion of Luck");
+        add("item.minecraft.splash_potion.effect.luck", "Splash Potion of Luck");
+        add("item.minecraft.lingering_potion.effect.luck", "Lingering Potion of Luck");
         add(ModItems.LIGHT_ORGAN.get(), "Light Organ");
         add(ModItems.JELLYFISH_MUD.get(), "Jellyfish Mud");
         add(ModItems.JELLYFISH_JELLO.get(), "Jellfish Jello");
@@ -106,6 +113,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE.get(), "Elixir Bottle");
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "Elixir Bottle of Melt Dream");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "Elixir Bottle of Rage Elixir");
+        add("tooltip.pasterdreammod.elixir_bottle_of_rage_elixir.1", "§7Effects after drinking:");
+        add("tooltip.pasterdreammod.elixir_bottle_of_rage_elixir.2", "§7▪ §9+0.1Base attack speed (until death)");
+        add("item.pasterdream.elixir_bottle_of_rage_elixir.client.success", "§5You feel a surge of power coursing through your body...");
+        add("item.pasterdream.elixir_bottle_of_rage_elixir.client.fail", "§7You have already drunk this potion.");
         add(ModItems.BUBBLE_TEA.get(), "Bubble Tea");
         add(ModItems.SWEET_DREAM_MUSIC_DISC.get(), "Music Disc");
         add(ModItems.SWEET_DREAM_MUSIC_DISC.get().getDescriptionId() + ".desc", "PasterDream - Sweet Dream");
