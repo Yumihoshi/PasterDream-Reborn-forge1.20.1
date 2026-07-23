@@ -34,6 +34,7 @@ public class SanAuraHandler {
             return;
         }
         if (!SanHelper.getIsSanEnabled(player)) return;
+        if (player.isSpectator()) return;
 
         Level level = player.level();
         BlockPos pos = player.blockPosition();
