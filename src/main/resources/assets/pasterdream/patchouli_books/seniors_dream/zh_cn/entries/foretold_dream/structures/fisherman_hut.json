@@ -1,0 +1,20 @@
+{
+  "sortnum": 2,
+  "name": "pasterdream.seniors_dream.entry.fisherman_hut",
+  "icon": "minecraft:cod",
+  "category": "pasterdream:foretold_dream/structures",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.fisherman_hut.page0"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "pasterdream:textures/patchouli_books/seniors_dream/en_us/entries/foretold_dream/structures/spruce_fisherman_hut.png",
+        "pasterdream:textures/patchouli_books/seniors_dream/en_us/entries/foretold_dream/structures/oak_fisherman_hut.png"
+      ],
+      "text": "pasterdream.seniors_dream.entry.fisherman_hut.page1"
+    }
+  ]
+}

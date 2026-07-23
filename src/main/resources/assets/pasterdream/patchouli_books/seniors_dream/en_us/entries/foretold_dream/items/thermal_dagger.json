@@ -1,0 +1,17 @@
+{
+  "sortnum": 9,
+  "name": "pasterdream.seniors_dream.entry.thermal_dagger",
+  "icon": "pasterdream:thermal_dagger",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:thermal_dagger",
+      "text": "pasterdream.seniors_dream.entry.thermal_dagger.page0"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.thermal_dagger.page1"
+    }
+  ]
+}

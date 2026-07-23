@@ -1,0 +1,18 @@
+{
+  "sortnum": 4,
+  "name": "pasterdream.seniors_dream.entry.inferno_sword",
+  "icon": "pasterdream:inferno_sword",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "pasterdream:hellfire_sword",
+      "text": "pasterdream.seniors_dream.entry.inferno_sword.page0"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:inferno_sword",
+      "text": "pasterdream.seniors_dream.entry.inferno_sword.page1"
+    }
+  ]
+}

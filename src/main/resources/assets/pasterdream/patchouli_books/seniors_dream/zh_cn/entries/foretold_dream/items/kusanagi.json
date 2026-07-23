@@ -1,0 +1,18 @@
+{
+  "sortnum": 5,
+  "name": "pasterdream.seniors_dream.entry.kusanagi",
+  "icon": "pasterdream:murakumo_kusanagi",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "pasterdream:kusanagi",
+      "text": "pasterdream.seniors_dream.entry.kusanagi.page0"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:murakumo_kusanagi",
+      "text": "pasterdream.seniors_dream.entry.kusanagi.page1"
+    }
+  ]
+}

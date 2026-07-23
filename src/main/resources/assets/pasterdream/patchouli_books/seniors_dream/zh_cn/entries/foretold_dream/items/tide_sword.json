@@ -1,0 +1,18 @@
+{
+  "sortnum": 6,
+  "name": "pasterdream.seniors_dream.entry.tide_sword",
+  "icon": "pasterdream:beihairuo_tide_sword",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "pasterdream:tide_sword",
+      "text": "pasterdream.seniors_dream.entry.tide_sword.page0"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:beihairuo_tide_sword",
+      "text": "pasterdream.seniors_dream.entry.tide_sword.page1"
+    }
+  ]
+}
