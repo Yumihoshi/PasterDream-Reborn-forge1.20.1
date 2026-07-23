@@ -748,6 +748,22 @@ public class ModItems {
                 }
             });
 
+    public static final RegistryObject<Item> FORTUNE_JELLY = ITEMS.register("fortune_jelly",
+            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties()
+                    .food(new FoodProperties.Builder().nutrition(6).alwaysEat().saturationMod(0.415f).build()).useDuration(25)
+            ){
+                @Override
+                protected void onFoodSpecial(Player player, Level level) {
+
+                    player.addEffect(new MobEffectInstance(MobEffects.LUCK, 1200, 0));
+                }
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                    super.appendHoverText(stack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.pasterdreammod.fortune_jelly"));
+                }
+            });
+
     public static final RegistryObject<Item> LIGHT_ORGAN = ITEMS.register("light_organ",
             () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().sanAdd(-1)
                     .food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(MobEffects.GLOWING, 100, 0), 1.0f)
@@ -824,9 +840,35 @@ public class ModItems {
             () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().stacksTo(1).meltDreamEnergyAdd(25).rarity(Rarity.UNCOMMON)
                     .food(new FoodProperties.Builder().nutrition(4).saturationMod(2).alwaysEat().build())));
 
+    private static final UUID ELIXIR_BOTTLE_OF_RAGE_ELIXIR_ATTACK_SPEED_UUID = UUID.fromString("78e1cdd9-d201-4e2b-8adb-0af735d2c806");
     public static final RegistryObject<Item> ELIXIR_BOTTLE_OF_RAGE_ELIXIR = ITEMS.register("elixir_bottle_of_rage_elixir",
             () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().stacksTo(1).rarity(Rarity.UNCOMMON)
-                    .food(new FoodProperties.Builder().alwaysEat().build())));
+                    .food(new FoodProperties.Builder().alwaysEat().build())) {
+                @Override
+                protected void onDrinkSpecial(Player player, Level level) {
+                    if (!level.isClientSide) {
+                        var AtkspdAttr = player.getAttribute(Attributes.ATTACK_SPEED);
+                        if (AtkspdAttr != null) {
+                            AttributeModifier existingModifier = AtkspdAttr.getModifier(ELIXIR_BOTTLE_OF_RAGE_ELIXIR_ATTACK_SPEED_UUID);
+                            if (existingModifier == null) {
+                                AtkspdAttr.addPermanentModifier(new AttributeModifier(ELIXIR_BOTTLE_OF_RAGE_ELIXIR_ATTACK_SPEED_UUID,
+                                        "elixir_bottle_of_rage_elixir", 0.1, AttributeModifier.Operation.ADDITION));
+                                level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                                        ModSounds.DREAM0.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                                player.displayClientMessage(Component.translatable("item.pasterdream.elixir_bottle_of_rage_elixir.client.success"), false);
+                            } else {
+                                player.displayClientMessage(Component.translatable("item.pasterdream.elixir_bottle_of_rage_elixir.client.fail"), false);
+                            }
+                        }
+                    }
+                }
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                    super.appendHoverText(stack, level, tooltip, flag);
+                    tooltip.add(Component.translatable("tooltip.pasterdreammod.elixir_bottle_of_rage_elixir.1"));
+                    tooltip.add(Component.translatable("tooltip.pasterdreammod.elixir_bottle_of_rage_elixir.2"));
+                }
+            });
 
     public static final RegistryObject<Item> PINEAPPLE_LOVE_SEA = ITEMS.register("pineapple_love_sea",
             () -> new PasterDreamDrinkItem(new PasterDreamDrinkAndFoodProperties().sanAdd(15).rarity(Rarity.UNCOMMON)

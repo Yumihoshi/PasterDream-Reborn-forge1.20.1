@@ -1,6 +1,8 @@
 package com.pasterdream.pasterdreammod.compat.jei;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.compat.jei.brewingrecipe.FortuneJellyJeiBrewingRecipe;
+import mezz.jei.api.recipe.vanilla.IJeiBrewingRecipe;
 import com.pasterdream.pasterdreammod.compat.jei.claypanrecipe.ClaypanJEIRecipe;
 import com.pasterdream.pasterdreammod.compat.jei.claypanrecipe.ClaypanRecipeCategory;
 import com.pasterdream.pasterdreammod.compat.jei.dreamaccumulatorrecipe.DreamAccumulatorJEIRecipe;
@@ -16,7 +18,10 @@ import com.pasterdream.pasterdreammod.compat.jei.researchtableresearch.ResearchT
 import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModFluids;
 import com.pasterdream.pasterdreammod.init.ModItems;
+import com.pasterdream.pasterdreammod.init.ModPotions;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
+import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanRecipe;
 import com.pasterdream.pasterdreammod.world.block.claypan.ClaypanScreen;
 import com.pasterdream.pasterdreammod.world.block.dreamaccumulator.DreamAccumulatorRecipe;
@@ -41,6 +46,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
@@ -86,6 +92,34 @@ public class ModJEIPlugin implements IModPlugin
 
             List<DreamAccumulatorRecipe> dreamAccumulatorRecipes = recipeManager.getAllRecipesFor(ModRecipes.DREAM_ACCUMULATOR.get());
             registration.addRecipes(DreamAccumulatorRecipeCategory.DREAM_ACCUMULATOR_RECIPE_TYPE, dreamAccumulatorRecipes.stream().map(DreamAccumulatorJEIRecipe::new).collect(Collectors.toList()));
+
+            // ===== 幸运药水酿造配方（原版样式，每步独立注册）=====
+            Item[] potionTypes = {Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION};
+            List<IJeiBrewingRecipe> brewingRecipes = new ArrayList<>();
+            for (Item type : potionTypes) {
+                // 福灵果冻：粗制药水 → 幸运药水
+                brewingRecipes.add(new FortuneJellyJeiBrewingRecipe(
+                        List.of(PotionUtils.setPotion(new ItemStack(type), Potions.AWKWARD)),
+                        List.of(new ItemStack(ModItems.FORTUNE_JELLY.get())),
+                        PotionUtils.setPotion(new ItemStack(type), ModPotions.LUCK.get()),
+                        1
+                ));
+                // 荧石粉：幸运药水 → 幸运药水 II
+                brewingRecipes.add(new FortuneJellyJeiBrewingRecipe(
+                        List.of(PotionUtils.setPotion(new ItemStack(type), ModPotions.LUCK.get())),
+                        List.of(new ItemStack(Items.GLOWSTONE_DUST)),
+                        PotionUtils.setPotion(new ItemStack(type), ModPotions.STRONG_LUCK.get()),
+                        1
+                ));
+                // 红石粉：幸运药水 → 长效幸运药水
+                brewingRecipes.add(new FortuneJellyJeiBrewingRecipe(
+                        List.of(PotionUtils.setPotion(new ItemStack(type), ModPotions.LUCK.get())),
+                        List.of(new ItemStack(Items.REDSTONE)),
+                        PotionUtils.setPotion(new ItemStack(type), ModPotions.LONG_LUCK.get()),
+                        1
+                ));
+            }
+            registration.addRecipes(RecipeTypes.BREWING, brewingRecipes);
             // 帕秋莉宝典 JEI 配方（让玩家对着带 NBT 的 guide_book 按 R 也能查到配方）
             if (ModList.get().isLoaded("patchouli")) {
                 ResourceLocation recipeId = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "seniors_dream_book_jei");

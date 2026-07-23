@@ -101,6 +101,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.MELT_DREAM_COTTON_CANDY.get());
         basicItem(ModItems.BUBBLE_GUM.get());
         basicItem(ModItems.GALAXY_JELLY.get());
+        basicItem(ModItems.FORTUNE_JELLY.get());
         basicItem(ModItems.LIGHT_ORGAN.get());
         basicItem(ModItems.JELLYFISH_MUD.get());
         basicItem(ModItems.JELLYFISH_JELLO.get());
