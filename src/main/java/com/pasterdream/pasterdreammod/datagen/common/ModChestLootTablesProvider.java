@@ -287,7 +287,7 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
 
                         )
                         .withPool(LootPool.lootPool()
-                                // 装备&工具，固定1抽取，不提供额外抽取次数（部分物品未加入，暂时加入已加入物品到战利品表）
+                                // 装备&工具，固定1抽取，不提供额外抽取次数
                                 .setBonusRolls(ConstantValue.exactly(0.0F))
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.PALE_BONENEEDLE.get())
@@ -299,6 +299,10 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                         .apply(SetItemCountFunction.setCount(
                                                 ConstantValue.exactly(1.0F))))
                                 .add(LootItem.lootTableItem(ModItems.PLIERS.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(ModItems.SORBENT.get())
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
                                                 ConstantValue.exactly(1.0F))))
@@ -686,6 +690,10 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                                 ConstantValue.exactly(1.0F))))
                                 .add(LootItem.lootTableItem(ModItems.MORTAR.get())
                                         .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(ModItems.SORBENT.get())
+                                        .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
                                                 ConstantValue.exactly(1.0F))))
                                 .add(LootItem.lootTableItem(ModItems.GLASS_JAR.get())
