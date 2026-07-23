@@ -28,7 +28,7 @@ public class DreamAccumulatorMenu extends AbstractContainerMenu
         data.set(1, blockEntity.getMaxProgress());
         addDataSlots(data);
 
-        addSlot(new SlotItemHandler(handler, 0, 74, 6)
+        addSlot(new SlotItemHandler(handler, 0, 77, 6)
         {
             @Override
             public boolean mayPlace(ItemStack stack)
@@ -36,16 +36,16 @@ public class DreamAccumulatorMenu extends AbstractContainerMenu
                 return false;
             }
         });
-        addSlot(new SlotItemHandler(handler, 1, 74, 60));
+        addSlot(new SlotItemHandler(handler, 1, 77, 60));
 
         for (int i = 0; i < 9; i++)
         {
-            addSlot(new Slot(inventory, i, 4 + i * 18, 160));
+            addSlot(new Slot(inventory, i, 5 + i * 18, 160));
         }
 
         for (int i = 0; i < 27; i++)
         {
-            addSlot(new Slot(inventory, i + 9, 4 + (i % 9) * 18, 102 + (i / 9) * 18));
+            addSlot(new Slot(inventory, i + 9, 5 + (i % 9) * 18, 102 + (i / 9) * 18));
         }
     }
 
@@ -83,7 +83,7 @@ public class DreamAccumulatorMenu extends AbstractContainerMenu
         else    //背包移入输入槽
             if (index >= 2 && index <= 37)
             {
-                if (!this.moveItemStackTo(stack, 1, 1, false) || !this.moveItemStackTo(stack, 5, 6, false))
+                if (!this.moveItemStackTo(stack, 1, 2, false) || !this.moveItemStackTo(stack, 5, 6, false))
                 {
                     return ItemStack.EMPTY;
                 }

@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.init;
 
+import com.pasterdream.pasterdreammod.advancement.critereon.FoundDesertFortressTrigger;
 import com.pasterdream.pasterdreammod.advancement.critereon.FoundTombTrigger;
 import com.pasterdream.pasterdreammod.advancement.critereon.NewStandardSwordDrawingTrigger;
 import com.pasterdream.pasterdreammod.advancement.critereon.ReadDreamNoteTrigger;
@@ -24,10 +25,14 @@ public class ModCriteriaTriggers {
     /** 阅读特定内容的寻梦者笔记 */
     public static final ReadDreamNoteTrigger READ_DREAM_NOTE = new ReadDreamNoteTrigger();
 
+    /** 进入沙漠堡垒结构 */
+    public static final FoundDesertFortressTrigger FOUND_DESERT_FORTRESS = new FoundDesertFortressTrigger();
+
     public static void init() {
         CriteriaTriggers.register(USE_BONE_NEEDLE);
         CriteriaTriggers.register(FOUND_TOMB);
         CriteriaTriggers.register(NEW_STANDARD_SWORD_DRAWING);
         CriteriaTriggers.register(READ_DREAM_NOTE);
+        CriteriaTriggers.register(FOUND_DESERT_FORTRESS);
     }
 }

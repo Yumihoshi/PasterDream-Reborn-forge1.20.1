@@ -31,6 +31,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
 
         basicItem(ModItems.MORTAR.get());
         basicItem(ModItems.FEATHER_PEN.get());
+        basicItem(ModItems.SORBENT.get());
+
         handheldItem(ModItems.PLIERS);
         basicItem(ModItems.DYEDREAM_DYE.get());
         basicItem(ModItems.DYEDREAM_BUD_NUGGET.get());

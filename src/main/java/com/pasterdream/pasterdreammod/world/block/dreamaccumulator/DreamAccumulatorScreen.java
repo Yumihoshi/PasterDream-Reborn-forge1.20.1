@@ -12,14 +12,14 @@ public class DreamAccumulatorScreen extends AbstractContainerScreen<DreamAccumul
     public DreamAccumulatorScreen(DreamAccumulatorMenu menu, Inventory inventory, Component title)
     {
         super(menu, inventory, title);
-        this.imageWidth = 169;
+        this.imageWidth = 170;
         this.imageHeight = 184;
     }
 
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY)
     {
-        GUIBackGroundRender.rendDreamAccumulatorGUI(guiGraphics, leftPos + 68, topPos);
+        GUIBackGroundRender.rendDreamAccumulatorGUI(guiGraphics, leftPos + 71, topPos);
         GUIBackGroundRender.rendPasterDreamInventoryGUI(guiGraphics, leftPos, topPos + 97);
     }
 
