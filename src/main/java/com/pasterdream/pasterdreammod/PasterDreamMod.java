@@ -5,6 +5,7 @@ import com.pasterdream.pasterdreammod.helper.fluidhandler.FluidHandlerResolvers;
 import com.pasterdream.pasterdreammod.helper.sanbiomeratemanager.SanBiomeRateManager;
 import com.pasterdream.pasterdreammod.helper.tooltipadder.AddToolTip;
 import com.pasterdream.pasterdreammod.event.ModMobDrops;
+import com.pasterdream.pasterdreammod.event.ModMobSpawnEvents;
 import com.pasterdream.pasterdreammod.event.ModWorldGenEvents;
 import com.pasterdream.pasterdreammod.event.PlayerEvents;
 import com.pasterdream.pasterdreammod.init.*;
@@ -100,6 +101,7 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onRapidReactionFall);
         MinecraftForge.EVENT_BUS.addListener(ModWorldGenEvents::onLevelLoad);
         MinecraftForge.EVENT_BUS.addListener(ModWorldGenEvents::onServerTick);
+        MinecraftForge.EVENT_BUS.addListener(ModMobSpawnEvents::onEntityJoinLevel);
         modEventBus.addListener(this::AddOverlays);
         modEventBus.addListener(this::AddEntityRenderersEvent);
         modEventBus.addListener(this::AddRegisterLayerDefinitions);
