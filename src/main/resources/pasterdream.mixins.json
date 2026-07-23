@@ -14,7 +14,9 @@
     "PhantomTargetMixin",
     "SculkArmorWardenImmunityMixin",
     "WardenTargetMixin",
-    "WorldGenRegionMixin"
+    "WorldGenRegionMixin",
+    "ServerboundSetStructureBlockPacketMixin",
+    "StructureBlockEntityMixin"
   ],
   "client": [
     "FogRendererMixin",
