@@ -1,0 +1,17 @@
+{
+  "sortnum": 10,
+  "name": "pasterdream.seniors_dream.entry.fortune_jelly",
+  "icon": "pasterdream:fortune_jelly",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:fortune_jelly",
+      "text": "pasterdream.seniors_dream.entry.fortune_jelly.page0"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.fortune_jelly.page1"
+    }
+  ]
+}

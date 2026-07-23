@@ -1,0 +1,18 @@
+{
+  "sortnum": 7,
+  "name": "pasterdream.seniors_dream.entry.desert_sword",
+  "icon": "pasterdream:chenjingmen_desert_sword",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:desert_sword",
+      "text": "pasterdream.seniors_dream.entry.desert_sword.page0"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:chenjingmen_desert_sword",
+      "text": "pasterdream.seniors_dream.entry.desert_sword.page1"
+    }
+  ]
+}

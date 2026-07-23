@@ -1106,10 +1106,62 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("pasterdream.seniors_dream.entry.sculk_upgrade.page0", "A fallen dynasty can never see the light of day again, but its stored power flows endlessly. Now that you have defeated the strongest guardian here, try infusing it into Netherite armor and let this forbidden power from the ancient civilization serve you. The upgraded Echo Set is not only more durable, but also grants you the protection of Echoes, freeing you from the intimidation of Sculk. Even when facing deeper darkness, the power of Echoes will grant you a sliver of courage.");
         add("pasterdream.seniors_dream.entry.sculk_upgrade.page1", "-- When wearing the Echo Set, what you feel is not just power, but also a deeper and more ancient darkness and fear coiling around your ears, impossible to shake off. Like a nightmare, it beckons you to embrace it...");
 
+        // Inferno Sword
+        add("pasterdream.seniors_dream.entry.inferno_sword", "Inferno Sword 'Bone-melter'");
+        add("pasterdream.seniors_dream.entry.inferno_sword.page0", "Use Netherite Scrap, Blaze Powder, and Molten Gold Blocks to upgrade the Molten Gold Sword into the Hellfire Sword. Its sharpness rivals that of a Diamond Sword, and it inflicts long-lasting fire upon enemies. If the enemy is already suffering from fire, this sword extends their torment.");
+        add("pasterdream.seniors_dream.entry.inferno_sword.page1", "After further enhancement, the sword is named 'Bone-melter.' It becomes lighter, and its wielder can actively unleash a combat art called 'Bone-melting Slash' to make the next strike deadlier. If the enemy is about to suffer prolonged fire damage, Bone-melting Slash will also extinguish their flames, slowing them down.$(br2)-- Bathed in the flames of battle, forged upon the anvil of war.");
+
+        // Kusanagi
+        add("pasterdream.seniors_dream.entry.kusanagi", "Kusanagi 'Murakumo'");
+        add("pasterdream.seniors_dream.entry.kusanagi.page0", "A sword named 'Kusanagi,' as sharp as a diamond-forged blade. It also inflicts painful poison upon those it wounds. Once two hundred lives have fallen beneath its edge, it reveals its full divine power — becoming even sharper and inflicting longer-lasting poison upon its victims.");
+        add("pasterdream.seniors_dream.entry.kusanagi.page1", "Its wielder can also actively unleash a combat art called 'Extreme Sharpness,' making the divine blade's next strike even deadlier.$(br2)-- Though this sword is called Murakumo no Kusanagi, this mod has no Yamata-no-Orochi, it cannot be used as a catalyst to summon a Heroic Spirit, nor can it unleash its Noble Phantasm to bring an Eight-Armed Raging Waves upon hostile creatures.");
+
+        // Tide Sword
+        add("pasterdream.seniors_dream.entry.tide_sword", "Beihai Ruo Tide Sword");
+        add("pasterdream.seniors_dream.entry.tide_sword.page0", "One day, you sense the Azure Dewdrop found in the Deep Sea Treasure resonating with the Tide Sword you forged. So you carefully polish the Azure Dewdrop and try embedding it into the Tide Sword. Now, this blade is named after an ancient sea god, becoming not only sharper but also granting its wielder the ability to unleash 'Surging Current' combat art — dashing swiftly through the water.");
+        add("pasterdream.seniors_dream.entry.tide_sword.page1", "Furthermore, if your enemy fights you in the water, your next slash after releasing Surging Current will be even deadlier.$(br2)-- Nine rivers flow across and return to the Sea God; a lone peak overlooks, intimidating the heavens.");
+
+        // Desert Sword
+        add("pasterdream.seniors_dream.entry.desert_sword", "Chenjingmen Desert");
+        add("pasterdream.seniors_dream.entry.desert_sword.page0", "The warrior buried in the desert has not found peace — now it is your turn to fulfill his unfinished will. After fulfilling his final wish, he will help you unlock the full power of the Desert Greatsword. Now this ancient hero's blade has recovered its true name — 'Chenjingmen' Desert. Not only has its former sharpness returned, but it also grants its wielder the 'Desperate Counterattack' ability.");
+        add("pasterdream.seniors_dream.entry.desert_sword.page1", "Upon activating Desperate Counterattack, you briefly gain more life to endure attacks — and the more damage you take, the deadlier your next counterstrike will be.$(br2)-- Looking back, the tainted aura remains uncleansed; I ask this mortal world, where have the heroes gone?");
+
+        // Deep Sea Treasure
+        add("pasterdream.seniors_dream.entry.deep_sea_treasure", "Deep Sea Treasure");
+        add("pasterdream.seniors_dream.entry.deep_sea_treasure.page0", "While fishing across the dimensions, you may sometimes discover these delicate little chests. Opening them yields small treasures. Your Luck level affects the rarity of the treasures inside, and some chests seem to emit a glow — the contents appear anything but ordinary. Aside from common items, rumor has it there's a weapon from the deep sea, along with precious collectibles born from dreams.");
+        add("pasterdream.seniors_dream.entry.deep_sea_treasure.page1", "Perhaps you could try fishing for good fortune in dreams?$(br2)-- A dream melded with the sea... wait, what do you mean I fished out an Axolotl?");
+
+        // Thermal Dagger
+        add("pasterdream.seniors_dream.entry.thermal_dagger", "Thermal Dagger");
+        add("pasterdream.seniors_dream.entry.thermal_dagger.page0", "When opening Deep Sea Treasures, you may sometimes find this peculiar little dagger. While held in your main hand, your swimming speed increases. This dagger is slightly faster and sharper than an iron sword. Amusingly, when you strike enemies with it, it makes a sizzling, oily searing sound.");
+        add("pasterdream.seniors_dream.entry.thermal_dagger.page1", "Long ago, an extraterrestrial visitor crash-landed in the ocean, lost and seeking a way home. This peculiar dagger must have come from the hands of that visitor.$(br2)-- Disclaimer: This dagger is not suitable for soloing a Reaper Leviathan. Upon leaving the ocean, please check yourself for Kharaa infection.");
+
+        // Fortune Jelly
+        add("pasterdream.seniors_dream.entry.fortune_jelly", "Fortune Jelly");
+        add("pasterdream.seniors_dream.entry.fortune_jelly.page0", "During your exploration of this world, you should have already found this green jelly in certain chests. Eating this bouncy little treat will earn you an extra blessing from Lady Luck herself.");
+        add("pasterdream.seniors_dream.entry.fortune_jelly.page1", "Though I haven't quite figured out how this jelly is made, I seem to be able to extract its lucky essence using brewing methods.");
+
         // Dyedream Sky Island
         add("pasterdream.seniors_dream.entry.dyedream_sky_island", "Dyedream Sky Island");
-        add("pasterdream.seniors_dream.entry.dyedream_sky_island.page0", "As a novice Dreamseeker, you may discover these pink floating islands in the Overworld — these are the result of the Dyedream's encroachment upon the Overworld, called Dyedream Sky Islands. You need to ascend the island and touch the Dyedream Rift upon it. Perhaps nothing will happen the first time. When you return to your shelter and drift into slumber, upon waking again, you will receive a Dreamseeker's Notes. After reading the notes, return to the sky island and investigate the Dyedream Rift once more, and then...");
+        add("pasterdream.seniors_dream.entry.dyedream_sky_island.page0", "When you first arrive, you'll notice these pink floating islands in the Overworld. Their existence seems somewhat... irrational, as if from a dream. Climb onto one and you'll find a strange rift. Upon first touch, nothing happens — until you wake from sleep again, and a set of notes suddenly appears in your pocket. Following the notes' guidance, return to the sky island and investigate the rift once more, and then...$(br2)-- If this sky island is a reflection of the Dream's power, then when I step through the rift — am I in [reality] or still in the [dream]?");
         add("pasterdream.seniors_dream.entry.dyedream_sky_island.page1", "A view of the Dyedream Sky Island.");
+
+        // Lost Sword Tomb
+        add("pasterdream.seniors_dream.entry.lost_sword_tomb", "Lost Sword Tomb");
+        add("pasterdream.seniors_dream.entry.lost_sword_tomb.page0", "The Lost Sword Tomb is a structure found only in jungle biomes. At its center stands a sword embedded in stone — the Sword in the Stone. It takes brute force to pull it free, unless...$(br2)The Lost Sword you obtain can be imbued with the power of the jungle and upgraded into Kusanagi. However, this blade seems to thirst for blood. Try to satisfy its craving, and you may unlock even greater power that lies dormant within...");
+        add("pasterdream.seniors_dream.entry.lost_sword_tomb.page1", "A view of the Lost Sword Tomb.");
+
+        // Fisherman's Hut
+        add("pasterdream.seniors_dream.entry.fisherman_hut", "Fisherman's Hut");
+        add("pasterdream.seniors_dream.entry.fisherman_hut.page0", "On the beach biomes of the Overworld, you may sometimes come across these fisherman's huts — homes of fisherman villagers who have left their villages to make a living by the sea alone. Inside the hut's chest, you can find treasures the fisherman has salvaged from the ocean.$(br2)Occasionally, there may even be a Deep Sea Treasure inside. Perhaps the fisherman never realized it could be opened, keeping it merely as a keepsake — valuing the casket over the pearl within.");
+        add("pasterdream.seniors_dream.entry.fisherman_hut.page1", "-- I believe they must have other reasons for choosing a solitary life by the sea. Perhaps, there are even deeper secrets hidden beneath these waters.");
+
+        // Desert Ruins
+        add("pasterdream.seniors_dream.entry.desert_ruins", "Desert Ruins");
+        add("pasterdream.seniors_dream.entry.desert_ruins.page0", "In the deserts of the Overworld, you may occasionally stumble upon these strange ruins. They appear to have been occupied by Pillagers and Husks — perhaps you could deal with these foes while you're exploring...");
+        add("pasterdream.seniors_dream.entry.desert_ruins.page1", "A view of the Desert Ruins surface.");
+        add("pasterdream.seniors_dream.entry.desert_ruins.page2", "Legend has it that a warrior who died with unfinished business is buried deep underground here, waiting for a lost traveler to come, fulfill his final wish, and inherit his legacy...");
+        add("pasterdream.seniors_dream.entry.desert_ruins.page3", "A view of the Desert Ruins underground.");
 
         // Entities
         add(ModEntities.PINK_CHICKEN.get(), "Pink Chicken");

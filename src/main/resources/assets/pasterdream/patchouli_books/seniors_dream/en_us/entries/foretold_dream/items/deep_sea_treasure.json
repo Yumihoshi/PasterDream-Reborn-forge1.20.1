@@ -1,0 +1,17 @@
+{
+  "sortnum": 8,
+  "name": "pasterdream.seniors_dream.entry.deep_sea_treasure",
+  "icon": "pasterdream:deep_sea_treasure",
+  "category": "pasterdream:foretold_dream/items",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "pasterdream:deep_sea_treasure",
+      "text": "pasterdream.seniors_dream.entry.deep_sea_treasure.page0"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.deep_sea_treasure.page1"
+    }
+  ]
+}
