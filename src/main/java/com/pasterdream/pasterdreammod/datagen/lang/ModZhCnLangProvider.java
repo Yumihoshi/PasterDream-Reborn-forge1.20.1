@@ -99,6 +99,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.GALAXY_JELLY.get(), "星河果冻");
         add("tooltip.pasterdreammod.galaxy_jelly", "§9食用后，将玩家抛到空中并获得7秒缓降");
         add("tooltip.pasterdreammod.galaxy_jelly.flavor", "§7§O --将星河捧入手中");
+        add(ModItems.FORTUNE_JELLY.get(), "福灵果冻");
+        add("tooltip.pasterdreammod.fortune_jelly", "§9食用后，获得幸运I（1:00）");
+        add("item.minecraft.potion.effect.luck", "幸运药水");
+        add("item.minecraft.splash_potion.effect.luck", "喷溅型幸运药水");
+        add("item.minecraft.lingering_potion.effect.luck", "滞留型幸运药水");
         add(ModItems.LIGHT_ORGAN.get(), "发光器官");
         add(ModItems.JELLYFISH_MUD.get(), "水母泥");
         add(ModItems.JELLYFISH_JELLO.get(), "水母果冻");
@@ -111,6 +116,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.ELIXIR_BOTTLE.get(), "灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_MELT_DREAM.get(), "融梦灵药瓶");
         add(ModItems.ELIXIR_BOTTLE_OF_RAGE_ELIXIR.get(), "狂暴战意灵药");
+        add("tooltip.pasterdreammod.elixir_bottle_of_rage_elixir.1", "§7饮用后获得效果：");
+        add("tooltip.pasterdreammod.elixir_bottle_of_rage_elixir.2", "§7▪ §9基础攻击速度+0.1（直至死亡）");
+        add("item.pasterdream.elixir_bottle_of_rage_elixir.client.success", "§5你感到一股力量在身体内涌动……");
+        add("item.pasterdream.elixir_bottle_of_rage_elixir.client.fail", "§7你已经饮用过这个药水了");
         add(ModItems.BUBBLE_TEA.get(), "珍珠奶茶");
         add(ModItems.SWEET_DREAM_MUSIC_DISC.get(), "音乐唱片");
         add(ModItems.SWEET_DREAM_MUSIC_DISC.get().getDescriptionId() + ".desc", "PasterDream - 甜蜜的梦");
