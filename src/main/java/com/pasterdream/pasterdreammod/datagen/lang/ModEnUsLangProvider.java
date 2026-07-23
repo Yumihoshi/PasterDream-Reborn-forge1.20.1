@@ -378,6 +378,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), "Melt Dream Crystal Chest");
         add(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get(), "Opened Melt Dream Crystal Chest");
         add(ModBlocks.DREAM_ACCUMULATOR.get(), "Dream Accumulator");
+        add(ModItems.SORBENT.get(), "Sorbent");
 
         add(ModBlocks.DYEDREAM_COROLLA_CROP.get(), "Dyedream Corolla");
         add(ModItems.DYEDREAM_COROLLA_CROP_AGE_1.get(), "Mature Dyedream Corolla");

@@ -1438,6 +1438,7 @@ public class ModItems {
     public static final RegistryObject<Item> MELT_DREAM_CRYSTAL_CHEST = ITEMS.register("melt_dream_crystal_chest", () -> new MeltDreamCrystalChestItem(ModBlocks.MELT_DREAM_CRYSTAL_CHEST.get(), new Item.Properties()));
     public static final RegistryObject<Item> OPENED_MELT_DREAM_CRYSTAL_CHEST = ITEMS.register("opened_melt_dream_crystal_chest", () -> new OpenedMeltDreamCrystalChestItem(ModBlocks.OPENED_MELT_DREAM_CRYSTAL_CHEST.get(), new Item.Properties()));
     public static final RegistryObject<Item> DREAM_ACCUMULATOR = ITEMS.register("dream_accumulator", () -> new DreamAccumulatorItem(ModBlocks.DREAM_ACCUMULATOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SORBENT = ITEMS.register("sorbent", () -> new Item(new Item.Properties().durability(54000)));
 
     public static final RegistryObject<Item> MORTAR = ITEMS.register("mortar", () -> new MortarItem(new Item.Properties()));
 
