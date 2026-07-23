@@ -4,6 +4,7 @@ import com.pasterdream.pasterdreammod.init.ModEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Phantom;
+import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,9 +17,15 @@ public class PhantomTargetMixin {
     @Inject(method = "setTarget", at = @At("HEAD"), cancellable = true)
     private void onSetTarget(LivingEntity target, CallbackInfo ci) {
         Mob self = (Mob) (Object) this;
-        if (self instanceof Phantom && target instanceof Player player
-                && player.hasEffect(ModEffects.DYEDREAM_PERFUME_BUFF.get())) {
-            ci.cancel();
+        if (target instanceof Player player) {
+            if (self instanceof Phantom
+                    && player.hasEffect(ModEffects.DYEDREAM_PERFUME_BUFF.get())) {
+                ci.cancel();
+            }
+            if (self instanceof Warden
+                    && player.hasEffect(ModEffects.SCULK_ARMOR_BUFF.get())) {
+                ci.cancel();
+            }
         }
     }
 }
