@@ -44,17 +44,17 @@ import mezz.jei.api.ingredients.subtypes.IIngredientSubtypeInterpreter;
 import mezz.jei.api.registration.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.core.NonNullList;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fml.ModList;
+
 
 import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -120,22 +120,6 @@ public class ModJEIPlugin implements IModPlugin
                 ));
             }
             registration.addRecipes(RecipeTypes.BREWING, brewingRecipes);
-            // 帕秋莉宝典 JEI 配方（让玩家对着带 NBT 的 guide_book 按 R 也能查到配方）
-            if (ModList.get().isLoaded("patchouli")) {
-                ResourceLocation recipeId = ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "seniors_dream_book_jei");
-                ItemStack patchouliBook = vazkii.patchouli.api.PatchouliAPI.get().getBookStack(
-                        ResourceLocation.fromNamespaceAndPath("pasterdream", "seniors_dream"));
-                ShapelessRecipe recipe = new ShapelessRecipe(
-                        recipeId,
-                        "",
-                        CraftingBookCategory.MISC,
-                        patchouliBook,
-                        NonNullList.of(Ingredient.EMPTY,
-                                Ingredient.of(Items.BOOK),
-                                Ingredient.of(ModItems.DYEDREAM_FRUIT.get()))
-                );
-                registration.addRecipes(RecipeTypes.CRAFTING, Collections.singletonList(recipe));
-            }
         }
     }
 

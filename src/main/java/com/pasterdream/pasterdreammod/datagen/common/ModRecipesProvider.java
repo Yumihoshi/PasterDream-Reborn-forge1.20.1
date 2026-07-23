@@ -1,5 +1,6 @@
 package com.pasterdream.pasterdreammod.datagen.common;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.datagen.util.RecipeHelpers;
@@ -10,6 +11,7 @@ import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModRecipes;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -2171,12 +2173,33 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
                 .save(pWriter, "dyedream_desk_from_lectern");
 
-        // 旧梦归引宝典 = 书 + 染梦果（合成后由 PlayerEvent.ItemCraftedEvent 替换为帕秋莉版）
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SENIORS_DREAM_BOOK.get(), 1)
-                .requires(Items.BOOK)
-                .requires(ModItems.DYEDREAM_FRUIT.get())
-                .unlockedBy(getHasName(ModItems.DYEDREAM_FRUIT.get()), has(ModItems.DYEDREAM_FRUIT.get()))
-                .save(pWriter, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, getItemName(ModItems.SENIORS_DREAM_BOOK.get())));
+        // 旧梦归引宝典 = 书 + 染梦果（使用帕秋莉 shapeless_book_recipe）
+        pWriter.accept(new FinishedRecipe() {
+            @Override
+            public void serializeRecipeData(JsonObject json) {
+                json.addProperty("book", "pasterdream:seniors_dream");
+                JsonArray ingredients = new JsonArray();
+                JsonObject book = new JsonObject();
+                book.addProperty("item", "minecraft:book");
+                ingredients.add(book);
+                JsonObject fruit = new JsonObject();
+                fruit.addProperty("item", "pasterdream:dyedream_fruit");
+                ingredients.add(fruit);
+                json.add("ingredients", ingredients);
+            }
+            @Override
+            public ResourceLocation getId() {
+                return ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, getItemName(ModItems.SENIORS_DREAM_BOOK.get()));
+            }
+            @Override
+            public RecipeSerializer<?> getType() {
+                return BuiltInRegistries.RECIPE_SERIALIZER.get(ResourceLocation.fromNamespaceAndPath("patchouli", "shapeless_book_recipe"));
+            }
+            @Override
+            public JsonObject serializeAdvancement() { return null; }
+            @Override
+            public ResourceLocation getAdvancementId() { return null; }
+        });
 
     }
 
