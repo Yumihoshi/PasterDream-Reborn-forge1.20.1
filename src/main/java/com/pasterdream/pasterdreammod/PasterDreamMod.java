@@ -91,6 +91,7 @@ public class PasterDreamMod
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerTick);
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerSleepInBed);
         MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onAttackEntity);
+        MinecraftForge.EVENT_BUS.addListener(PlayerEvents::onPlayerChangedDimension);
         MinecraftForge.EVENT_BUS.addListener(QymArmorEvents::onEquipChange);
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onItemAttributeModifier);
         MinecraftForge.EVENT_BUS.addListener(PasterDreamMod::onShelterLivingHurt);

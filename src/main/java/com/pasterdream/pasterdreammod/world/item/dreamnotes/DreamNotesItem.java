@@ -1,8 +1,12 @@
 package com.pasterdream.pasterdreammod.world.item.dreamnotes;
 
+import com.pasterdream.pasterdreammod.init.ModCriteriaTriggers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -36,13 +40,22 @@ public class DreamNotesItem extends Item
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand)
     {
         ItemStack stack = player.getItemInHand(hand);
+        CompoundTag tag = stack.getTag();
+        String content = tag != null ? tag.getString("content") : "";
+
         if (level.isClientSide)
         {
-            CompoundTag tag = stack.getTag();
-            if (tag != null && tag.contains("content"))
+            if (!content.isEmpty())
             {
-                String content = tag.getString("content");
                 Minecraft.getInstance().setScreen(new DreamNotesScreen(content));
+            }
+        }
+        else
+        {
+            if (!content.isEmpty() && player instanceof ServerPlayer serverPlayer)
+            {
+                level.playSound(null, player.blockPosition(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 1.0f, 1.0f);
+                ModCriteriaTriggers.READ_DREAM_NOTE.trigger(serverPlayer, content);
             }
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);

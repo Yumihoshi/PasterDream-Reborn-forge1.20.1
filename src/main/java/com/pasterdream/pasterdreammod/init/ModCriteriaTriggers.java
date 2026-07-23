@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.advancement.critereon.FoundTombTrigger;
 import com.pasterdream.pasterdreammod.advancement.critereon.NewStandardSwordDrawingTrigger;
+import com.pasterdream.pasterdreammod.advancement.critereon.ReadDreamNoteTrigger;
 import com.pasterdream.pasterdreammod.advancement.critereon.UseBoneNeedleTrigger;
 import net.minecraft.advancements.CriteriaTriggers;
 
@@ -20,9 +21,13 @@ public class ModCriteriaTriggers {
     /** 新概念拔剑 */
     public static final NewStandardSwordDrawingTrigger NEW_STANDARD_SWORD_DRAWING = new NewStandardSwordDrawingTrigger();
 
+    /** 阅读特定内容的寻梦者笔记 */
+    public static final ReadDreamNoteTrigger READ_DREAM_NOTE = new ReadDreamNoteTrigger();
+
     public static void init() {
         CriteriaTriggers.register(USE_BONE_NEEDLE);
         CriteriaTriggers.register(FOUND_TOMB);
         CriteriaTriggers.register(NEW_STANDARD_SWORD_DRAWING);
+        CriteriaTriggers.register(READ_DREAM_NOTE);
     }
 }

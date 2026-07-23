@@ -1138,6 +1138,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.use_pale_boneneedle.description", "使用苍白骨针在梦境中醒来");
         add("advancements.pasterdream.story.human_falls_out_of_dream.title", "人类坠出梦境");
         add("advancements.pasterdream.story.human_falls_out_of_dream.description", "你一时分不清你的痛是摔出来的还是被骨针扎出来的");
+        add("advancements.pasterdream.story.dyedream_crack.title", "染梦裂隙");
+        add("advancements.pasterdream.story.dyedream_crack.description", "在下一次的梦中醒来，裂隙会与你的梦境共鸣。");
+        add("advancements.pasterdream.story.dyedream_world.title", "哥德堡安眠曲");
+        add("advancements.pasterdream.story.dyedream_world.description", "访问染梦之境");
 
         // 进度 - 冒险拓展
         add("advancements.pasterdream.adventure.forgotten_sword_tomb.title", "被遗忘的剑冢");
@@ -1281,6 +1285,17 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.guard_buff.description", "使用守护预言卡获得，拥有该buff时，超过一定生命百分比的部分伤害将会受到减伤（可在配置里修改）");
         add("effect.pasterdream.holy_grail_buff.description", "使用圣杯预言卡获得，拥有该buff时，效果持续期间+15最大生命值，并免疫一部分负面状态，获得自然生命恢复且血量越低，回血速度越快。");
         add("effect.pasterdream.rapid_reaction_buff.description", "使用疾行预言卡获得，拥有该buff时，增加上坡高度，降低瞬身术冷却并免疫摔落伤害。");
+
+
+        // 染梦裂隙消息
+        add("message.pasterdream.dyedream_crack.first_contact.1", "§5身体从这个奇怪的洞穴中穿过，但并没有什么反应。");
+        add("message.pasterdream.dyedream_crack.first_contact.2", "§5你能感觉到这个类似裂隙一样的东西在与这个世界和另外一处地方交互，附近不同的环境可能正是因为此而诞生。");
+        add("message.pasterdream.dyedream_crack.first_contact.3", "§5现在可能还不是时候，让我们交给在日夜轮转之间的时光中给予答案。");
+        add("message.pasterdream.dyedream_crack.first_contact.4", "§5也许我该翻翻那本旧梦归引……或许其中有关于这类裂隙的记载。");
+        add("message.pasterdream.sleep.dream_of_crack.1", "§5你在睡梦中惊醒，背后冒出了些许冷汗，你回忆起自己梦见了往日探索中遇见的奇怪裂隙，在慢慢靠近并凝视着你。");
+        add("message.pasterdream.sleep.dream_of_crack.2", "§5你拿起附近的材料迅速地把这些梦境记录下来，在这之后你就失去了对这段梦境的记忆。");
+        add("message.pasterdream.sleep.dream_of_crack.3", "§5我必须知道发生了什么...");
+        add("message.pasterdream.dyedream_world.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
 
         // 沙漠英雄墓 - 任务对话
         add("message.pasterdream.desert_hero_tomb.line1", "良久，竟有来者。");
