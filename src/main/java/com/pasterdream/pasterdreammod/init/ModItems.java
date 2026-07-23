@@ -2,6 +2,7 @@ package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamDrinkAndFoodProperties;
+import com.pasterdream.pasterdreammod.tag.ModItemTags;
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.crate.picnicbasket.PicnicBasketItem;
 import com.pasterdream.pasterdreammod.world.block.ItemContainer.crate.shadowchest.ShadowChestItem;
 import com.pasterdream.pasterdreammod.world.block.cropblock.MatureCropItem;
@@ -86,6 +87,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -103,6 +105,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import top.theillusivec4.curios.api.CuriosApi;
 
 public class ModItems {
 
@@ -729,16 +732,28 @@ public class ModItems {
             ){
                 @Override
                 protected void onFoodSpecial(Player player, Level level) {
-                    // 垂直方向将玩家送上天空
-                    player.setDeltaMovement(player.getDeltaMovement().x, 3, player.getDeltaMovement().z);
-                    player.hurtMarked = true;
+                    // 检测饰品栏或盔甲栏是否有 galaxy_jelly_boost 标签的物品
+                    boolean hasBoost = player.getItemBySlot(EquipmentSlot.CHEST).is(ModItemTags.GALAXY_JELLY_BOOST)
+                            || CuriosApi.getCuriosInventory(player)
+                                    .map(inv -> inv.findFirstCurio(
+                                            stack -> stack.is(ModItemTags.GALAXY_JELLY_BOOST)).isPresent())
+                                    .orElse(false);
 
-                    player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 140, 0));
-                    // 2秒冷却 (40 ticks)
-                    player.getCooldowns().addCooldown(this, 40);
-
-                    level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                            SoundEvents.FIREWORK_ROCKET_LAUNCH, SoundSource.PLAYERS, 3.0F, 1.0F);
+                    if (hasBoost) {
+                        player.setDeltaMovement(player.getDeltaMovement().x, 2, player.getDeltaMovement().z);
+                        player.hurtMarked = true;
+                        player.getCooldowns().addCooldown(this, 80);
+                        level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                                SoundEvents.FIREWORK_ROCKET_LAUNCH, SoundSource.PLAYERS, 3.0F, 1.0F);
+                    } else {
+                        // 常规效果
+                        player.setDeltaMovement(player.getDeltaMovement().x, 3, player.getDeltaMovement().z);
+                        player.hurtMarked = true;
+                        player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 140, 0));
+                        player.getCooldowns().addCooldown(this, 40);
+                        level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                                SoundEvents.FIREWORK_ROCKET_LAUNCH, SoundSource.PLAYERS, 3.0F, 1.0F);
+                    }
                 }
                 @Override
                 public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
