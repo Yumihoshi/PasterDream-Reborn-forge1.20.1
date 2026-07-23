@@ -1,14 +1,14 @@
 package com.pasterdream.pasterdreammod.datagen.common;
 
 import com.pasterdream.pasterdreammod.PasterDreamMod;
+import com.pasterdream.pasterdreammod.init.ModBlocks;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import net.minecraft.advancements.*;
 import com.pasterdream.pasterdreammod.advancement.critereon.FoundTombTrigger;
 import com.pasterdream.pasterdreammod.advancement.critereon.NewStandardSwordDrawingTrigger;
+import com.pasterdream.pasterdreammod.advancement.critereon.ReadDreamNoteTrigger;
 import com.pasterdream.pasterdreammod.advancement.critereon.UseBoneNeedleTrigger;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.PlayerTrigger;
+import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.nbt.CompoundTag;
@@ -64,6 +64,45 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("tick", PlayerTrigger.TriggerInstance.tick())
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "story/root"), existingFileHelper);
+
+            // ========== 子进度：首次接触染梦裂隙（无显示，纯标记）==========
+            Advancement firstContactCrack = Advancement.Builder.advancement()
+                    .parent(root)
+                    .addCriterion("first_contact", new ImpossibleTrigger.TriggerInstance())
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/first_contact_dyedream_crack"), existingFileHelper);
+
+            // ========== 子进度：染梦裂隙 ==========
+            Advancement dyedreamCrackAdv = Advancement.Builder.advancement()
+                    .parent(root)
+                    .display(
+                            ModBlocks.DYEDREAM_CRACK.get(),
+                            Component.translatable("advancements.pasterdream.story.dyedream_crack.title"),
+                            Component.translatable("advancements.pasterdream.story.dyedream_crack.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("read_dyedream_crack_note",
+                            ReadDreamNoteTrigger.TriggerInstance.forContent("dyedreamCreak"))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/dyedream_crack"), existingFileHelper);
+
+            // ========== 子进度：染梦世界 ==========
+            Advancement.Builder.advancement()
+                    .parent(dyedreamCrackAdv)
+                    .display(
+                            ModBlocks.DYEDREAM_GRASS_BLOCK.get(),
+                            Component.translatable("advancements.pasterdream.story.dyedream_world.title"),
+                            Component.translatable("advancements.pasterdream.story.dyedream_world.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("read_dyedream_world_note",
+                            ReadDreamNoteTrigger.TriggerInstance.forContent("dyedreamWorld"))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/dyedream_world"), existingFileHelper);
 
             // ========== 子进度：纯洁无暇 ==========
             Advancement pureAndFlawless = Advancement.Builder.advancement()

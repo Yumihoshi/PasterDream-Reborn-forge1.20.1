@@ -1,11 +1,15 @@
 package com.pasterdream.pasterdreammod.event;
 
+import com.pasterdream.pasterdreammod.helper.itemwithnbt.dreamnoteswithnbt.DreamNotesWithNBT;
 import com.pasterdream.pasterdreammod.init.ModEffects;
 import com.pasterdream.pasterdreammod.init.ModItems;
 import com.pasterdream.pasterdreammod.world.skill.EvasionEffectHandler;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -13,11 +17,13 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
 import top.theillusivec4.curios.api.CuriosApi;
 
@@ -26,6 +32,9 @@ public class PlayerEvents {
     private static final ResourceKey<Level> DYEDREAM_WORLD =
             ResourceKey.create(Registries.DIMENSION,
                     ResourceLocation.fromNamespaceAndPath("pasterdream", "dyedream_world"));
+    private static final String NOTE_DELAY_TAG = "pasterdream:dream_note_delay";
+    private static final ResourceLocation DYEDREAM_CRACK_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/dyedream_crack");
+    private static final ResourceLocation DYEDREAM_WORLD_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/dyedream_world");
 
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
@@ -33,6 +42,9 @@ public class PlayerEvents {
         EvasionEffectHandler.onPlayerTick(player);
 
         if (!player.level().isClientSide()) {
+            // 笔记发放倒计时
+            tickNoteDelay(player);
+
             int dreamTeleportTicks = player.getPersistentData().getInt("pasterdream:dream_teleport_ticks");
             if (dreamTeleportTicks > 0) {
                 dreamTeleportTicks--;
@@ -119,6 +131,16 @@ public class PlayerEvents {
         player.addEffect(new MobEffectInstance(ModEffects.REST_BUFF.get(),
                 3600, 0, false, false));
 
+        // 过期玩家没有染梦裂隙进度，启动笔记发放倒计时
+        if (player instanceof ServerPlayer serverPlayer)
+        {
+            Advancement crackAdv = serverPlayer.server.getAdvancements().getAdvancement(DYEDREAM_CRACK_ADV);
+            if (crackAdv == null || !serverPlayer.getAdvancements().getOrStartProgress(crackAdv).isDone())
+            {
+                player.getPersistentData().putInt(NOTE_DELAY_TAG, 40);
+            }
+        }
+
         if (!player.hasEffect(ModEffects.DREAM_WISH_BUFF.get())) return;
 
         BlockPos pos = event.getPos();
@@ -127,5 +149,76 @@ public class PlayerEvents {
         data.putInt("pasterdream:dream_bed_x", pos.getX());
         data.putInt("pasterdream:dream_bed_y", pos.getY());
         data.putInt("pasterdream:dream_bed_z", pos.getZ());
+    }
+
+    private static void tickNoteDelay(Player player)
+    {
+        CompoundTag data = player.getPersistentData();
+        if (!data.contains(NOTE_DELAY_TAG))
+        {
+            return;
+        }
+
+        int delay = data.getInt(NOTE_DELAY_TAG) - 1;
+        if (delay > 0)
+        {
+            data.putInt(NOTE_DELAY_TAG, delay);
+            return;
+        }
+
+        data.remove(NOTE_DELAY_TAG);
+
+        if (!(player instanceof ServerPlayer serverPlayer) || !serverPlayer.isAlive())
+        {
+            return;
+        }
+
+        ItemStack note = DreamNotesWithNBT.dreamNotesWithNBT(
+                ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "dyedreamCreak");
+        if (!serverPlayer.getInventory().add(note))
+        {
+            serverPlayer.drop(note, false);
+        }
+
+        serverPlayer.displayClientMessage(
+                Component.translatable("message.pasterdream.sleep.dream_of_crack.1"), false);
+        serverPlayer.displayClientMessage(
+                Component.translatable("message.pasterdream.sleep.dream_of_crack.2"), false);
+        serverPlayer.displayClientMessage(
+                Component.translatable("message.pasterdream.sleep.dream_of_crack.3"), false);
+    }
+
+    /** 玩家首次进入染梦世界时，给予关于染梦世界的第二份笔记。 */
+    public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event)
+    {
+        if (!(event.getEntity() instanceof ServerPlayer serverPlayer))
+        {
+            return;
+        }
+
+        if (!event.getTo().equals(DYEDREAM_WORLD))
+        {
+            return;
+        }
+
+        Advancement worldAdv = serverPlayer.server.getAdvancements().getAdvancement(DYEDREAM_WORLD_ADV);
+        if (worldAdv != null)
+        {
+            AdvancementProgress progress = serverPlayer.getAdvancements().getOrStartProgress(worldAdv);
+            if (progress.isDone())
+            {
+                return;
+            }
+        }
+
+        ItemStack note = DreamNotesWithNBT.dreamNotesWithNBT(
+                ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", "dyedreamWorld");
+        if (!serverPlayer.getInventory().add(note))
+        {
+            serverPlayer.drop(note, false);
+        }
+
+        serverPlayer.displayClientMessage(
+                Component.translatable("message.pasterdream.dyedream_world.found_note"), false);
     }
 }

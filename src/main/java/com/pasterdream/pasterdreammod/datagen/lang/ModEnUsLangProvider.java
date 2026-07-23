@@ -974,6 +974,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.use_pale_boneneedle.description", "Use the Pale Boneneedle to Wake You up from the Dream");
         add("advancements.pasterdream.story.human_falls_out_of_dream.title", "Human Falls out of Dream");
         add("advancements.pasterdream.story.human_falls_out_of_dream.description", "You can’t tell for a moment whether your pain comes from falling or from being pierced by a bone needle.");
+        add("advancements.pasterdream.story.dyedream_crack.title", "Dyedream Crack");
+        add("advancements.pasterdream.story.dyedream_crack.description", "Wake up in the next dream, the crack will resonate with your dream.");
+        add("advancements.pasterdream.story.dyedream_world.title", "Gothenburg Lullaby");
+        add("advancements.pasterdream.story.dyedream_world.description", "Visit the Dyedream World");
 
         // Advancements - Adventure Expansion
         add("advancements.pasterdream.adventure.forgotten_sword_tomb.title", "The Forgotten Sword Tomb");
@@ -1114,6 +1118,16 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.guard_buff.description", "Obtained by using the Guardian Prophecy Card, while you have this buff, damage above a certain percentage of your health will be reduced (can be changed in the Config).");
 
         // Desert Hero Tomb - Quest Dialogue
+        // Dyedream Crack Messages
+        add("message.pasterdream.dyedream_crack.first_contact.1", "§5Your body passes through this strange hole, but nothing happens.");
+        add("message.pasterdream.dyedream_crack.first_contact.2", "§5You can feel that this crack-like thing interacts with this world and another place. The different environments nearby might have been born because of it.");
+        add("message.pasterdream.dyedream_crack.first_contact.3", "§5Perhaps it's not the time yet. Let's leave the answer to the time that flows between day and night.");
+        add("message.pasterdream.dyedream_crack.first_contact.4", "§5Maybe I should flip through the Seniors Dream... there might be records about this kind of crack.");
+        add("message.pasterdream.sleep.dream_of_crack.1", "§5You wake up startled from your sleep, with cold sweat on your back. You recall dreaming of the strange crack you encountered during your past explorations, slowly approaching and staring at you.");
+        add("message.pasterdream.sleep.dream_of_crack.2", "§5You quickly use nearby materials to record these dreams, and afterward you lose all memory of this dream.");
+        add("message.pasterdream.sleep.dream_of_crack.3", "§5I must find out what happened...");
+        add("message.pasterdream.dyedream_world.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
+
         add("message.pasterdream.desert_hero_tomb.line1", "At long last, a visitor has come.");
         add("message.pasterdream.desert_hero_tomb.line2", "I have no regrets, only one final request.");
         add("message.pasterdream.desert_hero_tomb.line3", "As you can see, this is all that remains of me.");

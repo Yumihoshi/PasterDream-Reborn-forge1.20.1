@@ -2,8 +2,14 @@ package com.pasterdream.pasterdreammod.world.block.portal;
 
 import com.pasterdream.pasterdreammod.init.ModParticleTypes;
 import com.pasterdream.pasterdreammod.init.ModSounds;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -25,13 +31,13 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlac
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 
 public class DyedreamCrackBlock extends DirectionalBlock
 {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    private static final ResourceKey<Level> DYEDREAM_WORLD = ResourceKey.create(net.minecraft.core.registries.Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath("pasterdream", "dyedream_world"));
+    private static final ResourceKey<Level> DYEDREAM_WORLD = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath("pasterdream", "dyedream_world"));
+    private static final ResourceLocation DYEDREAM_CRACK_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/dyedream_crack");
+    private static final ResourceLocation FIRST_CONTACT_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/first_contact_dyedream_crack");
 
     public DyedreamCrackBlock(Properties properties)
     {
@@ -104,8 +110,41 @@ public class DyedreamCrackBlock extends DirectionalBlock
                 return;
             }
 
-            level.playSound(null, blockPosition, ModSounds.DYEDREAM_CRACK.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
-            teleportToDreamDimension(player, state, blockPosition);
+            // 玩家在染梦世界中 → 尝试返回主世界
+            if (level.dimension().equals(DYEDREAM_WORLD))
+            {
+                level.playSound(null, blockPosition, ModSounds.DYEDREAM_CRACK.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
+                teleportToDreamDimension(player, state, blockPosition);
+                player.setPortalCooldown(20);
+                return;
+            }
+
+            // 检查是否已解锁染梦裂隙进度 → 允许进入染梦世界
+            Advancement crackAdv = player.server.getAdvancements().getAdvancement(DYEDREAM_CRACK_ADV);
+            if (crackAdv != null && player.getAdvancements().getOrStartProgress(crackAdv).isDone())
+            {
+                level.playSound(null, blockPosition, ModSounds.DYEDREAM_CRACK.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
+                teleportToDreamDimension(player, state, blockPosition);
+                player.setPortalCooldown(20);
+                return;
+            }
+
+            // 首次接触 → 显示提示并授予标记进度
+            Advancement firstContactAdv = player.server.getAdvancements().getAdvancement(FIRST_CONTACT_ADV);
+            if (firstContactAdv != null)
+            {
+                AdvancementProgress progress = player.getAdvancements().getOrStartProgress(firstContactAdv);
+                if (!progress.isDone())
+                {
+                    player.displayClientMessage(Component.translatable("message.pasterdream.dyedream_crack.first_contact.1"), false);
+                    player.displayClientMessage(Component.translatable("message.pasterdream.dyedream_crack.first_contact.2"), false);
+                    player.displayClientMessage(Component.translatable("message.pasterdream.dyedream_crack.first_contact.3"), false);
+                    for (String criteria : progress.getRemainingCriteria())
+                    {
+                        player.getAdvancements().award(firstContactAdv, criteria);
+                    }
+                }
+            }
 
             player.setPortalCooldown(20);
         }
