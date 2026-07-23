@@ -997,7 +997,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.adventure.forgotten_sword_tomb.description", "Discovered the lost sword tomb, a sword tomb hidden deep in the jungle.");
         add("advancements.pasterdream.story.get_the_lost_sword.title", "Sword of Oblivion");
         add("advancements.pasterdream.story.get_the_lost_sword.description", "Got the Sword Embryo, it seems to resonate with the power of the jungle…");
-        add("advancements.pasterdream.story.dig_up_a_tomb.title", "The girl next door has just grown up, strong and full of extraordinary strength");
+        add("advancements.pasterdream.story.dig_up_a_tomb.title", "Sweet Sixteen, with the Strength of a Titan");
         add("advancements.pasterdream.story.dig_up_a_tomb.description", "You... what exactly did you dig up???");
         add("advancements.pasterdream.new_standard_sword_drawing.title", "New Standard Sword Drawing");
         add("advancements.pasterdream.new_standard_sword_drawing.description", "Because you couldn't pull out the sword, you ended up using your enemy as a tool to break stones!");
@@ -1005,6 +1005,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.craft_kusanagi.description", "Craft Kusanagi, a sword imbued with the power of the jungle. It is hungrily seeking lost souls...");
         add("advancements.pasterdream.get_murakumo_kusanagi.title", "Lost Souls Under the Sword");
         add("advancements.pasterdream.get_murakumo_kusanagi.description", "Let Kusanagi further evolve by killing enemies.");
+        add("advancements.pasterdream.adventure.find_desert_fortress.title", "Desert Heroic Spirit");
+        add("advancements.pasterdream.adventure.find_desert_fortress.description", "Discover a desert fortress, where a heroic spirit who hasn't completed his aspiration. Maybe you should think about killing the nearby enemies first…");
+        add("advancements.pasterdream.adventure.get_desert_sword.title", "Sword of the Heroic Spirit");
+        add("advancements.pasterdream.adventure.get_desert_sword.description", "Get the Desert Sword from the hero and fulfill his last wish to let this weapon evolve.");
+        add("advancements.pasterdream.adventure.get_chenjingmen_desert_sword.title", "The wish has come true");
+        add("advancements.pasterdream.adventure.get_chenjingmen_desert_sword.description", "Fulfilling the heroic spirit's last wish allowed Desert Sword to evolve into ChenJingmen Desert Sword. The former hero can finally rest in peace...");
 
         // Advancements - Nether Expansion
         add("advancements.pasterdream.get_molten_gold_ingot.title", "Real Gold Does Not Fear Fire");
