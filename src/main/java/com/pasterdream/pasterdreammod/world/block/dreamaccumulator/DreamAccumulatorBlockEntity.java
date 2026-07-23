@@ -39,6 +39,7 @@ public class DreamAccumulatorBlockEntity extends BlockEntity implements MenuProv
     private double progress = 0;
     private int maxProgress = 0;
     private ItemStack catalyst = ItemStack.EMPTY;
+    private ItemStack legacyCatalyst = ItemStack.EMPTY;
     private double catalystMultiplier = 0;
     private ItemStack output = ItemStack.EMPTY;
 
@@ -99,7 +100,7 @@ public class DreamAccumulatorBlockEntity extends BlockEntity implements MenuProv
                 if(DreamAccumulatorRecipeProcessor.processor(output.copy(), itemHandler.getStackInSlot(0).copy()) != null)
                 {
                     maxProgress = matchedRecipe.time();
-                    catalyst = matchedRecipe.catalyst();
+                    catalyst = matchedRecipe.catalyst() != null ? matchedRecipe.catalyst() : ItemStack.EMPTY;
                     catalystMultiplier = matchedRecipe.catalystMultiplier();
                 }
                     else
@@ -111,9 +112,37 @@ public class DreamAccumulatorBlockEntity extends BlockEntity implements MenuProv
 
         if (maxProgress > 0)
         {
-            if(ItemStack.isSameItem(catalyst, itemHandler.getStackInSlot(1)) && itemHandler.getStackInSlot(1) != ItemStack.EMPTY)
+            if(!ItemStack.isSameItem(itemHandler.getStackInSlot(1), legacyCatalyst))
+            {
+                DreamAccumulatorRecipeMatchedData matchedRecipe = DreamAccumulatorRecipeMatch.matches(new DreamAccumulatorRecipeMatchedData(level.getBiome(worldPosition), 0, itemHandler.getStackInSlot(1), 0, itemHandler.getStackInSlot(0)), level.getRecipeManager().getAllRecipesFor(ModRecipes.DREAM_ACCUMULATOR.get()));
+                if(matchedRecipe != null)
+                {
+                    if(matchedRecipe.time() == maxProgress && ItemStack.isSameItem(matchedRecipe.output(), output))
+                    {
+                        catalyst = matchedRecipe.catalyst() != null ? matchedRecipe.catalyst() : ItemStack.EMPTY;
+                        catalystMultiplier = matchedRecipe.catalystMultiplier();
+                    }
+                        else
+                        {
+                            output = matchedRecipe.output();
+                            if(DreamAccumulatorRecipeProcessor.processor(output.copy(), itemHandler.getStackInSlot(0).copy()) != null)
+                            {
+                                maxProgress = matchedRecipe.time();
+                                catalyst = matchedRecipe.catalyst() != null ? matchedRecipe.catalyst() : ItemStack.EMPTY;
+                                catalystMultiplier = matchedRecipe.catalystMultiplier();
+                            }
+                                else
+                                {
+                                    maxProgress = 0;
+                                }
+                        }
+                }
+            }
+
+            if(catalyst != null && itemHandler.getStackInSlot(1) != ItemStack.EMPTY && ItemStack.isSameItem(catalyst, itemHandler.getStackInSlot(1)))
             {
                 progress += catalystMultiplier;
+                legacyCatalyst = itemHandler.getStackInSlot(1);
                 if(itemHandler.getStackInSlot(1).hasTag() && itemHandler.getStackInSlot(1).getTag().contains("Damage"))
                 {
                     itemHandler.getStackInSlot(1).hurt(1, level.getRandom(), null);
@@ -190,6 +219,7 @@ public class DreamAccumulatorBlockEntity extends BlockEntity implements MenuProv
         if (!catalyst.isEmpty())
         {
             tag.put("Catalyst", catalyst.serializeNBT());
+            tag.put("LegacyCatalyst", legacyCatalyst.serializeNBT());
         }
         tag.putDouble("CatalystMultiplier", catalystMultiplier);
         tag.putDouble("Progress", progress);
@@ -212,10 +242,12 @@ public class DreamAccumulatorBlockEntity extends BlockEntity implements MenuProv
         if (tag.contains("Catalyst"))
         {
             catalyst = ItemStack.of(tag.getCompound("Catalyst"));
+            legacyCatalyst = ItemStack.of(tag.getCompound("LegacyCatalyst"));
         }
             else
             {
                 catalyst = ItemStack.EMPTY;
+                legacyCatalyst = ItemStack.EMPTY;
             }
         catalystMultiplier = tag.getDouble("CatalystMultiplier");
         progress = tag.getDouble("Progress");
