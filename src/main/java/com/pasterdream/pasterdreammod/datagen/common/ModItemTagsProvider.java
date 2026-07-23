@@ -231,6 +231,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "star_fishing_rods")))
                 .add(ModItems.STAR_WISH_ROD.get());
 
+        tag(TagKey.create(Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "galaxy_jelly_boost")))
+                .add(Items.ELYTRA);
+
         // 音乐唱片
         tag(ItemTags.MUSIC_DISCS)
                 .add(ModItems.SWEET_DREAM_MUSIC_DISC.get())
