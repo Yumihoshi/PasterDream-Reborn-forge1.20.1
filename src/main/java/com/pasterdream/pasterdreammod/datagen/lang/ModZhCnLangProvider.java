@@ -568,6 +568,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.sculk_armor.3", "§7▪ §9身处深层时效果增强");
         add("tooltip.pasterdreammod.sculk_armor.4", "§7▪ §9免疫幽匿的黑暗恐惧");
         add("tooltip.pasterdreammod.sculk_armor.5", "§7▪ §9受到黑暗效果时提高移速和免伤");
+        add("tooltip.pasterdreammod.sculk_armor.6", "§7▪ §9免疫失明效果");
+        add("tooltip.pasterdreammod.sculk_armor.7", "§7▪ §9监守者不会攻击你");
         add("tooltip.pasterdreammod.dyedream_hammer", "§7▪ §9范围挖掘 3×3×3");
         add("tooltip.pasterdreammod.molten_gold_sword.1", "镶嵌：§7无");
         add("tooltip.pasterdreammod.molten_gold_sword.2", "§7▪ §9攻击将使目标引燃3秒");
