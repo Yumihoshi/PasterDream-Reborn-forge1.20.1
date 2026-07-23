@@ -13,6 +13,11 @@ public class LeftArrowButton extends Button
     }
 
     @Override
+    public void playDownSound(net.minecraft.client.sounds.SoundManager soundManager)
+    {
+    }
+
+    @Override
     public void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick)
     {
         if(isHovered())

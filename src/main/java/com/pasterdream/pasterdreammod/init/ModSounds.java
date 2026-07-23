@@ -52,6 +52,7 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> DREAM_HARP_OF_WANDERER = SOUNDS.register("dream_harp_of_wanderer", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dream_harp_of_wanderer")));
     public static final RegistryObject<SoundEvent> DING_0 = SOUNDS.register("ding_0", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "ding_0")));
     public static final RegistryObject<SoundEvent> DREAM_ACCUMULATOR = SOUNDS.register("dream_accumulator", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dream_accumulator")));
+    public static final RegistryObject<SoundEvent> ZIPPER = SOUNDS.register("zipper", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "zipper")));
 
     public static void register(IEventBus eventBus) {
         SOUNDS.register(eventBus);
