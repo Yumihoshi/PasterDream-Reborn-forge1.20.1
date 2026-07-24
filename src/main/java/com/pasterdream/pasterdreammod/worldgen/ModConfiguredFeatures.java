@@ -41,51 +41,7 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
 
-    // ===== 阴影维度植物 =====
-    // 阴影真菌树 (骨粉催熟，诡异菌形态)
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_FUNGUS_TREE =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fungus_tree"));
-    // 影芽 — 分散地表植被
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_SPROUTS_PATCH =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_sprouts_patch"));
-    // 影蕨 — 分散地表植被
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_FERN_PATCH =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fern_patch"));
-    // 影短根 — 分散地表植被
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_SHORT_ROOTS_PATCH =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_short_roots_patch"));
-    // 影根须 — 分散地表植被
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_ROOTS_PATCH =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_roots_patch"));
-    // 影茎蕨 — 分散地表植被
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_STEM_FERN_PATCH =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_stem_fern_patch"));
-    // 影菌 — 分散地表植被
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_FUNGUS_PATCH =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fungus_patch"));
-    // 白厄花 — 分散地表植被
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_ORCHID_FLOWER_PATCH =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_orchid_flower_patch"));
-
-    // 阴影残垣断壁 — 散落的破败墙体
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_RUIN_WALL =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_ruin_wall"));
-
-    // 阴影锁链柱 — 交替朝向的镂空矩形单元堆叠
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_CHAIN_PILLAR =
-            ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_chain_pillar"));
-
-    // ===== 染梦平原 =====
+    // ===== 染梦世界 =====
     // 染梦树
     public static final ResourceKey<ConfiguredFeature<?, ?>> DYEDREAM_TREE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
@@ -215,26 +171,15 @@ public class ModConfiguredFeatures {
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "linht_flower_patch"));
 
-    // ===== 原版维度花草 =====
-    public static final ResourceKey<ConfiguredFeature<?, ?>> GOLDENROD_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "goldenrod_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> FERRARIA_CRISPA_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "ferraria_crispa_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> MALVA_SINENSIS_CAVAN_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "malva_sinensis_cavan_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> EUSTOMA_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "eustoma_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OATS_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "oats_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> RYE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "rye_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_COROLLA_CROP_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_corolla_crop_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> COTTON_CROP_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "cotton_crop_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> JUNGLE_SPORANGIUM_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "jungle_sporangium_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> REED_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "reed_patch"));
 
-    // ===== 下界维度两种植物 =====
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BLAZE_FLOWER_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "blaze_flower_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CRIMSON_THORNS_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "crimson_thorns_patch"));
-
-    //原版维度矿石
-    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_TITANIUM_ORE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "deepslate_titanium_ore_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> MOLTEN_GOLD_ORE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "molten_gold_ore_patch"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SOUL_ORE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "soul_ore_patch"));
+    // ===== 方解石笋 =====
+    // 方解石笋
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CALCITE_STALICRIPE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "calcite_stalicripe"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_CALCITE_STALICRIPE =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "small_calcite_stalicripe"));
 
     // ===== 染梦维度矿石 =====
     // 钛矿
@@ -261,14 +206,73 @@ public class ModConfiguredFeatures {
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_lotus"));
 
-    // ===== 方解石笋 =====
-    // 方解石笋
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CALCITE_STALICRIPE =
+
+    // ========= 灯影之下 =========
+    // 阴影真菌树 (骨粉催熟，诡异菌形态)
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_FUNGUS_TREE =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "calcite_stalicripe"));
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_CALCITE_STALICRIPE =
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fungus_tree"));
+    // 影芽 — 分散地表植被
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_SPROUTS_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "small_calcite_stalicripe"));
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_sprouts_patch"));
+    // 影蕨 — 分散地表植被
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_FERN_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fern_patch"));
+    // 阴影矮菌索 — 分散地表植被
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_SHORT_ROOTS_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_short_roots_patch"));
+    // 阴影菌索 — 分散地表植被
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_ROOTS_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_roots_patch"));
+    // 影茎蕨 — 分散地表植被
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_STEM_FERN_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_stem_fern_patch"));
+    // 影菌 — 分散地表植被
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_FUNGUS_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_fungus_patch"));
+    // 白厄花 — 分散地表植被
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_ORCHID_FLOWER_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_orchid_flower_patch"));
+
+    // 阴影残垣断壁 — 散落的破败墙体
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_RUIN_WALL =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_ruin_wall"));
+
+    // 阴影锁链柱 — 交替朝向的镂空矩形单元堆叠
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHADOW_CHAIN_PILLAR =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_chain_pillar"));
+
+
+    // ===== 原版维度花草 =====
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GOLDENROD_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "goldenrod_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FERRARIA_CRISPA_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "ferraria_crispa_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MALVA_SINENSIS_CAVAN_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "malva_sinensis_cavan_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> EUSTOMA_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "eustoma_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OATS_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "oats_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> RYE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "rye_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_COROLLA_CROP_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_corolla_crop_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> COTTON_CROP_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "cotton_crop_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> JUNGLE_SPORANGIUM_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "jungle_sporangium_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> REED_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "reed_patch"));
+
+    // ===== 下界维度两种植物 =====
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLAZE_FLOWER_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "blaze_flower_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CRIMSON_THORNS_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "crimson_thorns_patch"));
+
+    //原版维度矿石
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_TITANIUM_ORE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "deepslate_titanium_ore_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MOLTEN_GOLD_ORE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "molten_gold_ore_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SOUL_ORE_PATCH = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "soul_ore_patch"));
+
 
 
     private static Holder<PlacedFeature> simpleBlockInAir(BlockStateProvider provider) {
@@ -416,44 +420,6 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.simple(ModBlocks.PINK_MUSHROOM_STEM.get()),
                         3)));
 
-        // 阴影真菌树 — 骨粉催熟+自然生成，诡异菌形态
-        context.register(SHADOW_FUNGUS_TREE, new ConfiguredFeature<>(Feature.HUGE_FUNGUS,
-                new HugeFungusConfiguration(
-                        ModBlocks.SHADOW_NYLIUM.get().defaultBlockState(),
-                        ModBlocks.SHADOW_STEM.get().defaultBlockState(),
-                        ModBlocks.SHADOW_WART_BLOCK.get().defaultBlockState(),
-                        ModBlocks.SHADOW_SHROOMLIGHT.get().defaultBlockState(),
-                        BlockPredicate.matchesBlocks(ModBlocks.SHADOW_NYLIUM.get()),
-                        true)));
-
-        // 影芽 — 分散地表植被，比染梦茎草更稀疏
-        context.register(SHADOW_SPROUTS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(16, 8, 3,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_SPROUTS.get())))));
-        // 影蕨 — 分散地表植被，比染梦茎草更稀疏
-        context.register(SHADOW_FERN_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(12, 8, 3,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_FERN.get())))));
-        // 影短根 — 分散地表植被
-        context.register(SHADOW_SHORT_ROOTS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(16, 8, 3,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_SHORT_ROOTS.get())))));
-        // 影根须 — 分散地表植被
-        context.register(SHADOW_ROOTS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(12, 8, 3,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_ROOTS.get())))));
-        // 影茎蕨 — 分散地表植被
-        context.register(SHADOW_STEM_FERN_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(8, 8, 3,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_STEM_FERN.get())))));
-        // 影菌 — 分散地表植被
-        context.register(SHADOW_FUNGUS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(8, 4, 2,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_FUNGUS.get())))));
-        // 白厄花 — 分散地表植被
-        context.register(WHITE_ORCHID_FLOWER_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(12, 8, 3,
-                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.WHITE_ORCHID_FLOWER.get())))));
 
         context.register(DYEDREAM_ICE_PILLAR, new ConfiguredFeature<>(Feature.BLOCK_COLUMN,
                 new BlockColumnConfiguration(
@@ -481,13 +447,7 @@ public class ModConfiguredFeatures {
         context.register(CALCITE_SPIKE, new ConfiguredFeature<>(ModFeatures.CALCITE_SPIKE.get(),
                 NoneFeatureConfiguration.INSTANCE));
 
-        // 阴影残垣断壁 — 散落的破败墙体
-        context.register(SHADOW_RUIN_WALL, new ConfiguredFeature<>(ModFeatures.SHADOW_RUIN_WALL.get(),
-                NoneFeatureConfiguration.INSTANCE));
 
-        // 阴影锁链柱 — 交替朝向镂空矩形单元堆叠，3-8 单元随机高度
-        context.register(SHADOW_CHAIN_PILLAR, new ConfiguredFeature<>(ModFeatures.SHADOW_CHAIN_PILLAR.get(),
-                NoneFeatureConfiguration.INSTANCE));
 
         // 雪块底水池 — 原作 ground_feature_dyedream_1
         context.register(SNOWY_WATER_POOL, new ConfiguredFeature<>(Feature.LAKE,
@@ -583,44 +543,92 @@ public class ModConfiguredFeatures {
 
         // 野生梦染茶花 — 原作 crop_0a（团簇生成）
         context.register(DYEDREAM_COROLLA_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(20, 5, 5,
+                new RandomPatchConfiguration(48, 6, 2,
                         simpleBlockInAir(BlockStateProvider.simple(
                         ModBlocks.DYEDREAM_COROLLA_CROP.get().defaultBlockState().setValue(PasterDreamCropBlock.AGE, 1))))));
 
         // 野生流明堇 — 原作 crop_2a（团簇生成）
         context.register(LIGHT_BALL_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(20, 5, 5,
+                new RandomPatchConfiguration(48, 6, 2,
                         simpleBlockInAir(BlockStateProvider.simple(
                         ModBlocks.LIGHT_BALL_CROP.get().defaultBlockState().setValue(PasterDreamCropBlock.AGE, 1))))));
 
         // 野生玲云花 — 原作 crop_3a（团簇生成）
         context.register(CLOUD_CROP_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(20, 5, 5,
+                new RandomPatchConfiguration(48, 6, 2,
                         simpleBlockInAir(BlockStateProvider.simple(
                         ModBlocks.CLOUD_CROP.get().defaultBlockState().setValue(PasterDreamCropBlock.AGE, 1))))));
 
         // 染梦铃兰 - 原作 flower_13
         context.register(DYEDREAM_LILY_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(20, 5, 5,
+                new RandomPatchConfiguration(48, 6, 2,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.DYEDREAM_LILY_OF_THE_VALLEY.get())))));
 
         // 冶梦莲 - 原作 flower_11
         context.register(DREAMING_LOTUS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(25, 5, 5,
+                new RandomPatchConfiguration(64, 6, 3,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.DREAMING_LOTUS.get())))));
 
         //雪绒花 — 原作 flower_16
         context.register(EDELWEISS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(25, 6, 6,
+                new RandomPatchConfiguration(64, 6, 2,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.EDELWEISS.get())))));
         //奇异蕨 — 原作 flower_14
         context.register(SINGULARITY_FERN_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(20, 5, 5,
+                new RandomPatchConfiguration(48, 5, 2,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SINGULARITY_FERN.get())))));
         //苓灯花 — 原作 flower_9
         context.register(LINHT_FLOWER_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(20, 5, 5,
+                new RandomPatchConfiguration(48, 5, 2,
                         simpleBlockInAir(BlockStateProvider.simple(ModBlocks.LINHT_FLOWER.get())))));
+
+        // ========= 灯影之下 =========
+        // 阴影真菌树 — 骨粉催熟+自然生成，诡异菌形态
+        context.register(SHADOW_FUNGUS_TREE, new ConfiguredFeature<>(Feature.HUGE_FUNGUS,
+                new HugeFungusConfiguration(
+                        ModBlocks.SHADOW_NYLIUM.get().defaultBlockState(),
+                        ModBlocks.SHADOW_STEM.get().defaultBlockState(),
+                        ModBlocks.SHADOW_WART_BLOCK.get().defaultBlockState(),
+                        ModBlocks.SHADOW_SHROOMLIGHT.get().defaultBlockState(),
+                        BlockPredicate.matchesBlocks(ModBlocks.SHADOW_NYLIUM.get()),
+                        true)));
+
+        // 影芽 — 分散地表植被，比染梦茎草更稀疏
+        context.register(SHADOW_SPROUTS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(16, 8, 3,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_SPROUTS.get())))));
+        // 影蕨 — 分散地表植被，比染梦茎草更稀疏
+        context.register(SHADOW_FERN_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(12, 8, 3,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_FERN.get())))));
+        // 阴影矮菌索 — 分散地表植被
+        context.register(SHADOW_SHORT_ROOTS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(16, 8, 3,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_SHORT_ROOTS.get())))));
+        // 阴影菌索 — 分散地表植被
+        context.register(SHADOW_ROOTS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(12, 8, 3,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_ROOTS.get())))));
+        // 影茎蕨 — 分散地表植被
+        context.register(SHADOW_STEM_FERN_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(8, 8, 3,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_STEM_FERN.get())))));
+        // 影菌 — 分散地表植被
+        context.register(SHADOW_FUNGUS_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(8, 4, 2,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.SHADOW_FUNGUS.get())))));
+        // 白厄花 — 分散地表植被
+        context.register(WHITE_ORCHID_FLOWER_PATCH, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(8, 4, 3,
+                        simpleBlockInAir(BlockStateProvider.simple(ModBlocks.WHITE_ORCHID_FLOWER.get())))));
+
+        // 阴影残垣断壁 — 散落的破败墙体
+        context.register(SHADOW_RUIN_WALL, new ConfiguredFeature<>(ModFeatures.SHADOW_RUIN_WALL.get(),
+                NoneFeatureConfiguration.INSTANCE));
+
+        // 阴影锁链柱 — 交替朝向镂空矩形单元堆叠，3-8 单元随机高度
+        context.register(SHADOW_CHAIN_PILLAR, new ConfiguredFeature<>(ModFeatures.SHADOW_CHAIN_PILLAR.get(),
+                NoneFeatureConfiguration.INSTANCE));
 
 
         //秋麒麟
