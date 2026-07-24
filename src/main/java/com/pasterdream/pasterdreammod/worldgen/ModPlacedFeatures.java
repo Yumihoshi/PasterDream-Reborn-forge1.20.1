@@ -162,6 +162,19 @@ public class ModPlacedFeatures {
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "small_calcite_stalicripe"));
 
+    // ===== 染梦冻洋 — 自定义冰山 placed feature（比原版更高频率） =====
+    public static final ResourceKey<PlacedFeature> DYEDREAM_ICEBERG_PACKED =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_iceberg_packed"));
+    public static final ResourceKey<PlacedFeature> DYEDREAM_ICEBERG_BLUE =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_iceberg_blue"));
+
+    // ===== 染梦海洋 — 海带 =====
+    public static final ResourceKey<PlacedFeature> DYEDREAM_KELP_PATCH =
+            ResourceKey.create(Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_kelp_patch"));
+
     // ===== 阴影维度植物 =====
     // 阴影真菌树 — 自然生成 + 骨粉催熟
     public static final ResourceKey<PlacedFeature> SHADOW_FUNGUS_TREE =
@@ -195,7 +208,6 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> WHITE_ORCHID_FLOWER_PATCH =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "white_orchid_flower_patch"));
-
     // 阴影残垣断壁 — 散落的破败墙体
     public static final ResourceKey<PlacedFeature> SHADOW_RUIN_WALL =
             ResourceKey.create(Registries.PLACED_FEATURE,
@@ -205,19 +217,6 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SHADOW_CHAIN_PILLAR =
             ResourceKey.create(Registries.PLACED_FEATURE,
                     ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "shadow_chain_pillar"));
-
-    // ===== 染梦冻洋 — 自定义冰山 placed feature（比原版更高频率） =====
-    public static final ResourceKey<PlacedFeature> DYEDREAM_ICEBERG_PACKED =
-            ResourceKey.create(Registries.PLACED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_iceberg_packed"));
-    public static final ResourceKey<PlacedFeature> DYEDREAM_ICEBERG_BLUE =
-            ResourceKey.create(Registries.PLACED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_iceberg_blue"));
-
-    // ===== 染梦海洋 — 海带 =====
-    public static final ResourceKey<PlacedFeature> DYEDREAM_KELP_PATCH =
-            ResourceKey.create(Registries.PLACED_FEATURE,
-                    ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_kelp_patch"));
 
     //原版维度花草
     public static final ResourceKey<PlacedFeature> GOLDENROD_PATCH = ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "goldenrod_patch"));
@@ -364,7 +363,6 @@ public class ModPlacedFeatures {
                         SurfaceWaterDepthFilter.forMaxDepth(0),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
 
-
         // === 染梦维度花草 ===
         // 茎草 — WORLD_SURFACE_WG
         context.register(STEM_GRASS_PATCH, new PlacedFeature(
@@ -398,6 +396,133 @@ public class ModPlacedFeatures {
                         SurfaceWaterDepthFilter.forMaxDepth(0),
                         onHeightmap(Heightmap.Types.MOTION_BLOCKING),
                         ON_DYEDREAM_GROUND)));
+
+        // 粉顶菌 (小型地表) — WORLD_SURFACE_WG
+        context.register(PINK_MUSHROOM_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.PINK_MUSHROOM_PATCH),
+                List.of(CountPlacement.of(5), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        // 高粉顶菌 (地表) — WORLD_SURFACE_WG
+        context.register(TALL_PINK_MUSHROOM_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.TALL_PINK_MUSHROOM_PATCH),
+                List.of(CountPlacement.of(3), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        // 染梦藤蔓 — 原作 vine_0: count=1 rarity=16 → 平均每16区块1簇
+        context.register(DYEDREAM_VINE_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_VINE_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        // 野生梦染茶花 — 团簇稀疏
+        context.register(DYEDREAM_COROLLA_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_COROLLA_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        // 野生流明堇 — 团簇稀疏
+        context.register(LIGHT_BALL_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.LIGHT_BALL_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        // 野生玲云花 — 团簇稀疏
+        context.register(CLOUD_CROP_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.CLOUD_CROP_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        // 染梦铃兰
+        context.register(DYEDREAM_LILY_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_LILY_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        //冶梦莲
+        context.register(DREAMING_LOTUS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.DREAMING_LOTUS_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        //雪绒花 — 原作 flower_16: count=5, rarity=32
+        context.register(EDELWEISS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.EDELWEISS_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+        //奇异蕨 — 原作 flower_14: count=2, rarity=32
+        context.register(SINGULARITY_FERN_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SINGULARITY_FERN_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+        //苓灯花 — 原作 flower_9: count=2, rarity=32
+        context.register(LINHT_FLOWER_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.LINHT_FLOWER_PATCH),
+                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                        ON_DYEDREAM_GROUND)));
+
+        // 方解石笋(大) — 不限制高度
+        context.register(CALCITE_STALICRIPE, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.CALCITE_STALICRIPE),
+                List.of(CountPlacement.of(20), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(320)))));
+        // 染梦苔藓 — 同方解石笋，不限制高度
+        context.register(DYEDREAM_MOSS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_MOSS_PATCH),
+                List.of(CountPlacement.of(10), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(320)))));
+        // 方解石笋(小) — 不限制高度
+        context.register(SMALL_CALCITE_STALICRIPE, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SMALL_CALCITE_STALICRIPE),
+                List.of(CountPlacement.of(20), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(320)))));
+
+
+        // 云团柱 — SP, rarity=4, MOTION_BLOCKING
+        context.register(CLOUD_PILLAR_SMALL, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.CLOUD_PILLAR_SMALL),
+                List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.MOTION_BLOCKING))));
+        context.register(CLOUD_PILLAR_LARGE, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.CLOUD_PILLAR_LARGE),
+                List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.MOTION_BLOCKING))));
+
+        // ===== 水下装饰（OCEAN_FLOOR 放置于海床） =====
+        context.register(CORAL_TREE_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.CORAL_TREE_PATCH),
+                List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.OCEAN_FLOOR))));
+        context.register(CORAL_CLAW_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.CORAL_CLAW_PATCH),
+                List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.OCEAN_FLOOR))));
+        context.register(CORAL_MUSHROOM_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.CORAL_MUSHROOM_PATCH),
+                List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.OCEAN_FLOOR))));
+        context.register(SEA_PICKLE_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.SEA_PICKLE_PATCH),
+                List.of(CountPlacement.of(4), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.OCEAN_FLOOR))));
+        // 染梦海草 — 原作 ground_feature_dyedream_5: count=64, OCEAN_FLOOR_WG, y=20~59
+        context.register(DYEDREAM_SEAGRASS_PATCH, new PlacedFeature(
+                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_SEAGRASS_PATCH),
+                List.of(CountPlacement.of(64), InSquarePlacement.spread(),
+                        onHeightmap(Heightmap.Types.OCEAN_FLOOR_WG),
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(20), VerticalAnchor.absolute(59)))));
+
 
         // 阴影真菌树
         context.register(SHADOW_FUNGUS_TREE, new PlacedFeature(
@@ -435,13 +560,13 @@ public class ModPlacedFeatures {
                 List.of(CountPlacement.of(1), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
                         ON_SHADOW_GROUND)));
-        // 影短根 — WORLD_SURFACE_WG
+        // 阴影矮菌索 — WORLD_SURFACE_WG
         context.register(SHADOW_SHORT_ROOTS_PATCH, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.SHADOW_SHORT_ROOTS_PATCH),
                 List.of(CountPlacement.of(1), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
                         ON_SHADOW_GROUND)));
-        // 影根须 — WORLD_SURFACE_WG
+        // 阴影菌索 — WORLD_SURFACE_WG
         context.register(SHADOW_ROOTS_PATCH, new PlacedFeature(
                 cf.getOrThrow(ModConfiguredFeatures.SHADOW_ROOTS_PATCH),
                 List.of(CountPlacement.of(1), InSquarePlacement.spread(),
@@ -465,116 +590,6 @@ public class ModPlacedFeatures {
                 List.of(CountPlacement.of(1), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
                         ON_SHADOW_GROUND)));
-
-        // 粉顶菌 (小型地表) — WORLD_SURFACE_WG
-        context.register(PINK_MUSHROOM_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.PINK_MUSHROOM_PATCH),
-                List.of(CountPlacement.of(5), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-
-        // 高粉顶菌 (地表) — WORLD_SURFACE_WG
-        context.register(TALL_PINK_MUSHROOM_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.TALL_PINK_MUSHROOM_PATCH),
-                List.of(CountPlacement.of(3), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-
-        // 染梦藤蔓 — 原作 vine_0: count=1 rarity=16 → 平均每16区块1簇
-        context.register(DYEDREAM_VINE_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_VINE_PATCH),
-                List.of(CountPlacement.of(1), RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-
-        // 野生梦染茶花 — 团簇稀疏
-        context.register(DYEDREAM_COROLLA_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_COROLLA_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-
-        // 野生流明堇 — 团簇稀疏
-        context.register(LIGHT_BALL_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.LIGHT_BALL_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-
-        // 野生玲云花 — 团簇稀疏
-        context.register(CLOUD_CROP_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.CLOUD_CROP_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-
-        // 云团柱 — SP, rarity=4, MOTION_BLOCKING
-        context.register(CLOUD_PILLAR_SMALL, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.CLOUD_PILLAR_SMALL),
-                List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.MOTION_BLOCKING))));
-        context.register(CLOUD_PILLAR_LARGE, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.CLOUD_PILLAR_LARGE),
-                List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.MOTION_BLOCKING))));
-
-        // ===== 水下装饰（OCEAN_FLOOR 放置于海床） =====
-        context.register(CORAL_TREE_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.CORAL_TREE_PATCH),
-                List.of(CountPlacement.of(2), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.OCEAN_FLOOR))));
-        context.register(CORAL_CLAW_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.CORAL_CLAW_PATCH),
-                List.of(CountPlacement.of(2), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.OCEAN_FLOOR))));
-        context.register(CORAL_MUSHROOM_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.CORAL_MUSHROOM_PATCH),
-                List.of(CountPlacement.of(2), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.OCEAN_FLOOR))));
-        context.register(SEA_PICKLE_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.SEA_PICKLE_PATCH),
-                List.of(CountPlacement.of(4), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.OCEAN_FLOOR))));
-        // 染梦海草 — 原作 ground_feature_dyedream_5: count=64, OCEAN_FLOOR_WG, y=20~59
-        context.register(DYEDREAM_SEAGRASS_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_SEAGRASS_PATCH),
-                List.of(CountPlacement.of(64), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.OCEAN_FLOOR_WG),
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(20), VerticalAnchor.absolute(59)))));
-
-        // 染梦铃兰
-        context.register(DYEDREAM_LILY_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_LILY_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-
-        //冶梦莲
-        context.register(DREAMING_LOTUS_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.DREAMING_LOTUS_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-
-        //雪绒花 — 原作 flower_16: count=5, rarity=32
-        context.register(EDELWEISS_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.EDELWEISS_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-        //奇异蕨 — 原作 flower_14: count=2, rarity=32
-        context.register(SINGULARITY_FERN_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.SINGULARITY_FERN_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-        //苓灯花 — 原作 flower_9: count=2, rarity=32
-        context.register(LINHT_FLOWER_PATCH, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.LINHT_FLOWER_PATCH),
-                List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(),
-                        onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
-                        ON_DYEDREAM_GROUND)));
-
         //秋麒麟
         context.register(GOLDENROD_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.GOLDENROD_PATCH), List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
 
@@ -657,18 +672,6 @@ public class ModPlacedFeatures {
                 List.of(CountPlacement.of(6), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
                         onHeightmap(Heightmap.Types.WORLD_SURFACE_WG))));
 
-        // 方解石笋(大) — 不限制高度
-        context.register(CALCITE_STALICRIPE, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.CALCITE_STALICRIPE),
-                List.of(CountPlacement.of(20), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(320)))));
-        // 染梦苔藓 — 同方解石笋，不限制高度
-        context.register(DYEDREAM_MOSS_PATCH, new PlacedFeature(cf.getOrThrow(ModConfiguredFeatures.DYEDREAM_MOSS_PATCH), List.of(CountPlacement.of(20), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(320)))));
-        // 方解石笋(小) — 不限制高度
-        context.register(SMALL_CALCITE_STALICRIPE, new PlacedFeature(
-                cf.getOrThrow(ModConfiguredFeatures.SMALL_CALCITE_STALICRIPE),
-                List.of(CountPlacement.of(20), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(320)))));
 
         // ===== 洞穴晶芽 =====
         // 染梦晶芽 x3 — 所有群系,
