@@ -8,8 +8,10 @@ import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamD
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import net.minecraft.ChatFormatting;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -141,6 +143,11 @@ public class PasterDreamDrinkItem extends Item
 
         if (!level.isClientSide && entity instanceof Player player)
         {
+            player.awardStat(Stats.ITEM_USED.get(this));
+            if (player instanceof ServerPlayer serverPlayer)
+            {
+                CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
+            }
             onDrinkSpecial(player, level);
         }
 
