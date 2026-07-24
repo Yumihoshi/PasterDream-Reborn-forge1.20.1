@@ -40,10 +40,10 @@ public class PlayerEvents {
     private static final ResourceLocation PURE_AND_FLAWLESS_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/pure_and_flawless");
     private static final ResourceLocation DREAM_FERTILIZER_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/dream_fertilizer");
 
-    /** 进度 ID → 笔记 content 键 的映射 */
-    private static final java.util.Map<ResourceLocation, String> ADVANCEMENT_NOTE_CONTENT = java.util.Map.of(
-            PURE_AND_FLAWLESS_ADV, "whiteCorolla",
-            DREAM_FERTILIZER_ADV, "dreamFertilizer"
+    /** 进度 ID → 笔记 content 键列表 的映射 */
+    private static final java.util.Map<ResourceLocation, java.util.List<String>> ADVANCEMENT_NOTE_CONTENT = java.util.Map.of(
+            PURE_AND_FLAWLESS_ADV, java.util.List.of("whiteCorolla", "paleBoneNeedle"),
+            DREAM_FERTILIZER_ADV, java.util.List.of("dreamFertilizer")
     );
 
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
@@ -247,15 +247,17 @@ public class PlayerEvents {
             return;
         }
 
-        String content = ADVANCEMENT_NOTE_CONTENT.get(advancement.getId());
-        if (content == null) {
+        java.util.List<String> contents = ADVANCEMENT_NOTE_CONTENT.get(advancement.getId());
+        if (contents == null) {
             return;
         }
 
-        ItemStack note = DreamNotesWithNBT.dreamNotesWithNBT(
-                ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", content);
-        if (!serverPlayer.getInventory().add(note)) {
-            serverPlayer.drop(note, false);
+        for (String content : contents) {
+            ItemStack note = DreamNotesWithNBT.dreamNotesWithNBT(
+                    ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", content);
+            if (!serverPlayer.getInventory().add(note)) {
+                serverPlayer.drop(note, false);
+            }
         }
 
         serverPlayer.displayClientMessage(
