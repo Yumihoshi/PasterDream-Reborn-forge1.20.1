@@ -794,7 +794,7 @@ public class ModItems {
                     .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.5f).build())));
 
     public static final RegistryObject<Item> QUEER_SOUP = ITEMS.register("queer_soup",
-            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties()
+            () -> new PasterDreamFoodItem(new PasterDreamDrinkAndFoodProperties().meltDreamEnergyAdd(1)
                     .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.375f).alwaysEat().build()))
             {
                 @Override
