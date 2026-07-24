@@ -1215,7 +1215,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("message.pasterdream.sleep.dream_of_crack.2", "§5You quickly use nearby materials to record these dreams, and afterward you lose all memory of this dream.");
         add("message.pasterdream.sleep.dream_of_crack.3", "§5I must find out what happened...");
         add("message.pasterdream.dyedream_world.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
-        add("message.pasterdream.pure_and_flawless.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
+        add("message.pasterdream.story.pure_and_flawless.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
         add("message.pasterdream.story.dream_fertilizer.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
         add("message.pasterdream.dream_accumulator.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
 

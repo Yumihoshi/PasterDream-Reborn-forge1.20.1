@@ -1383,7 +1383,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("message.pasterdream.sleep.dream_of_crack.2", "§5你拿起附近的材料迅速地把这些梦境记录下来，在这之后你就失去了对这段梦境的记忆。");
         add("message.pasterdream.sleep.dream_of_crack.3", "§5我必须知道发生了什么...");
         add("message.pasterdream.dyedream_world.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
-        add("message.pasterdream.pure_and_flawless.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
+        add("message.pasterdream.story.pure_and_flawless.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
         add("message.pasterdream.story.dream_fertilizer.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
         add("message.pasterdream.dream_accumulator.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
 
