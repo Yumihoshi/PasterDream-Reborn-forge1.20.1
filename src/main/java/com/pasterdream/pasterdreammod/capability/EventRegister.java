@@ -7,6 +7,7 @@ import com.pasterdream.pasterdreammod.capability.san.ISan;
 import com.pasterdream.pasterdreammod.capability.san.SanProvider;
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MaxMeltDreamEnergySyncPacket;
 import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
+import com.pasterdream.pasterdreammod.network.san.IsSanEnableSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.MaxSanSyncPacket;
 import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
 import com.pasterdream.pasterdreammod.Config;
@@ -110,6 +111,7 @@ public class EventRegister
                 player.getCapability(ModCapabilities.MELT_DREAM_ENERGY).ifPresent(capability -> MaxMeltDreamEnergySyncPacket.sendToPlayer(player, capability));
                 player.getCapability(ModCapabilities.SAN).ifPresent(capability -> SanSyncPacket.sendToPlayer(player, capability));
                 player.getCapability(ModCapabilities.SAN).ifPresent(capability -> MaxSanSyncPacket.sendToPlayer(player, capability));
+                player.getCapability(ModCapabilities.SAN).ifPresent(capability -> IsSanEnableSyncPacket.sendToPlayer(player, capability));
             }
         }
     }
