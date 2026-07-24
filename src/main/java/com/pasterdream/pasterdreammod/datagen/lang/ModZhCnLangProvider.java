@@ -1154,6 +1154,18 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.dyedream_crack.description", "在下一次的梦中醒来，裂隙会与你的梦境共鸣。");
         add("advancements.pasterdream.story.dyedream_world.title", "哥德堡安眠曲");
         add("advancements.pasterdream.story.dyedream_world.description", "访问染梦之境");
+        add("advancements.pasterdream.story.dream_fertilizer.title", "不可食用果冻");
+        add("advancements.pasterdream.story.dream_fertilizer.description", "制作并使用衍梦肥泥挥洒梦境的土地");
+        add("advancements.pasterdream.story.dyedream_dust.title", "把梦捧在手心里!");
+        add("advancements.pasterdream.story.dyedream_dust.description", "从这个世界探寻它的踪迹");
+        add("advancements.pasterdream.story.melt_dream_crystal_fragment.title", "熔融于梦");
+        add("advancements.pasterdream.story.melt_dream_crystal_fragment.description", "收集到一颗融梦水晶碎片");
+        add("advancements.pasterdream.story.glass_jar_of_dream_juice.title", "好梦在何方");
+        add("advancements.pasterdream.story.glass_jar_of_dream_juice.description", "制作并饮用梦境果汁，在睡梦中前往染梦之境");
+        add("advancements.pasterdream.story.dream_accumulator.title", "尘埃落定");
+        add("advancements.pasterdream.story.dream_accumulator.description", "使用蓄梦池收集染梦粉尘");
+        add("advancements.pasterdream.story.melt_dream_liquid_bucket.title", "百味杂陈");
+        add("advancements.pasterdream.story.melt_dream_liquid_bucket.description", "获得一桶融梦涌泉");
         add("advancements.pasterdream.story.create_pliers.title", "太陽とレインボ一");
         add("advancements.pasterdream.story.create_pliers.description", "制作一把园艺钳");
         add("advancements.pasterdream.story.create_research_table.title", "下午茶时光");
@@ -1371,6 +1383,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("message.pasterdream.sleep.dream_of_crack.2", "§5你拿起附近的材料迅速地把这些梦境记录下来，在这之后你就失去了对这段梦境的记忆。");
         add("message.pasterdream.sleep.dream_of_crack.3", "§5我必须知道发生了什么...");
         add("message.pasterdream.dyedream_world.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
+        add("message.pasterdream.pure_and_flawless.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
+        add("message.pasterdream.story.dream_fertilizer.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
+        add("message.pasterdream.dream_accumulator.found_note", "你发现了一张寻梦者笔记，并收进了你的背包");
 
         // 沙漠英雄墓 - 任务对话
         add("message.pasterdream.desert_hero_tomb.line1", "良久，竟有来者。");

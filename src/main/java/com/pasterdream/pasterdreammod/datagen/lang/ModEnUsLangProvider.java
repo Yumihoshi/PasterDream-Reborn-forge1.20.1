@@ -992,6 +992,18 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancements.pasterdream.story.dyedream_crack.description", "Wake up in the next dream, the crack will resonate with your dream.");
         add("advancements.pasterdream.story.dyedream_world.title", "Gothenburg Lullaby");
         add("advancements.pasterdream.story.dyedream_world.description", "Visit the Dyedream World");
+        add("advancements.pasterdream.story.dream_fertilizer.title", "Inedible Jelly");
+        add("advancements.pasterdream.story.dream_fertilizer.description", "Craft and use Dream Fertilizer to spread on the dream land");
+        add("advancements.pasterdream.story.dyedream_dust.title", "Holding the Dream in Your Palm!");
+        add("advancements.pasterdream.story.dyedream_dust.description", "Seek its traces from this world");
+        add("advancements.pasterdream.story.melt_dream_crystal_fragment.title", "Melted in Dream");
+        add("advancements.pasterdream.story.melt_dream_crystal_fragment.description", "Collect a Melt Dream Crystal Fragment");
+        add("advancements.pasterdream.story.glass_jar_of_dream_juice.title", "Where Lies the Sweet Dream");
+        add("advancements.pasterdream.story.glass_jar_of_dream_juice.description", "Craft and drink Dream Juice, then journey to the Dyedream World in your sleep");
+        add("advancements.pasterdream.story.dream_accumulator.title", "The Dust Has Settled");
+        add("advancements.pasterdream.story.dream_accumulator.description", "Use the Dream Accumulator to collect Dyedream Dust");
+        add("advancements.pasterdream.story.melt_dream_liquid_bucket.title", "Mixed Emotions");
+        add("advancements.pasterdream.story.melt_dream_liquid_bucket.description", "Obtain a bucket of Melt Dream Spring");
         add("advancements.pasterdream.story.create_pliers.title", "太陽とレインボ一");
         add("advancements.pasterdream.story.create_pliers.description", "Make a pair of pliers");
         add("advancements.pasterdream.story.create_research_table.title", "Afternoon Tea Time");
@@ -1203,6 +1215,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("message.pasterdream.sleep.dream_of_crack.2", "§5You quickly use nearby materials to record these dreams, and afterward you lose all memory of this dream.");
         add("message.pasterdream.sleep.dream_of_crack.3", "§5I must find out what happened...");
         add("message.pasterdream.dyedream_world.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
+        add("message.pasterdream.pure_and_flawless.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
+        add("message.pasterdream.story.dream_fertilizer.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
+        add("message.pasterdream.dream_accumulator.found_note", "You found a Dream Seeker's note and tucked it into your backpack");
 
         add("message.pasterdream.desert_hero_tomb.line1", "At long last, a visitor has come.");
         add("message.pasterdream.desert_hero_tomb.line2", "I have no regrets, only one final request.");

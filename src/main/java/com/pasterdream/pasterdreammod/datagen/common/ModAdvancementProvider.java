@@ -119,7 +119,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                             "story/create_research_table"), existingFileHelper);
 
             // ========== 染梦裂隙子进度：染梦世界 ==========
-            Advancement.Builder.advancement()
+            Advancement dyedreamWorld = Advancement.Builder.advancement()
                     .parent(dyedreamCrackAdv)
                     .display(
                             ModBlocks.DYEDREAM_GRASS_BLOCK.get(),
@@ -133,6 +133,107 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
                             ReadDreamNoteTrigger.TriggerInstance.forContent("dyedreamWorld"))
                     .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
                             "story/dyedream_world"), existingFileHelper);
+
+            // ========== 染梦世界子进度：不可食用果冻 ==========
+            Advancement.Builder.advancement()
+                    .parent(dyedreamWorld)
+                    .display(
+                            ModItems.DREAM_FERTILIZER.get(),
+                            Component.translatable("advancements.pasterdream.story.dream_fertilizer.title"),
+                            Component.translatable("advancements.pasterdream.story.dream_fertilizer.description"),
+                            null,
+                            FrameType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("has_dream_fertilizer", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.DREAM_FERTILIZER.get()))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/dream_fertilizer"), existingFileHelper);
+
+            // ========== 染梦世界子进度：把梦捧在手心里! ==========
+            Advancement dyedreamDust = Advancement.Builder.advancement()
+                    .parent(dyedreamWorld)
+                    .display(
+                            ModItems.DYEDREAM_DUST.get(),
+                            Component.translatable("advancements.pasterdream.story.dyedream_dust.title"),
+                            Component.translatable("advancements.pasterdream.story.dyedream_dust.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("has_dyedream_dust", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.DYEDREAM_DUST.get()))
+                    .rewards(AdvancementRewards.Builder.experience(20))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/dyedream_dust"), existingFileHelper);
+
+            // ========== 把梦捧在手心里子进度：熔融于梦 ==========
+            Advancement.Builder.advancement()
+                    .parent(dyedreamDust)
+                    .display(
+                            ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(),
+                            Component.translatable("advancements.pasterdream.story.melt_dream_crystal_fragment.title"),
+                            Component.translatable("advancements.pasterdream.story.melt_dream_crystal_fragment.description"),
+                            null,
+                            FrameType.CHALLENGE,
+                            true, true, false
+                    )
+                    .addCriterion("has_melt_dream_crystal_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get()))
+                    .rewards(AdvancementRewards.Builder.experience(50))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/melt_dream_crystal_fragment"), existingFileHelper);
+
+            // ========== 染梦世界子进度：好梦在何方 ==========
+            Advancement.Builder.advancement()
+                    .parent(dyedreamWorld)
+                    .display(
+                            ModItems.GLASS_JAR_OF_DREAM_JUICE.get(),
+                            Component.translatable("advancements.pasterdream.story.glass_jar_of_dream_juice.title"),
+                            Component.translatable("advancements.pasterdream.story.glass_jar_of_dream_juice.description"),
+                            null,
+                            FrameType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("drink_dream_juice", ConsumeItemTrigger.TriggerInstance.usedItem(
+                            ItemPredicate.Builder.item().of(ModItems.GLASS_JAR_OF_DREAM_JUICE.get()).build()))
+                    .rewards(AdvancementRewards.Builder.experience(20))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/glass_jar_of_dream_juice"), existingFileHelper);
+
+            // ========== 染梦世界子进度：尘埃落定 ==========
+            Advancement.Builder.advancement()
+                    .parent(dyedreamWorld)
+                    .display(
+                            ModItems.DREAM_ACCUMULATOR.get(),
+                            Component.translatable("advancements.pasterdream.story.dream_accumulator.title"),
+                            Component.translatable("advancements.pasterdream.story.dream_accumulator.description"),
+                            null,
+                            FrameType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("read_dream_accumulator_note",
+                            ReadDreamNoteTrigger.TriggerInstance.forContent("dreamAccumulator"))
+                    .rewards(AdvancementRewards.Builder.experience(10))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/dream_accumulator"), existingFileHelper);
+
+            // ========== 染梦世界子进度：百味杂陈 ==========
+            Advancement.Builder.advancement()
+                    .parent(dyedreamWorld)
+                    .display(
+                            ModItems.MELT_DREAM_LIQUID_BUCKET.get(),
+                            Component.translatable("advancements.pasterdream.story.melt_dream_liquid_bucket.title"),
+                            Component.translatable("advancements.pasterdream.story.melt_dream_liquid_bucket.description"),
+                            null,
+                            FrameType.TASK,
+                            true, true, false
+                    )
+                    .addCriterion("has_melt_dream_liquid_bucket", InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ModItems.MELT_DREAM_LIQUID_BUCKET.get()))
+                    .rewards(AdvancementRewards.Builder.experience(10))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,
+                            "story/melt_dream_liquid_bucket"), existingFileHelper);
 
             // ========== 子进度：纯洁无暇 ==========
             Advancement pureAndFlawless = Advancement.Builder.advancement()

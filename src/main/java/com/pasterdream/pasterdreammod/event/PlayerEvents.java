@@ -22,6 +22,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.AdvancementEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
@@ -33,8 +34,17 @@ public class PlayerEvents {
             ResourceKey.create(Registries.DIMENSION,
                     ResourceLocation.fromNamespaceAndPath("pasterdream", "dyedream_world"));
     private static final String NOTE_DELAY_TAG = "pasterdream:dream_note_delay";
+    private static final ResourceLocation FIRST_CONTACT_DYEDREAM_CRACK_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/first_contact_dyedream_crack");
     private static final ResourceLocation DYEDREAM_CRACK_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/dyedream_crack");
     private static final ResourceLocation DYEDREAM_WORLD_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/dyedream_world");
+    private static final ResourceLocation PURE_AND_FLAWLESS_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/pure_and_flawless");
+    private static final ResourceLocation DREAM_FERTILIZER_ADV = ResourceLocation.fromNamespaceAndPath("pasterdream", "story/dream_fertilizer");
+
+    /** 进度 ID → 笔记 content 键 的映射 */
+    private static final java.util.Map<ResourceLocation, String> ADVANCEMENT_NOTE_CONTENT = java.util.Map.of(
+            PURE_AND_FLAWLESS_ADV, "whiteCorolla",
+            DREAM_FERTILIZER_ADV, "dreamFertilizer"
+    );
 
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
@@ -131,13 +141,17 @@ public class PlayerEvents {
         player.addEffect(new MobEffectInstance(ModEffects.REST_BUFF.get(),
                 3600, 0, false, false));
 
-        // 过期玩家没有染梦裂隙进度，启动笔记发放倒计时
+        // 玩家接触过染梦裂隙但尚未获得染梦裂隙笔记时，睡觉触发笔记发放倒计时
         if (player instanceof ServerPlayer serverPlayer)
         {
-            Advancement crackAdv = serverPlayer.server.getAdvancements().getAdvancement(DYEDREAM_CRACK_ADV);
-            if (crackAdv == null || !serverPlayer.getAdvancements().getOrStartProgress(crackAdv).isDone())
+            Advancement firstContactAdv = serverPlayer.server.getAdvancements().getAdvancement(FIRST_CONTACT_DYEDREAM_CRACK_ADV);
+            if (firstContactAdv != null && serverPlayer.getAdvancements().getOrStartProgress(firstContactAdv).isDone())
             {
-                player.getPersistentData().putInt(NOTE_DELAY_TAG, 40);
+                Advancement crackAdv = serverPlayer.server.getAdvancements().getAdvancement(DYEDREAM_CRACK_ADV);
+                if (crackAdv == null || !serverPlayer.getAdvancements().getOrStartProgress(crackAdv).isDone())
+                {
+                    player.getPersistentData().putInt(NOTE_DELAY_TAG, 40);
+                }
             }
         }
 
@@ -220,5 +234,31 @@ public class PlayerEvents {
 
         serverPlayer.displayClientMessage(
                 Component.translatable("message.pasterdream.dyedream_world.found_note"), false);
+    }
+
+    /** 玩家获得指定进度时，发放对应笔记。 */
+    public static void onAdvancementEarned(AdvancementEvent.AdvancementEarnEvent event) {
+        if (!(event.getEntity() instanceof ServerPlayer serverPlayer)) {
+            return;
+        }
+
+        Advancement advancement = event.getAdvancement();
+        if (advancement == null) {
+            return;
+        }
+
+        String content = ADVANCEMENT_NOTE_CONTENT.get(advancement.getId());
+        if (content == null) {
+            return;
+        }
+
+        ItemStack note = DreamNotesWithNBT.dreamNotesWithNBT(
+                ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "content", content);
+        if (!serverPlayer.getInventory().add(note)) {
+            serverPlayer.drop(note, false);
+        }
+
+        serverPlayer.displayClientMessage(
+                Component.translatable("message.pasterdream." + advancement.getId().getPath().replace('/', '.') + ".found_note"), false);
     }
 }
