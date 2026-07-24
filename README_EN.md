@@ -68,8 +68,8 @@ Project documentation is available in the [`document/`](document/) directory:
 - **Design**: ShiLiuYinYu
 - **Programming**: 2884omgpy, ShiLiuYinYu, Garam
 - **Art**: GQ2529, Garam
-- **Writing**: Yumihoshi
-- **Special Thanks**: -北旭-, 福米花_flow
+- **Writing**: Yumihoshi, bei_xu, Akizuki Ayane
+- **Special Thanks**: 福米花_flow
 
 <a href="https://github.com/PasterDreamReborn-Organization/PasterDream-Reborn-forge1.20.1/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=PasterDreamReborn-Organization/PasterDream-Reborn-forge1.20.1" />
