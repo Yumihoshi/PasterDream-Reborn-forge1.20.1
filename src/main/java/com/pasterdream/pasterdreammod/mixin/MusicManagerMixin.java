@@ -18,13 +18,18 @@ public class MusicManagerMixin {
     @Shadow private int nextSongDelay;
 
     @Inject(method = "tick", at = @At("RETURN"))
-    private void pasterdream$shortenTransitionDelay(CallbackInfo ci) {
+    private void pasterdream$adjustMusicDelay(CallbackInfo ci) {
         LocalPlayer player = minecraft.player;
         if (player == null) return;
         if (!player.level().dimension().equals(DyedreamDimension.DYEDREAM_WORLD)) return;
 
-        if (nextSongDelay > 60) {
-            nextSongDelay = 60;
+        // 有一定概率播放MC原版音乐，此时不干预间隔
+        if (player.level().random.nextFloat() < 0.35f) {
+            return;
+        }
+
+        if (nextSongDelay > 1200) {
+            nextSongDelay = 1200;
         }
     }
 }
