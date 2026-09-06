@@ -44,7 +44,7 @@ description: 新增/修改能力系统（融梦能量 MeltDreamEnergy、SAN 值�
 | 融梦能量 HUD | `client/MeltDreamEnergyTank.java` |
 | SAN HUD | `client/SanTank.java` |
 | 低 SAN 失智视觉 | `client/LoseMind.java` |
-| 命令 | `command/MeltDreamEnergy.java`、`command/san/San.java` |
+| 命令 | `command/meltdreamenergy/MeltDreamEnergy.java`、`command/san/San.java` |
 | SAN 群系倍率 | `helper/sanbiomeratemanager/` |
 
 ---

@@ -21,7 +21,7 @@ description: 新增/修改世界生成（群系、维度类型、噪声设置、
 | 噪声设置 | `worldgen/dimension/ModNoiseSettings.java` | `NOISE_SETTINGS` |
 | 维度 | `worldgen/dimension/ModLevelStems.java` | `LEVEL_STEM` |
 
-全部由 `datagen/ModWorldGenProvider.java`（`DatapackBuiltinEntriesProvider`）串联，`RegistrySetBuilder` 按依赖顺序注册（BIOME / DIMENSION_TYPE / NOISE_SETTINGS 在 LEVEL_STEM 之前）。
+全部由 `datagen/common/ModWorldGenProvider.java`（`DatapackBuiltinEntriesProvider`）串联，`RegistrySetBuilder` 按依赖顺序注册（BIOME / DIMENSION_TYPE / NOISE_SETTINGS 在 LEVEL_STEM 之前）。
 
 ---
 
@@ -54,7 +54,7 @@ description: 新增/修改世界生成（群系、维度类型、噪声设置、
 | 群系修改器 | `worldgen/biome/ModBiomeModifiers.java` + `ModBiomeModifierProvider.java` |
 | 维度 | `worldgen/dimension/` |
 | 结构 Provider | `worldgen/structures/` |
-| 世界生成 datagen | `datagen/ModWorldGenProvider.java` |
+| 世界生成 datagen | `datagen/common/ModWorldGenProvider.java` |
 | 结构生成辅助 | `helper/structuregenerate/` |
 | 结构生成事件 | `event/ModWorldGenEvents.java` |
 

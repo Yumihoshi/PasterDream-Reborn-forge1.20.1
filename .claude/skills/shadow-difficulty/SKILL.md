@@ -39,7 +39,7 @@ description: 修改暗影难度系统（暗影生物数值缩放、特殊行为�
 - 玩家个人覆盖用 `persistentData`（仅一个 int、仅服务端、无需同步），**不用** Capability
 - 配置项全部在 `Config.java`，倍率/阈值用 4 值数组对应 4 个难度
 - 击杀回理智在 `TerrorbeakEntity.die()`，击杀者为玩家且 SAN≤20 时触发
-- 低 SAN 视觉开关（overlay/jitter/sound）经 `LowSanWorldData.java`（SavedData）持久化
+- 低 SAN 视觉开关（overlay/jitter/sound）存于 `Config.java` 静态字段（配置持久化），经 `LowSanConfigSyncPacket` 同步到客户端
 
 ---
 
@@ -55,7 +55,7 @@ description: 修改暗影难度系统（暗影生物数值缩放、特殊行为�
 | 低理智刷怪 | `event/LowSanSpawnHandler.java` |
 | 难度命令 | `command/san/ShadowDifficulty.java` |
 | 低 SAN 视觉命令 | `command/san/LowSanEffect.java` |
-| 视觉持久化 | `command/san/LowSanWorldData.java` |
+| 视觉开关持久化 | `Config.java`（静态字段，配置持久化） |
 | 视觉同步 | `network/san/LowSanConfigSyncPacket.java` |
 | 暗影生物标签 | `tag/ModEntityTypeTags.java`（`SHADOW_MOB`） |
 

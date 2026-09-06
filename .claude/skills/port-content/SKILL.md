@@ -181,7 +181,7 @@ description: 从源模组搬运方块、物品、工具、护甲、实体到重�
 
 - `init/ModParticleTypes.java` 注册 `SimpleParticleType`
 - `client/particle/` 下创建粒子行为类（继承 `TextureSheetParticle`）+ Provider
-- `client/particle/ModParticles.java` 中注册 `RegisterParticleProvidersEvent`
+- `init/ModParticles.java` 中注册 `RegisterParticleProvidersEvent`
 - 纹理 JSON 手动维护在 `assets/pasterdream/particles/`（**不走 datagen**）
 
 ---
@@ -358,7 +358,7 @@ description: 从源模组搬运方块、物品、工具、护甲、实体到重�
 | 获得物品 | `InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.XXX.get())` |
 | 饮用/食用物品 | `ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(...).build())` |
 | 读取笔记 | `ReadDreamNoteTrigger.TriggerInstance.forContent("noteContentKey")` |
-| 自定义事件 | 见 `advancement/criterion/` 下的自定义 Trigger |
+| 自定义事件 | 见 `advancement/critereon/` 下的自定义 Trigger |
 
 ### 15.3 笔记分发模式
 
@@ -410,5 +410,5 @@ description: 从源模组搬运方块、物品、工具、护甲、实体到重�
 | 笔记分发表 | `event/PlayerEvents.java` → `ADVANCEMENT_NOTE_CONTENT` |
 | 笔记分发事件 | `event/PlayerEvents.java` → `onAdvancementEarned()` |
 | 自定义触发器注册 | `init/ModCriteriaTriggers.java` |
-| 自定义触发器实现 | `advancement/criterion/` |
+| 自定义触发器实现 | `advancement/critereon/` |
 | 语言文件 | `datagen/lang/ModZhCnLangProvider.java` / `ModEnUsLangProvider.java` |
