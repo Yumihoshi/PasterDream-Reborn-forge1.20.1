@@ -1,5 +1,7 @@
 package com.pasterdream.pasterdreammod.world.item.curio;
 
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
 import com.pasterdream.pasterdreammod.PasterDreamMod;
 import com.pasterdream.pasterdreammod.capability.san.ISanModifier;
 import com.pasterdream.pasterdreammod.helper.AdvancementHelper;
@@ -10,6 +12,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -21,6 +25,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.UUID;
 
 public class BroochOfWhiteOrchidItem extends Item implements ICurioItem, ISanModifier {
 
@@ -68,6 +73,13 @@ public class BroochOfWhiteOrchidItem extends Item implements ICurioItem, ISanMod
         list.add(Component.translatable("tooltip.pasterdream.brooch_of_white_orchid.effect2"));
         list.add(Component.translatable("tooltip.pasterdream.brooch_of_white_orchid.effect3"));
         list.add(Component.translatable("tooltip.pasterdream.brooch_of_white_orchid.flavor"));
+    }
+
+    @Override
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
+        Multimap<Attribute, AttributeModifier> modifiers = HashMultimap.create();
+        CuriosApi.addSlotModifier(modifiers, "body", uuid, 1.0, AttributeModifier.Operation.ADDITION);
+        return modifiers;
     }
 
     @Override

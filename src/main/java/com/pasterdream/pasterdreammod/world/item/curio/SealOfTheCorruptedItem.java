@@ -86,6 +86,7 @@ public class SealOfTheCorruptedItem extends Item implements ICurioItem, ISanModi
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext,
                                                                          UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifiers = HashMultimap.create();
+        CuriosApi.addSlotModifier(modifiers, "body", uuid, 1.0, AttributeModifier.Operation.ADDITION);
         modifiers.put(ForgeMod.ENTITY_REACH.get(),
                 new AttributeModifier(ENTITY_REACH_UUID, "seal_of_the_corrupted.entity_reach",
                         1.0, AttributeModifier.Operation.ADDITION));
