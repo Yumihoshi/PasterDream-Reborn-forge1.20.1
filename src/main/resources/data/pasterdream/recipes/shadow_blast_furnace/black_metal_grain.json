@@ -4,7 +4,7 @@
   [
     {
       "fluid": "pasterdream:shadow_liquid",
-      "amount": 3000
+      "amount": 1000
     }
   ],
   "itemInputs":
@@ -22,5 +22,5 @@
       "item": "pasterdream:black_metal_grain"
     }
   ],
-  "processingTime": 900
+  "processingTime": 40
 }
