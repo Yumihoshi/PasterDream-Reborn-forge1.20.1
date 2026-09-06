@@ -22,7 +22,7 @@ description: 客户端渲染（RenderType、HUD、粒子、音效、GeckoLib 动
 
 - `init/ModParticleTypes.java` 注册 `SimpleParticleType`
 - `client/particle/` 下创建行为类（继承 `TextureSheetParticle`）+ 内部 Provider
-- `client/particle/ModParticles.java` 注册 `RegisterParticleProvidersEvent`
+- `init/ModParticles.java` 注册 `RegisterParticleProvidersEvent`
 - 纹理 JSON 手动维护 `assets/pasterdream/particles/`（**不走 datagen**）
 - 群系引用：`BiomeSpecialEffects.Builder.ambientParticle(new AmbientParticleSettings(particleType, probability))`
 
