@@ -2965,7 +2965,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .pattern(" c ")
                 .define('a', Items.BOOK)
                 .define('b', ModItems.DYEDREAM_SLAB.get())
-                .define('c', Items.CALCITE)
+                .define('c', ModItems.DYEDREAM_LOG.get())
                 .unlockedBy(getHasName(ModItems.DYEDREAM_PLANKS.get()), has(ModItems.DYEDREAM_PLANKS.get()))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DYEDREAM_DESK.get(), 1)
@@ -2983,7 +2983,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .pattern(" c ")
                 .define('a', Items.BOOK)
                 .define('b', ModItems.WIND_MOOR_SLAB.get())
-                .define('c', ModItems.THICK_CLOUD.get())
+                .define('c', ModItems.STRIPPED_WIND_MOOR_LOG.get())
                 .unlockedBy(getHasName(ModItems.WIND_MOOR_SLAB.get()), has(ModItems.WIND_MOOR_SLAB.get()))
                 .save(pWriter);
         // 阴影书桌
