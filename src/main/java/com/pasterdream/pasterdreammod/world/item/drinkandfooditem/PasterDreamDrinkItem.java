@@ -1,13 +1,10 @@
 package com.pasterdream.pasterdreammod.world.item.drinkandfooditem;
 
-import com.pasterdream.pasterdreammod.capability.ModCapabilities;
 import com.pasterdream.pasterdreammod.capability.meltdreamenergy.MeltDreamEnergyHelper;
 import com.pasterdream.pasterdreammod.capability.san.SanHelper;
 import com.pasterdream.pasterdreammod.helper.fluidcontainercapability.FluidContainerRegistry;
+import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.FoodValueTooltips;
 import com.pasterdream.pasterdreammod.helper.drinkandfoodproperties.PasterDreamDrinkAndFoodProperties;
-import com.pasterdream.pasterdreammod.network.meltdreamenergy.MeltDreamEnergySyncPacket;
-import com.pasterdream.pasterdreammod.network.san.SanSyncPacket;
-import net.minecraft.ChatFormatting;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -46,15 +43,8 @@ public class PasterDreamDrinkItem extends Item
     {
         super.appendHoverText(itemStack, level, tooltip, flag);
 
-        if(sanAdd != 0)
-        {
-            tooltip.add(Component.translatable("tooltip.pasterdreammod.san_value").withStyle(ChatFormatting.BLUE).append(Component.literal(formatValue(sanAdd)).withStyle(sanAdd < 0 ? ChatFormatting.RED : ChatFormatting.BLUE)));
-        }
-
-        if(meltDreamEnergyAdd != 0)
-        {
-            tooltip.add(Component.translatable("tooltip.pasterdreammod.melt_dream_energy").withStyle(ChatFormatting.BLUE).append(Component.literal(formatValue(meltDreamEnergyAdd))).withStyle(ChatFormatting.BLUE));
-        }
+        FoodValueTooltips.appendSanTooltip(tooltip, sanAdd);
+        FoodValueTooltips.appendMeltDreamEnergyTooltip(tooltip, meltDreamEnergyAdd);
 
         FoodProperties food = this.getFoodProperties();
         if (food != null)
@@ -82,15 +72,6 @@ public class PasterDreamDrinkItem extends Item
                 tooltip.add(text.copy().withStyle(instance.getEffect().getCategory().getTooltipFormatting()));
             }
         }
-    }
-
-    private static String formatValue(double value)
-    {
-        if (value == (long) value)
-        {
-            return String.format("%+d", (long) value);
-        }
-        return String.format("%+.1f", value);
     }
 
     private static String formatTickDuration(int ticks)

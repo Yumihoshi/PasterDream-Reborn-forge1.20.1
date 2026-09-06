@@ -275,6 +275,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.MACHINE_LIGHT_WING.get(), "机械光翼");
         add(ModItems.ANGEL_WING.get(), "天使之翼");
         add(ModItems.FORSAKENS_WING.get(), "遗忘之翼");
+        add(ModItems.TURNBACK_CLOAK.get(), "转身衣装");
         add(ModItems.DREAM_FERTILIZER.get(), "衍梦肥泥");
         add(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(), "融梦水晶碎片");
         add(ModItems.MELT_DREAM_AURORIAN_STEEL.get(), "融梦极光钢锭");
@@ -695,7 +696,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdreammod.melt_dream_crystal_fragment", "§7此世间一切拥有灵魂的生物皆有梦\n那些醒来时无法想起的细缕回忆\n破碎并融化被埋藏在世界各处凝结成晶\n等待着被新的灵魂发现");
         add("tooltip.pasterdreammod.upgrade_kit", "§7用于在锻造台处升级装备 可以保留装备的原有强化属性");
         add("tooltip.pasterdream.enhance_stone.usage", "§7用于在精铸工坊工作台中强化武器/工具/装备");
-        add("tooltip.pasterdream.thermal_dagger.swim", "§7▪ §9主手时 +0.5 游泳速度");
+        add("tooltip.pasterdream.thermal_dagger.swim", "§7▪ §9持有时 +0.5 游泳速度（不叠加）");
         add("tooltip.pasterdream.thermal_dagger", "§7§o-- 深海迷航");
         add("tooltip.pasterdream.deep_treasure", "§7飞溅的浪花将我们推向远方");
         add("tooltip.pasterdream.shadow_deep_treasure", "§7表面似乎还流淌着阴影");
@@ -879,6 +880,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("book.pasterdream.title.花园解密:迷梦冶梦莲", "花园解密:迷梦冶梦莲");
         add("book.pasterdream.title.花园解密:凛冽雪绒花", "花园解密:凛冽雪绒花");
         add("book.pasterdream.title.花园解密:九尾狐", "花园解密:九尾狐");
+        add("book.pasterdream.title.染梦裂隙", "染梦裂隙");
         add("book.pasterdream.title.染梦游记 其一", "染梦游记 其一");
         add("book.pasterdream.title.染梦游记 其二", "染梦游记 其二");
         add("book.pasterdream.title.染梦游记 其三", "染梦游记 其三");
@@ -923,6 +925,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("book.pasterdream.title.交易", "交易");
         add("book.pasterdream.title.破碎", "破碎");
 
+        add("book.pasterdream.title.无翼鸟也有展翅的梦", "无翼鸟也有展翅的梦");
         add("book.pasterdream.title.破风的骑士", "破风的骑士");
         add("book.pasterdream.title.清晨的新风", "清晨的新风");
         add("book.pasterdream.title.魔法使的记录-其一", "魔法使的记录-其一");
@@ -936,6 +939,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("book.pasterdream.content.花园解密:迷梦冶梦莲", "西北的风吹过叮铃作响\n\n东北的云彩遮住了暖阳\n\n西南的光芒婉流明夕阳\n\n东南的亭亭小伞生其旁\n\n四周的矮草依花微风岸\n\n得以迷醉那冶梦的花莲");
         add("book.pasterdream.content.花园解密:凛冽雪绒花", "北方的大树抵挡了刺骨寒风\n\n南方的花朵染上了梦的颜色\n\n西方的灯笼代替了落日暖阳\n\n东方的草从见证了时间流淌\n\n这座花园的园丁们\n\n是由雪组成的小人\n\n和会飞的蓝色精灵");
         add("book.pasterdream.content.花园解密:九尾狐", "朝霞如梦似幻，熠熠生辉\n\n漂浮着的水晶花盆，高大的莲花燃烧着灵魂色的火焰\n\n浮空岛屿之上的水池中央\n\n一座九尾狐狸的雕像\n\n满足她的味蕾\n\n即可完成你许下的小小愿望\n\n发出金色光芒的甜蜜浆果\n\n许愿清单：\n\n给金色的苹果注入魔力\n\n让桶里充满融梦的涌泉\n\n用一堆梦境的硬币换取宝箱\n\n给她能映射梦的水晶或金色的铃兰花\n\n将正在睡觉的金色狐狸的梦\n\n变为现实...\n\n她会给予你一样特殊的纪念品");
+        add("book.pasterdream.content.染梦裂隙", "就在今早，现在立刻出发！\n我能透过那个黑色的裂隙里面，看到一个仙境一样的世界。\n与它所造成周围的环境变化一样，这很可能属于一种侵染。\n我必须立马动身去一探究竟，与其说是巧合而产生的梦，我更愿意相信这是一种命运。\n我本以为自己会因为一时冲动的走进那个裂隙而付出代价，但至少现在看起来很安静祥和，像一个少女所做的美梦王国，所以我将这个地方理解为被美梦染色的世界。\n梦染世间，这是我为自己眼前的景象所做的总结。\n我现在应该去逛逛探索一下，希望能给我更多的惊喜，祝我好运。\nBy 琴雨梦");
         add("book.pasterdream.content.染梦游记 其一", "在这个世界中，有一种粉色的晶芽生长在温暖区域的地下。\n那些像史莱姆一样的生物天生具有保护色，或许可以通过它们发出的声音找到它们。\n在这里的汪洋之中也潜藏着秘宝。\n在我们的世界中，有一些宝箱都是藏起来的，这里可能也一样？\n这里也有种奇怪的花坛，会为能够解开谜题之人奉上独特的鲜花。\n有些地下洞穴里可能藏着能增加自身生命力的水晶。\n在这里，有些地方流淌着特殊的泉水。\n世界树的内部也藏着宝藏......\n运气是在这里找到宝物的关键。\n我见到的这一切，都有种似曾相识的感觉......就像经历过......这一切的存在。\nBy 琴雨梦");
         add("book.pasterdream.content.染梦游记 其二", "这里的地下浅层会有一种可以食用的矿石，还是甜味的。\n除了这种甜甜的矿石之外，地下也能发现稀有的钛金属，不过因为颜色和环境相近，我们不太容易发现它。\n地下生长的粉色石英矿物是一种不错的建筑材料！\n染梦的树叶上生长着一种果实，我们可以把这种果实做成蛋糕，吃起来味道一定很不错！\n这里有一些本土的作物，想要催熟它们需要特定的软泥肥料。\n把染梦粉尘与骨粉一同研磨可以制作出一种特殊的染料。\n某个地下研究所里有一台可以积蓄染梦粉尘的仪器。\nBy 琴雨梦");
         add("book.pasterdream.content.染梦游记 其三", "在这里探险让我感觉很轻松，即使什么都不做，也可以让我的心情好一些。\n经过这么久的探险，被我发现的群系也不少了，看景观的话，温带和寒带都有。\n但是，这里的冰冷海洋下竟然会生长出珊瑚！\n而且，这里好像会时不时有列车经过，不清楚是否是自己的幻觉......\n我还在一些遗迹的箱子里翻到了几张好听的唱片~\n我发现融梦水晶箱的振动次数越多，里面的宝藏也相对越好欸。\n有些的教堂显得与众不同，建筑的一半像是被什么侵入了一样......\nBy 琴雨梦");
@@ -977,6 +981,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("book.pasterdream.content.暮影之笼", "尽管我把它藏在这里，我还是担心会被发现，所以留下这份书信，警告后来的旅行者，不要轻易的靠近这里，里面的东西并不是世间力量可以对抗的，你会被污染，蛊惑，借此引发祸端，将整个世界拖入黑暗。\n当然，我也并不会担心，如果你拥有超越于我的能力，便可以去探索被我封存的东西，甚至可以去完成我未曾触及之物。\nBy 卡莱");
         add("book.pasterdream.content.与黑色双手的决战和败北", "我写下这张笔记，以警示那些试图挑战它的旅者：「它」远比想象中的更为强大。\n关于那个闪光的传送门彼端的世界究竟为何，探索灯影的其他寻梦者们和我的好友留下的笔记给了我答案：门后是一个闭锁的小型世界，里面有形似一双手的恐怖阴影生物。\n为了战胜它，我用粉红梦境中能获得的最强韧的金属制作了盔甲和武器，并做好了一切我认为能做的准备后，跳入了传送门。\n然而，即使我认为我已经做好了充足的准备，这场战斗却仍然艰苦至极。\n无穷无尽的不知从何处涌出的暗影怪物、黑色双手的猛烈进攻无时无刻不在摧残着我的精神、意志和体力。\n即便如此，我也尽我所能地对他发动攻击，而换来的则是更为强烈的反击——不管怎么说，我还是认为我有对它造成有效伤害。\n就在我认为这样下去说不定有胜算的时候，可怕的事情发生了。\n一瞬间我的视野陷入了黑暗，一片漆黑之中好似无穷无尽的阴影生物蠕动而出，而我的攻击甚至无法穿透围绕那双手的厚厚一层阴影。\n被怪物包围，药水用尽、身受重创的我，在脑海中强烈祈求着这只是一场梦，拿起苍白骨针猛的往自己手臂上扎去。\n一阵刺痛之后，我的视野被强光夺去。眨眼间，我已身处熟悉的床边。但满身的冷汗、布满裂纹的盔甲和空空如也的药水瓶告诉我，刚才的经历并不是简单的一场梦。\n果然，要想击败这恐怖的生物，需要能够抑制阴影，或是能融入阴影、从内部破坏它的武器。\n果然是我还遗漏了什么要点吗。或许，等待其他援助者前来，和他们一同面对它才是更好的选择。\n在那之前，我得先想办法找到更为强大的武器......\nBy 千夜");
         add("book.pasterdream.content.暗影图书馆", "我也知道你也会好奇这种地方为何会存在，我将废墟收集到残留之物整理了起来并存储在这里，这里你可以了解到我的故事以及更早的历史。\n如果你只是想了解暗影，那很可惜了，这类资料被销毁或则藏匿。它很危险，无论如何都不要接触它。\n当然，我留有保险。（笑脸）\nBy 卡莱");
+        add("book.pasterdream.content.无翼鸟也有展翅的梦", "像鸟儿一样飞翔，算是我从小以来就有的一个梦想。\n我想看看在云端之上俯瞰大地的模样，我想知道会不会和童话故事一样，有着遨游云海的神龙，迁移的飞鸟......\n或者......悬浮在天空的......城堡......以及......zzz......\n当我从梦乡中醒来之后，感觉自己身体轻飘飘的？背后有一阵风把我吹了起来，脚下的教堂也有一半变成了青绿色，还有......睡觉前没吃完的迷梦炖菜撒在了地上......呜呜。\n收拾好后我便踏出了教堂的门，抬头仰望更高的天空......\n如果我有办法能够飞上去的话......\nBy 琴雨梦");
         add("book.pasterdream.content.破风的骑士", "古希腊风格建筑的残垣断壁，围绕成一个圆环的神庙，在这中心供奉着一个并不起眼的祭坛。\n是用来求雨？还是期望能预测风的方向？还是供奉自己的守护神？\n我靠近处于中心的那个半砖状祭坛蹲下，发现在祭坛中间留有一个黑色的洞，里面竖放着一张圈起的纸条。\n上面画着一些潦草的图案，还有数字标号的顺序。一块蓝色的水晶，还有3个类似金属制成的盔甲。\n以及这张纸最下面的一行写着\n“破风的骑士”将驱逐其守护之物以外的一切......\nBy 琴雨梦");
         add("book.pasterdream.content.清晨的新风", "这是新的一天的开始，也是新的风向的到来。\n伴随着风铃的声音，飘落的羽毛，以及从东方升起的旭光。\n风是属于这里的恩赐，顺应风的方向将是我们探索的助力，而逆风将可能使我们寸步难行。\n风不仅指引我们旅途的方向，也是一种特殊的钥匙。\n风只会在新的一天到来的时候再度吹拂，无法通过任何方式预言。\n如果错过了清晨风的指引，或是在这个梦境之外无法用身体去感受风向，那么，风向标可以跨越现实与梦来告诉你当今的风向。\n以及在这里散落的一些宝藏，将可以改变风对我们的影响。\n还有许多风的秘密......也许风会在某时某刻向我们揭晓。\nBy 琴雨梦");
         add("book.pasterdream.content.魔法使的记录-其一", "粉红，飞花，云彩，以及各种仅仅存在于幻想中的建筑，这个世界的一切就像一位少女的所有梦幻的具现。\n这么说来，这个世界确确实实是梦境没错，安宁，惬意，简直就是最美好的美梦......\n不过，即使这是梦境，我的习惯依然引导着我向自己提出了几个问题：如此美丽的世界是从何而来？那些神秘的建筑是出自何人之手？以及...我所感受到的奇妙感觉是从何而来？\n搞清楚这些，我或许能掌握更多的秘辛，学习更多的魔法。\n多么奇妙的世界啊，真是诱人，这个世界的所有谜题都在引诱我探求真相。\nBy 绫苒");
@@ -1173,7 +1178,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.WORLDTREE_SEEDPOD.get(), "世界树种荚");
         add(ModItems.GARLAND.get(), "花环");
         add(ModItems.WIND_SPIRIT.get(), "风精灵");
-        add("tooltip.pasterdream.wind_spirit.effect1", "§7▪ §9佩戴后，玩家发射的弹射物速度提高50%");
+        add("attribute.pasterdream.arrow_velocity", "箭矢速度");
         add(ModItems.REST_ICON.get(), "休憩图标");
         add(ModItems.CHEER_UP_ICON.get(), "振奋图标");
         add(ModItems.LETHARGY_ICON.get(), "不振图标");
@@ -1224,6 +1229,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.kaichu_omamori.hotkey", "§7▪ §9按下 §e%s §9释放狐火立场");
         add("tooltip.pasterdream.kaichu_omamori.flavor", "§o§7 -- Alirea定制物品");
         add("key.pasterdream.kaichu_omamori", "激活怀中御守");
+        add("key.pasterdream.cloak_activate", "启用衣装");
 
         add(ModItems.ALLKINDS_RING.get(), "万象神戒");
         add("tooltip.pasterdream.allkinds_ring.flavor", "§7§o聚万象之力 铸以此戒");
@@ -1340,6 +1346,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.confusion", "混乱");
         add("effect.pasterdream.insane", "疯狂");
         add("effect.pasterdream.evasion", "回避");
+        add("effect.pasterdream.turnback_cloak", "转身衣装");
         add("effect.pasterdream.blink_cooldown", "瞬身术冷却");
         add("effect.pasterdream.dyedream_perfume", "染梦香水");
         add("effect.pasterdream.goldenrod_tea", "秋麒麟茶");
@@ -1363,6 +1370,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("attribute.pasterdream.max_melt_dream_energy_extra", "融梦能量上限加成");
         add("attribute.pasterdream.melt_dream_variability", "融梦光环");
         add("subtitles.pasterdream.evasion", "瞬身术: 回避");
+        add("subtitles.pasterdream.cloak", "衣装展开");
 
         // 低San效果指令
         add("command.pasterdream.lowsan.overlay", "低San屏幕覆盖层");
@@ -1429,7 +1437,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.shadow_sword.skill_desc3", "§7▪ §9精神值消耗：5，不足则消耗5生命值，不致死");
         add("tooltip.pasterdream.shadow_sword.passive_name", "被动：§5影之疯狂");
         add("tooltip.pasterdream.shadow_sword.desc1", "§7▪ §9精神值越低伤害和攻速越高");
-        add("tooltip.pasterdream.shadow_sword.desc2", "§7▪ §9最高+75%攻击力和50%攻速");
+        add("tooltip.pasterdream.shadow_sword.desc2", "§7▪ §9最高+75%最终伤害和50%攻速");
         add("message.pasterdream.shadow_sword.san_disabled", "§c影刃拒绝了你");
         add("message.pasterdream.shadow_sword.no_talent", "未选择<暗影> 无法使用此剑");
 
@@ -1579,6 +1587,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.melt_dream_energy_ring.effect1", "§7▪ §9融梦能量+0.3/min");
         add("effect.pasterdream.counter_attack", "反击");
         add("effect.pasterdream.memento", "寻梦者的祈愿");
+
+        // 转身衣装
+        add("tooltip.pasterdream.turnback_cloak.hotkey", "§7▪ §9默认按 §e%s §9启用衣装");
+        add("tooltip.pasterdream.turnback_cloak.effect1", "§7▪ §9衣装启用后可以在90秒内自动回避6次伤害");
+        add("tooltip.pasterdream.turnback_cloak.effect2", "§7▪ §9成功回避伤害后获得 反击I (0:10)");
+        add("tooltip.pasterdream.turnback_cloak.cooldown", "§7▪ §9冷却时间：300秒");
+        add("tooltip.pasterdream.turnback_cloak.energy_cost", "§7▪ §9融梦能量消耗：§c10");
 
         // 战争旗帜
         add(ModItems.WAR_FLAG.get(), "战争旗帜");
@@ -1892,7 +1907,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("pasterdream.seniors_dream.category.rules", "机制介绍");
         add("pasterdream.seniors_dream.category.rules.desc", "本篇介绍模组中的机制");
         add("pasterdream.seniors_dream.category.rules_shadow_difficulty", "暗影难度系统");
-        add("pasterdream.seniors_dream.category.rules_shadow_difficulty.desc", "随着你在疯狂的泥潭中越陷越深，阴影中的存在也开始注意到你。它们并非幻觉——当你的精神防线足够薄弱时，暗影生物便会在你周围的黑暗中显形。你的理智越是不堪一击，它们出现得就越频繁，种类也越是可怖。$(br2)--暗影侵袭");
+        add("pasterdream.seniors_dream.category.rules_shadow_difficulty.desc", "随着你在疯狂的泥潭中越陷越深，阴影中的存在也开始注意到你。它们并非幻觉——当你的精神防线足够薄弱时，暗影生物便会在你周围的黑暗中显形。你的理智越是不堪一击，它们出现得就越频繁，种类也越是可怖。$(br)--暗影侵袭");
 
         // 融梦能量
         add("pasterdream.seniors_dream.entry.meltdream", "融梦能量");
@@ -1905,10 +1920,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("pasterdream.seniors_dream.entry.san", "san值");
         add("pasterdream.seniors_dream.entry.san.page0", "或许你也已经注意到了，在你屏幕的右下角有一个大脑一样的图标，即为san值。");
         add("pasterdream.seniors_dream.entry.san.page1", "san值界面展示。");
-        add("pasterdream.seniors_dream.entry.san.page2", "san值效果影响：$(br)san>=90%% 获得振奋$(br)san<=60%% 获得不振$(br)san<=40%% 获得恍惚$(br)san<=20%% 获得疯狂I$(br)san<=10%% 获得疯狂II$(br)san<=1%%  获得疯狂III$(br2)每个buff的详细效果请自行查阅对应的章节");
+        add("pasterdream.seniors_dream.entry.san.page2", "san值效果影响：$(br)san>=90%% 获得振奋$(br)san<=60%% 获得不振$(br)san<=40%% 获得恍惚$(br)san<=20%% 获得疯狂I$(br)san<=10%% 获得疯狂II$(br)san<=1%%  获得疯狂III$(br)每个buff的详细效果请自行查阅对应的章节");
         add("pasterdream.seniors_dream.entry.san.page3", "环境带来的san值变化：$(br)san的变化受到群系类型和光照强度的影响，计算公式为：$(br)总变化率 = (理智光环 / 1200) + 群系影响 + (光照等级 - 7) * 0.0001");
-        add("pasterdream.seniors_dream.entry.san.page4", "群系的影响主要表现为：$(br)在深暗之域和灯影之下的群系会降低玩家san值；$(br)在染梦世界的群系会提升玩家的san值；$(br)在其他群系不会产生强干扰。$(br2)理智光环为n则代表玩家在除开其它影响（群系影响和光照等级）的条件下一分钟内会增加n点理智。");
-        add("pasterdream.seniors_dream.entry.san.page5", "其他掉san的情况：$(br)处于阴影生物的疯狂光环下；$(br)手持带有疯狂光环的物品；$(br)某些物品的技能也会消耗san值。$(br2)主动恢复san值的方法：$(br)使用特定物品或食物；$(br)装备带有理智光环的饰品；$(br)拥有料理和休憩buff；$(br)让自己处于亮度较高的环境。");
+        add("pasterdream.seniors_dream.entry.san.page4", "群系的影响主要表现为：$(br)在深暗之域和灯影之下的群系会降低玩家san值；$(br)在染梦世界的群系会提升玩家的san值；$(br)在其他群系不会产生强干扰。$(br)理智光环为n则代表玩家在除开其它影响（群系影响和光照等级）的条件下一分钟内会增加n点理智。");
+        add("pasterdream.seniors_dream.entry.san.page5", "其他掉san的情况：$(br)处于阴影生物的疯狂光环下；$(br)手持带有疯狂光环的物品；$(br)某些物品的技能也会消耗san值。$(br)主动恢复san值的方法：$(br)使用特定物品或食物；$(br)装备带有理智光环的饰品；$(br)拥有料理和休憩buff；$(br)让自己处于亮度较高的环境。");
         add("pasterdream.seniors_dream.entry.san.page6", "与san值相关的部分物品展示。");
 
         // 瞬身术
@@ -1960,7 +1975,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 狱炎剑
         add("pasterdream.seniors_dream.entry.inferno_sword", "『融骸』狱炎剑");
         add("pasterdream.seniors_dream.entry.inferno_sword.page0", "利用远古残骸，配上烈焰粉和炙焰金块来强化炙焰金剑后，便将它升级成狱炎剑。它的锋利程度和钻石剑不相上下，而它也会给予敌人长时间的烈焰炙烤，如果敌人原本就在承受着火焰的灼烧，那么，这把剑会延长他们受到折磨的时间。");
-        add("pasterdream.seniors_dream.entry.inferno_sword.page1", "强化后，这把剑获名『融骸』，它变得更加轻便，使用者可以主动释放战技，让这把剑获得「融骸斩击」，使它下一击更致命，如果敌人将会受到长时间的火焰灼烧，融骸斩击还会熄灭他们身上的火焰，让他们的行动更加迟缓。$(br2)——浴身于战火，铸炼于战砧。");
+        add("pasterdream.seniors_dream.entry.inferno_sword.page1", "强化后，这把剑获名『融骸』，它变得更加轻便，使用者可以主动释放战技，让这把剑获得「融骸斩击」，使它下一击更致命，如果敌人将会受到长时间的火焰灼烧，融骸斩击还会熄灭他们身上的火焰，让他们的行动更加迟缓。$(br)——浴身于战火，铸炼于战砧。");
 
         // 草薙
         add("pasterdream.seniors_dream.entry.kusanagi", "『天丛云』草薙");
@@ -1975,17 +1990,17 @@ public class ModZhCnLangProvider extends LanguageProvider {
         // 朔漠
         add("pasterdream.seniors_dream.entry.desert_sword", "『沉荆门』朔漠");
         add("pasterdream.seniors_dream.entry.desert_sword.page0", "埋葬于荒漠的战士并未安息，现在，该你去完成他的遗志了。满足他的遗愿后，他会帮你释放朔漠大剑的全部力量，这把古老的英雄之剑也恢复了它的真名——『沉荆门』朔漠，它不仅恢复了以往的锋利，还可以赋予它的持有者「绝地反击」的能力。");
-        add("pasterdream.seniors_dream.entry.desert_sword.page1", "启动绝地反击后，你会短暂获得更多的生命来忍受攻击，而你受的伤越多，你接下来的反击一刀将会越致命。$(br2)——回首妖氛未扫，问人间、英雄何处？");
+        add("pasterdream.seniors_dream.entry.desert_sword.page1", "启动绝地反击后，你会短暂获得更多的生命来忍受攻击，而你受的伤越多，你接下来的反击一刀将会越致命。$(br)——回首妖氛未扫，问人间、英雄何处？");
 
         // 深海秘宝
         add("pasterdream.seniors_dream.entry.deep_sea_treasure", "深海秘宝");
         add("pasterdream.seniors_dream.entry.deep_sea_treasure.page0", "当你在各个维度钓鱼时，有时会发现这种精致的小箱子，打开它会有一些小宝藏，而你的幸运程度则会影响开出的宝藏稀有度。另外，有些秘宝似乎散发着光芒，看样子里面的宝藏也不一般。除了一些常规的物品外，据说还有一把来自深海的武器，以及一些源于梦中的珍藏。");
-        add("pasterdream.seniors_dream.entry.deep_sea_treasure.page1", "或许，可以试试去梦里钓一钓好运？$(br2)——融梦于海，等等，什么叫开出来了一只美西螈？");
+        add("pasterdream.seniors_dream.entry.deep_sea_treasure.page1", "或许，可以试试去梦里钓一钓好运？$(br)——融梦于海，等等，什么叫开出来了一只美西螈？");
 
         // 热能匕首
         add("pasterdream.seniors_dream.entry.thermal_dagger", "热能匕首");
         add("pasterdream.seniors_dream.entry.thermal_dagger.page0", "当你打开深海秘宝时，有可能会获得这种奇怪的小匕首，当主手持有这把匕首时，你的游泳速度会更快。这把匕首的速度和锋利度都略胜铁剑一筹，有趣的是，你拿这把武器去攻击敌人时，会有滋滋冒油的炙烤声。");
-        add("pasterdream.seniors_dream.entry.thermal_dagger.page1", "过去曾有天外来客坠落在海洋中，在迷航中寻求回家的道路，这把奇特的匕首想必就是出自于那位天外来客之手。$(br2)——温馨提示：本匕首并不能拿去单挑死神利维坦，离开海洋请自查是否感染卡拉病毒。");
+        add("pasterdream.seniors_dream.entry.thermal_dagger.page1", "过去曾有天外来客坠落在海洋中，在迷航中寻求回家的道路，这把奇特的匕首想必就是出自于那位天外来客之手。$(br)——温馨提示：本匕首并不能拿去单挑死神利维坦，离开海洋请自查是否感染卡拉病毒。");
 
         // 福灵果冻
         add("pasterdream.seniors_dream.entry.fortune_jelly", "福灵果冻");
@@ -1994,27 +2009,27 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         // 研钵
         add("pasterdream.seniors_dream.entry.mortar", "研钵");
-        add("pasterdream.seniors_dream.entry.mortar.page0", "古代的炼金术士用研钵这种工具来辅助他们炼制药剂，帮助他们追求点石成金的第五元素。当然，无需研究炼金术的你可以用这种工具制作一些存在于梦境中的染料。$(br2)你可以在研钵里存入液体。在液体区域右键存入液体，左键取出液体。你需要把它放在工作台上来制作染梦染料和其他可以用研钵制作的东西。制作完成后，研钵可以回收，但是研钵里存储的液体会被消耗");
+        add("pasterdream.seniors_dream.entry.mortar.page0", "古代的炼金术士用研钵这种工具来辅助他们炼制药剂，帮助他们追求点石成金的第五元素。当然，无需研究炼金术的你可以用这种工具制作一些存在于梦境中的染料。$(br)你可以在研钵里存入液体。在液体区域右键存入液体，左键取出液体。你需要把它放在工作台上来制作染梦染料和其他可以用研钵制作的东西。制作完成后，研钵可以回收，但是研钵里存储的液体会被消耗");
         add("pasterdream.seniors_dream.entry.mortar.page1", "——过去的人们用它来追寻太一之奇迹，而现在行于梦幻的人们用它来提纯梦境的神秘");
 
         // 精铸工坊
         add("pasterdream.seniors_dream.entry.weapon_workshop", "精铸工坊");
-        add("pasterdream.seniors_dream.entry.weapon_workshop.page0", "随着工具的升级，你的工作台慢慢开始难以胜任工具制作的任务。于是，你将目光转向村庄中铁匠铺的设备，不过你似乎无法将其复现……$(br2)或许，你需要稍稍破费一下，和村庄的工具匠多交易几次，等到他成为了大师后，应该就会愿意卖给你精铸工坊的搭建蓝图了吧。$(br2)另外，通过这种工坊，似乎还可以利用你找到的强化石。");
+        add("pasterdream.seniors_dream.entry.weapon_workshop.page0", "随着工具的升级，你的工作台慢慢开始难以胜任工具制作的任务。于是，你将目光转向村庄中铁匠铺的设备，不过你似乎无法将其复现……$(br)或许，你需要稍稍破费一下，和村庄的工具匠多交易几次，等到他成为了大师后，应该就会愿意卖给你精铸工坊的搭建蓝图了吧。$(br)另外，通过这种工坊，似乎还可以利用你找到的强化石。");
         add("pasterdream.seniors_dream.entry.weapon_workshop.page1", "——早在中世纪就存在这种设备和技术，虽然古老，但是它们足够我用来打造更强大的工具了。");
 
         // 染梦空岛
         add("pasterdream.seniors_dream.entry.dyedream_sky_island", "染梦空岛");
-        add("pasterdream.seniors_dream.entry.dyedream_sky_island.page0", "初来之时，你会在主世界发现这种粉红色的空岛，它的存在似乎有那么一些不合理，就像是……梦一般。登上这座岛，就能看到一道奇怪的裂隙。第一次接触没有直接反应，但会让你做一个奇怪的梦。醒来后，你发现有一份笔记神秘地出现在你的口袋里，你或许应当在阅读完这份神秘的笔记后，重新去触碰那道裂隙……$(br2)——如果说这座空岛就是梦境力量的映射，那当穿过裂隙，我究竟身处的是「现实」还是「梦境」？");
+        add("pasterdream.seniors_dream.entry.dyedream_sky_island.page0", "初来之时，你会在主世界发现这种粉红色的空岛，它的存在似乎有那么一些不合理，就像是……梦一般。登上这座岛，就能看到一道奇怪的裂隙。第一次接触没有直接反应，但会让你做一个奇怪的梦。醒来后，你发现有一份笔记神秘地出现在你的口袋里，你或许应当在阅读完这份神秘的笔记后，重新去触碰那道裂隙……$(br)——如果说这座空岛就是梦境力量的映射，那当穿过裂隙，我究竟身处的是「现实」还是「梦境」？");
         add("pasterdream.seniors_dream.entry.dyedream_sky_island.page1", "");
 
         // 失落剑冢
         add("pasterdream.seniors_dream.entry.the_lost_sword_tomb", "失落剑冢");
-        add("pasterdream.seniors_dream.entry.the_lost_sword_tomb.page0", "失落剑冢是一个只能在丛林群系发现的结构，中间有一把插在石头里面的石中剑，需要用大力出奇迹的方法才能拔出来，除非……$(br2)获取到的失落之剑可以赋予丛林的力量升级为草薙，不过这柄剑似乎有点嗜杀，试着满足它，也许可以引出它所没表现出来的更多强大力量……");
+        add("pasterdream.seniors_dream.entry.the_lost_sword_tomb.page0", "失落剑冢是一个只能在丛林群系发现的结构，中间有一把插在石头里面的石中剑，需要用大力出奇迹的方法才能拔出来，除非……$(br)获取到的失落之剑可以赋予丛林的力量升级为草薙，不过这柄剑似乎有点嗜杀，试着满足它，也许可以引出它所没表现出来的更多强大力量……");
         add("pasterdream.seniors_dream.entry.the_lost_sword_tomb.page1", "");
 
         // 渔夫小屋
         add("pasterdream.seniors_dream.entry.fisherman_hut", "渔夫小屋");
-        add("pasterdream.seniors_dream.entry.fisherman_hut.page0", "在主世界的沙滩群系，你有时会发现这种渔夫小屋，这是离开村庄，独自在海边谋生的渔夫村民的家。你可以在屋子里的宝箱找到渔夫村民在海中打捞出来的宝藏。$(br2)当然，有时候里面也会有深海秘宝，或许渔夫不知道怎么打开，所以只是珍藏着，真是买椟还珠。");
+        add("pasterdream.seniors_dream.entry.fisherman_hut.page0", "在主世界的沙滩群系，你有时会发现这种渔夫小屋，这是离开村庄，独自在海边谋生的渔夫村民的家。你可以在屋子里的宝箱找到渔夫村民在海中打捞出来的宝藏。$(br)当然，有时候里面也会有深海秘宝，或许渔夫不知道怎么打开，所以只是珍藏着，真是买椟还珠。");
         add("pasterdream.seniors_dream.entry.fisherman_hut.page1", "——我相信他们一定有着其他理由才会独自来到海边生活，或许，这片深海里还有更深的秘密。");
 
         // 沙漠遗迹
@@ -2036,7 +2051,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("pasterdream.seniors_dream.category.foretold_dream_buffs.desc", "模组中新增的buff效果。");
 
         add("pasterdream.seniors_dream.entry.rest", "休憩");
-        add("pasterdream.seniors_dream.entry.rest.page0", "休憩是一种可以为玩家逐渐恢复san值的buff效果，每级增加1.2理智光环。$(br2)通过在原版的床上躺下、身处娇小琴雨梦玩偶或者营火附近，玩家都可以获得该buff。");
+        add("pasterdream.seniors_dream.entry.rest.page0", "休憩是一种可以为玩家逐渐恢复san值的buff效果，每级增加1.2理智光环。$(br)通过在原版的床上躺下、身处娇小琴雨梦玩偶或者营火附近，玩家都可以获得该buff。");
 
         add("pasterdream.seniors_dream.entry.cheer_up", "振奋");
         add("pasterdream.seniors_dream.entry.cheer_up.page0", "当玩家san值>=90%%时获得的buff效果，具体效果为：$(br)瞬身术冷却时间-10%%；$(br)移动速度+0.05；$(br)攻击速度+0.05；$(br)技能冷却时间-10%%。");
@@ -2084,19 +2099,19 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         // 染梦世间-方块与物品
         add("pasterdream.seniors_dream.entry.melt_dream_crystal_chest", "融梦水晶箱");
-        add("pasterdream.seniors_dream.entry.melt_dream_crystal_chest.page0", "在你探索这个梦境的各个结构时，经常会发现这种精致的小箱子，你只需要和它互动，箱子就会自行开启。你也许会注意到，箱子震动的次数越多，开出来的战利品越好，或许你应该想办法让自己更幸运，然后来开一开箱子。$(br2)据说梦中有一种特殊的工具，可以凝聚来自你身上的染梦力量，为打开的融梦水晶箱重新填满宝藏……");
+        add("pasterdream.seniors_dream.entry.melt_dream_crystal_chest.page0", "在你探索这个梦境的各个结构时，经常会发现这种精致的小箱子，你只需要和它互动，箱子就会自行开启。你也许会注意到，箱子震动的次数越多，开出来的战利品越好，或许你应该想办法让自己更幸运，然后来开一开箱子。$(br)据说梦中有一种特殊的工具，可以凝聚来自你身上的染梦力量，为打开的融梦水晶箱重新填满宝藏……");
         add("pasterdream.seniors_dream.entry.melt_dream_crystal_chest.page1", "——融梦水晶箱不会变成宝箱怪，也不会有传送陷阱，放心开吧。");
 
         add("pasterdream.seniors_dream.entry.melt_dream_crystal_fragment", "融梦水晶碎片");
-        add("pasterdream.seniors_dream.entry.melt_dream_crystal_fragment.page0", "凝聚了巨大梦境力量的水晶散落于梦境各地，比如染梦世界树，逐梦列车中。当然，某些箱子里偶尔也能发现这种碎片。$(br2)这种碎片不仅可以镶嵌在染梦合金的工具上，将后者强化为融梦工具，而且可以放置下来，变成一个水晶簇状的小实体。或许，你需要用它来触及梦境中无比深沉的黑暗……");
+        add("pasterdream.seniors_dream.entry.melt_dream_crystal_fragment.page0", "凝聚了巨大梦境力量的水晶散落于梦境各地，比如染梦世界树，逐梦列车中。当然，某些箱子里偶尔也能发现这种碎片。$(br)这种碎片不仅可以镶嵌在染梦合金的工具上，将后者强化为融梦工具，而且可以放置下来，变成一个水晶簇状的小实体。或许，你需要用它来触及梦境中无比深沉的黑暗……");
         add("pasterdream.seniors_dream.entry.melt_dream_crystal_fragment.page1", "——蕴含着巨大能量的水晶碎片，似乎可以用它来更好地利用梦境的力量，或者……");
 
         add("pasterdream.seniors_dream.entry.qym_doll", "娇小琴雨梦玩偶");
-        add("pasterdream.seniors_dream.entry.qym_doll.page0", "有时你打开融梦水晶箱时，会发现这么一种软乎乎的玩偶，它参照着那位最早的寻梦少女形象而设计出来，极其可爱的外观让你能在这个玩偶周围感到轻松，从而有效缓解你的精神压力。$(br2)当然，你也可以和玩偶互动(rua)，每一次互动之后，你的精神压力都会减少一点。");
+        add("pasterdream.seniors_dream.entry.qym_doll.page0", "有时你打开融梦水晶箱时，会发现这么一种软乎乎的玩偶，它参照着那位最早的寻梦少女形象而设计出来，极其可爱的外观让你能在这个玩偶周围感到轻松，从而有效缓解你的精神压力。$(br)当然，你也可以和玩偶互动(rua)，每一次互动之后，你的精神压力都会减少一点。");
         add("pasterdream.seniors_dream.entry.qym_doll.page1", "——这是什么？可爱捏，rua一下。");
 
         add("pasterdream.seniors_dream.entry.galaxy_jelly", "星河果冻");
-        add("pasterdream.seniors_dream.entry.galaxy_jelly.page0", "这种奇怪的小果冻会在被你食用之后让你“嗖”地一下飞起来，当然，你不用担心会摔死，它会给予你缓降效果，能保证你安全落地，总而言之，这是一个探索梦境，翻山越岭的家庭必备好帮手。$(br2)注意：严禁连续食用，否则有摔死的风险。");
+        add("pasterdream.seniors_dream.entry.galaxy_jelly.page0", "这种奇怪的小果冻会在被你食用之后让你“嗖”地一下飞起来，当然，你不用担心会摔死，它会给予你缓降效果，能保证你安全落地，总而言之，这是一个探索梦境，翻山越岭的家庭必备好帮手。$(br)注意：严禁连续食用，否则有摔死的风险。");
         add("pasterdream.seniors_dream.entry.galaxy_jelly.page1", "——仰望天空，不禁让人感叹星河广阔神秘。我虽不是嫦娥可以一步登天，但我愿意成为万户，行走在追逐星河的路上。");
 
         add("pasterdream.seniors_dream.entry.life_crystal", "生命水晶");
@@ -2104,43 +2119,43 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("pasterdream.seniors_dream.entry.life_crystal.page1", "——Heart Breaker");
 
         add("pasterdream.seniors_dream.entry.machine_light_wing", "机械光翼");
-        add("pasterdream.seniors_dream.entry.machine_light_wing.page0", "当你好奇地装上这双从融梦水晶箱中获得的翅膀时，它会立刻吸收你的融梦能量并让你浮空，而且它会不断让你维持飞行状态。除非你的能量耗尽或者是摘下它，否则它可不会让你安稳地踩在地面上。$(br2)虽说大家都想要一双飞行的翅膀，但是这对光翼的能量消耗速度实在太快，还是必要时再使用吧。");
+        add("pasterdream.seniors_dream.entry.machine_light_wing.page0", "当你好奇地装上这双从融梦水晶箱中获得的翅膀时，它会立刻吸收你的融梦能量并让你浮空，而且它会不断让你维持飞行状态。除非你的能量耗尽或者是摘下它，否则它可不会让你安稳地踩在地面上。$(br)虽说大家都想要一双飞行的翅膀，但是这对光翼的能量消耗速度实在太快，还是必要时再使用吧。");
         add("pasterdream.seniors_dream.entry.machine_light_wing.page1", "——三叶草：你双脚离地了，对吧？");
 
         add("pasterdream.seniors_dream.entry.qym_armor_set", "琴雨梦套装");
         add("pasterdream.seniors_dream.entry.qym_armor_set.page0", "这些是过去曾经属于那位追寻梦幻的少女的随身物品，穿戴上这些衣物时，一股梦幻般的感觉游走在你的身体内，你或许可以永远保持清醒，或许会获得无穷无尽的染梦能量，或许可以自由自在地在天空飞翔。");
-        add("pasterdream.seniors_dream.entry.qym_armor_set.page1", "而你穿上全部套装后，还会在梦境中自行闪避所有针对你的攻击，不过，如果你以凡人之躯行于大地的话，是没有办法获得这位前辈寻梦者的随身物品的，你或许需要足以创造万物的神明之力……$(br2)——最初的寻梦少女沉眠于长虹中，静待后来的入梦之人探寻未知。");
+        add("pasterdream.seniors_dream.entry.qym_armor_set.page1", "而你穿上全部套装后，还会在梦境中自行闪避所有针对你的攻击，不过，如果你以凡人之躯行于大地的话，是没有办法获得这位前辈寻梦者的随身物品的，你或许需要足以创造万物的神明之力……$(br)——最初的寻梦少女沉眠于长虹中，静待后来的入梦之人探寻未知。");
 
         add("pasterdream.seniors_dream.entry.pale_boneneedle", "苍白骨针");
-        add("pasterdream.seniors_dream.entry.pale_boneneedle.page0", "你在雪山上发现了一种具有强烈香气的苍白雪莲，这种香气具有明显的提神效果。已经成为寻梦者，曾经在梦中迷失的你想到一个妙计，将苍白雪莲的花冠和骨质针具绑在一起，剧烈的疼痛和香气的刺激想必能让你迅速清醒，离开梦境。$(br2)而如果把来自末地的珍珠和古城的回响融入到苍白骨针中，也许会有奇效……");
+        add("pasterdream.seniors_dream.entry.pale_boneneedle.page0", "你在雪山上发现了一种具有强烈香气的苍白雪莲，这种香气具有明显的提神效果。已经成为寻梦者，曾经在梦中迷失的你想到一个妙计，将苍白雪莲的花冠和骨质针具绑在一起，剧烈的疼痛和香气的刺激想必能让你迅速清醒，离开梦境。$(br)而如果把来自末地的珍珠和古城的回响融入到苍白骨针中，也许会有奇效……");
         add("pasterdream.seniors_dream.entry.pale_boneneedle.page1", "——无论梦幻是洁净的染梦还是深邃的阴影，梦醒之时，我们将会重逢。");
 
         add("pasterdream.seniors_dream.entry.dyedream_perfume", "染梦香水");
-        add("pasterdream.seniors_dream.entry.dyedream_perfume.page0", "在染梦的梦境中，地上的植物吸引了你的注意力，那香气让你有了一种新思路：或许可以把它们收集起来，用它们制作香水……$(br2)当你饮用这独特的饮料后，一定时间内幻翼不会来打扰你，并且梦境的力量让你就像睡了一觉一样，接下来几天都不会有幻翼像苍蝇一样飞在你头顶了……");
+        add("pasterdream.seniors_dream.entry.dyedream_perfume.page0", "在染梦的梦境中，地上的植物吸引了你的注意力，那香气让你有了一种新思路：或许可以把它们收集起来，用它们制作香水……$(br)当你饮用这独特的饮料后，一定时间内幻翼不会来打扰你，并且梦境的力量让你就像睡了一觉一样，接下来几天都不会有幻翼像苍蝇一样飞在你头顶了……");
         add("pasterdream.seniors_dream.entry.dyedream_perfume.page1", "——Q：为什么要喝香水？A：你都在做梦了就不要考虑这些小事了~");
 
         // 大地之刃
         add("pasterdream.seniors_dream.entry.terra_blade", "大地之刃");
-        add("pasterdream.seniors_dream.entry.terra_blade.page0", "当你在现实与炼狱中获得了八把古代遗存之物所制造的剑后，你或许有一种其他办法来让它们发挥更大的作用……$(br2)这八把剑与梦境中的涌泉合而为一的神剑——大地之刃，具有极致的伤害和不菲的力量，你可以在融梦能量充足时开启剑气状态，每一次斩击都会释放出无比致命的剑气来杀死远处的敌人，当然，记得随时关注你的融梦能量……");
+        add("pasterdream.seniors_dream.entry.terra_blade.page0", "当你在现实与炼狱中获得了八把古代遗存之物所制造的剑后，你或许有一种其他办法来让它们发挥更大的作用……$(br)这八把剑与梦境中的涌泉合而为一的神剑——大地之刃，具有极致的伤害和不菲的力量，你可以在融梦能量充足时开启剑气状态，每一次斩击都会释放出无比致命的剑气来杀死远处的敌人，当然，记得随时关注你的融梦能量……");
         add("pasterdream.seniors_dream.entry.terra_blade.page1", "——此身剑所天成，数剑合一，铸为英雄之刃。");
 
         // 银河果冻
         add("pasterdream.seniors_dream.entry.milky_way_jelly", "银河果冻");
         add("pasterdream.seniors_dream.entry.milky_way_jelly.page0", "或许终有一天，你需要以凡人之躯跨越某些常规办法下无法逾越的天险，登顶世界的顶层，而原本从染梦世界中获得的星河果冻性能显然不太好，这时，你将目光放到了染梦世界的云朵和现实的羽毛上……");
-        add("pasterdream.seniors_dream.entry.milky_way_jelly.page1", "当你食用了这块全新的果冻后，会有一股力量将你送到世界的顶层，并赋予你缓降效果，让你慢慢落地，这样一来，某些难以跨越的屏障想必也无法阻挡你了。$(br2)——当大地不再是人类的阻碍，星海便是我们的目标");
+        add("pasterdream.seniors_dream.entry.milky_way_jelly.page1", "当你食用了这块全新的果冻后，会有一股力量将你送到世界的顶层，并赋予你缓降效果，让你慢慢落地，这样一来，某些难以跨越的屏障想必也无法阻挡你了。$(br)——当大地不再是人类的阻碍，星海便是我们的目标");
 
         // 衍梦肥泥
         add("pasterdream.seniors_dream.entry.dream_fertilizer", "衍梦肥泥");
-        add("pasterdream.seniors_dream.entry.dream_fertilizer.page0", "你在这个梦境发现了独有的粉色史莱姆后，你应该设法从它的身上获得一种粉色的史莱姆球，并试着把粉色史莱姆球和骨粉块放在一起进行研磨，似乎可以获得一种软泥……$(br2)这种软泥对于任何作物，哪怕是梦境中生长的作物，都有很强的催熟作用。它衍生于梦境，所以被命名为衍梦肥泥，希望它可以庇佑你的作物蓬勃生长。");
+        add("pasterdream.seniors_dream.entry.dream_fertilizer.page0", "你在这个梦境发现了独有的粉色史莱姆后，你应该设法从它的身上获得一种粉色的史莱姆球，并试着把粉色史莱姆球和骨粉块放在一起进行研磨，似乎可以获得一种软泥……$(br)这种软泥对于任何作物，哪怕是梦境中生长的作物，都有很强的催熟作用。它衍生于梦境，所以被命名为衍梦肥泥，希望它可以庇佑你的作物蓬勃生长。");
         add("pasterdream.seniors_dream.entry.dream_fertilizer.page1", "——至少粉色史莱姆不会保佑你……但是是从人家尸体上拿到的史莱姆球，所以也可以视为粉色史莱姆在保佑你的作物。");
 
         // 蓄梦池
         add("pasterdream.seniors_dream.entry.dream_accumulator", "蓄梦池");
-        add("pasterdream.seniors_dream.entry.dream_accumulator.page0", "在地下实验室，你可以找到这种小巧的仪器。它缓慢地汇聚着周围的空气，让它们沉到池底，似乎需要给它一些时间。不过在前辈的实验室中，还有一种吸附剂材料。加入仪器后，仪器周围以更快的速度凝聚空气中的尘埃。这种尘埃最终会凝聚成染梦粉尘，一种重要的合成材料。$(br2)把仪器带回现实世界之后，仪器的效率会大打折扣，不过，它依旧能缓慢捕捉现实世界的梦境能量，虽然缓慢，但聊胜于无吧。");
+        add("pasterdream.seniors_dream.entry.dream_accumulator.page0", "在地下实验室，你可以找到这种小巧的仪器。它缓慢地汇聚着周围的空气，让它们沉到池底，似乎需要给它一些时间。不过在前辈的实验室中，还有一种吸附剂材料。加入仪器后，仪器周围以更快的速度凝聚空气中的尘埃。这种尘埃最终会凝聚成染梦粉尘，一种重要的合成材料。$(br)把仪器带回现实世界之后，仪器的效率会大打折扣，不过，它依旧能缓慢捕捉现实世界的梦境能量，虽然缓慢，但聊胜于无吧。");
 
         // 寻梦者笔记
         add("pasterdream.seniors_dream.entry.dream_notes_dyedream_world", "寻梦者笔记");
-        add("pasterdream.seniors_dream.entry.dream_notes_dyedream_world.page0", "你并非第一个进入梦境的寻梦者，在你之前有多位前辈曾踏入梦境之中。在梦中的各个角落，你可以找到他们留下的笔记，有些笔记是他们亲笔写就，也有一些笔记是梦境将他们的所见具现成文。有些笔记只是他们的心事或者碎碎念，但有一些则记载了梦境中更深层的隐秘。$(br2)如果是想要更进一步追寻梦境的秘辛的话，或许你应该搜寻一下这些笔记，并好好阅读一下？");
+        add("pasterdream.seniors_dream.entry.dream_notes_dyedream_world.page0", "你并非第一个进入梦境的寻梦者，在你之前有多位前辈曾踏入梦境之中。在梦中的各个角落，你可以找到他们留下的笔记，有些笔记是他们亲笔写就，也有一些笔记是梦境将他们的所见具现成文。有些笔记只是他们的心事或者碎碎念，但有一些则记载了梦境中更深层的隐秘。$(br)如果是想要更进一步追寻梦境的秘辛的话，或许你应该搜寻一下这些笔记，并好好阅读一下？");
 
         // 染梦教堂
         add("pasterdream.seniors_dream.entry.dyedream_church", "染梦教堂");
@@ -2149,12 +2164,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         // 逐梦列车
         add("pasterdream.seniors_dream.entry.dream_train", "逐梦列车");
-        add("pasterdream.seniors_dream.entry.dream_train.page1", "在梦境中，有时你会听到列车的呼啸声，那便是逐梦列车，当你听见列车的声音时，脑海中会自然而然地闪过列车的大概方位，你可以登上这列梦幻的列车，探索它隐藏的奥秘……$(br2)如果条件允许的话，或许应该从头到尾完全探索一下列车？");
+        add("pasterdream.seniors_dream.entry.dream_train.page1", "在梦境中，有时你会听到列车的呼啸声，那便是逐梦列车，当你听见列车的声音时，脑海中会自然而然地闪过列车的大概方位，你可以登上这列梦幻的列车，探索它隐藏的奥秘……$(br)如果条件允许的话，或许应该从头到尾完全探索一下列车？");
         add("pasterdream.seniors_dream.entry.dream_train.page2", "——追逐着梦幻的列车汽笛响彻地平，我们的旅途也将继续。");
 
         // 染梦世界树
         add("pasterdream.seniors_dream.entry.dyedream_worldtree", "染梦世界树");
-        add("pasterdream.seniors_dream.entry.dyedream_worldtree.page1", "在染梦世界的平原，长着这样一种参天大树，这里是融梦能量最为密集的区域，可以见到大量的融梦水晶箱，传说世界树的种荚有着奇妙的效果，你或许应该大胆地探索，无需拘泥于小节，这样说不定可以探索到更多的隐秘……$(br2)传说在最初曾有一真一假两种世界树，不过现在仅仅剩下真世界树了，当你找不到世界树时，或许可以想一想最初的那位创造梦境之人……");
+        add("pasterdream.seniors_dream.entry.dyedream_worldtree.page1", "在染梦世界的平原，长着这样一种参天大树，这里是融梦能量最为密集的区域，可以见到大量的融梦水晶箱，传说世界树的种荚有着奇妙的效果，你或许应该大胆地探索，无需拘泥于小节，这样说不定可以探索到更多的隐秘……$(br)传说在最初曾有一真一假两种世界树，不过现在仅仅剩下真世界树了，当你找不到世界树时，或许可以想一想最初的那位创造梦境之人……");
         add("pasterdream.seniors_dream.entry.dyedream_worldtree.page2", "——连通天地的世界树，支撑着整个梦境的美好。");
 
         // 花园解密-迷梦冶梦莲
@@ -2195,7 +2210,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         // 染梦穿云塔
         add("pasterdream.seniors_dream.entry.dyedream_tower", "染梦穿云塔");
-        add("pasterdream.seniors_dream.entry.dyedream_tower.page1", "在染梦的梦境中，这种高耸入云的尖塔很容易引起你的注意力。它有两种不同的建筑样式，每座塔的底部房间里都能找到先来者的游记……$(br2)说到塔，爬到顶端似乎是必备的环节，塔顶应该会有一些战利品，也许你应该仔细在塔顶寻找一下？不过，塔的样式不同，战利品的位置似乎也会有所差异……");
+        add("pasterdream.seniors_dream.entry.dyedream_tower.page1", "在染梦的梦境中，这种高耸入云的尖塔很容易引起你的注意力。它有两种不同的建筑样式，每座塔的底部房间里都能找到先来者的游记……$(br)说到塔，爬到顶端似乎是必备的环节，塔顶应该会有一些战利品，也许你应该仔细在塔顶寻找一下？不过，塔的样式不同，战利品的位置似乎也会有所差异……");
         add("pasterdream.seniors_dream.entry.dyedream_tower.page2", "——爬到塔顶→鸟瞰点同步→信仰之跃→bang！同步失败~");
 
         // 浮空神庙
@@ -2207,12 +2222,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("pasterdream.seniors_dream.entry.invaded_church", "侵染教堂");
         add("pasterdream.seniors_dream.entry.invaded_church.page1", "");
         add("pasterdream.seniors_dream.entry.invaded_church.page2", "在染梦世界中探索时，偶尔会在天空中发现这种一半被来自另一个梦境的阴影与黑暗侵蚀染黑的教堂。在这座暗影侵染的教堂中可能发现融梦水晶箱，如果在这座教堂的角落里仔细寻找，也许能够发现遗落的宝箱。");
-        add("pasterdream.seniors_dream.entry.invaded_church.page3", "除此之外，在这里存在着寻梦者前辈留下的笔记。根据笔记的指引前往下界，想办法穿越基岩层，或许能够找到黑暗的来源……$(br2)——为暗影所侵蚀的教堂，在其背后隐藏着不祥与疯狂。");
+        add("pasterdream.seniors_dream.entry.invaded_church.page3", "除此之外，在这里存在着寻梦者前辈留下的笔记。根据笔记的指引前往下界，想办法穿越基岩层，或许能够找到黑暗的来源……$(br)——为暗影所侵蚀的教堂，在其背后隐藏着不祥与疯狂。");
 
         // 萦风教堂
         add("pasterdream.seniors_dream.entry.fluffy_wind_church", "萦风教堂");
         add("pasterdream.seniors_dream.entry.fluffy_wind_church.page1", "在染梦世界中探索时，偶尔会在天空中发现这样一种一半被来自另一个梦境的青苔与微风所侵染为翠绿色的教堂。在这座微风萦绕的教堂中能够发现融梦水晶箱。仔细寻找的话，在角落里也能够发现一些遗落的宝箱。");
-        add("pasterdream.seniors_dream.entry.fluffy_wind_church.page2", "在教堂正中的讲台之上有一件寻梦者的永恒书卷，可以从中获取来自最初寻梦者的笔记。或许按照笔记吃下迷梦炖菜飞向高空就能到达将教堂侵染为翠绿的另一场梦境？$(br2)——萦绕着翠绿与微风的教堂，蕴藏着渴望飞翔的梦。");
+        add("pasterdream.seniors_dream.entry.fluffy_wind_church.page2", "在教堂正中的讲台之上有一件寻梦者的永恒书卷，可以从中获取来自最初寻梦者的笔记。或许按照笔记吃下迷梦炖菜飞向高空就能到达将教堂侵染为翠绿的另一场梦境？$(br)——萦绕着翠绿与微风的教堂，蕴藏着渴望飞翔的梦。");
 
         // 灯影之下
         add("pasterdream.seniors_dream.category.lamp_shadow_world", "灯影之下");
@@ -2243,17 +2258,17 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         // 暗影高炉
         add("pasterdream.seniors_dream.entry.shadow_blast_furnace", "暗影高炉");
-        add("pasterdream.seniors_dream.entry.shadow_blast_furnace.page1", "在阴影的梦境中，你找到了琴雨梦和夜岚的实验遗存，在遗迹里留有这项装置的残骸和一份蓝图，对照着蓝图，似乎可以复现这台机器。$(br2)这台机器以梦境中的熔融阴影和噩梦为燃料，可以转化一些物品，使它们浸染上阴影。除此之外，它似乎还可以用来修复锈蚀金属……");
+        add("pasterdream.seniors_dream.entry.shadow_blast_furnace.page1", "在阴影的梦境中，你找到了琴雨梦和夜岚的实验遗存，在遗迹里留有这项装置的残骸和一份蓝图，对照着蓝图，似乎可以复现这台机器。$(br)这台机器以梦境中的熔融阴影和噩梦为燃料，可以转化一些物品，使它们浸染上阴影。除此之外，它似乎还可以用来修复锈蚀金属……");
         add("pasterdream.seniors_dream.entry.shadow_blast_furnace.page2", "——熔炼黑暗的机器，要令万物都染上黑暗。");
 
         // 笔记残页
         add("pasterdream.seniors_dream.entry.broken_note", "笔记残页");
-        add("pasterdream.seniors_dream.entry.broken_note.page0", "造访这片梦境的外来者不在少数，但是他们的笔记遗存更多的被撕碎，散落在梦境的各个角落。为了拼凑和解读这些笔记，我们需要一个专门的设施。$(br2)通过还原这些笔记，你能知晓更多隐秘，或许能知晓某些设施的修复办法。");
+        add("pasterdream.seniors_dream.entry.broken_note.page0", "造访这片梦境的外来者不在少数，但是他们的笔记遗存更多的被撕碎，散落在梦境的各个角落。为了拼凑和解读这些笔记，我们需要一个专门的设施。$(br)通过还原这些笔记，你能知晓更多隐秘，或许能知晓某些设施的修复办法。");
         add("pasterdream.seniors_dream.entry.broken_note.page1", "——知识就是力量，在如此危险的梦境中更是如此。");
 
         // 黑金属
         add("pasterdream.seniors_dream.entry.black_metal_ingot", "黑金属");
-        add("pasterdream.seniors_dream.entry.black_metal_ingot.page0", "琴雨梦和夜岚对于有关灯影之下中随处可见的锈蚀金属的重新利用早就有所研究，你在阅读完她留下的笔记后，有了一种复现这项技术的想法……$(br2)依据她笔记中记载的“以阴影填补孔隙”的想法，借助暗影高炉，你成功制作出了黑金属粒。这种金属可以用于锻造影蚀工具。只是一点金属粒明显不够，你必须想办法得到可以用于锻造的金属锭……");
+        add("pasterdream.seniors_dream.entry.black_metal_ingot.page0", "琴雨梦和夜岚对于有关灯影之下中随处可见的锈蚀金属的重新利用早就有所研究，你在阅读完她留下的笔记后，有了一种复现这项技术的想法……$(br)依据她笔记中记载的“以阴影填补孔隙”的想法，借助暗影高炉，你成功制作出了黑金属粒。这种金属可以用于锻造影蚀工具。只是一点金属粒明显不够，你必须想办法得到可以用于锻造的金属锭……");
         add("pasterdream.seniors_dream.entry.black_metal_ingot.page1", "——流淌着阴影的金属，是寻梦者驾驭黑暗力量的一小步。");
 
         // 卡莱的调味瓶
@@ -2262,22 +2277,24 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         // 光明飞蝶
         add("pasterdream.seniors_dream.entry.bright_butterfly_curio", "光明飞蝶");
-        add("pasterdream.seniors_dream.entry.bright_butterfly_curio.page0", "在过去，第一位进入灯影的寻梦者借助光明飞蝶掌控暗影的力量，最终成功离开了灯影之下。在掌控了光明的力量后，你或许可以尝试用白厄水晶改造一下夜明蝶……$(br2)利用白厄水晶复现了光明飞蝶，并将其佩戴后，你的眼中常驻光明，眼前的黑暗消散殆尽。任何尝试夺走你眼前光明的手段都将失效。");
+        add("pasterdream.seniors_dream.entry.bright_butterfly_curio.page0", "在过去，第一位进入灯影的寻梦者借助光明飞蝶掌控暗影的力量，最终成功离开了灯影之下。在掌控了光明的力量后，你或许可以尝试用白厄水晶改造一下夜明蝶……$(br)利用白厄水晶复现了光明飞蝶，并将其佩戴后，你的眼中常驻光明，眼前的黑暗消散殆尽。任何尝试夺走你眼前光明的手段都将失效。");
         add("pasterdream.seniors_dream.entry.bright_butterfly_curio.page1", "——眼中所见皆为光明之时，黑暗自然无处遁形。");
 
         // 灯影之下-结构
         add("pasterdream.seniors_dream.entry.shadow_foundry", "阴影铸造厂");
-        add("pasterdream.seniors_dream.entry.shadow_foundry.page0", "过去的寻梦者在这片黑暗之地摸爬滚打，留下了许多遗存，其中，这座废墟是琴雨梦和夜岚的有关锈蚀金属的研究所遗留下来的。$(br2)在这里，你能找到一份暗影高炉的蓝图以及它的残骸。你或许可以尝试一下在其他地方重新搭建这台机器，并用它尝试复现琴雨梦的研究成果……");
+        add("pasterdream.seniors_dream.entry.shadow_foundry.page0", "过去的寻梦者在这片黑暗之地摸爬滚打，留下了许多遗存，其中，这座废墟是琴雨梦和夜岚的有关锈蚀金属的研究所遗留下来的。$(br)在这里，你能找到一份暗影高炉的蓝图以及它的残骸。你或许可以尝试一下在其他地方重新搭建这台机器，并用它尝试复现琴雨梦的研究成果……");
         add("pasterdream.seniors_dream.entry.shadow_foundry.page1", "——人类从不会停止追寻未知的脚步，哪怕在永暗的梦境之中亦是如此，这座遗迹便是最好的证明……");
 
         add("pasterdream.seniors_dream.entry.shadow_dungeon_structure", "暗影地牢");
-        add("pasterdream.seniors_dream.entry.shadow_dungeon_structure.page0", "未完成");
+        add("pasterdream.seniors_dream.entry.shadow_dungeon_structure.page0", "在你通过搜集笔记碎片拼凑笔记，了解到足够的隐秘后，你终于知晓了修复暗影地牢核心的方法。在地牢内部，有五层的考验等待着你，你需要在寻得钥匙，打开大门，前往下一层，值得注意的是，每次造访地牢，这里都会有所变化。");
+        add("pasterdream.seniors_dream.entry.shadow_dungeon_structure.page1", "第一层是无穷无尽的迷宫，千万要小心脚下的暗影之手，它们会将你的理智拖入深渊……第二层是前辈整理留下的图书馆，书本里的文字漆黑难辨，无法解读，但是在书架中留有你需要的东西。第三层被无穷的凝固暗影掩埋，你或许可以用镐子和炸弹破开前路，但是小心石头里蛰伏的虫子……");
+        add("pasterdream.seniors_dream.entry.shadow_dungeon_structure.page2", "第四层则会产生明显的变化，要么是厚翅甲虫的母巢，要么是供奉着阴影火盆的房间，无论如何，你都将面对一场恶战。而第五层的居民，见证过这里的一段往事……");
 
         add("pasterdream.seniors_dream.entry.aaroncos_arena_portal", "怪异手状结构");
-        add("pasterdream.seniors_dream.entry.aaroncos_arena_portal.page0", "当你在灯影之下探索时，有时会发现这种手状结构，它的掌心有着传送门状的白色裂隙。$(br2)可是，当你尝试站在它手心的裂隙中时，却什么都没有发生。$(br2)或许现在不是时候，让我们继续在梦中的旅途，总有一天，这里会向你展示它全部的秘密。");
+        add("pasterdream.seniors_dream.entry.aaroncos_arena_portal.page0", "当你在灯影之下探索时，有时会发现这种手状结构，它的掌心有着传送门状的白色裂隙。$(br)可是，当你尝试站在它手心的裂隙中时，却什么都没有发生。$(br)或许现在不是时候，让我们继续在梦中的旅途，总有一天，这里会向你展示它全部的秘密。");
 
         add("pasterdream.seniors_dream.entry.aaroncos_arena", "亚伦柯斯竞技场");
-        add("pasterdream.seniors_dream.entry.aaroncos_arena.page0", "当你在灯与影之中做出了你的选择后，你终于获得了资格穿过传送门，前来见证无比恐怖的暗影之手。这里会侵蚀你的理智，让你在之后的战斗中慢慢落入劣势。$(br2)无论你是选择化身为灯来消灭它，战胜它，还是选择融入阴影来接纳它，取代它，这一次战斗都是前所未有的恶战。请确保做好了万全准备再来向它发起挑战。");
+        add("pasterdream.seniors_dream.entry.aaroncos_arena.page0", "当你在灯与影之中做出了你的选择后，你终于获得了资格穿过传送门，前来见证无比恐怖的暗影之手。这里会侵蚀你的理智，让你在之后的战斗中慢慢落入劣势。$(br)无论你是选择化身为灯来消灭它，战胜它，还是选择融入阴影来接纳它，取代它，这一次战斗都是前所未有的恶战。请确保做好了万全准备再来向它发起挑战。");
 
         // 风之旅途
         add("pasterdream.seniors_dream.category.wind_journey", "风之旅途");
@@ -2288,23 +2305,23 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("pasterdream.seniors_dream.category.wind_journey_structures.desc", "本篇介绍风之旅途的部分结构。");
 
         add("pasterdream.seniors_dream.entry.wind_direction", "风向");
-        add("pasterdream.seniors_dream.entry.wind_direction.page0", "在这个被风托举起来的世界，强烈的气流会给你的探索造成极大影响。在每天清晨，风都可能会改变自己的方向，并持续这个方向直到第二个清晨。$(br2)当伴风前进时，不管是跑跳还是使用瞬身术，都会变得更快更远，但逆风而行，则会被极大地掣肘。");
+        add("pasterdream.seniors_dream.entry.wind_direction.page0", "在这个被风托举起来的世界，强烈的气流会给你的探索造成极大影响。在每天清晨，风都可能会改变自己的方向，并持续这个方向直到第二个清晨。$(br)当伴风前进时，不管是跑跳还是使用瞬身术，都会变得更快更远，但逆风而行，则会被极大地掣肘。");
         add("pasterdream.seniors_dream.entry.wind_direction.page1", "因此在这里探索，顺着风的方向前进似乎是一种明智之举。你也可以制作一个风向标，它能帮助你看清风向和自己现在的所处位置。");
 
         add("pasterdream.seniors_dream.entry.wind_runner_jelly", "风行者果冻");
-        add("pasterdream.seniors_dream.entry.wind_runner_jelly.page0", "一种独属于风之旅途的果冻，而且它居然可以合成制作出来？！$(br2)如果给水母果冻添加一点甜味，加上岛屿凝结的水晶和风，再配合一点植物的提取物一起研磨的话……");
-        add("pasterdream.seniors_dream.entry.wind_runner_jelly.page1", "风行者果冻可以让你在即使不装备鞘翅类装备的情况下仍然启用鞘翅飞行，不过有些翅膀的加速功能和创造飞行功能还是做不到的啦。$(br2)——等等，不能飞，那你是怎么到这个梦境来的？");
+        add("pasterdream.seniors_dream.entry.wind_runner_jelly.page0", "一种独属于风之旅途的果冻，而且它居然可以合成制作出来？！$(br)如果给水母果冻添加一点甜味，加上岛屿凝结的水晶和风，再配合一点植物的提取物一起研磨的话……");
+        add("pasterdream.seniors_dream.entry.wind_runner_jelly.page1", "风行者果冻可以让你在即使不装备鞘翅类装备的情况下仍然启用鞘翅飞行，不过有些翅膀的加速功能和创造飞行功能还是做不到的啦。$(br)——等等，不能飞，那你是怎么到这个梦境来的？");
 
         add("pasterdream.seniors_dream.entry.break_wind_curtain", "破风幕帐");
-        add("pasterdream.seniors_dream.entry.break_wind_curtain.page0", "在云层飞行的时候，你会发现这种青绿色的一层“膜”。不用担心，撞上它也不会受到什么伤害，不过确实可以“感受到动能”。破风幕帐会多给予你一份飞行的能量，给予短暂的加速效果，如果能多穿过几个，飞跃云层并不是什么难事。$(br2)当然，这种好东西可以用吸收了梦境力量和风的力量的一些物品来制作。");
+        add("pasterdream.seniors_dream.entry.break_wind_curtain.page0", "在云层飞行的时候，你会发现这种青绿色的一层“膜”。不用担心，撞上它也不会受到什么伤害，不过确实可以“感受到动能”。破风幕帐会多给予你一份飞行的能量，给予短暂的加速效果，如果能多穿过几个，飞跃云层并不是什么难事。$(br)当然，这种好东西可以用吸收了梦境力量和风的力量的一些物品来制作。");
         add("pasterdream.seniors_dream.entry.break_wind_curtain.page1", "——什么叫你撞到破风幕帐的边框上了?");
 
         add("pasterdream.seniors_dream.entry.christmas_tree_island", "圣诞树岛");
-        add("pasterdream.seniors_dream.entry.christmas_tree_island.page0", "这是一座似乎不属于这里的岛屿，这里常年积雪，四季如冬，闪烁的彩灯、喧嚣的动物更为这里添加一份生机。$(br2)环顾一圈岛屿，相信你会不由得感叹：这地方简直富得流油！圣诞树上居然会用钻石块点缀！$(br2)岛屿的正中间，最大的树下有许多箱子，里面藏着一个雪白的发卡。这个发卡凝结了寒冬气息，带上它，冰雪也会庇佑你，让你免受火焰灼伤之痛。");
+        add("pasterdream.seniors_dream.entry.christmas_tree_island.page0", "这是一座似乎不属于这里的岛屿，这里常年积雪，四季如冬，闪烁的彩灯、喧嚣的动物更为这里添加一份生机。$(br)环顾一圈岛屿，相信你会不由得感叹：这地方简直富得流油！圣诞树上居然会用钻石块点缀！$(br)岛屿的正中间，最大的树下有许多箱子，里面藏着一个雪白的发卡。这个发卡凝结了寒冬气息，带上它，冰雪也会庇佑你，让你免受火焰灼伤之痛。");
         add("pasterdream.seniors_dream.entry.christmas_tree_island.page1", "——那些骑飞天扫帚的女巫要是能飞到这里拿到发卡，应该就不用怕烧死了。");
 
         add("pasterdream.seniors_dream.entry.break_wind_knight_altar", "破风骑士祭坛");
-        add("pasterdream.seniors_dream.entry.break_wind_knight_altar.page0", "在风泊群岛的上方，还有一座面积不小的岛屿，也就是破风骑士祭坛。断壁残垣似乎在讲述过去的恶战，如今的一片寂静不禁让人感叹沧海桑田。角斗场正中央，有一册永恒书卷，看来琴雨梦已经研究清楚了如何唤醒骑士。$(br2)想要召唤破风骑士，需要在祭坛的正中央插入这个岛屿埋藏的水晶，然后用蕴含狂风力量的铁锭组装它的躯干与头部，最后，需要一点闪电的力量激活它……$(br2)破风骑士会驱逐一切入侵者，如果想要挑战它，请做好充足的准备。");
+        add("pasterdream.seniors_dream.entry.break_wind_knight_altar.page0", "在风泊群岛的上方，还有一座面积不小的岛屿，也就是破风骑士祭坛。断壁残垣似乎在讲述过去的恶战，如今的一片寂静不禁让人感叹沧海桑田。角斗场正中央，有一册永恒书卷，看来琴雨梦已经研究清楚了如何唤醒骑士。$(br)想要召唤破风骑士，需要在祭坛的正中央插入这个岛屿埋藏的水晶，然后用蕴含狂风力量的铁锭组装它的躯干与头部，最后，需要一点闪电的力量激活它……$(br)破风骑士会驱逐一切入侵者，如果想要挑战它，请做好充足的准备。");
         add("pasterdream.seniors_dream.entry.break_wind_knight_altar.page1", "——搞半天搞要自己拼啊。");
 
         // 剧情
@@ -2630,7 +2647,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.wind_vane.desc", "§7检测当前的风向与玩家的角度");
         add("message.pasterdream.wind_vane.angle", "角度：%s 方向：%s");
         add("tooltip.pasterdream.wind_knight_flag.effect1", "§7▪ §9可以将逆风视为顺风");
-        add("tooltip.pasterdream.fractured_angel_statue.effect1", "§7▪ §9受到伤害时有10%的概率获得1秒无敌");
+        add("tooltip.pasterdream.fractured_angel_statue.effect1", "§7▪ §9受到伤害时有%s%%的概率获得%s秒无敌");
         add("tooltip.pasterdream.fractured_angel_statue.effect2", "§7▪ §9免疫鞘翅飞行撞击时的动能伤害");
         add("tooltip.pasterdream.fractured_angel_statue.effect3", "§7▪ §9免疫摔落伤害");
         add("tooltip.pasterdream.fractured_angel_statue.lore", "§7§o-- 无骨的天使西丽亚");

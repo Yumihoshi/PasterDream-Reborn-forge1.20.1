@@ -2016,9 +2016,9 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('b', ModItems.CONGEAL_WIND_IRON_NUGGET.get())
                 .unlockedBy(getHasName(ModItems.CONGEAL_WIND_IRON_INGOT.get()), has(ModItems.CONGEAL_WIND_IRON_INGOT.get()))
                 .save(pWriter);
-        // 凝风铁压力板：3×凝风铁锭连一排 → 2
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.CONGEAL_WIND_IRON_PRESSURE_PLATE.get(), 2)
-                .pattern("aaa")
+        // 凝风铁压力板：凝风铁锭×2 → 1
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModItems.CONGEAL_WIND_IRON_PRESSURE_PLATE.get(), 1)
+                .pattern("aa")
                 .define('a', ModItems.CONGEAL_WIND_IRON_INGOT.get())
                 .unlockedBy(getHasName(ModItems.CONGEAL_WIND_IRON_INGOT.get()), has(ModItems.CONGEAL_WIND_IRON_INGOT.get()))
                 .save(pWriter);
@@ -2037,9 +2037,9 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('b', Items.SLIME_BALL)
                 .unlockedBy(getHasName(ModItems.CONGEAL_WIND_IRON_INGOT.get()), has(ModItems.CONGEAL_WIND_IRON_INGOT.get()))
                 .save(pWriter);
-        // 弹射压力板：凝风铁锭×2
+        // 弹射压力板：3×凝风铁锭连一排 → 1
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EJECTION_PRESSURE_PLATE.get(), 1)
-                .pattern("aa")
+                .pattern("aaa")
                 .define('a', ModItems.CONGEAL_WIND_IRON_INGOT.get())
                 .unlockedBy(getHasName(ModItems.CONGEAL_WIND_IRON_INGOT.get()), has(ModItems.CONGEAL_WIND_IRON_INGOT.get()))
                 .save(pWriter);
@@ -2391,6 +2391,30 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(ModItems.GLASS_JAR.get(), 8)
                 .unlockedBy(getHasName(Items.MILK_BUCKET), has(Items.MILK_BUCKET))
                 .save(pWriter);
+
+        // 墨水罐合成配方一（水罐 + 玻璃罐 + 黑色染料，容器自动配平）
+        saveContainerBalancedShapeless(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_INK.get(), 2)
+                        .requires(ModItems.GLASS_JAR_OF_WATER.get(), 1)
+                        .requires(ModItems.GLASS_JAR.get(), 1)
+                        .requires(Items.BLACK_DYE, 1)
+                        .unlockedBy(getHasName(ModItems.GLASS_JAR_OF_WATER.get()), has(ModItems.GLASS_JAR_OF_WATER.get())),
+                pWriter, "glass_jar_of_ink_from_black_dye",
+                ModItems.GLASS_JAR_OF_INK.get(), 2,
+                ModItems.GLASS_JAR_OF_WATER.get(), 1,
+                ModItems.GLASS_JAR.get(), 1,
+                Items.BLACK_DYE, 1);
+
+        // 墨水罐合成配方二（水罐*2 + 墨囊，容器自动配平）
+        saveContainerBalancedShapeless(
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GLASS_JAR_OF_INK.get(), 2)
+                        .requires(ModItems.GLASS_JAR_OF_WATER.get(), 2)
+                        .requires(Items.INK_SAC, 1)
+                        .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC)),
+                pWriter, "glass_jar_of_ink_from_ink_sac",
+                ModItems.GLASS_JAR_OF_INK.get(), 2,
+                ModItems.GLASS_JAR_OF_WATER.get(), 2,
+                Items.INK_SAC, 1);
 
         // 巧克力合成配方
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CHOCOLATE.get(), 1)
@@ -2941,7 +2965,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .pattern(" c ")
                 .define('a', Items.BOOK)
                 .define('b', ModItems.DYEDREAM_SLAB.get())
-                .define('c', Items.CALCITE)
+                .define('c', ModItems.DYEDREAM_LOG.get())
                 .unlockedBy(getHasName(ModItems.DYEDREAM_PLANKS.get()), has(ModItems.DYEDREAM_PLANKS.get()))
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DYEDREAM_DESK.get(), 1)
@@ -2952,6 +2976,26 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('b', Items.LECTERN)
                 .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
                 .save(pWriter, "dyedream_desk_from_lectern");
+        // 风泊书桌
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WIND_MOOR_DESK.get(), 1)
+                .pattern(" a ")
+                .pattern("bbb")
+                .pattern(" c ")
+                .define('a', Items.BOOK)
+                .define('b', ModItems.WIND_MOOR_SLAB.get())
+                .define('c', ModItems.STRIPPED_WIND_MOOR_LOG.get())
+                .unlockedBy(getHasName(ModItems.WIND_MOOR_SLAB.get()), has(ModItems.WIND_MOOR_SLAB.get()))
+                .save(pWriter);
+        // 阴影书桌
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHADOW_DESK.get(), 1)
+                .pattern(" a ")
+                .pattern("bbb")
+                .pattern(" c ")
+                .define('a', Items.BOOK)
+                .define('b', ModItems.SHADOW_SLAB.get())
+                .define('c', ModItems.STRIPPED_SHADOW_STEM.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_SLAB.get()), has(ModItems.SHADOW_SLAB.get()))
+                .save(pWriter);
         // 研究台
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RESEARCH_TABLE.get(), 1)
                 .pattern("abc")

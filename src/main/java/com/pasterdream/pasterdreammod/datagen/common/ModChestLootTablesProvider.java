@@ -397,8 +397,8 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                         .setWeight(90))
                         )
                         .withPool(LootPool.lootPool()
-                                // 染梦装备，固定1抽取，幸运影响系数1（概率太低了，所以加了幸运影响系数）
-                                .setBonusRolls(ConstantValue.exactly(0.5F))
+                                // 染梦装备
+                                .setBonusRolls(ConstantValue.exactly(0.15F))
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_UPGRADE.get())
                                         .setWeight(1)
@@ -787,8 +787,8 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                         .setWeight(80))
                         )
                         .withPool(LootPool.lootPool()
-                                // 染梦装备，固定1抽取，幸运影响系数1（概率太低了，所以加了幸运影响系数）
-                                .setBonusRolls(ConstantValue.exactly(0.5F))
+                                // 染梦装备
+                                .setBonusRolls(ConstantValue.exactly(0.15F))
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.DYEDREAM_UPGRADE.get())
                                         .setWeight(1)
@@ -1125,6 +1125,103 @@ public class ModChestLootTablesProvider implements LootTableSubProvider {
                                         .setWeight(1)
                                         .apply(SetItemCountFunction.setCount(
                                                 UniformGenerator.between(2.0F, 5.0F))))
+                        )
+        );
+
+        consumer.accept(
+                ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID,"chests/desert_cottage_chest"),
+                LootTable.lootTable()
+                        // 沙漠建材，固定1抽取，无幸运修正
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(Items.SAND)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(5.0F, 7.0F))))
+                                .add(LootItem.lootTableItem(Items.SANDSTONE)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(3.0F, 5.0F))))
+                                .add(LootItem.lootTableItem(Items.CHISELED_SANDSTONE)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                        )
+                        // 植物&食物，固定1抽取，无幸运修正
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(Items.DEAD_BUSH)
+                                        .setWeight(3)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(ModItems.RYE_SEED.get())
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(2.0F, 4.0F))))
+                                .add(LootItem.lootTableItem(Items.BEETROOT)
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(Items.GOLDEN_APPLE)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(ModItems.RICE_CAKE.get())
+                                        .setWeight(2)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(4.0F, 7.0F))))
+                        )
+                        // 工具&装备，固定1抽取，无幸运修正
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(Items.NAME_TAG)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.IRON_HORSE_ARMOR)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.GOLDEN_HORSE_ARMOR)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(Items.FLINT_AND_STEEL)
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                        )
+                        // 材料&贵重物品，固定2抽取，无幸运修正
+                        .withPool(LootPool.lootPool()
+                                .setBonusRolls(ConstantValue.exactly(0.0F))
+                                .setRolls(ConstantValue.exactly(2.0F))
+                                .add(LootItem.lootTableItem(ModItems.PERGAMYN.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(ModItems.GLASS_JAR_OF_INK.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                ConstantValue.exactly(1.0F))))
+                                .add(LootItem.lootTableItem(ModItems.ATTACK_ENHANCE_STONE.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(ModItems.LUCK_ENHANCE_STONE.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 3.0F))))
+                                .add(LootItem.lootTableItem(ModItems.PROTECT_DECK.get())
+                                        .setWeight(1)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(1.0F, 3.0F))))
                         )
         );
 

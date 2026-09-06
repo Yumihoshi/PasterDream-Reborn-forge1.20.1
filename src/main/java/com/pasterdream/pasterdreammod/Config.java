@@ -420,6 +420,14 @@ public class Config
             .comment("破风骑士：是否免疫负面状态效果（有害类效果，如中毒、虚弱、缓慢等），默认 true")
             .define("windKnightImmuneToNegativeEffects", true);
 
+    // === 折翼天使雕像 ===
+    private static final ForgeConfigSpec.DoubleValue FRACTURED_ANGEL_STATUE_INVULNERABLE_CHANCE = BUILDER
+            .comment("折翼天使雕像：受击后获得无敌的触发概率，默认 0.1（10%），允许最小值为0，最大值为1")
+            .defineInRange("fracturedAngelStatueInvulnerableChance", 0.1, 0.0, 1.0);
+
+    private static final ForgeConfigSpec.IntValue FRACTURED_ANGEL_STATUE_INVULNERABLE_TICKS = BUILDER
+            .comment("折翼天使雕像：受击后获得的无敌时长（tick，20 tick = 1 秒），默认 20")
+            .defineInRange("fracturedAngelStatueInvulnerableTicks", 20, 1, Integer.MAX_VALUE);
 
     // === 大便携储物袋抓取生物 ===
     private static final ForgeConfigSpec.BooleanValue CREATURE_CAPTURE_ENABLED = BUILDER
@@ -767,6 +775,10 @@ public class Config
     public static int windKnightPassiveInvulnerableTicks;
     public static boolean windKnightImmuneToNegativeEffects;
 
+    // === 折翼天使雕像 ===
+    public static double fracturedAngelStatueInvulnerableChance;
+    public static int fracturedAngelStatueInvulnerableTicks;
+
     /**
      * 解析某 BOSS 档位实际生效的限伤配置。
      * 档位未开启独立配置时回落到全局（GLOBAL）配置。
@@ -869,11 +881,12 @@ public class Config
                 LOGGER.warn("sin_instakill_entities: invalid resource location '{}', skipping", idStr);
                 continue;
             }
-            EntityType<?> et = ForgeRegistries.ENTITY_TYPES.getValue(rl);
-            if (et == null) {
+            // 注意：getValue 对未知 ID 会返回默认值（minecraft:pig），必须先 containsKey 判空
+            if (!ForgeRegistries.ENTITY_TYPES.containsKey(rl)) {
                 LOGGER.warn("sin_instakill_entities: unknown entity type '{}', skipping", idStr);
                 continue;
             }
+            EntityType<?> et = ForgeRegistries.ENTITY_TYPES.getValue(rl);
             set.add(et);
         }
         cachedSinInstakillTypes = Set.copyOf(set);
@@ -888,11 +901,12 @@ public class Config
                 LOGGER.warn("conflict_mark_blacklist: invalid resource location '{}', skipping", idStr);
                 continue;
             }
-            EntityType<?> et = ForgeRegistries.ENTITY_TYPES.getValue(rl);
-            if (et == null) {
+            // 注意：getValue 对未知 ID 会返回默认值（minecraft:pig），必须先 containsKey 判空
+            if (!ForgeRegistries.ENTITY_TYPES.containsKey(rl)) {
                 LOGGER.warn("conflict_mark_blacklist: unknown entity type '{}', skipping", idStr);
                 continue;
             }
+            EntityType<?> et = ForgeRegistries.ENTITY_TYPES.getValue(rl);
             set.add(et);
         }
         cachedConflictMarkBlacklistTypes = Set.copyOf(set);
@@ -907,11 +921,12 @@ public class Config
                 LOGGER.warn("creatureCaptureEntities: invalid resource location '{}', skipping", idStr);
                 continue;
             }
-            EntityType<?> et = ForgeRegistries.ENTITY_TYPES.getValue(rl);
-            if (et == null) {
+            // 注意：getValue 对未知 ID 会返回默认值（minecraft:pig），必须先 containsKey 判空
+            if (!ForgeRegistries.ENTITY_TYPES.containsKey(rl)) {
                 LOGGER.warn("creatureCaptureEntities: unknown entity type '{}', skipping", idStr);
                 continue;
             }
+            EntityType<?> et = ForgeRegistries.ENTITY_TYPES.getValue(rl);
             set.add(et);
         }
         cachedCaptureEntityTypes = Set.copyOf(set);
@@ -1061,6 +1076,8 @@ public class Config
         windKnightPassiveInvulnerableChance = WIND_KNIGHT_PASSIVE_INVULNERABLE_CHANCE.get();
         windKnightPassiveInvulnerableTicks = WIND_KNIGHT_PASSIVE_INVULNERABLE_TICKS.get();
         windKnightImmuneToNegativeEffects = WIND_KNIGHT_IMMUNE_TO_NEGATIVE_EFFECTS.get();
+        fracturedAngelStatueInvulnerableChance = FRACTURED_ANGEL_STATUE_INVULNERABLE_CHANCE.get();
+        fracturedAngelStatueInvulnerableTicks = FRACTURED_ANGEL_STATUE_INVULNERABLE_TICKS.get();
         creatureCaptureEnabled = CREATURE_CAPTURE_ENABLED.get();
         creatureCaptureEntities = CREATURE_CAPTURE_ENTITIES.get();
 

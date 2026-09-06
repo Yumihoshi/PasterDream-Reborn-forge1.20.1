@@ -798,6 +798,7 @@ public class ModCreativeModeTabs {
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("花园解密:迷梦冶梦莲"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("花园解密:凛冽雪绒花"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("花园解密:九尾狐"));
+                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("染梦裂隙"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("染梦游记 其一"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("染梦游记 其二"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("染梦游记 其三"));
@@ -843,6 +844,7 @@ public class ModCreativeModeTabs {
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("交易"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("破碎"));
 
+                        output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("无翼鸟也有展翅的梦"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("破风的骑士"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("清晨的新风"));
                         output.accept(DreamNotesBookWithNBTToCreativeModeTab.buildNBT("魔法使的记录-其二"));
@@ -977,6 +979,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STRAWBERRY_HEART.get());
                         output.accept(ModItems.ANGEL_WING.get());
                         output.accept(ModItems.FORSAKENS_WING.get());
+                        output.accept(ModItems.TURNBACK_CLOAK.get());
                         output.accept(ModItems.SLIVER_BELL.get());
                     })
                     .build());

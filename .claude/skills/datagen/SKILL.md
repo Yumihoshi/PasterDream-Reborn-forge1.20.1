@@ -25,7 +25,7 @@ description: 数据生成器（runData）。覆盖所有 Provider（方块状态
 | `ModRecipesProvider` | 配方 |
 | `ModAdvancementProvider` | 进度 |
 | `ModWorldGenProvider` | 世界生成（`DatapackBuiltinEntriesProvider`） |
-| `ModBucketItemProvider` | 流体桶物品模型 |
+| `GenerateBucketItem` | 流体桶物品模型 |
 
 语言文件：`datagen/lang/ModEnUsLangProvider.java` / `ModZhCnLangProvider.java`。
 
