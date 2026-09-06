@@ -8,6 +8,19 @@
     {
       "type": "patchouli:text",
       "text": "pasterdream.seniors_dream.entry.shadow_dungeon_structure.page0"
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["pasterdream:textures/patchouli_books/seniors_dream/en_us/entries/lamp_shadow_world/structures/shadow_dungeon.png"],
+      "text": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.shadow_dungeon_structure.page1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pasterdream.seniors_dream.entry.shadow_dungeon_structure.page2"
     }
   ]
 }
