@@ -553,6 +553,7 @@
     "hiyori_head": "hiyori_butterfly_hairpin",
     "allkinds_ring": "allkinds_ring",
     "cradle_in_ones_arms": "kaichu_omamori",
+    "turnback_cloak": "turnback_cloak",
     "white_flower_body": "brooch_of_white_orchid",
     "degenerate_bodys": "seal_of_the_corrupted",
     "sweetdream_disc": "sweet_dream_music_disc",
@@ -650,7 +651,9 @@
     "cloudmist_buff": "cloud_mist",
     "tailwind": "tailwind",
     "deadwind": "deadwind",
-    "windproof": "windproof"
+    "windproof": "windproof",
+    "turnback_cloak_buff": "turnback_cloak",
+    "evasion_buff": "evasion"
   },
   "enchantments": {
     "enchantment_atkspd": "swift_strike",

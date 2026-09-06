@@ -1,6 +1,7 @@
 package com.pasterdream.pasterdreammod.init;
 
 import com.pasterdream.pasterdreammod.network.curio.KaichuOmamoriActivationPacket;
+import com.pasterdream.pasterdreammod.network.curio.CloakActivationPacket;
 import com.pasterdream.pasterdreammod.network.skill.BlinkPacket;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -18,11 +19,14 @@ public class ModKeyMappings {
             "key.pasterdream.blink", GLFW.GLFW_KEY_C, "key.categories.pasterdream");
     public static final KeyMapping KAICHU_OMAMORI = new KeyMapping(
             "key.pasterdream.kaichu_omamori", GLFW.GLFW_KEY_V, "key.categories.pasterdream");
+    public static final KeyMapping CLOAK_ACTIVATE = new KeyMapping(
+            "key.pasterdream.cloak_activate", GLFW.GLFW_KEY_Z, "key.categories.pasterdream");
 
     @SubscribeEvent
     public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
         event.register(BLINK);
         event.register(KAICHU_OMAMORI);
+        event.register(CLOAK_ACTIVATE);
     }
 
     @Mod.EventBusSubscriber({Dist.CLIENT})
@@ -35,6 +39,9 @@ public class ModKeyMappings {
                 }
                 while (ModKeyMappings.KAICHU_OMAMORI.consumeClick()) {
                     ModNetwork.CHANNEL.sendToServer(new KaichuOmamoriActivationPacket());
+                }
+                while (ModKeyMappings.CLOAK_ACTIVATE.consumeClick()) {
+                    ModNetwork.CHANNEL.sendToServer(new CloakActivationPacket());
                 }
             }
         }

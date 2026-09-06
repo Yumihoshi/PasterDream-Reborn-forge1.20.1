@@ -19,6 +19,7 @@ import com.pasterdream.pasterdreammod.network.researchtable.ResearchTableCopyPac
 import com.pasterdream.pasterdreammod.network.researchtable.ResearchTableResearchPacket;
 import com.pasterdream.pasterdreammod.network.curio.CurioActivationPacket;
 import com.pasterdream.pasterdreammod.network.curio.KaichuOmamoriActivationPacket;
+import com.pasterdream.pasterdreammod.network.curio.CloakActivationPacket;
 import com.pasterdream.pasterdreammod.network.skill.BlinkPacket;
 import com.pasterdream.pasterdreammod.network.skill.TerraBladeSwingPacket;
 import com.pasterdream.pasterdreammod.network.san.IsSanEnableSyncPacket;
@@ -74,6 +75,7 @@ public class ModNetwork
 
         CHANNEL.registerMessage(id++, CurioActivationPacket.class, CurioActivationPacket::encode, CurioActivationPacket::decode, CurioActivationPacket::handle);
         CHANNEL.registerMessage(id++, KaichuOmamoriActivationPacket.class, KaichuOmamoriActivationPacket::encode, KaichuOmamoriActivationPacket::decode, KaichuOmamoriActivationPacket::handle);
+        CHANNEL.registerMessage(id++, CloakActivationPacket.class, CloakActivationPacket::encode, CloakActivationPacket::decode, CloakActivationPacket::handle);
 
         CHANNEL.registerMessage(id++, ShadowErosionMiningSpeedSyncPacket.class, ShadowErosionMiningSpeedSyncPacket::encode, ShadowErosionMiningSpeedSyncPacket::decode, ShadowErosionMiningSpeedSyncPacket::handle);
 

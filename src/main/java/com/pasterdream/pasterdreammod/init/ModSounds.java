@@ -39,6 +39,7 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> DYEDREAM_CRACK = SOUNDS.register("dyedream_crack", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "dyedream_crack")));
     public static final RegistryObject<SoundEvent> AWAKE = SOUNDS.register("awake", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "awake")));
     public static final RegistryObject<SoundEvent> EVASION = SOUNDS.register("evasion", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "evasion")));
+    public static final RegistryObject<SoundEvent> CLOAK = SOUNDS.register("cloak", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "cloak")));
     public static final RegistryObject<SoundEvent> LOSE_MIND = SOUNDS.register("lose_mind", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "lose_mind")));
 
     public static final RegistryObject<SoundEvent> SWEET_DREAM_MUSIC = SOUNDS.register("sweet_dream_music", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(PasterDreamMod.MOD_ID, "sweet_dream_music")));

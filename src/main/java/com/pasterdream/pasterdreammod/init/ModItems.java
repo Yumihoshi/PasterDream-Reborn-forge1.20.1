@@ -1936,6 +1936,10 @@ public class ModItems {
     public static final RegistryObject<Item> FORSAKENS_WING = ITEMS.register("forsakens_wing",
             () -> new ForsakensWingItem());
 
+    // 转身衣装
+    public static final RegistryObject<Item> TURNBACK_CLOAK = ITEMS.register("turnback_cloak",
+            () -> new TurnbackCloakItem());
+
     // 厚翅甲壳
     public static final RegistryObject<Item> BLACK_BEETLE_CARAPACE = ITEMS.register("black_beetle_carapace",
             () -> new Item(new Item.Properties()));

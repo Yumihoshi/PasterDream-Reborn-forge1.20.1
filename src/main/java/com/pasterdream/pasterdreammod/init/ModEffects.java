@@ -104,6 +104,8 @@ public class ModEffects {
             EFFECTS.register("cloud_mist", CloudMistEffect::new);
     public static final RegistryObject<MobEffect> WIND_RUNNER =
             EFFECTS.register("wind_runner", WindRunnerEffect::new);
+    public static final RegistryObject<MobEffect> TURNBACK_CLOAK =
+            EFFECTS.register("turnback_cloak", TurnbackCloakBuffEffect::new);
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);

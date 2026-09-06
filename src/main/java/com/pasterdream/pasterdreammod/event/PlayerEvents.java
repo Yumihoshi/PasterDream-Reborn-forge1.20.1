@@ -166,14 +166,18 @@ public class PlayerEvents {
         if (amplifier > 0) {
             player.addEffect(new MobEffectInstance(ModEffects.EVASION.get(),
                     duration, amplifier - 1, false, false));
+        } else {
+            // 回避次数用完：转身衣装状态效果自动取消
+            player.removeEffect(ModEffects.TURNBACK_CLOAK.get());
         }
 
         event.setAmount(0);
         event.setCanceled(true);
 
-        // 反击戒指：成功闪避时获得反击 buff
+        // 反击戒指 / 转身衣装：成功闪避时获得反击 buff
         if (CuriosApi.getCuriosInventory(player)
-                .map(h -> h.findFirstCurio(ModItems.COUNTER_RING.get()).isPresent())
+                .map(h -> h.findFirstCurio(ModItems.COUNTER_RING.get()).isPresent()
+                        || h.findFirstCurio(ModItems.TURNBACK_CLOAK.get()).isPresent())
                 .orElse(false)) {
             player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0, false, false));
             player.addEffect(new MobEffectInstance(ModEffects.COUNTER_ATTACK.get(), 200, 0, false, false));

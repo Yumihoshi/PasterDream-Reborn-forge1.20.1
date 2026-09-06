@@ -615,6 +615,7 @@
 | `hiyori_head`                  | `hiyori_butterfly_hairpin`                  | 重命名，`hiyori_head` → `hiyori_butterfly_hairpin`                   | 客制化类 `HiyoriButterflyHairpinItem`，实现 `ICurioItem`，+2 最大生命值、+15 幸运、+0.96 理智光环，品质 EPIC，禁止重复装备              |
 | `allkinds_ring`                | `allkinds_ring`                             | 不改                                                               | 客制化类 `AllkindsRingItem`，实现 `ICurioItem`，+4 生命、+2 攻击、+0.1 攻速、+0.2 触及、+0.5 方块触及、+5% 移速，品质 LEGENDARY，跳过战技属性 |
 | `cradle_in_ones_arms`          | `kaichu_omamori`                            | 重命名，`cradle_in_ones_arms` → `kaichu_omamori`                     | 客制化类 `KaichuOmamoriItem`，实现 `ICurioItem`，现在可佩戴，佩戴后启动激活专属热键，+5幸运，品质 LEGENDARY                             |
+| `turnback_cloak`               | `turnback_cloak`                            | 不改                                                               | 客制化类 `TurnbackCloakItem`，实现 `ICurioItem`，back 槽位，Z 键激活消耗 10 融梦能量，90s 内 6 次回避 + 反击，冷却 300s，品质 LEGENDARY（数值以 tooltip 为准） |
 | `white_flower_body`            | `brooch_of_white_orchid`                    | 重命名，`white_flower_body` → `brooch_of_white_orchid`               | 客制化类 `BroochOfWhiteOrchidItem`，实现 `ICurioItem`，免疫环境降SAN效果，品质 EPIC                                        |
 | `degenerate_bodys`             | `seal_of_the_corrupted`                     | 重命名，`degenerate_bodys` → `seal_of_the_corrupted`                 | 客制化类 `SealOfTheCorruptedItem`，实现 `ICurioItem`，生命-4 / 触及+0.2 / 方块触及+1.0 / 攻击+2.0，品质 EPIC，body 槽位          |
 | `sweetdream_disc`              | `sweet_dream_music_disc`                    | 重命名，修复 word glueing + `_disc` → `_music_disc`                    | 无需客制化类，直接用 `RecordItem`（旧类无有效覆写）                                                                         |
@@ -670,6 +671,8 @@
 | `tailwind`               | `tailwind`               | 不改        | `TailwindEffect`，顺风，移速/闪烁距离提升，与逆风互斥                        |
 | `deadwind`               | `deadwind`               | 不改        | `DeadwindEffect`，逆风，移速/闪烁距离降低，与顺风互斥                        |
 | `windproof`              | `windproof`              | 不改        | `WindproofEffect`，防风标记，免疫顺风/逆风                             |
+| `turnback_cloak_buff`    | `turnback_cloak`         | 重命名，去 `_buff` 后缀 | `TurnbackCloakBuffEffect`，每 tick 金色+灰尘粒子环绕，转身衣装激活后持续 90s    |
+| `evasion_buff`           | `evasion`                | 合并进现有回避效果 | 复用 `ModEffects.EVASION`（放大器=次数-1），原闪避BUFF 不再单独注册                 |
 
 ---
 
