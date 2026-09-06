@@ -2976,6 +2976,26 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('b', Items.LECTERN)
                 .unlockedBy(getHasName(ModItems.DYEDREAM_DYE.get()), has(ModItems.DYEDREAM_DYE.get()))
                 .save(pWriter, "dyedream_desk_from_lectern");
+        // 风泊书桌
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WIND_MOOR_DESK.get(), 1)
+                .pattern(" a ")
+                .pattern("bbb")
+                .pattern(" c ")
+                .define('a', Items.BOOK)
+                .define('b', ModItems.WIND_MOOR_SLAB.get())
+                .define('c', ModItems.THICK_CLOUD.get())
+                .unlockedBy(getHasName(ModItems.WIND_MOOR_SLAB.get()), has(ModItems.WIND_MOOR_SLAB.get()))
+                .save(pWriter);
+        // 阴影书桌
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHADOW_DESK.get(), 1)
+                .pattern(" a ")
+                .pattern("bbb")
+                .pattern(" c ")
+                .define('a', Items.BOOK)
+                .define('b', ModItems.SHADOW_SLAB.get())
+                .define('c', ModItems.STRIPPED_SHADOW_STEM.get())
+                .unlockedBy(getHasName(ModItems.SHADOW_SLAB.get()), has(ModItems.SHADOW_SLAB.get()))
+                .save(pWriter);
         // 研究台
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RESEARCH_TABLE.get(), 1)
                 .pattern("abc")
