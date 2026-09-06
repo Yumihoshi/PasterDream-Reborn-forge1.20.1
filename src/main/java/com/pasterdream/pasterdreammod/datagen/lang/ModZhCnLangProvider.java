@@ -275,6 +275,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.MACHINE_LIGHT_WING.get(), "机械光翼");
         add(ModItems.ANGEL_WING.get(), "天使之翼");
         add(ModItems.FORSAKENS_WING.get(), "遗忘之翼");
+        add(ModItems.TURNBACK_CLOAK.get(), "转身衣装");
         add(ModItems.DREAM_FERTILIZER.get(), "衍梦肥泥");
         add(ModItems.MELT_DREAM_CRYSTAL_FRAGMENT.get(), "融梦水晶碎片");
         add(ModItems.MELT_DREAM_AURORIAN_STEEL.get(), "融梦极光钢锭");
@@ -1227,6 +1228,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.kaichu_omamori.hotkey", "§7▪ §9按下 §e%s §9释放狐火立场");
         add("tooltip.pasterdream.kaichu_omamori.flavor", "§o§7 -- Alirea定制物品");
         add("key.pasterdream.kaichu_omamori", "激活怀中御守");
+        add("key.pasterdream.cloak_activate", "启用衣装");
 
         add(ModItems.ALLKINDS_RING.get(), "万象神戒");
         add("tooltip.pasterdream.allkinds_ring.flavor", "§7§o聚万象之力 铸以此戒");
@@ -1343,6 +1345,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.pasterdream.confusion", "混乱");
         add("effect.pasterdream.insane", "疯狂");
         add("effect.pasterdream.evasion", "回避");
+        add("effect.pasterdream.turnback_cloak", "转身衣装");
         add("effect.pasterdream.blink_cooldown", "瞬身术冷却");
         add("effect.pasterdream.dyedream_perfume", "染梦香水");
         add("effect.pasterdream.goldenrod_tea", "秋麒麟茶");
@@ -1366,6 +1369,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("attribute.pasterdream.max_melt_dream_energy_extra", "融梦能量上限加成");
         add("attribute.pasterdream.melt_dream_variability", "融梦光环");
         add("subtitles.pasterdream.evasion", "瞬身术: 回避");
+        add("subtitles.pasterdream.cloak", "衣装展开");
 
         // 低San效果指令
         add("command.pasterdream.lowsan.overlay", "低San屏幕覆盖层");
@@ -1582,6 +1586,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.melt_dream_energy_ring.effect1", "§7▪ §9融梦能量+0.3/min");
         add("effect.pasterdream.counter_attack", "反击");
         add("effect.pasterdream.memento", "寻梦者的祈愿");
+
+        // 转身衣装
+        add("tooltip.pasterdream.turnback_cloak.hotkey", "§7▪ §9默认按 §e%s §9启用衣装");
+        add("tooltip.pasterdream.turnback_cloak.effect1", "§7▪ §9衣装启用后可以在90秒内自动回避6次伤害");
+        add("tooltip.pasterdream.turnback_cloak.effect2", "§7▪ §9成功回避伤害后获得 反击I (0:10)");
+        add("tooltip.pasterdream.turnback_cloak.cooldown", "§7▪ §9冷却时间：300秒");
+        add("tooltip.pasterdream.turnback_cloak.energy_cost", "§7▪ §9融梦能量消耗：§c10");
 
         // 战争旗帜
         add(ModItems.WAR_FLAG.get(), "战争旗帜");

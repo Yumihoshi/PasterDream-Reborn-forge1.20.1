@@ -184,6 +184,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.MACHINE_LIGHT_WING.get());
         basicItem(ModItems.ANGEL_WING.get());
         basicItem(ModItems.FORSAKENS_WING.get());
+        basicItem(ModItems.TURNBACK_CLOAK.get());
         handheldItem(ModItems.MOLTEN_GOLD_SWORD);
         handheldItem(ModItems.MOLTEN_GOLD_PICKAXE);
         handheldItem(ModItems.MOLTEN_GOLD_AXE);

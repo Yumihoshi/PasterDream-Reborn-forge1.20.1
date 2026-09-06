@@ -267,6 +267,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.MACHINE_LIGHT_WING.get(), "Machine Light Wing");
         add(ModItems.ANGEL_WING.get(), "Angel Wing");
         add(ModItems.FORSAKENS_WING.get(), "Forsakens Wing");
+        add(ModItems.TURNBACK_CLOAK.get(), "Turnback Cloak");
         add(ModItems.DREAM_FERTILIZER.get(), "Dream Fertilizer");
         add(ModItems.DREAM_NOTES_DYEDREAM_WORLD.get(), "Dream Notes - Dyedream World");
         add(ModItems.DREAM_NOTES_LAMP_SHADOW_WORLD.get(), "Dream Notes - Lamp Shadow World");
@@ -1110,6 +1111,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.kaichu_omamori.effect.cooldown", "§7▪ §9Cooldown: %s seconds");
         add("tooltip.pasterdream.kaichu_omamori.flavor", "§o§7 -- Alirea custom item");
         add("key.pasterdream.kaichu_omamori", "Activate Kaichu Omamori");
+        add("key.pasterdream.cloak_activate", "Activate Cloak");
         add("tooltip.pasterdream.kaichu_omamori.equip", "§7When equip:");
         add("tooltip.pasterdream.kaichu_omamori.luck", "§7▪ §9+5Luck");
         add("tooltip.pasterdream.kaichu_omamori.hotkey", "§7▪ §9Press §e%s §9to release Foxfire field");
@@ -1173,6 +1175,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.pasterdream.confusion", "Confusion");
         add("effect.pasterdream.insane", "Insanity");
         add("effect.pasterdream.evasion", "Evasion");
+        add("effect.pasterdream.turnback_cloak", "Turnback Cloak");
         add("effect.pasterdream.blink_cooldown", "Blink Cooldown");
         add("effect.pasterdream.dyedream_perfume", "Dyedream Perfume");
         add("effect.pasterdream.goldenrod_tea", "Goldenrod Tea");
@@ -1195,6 +1198,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("attribute.pasterdream.max_melt_dream_energy_extra", "Max Melt Dream Energy Bonus");
         add("attribute.pasterdream.melt_dream_variability", "Melt Dream Aura");
         add("subtitles.pasterdream.evasion", "Evasion");
+        add("subtitles.pasterdream.cloak", "Cloak unfurls");
 
         // Low San effect commands
         add("command.pasterdream.lowsan.overlay", "Low San screen overlay");
@@ -1409,6 +1413,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.pasterdream.melt_dream_energy_ring.effect1", "§7▪ §9Melt Dream Energy +0.3/min");
         add("effect.pasterdream.counter_attack", "Counterattack");
         add("effect.pasterdream.memento", "Dream Seeker's Prayer");
+
+        // Turnback Cloak
+        add("tooltip.pasterdream.turnback_cloak.hotkey", "§7▪ §9Press §e%s §9by default to activate the cloak");
+        add("tooltip.pasterdream.turnback_cloak.effect1", "§7▪ §9While active, automatically evade 6 instances of damage within 90 seconds");
+        add("tooltip.pasterdream.turnback_cloak.effect2", "§7▪ §9On successful dodge: gain Counterattack I (0:10)");
+        add("tooltip.pasterdream.turnback_cloak.cooldown", "§7▪ §9Cooldown: 300 seconds");
+        add("tooltip.pasterdream.turnback_cloak.energy_cost", "§7▪ §9Melt Dream Energy cost: §c10");
 
         // War Flag
         add(ModItems.WAR_FLAG.get(), "War Flag");

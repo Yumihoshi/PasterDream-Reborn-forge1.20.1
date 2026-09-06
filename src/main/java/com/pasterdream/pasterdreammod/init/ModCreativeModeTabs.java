@@ -979,6 +979,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STRAWBERRY_HEART.get());
                         output.accept(ModItems.ANGEL_WING.get());
                         output.accept(ModItems.FORSAKENS_WING.get());
+                        output.accept(ModItems.TURNBACK_CLOAK.get());
                         output.accept(ModItems.SLIVER_BELL.get());
                     })
                     .build());

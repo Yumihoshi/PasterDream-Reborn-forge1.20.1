@@ -36,6 +36,10 @@
   {
     "sounds": [{"name": "pasterdream:evasion", "stream": false}]
   },
+  "cloak":
+  {
+    "sounds": [{"name": "pasterdream:cloak", "stream": false}]
+  },
   "lose_mind":
   {
     "sounds": [{"name": "pasterdream:lose_mind", "stream": false}]

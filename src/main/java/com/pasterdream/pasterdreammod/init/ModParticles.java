@@ -40,5 +40,6 @@ public class ModParticles {
         event.registerSpriteSet(ModParticleTypes.FIREFLY_GLASS_JAR_PARTICLE.get(), FireflyGlassJarParticle.Provider::new);
         event.registerSpriteSet(ModParticleTypes.LIGHT_FIREFLY_GLASS_JAR_PARTICLE.get(), LightFireflyGlassJarParticle.Provider::new);
         event.registerSpriteSet(ModParticleTypes.FIREFLY_PARTICLE.get(), FireflyParticle.Provider::new);
+        event.registerSpriteSet(ModParticleTypes.GOLDEN_PARTICLE.get(), GoldenParticle.Provider::new);
     }
 }
